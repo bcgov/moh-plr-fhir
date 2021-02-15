@@ -12,6 +12,7 @@ Description: "General constraints on the Location resource for use in the BC Pro
 * description MS
 * mode MS
 * type 1..* MS
+* type from $LocationType (required)
 * telecom only BCContactPoint 
 * telecom MS
 * address only BCAddress 
@@ -53,10 +54,21 @@ Description: "An optional mailing address for the facility."
 
 Instance: Example-AddProvider-WorkLocation
 InstanceOf: BCLocation
+Description: "Example of a Location (facility) that is the affiliated with an Organization."
+* extension[facilityDetails].extension[ownerName].valueString = "OPERATOR NAME"
+* extension[serviceArea].valueCodeableConcept = http://example.org/CodeSystem/HealthServiceAreas#MAINLAND
+* extension[mailingAddress].valueAddress.type = #postal
+* extension[mailingAddress].valueAddress.line[0] = "19 ST"
+* extension[mailingAddress].valueAddress.line[1] = "ADDRESS ADDRESSLINE2TXT"
+* extension[mailingAddress].valueAddress.line[2] = "ADDRESS ADDRESSLINE3TXT"
+* extension[mailingAddress].valueAddress.city = "VICTORIA"
+* extension[mailingAddress].valueAddress.postalCode = "V6P7B8"
+* extension[mailingAddress].valueAddress.state = "BC"
+* extension[mailingAddress].valueAddress.country = "CA"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.40.1.10"
 * identifier.value = "1"
 * name = "WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT"
-* type = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HD
+* type = $RoleCode#HD
 * telecom[0].use = #work
 * telecom[0].system = #email
 * telecom[0].value = "joe@gmail.com"
@@ -81,10 +93,11 @@ InstanceOf: BCLocation
 
 Instance: Example-AddOrganization-Location
 InstanceOf: BCLocation
+Description: "Example of a Location (Facility) that exists on its own."
 * identifier.system = "urn:oid:2.16.840.1.113883.3.40.1.10"
 * identifier.value = "111"
 * name = "General Hospital"
-* type = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP
+* type = $RoleCode#HOSP
 * telecom[0].use = #work
 * telecom[0].system = #fax
 * telecom[0].period.start = "1982-03-04T00:00:00-07:00"

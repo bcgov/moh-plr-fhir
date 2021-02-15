@@ -47,6 +47,7 @@ Description: "Allows for use on a simple name string."
 
 Instance: Example-Qualification-Organization
 InstanceOf: BCOrganization
+Description: "Example of an organization's qualifications."
 * name = "CREDENTIAL_CREDENTIALGRANTINGINSTTXT"
 * address.city = "CALGARY"
 * address.state = "AB"
@@ -54,6 +55,7 @@ InstanceOf: BCOrganization
 
 Instance: Example-AddOrganization-Bundle
 InstanceOf: Bundle
+Description: "Example of a Bundle of resources that are needed to create an Organization."
 * type = #transaction
 * entry[0].fullUrl = "http://plr.moh.bc.ca/fhir/Organization/12345"
 * entry[0].resource = Example-AddOrganization-Organization
@@ -70,6 +72,7 @@ InstanceOf: Bundle
 
 Instance: Example-AddOrganization-Organization
 InstanceOf: BCOrganization
+Description: "Example of an Organization that is being created."
 * identifier[0].system = "urn:oid:2.16.840.1.113883.3.40.2.3"
 * identifier[0].value = "CPN.00147422.BC.PRS"
 * identifier[1].system = "urn:oid:2.16.840.1.113883.3.40.2.8"
@@ -92,15 +95,16 @@ InstanceOf: BCOrganization
 * telecom[0].value = "7786428585"
 * telecom[0].period.start = "2014-01-31T00:00:00-07:00"
 * active = true
-* extension[status].extension[statusCode].valueCode = http://terminology.hl7.org/CodeSystem/v3-RoleStatus#normal
+* extension[status].extension[statusCode].valueCodeableConcept = $RoleStatus#normal
 * extension[status].extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
 * extension[status].extension[period].valuePeriod.end = "2030-01-31T00:00:00-07:00"
 * extension[status].extension[eventId].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.12"
 * extension[status].extension[eventId].valueIdentifier.value = "status1"
-* extension[status].extension[statusReasonCode].valueCodeableConcept = http://example.org/status_reason_code#ORG
+* extension[status].extension[statusReasonCode].valueCodeableConcept = http://example.org/status_reason_code#PRAC
 
 Instance: Example-AddOrganization-OrganizationAffiliation
 InstanceOf: BCOrganizationAffiliation
+Description: "Example of a relationship between an Organization and its Locations (facilities)."
 * active = true
 * period.start = "1989-04-04T00:00:00-07:00"
 * organization = Reference(Example-AddOrganization-Organization)

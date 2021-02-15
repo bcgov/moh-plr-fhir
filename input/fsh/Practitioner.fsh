@@ -18,6 +18,7 @@ Description: "General constraints on the Practitioner resource for use in the BC
 * qualification.extension contains PractitionerQualificationIssueDateExtension named issueDate 1..1 MS and StatusExtension named status 0..* MS
 * qualification.identifier MS
 * qualification.code MS
+* qualification.code from $PracQualification (required)
 * qualification.period MS
 * qualification.issuer MS
 * qualification.issuer only Reference(BCOrganization)
@@ -43,7 +44,9 @@ Description: "General constraints on the PractitionerRole resource for use in th
 * organization MS
 * organization only Reference(BCOrganization)
 * code MS
+* code from $PracRoleCode (required)
 * specialty MS
+* specialty from $PracSpecialty (required)
 * specialty.extension contains PeriodExtension named period 1..1 MS and StatusExtension named status 0..* MS
 * location MS
 * location only Reference(BCLocation)
@@ -54,12 +57,13 @@ Description: "General constraints on the PractitionerRole resource for use in th
 Extension: DeathDateExtension
 Id: bc-practitioner-deathdate-extension
 Title: "BC Practitioner Date of Death Extension"
-Description: "The Date of Death of a Practitioner"
+Description: "The Date of Death of a Practitioner."
 * value[x] only dateTime
 
 Extension: BirthDateInfoExtension
 Id: bc-birthdate-info-extension
-Title: "BC Extra birthdate information."
+Title: "BC Extra birthdate information"
+Description: "Adds birth time and a period to the birth date."
 * extension contains birthTime 0..1 MS and period 0..1 MS
 * extension[birthTime].value[x] only dateTime
 * extension[period].value[x] only Period
@@ -130,8 +134,8 @@ Id: bc-license-status-extension
 Title: "BC License Status Extension"
 Description: "Tracking the status and changes to the status of a practitioner/organization license."
 * extension contains statusCode 1..1 MS and period 1..1 MS and eventId 1..1 MS and statusReasonCode 1..1 MS and endReasonCode 0..1 MS and custodianId 0..1 MS
-* extension[statusCode].value[x] only code
-* extension[statusCode].valueCode from PractitionerStatusVS
+* extension[statusCode].value[x] only CodeableConcept
+* extension[statusCode].valueCodeableConcept from $StatusVS (required)
 * extension[period].value[x] only Period
 * extension[statusReasonCode].value[x] only CodeableConcept
 * extension[endReasonCode].value[x] only CodeableConcept
@@ -140,6 +144,7 @@ Description: "Tracking the status and changes to the status of a practitioner/or
 
 Instance: Example-AddProvider-Bundle
 InstanceOf: Bundle
+Description: "Example of a bundle of resources sent when requesting a provider create."
 * type = #transaction
 * entry[0].fullUrl = "http://plr.moh.bc.ca/fhir/Practitioner/12345"
 * entry[0].resource = Example-AddProvider-Practitioner
@@ -164,7 +169,8 @@ InstanceOf: Bundle
 
 Instance: Example-AddProvider-Practitioner
 InstanceOf: BCPractitioner
-* extension[status].extension[statusCode].valueCode = http://terminology.hl7.org/CodeSystem/v3-RoleStatus#active
+Description: "Example of a BC practitioner that is being created."
+* extension[status].extension[statusCode].valueCodeableConcept = $RoleStatus#active
 * extension[status].extension[period].valuePeriod.start = "2000-01-01"
 * extension[status].extension[period].valuePeriod.end = "2020-01-01"
 * extension[status].extension[eventId].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.12"
@@ -220,6 +226,7 @@ InstanceOf: BCPractitioner
 * telecom[0].value = "2507654333"
 * telecom[0].period.start = "2000-01-01"
 * telecom[0].period.end = "2020-01-01"
+* telecom[0].extension[validFlag].valueCode = #valid
 * telecom[1].system = #email
 * telecom[1].use = #work
 * telecom[1].value = "hey@day.com"
@@ -242,7 +249,7 @@ InstanceOf: BCPractitioner
 * birthDate.extension[birthInfo].extension[period].valuePeriod.end = "2020-01-01"
 * qualification.identifier.system = "urn:oid:2.16.840.1.113883.3.40.1.2"
 * qualification.identifier.value = "CREDENTIAL_REGISTRATIONNUMBERTXT"
-* qualification.code = https://fhir.infoway-inforoute.ca/CodeSystem/scpqual#BD
+* qualification.code = $SCPQual#BD
 * qualification.code.text = "CREDENTIAL_CREDENTIALDESIGNATIONTXT"
 * qualification.period.start = "2000-01-01"
 * qualification.period.end = "2020-01-01"
@@ -251,18 +258,27 @@ InstanceOf: BCPractitioner
 
 Instance: Example-AddProvider-RelatedPractitioner
 InstanceOf: BCPractitioner
+Description: "Example of a practitioner that has a relationship to the example created practitioner."
 * identifier.system = "urn:oid:2.16.840.1.113883.3.40.20.19"
 * identifier.value = "3DEGDIDERCHIDMAY22T02"
 * name.text = "23"
 
 Instance: Example-AddProvider-PractitionerRole
 InstanceOf: BCPractitionerRole
+Description: "Example of the role that the created practitioner is playing."
 * practitioner = Reference(Example-AddProvider-Practitioner)
 * organization.display = "BC"
-* code = https://fhir.infoway-inforoute.ca/CodeSystem/scptype#MD
-* specialty = https://fhir.infoway-inforoute.ca/CodeSystem/scpqual#130
+* code = $SCPType#MD
+* specialty = http://snomed.info/sct#419772000
 * specialty.extension[period].valuePeriod.start = "2000-01-01"
 * specialty.extension[period].valuePeriod.end = "2020-01-01"
+* specialty.extension[status].extension[statusCode].valueCodeableConcept = $RoleStatus#active
+* specialty.extension[status].extension[period].valuePeriod.start = "2000-01-01"
+* specialty.extension[status].extension[statusReasonCode].valueCodeableConcept = http://example.org/status_reason_code#PRAC
+* specialty.extension[status].extension[custodianId].valueIdentifier.system = "http://example.org/custodian-ids"
+* specialty.extension[status].extension[custodianId].valueIdentifier.value = "123456679"
+* specialty.extension[status].extension[eventId].valueIdentifier.system = "http://example.org/event-ids"
+* specialty.extension[status].extension[eventId].valueIdentifier.value = "123456679"
 * location = Reference(Example-AddProvider-WorkLocation)
 * location.extension[period].valuePeriod.start = "2000-01-01"
 * location.extension[period].valuePeriod.end = "2020-01-01"
