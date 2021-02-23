@@ -1,0 +1,937 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "fhir.ca-bc.provider",
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>BCProviderRegistry</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/ca-bc/provider/ImplementationGuide/fhir.ca-bc.provider</pre><div><p>FHIR Implementation Guide for BC MOH Provider Registry</p>\n</div></div>"
+  },
+  "url": "http://hl7.org/fhir/ca-bc/provider/ImplementationGuide/fhir.ca-bc.provider",
+  "version": "0.1.0",
+  "name": "BCProviderRegistry",
+  "title": "BC Provider Registry FHIR Implementation Guide",
+  "status": "draft",
+  "date": "2021-02-22T12:33:55-07:00",
+  "publisher": "BC Ministry of Health",
+  "contact": [
+    {
+      "name": "BC Ministry of Health",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"
+        }
+      ]
+    }
+  ],
+  "description": "FHIR Implementation Guide for BC MOH Provider Registry",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "CA",
+          "display": "Canada"
+        }
+      ]
+    }
+  ],
+  "packageId": "fhir.ca-bc.provider",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "extension": [
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "copyrightyear"
+          },
+          {
+            "url": "value",
+            "valueString": "2020+"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "releaselabel"
+          },
+          {
+            "url": "value",
+            "valueString": "Build CI"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-history"
+          },
+          {
+            "url": "value",
+            "valueString": "http://hl7.org/fhir/ca-bc/provider/history.html"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-liquid"
+          },
+          {
+            "url": "value",
+            "valueString": "template/liquid"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-liquid"
+          },
+          {
+            "url": "value",
+            "valueString": "input/liquid"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-qa"
+          },
+          {
+            "url": "value",
+            "valueString": "temp/qa"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-temp"
+          },
+          {
+            "url": "value",
+            "valueString": "temp/pages"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-output"
+          },
+          {
+            "url": "value",
+            "valueString": "output"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-suppressed-warnings"
+          },
+          {
+            "url": "value",
+            "valueString": "input/ignoreWarnings.txt"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "template-html"
+          },
+          {
+            "url": "value",
+            "valueString": "template-page.html"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "template-md"
+          },
+          {
+            "url": "value",
+            "valueString": "template-page-md.html"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-contact"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-context"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-copyright"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-jurisdiction"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-license"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-publisher"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-version"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "active-tables"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      }
+    ],
+    "resource": [
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:complex-type"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/BCAddress"
+        },
+        "name": "BCAddress",
+        "description": "Adds a validity flag and a status to the address.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:complex-type"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/BCContactPoint"
+        },
+        "name": "BCContactPoint",
+        "description": "Adds a status, validity flag and extra contact information.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:complex-type"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/BCHumanName"
+        },
+        "name": "BCHumanName",
+        "description": "Adds a status, validity flag and period, and a use code to a name.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:complex-type"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/BCIdentifier"
+        },
+        "name": "BCIdentifier",
+        "description": "Adds a status to the identifier.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-location"
+        },
+        "name": "BCLocation",
+        "description": "General constraints on the Location resource for use in the BC Provider Registry project.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-organization"
+        },
+        "name": "BCOrganization",
+        "description": "General constraints on the Organization resource for use in the BC Provider Registry project.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-organizationaffiliation"
+        },
+        "name": "BCOrganizationAffiliation",
+        "description": "General constraints on the OrganizationAffiliation resource for use in the BC Provider Registry project.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-practitioner"
+        },
+        "name": "BCPractitioner",
+        "description": "General constraints on the Practitioner resource for use in the BC Provider Registry project.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-practitioner-role"
+        },
+        "name": "BCPractitionerRole",
+        "description": "General constraints on the PractitionerRole resource for use in the BC Provider Registry project.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-birthdate-info-extension"
+        },
+        "name": "BC Extra birthdate information",
+        "description": "Adds birth time and a period to the birth date.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-birthplace-extension"
+        },
+        "name": "BC Birth Place Extension",
+        "description": "Captures the place where a patient/practitioner/person was born.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-facility-commmunity-health-service-area-extension"
+        },
+        "name": "BC Facility Community Health Service Area",
+        "description": "A code that represents the community health service area that the location is a part of.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-practitioner-deathdate-extension"
+        },
+        "name": "BC Practitioner Date of Death Extension",
+        "description": "The Date of Death of a Practitioner.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-facility-details-extension"
+        },
+        "name": "BC Facility Details Extension",
+        "description": "Provides the details of a facility as represented by a FHIR location.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-license-status-extension"
+        },
+        "name": "BC License Status Extension",
+        "description": "Tracking the status and changes to the status of a practitioner/organization license.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-facility-mailing-address"
+        },
+        "name": "BC Facility Mailing Address",
+        "description": "An optional mailing address for the facility.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-name-use-extension"
+        },
+        "name": "BC Name Use Extension",
+        "description": "Allows for use on a simple name string.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-note-extension"
+        },
+        "name": "BC Notes",
+        "description": "Notes about the practitioner/location/organization.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-period-extension"
+        },
+        "name": "BC Valid Period",
+        "description": "The period for when the extended element is valid.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-practitioner-condition-extension"
+        },
+        "name": "BC Practitioner Conditions",
+        "description": "Conditions on the provider's role",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-practitioner-confidentiality-extension"
+        },
+        "name": "BC Practitioner Confidentiality Extension",
+        "description": "Indicates the confidentality of the practitioner's information.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-practitioner-disciplinary-action-extension"
+        },
+        "name": "BC Practitioner Disciplinary Actions",
+        "description": "Provides details of disciplinary actions against the provider.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-practitioner-qualification-issue-date-extension"
+        },
+        "name": "BC Practitioner Qualification Issue Date",
+        "description": "The issue date of the practitioner's qualification.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-practitioner-relationship-extension"
+        },
+        "name": "BC Practitioner to Practitioner Relationship",
+        "description": "Allows for relationships of practitioners to practitioners without needing CareTeam semantics.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-status-extension"
+        },
+        "name": "BC Status Extension",
+        "description": "Tracking status codes and the effective dates of those statuses.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-valid-flag-extension"
+        },
+        "name": "BC Valid Flag Extension",
+        "description": "Used to indicate if a data element has been validated by the ministry.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/ValidFlagVS"
+        },
+        "name": "BC Valid Flag Extension ValueSet",
+        "description": "An indication of the validity of a data element",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "CodeSystem"
+          }
+        ],
+        "reference": {
+          "reference": "CodeSystem/ValidFlagCS"
+        },
+        "name": "BC Valid Flag Extension CodeSystem",
+        "description": "An indication of the validity of a data element",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Bundle"
+          }
+        ],
+        "reference": {
+          "reference": "Bundle/Example-AddOrganization-Bundle"
+        },
+        "name": "Example-AddOrganization-Bundle",
+        "description": "Example of a Bundle of resources that are needed to create an Organization.",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Location"
+          }
+        ],
+        "reference": {
+          "reference": "Location/Example-AddOrganization-Location"
+        },
+        "name": "Example-AddOrganization-Location",
+        "description": "Example of a Location (Facility) that exists on its own.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Organization"
+          }
+        ],
+        "reference": {
+          "reference": "Organization/Example-AddOrganization-Organization"
+        },
+        "name": "Example-AddOrganization-Organization",
+        "description": "Example of an Organization that is being created.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "OrganizationAffiliation"
+          }
+        ],
+        "reference": {
+          "reference": "OrganizationAffiliation/Example-AddOrganization-OrganizationAffiliation"
+        },
+        "name": "Example-AddOrganization-OrganizationAffiliation",
+        "description": "Example of a relationship between an Organization and its Locations (facilities).",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organizationaffiliation"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Bundle"
+          }
+        ],
+        "reference": {
+          "reference": "Bundle/Example-AddProvider-Bundle"
+        },
+        "name": "Example-AddProvider-Bundle",
+        "description": "Example of a bundle of resources sent when requesting a provider create.",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Practitioner"
+          }
+        ],
+        "reference": {
+          "reference": "Practitioner/Example-AddProvider-Practitioner"
+        },
+        "name": "Example-AddProvider-Practitioner",
+        "description": "Example of a BC practitioner that is being created.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PractitionerRole"
+          }
+        ],
+        "reference": {
+          "reference": "PractitionerRole/Example-AddProvider-PractitionerRole"
+        },
+        "name": "Example-AddProvider-PractitionerRole",
+        "description": "Example of the role that the created practitioner is playing.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Practitioner"
+          }
+        ],
+        "reference": {
+          "reference": "Practitioner/Example-AddProvider-RelatedPractitioner"
+        },
+        "name": "Example-AddProvider-RelatedPractitioner",
+        "description": "Example of a practitioner that has a relationship to the example created practitioner.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Location"
+          }
+        ],
+        "reference": {
+          "reference": "Location/Example-AddProvider-WorkLocation"
+        },
+        "name": "Example-AddProvider-WorkLocation",
+        "description": "Example of a Location (facility) that is the affiliated with an Organization.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Organization"
+          }
+        ],
+        "reference": {
+          "reference": "Organization/Example-Qualification-Organization"
+        },
+        "name": "Example-Qualification-Organization",
+        "description": "Example of an organization's qualifications.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "PLR Overview",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "specification.html",
+          "title": "FHIR Design and Overview",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "transition.html",
+          "title": "Transition from V3 Provider to FHIR",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "connected_partner.html",
+          "title": "Becoming a Connected Partner",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "system.html",
+          "title": "Performance and Availability",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "future.html",
+          "title": "Future Plans",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "glossary.html",
+          "title": "Glossary",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "credits.html",
+          "title": "Credits",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "path-resource",
+        "value": "input/capabilities"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/examples"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/extensions"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/models"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/operations"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/profiles"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/resources"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/vocabulary"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/maps"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/testing"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/history"
+      },
+      {
+        "code": "path-resource",
+        "value": "fsh-generated/resources"
+      },
+      {
+        "code": "path-pages",
+        "value": "template/config"
+      },
+      {
+        "code": "path-pages",
+        "value": "input/images"
+      },
+      {
+        "code": "path-tx-cache",
+        "value": "input-cache/txcache"
+      }
+    ]
+  }
+}

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR.CA-BC.PROVIDER\Example-AddProvider-Bundle - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.33"}
+    h3,h4,h5,h6{--heading-prefix:"9.33"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">BC Provider Registry FHIR Implementation Guide</span><br/>0.1.0 - Build CI</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Overview</a>
+  </li>
+  <li>
+    <a href="specification.html">FHIR Design</a>
+  </li>
+  <li>
+    <a href="transition.html">V3 Transition</a>
+  </li>
+  <li>
+    <a href="connected_partner.html">Connected Partner</a>
+  </li>
+  <li>
+    <a href="system.html">System Performance</a>
+  </li>
+  <li>
+    <a href="future.html">Future Plans</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html#1">Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#3">Extensions</a>
+      </li>
+      <li>
+        <a href="artifacts.html#4">Value Sets</a>
+      </li>
+      <li>
+        <a href="artifacts.html#6">Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="glossary.html">Glossary</a>
+  </li>
+  <li>
+    <a href="credits.html">Credits</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Example-AddProvider-Bundle</b></li>
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <div id="segment-content">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">BC Provider Registry FHIR Implementation Guide - Local Development build (v0.1.0). See the <a href="http://hl7.org/fhir/ca-bc/provider/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+  
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+  
+    <li>
+      <a href="Bundle-Example-AddProvider-Bundle.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Bundle-Example-AddProvider-Bundle.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Bundle-Example-AddProvider-Bundle.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+  <a name="root"> </a>
+
+
+  <h2 id="root">Example Bundle: Example-AddProvider-Bundle</h2>
+
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <div><p>Bundle Example-AddProvider-Bundle of type transaction</p><a name="http-//plr.moh.bc.ca/fhir/Practitioner/12345"> </a><a name="Practitioner_Example-AddProvider-Practitioner"> </a><hr/><p>Entry 1 - Full URL = http://plr.moh.bc.ca/fhir/Practitioner/12345</p><p>Request:</p><pre>POST http://plr.moh.bc.ca/fhir/Practitioner
+</pre><p>Resource Practitioner:</p><blockquote><p><b>Generated Narrative</b></p><h3>Texts</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><blockquote><p><b>BC License Status Extension</b></p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <span title="Codes: {http://terminology.hl7.org/CodeSystem/v3-RoleStatus active}">active</span></p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2000-01-01 --&gt; 2020-01-01</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: id: 111</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <span title="Codes: {http://example.org/status_reason_code PRAC}">PRAC</span></p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: id: RNA</p></blockquote><p><b>BC Practitioner Date of Death Extension</b>: 2000-02-01</p><p><b>BC Birth Place Extension</b>: AL US </p><blockquote><p><b>BC Practitioner Disciplinary Actions</b></p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: id: DISCIPLINARY_ACTION_TEST1</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: DISCIPLINARYACTION_DESCRIPTIONTXT_1</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: Nov. 20, 1950, 12:00:00 a.m. --&gt; 2020-01-01</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2020-01-01</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: true</p></blockquote><blockquote><p><b>BC Practitioner Confidentiality Extension</b></p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <span title="Codes: {http://terminology.hl7.org/CodeSystem/v3-Confidentiality N}">normal</span></p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2000-01-01 --&gt; 2020-01-01</p></blockquote><blockquote><p><b>BC Notes</b></p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: id: noteID1</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: Note text sample</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2000-01-01 --&gt; 2020-01-01</p></blockquote><blockquote><p><b>BC Practitioner Conditions</b></p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: id: 23</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2000-01-01 --&gt; 2020-01-01</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: true</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: CONDITION_RESTRICTION_EXPLANATION TEXT</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <span title="Codes: {http://example.org/condition_type_code LOC}">LOC</span></p></blockquote><blockquote><p><b>BC Practitioner to Practitioner Relationship</b></p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2000-01-01 --&gt; 2020-01-01</p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <a href="Practitioner-Example-AddProvider-RelatedPractitioner.html">Generated Summary: id: 3DEGDIDERCHIDMAY22T02; 23</a></p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <span title="Codes: {http://example.org/provider_relationship_type_code LOC}">LOC</span></p></blockquote><p><b>identifier</b>: id: MD20180719V01</p><p><b>active</b>: true</p><p><b>name</b>: SONYA NAME PRSNSECONDGIVENNAMETXT NAME PRSNTHIRDGIVENNAMETXT KELASEY (OFFICIAL)</p><p><b>telecom</b>: ph: 2507654333(HOME), <a href="mailto:hey@day.com">hey@day.com</a></p><p><b>address</b>: 91 RD ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V8V8V8 (WORK)</p><p><b>gender</b>: FEMALE</p><p><b>birthDate</b>: 1951-11-12</p><h3>Qualifications</h3><table class="grid"><tr><td>-</td><td><b>Extension</b></td><td><b>Identifier</b></td><td><b>Code</b></td><td><b>Period</b></td><td><b>Issuer</b></td></tr><tr><td>*</td><td/><td>id: CREDENTIAL_REGISTRATIONNUMBERTXT</td><td><span title="Codes: {https://fhir.infoway-inforoute.ca/CodeSystem/scpqual BD}">CREDENTIAL_CREDENTIALDESIGNATIONTXT</span></td><td>2000-01-01 --&gt; 2020-01-01</td><td><a href="Organization-Example-Qualification-Organization.html">Generated Summary: name: CREDENTIAL_CREDENTIALGRANTINGINSTTXT</a></td></tr></table></blockquote><a name="http-//plr.moh.bc.ca/fhir/PractitionerRole/12345"> </a><a name="PractitionerRole_Example-AddProvider-PractitionerRole"> </a><hr/><p>Entry 2 - Full URL = http://plr.moh.bc.ca/fhir/PractitionerRole/12345</p><p>Request:</p><pre>POST http://plr.moh.bc.ca/fhir/PractitionerRole
+</pre><p>Resource PractitionerRole:</p><blockquote><p><b>Generated Narrative</b></p><h3>Texts</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>practitioner</b>: <a href="Practitioner-Example-AddProvider-Practitioner.html">Generated Summary: id: MD20180719V01; active; SONYA NAME PRSNSECONDGIVENNAMETXT NAME PRSNTHIRDGIVENNAMETXT KELASEY (OFFICIAL); Phone: 2507654333, hey@day.com; gender: female; birthDate: 1951-11-12</a></p><p><b>organization</b>: <span>BC</span></p><p><b>code</b>: <span title="Codes: {https://fhir.infoway-inforoute.ca/CodeSystem/scptype MD}">MD</span></p><p><b>specialty</b>: <span title="Codes: {http://snomed.info/sct 419772000}">Family practice (qualifier value)</span></p><p><b>location</b>: <a href="Location-Example-AddProvider-WorkLocation.html">Generated Summary: id: 1; name: WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT; <span title="Codes: {http://terminology.hl7.org/CodeSystem/v3-RoleCode HD}">Hemodialysis unit</span>; joe@gmail.com, Phone: 2509876555</a></p></blockquote><a name="http-//plr.moh.bc.ca/fhir/Practitioner/23456"> </a><a name="Practitioner_Example-AddProvider-RelatedPractitioner"> </a><hr/><p>Entry 3 - Full URL = http://plr.moh.bc.ca/fhir/Practitioner/23456</p><p>Request:</p><pre>POST http://plr.moh.bc.ca/fhir/Practitioner
+</pre><p>Resource Practitioner:</p><blockquote><p><b>Generated Narrative</b></p><h3>Texts</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>identifier</b>: id: 3DEGDIDERCHIDMAY22T02</p><p><b>name</b>: 23</p></blockquote><a name="http-//plr.moh.bc.ca/fhir/Organization/12345"> </a><a name="Organization_Example-Qualification-Organization"> </a><hr/><p>Entry 4 - Full URL = http://plr.moh.bc.ca/fhir/Organization/12345</p><p>Request:</p><pre>POST http://plr.moh.bc.ca/fhir/Organization
+</pre><p>Resource Organization:</p><blockquote><p><b>Generated Narrative</b></p><h3>Texts</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>name</b>: CREDENTIAL_CREDENTIALGRANTINGINSTTXT</p><p><b>address</b>: CALGARY AB CA </p></blockquote><a name="http-//plr.moh.bc.ca/fhir/Location/12345"> </a><a name="Location_Example-AddProvider-WorkLocation"> </a><hr/><p>Entry 5 - Full URL = http://plr.moh.bc.ca/fhir/Location/12345</p><p>Request:</p><pre>POST http://plr.moh.bc.ca/fhir/Location
+</pre><p>Resource Location:</p><blockquote><p><b>Generated Narrative</b></p><h3>Texts</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><blockquote><p><b>BC Facility Details Extension</b></p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: OPERATOR NAME</p></blockquote><p><b>BC Facility Community Health Service Area</b>: <span title="Codes: {http://example.org/CodeSystem/HealthServiceAreas MAINLAND}">MAINLAND</span></p><p><b>BC Facility Mailing Address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p><p><b>identifier</b>: id: 1</p><p><b>name</b>: WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT</p><p><b>type</b>: <span title="Codes: {http://terminology.hl7.org/CodeSystem/v3-RoleCode HD}">Hemodialysis unit</span></p><p><b>telecom</b>: <a href="mailto:joe@gmail.com">joe@gmail.com</a>, ph: 2509876555(HOME)</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA (WORK)</p></blockquote></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 22, 2021 12:33-0700">2021-02-22</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

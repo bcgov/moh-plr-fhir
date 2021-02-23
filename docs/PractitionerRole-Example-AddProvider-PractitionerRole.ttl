@@ -1,0 +1,124 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-AddProvider-PractitionerRole> a fhir:PractitionerRole;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "Example-AddProvider-PractitionerRole"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>practitioner</b>: <a href=\"Practitioner-Example-AddProvider-Practitioner.html\">Generated Summary: id: MD20180719V01; active; SONYA NAME PRSNSECONDGIVENNAMETXT NAME PRSNTHIRDGIVENNAMETXT KELASEY (OFFICIAL); Phone: 2507654333, hey@day.com; gender: female; birthDate: 1951-11-12</a></p><p><b>organization</b>: <span>BC</span></p><p><b>code</b>: <span title=\"Codes: {https://fhir.infoway-inforoute.ca/CodeSystem/scptype MD}\">MD</span></p><p><b>specialty</b>: <span title=\"Codes: {http://snomed.info/sct 419772000}\">Family practice (qualifier value)</span></p><p><b>location</b>: <a href=\"Location-Example-AddProvider-WorkLocation.html\">Generated Summary: id: 1; name: WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-RoleCode HD}\">Hemodialysis unit</span>; joe@gmail.com, Phone: 2509876555</a></p></div>"
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link <http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-AddProvider-Practitioner>;
+     fhir:Reference.reference [ fhir:value "Practitioner/Example-AddProvider-Practitioner" ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:Reference.display [ fhir:value "BC" ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "https://fhir.infoway-inforoute.ca/CodeSystem/scptype" ];
+       fhir:Coding.code [ fhir:value "MD" ]
+     ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "statusCode" ];
+         fhir:Extension.valueCodeableConcept [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleStatus" ];
+             fhir:Coding.code [ fhir:value "active" ]
+           ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "period" ];
+         fhir:Extension.valuePeriod [
+           fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+         ]
+       ], [
+         fhir:index 2;
+         fhir:Extension.url [ fhir:value "eventId" ];
+         fhir:Extension.valueIdentifier [
+           fhir:Identifier.system [ fhir:value "http://example.org/event-ids" ];
+           fhir:Identifier.value [ fhir:value "123456679" ]
+         ]
+       ], [
+         fhir:index 3;
+         fhir:Extension.url [ fhir:value "statusReasonCode" ];
+         fhir:Extension.valueCodeableConcept [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://example.org/status_reason_code" ];
+             fhir:Coding.code [ fhir:value "PRAC" ]
+           ]
+         ]
+       ], [
+         fhir:index 4;
+         fhir:Extension.url [ fhir:value "custodianId" ];
+         fhir:Extension.valueIdentifier [
+           fhir:Identifier.system [ fhir:value "http://example.org/custodian-ids" ];
+           fhir:Identifier.value [ fhir:value "123456679" ]
+         ]
+       ];
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-status-extension" ]
+     ];
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:419772000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "419772000" ]
+     ]
+  ];
+  fhir:PractitionerRole.location [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/ca-bc/provider/Location/Example-AddProvider-WorkLocation>;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+       ]
+     ];
+     fhir:Reference.reference [ fhir:value "Location/Example-AddProvider-WorkLocation" ]
+  ] .
+
+<http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-AddProvider-Practitioner> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/Location/Example-AddProvider-WorkLocation> a fhir:ca-bc .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-AddProvider-PractitionerRole.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ca-bc/provider/PractitionerRole/Example-AddProvider-PractitionerRole.ttl> .
+
+# -------------------------------------------------------------------------------------
+

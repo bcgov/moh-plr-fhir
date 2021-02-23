@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Location xmlns="http://hl7.org/fhir">
+  <id value="Example-AddProvider-WorkLocation"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><blockquote><p><b>BC Facility Details Extension</b></p><h3>Urls</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: OPERATOR NAME</p></blockquote><p><b>BC Facility Community Health Service Area</b>: <span title="Codes: {http://example.org/CodeSystem/HealthServiceAreas MAINLAND}">MAINLAND</span></p><p><b>BC Facility Mailing Address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p><p><b>identifier</b>: id: 1</p><p><b>name</b>: WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT</p><p><b>type</b>: <span title="Codes: {http://terminology.hl7.org/CodeSystem/v3-RoleCode HD}">Hemodialysis unit</span></p><p><b>telecom</b>: <a href="mailto:joe@gmail.com">joe@gmail.com</a>, ph: 2509876555(HOME)</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA (WORK)</p></div>
+  </text>
+  <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-details-extension">
+    <extension url="ownerName">
+      <valueString value="OPERATOR NAME"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-commmunity-health-service-area-extension">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://example.org/CodeSystem/HealthServiceAreas"/>
+        <code value="MAINLAND"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address">
+    <valueAddress>
+      <type value="postal"/>
+      <line value="19 ST"/>
+      <line value="ADDRESS ADDRESSLINE2TXT"/>
+      <line value="ADDRESS ADDRESSLINE3TXT"/>
+      <city value="VICTORIA"/>
+      <state value="BC"/>
+      <postalCode value="V6P7B8"/>
+      <country value="CA"/>
+    </valueAddress>
+  </extension>
+  <identifier>
+    <system value="urn:oid:2.16.840.1.113883.3.40.1.10"/>
+    <value value="1"/>
+  </identifier>
+  <name value="WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+      <code value="HD"/>
+    </coding>
+  </type>
+  <telecom>
+    <system value="email"/>
+    <value value="joe@gmail.com"/>
+    <use value="work"/>
+    <period>
+      <start value="2000-01-01"/>
+      <end value="2020-01-01"/>
+    </period>
+  </telecom>
+  <telecom>
+    <system value="phone"/>
+    <value value="2509876555"/>
+    <use value="home"/>
+    <period>
+      <start value="2000-01-01"/>
+      <end value="2020-01-01"/>
+    </period>
+  </telecom>
+  <address>
+    <use value="work"/>
+    <type value="postal"/>
+    <line value="19 ST"/>
+    <line value="ADDRESS ADDRESSLINE2TXT"/>
+    <line value="ADDRESS ADDRESSLINE3TXT"/>
+    <city value="VICTORIA"/>
+    <state value="BC"/>
+    <postalCode value="V6P7B8"/>
+    <country value="CA"/>
+    <period>
+      <start value="2000-01-01"/>
+      <end value="2020-01-01"/>
+    </period>
+  </address>
+</Location>

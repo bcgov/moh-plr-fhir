@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="fhir.ca-bc.provider"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>BCProviderRegistry</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/ca-bc/provider/ImplementationGuide/fhir.ca-bc.provider</pre><div><p>FHIR Implementation Guide for BC MOH Provider Registry</p>
+</div></div>
+  </text>
+  <url value="http://hl7.org/fhir/ca-bc/provider/ImplementationGuide/fhir.ca-bc.provider"/>
+  <version value="0.1.0"/>
+  <name value="BCProviderRegistry"/>
+  <title value="BC Provider Registry FHIR Implementation Guide"/>
+  <status value="draft"/>
+  <date value="2021-02-22T12:33:55-07:00"/>
+  <publisher value="BC Ministry of Health"/>
+  <contact>
+    <name value="BC Ministry of Health"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"/>
+    </telecom>
+  </contact>
+  <description value="FHIR Implementation Guide for BC MOH Provider Registry"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="CA"/>
+      <display value="Canada"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="fhir.ca-bc.provider"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2020+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Build CI"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/ca-bc/provider/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/BCAddress"/>
+      </reference>
+      <name value="BCAddress"/>
+      <description value="Adds a validity flag and a status to the address."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/BCContactPoint"/>
+      </reference>
+      <name value="BCContactPoint"/>
+      <description value="Adds a status, validity flag and extra contact information."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/BCHumanName"/>
+      </reference>
+      <name value="BCHumanName"/>
+      <description value="Adds a status, validity flag and period, and a use code to a name."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/BCIdentifier"/>
+      </reference>
+      <name value="BCIdentifier"/>
+      <description value="Adds a status to the identifier."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-location"/>
+      </reference>
+      <name value="BCLocation"/>
+      <description value="General constraints on the Location resource for use in the BC Provider Registry project."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-organization"/>
+      </reference>
+      <name value="BCOrganization"/>
+      <description value="General constraints on the Organization resource for use in the BC Provider Registry project."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-organizationaffiliation"/>
+      </reference>
+      <name value="BCOrganizationAffiliation"/>
+      <description value="General constraints on the OrganizationAffiliation resource for use in the BC Provider Registry project."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-practitioner"/>
+      </reference>
+      <name value="BCPractitioner"/>
+      <description value="General constraints on the Practitioner resource for use in the BC Provider Registry project."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-practitioner-role"/>
+      </reference>
+      <name value="BCPractitionerRole"/>
+      <description value="General constraints on the PractitionerRole resource for use in the BC Provider Registry project."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-birthdate-info-extension"/>
+      </reference>
+      <name value="BC Extra birthdate information"/>
+      <description value="Adds birth time and a period to the birth date."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-birthplace-extension"/>
+      </reference>
+      <name value="BC Birth Place Extension"/>
+      <description value="Captures the place where a patient/practitioner/person was born."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-facility-commmunity-health-service-area-extension"/>
+      </reference>
+      <name value="BC Facility Community Health Service Area"/>
+      <description value="A code that represents the community health service area that the location is a part of."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-practitioner-deathdate-extension"/>
+      </reference>
+      <name value="BC Practitioner Date of Death Extension"/>
+      <description value="The Date of Death of a Practitioner."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-facility-details-extension"/>
+      </reference>
+      <name value="BC Facility Details Extension"/>
+      <description value="Provides the details of a facility as represented by a FHIR location."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-license-status-extension"/>
+      </reference>
+      <name value="BC License Status Extension"/>
+      <description value="Tracking the status and changes to the status of a practitioner/organization license."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-facility-mailing-address"/>
+      </reference>
+      <name value="BC Facility Mailing Address"/>
+      <description value="An optional mailing address for the facility."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-name-use-extension"/>
+      </reference>
+      <name value="BC Name Use Extension"/>
+      <description value="Allows for use on a simple name string."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-note-extension"/>
+      </reference>
+      <name value="BC Notes"/>
+      <description value="Notes about the practitioner/location/organization."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-period-extension"/>
+      </reference>
+      <name value="BC Valid Period"/>
+      <description value="The period for when the extended element is valid."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-practitioner-condition-extension"/>
+      </reference>
+      <name value="BC Practitioner Conditions"/>
+      <description value="Conditions on the provider&#39;s role"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-practitioner-confidentiality-extension"/>
+      </reference>
+      <name value="BC Practitioner Confidentiality Extension"/>
+      <description value="Indicates the confidentality of the practitioner&#39;s information."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-practitioner-disciplinary-action-extension"/>
+      </reference>
+      <name value="BC Practitioner Disciplinary Actions"/>
+      <description value="Provides details of disciplinary actions against the provider."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-practitioner-qualification-issue-date-extension"/>
+      </reference>
+      <name value="BC Practitioner Qualification Issue Date"/>
+      <description value="The issue date of the practitioner&#39;s qualification."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-practitioner-relationship-extension"/>
+      </reference>
+      <name value="BC Practitioner to Practitioner Relationship"/>
+      <description value="Allows for relationships of practitioners to practitioners without needing CareTeam semantics."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-status-extension"/>
+      </reference>
+      <name value="BC Status Extension"/>
+      <description value="Tracking status codes and the effective dates of those statuses."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-valid-flag-extension"/>
+      </reference>
+      <name value="BC Valid Flag Extension"/>
+      <description value="Used to indicate if a data element has been validated by the ministry."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ValidFlagVS"/>
+      </reference>
+      <name value="BC Valid Flag Extension ValueSet"/>
+      <description value="An indication of the validity of a data element"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ValidFlagCS"/>
+      </reference>
+      <name value="BC Valid Flag Extension CodeSystem"/>
+      <description value="An indication of the validity of a data element"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/Example-AddOrganization-Bundle"/>
+      </reference>
+      <name value="Example-AddOrganization-Bundle"/>
+      <description value="Example of a Bundle of resources that are needed to create an Organization."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Location"/>
+      </extension>
+      <reference>
+        <reference value="Location/Example-AddOrganization-Location"/>
+      </reference>
+      <name value="Example-AddOrganization-Location"/>
+      <description value="Example of a Location (Facility) that exists on its own."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Example-AddOrganization-Organization"/>
+      </reference>
+      <name value="Example-AddOrganization-Organization"/>
+      <description value="Example of an Organization that is being created."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OrganizationAffiliation"/>
+      </extension>
+      <reference>
+        <reference value="OrganizationAffiliation/Example-AddOrganization-OrganizationAffiliation"/>
+      </reference>
+      <name value="Example-AddOrganization-OrganizationAffiliation"/>
+      <description value="Example of a relationship between an Organization and its Locations (facilities)."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organizationaffiliation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/Example-AddProvider-Bundle"/>
+      </reference>
+      <name value="Example-AddProvider-Bundle"/>
+      <description value="Example of a bundle of resources sent when requesting a provider create."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/Example-AddProvider-Practitioner"/>
+      </reference>
+      <name value="Example-AddProvider-Practitioner"/>
+      <description value="Example of a BC practitioner that is being created."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/Example-AddProvider-PractitionerRole"/>
+      </reference>
+      <name value="Example-AddProvider-PractitionerRole"/>
+      <description value="Example of the role that the created practitioner is playing."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/Example-AddProvider-RelatedPractitioner"/>
+      </reference>
+      <name value="Example-AddProvider-RelatedPractitioner"/>
+      <description value="Example of a practitioner that has a relationship to the example created practitioner."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Location"/>
+      </extension>
+      <reference>
+        <reference value="Location/Example-AddProvider-WorkLocation"/>
+      </reference>
+      <name value="Example-AddProvider-WorkLocation"/>
+      <description value="Example of a Location (facility) that is the affiliated with an Organization."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Example-Qualification-Organization"/>
+      </reference>
+      <name value="Example-Qualification-Organization"/>
+      <description value="Example of an organization&#39;s qualifications."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
+    </resource>
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="PLR Overview"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="specification.html"/>
+        <title value="FHIR Design and Overview"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="transition.html"/>
+        <title value="Transition from V3 Provider to FHIR"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="connected_partner.html"/>
+        <title value="Becoming a Connected Partner"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="system.html"/>
+        <title value="Performance and Availability"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="future.html"/>
+        <title value="Future Plans"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="glossary.html"/>
+        <title value="Glossary"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="credits.html"/>
+        <title value="Credits"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>
