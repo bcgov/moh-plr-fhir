@@ -21,10 +21,11 @@ menu:
   System Performance: system.html
   Future Plans: future.html
   Artifacts:
-    Profiles: artifacts.html#1
-    Extensions: artifacts.html#3
-    Value Sets: artifacts.html#4
-    Examples: artifacts.html#6
+    Practitioner: artifacts.html#1
+    Organization: artifacts.html#2
+    Facility: artifacts.html#3
+    Datatypes: artifacts.html#4
+    Common: artifacts.html#5
   Glossary: glossary.html
   Credits: credits.html
   
@@ -48,3 +49,60 @@ pages:
 
 parameters:
   path-output: \docs
+  
+groups:
+  Practitioner:
+    name: Practitioner
+    description: Artifacts associated with Practitioners
+    resources:
+      - StructureDefinition/bc-practitioner
+      - StructureDefinition/bc-practitioner-role
+      - StructureDefinition/bc-practitioner-deathdate-extension
+      - StructureDefinition/bc-birthtime-extension
+      - StructureDefinition/bc-birthplace-extension
+      - StructureDefinition/bc-practitioner-confidentiality-extension
+      - StructureDefinition/bc-practitioner-relationship-extension
+      - StructureDefinition/bc-practitioner-disciplinary-action-extension
+      - StructureDefinition/bc-practitioner-condition-extension
+      - StructureDefinition/bc-practitioner-qualification-issue-date-extension
+      - Bundle/Example-AddProvider-Bundle
+      - Practitioner/Example-AddProvider-Practitioner
+      - Practitioner/Example-AddProvider-RelatedPractitioner
+      - PractitionerRole/Example-AddProvider-PractitionerRole
+      - Organization/Example-Qualification-Organization
+  Organization:
+    name: Organization
+    description: Artifacts associated with Organizations
+    resources:
+      - StructureDefinition/bc-organization
+      - StructureDefinition/bc-organizationaffiliation
+      - Bundle/Example-AddOrganization-Bundle
+      - Organization/Example-AddOrganization-Organization
+      - OrganizationAffiliation/Example-AddOrganization-OrganizationAffiliation
+  Facility:
+    name: Facility
+    description: Artifacts associated with Facilities (Locations)
+    resources:
+      - StructureDefinition/bc-location
+      - StructureDefinition/bc-facility-details-extension
+      - StructureDefinition/bc-facility-community-health-service-area-extension
+      - StructureDefinition/bc-facility-mailing-address-extension
+      - Location/Example-AddProvider-WorkLocation
+      - Location/Example-AddOrganization-Location
+  Datatypes:
+    name: Datatypes
+    description: Artifacts associated with datatypes
+    resources:
+      - StructureDefinition/bc-identifier
+      - StructureDefinition/bc-contactPoint
+      - StructureDefinition/bc-address
+      - StructureDefinition/bc-humanName
+  Common:
+    name: Common
+    description: Artifacts used across all groupings
+    resources:
+      - StructureDefinition/bc-note-extension
+      - StructureDefinition/bc-license-status-extension
+      - StructureDefinition/bc-name-use-extension
+      - StructureDefinition/bc-end-reason-extension
+      - StructureDefinition/bc-period-extension

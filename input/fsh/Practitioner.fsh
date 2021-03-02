@@ -13,9 +13,9 @@ Description: "General constraints on the Practitioner resource for use in the BC
 * address MS
 * gender MS
 * birthDate MS
-* birthDate.extension contains BirthDateInfoExtension named birthInfo 0..1 MS
+* birthDate.extension contains BirthTimeExtension named birthTime 0..1 MS
 * qualification MS
-* qualification.extension contains PractitionerQualificationIssueDateExtension named issueDate 1..1 MS and StatusExtension named status 0..* MS
+* qualification.extension contains PractitionerQualificationIssueDateExtension named issueDate 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * qualification.identifier MS
 * qualification.code MS
 * qualification.code from $PracQualification (required)
@@ -23,7 +23,9 @@ Description: "General constraints on the Practitioner resource for use in the BC
 * qualification.issuer MS
 * qualification.issuer only Reference(BCOrganization)
 * communication MS
-* extension contains LicenseStatusExtension named status 0..* MS and 
+* communication.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
+* extension contains PeriodExtension named demographicsPeriod 1..1 MS and EndReasonExtension named demographicsEndReason 0..1 MS and 
+    LicenseStatusExtension named status 0..* MS and 
 	DeathDateExtension named deathDate 0..1 MS and 
 	BirthPlaceExtension named birthplace 0..1 MS and
 	PractitionerConfidentialityExtension named confidentiality 0..1 MS and
@@ -43,14 +45,15 @@ Description: "General constraints on the PractitionerRole resource for use in th
 * practitioner only Reference(BCPractitioner) 
 * organization MS
 * organization only Reference(BCOrganization)
+* organization.extension contains EndReasonExtension named endReason 0..1 MS
 * code MS
 * code from $PracRoleCode (required)
 * specialty MS
 * specialty from $PracSpecialty (required)
-* specialty.extension contains PeriodExtension named period 1..1 MS and StatusExtension named status 0..* MS
+* specialty.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * location MS
 * location only Reference(BCLocation)
-* location.extension contains PeriodExtension named period 1..1 MS and StatusExtension named status 0..* MS
+* location.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * telecom only BCContactPoint
 * telecom MS
 
@@ -60,13 +63,11 @@ Title: "BC Practitioner Date of Death Extension"
 Description: "The Date of Death of a Practitioner."
 * value[x] only dateTime
 
-Extension: BirthDateInfoExtension
-Id: bc-birthdate-info-extension
-Title: "BC Extra birthdate information"
-Description: "Adds birth time and a period to the birth date."
-* extension contains birthTime 0..1 MS and period 0..1 MS
-* extension[birthTime].value[x] only dateTime
-* extension[period].value[x] only Period
+Extension: BirthTimeExtension
+Id: bc-birthtime-extension
+Title: "BC Extra birth time information"
+Description: "Adds birth time to the birth date."
+* value[x] only dateTime
 
 Extension: BirthPlaceExtension
 Id: bc-birthplace-extension
@@ -78,17 +79,15 @@ Extension: PractitionerConfidentialityExtension
 Id: bc-practitioner-confidentiality-extension
 Title: "BC Practitioner Confidentiality Extension"
 Description: "Indicates the confidentality of the practitioner's information."
-* extension contains code 1..1 MS and period 1..1 MS and StatusExtension named status 0..* MS
+* extension contains code 1..1 MS and PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[code].value[x] only CodeableConcept
 * extension[code].valueCodeableConcept from http://terminology.hl7.org/ValueSet/v3-ConfidentialityClassification (required)
-* extension[period].value[x] only Period
 
 Extension: PractitionerRelationshipExtension
 Id: bc-practitioner-relationship-extension
 Title: "BC Practitioner to Practitioner Relationship"
 Description: "Allows for relationships of practitioners to practitioners without needing CareTeam semantics."
-* extension contains period 1..1 MS and practitioner 1..1 MS and type 1..1 MS and StatusExtension named status 0..* MS
-* extension[period].value[x] only Period
+* extension contains PeriodExtension named period 1..1 MS and practitioner 1..1 MS and type 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[practitioner].value[x] only Reference(BCPractitioner)
 * extension[type].value[x] only CodeableConcept
 
@@ -96,10 +95,9 @@ Extension: PractitionerDiscplinaryActionExtension
 Id: bc-practitioner-disciplinary-action-extension
 Title: "BC Practitioner Disciplinary Actions"
 Description: "Provides details of disciplinary actions against the provider."
-* extension contains identifier 1..1 MS and description 1..1 MS and period 1..1 MS and archiveDate 1..1 MS and displayFlag 1..1 MS and StatusExtension named status 0..* MS
+* extension contains identifier 1..1 MS and description 1..1 MS and PeriodExtension named period 1..1 MS and archiveDate 1..1 MS and displayFlag 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[identifier].value[x] only Identifier
 * extension[description].value[x] only string
-* extension[period].value[x] only Period
 * extension[archiveDate].value[x] only dateTime
 * extension[displayFlag].value[x] only boolean
 
@@ -107,18 +105,16 @@ Extension: NoteExtension
 Id: bc-note-extension
 Title: "BC Notes"
 Description: "Notes about the practitioner/location/organization."
-* extension contains identifier 1..1 MS and text 1..1 MS and period 1..1 MS and StatusExtension named status 0..* MS
+* extension contains identifier 1..1 MS and text 1..1 MS and PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[identifier].value[x] only Identifier
 * extension[text].value[x] only string
-* extension[period].value[x] only Period
 
 Extension: PractitionerConditionExtension
 Id: bc-practitioner-condition-extension
 Title: "BC Practitioner Conditions"
 Description: "Conditions on the provider's role"
-* extension contains identifier 1..1 MS and period 1..1 MS and restriction 1..1 MS and restrictionText 1..1 MS and code 1..1 MS and StatusExtension named status 0..* MS
+* extension contains identifier 1..1 MS and PeriodExtension named period 1..1 MS and restriction 1..1 MS and restrictionText 1..1 MS and code 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[identifier].value[x] only Identifier
-* extension[period].value[x] only Period
 * extension[restriction].value[x] only boolean
 * extension[restrictionText].value[x] only string
 * extension[code].value[x] only CodeableConcept
@@ -133,14 +129,13 @@ Extension: LicenseStatusExtension
 Id: bc-license-status-extension
 Title: "BC License Status Extension"
 Description: "Tracking the status and changes to the status of a practitioner/organization license."
-* extension contains statusCode 1..1 MS and period 1..1 MS and eventId 1..1 MS and statusReasonCode 1..1 MS and endReasonCode 0..1 MS and custodianId 0..1 MS
+* extension contains statusCode 1..1 MS and period 1..1 MS and statusReasonCode 1..1 MS and endReasonCode 0..1 MS and custodianId 0..1 MS
 * extension[statusCode].value[x] only CodeableConcept
 * extension[statusCode].valueCodeableConcept from $StatusVS (required)
 * extension[period].value[x] only Period
 * extension[statusReasonCode].value[x] only CodeableConcept
 * extension[endReasonCode].value[x] only CodeableConcept
 * extension[custodianId].value[x] only Identifier
-* extension[eventId].value[x] only Identifier
 
 Instance: Example-AddProvider-Bundle
 InstanceOf: Bundle
@@ -173,11 +168,12 @@ Description: "Example of a BC practitioner that is being created."
 * extension[status].extension[statusCode].valueCodeableConcept = $RoleStatus#active
 * extension[status].extension[period].valuePeriod.start = "2000-01-01"
 * extension[status].extension[period].valuePeriod.end = "2020-01-01"
-* extension[status].extension[eventId].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.12"
-* extension[status].extension[eventId].valueIdentifier.value = "111"
 * extension[status].extension[custodianId].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.16"
 * extension[status].extension[custodianId].valueIdentifier.value = "RNA"
 * extension[status].extension[statusReasonCode].valueCodeableConcept = http://example.org/status_reason_code#PRAC
+* extension[demographicsEndReason].extension[custodianId].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.16"
+* extension[demographicsEndReason].extension[custodianId].valueIdentifier.value = "RNA"
+* extension[demographicsEndReason].extension[endReasonCode].valueCodeableConcept = http://example.org/status_reason_code#PRAC
 * extension[deathDate].valueDateTime = "2000-02-01"
 * extension[birthplace].valueAddress.state = "AL"
 * extension[birthplace].valueAddress.country = "US"
@@ -207,6 +203,8 @@ Description: "Example of a BC practitioner that is being created."
 * extension[relationship].extension[period].valuePeriod.end = "2020-01-01"
 * extension[relationship].extension[type].valueCodeableConcept = http://example.org/provider_relationship_type_code#LOC
 * extension[relationship].extension[practitioner].valueReference = Reference(Example-AddProvider-RelatedPractitioner)
+* extension[demographicsPeriod].valuePeriod.start = "2000-01-01"
+* extension[demographicsPeriod].valuePeriod.end = "2020-01-01"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.40.2.4"
 * identifier.value = "MD20180719V01"
 * identifier.period.start = "2000-01-01"
@@ -226,7 +224,6 @@ Description: "Example of a BC practitioner that is being created."
 * telecom[0].value = "2507654333"
 * telecom[0].period.start = "2000-01-01"
 * telecom[0].period.end = "2020-01-01"
-* telecom[0].extension[validFlag].valueCode = #valid
 * telecom[1].system = #email
 * telecom[1].use = #work
 * telecom[1].value = "hey@day.com"
@@ -244,9 +241,7 @@ Description: "Example of a BC practitioner that is being created."
 * address.period.end = "2020-01-01"
 * gender = #female
 * birthDate = "1951-11-12"
-* birthDate.extension[birthInfo].extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
-* birthDate.extension[birthInfo].extension[period].valuePeriod.start = "2000-01-01"
-* birthDate.extension[birthInfo].extension[period].valuePeriod.end = "2020-01-01"
+* birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
 * qualification.identifier.system = "urn:oid:2.16.840.1.113883.3.40.1.2"
 * qualification.identifier.value = "CREDENTIAL_REGISTRATIONNUMBERTXT"
 * qualification.code = $SCPQual#BD
@@ -259,6 +254,7 @@ Description: "Example of a BC practitioner that is being created."
 Instance: Example-AddProvider-RelatedPractitioner
 InstanceOf: BCPractitioner
 Description: "Example of a practitioner that has a relationship to the example created practitioner."
+* extension[demographicsPeriod].valuePeriod.start = "2000-01-01"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.40.20.19"
 * identifier.value = "3DEGDIDERCHIDMAY22T02"
 * name.text = "23"
@@ -272,13 +268,9 @@ Description: "Example of the role that the created practitioner is playing."
 * specialty = http://snomed.info/sct#419772000
 * specialty.extension[period].valuePeriod.start = "2000-01-01"
 * specialty.extension[period].valuePeriod.end = "2020-01-01"
-* specialty.extension[status].extension[statusCode].valueCodeableConcept = $RoleStatus#active
-* specialty.extension[status].extension[period].valuePeriod.start = "2000-01-01"
-* specialty.extension[status].extension[statusReasonCode].valueCodeableConcept = http://example.org/status_reason_code#PRAC
-* specialty.extension[status].extension[custodianId].valueIdentifier.system = "http://example.org/custodian-ids"
-* specialty.extension[status].extension[custodianId].valueIdentifier.value = "123456679"
-* specialty.extension[status].extension[eventId].valueIdentifier.system = "http://example.org/event-ids"
-* specialty.extension[status].extension[eventId].valueIdentifier.value = "123456679"
+* specialty.extension[endReason].extension[endReasonCode].valueCodeableConcept = http://example.org/status_reason_code#PRAC
+* specialty.extension[endReason].extension[custodianId].valueIdentifier.system = "http://example.org/custodian-ids"
+* specialty.extension[endReason].extension[custodianId].valueIdentifier.value = "123456679"
 * location = Reference(Example-AddProvider-WorkLocation)
 * location.extension[period].valuePeriod.start = "2000-01-01"
 * location.extension[period].valuePeriod.end = "2020-01-01"

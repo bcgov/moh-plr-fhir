@@ -19,9 +19,17 @@ htmlxhtmldisplay","",0,1,"","","","Narrative {[]} {[]}
 "Practitioner.contained","","inline resources
 anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Contained, inline Resources","These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.","This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.","","","","","","","","",,,,,"",,,,"DomainResource.contained",0,*,"","","N/A"
-"Practitioner.extension","","","",0,*,"","","","Extension {[]} {[]}
+"Practitioner.extension","","","",1,*,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Practitioner.extension","demographicsPeriod","","",1,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension]]} {[]}
+","BC Valid Period","The period for when the extended element is valid.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Practitioner.extension","demographicsEndReason","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension]]} {[]}
+","BC End Reason Extension","Tracking end reasons.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Practitioner.extension","status","","",0,*,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension]]} {[]}
 ","BC License Status Extension","Tracking the status and changes to the status of a practitioner/organization license.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
@@ -61,22 +69,22 @@ user content","",0,*,"","Y","","Extension {[]} {[]}
 
 Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"DomainResource.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
-"Practitioner.identifier","","","",1,*,"Y","","","Identifier {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCIdentifier]]} {[]}
+"Practitioner.identifier","","","",1,*,"Y","","","Identifier {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-identifier]]} {[]}
 ","An identifier intended for computation","An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers.","","Often, specific identities are assigned for the agent.","","","","","","","",,,,,"",,,,"Practitioner.identifier",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CX / EI (occasionally, more often EI maps to a resource id or a URL)","n/a","II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]","Identifier"
 "Practitioner.active","","","",0,1,"Y","","Y","boolean {[]} {[]}
 ","Whether this practitioner's record is in active use","Whether this practitioner's record is in active use.","If the practitioner is not in use by one organization, then it should mark the period on the PractitonerRole with an end date (even if they are active) as they may be active in another role.","Need to be able to mark a practitioner record as not to be used because it was created in error.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"Practitioner.active",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./statusCode","FiveWs.status"
-"Practitioner.name","","","",1,*,"Y","","","HumanName {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCHumanName]]} {[]}
+"Practitioner.name","","","",1,*,"Y","","","HumanName {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-humanName]]} {[]}
 ","Name of a human - parts and usage","A human's name with the ability to identify parts and usage.","Names may be changed, or repudiated, or people may have different names in different contexts. Names may be divided into parts of different type that have variable significance depending on context, though the division into parts does not always matter. With personal names, the different parts might or might not be imbued with some implicit meaning; various cultures associate different importance with the name parts and the degree to which systems must care about name parts around the world varies widely.","The name(s) that a Practitioner is known by. Where there are multiple, the name that the practitioner is usually known as should be used in the display.","","","","","","","",,,,,"",,,,"Practitioner.name",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XPN","n/a","EN (actually, PN)","ProviderName"
-"Practitioner.telecom","","","",0,*,"Y","","","ContactPoint {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCContactPoint]]} {[]}
+"Practitioner.telecom","","","",0,*,"Y","","","ContactPoint {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-contactPoint]]} {[]}
 ","Details of a Technology mediated contact point (phone, fax, email, etc.)","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific.","Need to know how to reach a practitioner independent to any roles the practitioner may have.","","","","","","","",,,,,"",,,,"Practitioner.telecom",0,*,"ele-1
 ","cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}
 ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}","XTN","n/a","TEL","ContactPoint"
-"Practitioner.address","","","",0,*,"Y","","","Address {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCAddress]]} {[]}
+"Practitioner.address","","","",0,*,"Y","","","Address {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-address]]} {[]}
 ","An address expressed using postal conventions (as opposed to GPS or other location definition formats)","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R4/location.html#) resource).","The home/mailing address of the practitioner is often required for employee administration purposes, and also for some rostering services where the start point (practitioners home) can be used in calculations.","","","","","","","",,,,,"",,,,"Practitioner.address",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XAD","n/a","AD","Address"
@@ -92,8 +100,8 @@ ele-1:All FHIR elements must have a @value or children {hasValue() or (children(
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Practitioner.birthDate.extension","birthInfo","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthdate-info-extension]]} {[]}
-","BC Extra birthdate information","Adds birth time and a period to the birth date.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"Practitioner.birthDate.extension","birthTime","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthtime-extension]]} {[]}
+","BC Extra birth time information","Adds birth time to the birth date.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Practitioner.birthDate.value","","","",0,1,"","","","date {[]} {[]}
@@ -114,8 +122,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","BC Practitioner Qualification Issue Date","The issue date of the practitioner's qualification.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Practitioner.qualification.extension","status","","",0,*,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-status-extension]]} {[]}
-","BC Status Extension","Tracking status codes and the effective dates of those statuses.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"Practitioner.qualification.extension","endReason","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension]]} {[]}
+","BC End Reason Extension","Tracking end reasons.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Practitioner.qualification.modifierExtension","","extensions
@@ -139,3 +147,21 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.communication","","","",0,*,"Y","","","CodeableConcept {[]} {[]}
 ","A language the practitioner can use in patient communication","A language the practitioner can use in patient communication.","The structure aa-BB with this exact casing is one the most widely used notations for locale. However not all systems code this but instead have it as free text. Hence CodeableConcept instead of code as the data type.","Knowing which language a practitioner speaks can help in facilitating communication with patients.","","","","","","","",,"preferred","A human language.","http://hl7.org/fhir/ValueSet/languages","",,,,"Practitioner.communication",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","PID-15, NK1-20, LAN-2","./languageCommunication","./Languages.LanguageSpokenCode"
+"Practitioner.communication.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"Practitioner.communication.extension","","","",1,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Practitioner.communication.extension","period","","",1,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension]]} {[]}
+","BC Valid Period","The period for when the extended element is valid.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Practitioner.communication.extension","endReason","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension]]} {[]}
+","BC End Reason Extension","Tracking end reasons.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Practitioner.communication.coding","","","",0,*,"","","Y","Coding {[]} {[]}
+","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","C*E.1-8, C*E.10-22","union(., ./translation)"
+"Practitioner.communication.text","","","",0,1,"","","Y","string {[]} {[]}
+","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","C*E.9. But note many systems use C*E.2 for this","./originalText[mediaType/code=""text/plain""]/data"

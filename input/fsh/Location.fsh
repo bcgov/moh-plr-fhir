@@ -2,12 +2,11 @@ Profile: BCLocation
 Parent: Location
 Id: bc-location
 Description: "General constraints on the Location resource for use in the BC Provider Registry project."
-
 * identifier only BCIdentifier
 * identifier 1..* MS
 * status MS
 * name 1..1 MS
-* name.extension contains StatusExtension named status 0..* MS
+* name.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * alias MS
 * description MS
 * mode MS
@@ -34,20 +33,20 @@ Extension: FacilityDetailsExtension
 Id: bc-facility-details-extension
 Title: "BC Facility Details Extension"
 Description: "Provides the details of a facility as represented by a FHIR location."
-* extension contains campusOfCare 0..1 MS and operatorName 0..1 MS and ownerName 0..1 MS and contactName 0..1 MS and StatusExtension named status 0..* MS
+* extension contains campusOfCare 0..1 MS and operatorName 0..1 MS and ownerName 0..1 MS and contactName 0..1 MS and PeriodExtension named period 1..1 MS  and EndReasonExtension named endReason 0..1 MS
 * extension[campusOfCare].value[x] only string
 * extension[operatorName].value[x] only string
 * extension[ownerName].value[x] only string
 * extension[contactName].value[x] only string
 
 Extension: CommunityHealthServiceArea
-Id: bc-facility-commmunity-health-service-area-extension
+Id: bc-facility-community-health-service-area-extension
 Title: "BC Facility Community Health Service Area"
 Description: "A code that represents the community health service area that the location is a part of."
 * value[x] only CodeableConcept
 
 Extension: MailingAddress
-Id: bc-facility-mailing-address
+Id: bc-facility-mailing-address-extension
 Title: "BC Facility Mailing Address"
 Description: "An optional mailing address for the facility."
 * value[x] only BCAddress
@@ -56,6 +55,7 @@ Instance: Example-AddProvider-WorkLocation
 InstanceOf: BCLocation
 Description: "Example of a Location (facility) that is the affiliated with an Organization."
 * extension[facilityDetails].extension[ownerName].valueString = "OPERATOR NAME"
+* extension[facilityDetails].extension[period].valuePeriod.start = "2000-01-01"
 * extension[serviceArea].valueCodeableConcept = http://example.org/CodeSystem/HealthServiceAreas#MAINLAND
 * extension[mailingAddress].valueAddress.type = #postal
 * extension[mailingAddress].valueAddress.line[0] = "19 ST"
@@ -68,6 +68,7 @@ Description: "Example of a Location (facility) that is the affiliated with an Or
 * identifier.system = "urn:oid:2.16.840.1.113883.3.40.1.10"
 * identifier.value = "1"
 * name = "WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT"
+* name.extension[period].valuePeriod.start = "2000-01-01"
 * type = $RoleCode#HD
 * telecom[0].use = #work
 * telecom[0].system = #email
@@ -97,6 +98,7 @@ Description: "Example of a Location (Facility) that exists on its own."
 * identifier.system = "urn:oid:2.16.840.1.113883.3.40.1.10"
 * identifier.value = "111"
 * name = "General Hospital"
+* name.extension[period].valuePeriod.start = "2000-01-01"
 * type = $RoleCode#HOSP
 * telecom[0].use = #work
 * telecom[0].system = #fax

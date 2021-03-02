@@ -2,15 +2,14 @@ Profile: BCOrganization
 Parent: Organization
 Id: bc-organization
 Description: "General constraints on the Organization resource for use in the BC Provider Registry project."
-
 * identifier 0..* MS
+* identifier only BCIdentifier
 * active MS
 * type MS
 * name 1..1 MS
-* name.extension contains ValidFlagExtension named validFlag 0..1 MS and 
-	NameUseExtension named use 0..1 MS and 
+* name.extension contains NameUseExtension named use 0..1 MS and 
 	PeriodExtension named period 0..1 MS and
-	StatusExtension named status 0..* MS
+	EndReasonExtension named endReason 0..1 MS
 * telecom only BCContactPoint 
 * telecom MS
 * address only BCAddress
@@ -22,7 +21,6 @@ Profile: BCOrganizationAffiliation
 Parent: OrganizationAffiliation
 Id: bc-organizationaffiliation
 Description: "General constraints on the OrganizationAffiliation resource for use in the BC Provider Registry project."
-
 * identifier 0..*  MS
 * active MS
 * period MS
@@ -30,11 +28,13 @@ Description: "General constraints on the OrganizationAffiliation resource for us
 * organization only Reference(BCOrganization)
 * participatingOrganization MS
 * participatingOrganization only Reference(BCOrganization)
+* participatingOrganization.extension contains EndReasonExtension named endReason 0..1 MS
 * network MS
 * code MS
 * specialty MS
 * location MS
 * location only Reference(BCLocation)
+* location.extension contains EndReasonExtension named endReason 0..1 MS
 * telecom only BCContactPoint
 * telecom MS
 
@@ -95,12 +95,6 @@ Description: "Example of an Organization that is being created."
 * telecom[0].value = "7786428585"
 * telecom[0].period.start = "2014-01-31T00:00:00-07:00"
 * active = true
-* extension[status].extension[statusCode].valueCodeableConcept = $RoleStatus#normal
-* extension[status].extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
-* extension[status].extension[period].valuePeriod.end = "2030-01-31T00:00:00-07:00"
-* extension[status].extension[eventId].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.12"
-* extension[status].extension[eventId].valueIdentifier.value = "status1"
-* extension[status].extension[statusReasonCode].valueCodeableConcept = http://example.org/status_reason_code#PRAC
 
 Instance: Example-AddOrganization-OrganizationAffiliation
 InstanceOf: BCOrganizationAffiliation

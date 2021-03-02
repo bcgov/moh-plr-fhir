@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "BCProviderRegistry"];
   fhir:ImplementationGuide.title [ fhir:value "BC Provider Registry FHIR Implementation Guide"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2021-02-23T17:10:12-07:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-03-02T11:55:06-07:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "BC Ministry of Health"];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -274,6 +274,32 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ];
+     fhir:ImplementationGuide.definition.grouping [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "Practitioner" ];
+       fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Practitioner" ];
+       fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Artifacts associated with Practitioners" ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value "Organization" ];
+       fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Organization" ];
+       fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Artifacts associated with Organizations" ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value "Facility" ];
+       fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Facility" ];
+       fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Artifacts associated with Facilities (Locations)" ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value "Datatypes" ];
+       fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Datatypes" ];
+       fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Artifacts associated with datatypes" ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value "Common" ];
+       fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Common" ];
+       fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Artifacts used across all groupings" ]
+     ];
      fhir:ImplementationGuide.definition.resource [
        fhir:index 0;
        fhir:Element.extension [
@@ -282,12 +308,13 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:complex-type" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCAddress>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/BCAddress" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-address>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-address" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BCAddress" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Adds a validity flag and a status to the address." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Adds an end reason to the address." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Datatypes" ]
      ], [
        fhir:index 1;
        fhir:Element.extension [
@@ -296,12 +323,13 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:complex-type" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCContactPoint>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/BCContactPoint" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-contactPoint>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-contactPoint" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BCContactPoint" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Adds a status, validity flag and extra contact information." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Adds an end reason and extra contact information." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Datatypes" ]
      ], [
        fhir:index 2;
        fhir:Element.extension [
@@ -310,12 +338,13 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:complex-type" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCHumanName>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/BCHumanName" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-humanName>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-humanName" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BCHumanName" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Adds a status, validity flag and period, and a use code to a name." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Adds an end resaon and a use code to a name." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Datatypes" ]
      ], [
        fhir:index 3;
        fhir:Element.extension [
@@ -324,12 +353,13 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:complex-type" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCIdentifier>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/BCIdentifier" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-identifier>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-identifier" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BCIdentifier" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Adds a status to the identifier." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Adds an end reason to the identifier." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Datatypes" ]
      ], [
        fhir:index 4;
        fhir:Element.extension [
@@ -343,7 +373,8 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BCLocation" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "General constraints on the Location resource for use in the BC Provider Registry project." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Facility" ]
      ], [
        fhir:index 5;
        fhir:Element.extension [
@@ -357,7 +388,8 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BCOrganization" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "General constraints on the Organization resource for use in the BC Provider Registry project." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Organization" ]
      ], [
        fhir:index 6;
        fhir:Element.extension [
@@ -371,7 +403,8 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BCOrganizationAffiliation" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "General constraints on the OrganizationAffiliation resource for use in the BC Provider Registry project." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Organization" ]
      ], [
        fhir:index 7;
        fhir:Element.extension [
@@ -385,7 +418,8 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BCPractitioner" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "General constraints on the Practitioner resource for use in the BC Provider Registry project." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
        fhir:index 8;
        fhir:Element.extension [
@@ -399,23 +433,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BCPractitionerRole" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "General constraints on the PractitionerRole resource for use in the BC Provider Registry project." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
        fhir:index 9;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthdate-info-extension>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-birthdate-info-extension" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Extra birthdate information" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Adds birth time and a period to the birth date." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 10;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -427,7 +448,23 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Birth Place Extension" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Captures the place where a patient/practitioner/person was born." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
+     ], [
+       fhir:index 10;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthtime-extension>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-birthtime-extension" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Extra birth time information" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Adds birth time to the birth date." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
        fhir:index 11;
        fhir:Element.extension [
@@ -436,12 +473,13 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-commmunity-health-service-area-extension>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-facility-commmunity-health-service-area-extension" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-community-health-service-area-extension>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-facility-community-health-service-area-extension" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Facility Community Health Service Area" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A code that represents the community health service area that the location is a part of." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Facility" ]
      ], [
        fhir:index 12;
        fhir:Element.extension [
@@ -455,9 +493,25 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Practitioner Date of Death Extension" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The Date of Death of a Practitioner." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
        fhir:index 13;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-end-reason-extension" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC End Reason Extension" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Tracking end reasons." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Common" ]
+     ], [
+       fhir:index 14;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -469,9 +523,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Facility Details Extension" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Provides the details of a facility as represented by a FHIR location." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Facility" ]
      ], [
-       fhir:index 14;
+       fhir:index 15;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -483,23 +538,25 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC License Status Extension" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Tracking the status and changes to the status of a practitioner/organization license." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Common" ]
      ], [
-       fhir:index 15;
+       fhir:index 16;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-facility-mailing-address" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address-extension>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-facility-mailing-address-extension" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Facility Mailing Address" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "An optional mailing address for the facility." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Facility" ]
      ], [
-       fhir:index 16;
+       fhir:index 17;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -511,9 +568,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Name Use Extension" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Allows for use on a simple name string." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Common" ]
      ], [
-       fhir:index 17;
+       fhir:index 18;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -525,9 +583,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Notes" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Notes about the practitioner/location/organization." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Common" ]
      ], [
-       fhir:index 18;
+       fhir:index 19;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -539,9 +598,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Valid Period" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The period for when the extended element is valid." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Common" ]
      ], [
-       fhir:index 19;
+       fhir:index 20;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -553,9 +613,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Practitioner Conditions" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Conditions on the provider's role" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
-       fhir:index 20;
+       fhir:index 21;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -567,9 +628,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Practitioner Confidentiality Extension" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Indicates the confidentality of the practitioner's information." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
-       fhir:index 21;
+       fhir:index 22;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -581,9 +643,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Practitioner Disciplinary Actions" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Provides details of disciplinary actions against the provider." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
-       fhir:index 22;
+       fhir:index 23;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -595,9 +658,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Practitioner Qualification Issue Date" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The issue date of the practitioner's qualification." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
-       fhir:index 23;
+       fhir:index 24;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -609,65 +673,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Practitioner to Practitioner Relationship" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Allows for relationships of practitioners to practitioners without needing CareTeam semantics." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 24;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-status-extension>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-status-extension" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Status Extension" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Tracking status codes and the effective dates of those statuses." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
        fhir:index 25;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-valid-flag-extension>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/bc-valid-flag-extension" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Valid Flag Extension" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Used to indicate if a data element has been validated by the ministry." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 26;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/ValueSet/ValidFlagVS>;
-         fhir:Reference.reference [ fhir:value "ValueSet/ValidFlagVS" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Valid Flag Extension ValueSet" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "An indication of the validity of a data element" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 27;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "CodeSystem" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/CodeSystem/ValidFlagCS>;
-         fhir:Reference.reference [ fhir:value "CodeSystem/ValidFlagCS" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BC Valid Flag Extension CodeSystem" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "An indication of the validity of a data element" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 28;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -679,9 +688,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-AddOrganization-Bundle" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a Bundle of resources that are needed to create an Organization." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Organization" ]
      ], [
-       fhir:index 29;
+       fhir:index 26;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -696,9 +706,10 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location>
-       ]
+       ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Facility" ]
      ], [
-       fhir:index 30;
+       fhir:index 27;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -713,9 +724,10 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization>
-       ]
+       ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Organization" ]
      ], [
-       fhir:index 31;
+       fhir:index 28;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -730,9 +742,10 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organizationaffiliation";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organizationaffiliation>
-       ]
+       ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Organization" ]
      ], [
-       fhir:index 32;
+       fhir:index 29;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -744,9 +757,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-AddProvider-Bundle" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a bundle of resources sent when requesting a provider create." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
-       fhir:index 33;
+       fhir:index 30;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -761,9 +775,10 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner>
-       ]
+       ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
-       fhir:index 34;
+       fhir:index 31;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -778,9 +793,10 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
-       ]
+       ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
-       fhir:index 35;
+       fhir:index 32;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -795,9 +811,10 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner>
-       ]
+       ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
-       fhir:index 36;
+       fhir:index 33;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -812,9 +829,10 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location>
-       ]
+       ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Facility" ]
      ], [
-       fhir:index 37;
+       fhir:index 34;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -829,7 +847,8 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization>
-       ]
+       ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ];
      fhir:ImplementationGuide.definition.page [
        fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "toc.html" ];
@@ -940,13 +959,13 @@
      ]
   ] .
 
-<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCAddress> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-address> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCContactPoint> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-contactPoint> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCHumanName> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-humanName> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCIdentifier> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-identifier> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location> a fhir:ca-bc .
 
@@ -958,19 +977,21 @@
 
 <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthdate-info-extension> a fhir:ca-bc .
-
 <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthplace-extension> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-commmunity-health-service-area-extension> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthtime-extension> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-community-health-service-area-extension> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-deathdate-extension> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-details-extension> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address-extension> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-name-use-extension> a fhir:ca-bc .
 
@@ -987,14 +1008,6 @@
 <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-issue-date-extension> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension> a fhir:ca-bc .
-
-<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-status-extension> a fhir:ca-bc .
-
-<http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-valid-flag-extension> a fhir:ca-bc .
-
-<http://hl7.org/fhir/ca-bc/provider/ValueSet/ValidFlagVS> a fhir:ca-bc .
-
-<http://hl7.org/fhir/ca-bc/provider/CodeSystem/ValidFlagCS> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-AddOrganization-Bundle> a fhir:ca-bc .
 

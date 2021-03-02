@@ -24,7 +24,16 @@
      fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.10" ];
      fhir:Identifier.value [ fhir:value "111" ]
   ];
-  fhir:Location.name [ fhir:value "General Hospital"];
+  fhir:Location.name [
+     fhir:value "General Hospital";
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
+     ]
+  ];
   fhir:Location.type [
      fhir:index 0;
      fhir:CodeableConcept.coding [

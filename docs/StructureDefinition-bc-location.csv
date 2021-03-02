@@ -31,11 +31,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","BC Facility Details Extension","Provides the details of a facility as represented by a FHIR location.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Location.extension","serviceArea","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-commmunity-health-service-area-extension]]} {[]}
+"Location.extension","serviceArea","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-community-health-service-area-extension]]} {[]}
 ","BC Facility Community Health Service Area","A code that represents the community health service area that the location is a part of.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Location.extension","mailingAddress","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address]]} {[]}
+"Location.extension","mailingAddress","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address-extension]]} {[]}
 ","BC Facility Mailing Address","An optional mailing address for the facility.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -45,7 +45,7 @@ user content","",0,*,"","Y","","Extension {[]} {[]}
 
 Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"DomainResource.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
-"Location.identifier","","","",1,*,"Y","","","Identifier {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCIdentifier]]} {[]}
+"Location.identifier","","","",1,*,"Y","","","Identifier {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-identifier]]} {[]}
 ","An identifier intended for computation","An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers.","","Organization label locations in registries, need to keep track of those.","","","","","","","",,,,,"",,,,"Location.identifier",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]"
@@ -60,12 +60,16 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ",".name"
 "Location.name.id","","","",0,1,"","","","string {[]} {[]}
 ","xml:id (or equivalent in JSON)","unique id for the element within a resource (for internal references)","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"Location.name.extension","","","",0,*,"","","","Extension {[]} {[]}
+"Location.name.extension","","","",1,*,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Location.name.extension","status","","",0,*,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-status-extension]]} {[]}
-","BC Status Extension","Tracking status codes and the effective dates of those statuses.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"Location.name.extension","period","","",1,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension]]} {[]}
+","BC Valid Period","The period for when the extended element is valid.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Location.name.extension","endReason","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension]]} {[]}
+","BC End Reason Extension","Tracking end reasons.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Location.name.value","","","",0,1,"","","","string {[]} {[]}
@@ -84,11 +88,11 @@ For searching knowing previous names that the location was known by can be very 
 "Location.type","","","",1,*,"Y","","Y","CodeableConcept {[]} {[]}
 ","Type of function performed","Indicates the type of function performed at the location.","","","","","","","","","",,"required","","https://fhir.infoway-inforoute.ca/ValueSet/servicedeliverylocationroletype","",,,,"Location.type",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".code","FiveWs.class"
-"Location.telecom","","","",0,*,"Y","","","ContactPoint {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCContactPoint]]} {[]}
+"Location.telecom","","","",0,*,"Y","","","ContactPoint {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-contactPoint]]} {[]}
 ","Details of a Technology mediated contact point (phone, fax, email, etc.)","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","","","","","","","","","",,,,,"",,,,"Location.telecom",0,*,"ele-1
 ","cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}
 ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}","n/a","TEL"
-"Location.address","","","",1,1,"Y","","","Address {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/BCAddress]]} {[]}
+"Location.address","","","",1,1,"Y","","","Address {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-address]]} {[]}
 ","An address expressed using postal conventions (as opposed to GPS or other location definition formats)","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R4/location.html#) resource).","If locations can be visited, we need to keep track of their address.","","","","","","","",,,,,"",,,,"Location.address",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","AD"

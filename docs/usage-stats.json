@@ -5,11 +5,25 @@
   "jurisdiction": "CA",
   "extensions": [
     {
-      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthdate-info-extension",
-      "title": "BC Extra birthdate information",
+      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthplace-extension",
+      "title": "BC Birth Place Extension",
       "types": [
-        "dateTime",
-        "Period",
+        "Address"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthtime-extension",
+      "title": "BC Extra birth time information",
+      "types": [
+        "dateTime"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension",
+      "title": "BC End Reason Extension",
+      "types": [
+        "CodeableConcept",
+        "Identifier",
         "base64Binary",
         "boolean",
         "canonical",
@@ -63,14 +77,7 @@
       ]
     },
     {
-      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthplace-extension",
-      "title": "BC Birth Place Extension",
-      "types": [
-        "Address"
-      ]
-    },
-    {
-      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-commmunity-health-service-area-extension",
+      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-community-health-service-area-extension",
       "title": "BC Facility Community Health Service Area",
       "types": [
         "CodeableConcept"
@@ -137,7 +144,7 @@
       ]
     },
     {
-      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address",
+      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address-extension",
       "title": "BC Facility Mailing Address",
       "types": [
         "Address"
@@ -150,7 +157,6 @@
         "CodeableConcept",
         "CodeableConcept",
         "Period",
-        "Identifier",
         "CodeableConcept",
         "CodeableConcept",
         "Identifier",
@@ -220,7 +226,6 @@
       "types": [
         "Identifier",
         "string",
-        "Period",
         "base64Binary",
         "boolean",
         "canonical",
@@ -285,7 +290,6 @@
       "title": "BC Practitioner Conditions",
       "types": [
         "Identifier",
-        "Period",
         "boolean",
         "string",
         "CodeableConcept",
@@ -347,7 +351,6 @@
       "types": [
         "CodeableConcept",
         "CodeableConcept",
-        "Period",
         "base64Binary",
         "boolean",
         "canonical",
@@ -413,7 +416,6 @@
       "types": [
         "Identifier",
         "string",
-        "Period",
         "dateTime",
         "boolean",
         "base64Binary",
@@ -479,7 +481,6 @@
       "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension",
       "title": "BC Practitioner to Practitioner Relationship",
       "types": [
-        "Period",
         "Reference",
         "CodeableConcept",
         "base64Binary",
@@ -532,76 +533,6 @@
         "UsageContext",
         "Dosage",
         "Meta"
-      ]
-    },
-    {
-      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-status-extension",
-      "title": "BC Status Extension",
-      "types": [
-        "CodeableConcept",
-        "CodeableConcept",
-        "Period",
-        "Identifier",
-        "CodeableConcept",
-        "Identifier",
-        "base64Binary",
-        "boolean",
-        "canonical",
-        "code",
-        "date",
-        "dateTime",
-        "decimal",
-        "id",
-        "instant",
-        "integer",
-        "markdown",
-        "oid",
-        "positiveInt",
-        "string",
-        "time",
-        "unsignedInt",
-        "uri",
-        "url",
-        "uuid",
-        "Address",
-        "Age",
-        "Annotation",
-        "Attachment",
-        "CodeableConcept",
-        "Coding",
-        "ContactPoint",
-        "Count",
-        "Distance",
-        "Duration",
-        "HumanName",
-        "Identifier",
-        "Money",
-        "Period",
-        "Quantity",
-        "Range",
-        "Ratio",
-        "Reference",
-        "SampledData",
-        "Signature",
-        "Timing",
-        "ContactDetail",
-        "Contributor",
-        "DataRequirement",
-        "Expression",
-        "ParameterDefinition",
-        "RelatedArtifact",
-        "TriggerDefinition",
-        "UsageContext",
-        "Dosage",
-        "Meta"
-      ]
-    },
-    {
-      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-valid-flag-extension",
-      "title": "BC Valid Flag Extension",
-      "types": [
-        "code",
-        "code"
       ]
     }
   ],
@@ -684,15 +615,34 @@
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category": [
       "StructureDefinition"
     ],
-    "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthdate-info-extension": [
-      "Bundle.entry.resource.birthDate",
-      "Practitioner.birthDate"
-    ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthplace-extension": [
       "Bundle.entry.resource",
       "Practitioner"
     ],
-    "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-commmunity-health-service-area-extension": [
+    "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthtime-extension": [
+      "Bundle.entry.resource.birthDate",
+      "Practitioner.birthDate"
+    ],
+    "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension": [
+      "Address",
+      "Bundle.entry.resource",
+      "Bundle.entry.resource.specialty",
+      "ContactPoint",
+      "Extension",
+      "HumanName",
+      "Identifier",
+      "Location.name",
+      "Organization.name",
+      "OrganizationAffiliation.location",
+      "OrganizationAffiliation.participatingOrganization",
+      "Practitioner",
+      "Practitioner.communication",
+      "Practitioner.qualification",
+      "PractitionerRole.location",
+      "PractitionerRole.organization",
+      "PractitionerRole.specialty"
+    ],
+    "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-community-health-service-area-extension": [
       "Bundle.entry.resource",
       "Location"
     ],
@@ -700,7 +650,7 @@
       "Bundle.entry.resource",
       "Location"
     ],
-    "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address": [
+    "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address-extension": [
       "Bundle.entry.resource",
       "Location"
     ],
@@ -721,11 +671,15 @@
       "Practitioner"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension": [
+      "Bundle.entry.resource",
       "Bundle.entry.resource.location",
       "Bundle.entry.resource.name",
       "Bundle.entry.resource.specialty",
-      "HumanName",
+      "Extension",
+      "Location.name",
       "Organization.name",
+      "Practitioner",
+      "Practitioner.communication",
       "PractitionerRole.location",
       "PractitionerRole.specialty"
     ],
@@ -752,27 +706,6 @@
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension": [
       "Bundle.entry.resource",
       "Practitioner"
-    ],
-    "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-status-extension": [
-      "Address",
-      "Bundle.entry.resource.specialty",
-      "ContactPoint",
-      "Extension",
-      "HumanName",
-      "Identifier",
-      "Location.name",
-      "Organization.name",
-      "Practitioner.qualification",
-      "PractitionerRole.location",
-      "PractitionerRole.specialty"
-    ],
-    "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-valid-flag-extension": [
-      "Address",
-      "Bundle.entry.resource.telecom",
-      "ContactPoint",
-      "HumanName",
-      "Organization.name",
-      "Practitioner.telecom"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
       "ImplementationGuide.definition"

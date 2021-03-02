@@ -17,7 +17,7 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><blockquote><p><b>BC Facility Details Extension</b></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: OPERATOR NAME</p></blockquote><p><b>BC Facility Community Health Service Area</b>: <span title=\"Codes: {http://example.org/CodeSystem/HealthServiceAreas MAINLAND}\">MAINLAND</span></p><p><b>BC Facility Mailing Address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p><p><b>identifier</b>: id: 1</p><p><b>name</b>: WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT</p><p><b>type</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-RoleCode HD}\">Hemodialysis unit</span></p><p><b>telecom</b>: <a href=\"mailto:joe@gmail.com\">joe@gmail.com</a>, ph: 2509876555(HOME)</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA (WORK)</p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><blockquote><p><b>BC Facility Details Extension</b></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: OPERATOR NAME</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2000-01-01 --&gt; (ongoing)</p></blockquote><p><b>BC Facility Community Health Service Area</b>: <span title=\"Codes: {http://example.org/CodeSystem/HealthServiceAreas MAINLAND}\">MAINLAND</span></p><p><b>BC Facility Mailing Address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p><p><b>identifier</b>: id: 1</p><p><b>name</b>: WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT</p><p><b>type</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-RoleCode HD}\">Hemodialysis unit</span></p><p><b>telecom</b>: <a href=\"mailto:joe@gmail.com\">joe@gmail.com</a>, ph: 2509876555(HOME)</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA (WORK)</p></div>"
   ];
   fhir:DomainResource.extension [
      fhir:index 0;
@@ -25,11 +25,17 @@
        fhir:index 0;
        fhir:Extension.url [ fhir:value "ownerName" ];
        fhir:Extension.valueString [ fhir:value "OPERATOR NAME" ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
      ];
      fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-details-extension" ]
   ], [
      fhir:index 1;
-     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-commmunity-health-service-area-extension" ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-community-health-service-area-extension" ];
      fhir:Extension.valueCodeableConcept [
        fhir:CodeableConcept.coding [
          fhir:index 0;
@@ -39,7 +45,7 @@
      ]
   ], [
      fhir:index 2;
-     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address" ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-mailing-address-extension" ];
      fhir:Extension.valueAddress [
        fhir:Address.type [ fhir:value "postal" ];
        fhir:Address.line [
@@ -63,7 +69,16 @@
      fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.10" ];
      fhir:Identifier.value [ fhir:value "1" ]
   ];
-  fhir:Location.name [ fhir:value "WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT"];
+  fhir:Location.name [
+     fhir:value "WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT";
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
+     ]
+  ];
   fhir:Location.type [
      fhir:index 0;
      fhir:CodeableConcept.coding [
