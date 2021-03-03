@@ -267,63 +267,6 @@ One Organization Affiliation for each Location to Organization relationship.</p>
   <li>OrganizationAffilication and PractitionerRole do not have logical IDs or business identifiers.  Searching by these resources is not permitted.</li>
 </ol>
 
-<p>The matrix below shows how one could use include/revinclude searches starting From a FHIR resource To an associated FHIR resource following references.  It gets complicated to find references to Location as you have to reverse include.  Also to reverse include and return the full Provider also gets difficult.</p>
-
-<table class="grid">
-  <thead>
-    <tr>
-      <th><strong>From/To</strong></th>
-      <th>Practitioner</th>
-      <th>PractitionerRole</th>
-      <th>Organization</th>
-      <th>OrganizationAffiliation</th>
-      <th>Location</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Practitioner</td>
-      <td>n/a</td>
-      <td>revinclude</td>
-      <td>n/a</td>
-      <td>n/a</td>
-      <td>n/a</td>
-    </tr>
-    <tr>
-      <td>PractitionerRole</td>
-      <td>include</td>
-      <td>n/a</td>
-      <td>include</td>
-      <td>n/a</td>
-      <td>include</td>
-    </tr>
-    <tr>
-      <td>Organization</td>
-      <td>n/a</td>
-      <td>revinclude</td>
-      <td>n/a</td>
-      <td>revinclude</td>
-      <td>n/a</td>
-    </tr>
-    <tr>
-      <td>OrganizationAffiliation</td>
-      <td>n/a</td>
-      <td>n/a</td>
-      <td>include</td>
-      <td>n/a</td>
-      <td>include</td>
-    </tr>
-    <tr>
-      <td>Location</td>
-      <td>n/a</td>
-      <td>revinclude</td>
-      <td>n/a</td>
-      <td>revinclude</td>
-      <td>n/a</td>
-    </tr>
-  </tbody>
-</table>
-
 <p>The proposal is to use FHIR Operations to search for Providers and Facilities.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR’s case, the server would need to include resources that make up the full Provider or additionally return the full Provider and related Providers or Facilities.  Queries using PractitionerRole and OrganizationAffiliation are not permitted and unnecessary.</p>
 
 <h5 id="return-the-full-provider-or-facility">Return the Full Provider or Facility</h5>
@@ -405,7 +348,7 @@ One optional Practitioner Role for all Expertise (Specialty), specialty is a lis
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 3, 2021 11:47-0700">2021-03-03</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 3, 2021 14:16-0700">2021-03-03</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

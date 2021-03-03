@@ -78,17 +78,6 @@ The response Bundle is similarly structured to the request, populating and echoi
 3. The logical ID as per FHIR conformance is the IPC and IFC (for Facilities)
 4. OrganizationAffilication and PractitionerRole do not have logical IDs or business identifiers.  Searching by these resources is not permitted.
 
-The matrix below shows how one could use include/revinclude searches starting From a FHIR resource To an associated FHIR resource following references.  It gets complicated to find references to Location as you have to reverse include.  Also to reverse include and return the full Provider also gets difficult.
-
-| **From/To** | Practitioner | PractitionerRole | Organization | OrganizationAffiliation | Location |
-| --- | --- | --- | --- | --- | --- |
-| Practitioner | n/a | revinclude | n/a | n/a | n/a |
-| PractitionerRole | include | n/a | include | n/a | include |
-| Organization | n/a | revinclude | n/a | revinclude | n/a |
-| OrganizationAffiliation | n/a | n/a | include | n/a | include |
-| Location | n/a | revinclude | n/a | revinclude | n/a |
-{:.grid}
-
 The proposal is to use FHIR Operations to search for Providers and Facilities.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR's case, the server would need to include resources that make up the full Provider or additionally return the full Provider and related Providers or Facilities.  Queries using PractitionerRole and OrganizationAffiliation are not permitted and unnecessary.
 
 ##### Return the Full Provider or Facility
