@@ -41,7 +41,23 @@ The relationships above are compositions, the children cannot exist without the 
 
 ### Facilities
 
-A Facility is ....  
+A Facility is an identified, named place, piece of equipment or amenity of interest to BC Health which may be physical (e.g. a building or vehicle).  It can be a a particular place or position which may be physically/spatially related.  Facilities have names, unique types and purposes, and may have other communication mechanisms: mailing addresses, telephone numbers, etc.  As well, multiple organizations or individual providers can be related to a facility.
+
+A Facility is a unique civic address in BC as recognized by DataBC and may be:
+
+* A single building (most frequent case).
+* A unit within a building.
+* One of several assigned to very large buildings with multiple entrances (e.g. Vancouver General).
+
+Examples: Long term care facility, Walk-in Clinic, Urgent Care Centre, Public Health Office, Hospitals, Ambulances, Pharmacies, Laboratory offices, Community Medical Imaging Clinics.
+
+The PLR concept of a Providers Work Location will be promoted to an independent entity called Facility. Were Facilities are stand-alone data that can be related to Providers through Relationships.
+
+This change will enable:
+
+* Better Health Sector clinical document delivery, enhance location quality, and improve upon the PLR model by implementing Facility as a standalone concept.
+* PLR to move toward the source of truth of Facility information for use by the Ministry’s analytics teams and Health Sector systems, where currently disparate silos of Facility information exist. 
+
 
 {::options parse_block_html="false" /}
 <figure>
