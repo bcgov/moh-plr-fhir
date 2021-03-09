@@ -1,40 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <title>FHIR.CA-BC.PROVIDER\FHIR Design and Overview - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
 
-    <link href="fhir.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="fhir.css"/>
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
-    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
 
-    <!-- Project extras -->
-    <link href="assets/css/project.css" rel="stylesheet"/>
-    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
-    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
-  	<link href="assets/css/prism.css" rel="stylesheet" />
-    <!-- Placeholder for child template CSS declarations -->
-<link href="assets/css/bc-fhir.css" rel="stylesheet"/>
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/bc-fhir.css"/>
 
 
-    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
     <script src="assets/js/html5shiv.js"></script>
     <script src="assets/js/respond.min.js"></script>
-    <![endif]-->
+    <![endif] -->
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
@@ -44,12 +44,12 @@
 
     <style type="text/css">h2{--heading-prefix:"2"}
     h3,h4,h5,h6{--heading-prefix:"2"}</style>
-    <div id="segment-header" class="segment">  <!-- segment-header -->
-      <div class="container">  <!-- container -->
-        <!-- Left logo - typically the publisher's logo - project or affiliate -->
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- Left logo - typically the publisher's logo - project or affiliate -->
         <div id="project-nav">
-          <a id="project-logo" no-external="true" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">
-            <img height="71" alt="Project home" src="assets/images/BCMinistry.png"/>
+          <a no-external="true" id="project-logo" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">
+            <img src="assets/images/BCMinistry.png" alt="Project home" height="71"/>
           </a>
         </div>
 
@@ -58,27 +58,27 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">BC Provider Registry FHIR Implementation Guide</span><br/>0.1.0 - Build CI</p>
         </div>
-      </div> <!-- /container -->
-    </div>  <!-- /segment-header -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
 
-    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
       <div id="stripe"> </div>
-      <div class="container">  <!-- container -->
-        <!-- HEADER CONTENT -->
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
 
         <nav class="navbar navbar-inverse">
-          <!--status-bar-->
+            <!-- status-bar -->
           <div class="container">
-            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
             </button>
-            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
-              <!-- menu.xml  -->
+                <!-- menu.xml -->
 
-<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+<ul class="nav navbar-nav">
   <li>
     <a href="index.html">Overview</a>
   </li>
@@ -103,19 +103,22 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="artifacts.html#1">Practitioner</a>
+        <a href="artifacts.html#1">Operations</a>
       </li>
       <li>
-        <a href="artifacts.html#2">Organization</a>
+        <a href="artifacts.html#2">Practitioner</a>
       </li>
       <li>
-        <a href="artifacts.html#3">Facility</a>
+        <a href="artifacts.html#3">Organization</a>
       </li>
       <li>
-        <a href="artifacts.html#4">Datatypes</a>
+        <a href="artifacts.html#4">Facility</a>
       </li>
       <li>
-        <a href="artifacts.html#5">Common</a>
+        <a href="artifacts.html#5">Datatypes</a>
+      </li>
+      <li>
+        <a href="artifacts.html#6">Common</a>
       </li>
     </ul>
   </li>
@@ -126,23 +129,23 @@
     <a href="credits.html">Credits</a>
   </li>
 </ul>
-            </div>  <!-- /.nav-collapse -->
-          </div>  <!-- /.container -->
-        </nav>  <!-- /.navbar -->
-      <!-- /HEADER CONTENT -->
-      </div>  <!-- /container -->
-    </div>  <!-- /segment-navbar -->
-    <!--status-bar-->
-    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
-      <div class="container">  <!-- container -->
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>FHIR Design and Overview</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>FHIR Design and Overview</b></li>
         </ul>
-      </div>  <!-- /container -->
-    </div>  <!-- /segment-breadcrumb -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
 
-    <div id="segment-content">  <!-- segment-content -->
-      <div class="container">  <!-- container -->
+    <div id="segment-content">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
 
@@ -154,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">BC Provider Registry FHIR Implementation Guide - Local Development build (v0.1.0). See the <a href="http://hl7.org/fhir/ca-bc/provider/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+    <!-- ReleaseHeader --><p id="publish-box">BC Provider Registry FHIR Implementation Guide - Local Development build (v0.1.0). See the <a href="http://hl7.org/fhir/ca-bc/provider/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>FHIR Design and Overview</h2>
   
 
@@ -166,14 +169,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
-    <p><!-- white space is critical inside of capture --></p>
+    <p>  <!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#how-do-plr-fhir-messages-fit-into-bc-core-specifications" id="markdown-toc-how-do-plr-fhir-messages-fit-into-bc-core-specifications">How do PLR FHIR Messages fit into BC Core Specifications?</a></li>
   <li><a href="#fhir-resources" id="markdown-toc-fhir-resources">FHIR Resources</a></li>
   <li><a href="#relationships-between-resources" id="markdown-toc-relationships-between-resources">Relationships between Resources</a></li>
   <li><a href="#message-use-cases" id="markdown-toc-message-use-cases">Message Use Cases</a></li>
-  <li><a href="#query-design" id="markdown-toc-query-design">Query Design</a></li>
   <li><a href="#capability-statement" id="markdown-toc-capability-statement">Capability Statement</a></li>
   <li><a href="#special-notes" id="markdown-toc-special-notes">Special Notes</a></li>
   <li><a href="#dos-and-donts" id="markdown-toc-dos-and-donts">Do’s and Don’ts</a></li>
@@ -184,41 +186,56 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="fhir-resources">FHIR Resources</h3>
 
-<p>In FHIR, the resources used are named Practitioner, Organization, and Location.</p>
+<p>In FHIR, the resources used are named Practitioner, Organization, and Location.  BC has created profiles of each of these resources for use in the PLR system.</p>
 
-<p>Each Individual Provider is composed of a Practitioner resource and at least one Practitioner Role which holds the Providers role, such as Nurse or Dentist.</p>
+<p>Each Individual Provider is composed of a <a href="StructureDefinition-bc-practitioner.html">Practitioner instance</a> and at least one <a href="StructureDefinition-bc-practitioner-role.html">Practitioner Role instance</a> which holds the Provider’s role, such as Nurse or Dentist.</p>
 
-<p>Each Organizational Provider is composed of an Organization resource with zero or more Practitioner Roles or Organization Affiliations that store relationship references.</p>
+<p><a name="9b932bae-9f44-4cd4-bed8-dd6e522ffe46">​</a>Each Organizational Provider is composed of an <a href="StructureDefinition-bc-organization.html">Organization instance</a> with zero or more <a href="StructureDefinition-bc-practitioner-role.html">Practitioner Role instances</a> or <a href="StructureDefinition-bc-organization-affiliation.html">Organization Affiliation instances</a> that store relationship references.</p>
 
-<p>Each Facility is composed of a Location resource with zero or more Practitioner Roles or Organizations for relationship references.</p>
+<p><a name="66558e0e-75d6-4fc6-9cae-c9ac667225fa">​</a>Each Facility is composed of a <a href="StructureDefinition-bc-location.html">Location instance</a> with zero or more Practitioner Role profile instances](StructureDefinition-bc-practitioner-role.html) or <a href="StructureDefinition-bc-organization-affiliation.html">Organization Affiliation instances</a> for relationship references.</p>
 
-<p>A person may be in PLR twice, once for each role, such as a Nurse and Dentist.  This means in FHIR there will be two Practitioner resources, one for Nurse and one for Dentist, each Practitioner resource being identical*, distinguishable only by reviewing the associated Practitioner Role resources.  It is best practice to treat the Dentist and Nurse as unique Practitioners in the context of FHIR messages to BC PLR.</p>
+<p>A person may be in PLR twice, once for each role, such as a Nurse and Dentist.  This means in FHIR there will be two Practitioner instances, one for Nurse and one for Dentist, each Practitioner instance being identical*, distinguishable only by reviewing the associated Practitioner Role profile instance.  It is best practice to treat the Dentist and Nurse as unique Practitioners in the context of FHIR messages to BC PLR.</p>
 
-<p>*Parts of the Practitioner resource may not be identical if the Provider gave the College of Nursing a slightly different name than the College of Dentistry (like short forms, or last name changes).</p>
+<p>*Parts of the Practitioner instance may not be identical if the Provider gave the College of Nursing a slightly different name than the College of Dentistry (like short forms, or last name changes).</p>
 
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="800px" src="bc_fhir_prac_org_fac.png" alt="BC FHIR Resources" />
+  <img src="bc_fhir_prac_org_fac.png" width="800px" alt="BC FHIR Resources" style="padding-top:0;padding-bottom:30px"/>
   <figcaption>Figure 2.1 - BC FHIR Resources</figcaption>
 </figure>
 
-<p>The above diagram uses aggregation, the Organization and Location resources can exist without Practitioner Roles.</p>
-
 <h3 id="relationships-between-resources">Relationships between Resources</h3>
 <h4 id="provider-to-provider-relationships">Provider to Provider Relationships</h4>
-<p>One Practitioner Role for each Individual to Individual relationship.
-One Practitioner Role for each Organization to Individual relationship.
-One Organization Affiliation for each Organization to Organization relationship.</p>
+
+<h5 id="individual-provider-to-individual-provider">Individual Provider to Individual Provider</h5>
+<p>To show the relationship between two individual providers, the <a href="StructureDefinition-bc-practitioner-relationship-extension.html">BC Practitioner Relationship extension</a> was created.  This allows for a relationship type and a linkage between two BC Practitioners to be stated.  NOTE: It is expected that the relationship would be found on both Practitioner instances.</p>
+
+<h5 id="individual-provider-to-organizational-provider">Individual Provider to Organizational Provider</h5>
+<p>To show the relationship between an individual Provider and an organizational Provider, the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  This resource has a practitioner data element and an organization data element along with a code that is used to say what role the individual provider plays at the organization.</p>
+
+<h5 id="organizational-provider-to-organizational-provider">Organizational Provider to Organizational Provider</h5>
+<p><a name="fc393fd7-e57e-4a44-8dc1-310b6a8121f3">​</a>To show the relationship between two organizational providers, the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.</p>
 
 <h4 id="provider-to-facility-relationships">Provider to Facility Relationships</h4>
-<p>One Practitioner Role for each Location to Individual relationship.
-One Organization Affiliation for each Location to Organization relationship.</p>
+
+<h5 id="individual-provider-to-facility">Individual Provider to Facility</h5>
+<p>To show the relationship between an individual provider and a facility, the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  Instead of the organization data element, the location data element is used to indicate that a provider is related to a facility.</p>
+
+<h5 id="organization-provider-to-facility">Organization Provider to Facility</h5>
+<p><a name="bf198a66-de32-43f5-90cf-926dbc337942">​</a>To show the relationship between an organizational provider and a facility, the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  Instead of the particpiating organization data element, the location data element is used to indicate that an organization is related to a facility.</p>
 
 <h3 id="message-use-cases">Message Use Cases</h3>
+<p>There are a number of use cases that support the existing PLR functionality:</p>
+
+<ul>
+  <li>Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location</li>
+  <li>Maintain - used when an outside source is communicating a change to PLR</li>
+  <li>Batch - allows for the sending of multiple Maintain messages at one time</li>
+  <li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances</li>
+</ul>
 
 <h4 id="distributions">Distributions</h4>
-<p>PUT /Bundle/123445</p>
 
-<p>The transaction Bundle includes one of the following sets:</p>
+<p>A Distribution is used by PLR to communicate a change in a single Practitioner, Organization, or Location.  It will be accomplished by sending a FHIR Bundle of type ‘transaction’ via a RESTful PUT message.  The transaction Bundle includes one of the following sets:</p>
 
 <ol>
   <li>PractitionerRole(s) and Practitioner;</li>
@@ -226,12 +243,19 @@ One Organization Affiliation for each Location to Organization relationship.</p>
   <li>Location, OrganizationAffiliation(s), PractitionerRole(s).</li>
 </ol>
 
-<p>One PUT message per distribution and each distribution has a single Provider or Facility (as we do today).  Each distribution message has a logical ID which is a database unique key (event item id column).  This logical ID is not intended to be used in any other message.  I.e. one can not request the Bundle with GET /Bundle/123445; I am only stating this to keep scope smaller … we could implement the GET if desired.</p>
+<p>One PUT message per distribution and each distribution will have a single Provider or Facility.  Each distribution message has a logical ID which is a database unique key.  This logical ID is not intended to be used in any other message, i.e., one can not request the Bundle with GET /Bundle/123445.</p>
 
 <p>The response to a distribution must be HTTP 200 or 201 OK.  Anything else and the reliable messaging function will retry to send the message until a 200 is received back.</p>
 
+<h4 id="maintain">Maintain</h4>
+<p>Maintain Provider and Facility will be exactly like Distributions above, just an incoming message, rather than an outbound message.</p>
+
+<p>The logical ID of the transaction Bundle is assigned by the source of the message and is not intended to be used again.  The source today requires a unique identifier for each message, and the logical ID can be that unique identifier.</p>
+
+<p>The response will also be a Bundle with OperationOutcome and the modified or new resource(s) within the Bundle.  A maintain Bundle must only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created that target Provider must already exist in PLR, otherwise the whole transaction Bundle is rolled back.</p>
+
 <h4 id="batch">Batch</h4>
-<p>Batch also uses Bundles, but a batch Bundle.  A batch Bundle allows for many independent transactions to be in a single message (as we do today).  The batch Bundle must contain at least one or more of:</p>
+<p>Batch also uses Bundles, but a batch Bundle.  A batch Bundle allows for many independent transactions to be sent in a single message.  The batch Bundle must contain at least one or more of:</p>
 
 <ol>
   <li>a transaction Bundle (with PractitionerRole(s) and Practitioner) to add/update a Ind. Provider</li>
@@ -244,6 +268,32 @@ One Organization Affiliation for each Location to Organization relationship.</p>
 <p>The response Bundle is similarly structured to the request, populating and echoing back the results of each transaction.  The only difference is that OperationOutcome should also be included for each transaction for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn’t processed due to validation or non-business errors.</p>
 
 <h4 id="query">Query</h4>
+<p>Rather than using the FHIR RESTful search mechanism, PLR FHIR has defined a set of FHIR Operations to search for Providers and Facilities.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR’s case, the server would need to include resources that make up the full Provider or additionally return the full Provider and related Providers or Facilities.  Queries using PractitionerRole and OrganizationAffiliation are not permitted and unnecessary.</p>
+
+<p>The two query operations are:</p>
+
+<ul>
+  <li>$full - used to return the full provider or facility without following relationships</li>
+  <li>$dereference - used to return the full provider or facility along with all directly referenced providers or facilities</li>
+</ul>
+
+<p>The syntax for the $full operation is:</p>
+
+<ul>
+  <li>GET /resource/id/$full to retrieve a specific provider or facility where the id is known</li>
+  <li>GET /resource/$full?param1&amp;param2&amp;… to search for a provider or facility</li>
+</ul>
+
+<p>The parameters for the $full operation will be the standard search parameters.</p>
+
+<p>The syntax for the $dereference operation is:</p>
+
+<ul>
+  <li>GET /resource/id/$dereference to retrieve the full information about a specific provider or facility where the id is known</li>
+  <li>GET /resource/$dereference?param1&amp;param2&amp;… to search and retrieve the full information about a provider or facility</li>
+</ul>
+
+<p>The parameters for the $dereference operation will be the standard search parameters, along with the ‘join’ parameters, e.g., location_city, organization_name, etc.</p>
 
 <h5 id="general-query-rules">General Query Rules</h5>
 <ol>
@@ -267,75 +317,25 @@ One Organization Affiliation for each Location to Organization relationship.</p>
   <li>OrganizationAffilication and PractitionerRole do not have logical IDs or business identifiers.  Searching by these resources is not permitted.</li>
 </ol>
 
-<p>The proposal is to use FHIR Operations to search for Providers and Facilities.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR’s case, the server would need to include resources that make up the full Provider or additionally return the full Provider and related Providers or Facilities.  Queries using PractitionerRole and OrganizationAffiliation are not permitted and unnecessary.</p>
-
-<h5 id="return-the-full-provider-or-facility">Return the Full Provider or Facility</h5>
-<p>GET /<resource>/<id>/$full
-GET /<resource>/$full?&lt;operation param 1&gt;&amp;&lt;operation param 2&gt;&amp;...
-The operational parameters will need to be defined for the $full operation but more than likely these will be the standard search parameters.</resource></id></resource></p>
-
-<h5 id="return-the-full-provider-or-facility-and-return-all-the-directly-referenced-providers-or-facilities">Return the full Provider or Facility and Return All the Directly Referenced Providers or Facilities</h5>
-<p>GET /<resource>/<id>/$dereference
-GET /<resource>/$dereference?&lt;operation param 1&gt;&amp;&lt;operation param 2&gt;&amp;...</resource></id></resource></p>
-
-<p>These operational parameters, in addition to the standard search parameters will need to include the ‘join’ parameters.  Like location_city, org_name, practitioner_gender, practitionerrole_specialty, etc</p>
-
-<h4 id="queries-in-business-terms">Queries in Business Terms</h4>
-<h5 id="i-want-to-find-a-facility-by-name-and-include-all-relationships">I want to find a Facility by name and include all relationships</h5>
-<p>GET /Location/$full?org_name=St John Clinic</p>
-
-<h5 id="i-want-to-find-all-nurses-working-in-kelowna-health-care-facilities">I want to find all Nurses working in Kelowna health care Facilities.</h5>
-<p>GET /Practitioner/$full?roleType=RN&amp;location-city=Kelowna&amp;location-reln-type=employee</p>
-
-<h5 id="i-want-to-find-all-facilities-owned-by-good-health-clinic">I want to find all Facilities owned by Good Health Clinic.</h5>
-<p>GET /Location/$full?org-name=Good Health Clinic&amp;location-reln-type=owned</p>
-
-<h5 id="i-want-to-find-all-providers-related-to-a-particular-provider">I want to find all Providers related to a particular Provider</h5>
-<p>GET /Practitioner/IPC.00034542.PRS.BC/$dereference?_filterOutResources=Location,self</p>
-
-<h5 id="i-want-to-find-all-facilities-and-providers-related-to-vancouver-general-hospital">I want to find all Facilities and Providers related to Vancouver General Hospital</h5>
-<p>GET /Location/$dereference?name=Vancouver General Hospital&amp;_filterOutResources=self</p>
-
-<h4 id="maintain">Maintain</h4>
-<p>Maintain Provider and Facility will be exactly like Distributions above, just an incoming message, rather than an outbound message.</p>
-
-<p>The logical ID of the transaction Bundle is assigned by the source of the message and is not intended to be used again.  The source today requires a unique identifier for each message, and the logical ID can be that unique identifier.
-The response will also be a Bundle with OperationOutcome and the modified or new resource(s) within the Bundle.  A maintain Bundle must only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created that target Provider must already exist in PLR, otherwise the whole transaction Bundle is rolled back.</p>
-
-<h5 id="create-a-new-provider">Create a new Provider</h5>
-<p>PUT /Bundle</p>
-
-<h5 id="update-an-existing-provider">Update an existing Provider</h5>
-<p>PUT /Bundle/234432</p>
-
-<h3 id="query-design">Query Design</h3>
-
-<h4 id="query-relationships">Query Relationships</h4>
-
 <h3 id="capability-statement">Capability Statement</h3>
 
 <h3 id="special-notes">Special Notes</h3>
-
 <h4 id="providers-and-roles">Providers and Roles</h4>
 <h4 id="provider-role-and-expertise">Provider Role and Expertise</h4>
-<p>One mandatory Practitioner Role must be related to the Practitioner.
-One optional Practitioner Role for all Expertise (Specialty), specialty is a list.</p>
-
 <h4 id="organizations-and-roles">Organizations and Roles</h4>
-
 <h3 id="dos-and-donts">Do’s and Don’ts</h3>
 
 
 
 
 </div>
-        </div>  <!-- /inner-wrapper -->
-      </div>  <!-- /row -->
-    </div>  <!-- /container -->
-  </div>  <!-- /segment-content -->
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
 
-  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
-  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
 
   <script type="text/javascript">
     $(document).ready(function(){
@@ -344,37 +344,37 @@ One optional Practitioner Role for all Expertise (Specialty), specialty is a lis
       }
     });
   </script>
-  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
-    <div class="container">  <!-- container -->
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 3, 2021 14:16-0700">2021-03-03</span>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 9, 2021 14:54-0700">2021-03-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
                  <a style="color: #81BEF7" href="qa.html">QA Report</a>
           </span>
         </p>
-      </div>  <!-- /inner-wrapper -->
-    </div>  <!-- /container -->
-  </div>  <!-- /segment-footer -->
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
   
-  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
-    <div class="container">  <!-- container -->
-    </div>  <!-- /container -->
-  </div>  <!-- /segment-post-footer -->
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
   
-  <!-- JS and analytics only. -->
-  <!-- Bootstrap core JavaScript
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
   ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
-  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
-  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
   <script>anchors.options.visible = 'hover'
 anchors.add()</script>
   
-  <!-- Analytics Below
+    <!-- Analytics Below
   ================================================== -->
   </body>
 </html>

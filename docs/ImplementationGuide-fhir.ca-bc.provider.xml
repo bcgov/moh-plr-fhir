@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2021-03-03T14:16:12-07:00"/>
+  <date value="2021-03-09T14:54:07-07:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -184,6 +184,10 @@
         <valueString value="true"/>
       </extension>
     </extension>
+    <grouping id="Operations">
+      <name value="Operations"/>
+      <description value="PLR Operations and the Bundle profiles associated with them"/>
+    </grouping>
     <grouping id="Practitioner">
       <name value="Practitioner"/>
       <description value="Artifacts associated with Practitioners"/>
@@ -623,6 +627,30 @@
       <description value="Example of an organization&#39;s qualifications."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
       <groupingId value="Practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/bc-dereference-resource-query"/>
+      </reference>
+      <name value="DereferenceResourceQuery"/>
+      <description value="This operation is used to query for a provider, organization, or facility and will return the information for that provider, organization, or facility, along with any instances that can be found by following associations to other providers, organizations, or facilities."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Operations"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/bc-full-resource-query"/>
+      </reference>
+      <name value="FullResourceQuery"/>
+      <description value="This operation is used to query for a provider, organization, or facility and will return the information for that provider, organization, or facility, without following associations to other providers, organizations, or facilities."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Operations"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>
