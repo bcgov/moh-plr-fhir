@@ -190,9 +190,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Each Individual Provider is composed of a <a href="StructureDefinition-bc-practitioner.html">Practitioner instance</a> and at least one <a href="StructureDefinition-bc-practitioner-role.html">Practitioner Role instance</a> which holds the Provider’s role, such as Nurse or Dentist.</p>
 
-<p><a name="9b932bae-9f44-4cd4-bed8-dd6e522ffe46">​</a>Each Organizational Provider is composed of an <a href="StructureDefinition-bc-organization.html">Organization instance</a> with zero or more <a href="StructureDefinition-bc-practitioner-role.html">Practitioner Role instances</a> or <a href="StructureDefinition-bc-organization-affiliation.html">Organization Affiliation instances</a> that store relationship references.</p>
+<p><a name="3929bf10-6537-49d1-9541-bb04627a48d7">​</a>Each Organizational Provider is composed of an <a href="StructureDefinition-bc-organization.html">Organization instance</a> with zero or more <a href="StructureDefinition-bc-practitioner-role.html">Practitioner Role instances</a> or <a href="StructureDefinition-bc-organization-affiliation.html">Organization Affiliation instances</a> that store relationship references.</p>
 
-<p><a name="66558e0e-75d6-4fc6-9cae-c9ac667225fa">​</a>Each Facility is composed of a <a href="StructureDefinition-bc-location.html">Location instance</a> with zero or more Practitioner Role profile instances](StructureDefinition-bc-practitioner-role.html) or <a href="StructureDefinition-bc-organization-affiliation.html">Organization Affiliation instances</a> for relationship references.</p>
+<p><a name="ec784e61-fd90-4aed-ab0e-d28620e37b83">​</a>Each Facility is composed of a <a href="StructureDefinition-bc-location.html">Location instance</a> with zero or more <a href="StructureDefinition-bc-practitioner-role.html">Practitioner Role profile instances</a> or <a href="StructureDefinition-bc-organization-affiliation.html">Organization Affiliation instances</a> for relationship references.</p>
 
 <p>A person may be in PLR twice, once for each role, such as a Nurse and Dentist.  This means in FHIR there will be two Practitioner instances, one for Nurse and one for Dentist, each Practitioner instance being identical*, distinguishable only by reviewing the associated Practitioner Role profile instance.  It is best practice to treat the Dentist and Nurse as unique Practitioners in the context of FHIR messages to BC PLR.</p>
 
@@ -213,7 +213,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>To show the relationship between an individual Provider and an organizational Provider, the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  This resource has a practitioner data element and an organization data element along with a code that is used to say what role the individual provider plays at the organization.</p>
 
 <h5 id="organizational-provider-to-organizational-provider">Organizational Provider to Organizational Provider</h5>
-<p><a name="fc393fd7-e57e-4a44-8dc1-310b6a8121f3">​</a>To show the relationship between two organizational providers, the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.</p>
+<p><a name="4bec8ca4-a95c-478b-81a9-1fe71a2623fb">​</a>To show the relationship between two organizational providers, the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.</p>
 
 <h4 id="provider-to-facility-relationships">Provider to Facility Relationships</h4>
 
@@ -221,7 +221,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>To show the relationship between an individual provider and a facility, the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  Instead of the organization data element, the location data element is used to indicate that a provider is related to a facility.</p>
 
 <h5 id="organization-provider-to-facility">Organization Provider to Facility</h5>
-<p><a name="bf198a66-de32-43f5-90cf-926dbc337942">​</a>To show the relationship between an organizational provider and a facility, the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  Instead of the particpiating organization data element, the location data element is used to indicate that an organization is related to a facility.</p>
+<p><a name="59bea4f6-8132-4292-a9b4-4c072937c9cf">​</a>To show the relationship between an organizational provider and a facility, the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  Instead of the particpiating organization data element, the location data element is used to indicate that an organization is related to a facility.</p>
 
 <h3 id="message-use-cases">Message Use Cases</h3>
 <p>There are a number of use cases that support the existing PLR functionality:</p>
@@ -348,7 +348,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 9, 2021 14:54-0700">2021-03-09</span>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 9, 2021 16:20-0700">2021-03-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

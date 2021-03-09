@@ -8,7 +8,7 @@ Each Individual Provider is composed of a [Practitioner instance](StructureDefin
 
 Each Organizational Provider is composed of an [Organization instance](StructureDefinition-bc-organization.html) with zero or more [Practitioner Role instances](StructureDefinition-bc-practitioner-role.html) or [Organization Affiliation instances](StructureDefinition-bc-organization-affiliation.html) that store relationship references.
 
-Each Facility is composed of a [Location instance](StructureDefinition-bc-location.html) with zero or more Practitioner Role profile instances](StructureDefinition-bc-practitioner-role.html) or [Organization Affiliation instances](StructureDefinition-bc-organization-affiliation.html) for relationship references.
+Each Facility is composed of a [Location instance](StructureDefinition-bc-location.html) with zero or more [Practitioner Role profile instances](StructureDefinition-bc-practitioner-role.html) or [Organization Affiliation instances](StructureDefinition-bc-organization-affiliation.html) for relationship references.
 
 A person may be in PLR twice, once for each role, such as a Nurse and Dentist.  This means in FHIR there will be two Practitioner instances, one for Nurse and one for Dentist, each Practitioner instance being identical*, distinguishable only by reviewing the associated Practitioner Role profile instance.  It is best practice to treat the Dentist and Nurse as unique Practitioners in the context of FHIR messages to BC PLR.
 
