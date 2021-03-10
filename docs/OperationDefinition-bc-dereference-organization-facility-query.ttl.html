@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FHIR.CA-BC.PROVIDER\DereferenceResourceQuery - TTL Representation - FHIR v4.0.1</title>
+    <title>FHIR.CA-BC.PROVIDER\DereferenceOrganizationFacilityQuery - TTL Representation - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -44,8 +44,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"9.1"}
-    h3,h4,h5,h6{--heading-prefix:"9.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"8.1"}
+    h3,h4,h5,h6{--heading-prefix:"8.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Left logo - typically the publisher's logo - project or affiliate -->
@@ -94,9 +94,6 @@
     <a href="connected_partner.html">Connected Partner</a>
   </li>
   <li>
-    <a href="system.html">System Performance</a>
-  </li>
-  <li>
     <a href="future.html">Future Plans</a>
   </li>
   <li class="dropdown">
@@ -141,7 +138,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>DereferenceResourceQuery</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>DereferenceOrganizationFacilityQuery</b></li>
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -163,20 +160,20 @@
 <ul class="nav nav-tabs">
 
   <li>
-    <a href="OperationDefinition-bc-dereference-resource-query.html">Narrative Content</a>
+    <a href="OperationDefinition-bc-dereference-organization-facility-query.html">Narrative Content</a>
   </li>
 
 
   
     <li>
-      <a href="OperationDefinition-bc-dereference-resource-query.xml.html">XML</a>
+      <a href="OperationDefinition-bc-dereference-organization-facility-query.xml.html">XML</a>
     </li>
   
 
 
   
     <li>
-      <a href="OperationDefinition-bc-dereference-resource-query.json.html">JSON</a>
+      <a href="OperationDefinition-bc-dereference-organization-facility-query.json.html">JSON</a>
     </li>
   
 
@@ -195,9 +192,9 @@
 <a name="root"> </a>
 
 
-<h2 id="root">: DereferenceResourceQuery - TTL Representation</h2>
+<h2 id="root">: DereferenceOrganizationFacilityQuery - TTL Representation</h2>
 
-<p><a href="OperationDefinition-bc-dereference-resource-query.ttl" no-download="true">Raw ttl</a> | <a href="OperationDefinition-bc-dereference-resource-query.ttl" download>Download</a></p>
+<p><a href="OperationDefinition-bc-dereference-organization-facility-query.ttl" no-download="true">Raw ttl</a> | <a href="OperationDefinition-bc-dereference-organization-facility-query.ttl" download>Download</a></p>
 
   <!-- insert intro if present -->
   
@@ -214,18 +211,18 @@
 
  a fhir:OperationDefinition;
   <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
-  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;bc-dereference-resource-query&quot;];
+  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;bc-dereference-organization-facility-query&quot;];
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.text">fhir:DomainResource.text</a> [
      <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;extensions&quot; ];
-     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;DereferenceResourceQuery&lt;/h2&gt;&lt;p&gt;QUERY: DereferenceResourceQuery&lt;/p&gt;&lt;p&gt;The official URL for this operation definition is: &lt;/p&gt;&lt;pre&gt;http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-resource-query&lt;/pre&gt;&lt;p&gt;URL: [base]/Practitioner/$dereference&lt;/p&gt;&lt;p&gt;URL: [base]/Practitioner/[id]/$dereference&lt;/p&gt;&lt;p&gt;URL: [base]/Organization/$dereference&lt;/p&gt;&lt;p&gt;URL: [base]/Organization/[id]/$dereference&lt;/p&gt;&lt;p&gt;URL: [base]/Location/$dereference&lt;/p&gt;&lt;p&gt;URL: [base]/Location/[id]/$dereference&lt;/p&gt;&lt;p&gt;Parameters&lt;/p&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;DereferenceOrganizationFacilityQuery&lt;/h2&gt;&lt;p&gt;QUERY: DereferenceOrganizationFacilityQuery&lt;/p&gt;&lt;p&gt;The official URL for this operation definition is: &lt;/p&gt;&lt;pre&gt;http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-organization-facility-query&lt;/pre&gt;&lt;p&gt;URL: [base]/Organization/$dereference&lt;/p&gt;&lt;p&gt;URL: [base]/Organization/[id]/$dereference&lt;/p&gt;&lt;p&gt;URL: [base]/Location/$dereference&lt;/p&gt;&lt;p&gt;URL: [base]/Location/[id]/$dereference&lt;/p&gt;&lt;p&gt;Parameters&lt;/p&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;br/&gt;(&lt;a href=\&quot;http://hl7.org/fhir/R4/search.html#string\&quot;&gt;string&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Search for organizations or locations with the specified name.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
   ];
-  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.url">fhir:OperationDefinition.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-resource-query&quot;];
+  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.url">fhir:OperationDefinition.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-organization-facility-query&quot;];
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.version">fhir:OperationDefinition.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;0.1.0&quot;];
-  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.name">fhir:OperationDefinition.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;DereferenceResourceQuery&quot;];
-  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.title">fhir:OperationDefinition.title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Dereferenced Query for a provider&quot;];
+  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.name">fhir:OperationDefinition.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;DereferenceOrganizationFacilityQuery&quot;];
+  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.title">fhir:OperationDefinition.title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Dereference Query for an organization or location&quot;];
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.status">fhir:OperationDefinition.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;draft&quot;];
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.kind">fhir:OperationDefinition.kind</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;query&quot;];
-  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.date">fhir:OperationDefinition.date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2021-03-09T16:20:18-07:00&quot;^^xsd:dateTime];
+  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.date">fhir:OperationDefinition.date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2021-03-10T13:16:27-07:00&quot;^^xsd:dateTime];
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.publisher">fhir:OperationDefinition.publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;BC Ministry of Health&quot;];
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.contact">fhir:OperationDefinition.contact</a> [
      <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
@@ -245,18 +242,25 @@
   ];
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.code">fhir:OperationDefinition.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;dereference&quot;];
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.resource">fhir:OperationDefinition.resource</a> [
-     <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Practitioner&quot;;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Organization&quot;;
      <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0
   ], [
-     <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Organization&quot;;
-     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1
-  ], [
      <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Location&quot;;
-     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1
   ];
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.system">fhir:OperationDefinition.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean];
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.type">fhir:OperationDefinition.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean];
-  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.instance">fhir:OperationDefinition.instance</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean].
+  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.instance">fhir:OperationDefinition.instance</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean];
+  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">fhir:OperationDefinition.parameter</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">fhir:OperationDefinition.parameter.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;name&quot; ];
+     <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">fhir:OperationDefinition.parameter.use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;in&quot; ];
+     <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">fhir:OperationDefinition.parameter.min</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#integer">fhir:value</a> &quot;0&quot;^^xsd:integer ];
+     <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">fhir:OperationDefinition.parameter.max</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1&quot; ];
+     <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">fhir:OperationDefinition.parameter.documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Search for organizations or locations with the specified name.&quot; ];
+     <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">fhir:OperationDefinition.parameter.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ];
+     <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.searchType">fhir:OperationDefinition.parameter.searchType</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+  ].
 
 # - ontology header ------------------------------------------------------------
 
@@ -292,7 +296,7 @@
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 9, 2021 16:20-0700">2021-03-09</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 10, 2021 13:16-0700">2021-03-10</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

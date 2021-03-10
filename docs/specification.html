@@ -92,9 +92,6 @@
     <a href="connected_partner.html">Connected Partner</a>
   </li>
   <li>
-    <a href="system.html">System Performance</a>
-  </li>
-  <li>
     <a href="future.html">Future Plans</a>
   </li>
   <li class="dropdown">
@@ -190,9 +187,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Each Individual Provider is composed of a <a href="StructureDefinition-bc-practitioner.html">Practitioner instance</a> and at least one <a href="StructureDefinition-bc-practitioner-role.html">Practitioner Role instance</a> which holds the Provider’s role, such as Nurse or Dentist.</p>
 
-<p><a name="3929bf10-6537-49d1-9541-bb04627a48d7">​</a>Each Organizational Provider is composed of an <a href="StructureDefinition-bc-organization.html">Organization instance</a> with zero or more <a href="StructureDefinition-bc-practitioner-role.html">Practitioner Role instances</a> or <a href="StructureDefinition-bc-organization-affiliation.html">Organization Affiliation instances</a> that store relationship references.</p>
+<p><a name="4f7a3d2c-2151-499f-860e-bd4b1f72d617">​</a>Each Organizational Provider is composed of an <a href="StructureDefinition-bc-organization.html">Organization instance</a> with zero or more <a href="StructureDefinition-bc-practitioner-role.html">Practitioner Role instances</a> or <a href="StructureDefinition-bc-organization-affiliation.html">Organization Affiliation instances</a> that store relationship references.</p>
 
-<p><a name="ec784e61-fd90-4aed-ab0e-d28620e37b83">​</a>Each Facility is composed of a <a href="StructureDefinition-bc-location.html">Location instance</a> with zero or more <a href="StructureDefinition-bc-practitioner-role.html">Practitioner Role profile instances</a> or <a href="StructureDefinition-bc-organization-affiliation.html">Organization Affiliation instances</a> for relationship references.</p>
+<p><a name="5913fd62-fb70-4791-9907-f7985b35facd">​</a>Each Facility is composed of a <a href="StructureDefinition-bc-location.html">Location instance</a> with zero or more <a href="StructureDefinition-bc-practitioner-role.html">Practitioner Role profile instances</a> or <a href="StructureDefinition-bc-organization-affiliation.html">Organization Affiliation instances</a> for relationship references.</p>
 
 <p>A person may be in PLR twice, once for each role, such as a Nurse and Dentist.  This means in FHIR there will be two Practitioner instances, one for Nurse and one for Dentist, each Practitioner instance being identical*, distinguishable only by reviewing the associated Practitioner Role profile instance.  It is best practice to treat the Dentist and Nurse as unique Practitioners in the context of FHIR messages to BC PLR.</p>
 
@@ -213,7 +210,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>To show the relationship between an individual Provider and an organizational Provider, the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  This resource has a practitioner data element and an organization data element along with a code that is used to say what role the individual provider plays at the organization.</p>
 
 <h5 id="organizational-provider-to-organizational-provider">Organizational Provider to Organizational Provider</h5>
-<p><a name="4bec8ca4-a95c-478b-81a9-1fe71a2623fb">​</a>To show the relationship between two organizational providers, the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.</p>
+<p><a name="694a98ca-3ca2-4172-b7bd-7583ee1c1d58">​</a>To show the relationship between two organizational providers, the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.</p>
 
 <h4 id="provider-to-facility-relationships">Provider to Facility Relationships</h4>
 
@@ -221,7 +218,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>To show the relationship between an individual provider and a facility, the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  Instead of the organization data element, the location data element is used to indicate that a provider is related to a facility.</p>
 
 <h5 id="organization-provider-to-facility">Organization Provider to Facility</h5>
-<p><a name="59bea4f6-8132-4292-a9b4-4c072937c9cf">​</a>To show the relationship between an organizational provider and a facility, the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  Instead of the particpiating organization data element, the location data element is used to indicate that an organization is related to a facility.</p>
+<p><a name="a24319b3-2e7f-48be-84ba-22ce92263e11">​</a>To show the relationship between an organizational provider and a facility, the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  Instead of the particpiating organization data element, the location data element is used to indicate that an organization is related to a facility.</p>
 
 <h3 id="message-use-cases">Message Use Cases</h3>
 <p>There are a number of use cases that support the existing PLR functionality:</p>
@@ -273,8 +270,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>The two query operations are:</p>
 
 <ul>
-  <li>$full - used to return the full provider or facility without following relationships</li>
-  <li>$dereference - used to return the full provider or facility along with all directly referenced providers or facilities</li>
+  <li><a name="ef87f0e8-caf3-479f-a5d0-7afdda6fdbb6">​</a>$full - used to return the full <a href="OperationDefinition/bc-full-provider-query.html">provider</a> or <a href="OperationDefinition/bc-full-organization-facility-query.html">organization or facility</a> without following relationships</li>
+  <li><a name="2156d7f5-6e6b-47a0-a142-9575dc05e6b6">​</a>$dereference - used to return the full <a href="OperationDefinition/bc-dereference-provider-query.html">provider</a> or <a href="OperationDefinition/bc-dereference-organization-facility-query.html">organization or facility</a> along with all directly referenced providers or facilities</li>
 </ul>
 
 <p>The syntax for the $full operation is:</p>
@@ -308,8 +305,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li>Status code</li>
       <li>Status reason</li>
       <li>Gender</li>
-      <li>Org long name</li>
-      <li>Org description</li>
+      <li>Organization name</li>
     </ul>
   </li>
   <li>Wild cards requirements are valid as per the Web interface and requirements</li>
@@ -348,7 +344,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 9, 2021 16:20-0700">2021-03-09</span>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 10, 2021 13:16-0700">2021-03-10</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

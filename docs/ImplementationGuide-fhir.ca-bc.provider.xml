@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2021-03-09T16:20:18-07:00"/>
+  <date value="2021-03-10T13:16:27-07:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -633,10 +633,10 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/bc-dereference-resource-query"/>
+        <reference value="OperationDefinition/bc-dereference-organization-facility-query"/>
       </reference>
-      <name value="DereferenceResourceQuery"/>
-      <description value="This operation is used to query for a provider, organization, or facility and will return the information for that provider, organization, or facility, along with any instances that can be found by following associations to other providers, organizations, or facilities."/>
+      <name value="DereferenceOrganizationFacilityQuery"/>
+      <description value="This operation is used to query for an organization or facility and will return the information for that organization or facility along with any instances that can be found by following associations to other providers, organizations, or facilities."/>
       <exampleBoolean value="false"/>
       <groupingId value="Operations"/>
     </resource>
@@ -645,10 +645,34 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/bc-full-resource-query"/>
+        <reference value="OperationDefinition/bc-dereference-provider-query"/>
       </reference>
-      <name value="FullResourceQuery"/>
-      <description value="This operation is used to query for a provider, organization, or facility and will return the information for that provider, organization, or facility, without following associations to other providers, organizations, or facilities."/>
+      <name value="DereferenceProviderQuery"/>
+      <description value="This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Operations"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/bc-full-organization-facility-query"/>
+      </reference>
+      <name value="FullOrganizationFacilityQuery"/>
+      <description value="This operation is used to query for an organization or facility and will return the information for that organization or facility without following associations to other providers, organizations, or facilities."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Operations"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/bc-full-provider-query"/>
+      </reference>
+      <name value="FullProviderQuery"/>
+      <description value="This operation is used to query for a provider and will return the information for that provider without following associations to other providers, organizations, or facilities."/>
       <exampleBoolean value="false"/>
       <groupingId value="Operations"/>
     </resource>
@@ -674,11 +698,6 @@
       <page>
         <nameUrl value="connected_partner.html"/>
         <title value="Becoming a Connected Partner"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="system.html"/>
-        <title value="Performance and Availability"/>
         <generation value="markdown"/>
       </page>
       <page>

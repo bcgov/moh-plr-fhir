@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "BCProviderRegistry"];
   fhir:ImplementationGuide.title [ fhir:value "BC Provider Registry FHIR Implementation Guide"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2021-03-09T16:20:18-07:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-03-10T13:16:27-07:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "BC Ministry of Health"];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -862,11 +862,11 @@
          fhir:Extension.valueString [ fhir:value "OperationDefinition" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-resource-query>;
-         fhir:Reference.reference [ fhir:value "OperationDefinition/bc-dereference-resource-query" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-organization-facility-query>;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/bc-dereference-organization-facility-query" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "DereferenceResourceQuery" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This operation is used to query for a provider, organization, or facility and will return the information for that provider, organization, or facility, along with any instances that can be found by following associations to other providers, organizations, or facilities." ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "DereferenceOrganizationFacilityQuery" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This operation is used to query for an organization or facility and will return the information for that organization or facility along with any instances that can be found by following associations to other providers, organizations, or facilities." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Operations" ]
      ], [
@@ -877,11 +877,41 @@
          fhir:Extension.valueString [ fhir:value "OperationDefinition" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-resource-query>;
-         fhir:Reference.reference [ fhir:value "OperationDefinition/bc-full-resource-query" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-provider-query>;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/bc-dereference-provider-query" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "FullResourceQuery" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This operation is used to query for a provider, organization, or facility and will return the information for that provider, organization, or facility, without following associations to other providers, organizations, or facilities." ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "DereferenceProviderQuery" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Operations" ]
+     ], [
+       fhir:index 37;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "OperationDefinition" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-organization-facility-query>;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/bc-full-organization-facility-query" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "FullOrganizationFacilityQuery" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This operation is used to query for an organization or facility and will return the information for that organization or facility without following associations to other providers, organizations, or facilities." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Operations" ]
+     ], [
+       fhir:index 38;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "OperationDefinition" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-provider-query>;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/bc-full-provider-query" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "FullProviderQuery" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This operation is used to query for a provider and will return the information for that provider without following associations to other providers, organizations, or facilities." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Operations" ]
      ];
@@ -911,21 +941,16 @@
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 4;
-         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "system.html" ];
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Performance and Availability" ];
-         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
-       ], [
-         fhir:index 5;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "future.html" ];
          fhir:ImplementationGuide.definition.page.title [ fhir:value "Future Plans" ];
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
-         fhir:index 6;
+         fhir:index 5;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "glossary.html" ];
          fhir:ImplementationGuide.definition.page.title [ fhir:value "Glossary" ];
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
-         fhir:index 7;
+         fhir:index 6;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "credits.html" ];
          fhir:ImplementationGuide.definition.page.title [ fhir:value "Credits" ];
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
@@ -1064,9 +1089,13 @@
 
 <http://hl7.org/fhir/ca-bc/provider/Organization/Example-Qualification-Organization> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-resource-query> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-organization-facility-query> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-resource-query> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-provider-query> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-organization-facility-query> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-provider-query> a fhir:ca-bc .
 
 # - ontology header ------------------------------------------------------------
 

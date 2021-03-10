@@ -85,8 +85,8 @@ Rather than using the FHIR RESTful search mechanism, PLR FHIR has defined a set 
 
 The two query operations are:
 
-* $full - used to return the full provider or facility without following relationships
-* $dereference - used to return the full provider or facility along with all directly referenced providers or facilities
+* $full - used to return the full [provider](OperationDefinition/bc-full-provider-query.html) or [organization or facility](OperationDefinition/bc-full-organization-facility-query.html) without following relationships
+* $dereference - used to return the full [provider](OperationDefinition/bc-dereference-provider-query.html) or [organization or facility](OperationDefinition/bc-dereference-organization-facility-query.html) along with all directly referenced providers or facilities
 
 The syntax for the $full operation is:
 
@@ -113,8 +113,7 @@ The parameters for the $dereference operation will be the standard search parame
     * Status code
     * Status reason
     * Gender
-    * Org long name
-    * Org description
+    * Organization name
 2. Wild cards requirements are valid as per the Web interface and requirements
 3. The logical ID as per FHIR conformance is the IPC and IFC (for Facilities)
 4. OrganizationAffilication and PractitionerRole do not have logical IDs or business identifiers.  Searching by these resources is not permitted.

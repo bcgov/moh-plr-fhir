@@ -10,7 +10,7 @@
   "name": "BCProviderRegistry",
   "title": "BC Provider Registry FHIR Implementation Guide",
   "status": "draft",
-  "date": "2021-03-09T16:20:18-07:00",
+  "date": "2021-03-10T13:16:27-07:00",
   "publisher": "BC Ministry of Health",
   "contact": [
     {
@@ -856,10 +856,10 @@
           }
         ],
         "reference": {
-          "reference": "OperationDefinition/bc-dereference-resource-query"
+          "reference": "OperationDefinition/bc-dereference-organization-facility-query"
         },
-        "name": "DereferenceResourceQuery",
-        "description": "This operation is used to query for a provider, organization, or facility and will return the information for that provider, organization, or facility, along with any instances that can be found by following associations to other providers, organizations, or facilities.",
+        "name": "DereferenceOrganizationFacilityQuery",
+        "description": "This operation is used to query for an organization or facility and will return the information for that organization or facility along with any instances that can be found by following associations to other providers, organizations, or facilities.",
         "exampleBoolean": false,
         "groupingId": "Operations"
       },
@@ -871,10 +871,40 @@
           }
         ],
         "reference": {
-          "reference": "OperationDefinition/bc-full-resource-query"
+          "reference": "OperationDefinition/bc-dereference-provider-query"
         },
-        "name": "FullResourceQuery",
-        "description": "This operation is used to query for a provider, organization, or facility and will return the information for that provider, organization, or facility, without following associations to other providers, organizations, or facilities.",
+        "name": "DereferenceProviderQuery",
+        "description": "This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities.",
+        "exampleBoolean": false,
+        "groupingId": "Operations"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "OperationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "OperationDefinition/bc-full-organization-facility-query"
+        },
+        "name": "FullOrganizationFacilityQuery",
+        "description": "This operation is used to query for an organization or facility and will return the information for that organization or facility without following associations to other providers, organizations, or facilities.",
+        "exampleBoolean": false,
+        "groupingId": "Operations"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "OperationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "OperationDefinition/bc-full-provider-query"
+        },
+        "name": "FullProviderQuery",
+        "description": "This operation is used to query for a provider and will return the information for that provider without following associations to other providers, organizations, or facilities.",
         "exampleBoolean": false,
         "groupingId": "Operations"
       }
@@ -902,11 +932,6 @@
         {
           "nameUrl": "connected_partner.html",
           "title": "Becoming a Connected Partner",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "system.html",
-          "title": "Performance and Availability",
           "generation": "markdown"
         },
         {

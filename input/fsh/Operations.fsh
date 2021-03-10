@@ -1,35 +1,220 @@
-Instance: FullResourceQuery
+Instance: FullProviderQuery
 InstanceOf: OperationDefinition
-Description: "This operation is used to query for a provider, organization, or facility and will return the information for that provider, organization, or facility, without following associations to other providers, organizations, or facilities."
+Description: "This operation is used to query for a provider and will return the information for that provider without following associations to other providers, organizations, or facilities."
 Usage: #definition
-* id = "bc-full-resource-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-resource-query"
-* name = "FullResourceQuery"
+* id = "bc-full-provider-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-provider-query"
+* name = "FullProviderQuery"
 * title = "Full Query for a provider"
 * status = #draft
 * kind = #query
 * code = #full
 * resource[0] = #Practitioner
-* resource[1] = #Organization
-* resource[2] = #Location
 * system = false
 * type = true
 * instance = true
+* parameter[0].name = #surname
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1"
+* parameter[0].documentation = "Search for providers with the specified surname."
+* parameter[0].type = #string
+* parameter[0].searchType = #string
+* parameter[1].name = #given
+* parameter[1].use = #in
+* parameter[1].min = 0
+* parameter[1].max = "1"
+* parameter[1].documentation = "Search for providers with the specified given name."
+* parameter[1].type = #string
+* parameter[1].searchType = #string
+* parameter[2].name = #status
+* parameter[2].use = #in
+* parameter[2].min = 0
+* parameter[2].max = "1"
+* parameter[2].documentation = "Search for providers with a license that has the specified status."
+* parameter[2].type = #string
+* parameter[2].searchType = #token
+* parameter[3].name = #address-city
+* parameter[3].use = #in
+* parameter[3].min = 0
+* parameter[3].max = "1"
+* parameter[3].documentation = "Search for providers with an address that includes the given city."
+* parameter[3].type = #string
+* parameter[3].searchType = #string
+* parameter[4].name = #gender
+* parameter[4].use = #in
+* parameter[4].min = 0
+* parameter[4].max = "1"
+* parameter[4].documentation = "Search for providers with the specified gender."
+* parameter[4].type = #string
+* parameter[4].searchType = #token
+* parameter[5].name = #role
+* parameter[5].use = #in
+* parameter[5].min = 0
+* parameter[5].max = "1"
+* parameter[5].documentation = "Search for providers that have an associated PractitionerRole code with the specified value."
+* parameter[5].type = #string
+* parameter[5].searchType = #token
+* parameter[6].name = #language
+* parameter[6].use = #in
+* parameter[6].min = 0
+* parameter[6].max = "1"
+* parameter[6].documentation = "Search for providers who can communicate with the specified language code."
+* parameter[6].type = #string
+* parameter[6].searchType = #token
+* parameter[7].name = #expertise
+* parameter[7].use = #in
+* parameter[7].min = 0
+* parameter[7].max = "1"
+* parameter[7].documentation = "Search for providers with a qualification that matches the specified expertise."
+* parameter[7].type = #string
+* parameter[7].searchType = #token
+* parameter[8].name = #status-reason
+* parameter[8].use = #in
+* parameter[8].min = 0
+* parameter[8].max = "1"
+* parameter[8].documentation = "Search for providers with a license that has the specified status reason."
+* parameter[8].type = #string
+* parameter[8].searchType = #token
+* parameter[9].name = #organization-name
+* parameter[9].use = #in
+* parameter[9].min = 0
+* parameter[9].max = "1"
+* parameter[9].documentation = "Search for providers associated with an organization with the specified name."
+* parameter[9].type = #string
+* parameter[9].searchType = #string
 
-Instance: DereferenceResourceQuery
+Instance: FullOrganizationFacilityQuery
 InstanceOf: OperationDefinition
-Description: "This operation is used to query for a provider, organization, or facility and will return the information for that provider, organization, or facility, along with any instances that can be found by following associations to other providers, organizations, or facilities."
+Description: "This operation is used to query for an organization or facility and will return the information for that organization or facility without following associations to other providers, organizations, or facilities."
 Usage: #definition
-* id = "bc-dereference-resource-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-resource-query"
-* name = "DereferenceResourceQuery"
-* title = "Dereferenced Query for a provider"
+* id = "bc-full-organization-facility-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-organization-facility-query"
+* name = "FullOrganizationFacilityQuery"
+* title = "Full Query for an organization or location"
+* status = #draft
+* kind = #query
+* code = #full
+* resource[0] = #Organization
+* resource[1] = #Location
+* system = false
+* type = true
+* instance = true
+* parameter[0].name = #name
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1"
+* parameter[0].documentation = "Search for organizations or locations with the specified name."
+* parameter[0].type = #string
+* parameter[0].searchType = #string
+
+Instance: DereferenceProviderQuery
+InstanceOf: OperationDefinition
+Description: "This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities."
+Usage: #definition
+* id = "bc-dereference-provider-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-provider-query"
+* name = "DereferenceProviderQuery"
+* title = "Dereferenced Query for a Provider"
 * status = #draft
 * kind = #query
 * code = #dereference
 * resource[0] = #Practitioner
-* resource[1] = #Organization
-* resource[2] = #Location
 * system = false
 * type = true
 * instance = true
+* parameter[0].name = #surname
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1"
+* parameter[0].documentation = "Search for providers with the specified surname."
+* parameter[0].type = #string
+* parameter[0].searchType = #string
+* parameter[1].name = #given
+* parameter[1].use = #in
+* parameter[1].min = 0
+* parameter[1].max = "1"
+* parameter[1].documentation = "Search for providers with the specified given name."
+* parameter[1].type = #string
+* parameter[1].searchType = #string
+* parameter[2].name = #status
+* parameter[2].use = #in
+* parameter[2].min = 0
+* parameter[2].max = "1"
+* parameter[2].documentation = "Search for providers with a license that has the specified status."
+* parameter[2].type = #string
+* parameter[2].searchType = #token
+* parameter[3].name = #address-city
+* parameter[3].use = #in
+* parameter[3].min = 0
+* parameter[3].max = "1"
+* parameter[3].documentation = "Search for providers with an address that includes the given city."
+* parameter[3].type = #string
+* parameter[3].searchType = #string
+* parameter[4].name = #gender
+* parameter[4].use = #in
+* parameter[4].min = 0
+* parameter[4].max = "1"
+* parameter[4].documentation = "Search for providers with the specified gender."
+* parameter[4].type = #string
+* parameter[4].searchType = #token
+* parameter[5].name = #role
+* parameter[5].use = #in
+* parameter[5].min = 0
+* parameter[5].max = "1"
+* parameter[5].documentation = "Search for providers that have an associated PractitionerRole code with the specified value."
+* parameter[5].type = #string
+* parameter[5].searchType = #token
+* parameter[6].name = #language
+* parameter[6].use = #in
+* parameter[6].min = 0
+* parameter[6].max = "1"
+* parameter[6].documentation = "Search for providers who can communicate with the specified language code."
+* parameter[6].type = #string
+* parameter[6].searchType = #token
+* parameter[7].name = #expertise
+* parameter[7].use = #in
+* parameter[7].min = 0
+* parameter[7].max = "1"
+* parameter[7].documentation = "Search for providers with a qualification that matches the specified expertise."
+* parameter[7].type = #string
+* parameter[7].searchType = #token
+* parameter[8].name = #status-reason
+* parameter[8].use = #in
+* parameter[8].min = 0
+* parameter[8].max = "1"
+* parameter[8].documentation = "Search for providers with a license that has the specified status reason."
+* parameter[8].type = #string
+* parameter[8].searchType = #token
+* parameter[9].name = #organization-name
+* parameter[9].use = #in
+* parameter[9].min = 0
+* parameter[9].max = "1"
+* parameter[9].documentation = "Search for providers associated with an organization with the specified name."
+* parameter[9].type = #string
+* parameter[9].searchType = #string
+
+Instance: DereferenceOrganizationFacilityQuery
+InstanceOf: OperationDefinition
+Description: "This operation is used to query for an organization or facility and will return the information for that organization or facility along with any instances that can be found by following associations to other providers, organizations, or facilities."
+Usage: #definition
+* id = "bc-dereference-organization-facility-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-organization-facility-query"
+* name = "DereferenceOrganizationFacilityQuery"
+* title = "Dereference Query for an organization or location"
+* status = #draft
+* kind = #query
+* code = #dereference
+* resource[0] = #Organization
+* resource[1] = #Location
+* system = false
+* type = true
+* instance = true
+* parameter[0].name = #name
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1"
+* parameter[0].documentation = "Search for organizations or locations with the specified name."
+* parameter[0].type = #string
+* parameter[0].searchType = #string
+
