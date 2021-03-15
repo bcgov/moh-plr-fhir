@@ -137,8 +137,28 @@ Description: "Tracking the status and changes to the status of a practitioner/or
 * extension[endReasonCode].value[x] only CodeableConcept
 * extension[custodianId].value[x] only Identifier
 
+Profile: BCProviderBundle
+Parent: Bundle
+Id: bc-provider-bundle
+Description: "A bundle that submits Practitioner and PractitionerRole information."
+* type 1..1 MS
+* type = #transaction (exactly)
+* entry 1..*
+* entry.resource 1..1 MS
+* entry.fullUrl 1..1 MS
+* entry.search 0..0
+* entry.request 1..1 MS
+* entry.response 0..0
+* entry ^slicing.discriminator.type = #type
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "The specific bundle entries that are needed for creating or updating a BC Practitioner."
+* entry contains Practitioner 1..* MS and PractitionerRole 0..* MS
+* entry[Practitioner].resource only BCPractitioner
+* entry[PractitionerRole].resource only BCPractitionerRole
+
 Instance: Example-AddProvider-Bundle
-InstanceOf: Bundle
+InstanceOf: BCProviderBundle
 Description: "Example of a bundle of resources sent when requesting a provider create."
 * type = #transaction
 * entry[0].fullUrl = "http://plr.moh.bc.ca/fhir/Practitioner/12345"
@@ -153,14 +173,14 @@ Description: "Example of a bundle of resources sent when requesting a provider c
 * entry[2].resource = Example-AddProvider-RelatedPractitioner
 * entry[2].request.method = #POST
 * entry[2].request.url = "http://plr.moh.bc.ca/fhir/Practitioner"
-* entry[3].fullUrl = "http://plr.moh.bc.ca/fhir/Organization/12345"
-* entry[3].resource = Example-Qualification-Organization
-* entry[3].request.method = #POST
-* entry[3].request.url = "http://plr.moh.bc.ca/fhir/Organization"
-* entry[4].fullUrl = "http://plr.moh.bc.ca/fhir/Location/12345"
-* entry[4].resource = Example-AddProvider-WorkLocation
-* entry[4].request.method = #POST
-* entry[4].request.url = "http://plr.moh.bc.ca/fhir/Location"
+//* entry[3].fullUrl = "http://plr.moh.bc.ca/fhir/Organization/12345"
+//* entry[3].resource = Example-Qualification-Organization
+//* entry[3].request.method = #POST
+//* entry[3].request.url = "http://plr.moh.bc.ca/fhir/Organization"
+//* entry[4].fullUrl = "http://plr.moh.bc.ca/fhir/Location/12345"
+//* entry[4].resource = Example-AddProvider-WorkLocation
+//* entry[4].request.method = #POST
+//* entry[4].request.url = "http://plr.moh.bc.ca/fhir/Location"
 
 Instance: Example-AddProvider-Practitioner
 InstanceOf: BCPractitioner

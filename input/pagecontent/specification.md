@@ -85,8 +85,8 @@ Rather than using the FHIR RESTful search mechanism, PLR FHIR has defined a set 
 
 The two query operations are:
 
-* $full - used to return the full [provider](OperationDefinition/bc-full-provider-query.html) or [organization or facility](OperationDefinition/bc-full-organization-facility-query.html) without following relationships
-* $dereference - used to return the full [provider](OperationDefinition/bc-dereference-provider-query.html) or [organization or facility](OperationDefinition/bc-dereference-organization-facility-query.html) along with all directly referenced providers or facilities
+* $full - used to return the full [provider](OperationDefinition-bc-full-provider-query.html) or [organization or facility](OperationDefinition-bc-full-organization-facility-query.html) without following relationships
+* $dereference - used to return the full [provider](OperationDefinition-bc-dereference-provider-query.html) or [organization or facility](OperationDefinition-bc-dereference-organization-facility-query.html) along with all directly referenced providers or facilities
 
 The syntax for the $full operation is:
 

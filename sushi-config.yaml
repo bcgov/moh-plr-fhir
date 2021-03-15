@@ -49,14 +49,18 @@ parameters:
   path-output: \docs
   
 groups:
-  Operations:
-    name: Operations
-    description: PLR Operations and the Bundle profiles associated with them
+  Capabilities:
+    name: Capabilities
+    description: PLR CapabilityStatement, the defined Operations and the Bundle profiles associated with them
     resources:
+      - CapabilityStatement/bc-plr-capability-statement
       - OperationDefinition/bc-full-provider-query
       - OperationDefinition/bc-full-organization-facility-query
       - OperationDefinition/bc-dereference-provider-query
       - OperationDefinition/bc-dereference-organization-facility-query
+      - StructureDefinition/bc-provider-bundle
+      - StructureDefinition/bc-organization-bundle
+      - StructureDefinition/bc-location-bundle
   Practitioner:
     name: Practitioner
     description: Artifacts associated with Practitioners
@@ -81,7 +85,7 @@ groups:
     description: Artifacts associated with Organizations
     resources:
       - StructureDefinition/bc-organization
-      - StructureDefinition/bc-organizationaffiliation
+      - StructureDefinition/bc-organization-affiliation
       - Bundle/Example-AddOrganization-Bundle
       - Organization/Example-AddOrganization-Organization
       - OrganizationAffiliation/Example-AddOrganization-OrganizationAffiliation
