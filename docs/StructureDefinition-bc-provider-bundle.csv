@@ -177,7 +177,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","OperationOutcome with hints and warnings (for batch/transaction)","An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction.","For a POST/PUT operation, this is the equivalent outcome that would be returned for prefer = operationoutcome - except that the resource is always returned whether or not the outcome is returned.
 
 This outcome is not used for error responses in batch/transaction, only for hints and warnings. In a batch operation, the error will be in Bundle.entry.response, and for transaction, there will be a single OperationOutcome instead of a bundle in the case of an error.","","","","","","","","",,,,,"",,,,"Bundle.entry.response.outcome",0,1,"",""
-"Bundle.entry","Practitioner","","",1,*,"Y","","Y","BackboneElement {[]} {[]}
+"Bundle.entry","Practitioner","","",1,1,"Y","","Y","BackboneElement {[]} {[]}
 ","Entry in the bundle - will have a resource or information","An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).","","","","","","","","","",,,,,"",,,,"Bundle.entry",0,*,"","bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}
 bdl-8:fullUrl cannot be a version specific reference {fullUrl.contains('/_history/').not()}ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}"
 "Bundle.entry.id","","","",0,1,"","","","string {[]} {[]}

@@ -2,6 +2,12 @@ Profile: BCPractitioner
 Parent: Practitioner
 Id: bc-practitioner
 Description: "General constraints on the Practitioner resource for use in the BC Provider Registry project."
+* contained ^slicing.discriminator.type = #type
+* contained ^slicing.discriminator.path = "$this"
+* contained ^slicing.rules = #open
+* contained ^slicing.description = "The organization that authorized a qualification."
+* contained contains QualificationOrganization 0..* MS
+* contained[QualificationOrganization] only BCOrganization
 * identifier only BCIdentifier
 * identifier 1..* MS
 * active MS
@@ -153,7 +159,7 @@ Description: "A bundle that submits Practitioner and PractitionerRole informatio
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for creating or updating a BC Practitioner."
-* entry contains Practitioner 1..* MS and PractitionerRole 0..* MS
+* entry contains Practitioner 1..1 MS and PractitionerRole 0..* MS
 * entry[Practitioner].resource only BCPractitioner
 * entry[PractitionerRole].resource only BCPractitionerRole
 
@@ -169,18 +175,6 @@ Description: "Example of a bundle of resources sent when requesting a provider c
 * entry[1].resource = Example-AddProvider-PractitionerRole
 * entry[1].request.method = #POST
 * entry[1].request.url = "http://plr.moh.bc.ca/fhir/PractitionerRole"
-* entry[2].fullUrl = "http://plr.moh.bc.ca/fhir/Practitioner/23456"
-* entry[2].resource = Example-AddProvider-RelatedPractitioner
-* entry[2].request.method = #POST
-* entry[2].request.url = "http://plr.moh.bc.ca/fhir/Practitioner"
-//* entry[3].fullUrl = "http://plr.moh.bc.ca/fhir/Organization/12345"
-//* entry[3].resource = Example-Qualification-Organization
-//* entry[3].request.method = #POST
-//* entry[3].request.url = "http://plr.moh.bc.ca/fhir/Organization"
-//* entry[4].fullUrl = "http://plr.moh.bc.ca/fhir/Location/12345"
-//* entry[4].resource = Example-AddProvider-WorkLocation
-//* entry[4].request.method = #POST
-//* entry[4].request.url = "http://plr.moh.bc.ca/fhir/Location"
 
 Instance: Example-AddProvider-Practitioner
 InstanceOf: BCPractitioner
@@ -225,6 +219,8 @@ Description: "Example of a BC practitioner that is being created."
 * extension[relationship].extension[practitioner].valueReference = Reference(Example-AddProvider-RelatedPractitioner)
 * extension[demographicsPeriod].valuePeriod.start = "2000-01-01"
 * extension[demographicsPeriod].valuePeriod.end = "2020-01-01"
+* contained[QualificationOrganization] = Example-Qualification-Organization
+* contained[QualificationOrganization].id = "qualificationOrganization"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.40.2.4"
 * identifier.value = "MD20180719V01"
 * identifier.period.start = "2000-01-01"
@@ -268,7 +264,7 @@ Description: "Example of a BC practitioner that is being created."
 * qualification.code.text = "CREDENTIAL_CREDENTIALDESIGNATIONTXT"
 * qualification.period.start = "2000-01-01"
 * qualification.period.end = "2020-01-01"
-* qualification.issuer = Reference(Example-Qualification-Organization)
+* qualification.issuer.reference = "#qualificationOrganization"
 * qualification.extension[issueDate].valueDateTime = "2001"
 
 Instance: Example-AddProvider-RelatedPractitioner

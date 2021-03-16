@@ -86,10 +86,6 @@ Description: "Example of a Bundle of resources that are needed to create an Orga
 * entry[1].resource = Example-AddOrganization-OrganizationAffiliation
 * entry[1].request.method = #POST
 * entry[1].request.url = "http://plr.moh.bc.ca/fhir/OrganizationAffiliation"
-//* entry[2].fullUrl = "http://plr.moh.bc.ca/fhir/Location/12345"
-//* entry[2].resource = Example-AddOrganization-Location
-//* entry[2].request.method = #POST
-//* entry[2].request.url = "http://plr.moh.bc.ca/fhir/Location"
 
 Instance: Example-AddOrganization-Organization
 InstanceOf: BCOrganization
