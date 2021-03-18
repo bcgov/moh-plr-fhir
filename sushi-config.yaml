@@ -20,12 +20,12 @@ menu:
   Connected Partner: connected_partner.html
   Future Plans: future.html
   Artifacts:
-    Operations: artifacts.html#1
+    Capabilities: artifacts.html#1
     Practitioner: artifacts.html#2
     Organization: artifacts.html#3
     Facility: artifacts.html#4
-    Datatypes: artifacts.html#5
-    Common: artifacts.html#6
+    Common: artifacts.html#5
+    Datatypes: artifacts.html#6
   Glossary: glossary.html
   Credits: credits.html
   
@@ -54,13 +54,17 @@ groups:
     description: PLR CapabilityStatement, the defined Operations and the Bundle profiles associated with them
     resources:
       - CapabilityStatement/bc-plr-capability-statement
-      - OperationDefinition/bc-full-provider-query
+      - OperationDefinition/bc-full-practitioner-query
       - OperationDefinition/bc-full-organization-facility-query
-      - OperationDefinition/bc-dereference-provider-query
+      - OperationDefinition/bc-dereference-practitioner-query
       - OperationDefinition/bc-dereference-organization-facility-query
-      - StructureDefinition/bc-provider-bundle
+      - StructureDefinition/bc-practitioner-bundle
       - StructureDefinition/bc-organization-bundle
       - StructureDefinition/bc-location-bundle
+      - Bundle/Example-Batch-Bundle
+      - Bundle/Example-AddPractitioner-Bundle
+      - Bundle/Example-AddOrganization-Bundle
+      - Bundle/Example-AddLocation-Bundle
   Practitioner:
     name: Practitioner
     description: Artifacts associated with Practitioners
@@ -75,10 +79,9 @@ groups:
       - StructureDefinition/bc-practitioner-disciplinary-action-extension
       - StructureDefinition/bc-practitioner-condition-extension
       - StructureDefinition/bc-practitioner-qualification-issue-date-extension
-      - Bundle/Example-AddProvider-Bundle
-      - Practitioner/Example-AddProvider-Practitioner
-      - Practitioner/Example-AddProvider-RelatedPractitioner
-      - PractitionerRole/Example-AddProvider-PractitionerRole
+      - Practitioner/Example-AddPractitioner-Practitioner
+      - Practitioner/Example-AddPractitioner-RelatedPractitioner
+      - PractitionerRole/Example-AddPractitioner-PractitionerRole
       - Organization/Example-Qualification-Organization
   Organization:
     name: Organization
@@ -86,27 +89,18 @@ groups:
     resources:
       - StructureDefinition/bc-organization
       - StructureDefinition/bc-organization-affiliation
-      - Bundle/Example-AddOrganization-Bundle
       - Organization/Example-AddOrganization-Organization
       - OrganizationAffiliation/Example-AddOrganization-OrganizationAffiliation
   Facility:
     name: Facility
-    description: Artifacts associated with Facilities (Locations)
+    description: Artifacts associated with Facilities
     resources:
       - StructureDefinition/bc-location
       - StructureDefinition/bc-facility-details-extension
       - StructureDefinition/bc-facility-community-health-service-area-extension
       - StructureDefinition/bc-facility-mailing-address-extension
-      - Location/Example-AddProvider-WorkLocation
+      - Location/Example-AddPractitioner-WorkLocation
       - Location/Example-AddOrganization-Location
-  Datatypes:
-    name: Datatypes
-    description: Artifacts associated with datatypes
-    resources:
-      - StructureDefinition/bc-identifier
-      - StructureDefinition/bc-contactPoint
-      - StructureDefinition/bc-address
-      - StructureDefinition/bc-humanName
   Common:
     name: Common
     description: Artifacts used across all groupings
@@ -116,3 +110,11 @@ groups:
       - StructureDefinition/bc-name-use-extension
       - StructureDefinition/bc-end-reason-extension
       - StructureDefinition/bc-period-extension
+  Datatypes:
+    name: Datatypes
+    description: Artifacts associated with datatypes
+    resources:
+      - StructureDefinition/bc-identifier
+      - StructureDefinition/bc-contactPoint
+      - StructureDefinition/bc-address
+      - StructureDefinition/bc-humanName

@@ -24,10 +24,12 @@ A Distribution is used by PLR to communicate a change in a single Practitioner, 
 
 One PUT message per distribution and each distribution will have a single Provider or Facility.  Each distribution message has a logical ID which is a database unique key.  This logical ID is not intended to be used in any other message, i.e., one can not request the Bundle with GET /Bundle/123445.
 
+With the restriction on the content of the different Distribution Bundles, it may take multiple Bundles to convey all of the relationships between Practitioners, Organizations, and Locations.  To send a PractitionerRole, the Organization and/or Location must already exist.  Similarly, for OrganizationAffiliations, the Organizations and/or Locations must already exist.  That could possibly mean that one would see a Distribution Bundle with just an Organization and then another Bundle with a Practitioner and a PractitionerRole linking the Practitioner and the Organization.
+
 The response to a distribution must be HTTP 200 or 201 OK.  Anything else and the reliable messaging function will retry to send the message until a 200 is received back.
 
 #### Maintain
-Maintain Provider and Facility will be exactly like Distributions above, just an incoming message, rather than an outbound message.
+Maintain Provider and Facility will be exactly like Distributions above, just an incoming message, rather than an outbound message.  The rules for Distributions apply to Maintain Bundles.
 
 The logical ID of the transaction Bundle is assigned by the source of the message and is not intended to be used again.  The source today requires a unique identifier for each message, and the logical ID can be that unique identifier.
 
@@ -40,7 +42,7 @@ Batch also uses Bundles, but a batch Bundle.  A batch Bundle allows for many ind
 2.	a transaction Bundle (with OrganizationAffiliation(s), PractitionerRole(s) and Organizations) to add/update a Org. Provider
 3.	a transaction Bundle (with OrganizationAffiliations(s) and PractitionerRole(s)) to add/update a Facility
 
-Batch is not a web service, but a file uploaded to an ftp site.  The logical ID of a Batch should be assigned by the source; PLR batch users should be assigning a unique identifier to the batch file (requirement today) so that will have to be the logical ID.  The logical ID is transient and not meant to be used again in any way.  Within the batch Bundle each transaction will have a conformant logical ID if the transaction is to update an existing Provider or Facility.  If the transaction is to create, the logical ID is assigned by PLR and returned in the response Bundle.
+The logical ID of a Batch should be assigned by the source; PLR batch users should be assigning a unique identifier to the batch file (requirement today) so that will have to be the logical ID.  The logical ID is transient and not meant to be used again in any way.  Within the batch Bundle each transaction will have a conformant logical ID if the transaction is to update an existing Provider or Facility.  If the transaction is to create, the logical ID is assigned by PLR and returned in the response Bundle.
 
 The response Bundle is similarly structured to the request, populating and echoing back the results of each transaction.  The only difference is that OperationOutcome should also be included for each transaction for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn't processed due to validation or non-business errors.
 
@@ -49,8 +51,8 @@ Rather than using the FHIR RESTful search mechanism, PLR FHIR has defined a set 
 
 The two query operations are:
 
-* $full - used to return the full [provider](OperationDefinition-bc-full-provider-query.html) or [organization or facility](OperationDefinition-bc-full-organization-facility-query.html) without following relationships
-* $dereference - used to return the full [provider](OperationDefinition-bc-dereference-provider-query.html) or [organization or facility](OperationDefinition-bc-dereference-organization-facility-query.html) along with all directly referenced providers or facilities
+* $full - used to return the full [provider](OperationDefinition-bc-full-practitioner-query.html) or [organization or facility](OperationDefinition-bc-full-organization-facility-query.html) without following relationships
+* $dereference - used to return the full [provider](OperationDefinition-bc-dereference-practitioner-query.html) or [organization or facility](OperationDefinition-bc-dereference-organization-facility-query.html) along with all directly referenced providers or facilities
 
 The syntax for the $full operation is:
 
@@ -74,15 +76,15 @@ The parameters for the $dereference operation will be the standard search parame
 
 * rest[0].mode = #server
 * rest[0].resource[0].type = #Bundle
-* rest[0].resource[0].supportedProfile[0] = Canonical(BCProviderBundle)
+* rest[0].resource[0].supportedProfile[0] = Canonical(BCPractitionerBundle)
 * rest[0].resource[0].supportedProfile[1] = Canonical(BCOrganizationBundle)
 * rest[0].resource[0].supportedProfile[2] = Canonical(BCLocationBundle)
 * rest[0].resource[0].interaction[0].code = #create
 * rest[0].resource[1].type = #Practitioner
 * rest[0].resource[1].operation[0].name = "full"
-* rest[0].resource[1].operation[0].definition = Canonical(FullProviderQuery)
+* rest[0].resource[1].operation[0].definition = Canonical(FullPractitionerQuery)
 * rest[0].resource[1].operation[1].name = "dereference"
-* rest[0].resource[1].operation[1].definition = Canonical(DereferenceProviderQuery)
+* rest[0].resource[1].operation[1].definition = Canonical(DereferencePractitionerQuery)
 * rest[0].resource[2].type = #Organization
 * rest[0].resource[2].operation[0].name = "full"
 * rest[0].resource[2].operation[0].definition = Canonical(FullOrganizationFacilityQuery)
@@ -95,7 +97,8 @@ The parameters for the $dereference operation will be the standard search parame
 * rest[0].resource[1].operation[1].definition = Canonical(DereferenceOrganizationFacilityQuery)
 * rest[1].mode = #client
 * rest[1].resource[0].type = #Bundle
-* rest[1].resource[0].supportedProfile[0] = Canonical(BCProviderBundle)
+* rest[1].resource[0].supportedProfile[0] = Canonical(BCPractitionerBundle)
 * rest[1].resource[0].supportedProfile[1] = Canonical(BCOrganizationBundle)
 * rest[1].resource[0].supportedProfile[2] = Canonical(BCLocationBundle)
+* rest[1].resource[0].supportedProfile[3] = Canonical(BCBatchBundle)
 * rest[1].resource[0].interaction[0].code = #create

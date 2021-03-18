@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="bc-full-practitioner-query"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>FullPractitionerQuery</h2><p>QUERY: FullPractitionerQuery</p><p>The official URL for this operation definition is: </p><pre>http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-practitioner-query</pre><p>URL: [base]/Practitioner/$full</p><p>URL: [base]/Practitioner/[id]/$full</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>surname</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for practitioners with the specified surname.</p>
+</div></td></tr><tr><td>IN</td><td>given</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for practitioners with the specified given name.</p>
+</div></td></tr><tr><td>IN</td><td>status</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners with a license that has the specified status.</p>
+</div></td></tr><tr><td>IN</td><td>address-city</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for practitioners with an address that includes the given city.</p>
+</div></td></tr><tr><td>IN</td><td>gender</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners with the specified gender.</p>
+</div></td></tr><tr><td>IN</td><td>role</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners that have an associated PractitionerRole code with the specified value.</p>
+</div></td></tr><tr><td>IN</td><td>language</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners who can communicate with the specified language code.</p>
+</div></td></tr><tr><td>IN</td><td>expertise</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners with a qualification that matches the specified expertise.</p>
+</div></td></tr><tr><td>IN</td><td>status-reason</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners with a license that has the specified status reason.</p>
+</div></td></tr><tr><td>IN</td><td>organization-name</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for practitioners associated with an organization with the specified name.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-practitioner-query"/>
+  <version value="0.1.0"/>
+  <name value="FullPractitionerQuery"/>
+  <title value="Full Query for a practitioner"/>
+  <status value="draft"/>
+  <kind value="query"/>
+  <date value="2021-03-18T00:19:32-06:00"/>
+  <publisher value="BC Ministry of Health"/>
+  <contact>
+    <name value="BC Ministry of Health"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="CA"/>
+      <display value="Canada"/>
+    </coding>
+  </jurisdiction>
+  <code value="full"/>
+  <resource value="Practitioner"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="surname"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with the specified surname."/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="given"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with the specified given name."/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="status"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with a license that has the specified status."/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="address-city"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with an address that includes the given city."/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="gender"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with the specified gender."/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="role"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners that have an associated PractitionerRole code with the specified value."/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="language"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners who can communicate with the specified language code."/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="expertise"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with a qualification that matches the specified expertise."/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="status-reason"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with a license that has the specified status reason."/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="organization-name"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners associated with an organization with the specified name."/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+</OperationDefinition>

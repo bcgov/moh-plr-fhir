@@ -1,0 +1,381 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-AddPractitioner-Practitioner> a fhir:Practitioner;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "Example-AddPractitioner-Practitioner"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>BC Valid Period</b>: 2000-01-01 --&gt; 2020-01-01</p><blockquote><p><b>BC License Status Extension</b></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-RoleStatus active}\">active</span></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2000-01-01 --&gt; 2020-01-01</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <span title=\"Codes: {http://example.org/status_reason_code PRAC}\">PRAC</span></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: id: RNA</p></blockquote><blockquote><p><b>BC End Reason Extension</b></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: id: RNA</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <span title=\"Codes: {http://example.org/status_reason_code PRAC}\">PRAC</span></p></blockquote><p><b>BC Practitioner Date of Death Extension</b>: 2000-02-01</p><p><b>BC Birth Place Extension</b>: AL US </p><blockquote><p><b>BC Practitioner Disciplinary Actions</b></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: id: DISCIPLINARY_ACTION_TEST1</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: DISCIPLINARYACTION_DESCRIPTIONTXT_1</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: Nov. 20, 1950, 12:00:00 a.m. --&gt; 2020-01-01</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2020-01-01</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: true</p></blockquote><blockquote><p><b>BC Practitioner Confidentiality Extension</b></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-Confidentiality N}\">normal</span></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2000-01-01 --&gt; 2020-01-01</p></blockquote><blockquote><p><b>BC Notes</b></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: id: noteID1</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: Note text sample</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2000-01-01 --&gt; 2020-01-01</p></blockquote><blockquote><p><b>BC Practitioner Conditions</b></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: id: 23</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2000-01-01 --&gt; 2020-01-01</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: true</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: CONDITION_RESTRICTION_EXPLANATION TEXT</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <span title=\"Codes: {http://example.org/condition_type_code LOC}\">LOC</span></p></blockquote><blockquote><p><b>BC Practitioner to Practitioner Relationship</b></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: 2000-01-01 --&gt; 2020-01-01</p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <a href=\"Practitioner-Example-AddPractitioner-RelatedPractitioner.html\">Generated Summary: id: 3DEGDIDERCHIDMAY22T02; 23</a></p><h3>Urls</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>value</b>: <span title=\"Codes: {http://example.org/provider_relationship_type_code LOC}\">LOC</span></p></blockquote><p><b>identifier</b>: id: MD20180719V01</p><p><b>active</b>: true</p><p><b>name</b>: SONYA NAME PRSNSECONDGIVENNAMETXT NAME PRSNTHIRDGIVENNAMETXT KELASEY (OFFICIAL)</p><p><b>telecom</b>: ph: 2507654333(HOME), <a href=\"mailto:hey@day.com\">hey@day.com</a></p><p><b>address</b>: 91 RD ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V8V8V8 (WORK)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1951-11-12</p><h3>Qualifications</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Identifier</b></td><td><b>Code</b></td><td><b>Period</b></td><td><b>Issuer</b></td></tr><tr><td>*</td><td></td><td>id: CREDENTIAL_REGISTRATIONNUMBERTXT</td><td><span title=\"Codes: {https://fhir.infoway-inforoute.ca/CodeSystem/scpqual BD}\">CREDENTIAL_CREDENTIALDESIGNATIONTXT</span></td><td>2000-01-01 --&gt; 2020-01-01</td><td><a name=\"qualificationOrganization\"> </a><blockquote><p><b>name</b>: CREDENTIAL_CREDENTIALGRANTINGINSTTXT</p><p><b>address</b>: CALGARY AB CA </p></blockquote></td></tr></table></div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Organization;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "qualificationOrganization" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization";
+         fhir:index 0;
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization>
+       ]
+     ];
+     fhir:Organization.name [ fhir:value "CREDENTIAL_CREDENTIALGRANTINGINSTTXT" ];
+     fhir:Organization.address [
+       fhir:index 0;
+       fhir:Address.city [ fhir:value "CALGARY" ];
+       fhir:Address.state [ fhir:value "AB" ];
+       fhir:Address.country [ fhir:value "CA" ]
+     ]
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+     fhir:Extension.valuePeriod [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "statusCode" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleStatus" ];
+           fhir:Coding.code [ fhir:value "active" ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "period" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "statusReasonCode" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/status_reason_code" ];
+           fhir:Coding.code [ fhir:value "PRAC" ]
+         ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Extension.url [ fhir:value "custodianId" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.16" ];
+         fhir:Identifier.value [ fhir:value "RNA" ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension" ]
+  ], [
+     fhir:index 2;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "custodianId" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.16" ];
+         fhir:Identifier.value [ fhir:value "RNA" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "endReasonCode" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/status_reason_code" ];
+           fhir:Coding.code [ fhir:value "PRAC" ]
+         ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension" ]
+  ], [
+     fhir:index 3;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-deathdate-extension" ];
+     fhir:Extension.valueDateTime [ fhir:value "2000-02-01"^^xsd:date ]
+  ], [
+     fhir:index 4;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthplace-extension" ];
+     fhir:Extension.valueAddress [
+       fhir:Address.state [ fhir:value "AL" ];
+       fhir:Address.country [ fhir:value "US" ]
+     ]
+  ], [
+     fhir:index 5;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "identifier" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.4" ];
+         fhir:Identifier.value [ fhir:value "DISCIPLINARY_ACTION_TEST1" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "description" ];
+       fhir:Extension.valueString [ fhir:value "DISCIPLINARYACTION_DESCRIPTIONTXT_1" ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "1950-11-20T00:00:00-07:00"^^xsd:dateTime ];
+         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Extension.url [ fhir:value "archiveDate" ];
+       fhir:Extension.valueDateTime [ fhir:value "2020-01-01"^^xsd:date ]
+     ], [
+       fhir:index 4;
+       fhir:Extension.url [ fhir:value "displayFlag" ];
+       fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension" ]
+  ], [
+     fhir:index 6;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "code" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-Confidentiality" ];
+           fhir:Coding.code [ fhir:value "N" ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-confidentiality-extension" ]
+  ], [
+     fhir:index 7;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "identifier" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.6" ];
+         fhir:Identifier.value [ fhir:value "noteID1" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "text" ];
+       fhir:Extension.valueString [ fhir:value "Note text sample" ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension" ]
+  ], [
+     fhir:index 8;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "identifier" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.1" ];
+         fhir:Identifier.value [ fhir:value "23" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "restriction" ];
+       fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 3;
+       fhir:Extension.url [ fhir:value "restrictionText" ];
+       fhir:Extension.valueString [ fhir:value "CONDITION_RESTRICTION_EXPLANATION TEXT" ]
+     ], [
+       fhir:index 4;
+       fhir:Extension.url [ fhir:value "code" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/condition_type_code" ];
+           fhir:Coding.code [ fhir:value "LOC" ]
+         ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-condition-extension" ]
+  ], [
+     fhir:index 9;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "practitioner" ];
+       fhir:Extension.valueReference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-AddPractitioner-RelatedPractitioner>;
+         fhir:Reference.reference [ fhir:value "Practitioner/Example-AddPractitioner-RelatedPractitioner" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "type" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/provider_relationship_type_code" ];
+           fhir:Coding.code [ fhir:value "LOC" ]
+         ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension" ]
+  ];
+  fhir:Practitioner.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.4" ];
+     fhir:Identifier.value [ fhir:value "MD20180719V01" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+     ]
+  ];
+  fhir:Practitioner.active [ fhir:value "true"^^xsd:boolean];
+  fhir:Practitioner.name [
+     fhir:index 0;
+     fhir:HumanName.use [ fhir:value "official" ];
+     fhir:HumanName.family [ fhir:value "KELASEY" ];
+     fhir:HumanName.given [
+       fhir:value "SONYA";
+       fhir:index 0
+     ], [
+       fhir:value "NAME PRSNSECONDGIVENNAMETXT";
+       fhir:index 1
+     ], [
+       fhir:value "NAME PRSNTHIRDGIVENNAMETXT";
+       fhir:index 2
+     ];
+     fhir:HumanName.prefix [
+       fhir:value "PRSNPREFIX";
+       fhir:index 0
+     ];
+     fhir:HumanName.suffix [
+       fhir:value "PRSNSUFFIX";
+       fhir:index 0
+     ];
+     fhir:HumanName.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+     ]
+  ];
+  fhir:Practitioner.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "2507654333" ];
+     fhir:ContactPoint.use [ fhir:value "home" ];
+     fhir:ContactPoint.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactPoint.system [ fhir:value "email" ];
+     fhir:ContactPoint.value [ fhir:value "hey@day.com" ];
+     fhir:ContactPoint.use [ fhir:value "work" ];
+     fhir:ContactPoint.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+     ]
+  ];
+  fhir:Practitioner.address [
+     fhir:index 0;
+     fhir:Address.use [ fhir:value "work" ];
+     fhir:Address.type [ fhir:value "postal" ];
+     fhir:Address.line [
+       fhir:value "91 RD";
+       fhir:index 0
+     ], [
+       fhir:value "ADDRESS ADDRESSLINE2TXT";
+       fhir:index 1
+     ], [
+       fhir:value "ADDRESS ADDRESSLINE3TXT";
+       fhir:index 2
+     ];
+     fhir:Address.city [ fhir:value "VICTORIA" ];
+     fhir:Address.state [ fhir:value "BC" ];
+     fhir:Address.postalCode [ fhir:value "V8V8V8" ];
+     fhir:Address.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+     ]
+  ];
+  fhir:Practitioner.gender [ fhir:value "female"];
+  fhir:Practitioner.birthDate [
+     fhir:value "1951-11-12"^^xsd:date;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthtime-extension" ];
+       fhir:Extension.valueDateTime [ fhir:value "1951-11-12T00:00:01-06:00"^^xsd:dateTime ]
+     ]
+  ];
+  fhir:Practitioner.qualification [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-issue-date-extension" ];
+       fhir:Extension.valueDateTime [ fhir:value "2001"^^xsd:gYear ]
+     ];
+     fhir:Practitioner.qualification.identifier [
+       fhir:index 0;
+       fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.2" ];
+       fhir:Identifier.value [ fhir:value "CREDENTIAL_REGISTRATIONNUMBERTXT" ]
+     ];
+     fhir:Practitioner.qualification.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://fhir.infoway-inforoute.ca/CodeSystem/scpqual" ];
+         fhir:Coding.code [ fhir:value "BD" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "CREDENTIAL_CREDENTIALDESIGNATIONTXT" ]
+     ];
+     fhir:Practitioner.qualification.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+     ];
+     fhir:Practitioner.qualification.issuer [
+       fhir:Reference.reference [ fhir:value "#qualificationOrganization" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-AddPractitioner-RelatedPractitioner> a fhir:ca-bc .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-AddPractitioner-Practitioner.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ca-bc/provider/Practitioner/Example-AddPractitioner-Practitioner.ttl> .
+
+# -------------------------------------------------------------------------------------
+

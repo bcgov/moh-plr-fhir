@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2021-03-16T16:35:08-06:00"/>
+  <date value="2021-03-18T00:19:32-06:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -198,15 +198,15 @@
     </grouping>
     <grouping id="Facility">
       <name value="Facility"/>
-      <description value="Artifacts associated with Facilities (Locations)"/>
-    </grouping>
-    <grouping id="Datatypes">
-      <name value="Datatypes"/>
-      <description value="Artifacts associated with datatypes"/>
+      <description value="Artifacts associated with Facilities"/>
     </grouping>
     <grouping id="Common">
       <name value="Common"/>
       <description value="Artifacts used across all groupings"/>
+    </grouping>
+    <grouping id="Datatypes">
+      <name value="Datatypes"/>
+      <description value="Artifacts associated with datatypes"/>
     </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -219,6 +219,17 @@
       <description value="Adds an end reason to the address."/>
       <exampleBoolean value="false"/>
       <groupingId value="Datatypes"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-batch-bundle"/>
+      </reference>
+      <name value="BCBatchBundle"/>
+      <description value="A Bundle that is used in the PLR Batch operation."/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -333,24 +344,24 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/bc-practitioner-role"/>
+        <reference value="StructureDefinition/bc-practitioner-bundle"/>
       </reference>
-      <name value="BCPractitionerRole"/>
-      <description value="General constraints on the PractitionerRole resource for use in the BC Provider Registry project."/>
+      <name value="BCPractitionerBundle"/>
+      <description value="A bundle that submits Practitioner and PractitionerRole information."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Practitioner"/>
+      <groupingId value="Capabilities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/bc-provider-bundle"/>
+        <reference value="StructureDefinition/bc-practitioner-role"/>
       </reference>
-      <name value="BCProviderBundle"/>
-      <description value="A bundle that submits Practitioner and PractitionerRole information."/>
+      <name value="BCPractitionerRole"/>
+      <description value="General constraints on the PractitionerRole resource for use in the BC Provider Registry project."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Capabilities"/>
+      <groupingId value="Practitioner"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -549,12 +560,24 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
+        <reference value="Bundle/Example-AddLocation-Bundle"/>
+      </reference>
+      <name value="Example-AddLocation-Bundle"/>
+      <description value="An example of bundle that is adding a location."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle"/>
+      <groupingId value="Capabilities"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
         <reference value="Bundle/Example-AddOrganization-Bundle"/>
       </reference>
       <name value="Example-AddOrganization-Bundle"/>
       <description value="Example of a Bundle of resources that are needed to create an Organization."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle"/>
-      <groupingId value="Organization"/>
+      <groupingId value="Capabilities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -597,21 +620,21 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/Example-AddProvider-Bundle"/>
+        <reference value="Bundle/Example-AddPractitioner-Bundle"/>
       </reference>
-      <name value="Example-AddProvider-Bundle"/>
-      <description value="Example of a bundle of resources sent when requesting a provider create."/>
-      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-provider-bundle"/>
-      <groupingId value="Practitioner"/>
+      <name value="Example-AddPractitioner-Bundle"/>
+      <description value="Example of a bundle of resources sent when requesting a practitioner create."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"/>
+      <groupingId value="Capabilities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Practitioner"/>
       </extension>
       <reference>
-        <reference value="Practitioner/Example-AddProvider-Practitioner"/>
+        <reference value="Practitioner/Example-AddPractitioner-Practitioner"/>
       </reference>
-      <name value="Example-AddProvider-Practitioner"/>
+      <name value="Example-AddPractitioner-Practitioner"/>
       <description value="Example of a BC practitioner that is being created."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
       <groupingId value="Practitioner"/>
@@ -621,9 +644,9 @@
         <valueString value="PractitionerRole"/>
       </extension>
       <reference>
-        <reference value="PractitionerRole/Example-AddProvider-PractitionerRole"/>
+        <reference value="PractitionerRole/Example-AddPractitioner-PractitionerRole"/>
       </reference>
-      <name value="Example-AddProvider-PractitionerRole"/>
+      <name value="Example-AddPractitioner-PractitionerRole"/>
       <description value="Example of the role that the created practitioner is playing."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
       <groupingId value="Practitioner"/>
@@ -633,9 +656,9 @@
         <valueString value="Practitioner"/>
       </extension>
       <reference>
-        <reference value="Practitioner/Example-AddProvider-RelatedPractitioner"/>
+        <reference value="Practitioner/Example-AddPractitioner-RelatedPractitioner"/>
       </reference>
-      <name value="Example-AddProvider-RelatedPractitioner"/>
+      <name value="Example-AddPractitioner-RelatedPractitioner"/>
       <description value="Example of a practitioner that has a relationship to the example created practitioner."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
       <groupingId value="Practitioner"/>
@@ -645,12 +668,24 @@
         <valueString value="Location"/>
       </extension>
       <reference>
-        <reference value="Location/Example-AddProvider-WorkLocation"/>
+        <reference value="Location/Example-AddPractitioner-WorkLocation"/>
       </reference>
-      <name value="Example-AddProvider-WorkLocation"/>
+      <name value="Example-AddPractitioner-WorkLocation"/>
       <description value="Example of a Location (facility) that is the affiliated with an Organization."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location"/>
       <groupingId value="Facility"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/Example-Batch-Bundle"/>
+      </reference>
+      <name value="Example-Batch-Bundle"/>
+      <description value="An example of a Batch Bundle that contains one each of a Practitioner bundle, Organization bundle, and a Location bundle."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle"/>
+      <groupingId value="Capabilities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -681,9 +716,9 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/bc-dereference-provider-query"/>
+        <reference value="OperationDefinition/bc-dereference-practitioner-query"/>
       </reference>
-      <name value="DereferenceProviderQuery"/>
+      <name value="DereferencePractitionerQuery"/>
       <description value="This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities."/>
       <exampleBoolean value="false"/>
       <groupingId value="Capabilities"/>
@@ -705,9 +740,9 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/bc-full-provider-query"/>
+        <reference value="OperationDefinition/bc-full-practitioner-query"/>
       </reference>
-      <name value="FullProviderQuery"/>
+      <name value="FullPractitionerQuery"/>
       <description value="This operation is used to query for a provider and will return the information for that provider without following associations to other providers, organizations, or facilities."/>
       <exampleBoolean value="false"/>
       <groupingId value="Capabilities"/>
@@ -720,7 +755,7 @@
         <reference value="CapabilityStatement/bc-plr-capability-statement"/>
       </reference>
       <name value="BCPLRCapabilityStatement"/>
-      <description value="This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.&#xA;&#xA;* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location&#xA;* Maintain - used when an outside source is communicating a change to PLR&#xA;* Batch - allows for the sending of multiple Maintain messages at one time&#xA;* Queries - a set of operations are defined that allow the querying of PLR FHIR instances&#xA;&#xA;#### Distributions&#xA;&#xA;A Distribution is used by PLR to communicate a change in a single Practitioner, Organization, or Location.  It will be accomplished by sending a FHIR Bundle of type &#39;transaction&#39; via a RESTful PUT message.  The transaction Bundle includes one of the following sets:&#xA;&#xA;1.&#x9;PractitionerRole(s) and Practitioner;&#xA;2.&#x9;OrganizationAffiliation(s), PractitionerRole(s) and Organization;&#xA;3.&#x9;Location, OrganizationAffiliation(s), PractitionerRole(s).  &#xA;&#xA;One PUT message per distribution and each distribution will have a single Provider or Facility.  Each distribution message has a logical ID which is a database unique key.  This logical ID is not intended to be used in any other message, i.e., one can not request the Bundle with GET /Bundle/123445.&#xA;&#xA;The response to a distribution must be HTTP 200 or 201 OK.  Anything else and the reliable messaging function will retry to send the message until a 200 is received back.&#xA;&#xA;#### Maintain&#xA;Maintain Provider and Facility will be exactly like Distributions above, just an incoming message, rather than an outbound message.&#xA;&#xA;The logical ID of the transaction Bundle is assigned by the source of the message and is not intended to be used again.  The source today requires a unique identifier for each message, and the logical ID can be that unique identifier.&#xA;&#xA;The response will also be a Bundle with OperationOutcome and the modified or new resource(s) within the Bundle.  A maintain Bundle must only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created that target Provider must already exist in PLR, otherwise the whole transaction Bundle is rolled back.&#xA;&#xA;#### Batch&#xA;Batch also uses Bundles, but a batch Bundle.  A batch Bundle allows for many independent transactions to be sent in a single message.  The batch Bundle must contain at least one or more of:&#xA;&#xA;1.&#x9;a transaction Bundle (with PractitionerRole(s) and Practitioner) to add/update a Ind. Provider&#xA;2.&#x9;a transaction Bundle (with OrganizationAffiliation(s), PractitionerRole(s) and Organizations) to add/update a Org. Provider&#xA;3.&#x9;a transaction Bundle (with OrganizationAffiliations(s) and PractitionerRole(s)) to add/update a Facility&#xA;&#xA;Batch is not a web service, but a file uploaded to an ftp site.  The logical ID of a Batch should be assigned by the source; PLR batch users should be assigning a unique identifier to the batch file (requirement today) so that will have to be the logical ID.  The logical ID is transient and not meant to be used again in any way.  Within the batch Bundle each transaction will have a conformant logical ID if the transaction is to update an existing Provider or Facility.  If the transaction is to create, the logical ID is assigned by PLR and returned in the response Bundle.&#xA;&#xA;The response Bundle is similarly structured to the request, populating and echoing back the results of each transaction.  The only difference is that OperationOutcome should also be included for each transaction for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn&#39;t processed due to validation or non-business errors.&#xA;&#xA;#### Query&#xA;Rather than using the FHIR RESTful search mechanism, PLR FHIR has defined a set of FHIR Operations to search for Providers and Facilities.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR&#39;s case, the server would need to include resources that make up the full Provider or additionally return the full Provider and related Providers or Facilities.  Queries using PractitionerRole and OrganizationAffiliation are not permitted and unnecessary.&#xA;&#xA;The two query operations are:&#xA;&#xA;* $full - used to return the full [provider](OperationDefinition-bc-full-provider-query.html) or [organization or facility](OperationDefinition-bc-full-organization-facility-query.html) without following relationships&#xA;* $dereference - used to return the full [provider](OperationDefinition-bc-dereference-provider-query.html) or [organization or facility](OperationDefinition-bc-dereference-organization-facility-query.html) along with all directly referenced providers or facilities&#xA;&#xA;The syntax for the $full operation is:&#xA;&#xA;* GET /resource/id/$full to retrieve a specific provider or facility where the id is known&#xA;* GET /resource/$full?param1&amp;param2&amp;... to search for a provider or facility&#xA;&#xA;The parameters for the $full operation will be the standard search parameters.&#xA;&#xA;The syntax for the $dereference operation is:&#xA;&#xA;* GET /resource/id/$dereference to retrieve the full information about a specific provider or facility where the id is known&#xA;* GET /resource/$dereference?param1&amp;param2&amp;... to search and retrieve the full information about a provider or facility&#xA;&#xA;The parameters for the $dereference operation will be the standard search parameters, along with the &#39;join&#39; parameters, e.g., location_city, organization_name, etc."/>
+      <description value="This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.&#xA;&#xA;* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location&#xA;* Maintain - used when an outside source is communicating a change to PLR&#xA;* Batch - allows for the sending of multiple Maintain messages at one time&#xA;* Queries - a set of operations are defined that allow the querying of PLR FHIR instances&#xA;&#xA;#### Distributions&#xA;&#xA;A Distribution is used by PLR to communicate a change in a single Practitioner, Organization, or Location.  It will be accomplished by sending a FHIR Bundle of type &#39;transaction&#39; via a RESTful PUT message.  The transaction Bundle includes one of the following sets:&#xA;&#xA;1.&#x9;PractitionerRole(s) and Practitioner;&#xA;2.&#x9;OrganizationAffiliation(s), PractitionerRole(s) and Organization;&#xA;3.&#x9;Location, OrganizationAffiliation(s), PractitionerRole(s).  &#xA;&#xA;One PUT message per distribution and each distribution will have a single Provider or Facility.  Each distribution message has a logical ID which is a database unique key.  This logical ID is not intended to be used in any other message, i.e., one can not request the Bundle with GET /Bundle/123445.&#xA;&#xA;With the restriction on the content of the different Distribution Bundles, it may take multiple Bundles to convey all of the relationships between Practitioners, Organizations, and Locations.  To send a PractitionerRole, the Organization and/or Location must already exist.  Similarly, for OrganizationAffiliations, the Organizations and/or Locations must already exist.  That could possibly mean that one would see a Distribution Bundle with just an Organization and then another Bundle with a Practitioner and a PractitionerRole linking the Practitioner and the Organization.&#xA;&#xA;The response to a distribution must be HTTP 200 or 201 OK.  Anything else and the reliable messaging function will retry to send the message until a 200 is received back.&#xA;&#xA;#### Maintain&#xA;Maintain Provider and Facility will be exactly like Distributions above, just an incoming message, rather than an outbound message.  The rules for Distributions apply to Maintain Bundles.&#xA;&#xA;The logical ID of the transaction Bundle is assigned by the source of the message and is not intended to be used again.  The source today requires a unique identifier for each message, and the logical ID can be that unique identifier.&#xA;&#xA;The response will also be a Bundle with OperationOutcome and the modified or new resource(s) within the Bundle.  A maintain Bundle must only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created that target Provider must already exist in PLR, otherwise the whole transaction Bundle is rolled back.&#xA;&#xA;#### Batch&#xA;Batch also uses Bundles, but a batch Bundle.  A batch Bundle allows for many independent transactions to be sent in a single message.  The batch Bundle must contain at least one or more of:&#xA;&#xA;1.&#x9;a transaction Bundle (with PractitionerRole(s) and Practitioner) to add/update a Ind. Provider&#xA;2.&#x9;a transaction Bundle (with OrganizationAffiliation(s), PractitionerRole(s) and Organizations) to add/update a Org. Provider&#xA;3.&#x9;a transaction Bundle (with OrganizationAffiliations(s) and PractitionerRole(s)) to add/update a Facility&#xA;&#xA;The logical ID of a Batch should be assigned by the source; PLR batch users should be assigning a unique identifier to the batch file (requirement today) so that will have to be the logical ID.  The logical ID is transient and not meant to be used again in any way.  Within the batch Bundle each transaction will have a conformant logical ID if the transaction is to update an existing Provider or Facility.  If the transaction is to create, the logical ID is assigned by PLR and returned in the response Bundle.&#xA;&#xA;The response Bundle is similarly structured to the request, populating and echoing back the results of each transaction.  The only difference is that OperationOutcome should also be included for each transaction for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn&#39;t processed due to validation or non-business errors.&#xA;&#xA;#### Query&#xA;Rather than using the FHIR RESTful search mechanism, PLR FHIR has defined a set of FHIR Operations to search for Providers and Facilities.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR&#39;s case, the server would need to include resources that make up the full Provider or additionally return the full Provider and related Providers or Facilities.  Queries using PractitionerRole and OrganizationAffiliation are not permitted and unnecessary.&#xA;&#xA;The two query operations are:&#xA;&#xA;* $full - used to return the full [provider](OperationDefinition-bc-full-practitioner-query.html) or [organization or facility](OperationDefinition-bc-full-organization-facility-query.html) without following relationships&#xA;* $dereference - used to return the full [provider](OperationDefinition-bc-dereference-practitioner-query.html) or [organization or facility](OperationDefinition-bc-dereference-organization-facility-query.html) along with all directly referenced providers or facilities&#xA;&#xA;The syntax for the $full operation is:&#xA;&#xA;* GET /resource/id/$full to retrieve a specific provider or facility where the id is known&#xA;* GET /resource/$full?param1&amp;param2&amp;... to search for a provider or facility&#xA;&#xA;The parameters for the $full operation will be the standard search parameters.&#xA;&#xA;The syntax for the $dereference operation is:&#xA;&#xA;* GET /resource/id/$dereference to retrieve the full information about a specific provider or facility where the id is known&#xA;* GET /resource/$dereference?param1&amp;param2&amp;... to search and retrieve the full information about a provider or facility&#xA;&#xA;The parameters for the $dereference operation will be the standard search parameters, along with the &#39;join&#39; parameters, e.g., location_city, organization_name, etc."/>
       <exampleBoolean value="true"/>
       <groupingId value="Capabilities"/>
     </resource>

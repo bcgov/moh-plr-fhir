@@ -72,7 +72,17 @@ Description: "A bundle that submits Location information."
 * entry[OrganizationAffiliation].resource only BCOrganizationAffiliation
 * entry[PractitionerRole].resource only BCPractitionerRole
 
-Instance: Example-AddProvider-WorkLocation
+Instance: Example-AddLocation-Bundle
+InstanceOf: BCLocationBundle
+Description: "An example of bundle that is adding a location."
+* type = #transaction
+* entry[0].fullUrl = "http://plr.moh.bc.ca/fhir/Location/12345"
+* entry[0].resource = Example-AddOrganization-Location
+* entry[0].request.method = #POST
+* entry[0].request.url = "http://plr.moh.bc.ca/fhir/Location"
+
+
+Instance: Example-AddPractitioner-WorkLocation
 InstanceOf: BCLocation
 Description: "Example of a Location (facility) that is the affiliated with an Organization."
 * extension[facilityDetails].extension[ownerName].valueString = "OPERATOR NAME"

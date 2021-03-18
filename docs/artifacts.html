@@ -100,7 +100,7 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="artifacts.html#1">Operations</a>
+        <a href="artifacts.html#1">Capabilities</a>
       </li>
       <li>
         <a href="artifacts.html#2">Practitioner</a>
@@ -112,10 +112,10 @@
         <a href="artifacts.html#4">Facility</a>
       </li>
       <li>
-        <a href="artifacts.html#5">Datatypes</a>
+        <a href="artifacts.html#5">Common</a>
       </li>
       <li>
-        <a href="artifacts.html#6">Common</a>
+        <a href="artifacts.html#6">Datatypes</a>
       </li>
     </ul>
   </li>
@@ -176,10 +176,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#4">Facility</a>
       </li>
       <li>
-         <a href="#5">Datatypes</a>
+         <a href="#5">Common</a>
       </li>
       <li>
-         <a href="#6">Common</a>
+         <a href="#6">Datatypes</a>
+      </li>
+      <li>
+         <a href="#7">Structures: Resource Profiles</a>
       </li>
    </ul>
 </div>
@@ -216,11 +219,47 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-bc-provider-bundle.html"
-                     title="StructureDefinition/bc-provider-bundle">BCProviderBundle</a>
+                  <a href="StructureDefinition-bc-practitioner-bundle.html"
+                     title="StructureDefinition/bc-practitioner-bundle">BCPractitionerBundle</a>
                </td>
                <td>
 <p>A bundle that submits Practitioner and PractitionerRole information.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Bundle-Example-AddLocation-Bundle.html"
+                     title="Bundle/Example-AddLocation-Bundle">Example-AddLocation-Bundle</a>
+               </td>
+               <td>
+<p>An example of bundle that is adding a location.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Bundle-Example-AddOrganization-Bundle.html"
+                     title="Bundle/Example-AddOrganization-Bundle">Example-AddOrganization-Bundle</a>
+               </td>
+               <td>
+<p>Example of a Bundle of resources that are needed to create an Organization.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Bundle-Example-AddPractitioner-Bundle.html"
+                     title="Bundle/Example-AddPractitioner-Bundle">Example-AddPractitioner-Bundle</a>
+               </td>
+               <td>
+<p>Example of a bundle of resources sent when requesting a practitioner create.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Bundle-Example-Batch-Bundle.html"
+                     title="Bundle/Example-Batch-Bundle">Example-Batch-Bundle</a>
+               </td>
+               <td>
+<p>An example of a Batch Bundle that contains one each of a Practitioner bundle, Organization bundle, and a Location bundle.</p>
 </td>
             </tr>
             <tr>
@@ -234,8 +273,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-dereference-provider-query.html"
-                     title="OperationDefinition/bc-dereference-provider-query">DereferenceProviderQuery</a>
+                  <a href="OperationDefinition-bc-dereference-practitioner-query.html"
+                     title="OperationDefinition/bc-dereference-practitioner-query">DereferencePractitionerQuery</a>
                </td>
                <td>
 <p>This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities.</p>
@@ -252,8 +291,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-full-provider-query.html"
-                     title="OperationDefinition/bc-full-provider-query">FullProviderQuery</a>
+                  <a href="OperationDefinition-bc-full-practitioner-query.html"
+                     title="OperationDefinition/bc-full-practitioner-query">FullPractitionerQuery</a>
                </td>
                <td>
 <p>This operation is used to query for a provider and will return the information for that provider without following associations to other providers, organizations, or facilities.</p>
@@ -286,10 +325,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>One PUT message per distribution and each distribution will have a single Provider or Facility.  Each distribution message has a logical ID which is a database unique key.  This logical ID is not intended to be used in any other message, i.e., one can not request the Bundle with GET /Bundle/123445.</p>
 
+<p>With the restriction on the content of the different Distribution Bundles, it may take multiple Bundles to convey all of the relationships between Practitioners, Organizations, and Locations.  To send a PractitionerRole, the Organization and/or Location must already exist.  Similarly, for OrganizationAffiliations, the Organizations and/or Locations must already exist.  That could possibly mean that one would see a Distribution Bundle with just an Organization and then another Bundle with a Practitioner and a PractitionerRole linking the Practitioner and the Organization.</p>
+
 <p>The response to a distribution must be HTTP 200 or 201 OK.  Anything else and the reliable messaging function will retry to send the message until a 200 is received back.</p>
 
 <h4 id="maintain">Maintain</h4>
-<p>Maintain Provider and Facility will be exactly like Distributions above, just an incoming message, rather than an outbound message.</p>
+<p>Maintain Provider and Facility will be exactly like Distributions above, just an incoming message, rather than an outbound message.  The rules for Distributions apply to Maintain Bundles.</p>
 
 <p>The logical ID of the transaction Bundle is assigned by the source of the message and is not intended to be used again.  The source today requires a unique identifier for each message, and the logical ID can be that unique identifier.</p>
 
@@ -304,7 +345,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>a transaction Bundle (with OrganizationAffiliations(s) and PractitionerRole(s)) to add/update a Facility</li>
 </ol>
 
-<p>Batch is not a web service, but a file uploaded to an ftp site.  The logical ID of a Batch should be assigned by the source; PLR batch users should be assigning a unique identifier to the batch file (requirement today) so that will have to be the logical ID.  The logical ID is transient and not meant to be used again in any way.  Within the batch Bundle each transaction will have a conformant logical ID if the transaction is to update an existing Provider or Facility.  If the transaction is to create, the logical ID is assigned by PLR and returned in the response Bundle.</p>
+<p>The logical ID of a Batch should be assigned by the source; PLR batch users should be assigning a unique identifier to the batch file (requirement today) so that will have to be the logical ID.  The logical ID is transient and not meant to be used again in any way.  Within the batch Bundle each transaction will have a conformant logical ID if the transaction is to update an existing Provider or Facility.  If the transaction is to create, the logical ID is assigned by PLR and returned in the response Bundle.</p>
 
 <p>The response Bundle is similarly structured to the request, populating and echoing back the results of each transaction.  The only difference is that OperationOutcome should also be included for each transaction for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn’t processed due to validation or non-business errors.</p>
 
@@ -314,8 +355,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>The two query operations are:</p>
 
 <ul>
-  <li>$full - used to return the full <a href="OperationDefinition-bc-full-provider-query.html">provider</a> or <a href="OperationDefinition-bc-full-organization-facility-query.html">organization or facility</a> without following relationships</li>
-  <li>$dereference - used to return the full <a href="OperationDefinition-bc-dereference-provider-query.html">provider</a> or <a href="OperationDefinition-bc-dereference-organization-facility-query.html">organization or facility</a> along with all directly referenced providers or facilities</li>
+  <li>$full - used to return the full <a href="OperationDefinition-bc-full-practitioner-query.html">provider</a> or <a href="OperationDefinition-bc-full-organization-facility-query.html">organization or facility</a> without following relationships</li>
+  <li>$dereference - used to return the full <a href="OperationDefinition-bc-dereference-practitioner-query.html">provider</a> or <a href="OperationDefinition-bc-dereference-organization-facility-query.html">organization or facility</a> along with all directly referenced providers or facilities</li>
 </ul>
 
 <p>The syntax for the $full operation is:</p>
@@ -441,17 +482,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Bundle-Example-AddProvider-Bundle.html"
-                     title="Bundle/Example-AddProvider-Bundle">Example-AddProvider-Bundle</a>
-               </td>
-               <td>
-<p>Example of a bundle of resources sent when requesting a provider create.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Practitioner-Example-AddProvider-Practitioner.html"
-                     title="Practitioner/Example-AddProvider-Practitioner">Example-AddProvider-Practitioner</a>
+                  <a href="Practitioner-Example-AddPractitioner-Practitioner.html"
+                     title="Practitioner/Example-AddPractitioner-Practitioner">Example-AddPractitioner-Practitioner</a>
                </td>
                <td>
 <p>Example of a BC practitioner that is being created.</p>
@@ -459,8 +491,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="PractitionerRole-Example-AddProvider-PractitionerRole.html"
-                     title="PractitionerRole/Example-AddProvider-PractitionerRole">Example-AddProvider-PractitionerRole</a>
+                  <a href="PractitionerRole-Example-AddPractitioner-PractitionerRole.html"
+                     title="PractitionerRole/Example-AddPractitioner-PractitionerRole">Example-AddPractitioner-PractitionerRole</a>
                </td>
                <td>
 <p>Example of the role that the created practitioner is playing.</p>
@@ -468,8 +500,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Practitioner-Example-AddProvider-RelatedPractitioner.html"
-                     title="Practitioner/Example-AddProvider-RelatedPractitioner">Example-AddProvider-RelatedPractitioner</a>
+                  <a href="Practitioner-Example-AddPractitioner-RelatedPractitioner.html"
+                     title="Practitioner/Example-AddPractitioner-RelatedPractitioner">Example-AddPractitioner-RelatedPractitioner</a>
                </td>
                <td>
 <p>Example of a practitioner that has a relationship to the example created practitioner.</p>
@@ -516,15 +548,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Bundle-Example-AddOrganization-Bundle.html"
-                     title="Bundle/Example-AddOrganization-Bundle">Example-AddOrganization-Bundle</a>
-               </td>
-               <td>
-<p>Example of a Bundle of resources that are needed to create an Organization.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
                   <a href="Organization-Example-AddOrganization-Organization.html"
                      title="Organization/Example-AddOrganization-Organization">Example-AddOrganization-Organization</a>
                </td>
@@ -547,7 +570,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <a name="4"> </a>
    <h3>Facility </h3>
    <p>
-    <p>Artifacts associated with Facilities (Locations)</p>
+    <p>Artifacts associated with Facilities</p>
 </p>
    <p>
       <table class="grid">
@@ -600,8 +623,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Location-Example-AddProvider-WorkLocation.html"
-                     title="Location/Example-AddProvider-WorkLocation">Example-AddProvider-WorkLocation</a>
+                  <a href="Location-Example-AddPractitioner-WorkLocation.html"
+                     title="Location/Example-AddPractitioner-WorkLocation">Example-AddPractitioner-WorkLocation</a>
                </td>
                <td>
 <p>Example of a Location (facility) that is the affiliated with an Organization.</p>
@@ -611,54 +634,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </table>
    </p>
    <a name="5"> </a>
-   <h3>Datatypes </h3>
-   <p>
-    <p>Artifacts associated with datatypes</p>
-</p>
-   <p>
-      <table class="grid">
-         <col style="width:20%"/>
-         <tbody>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-bc-address.html"
-                     title="StructureDefinition/bc-address">BCAddress</a>
-               </td>
-               <td>
-<p>Adds an end reason to the address.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-bc-contactPoint.html"
-                     title="StructureDefinition/bc-contactPoint">BCContactPoint</a>
-               </td>
-               <td>
-<p>Adds an end reason and extra contact information.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-bc-humanName.html"
-                     title="StructureDefinition/bc-humanName">BCHumanName</a>
-               </td>
-               <td>
-<p>Adds an end resaon and a use code to a name.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-bc-identifier.html"
-                     title="StructureDefinition/bc-identifier">BCIdentifier</a>
-               </td>
-               <td>
-<p>Adds an end reason to the identifier.</p>
-</td>
-            </tr>
-         </tbody>
-      </table>
-   </p>
-   <a name="6"> </a>
    <h3>Common </h3>
    <p>
     <p>Artifacts used across all groupings</p>
@@ -715,6 +690,75 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
+   <a name="6"> </a>
+   <h3>Datatypes </h3>
+   <p>
+    <p>Artifacts associated with datatypes</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-address.html"
+                     title="StructureDefinition/bc-address">BCAddress</a>
+               </td>
+               <td>
+<p>Adds an end reason to the address.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-contactPoint.html"
+                     title="StructureDefinition/bc-contactPoint">BCContactPoint</a>
+               </td>
+               <td>
+<p>Adds an end reason and extra contact information.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-humanName.html"
+                     title="StructureDefinition/bc-humanName">BCHumanName</a>
+               </td>
+               <td>
+<p>Adds an end resaon and a use code to a name.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-identifier.html"
+                     title="StructureDefinition/bc-identifier">BCIdentifier</a>
+               </td>
+               <td>
+<p>Adds an end reason to the identifier.</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="7"> </a>
+   <h3>Structures: Resource Profiles </h3>
+   <p>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-batch-bundle.html"
+                     title="StructureDefinition/bc-batch-bundle">BCBatchBundle</a>
+               </td>
+               <td>
+<p>A Bundle that is used in the PLR Batch operation.</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
 </div>
 
 </div>
@@ -737,7 +781,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 16, 2021 16:35-0600">2021-03-16</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 18, 2021 00:19-0600">2021-03-18</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

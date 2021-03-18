@@ -143,9 +143,9 @@ Description: "Tracking the status and changes to the status of a practitioner/or
 * extension[endReasonCode].value[x] only CodeableConcept
 * extension[custodianId].value[x] only Identifier
 
-Profile: BCProviderBundle
+Profile: BCPractitionerBundle
 Parent: Bundle
-Id: bc-provider-bundle
+Id: bc-practitioner-bundle
 Description: "A bundle that submits Practitioner and PractitionerRole information."
 * type 1..1 MS
 * type = #transaction (exactly)
@@ -163,20 +163,20 @@ Description: "A bundle that submits Practitioner and PractitionerRole informatio
 * entry[Practitioner].resource only BCPractitioner
 * entry[PractitionerRole].resource only BCPractitionerRole
 
-Instance: Example-AddProvider-Bundle
-InstanceOf: BCProviderBundle
-Description: "Example of a bundle of resources sent when requesting a provider create."
+Instance: Example-AddPractitioner-Bundle
+InstanceOf: BCPractitionerBundle
+Description: "Example of a bundle of resources sent when requesting a practitioner create."
 * type = #transaction
 * entry[0].fullUrl = "http://plr.moh.bc.ca/fhir/Practitioner/12345"
-* entry[0].resource = Example-AddProvider-Practitioner
+* entry[0].resource = Example-AddPractitioner-Practitioner
 * entry[0].request.method = #POST
 * entry[0].request.url = "http://plr.moh.bc.ca/fhir/Practitioner"
 * entry[1].fullUrl = "http://plr.moh.bc.ca/fhir/PractitionerRole/12345"
-* entry[1].resource = Example-AddProvider-PractitionerRole
+* entry[1].resource = Example-AddPractitioner-PractitionerRole
 * entry[1].request.method = #POST
 * entry[1].request.url = "http://plr.moh.bc.ca/fhir/PractitionerRole"
 
-Instance: Example-AddProvider-Practitioner
+Instance: Example-AddPractitioner-Practitioner
 InstanceOf: BCPractitioner
 Description: "Example of a BC practitioner that is being created."
 * extension[status].extension[statusCode].valueCodeableConcept = $RoleStatus#active
@@ -216,7 +216,7 @@ Description: "Example of a BC practitioner that is being created."
 * extension[relationship].extension[period].valuePeriod.start = "2000-01-01"
 * extension[relationship].extension[period].valuePeriod.end = "2020-01-01"
 * extension[relationship].extension[type].valueCodeableConcept = http://example.org/provider_relationship_type_code#LOC
-* extension[relationship].extension[practitioner].valueReference = Reference(Example-AddProvider-RelatedPractitioner)
+* extension[relationship].extension[practitioner].valueReference = Reference(Example-AddPractitioner-RelatedPractitioner)
 * extension[demographicsPeriod].valuePeriod.start = "2000-01-01"
 * extension[demographicsPeriod].valuePeriod.end = "2020-01-01"
 * contained[QualificationOrganization] = Example-Qualification-Organization
@@ -267,7 +267,7 @@ Description: "Example of a BC practitioner that is being created."
 * qualification.issuer.reference = "#qualificationOrganization"
 * qualification.extension[issueDate].valueDateTime = "2001"
 
-Instance: Example-AddProvider-RelatedPractitioner
+Instance: Example-AddPractitioner-RelatedPractitioner
 InstanceOf: BCPractitioner
 Description: "Example of a practitioner that has a relationship to the example created practitioner."
 * extension[demographicsPeriod].valuePeriod.start = "2000-01-01"
@@ -275,10 +275,10 @@ Description: "Example of a practitioner that has a relationship to the example c
 * identifier.value = "3DEGDIDERCHIDMAY22T02"
 * name.text = "23"
 
-Instance: Example-AddProvider-PractitionerRole
+Instance: Example-AddPractitioner-PractitionerRole
 InstanceOf: BCPractitionerRole
 Description: "Example of the role that the created practitioner is playing."
-* practitioner = Reference(Example-AddProvider-Practitioner)
+* practitioner = Reference(Example-AddPractitioner-Practitioner)
 * organization.display = "BC"
 * code = $SCPType#MD
 * specialty = http://snomed.info/sct#419772000
@@ -287,6 +287,6 @@ Description: "Example of the role that the created practitioner is playing."
 * specialty.extension[endReason].extension[endReasonCode].valueCodeableConcept = http://example.org/status_reason_code#PRAC
 * specialty.extension[endReason].extension[custodianId].valueIdentifier.system = "http://example.org/custodian-ids"
 * specialty.extension[endReason].extension[custodianId].valueIdentifier.value = "123456679"
-* location = Reference(Example-AddProvider-WorkLocation)
+* location = Reference(Example-AddPractitioner-WorkLocation)
 * location.extension[period].valuePeriod.start = "2000-01-01"
 * location.extension[period].valuePeriod.end = "2020-01-01"
