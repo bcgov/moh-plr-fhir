@@ -7,9 +7,7 @@ This specification is currently published as a Draft Standard on the ministry gi
 
 This specification was written and built by:
 
-* Jonathan Wiebe (CGI)
-* Linda Woo (CGI)
-* Neil Shrimpton (CGI)
-* Lorraine Constable (Constable Consulting)
-* Jean Duteau (Duteau Design)
-* Khushwinder Sekhon (BC MOH)
+* BC Ministry of Health (Khushwinder Sekhon)
+* CGI (Jonathan Wiebe, Linda Woo, Neil Shrimpton)
+* Constable Consulting (Lorraine Constable)
+* Duteau Design (Jean Duteau)
