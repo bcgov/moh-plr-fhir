@@ -51,7 +51,7 @@ PLR FHIR has defined a set of FHIR Operations to search for Providers and Facili
 
 The two query operations are:
 
-* $full - used to return the full [provider](OperationDefinition-bc-full-practitioner-query.html) or [organization or facility](OperationDefinition-bc-full-organization-facility-query.html) without following relationships
+* $full - used to return the full [provider](OperationDefinition-bc-full-practitioner-query.html) or [organization](OperationDefinition-bc-full-organization--query.html) or [location](OperationDefinition-bc-full-location-query.html) without following relationships
 * $dereference - used to return the full [provider](OperationDefinition-bc-dereference-practitioner-query.html) or [organization or facility](OperationDefinition-bc-dereference-organization-facility-query.html) along with all directly referenced providers or facilities
 
 The syntax for the $full operation is:
@@ -90,14 +90,14 @@ The parameters for the $dereference operation will be the standard search parame
 * rest[0].resource[1].operation[1].definition = Canonical(DereferencePractitionerQuery)
 * rest[0].resource[2].type = #Organization
 * rest[0].resource[2].operation[0].name = "full"
-* rest[0].resource[2].operation[0].definition = Canonical(FullOrganizationFacilityQuery)
+* rest[0].resource[2].operation[0].definition = Canonical(FullOrganizationQuery)
 * rest[0].resource[1].operation[1].name = "dereference"
-* rest[0].resource[1].operation[1].definition = Canonical(DereferenceOrganizationFacilityQuery)
+* rest[0].resource[1].operation[1].definition = Canonical(DereferenceOrganizationQuery)
 * rest[0].resource[3].type = #Location
 * rest[0].resource[3].operation[0].name = "full"
-* rest[0].resource[3].operation[0].definition = Canonical(FullOrganizationFacilityQuery)
+* rest[0].resource[3].operation[0].definition = Canonical(FullLocationQuery)
 * rest[0].resource[1].operation[1].name = "dereference"
-* rest[0].resource[1].operation[1].definition = Canonical(DereferenceOrganizationFacilityQuery)
+* rest[0].resource[1].operation[1].definition = Canonical(DereferenceLocationQuery)
 * rest[1].mode = #client
 * rest[1].resource[0].type = #Bundle
 * rest[1].resource[0].supportedProfile[0] = Canonical(BCPractitionerBundle)
