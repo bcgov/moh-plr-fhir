@@ -38,13 +38,6 @@ Description: "General constraints on the OrganizationAffiliation resource for us
 * telecom only BCContactPoint
 * telecom MS
 
-Extension: NameUseExtension
-Id: bc-name-use-extension
-Title: "BC Name Use Extension"
-Description: "Allows for use on a simple name string."
-* value[x] only code
-* valueCode from http://hl7.org/fhir/ValueSet/name-use (required)
-
 Instance: Example-Qualification-Organization
 InstanceOf: BCOrganization
 Description: "Example of an organization's qualifications."
