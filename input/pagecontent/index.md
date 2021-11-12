@@ -38,7 +38,7 @@ The information recorded for Providers consists of unique identifiers, names, ad
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="800px" src="bc_provider.png" alt="BC PLR Provider"/>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_provider.png" alt="BC PLR Provider"/>
   <figcaption>Figure 1.1 - BC PLR Provider</figcaption>
 </figure>
 {::options parse_block_html="true" /}
@@ -67,7 +67,7 @@ This enables:
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="800px" src="bc_facility.png" alt="BC PLR Facility"/>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_facility.png" alt="BC PLR Facility"/>
   <figcaption>Figure 1.2 - BC PLR Facility</figcaption>
 </figure>
 {::options parse_block_html="true" /}
@@ -80,5 +80,24 @@ The above diagram outlines the different entities that compose a facility:
 * Civic Address - civic address along with latitude/longitude and community health service area (CHSA) codes and code descriptions
 * Facility Identifier - identifier with identifier type
 
-### PLR User Guide
+### Relation to CA Baseline and other IGs
+
+Currently this guide is based on the international FHIR R4 specification.  The intent is to move to based on the CA Baseline however there are a few conflicts and these are being worked on with the Canadian standards team.  
+>When (if) this changes to the CA baseline we'll reword this section
+
+### Miscellaneous
+
+#### PLR User Guide
+
 The PLR User Guide provides a detailed overview of the current PLR functionality.  Please contact the [registry administrator](mailto:HLTH.REGISTRIESADMIN@gov.bc.ca) to request a copy of the User Guide.
+
+#### Data Absent Reason 
+
+No form of data absent reason is supported; manadatory data must always be present.
+
+#### Must Support
+
+Beyond privacy and security PLR places no constraints on any element regarding the FHIR definition of MustSupport.  I.e. This guide will not mark any field as MustSupport or make clear exactly what kind of 'support' is required.  For example, expired records are evident by examining the effective start and end dates.  A PLR user may choose to discard expired records, or use the last expired record as it is the 'best' record they have, but PLR doesn't require either of those actions, to support the record's effective dates, be executed.
+
+The privacy and security requried to handle PLR data is fully described in the conformance guides.
+

@@ -1,6 +1,6 @@
 Instance: FullPractitionerQuery
 InstanceOf: OperationDefinition
-Description: "This operation is used to query for a provider and will return the information for that provider without following associations to other providers, organizations, or facilities."
+Description: "This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities."
 Usage: #definition
 * id = "bc-full-practitioner-query"
 * url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-practitioner-query"
@@ -76,17 +76,11 @@ Usage: #definition
 * parameter[8].documentation = "Search for practitioners with a license that has the specified status reason."
 * parameter[8].type = #string
 * parameter[8].searchType = #token
-* parameter[9].name = #organization-name
-* parameter[9].use = #in
-* parameter[9].min = 0
-* parameter[9].max = "1"
-* parameter[9].documentation = "Search for practitioners associated with an organization with the specified name."
-* parameter[9].type = #string
-* parameter[9].searchType = #string
 
+/*
 Instance: FullOrganizationFacilityQuery
 InstanceOf: OperationDefinition
-Description: "This operation is used to query for an organization or facility and will return the information for that organization or facility without following associations to other providers, organizations, or facilities."
+Description: "This operation is used to query for an organization or facility and will return the information for that organization or facility without following associations to other practitioner, organizations, or location."
 Usage: #definition
 * id = "bc-full-organization-facility-query"
 * url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-organization-facility-query"
@@ -107,6 +101,111 @@ Usage: #definition
 * parameter[0].documentation = "Search for organizations or locations with the specified name."
 * parameter[0].type = #string
 * parameter[0].searchType = #string
+*/
+
+Instance: FullLocationQuery
+InstanceOf: OperationDefinition
+Description: "This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations."
+Usage: #definition
+* id = "bc-full-location-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-location-query"
+* name = "FullLocationQuery"
+* title = "Full Query for an location"
+* status = #draft
+* kind = #query
+* code = #full
+* resource[0] = #Location
+* system = false
+* type = true
+* instance = true
+* parameter[0].name = #name
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1"
+* parameter[0].documentation = "Search for locations with the specified name."
+* parameter[0].type = #string
+* parameter[0].searchType = #string
+* parameter[1].name = #type
+* parameter[1].use = #in
+* parameter[1].min = 0
+* parameter[1].max = "1"
+* parameter[1].documentation = "Search for locations with the specified type."
+* parameter[1].type = #string
+* parameter[1].searchType = #string
+* parameter[2].name = #purpose
+* parameter[2].use = #in
+* parameter[2].min = 0
+* parameter[2].max = "1"
+* parameter[2].documentation = "Search for locations with the specified purpose."
+* parameter[2].type = #string
+* parameter[2].searchType = #string
+* parameter[3].name = #city
+* parameter[3].use = #in
+* parameter[3].min = 0
+* parameter[3].max = "1"
+* parameter[3].documentation = "Search for locations with the specified city."
+* parameter[3].type = #string
+* parameter[3].searchType = #string
+* parameter[4].name = #healthAuthority
+* parameter[4].use = #in
+* parameter[4].min = 0
+* parameter[4].max = "1"
+* parameter[4].documentation = "Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[4].type = #string
+* parameter[4].searchType = #string
+* parameter[5].name = #healthServiceDeliveryArea
+* parameter[5].use = #in
+* parameter[5].min = 0
+* parameter[5].max = "1"
+* parameter[5].documentation = "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[5].type = #string
+* parameter[5].searchType = #string
+* parameter[6].name = #localHealthArea
+* parameter[6].use = #in
+* parameter[6].min = 0
+* parameter[6].max = "1"
+* parameter[6].documentation = "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[6].type = #string
+* parameter[6].searchType = #string
+* parameter[7].name = #communityHealthServiceArea
+* parameter[7].use = #in
+* parameter[7].min = 0
+* parameter[7].max = "1"
+* parameter[7].documentation = "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[7].type = #string
+* parameter[7].searchType = #string
+
+
+Instance: FullOrganizationQuery
+InstanceOf: OperationDefinition
+Description: "This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities."
+Usage: #definition
+* id = "bc-full-organization-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-organization-query"
+* name = "FullOrganizationQuery"
+* title = "Full Query for an organization"
+* status = #draft
+* kind = #query
+* code = #full
+* resource[0] = #Organization
+* system = false
+* type = true
+* instance = true
+* parameter[0].name = #name
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1"
+* parameter[0].documentation = "Search for organizations with the specified name."
+* parameter[0].type = #string
+* parameter[0].searchType = #string
+* parameter[1].name = #city
+* parameter[1].use = #in
+* parameter[1].min = 0
+* parameter[1].max = "1"
+* parameter[1].documentation = "Search for organizations with the specified city."
+* parameter[1].type = #string
+* parameter[1].searchType = #string
+
 
 Instance: DereferencePractitionerQuery
 InstanceOf: OperationDefinition
@@ -186,14 +285,8 @@ Usage: #definition
 * parameter[8].documentation = "Search for practitioners with a license that has the specified status reason."
 * parameter[8].type = #string
 * parameter[8].searchType = #token
-* parameter[9].name = #organization-name
-* parameter[9].use = #in
-* parameter[9].min = 0
-* parameter[9].max = "1"
-* parameter[9].documentation = "Search for practitioners associated with an organization with the specified name."
-* parameter[9].type = #string
-* parameter[9].searchType = #string
 
+/*
 Instance: DereferenceOrganizationFacilityQuery
 InstanceOf: OperationDefinition
 Description: "This operation is used to query for an organization or facility and will return the information for that organization or facility along with any instances that can be found by following associations to other providers, organizations, or facilities."
@@ -217,6 +310,111 @@ Usage: #definition
 * parameter[0].documentation = "Search for organizations or locations with the specified name."
 * parameter[0].type = #string
 * parameter[0].searchType = #string
+*/
+
+Instance: DereferenceOrganizationQuery
+InstanceOf: OperationDefinition
+Description: "This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations."
+Usage: #definition
+* id = "bc-dereference-organization-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-organization-query"
+* name = "DereferenceOrganizationQuery"
+* title = "Dereference Query for an organization"
+* status = #draft
+* kind = #query
+* code = #dereference
+* resource[0] = #Organization
+* system = false
+* type = true
+* instance = true
+* parameter[0].name = #name
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1"
+* parameter[0].documentation = "Search for organizations with the specified name."
+* parameter[0].type = #string
+* parameter[0].searchType = #string
+* parameter[1].name = #city
+* parameter[1].use = #in
+* parameter[1].min = 0
+* parameter[1].max = "1"
+* parameter[1].documentation = "Search for organizations with the specified city."
+* parameter[1].type = #string
+* parameter[1].searchType = #string
+
+
+Instance: DereferenceLocationQuery
+InstanceOf: OperationDefinition
+Description: "This operation is used to query for an location and will return the information for that location along with any instances that can be found by following associations to other providers, organizations, or location."
+Usage: #definition
+* id = "bc-dereference-location-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-location-query"
+* name = "DereferenceLocationQuery"
+* title = "Dereference Query for an location"
+* status = #draft
+* kind = #query
+* code = #dereference
+* resource[0] = #Location
+* system = false
+* type = true
+* instance = true
+* parameter[0].name = #name
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1"
+* parameter[0].documentation = "Search for locations with the specified name."
+* parameter[0].type = #string
+* parameter[0].searchType = #string
+* parameter[1].name = #type
+* parameter[1].use = #in
+* parameter[1].min = 0
+* parameter[1].max = "1"
+* parameter[1].documentation = "Search for locations with the specified type."
+* parameter[1].type = #string
+* parameter[1].searchType = #string
+* parameter[2].name = #purpose
+* parameter[2].use = #in
+* parameter[2].min = 0
+* parameter[2].max = "1"
+* parameter[2].documentation = "Search for locations with the specified purpose."
+* parameter[2].type = #string
+* parameter[2].searchType = #string
+* parameter[3].name = #city
+* parameter[3].use = #in
+* parameter[3].min = 0
+* parameter[3].max = "1"
+* parameter[3].documentation = "Search for locations with the specified city."
+* parameter[3].type = #string
+* parameter[3].searchType = #string
+* parameter[4].name = #healthAuthority
+* parameter[4].use = #in
+* parameter[4].min = 0
+* parameter[4].max = "1"
+* parameter[4].documentation = "Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[4].type = #string
+* parameter[4].searchType = #string
+* parameter[5].name = #healthServiceDeliveryArea
+* parameter[5].use = #in
+* parameter[5].min = 0
+* parameter[5].max = "1"
+* parameter[5].documentation = "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[5].type = #string
+* parameter[5].searchType = #string
+* parameter[6].name = #localHealthArea
+* parameter[6].use = #in
+* parameter[6].min = 0
+* parameter[6].max = "1"
+* parameter[6].documentation = "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[6].type = #string
+* parameter[6].searchType = #string
+* parameter[7].name = #communityHealthServiceArea
+* parameter[7].use = #in
+* parameter[7].min = 0
+* parameter[7].max = "1"
+* parameter[7].documentation = "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[7].type = #string
+* parameter[7].searchType = #string
+
 
 Profile: BCBatchBundle
 Parent: Bundle

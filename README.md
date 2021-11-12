@@ -1,7 +1,7 @@
 [![img](https://img.shields.io/badge/Lifecycle-Experimental-339999)]
 
 # moh-plr-fhir
-This repository will be used to develop the fhir messaging specification for the plr (provider and location registry) application of ministry of health
+This repository will be used to develop the fhir messaging specification for the plr (provider and location registry) application of ministry of health.
 
 # Building the SPL to FHIR IGuide
 
