@@ -106,26 +106,26 @@ The parameters for the $extendedQuery operation will be the search parameters li
 
 ##### Query Supported Search Parameters
 
-| Resource | Search Parameter Name |
+|Resource|Search Parameter Name|
 |----|:----|
-| Practitioner | given |
-| | surname |
-| | role |
-| | language |
-| | expertise |
-| | status |
-| | status-reason |
-| | address-city |
-| Organization | name |
-| | city |
-| Location | name |
-| | city |
-| | type |
-| | purpose |
-| | healthAuthority |
-| | healthServiceDeliveryArea |
-| | localHealthArea |
-| | communityHealthServiceArea |
+|Practitioner|given|
+||surname|
+||role|
+||language|
+||expertise|
+||status|
+||status-reason|
+||address-city|
+|Organization|name|
+||city|
+|Location|name|
+||city|
+||type|
+||purpose|
+||healthAuthority|
+||healthServiceDeliveryArea|
+||localHealthArea|
+||communityHealthServiceArea|
 
 NOTE: Wild cards requirements are valid as per the Web interface and requirements which can be found in the PLR User Guide.
 
