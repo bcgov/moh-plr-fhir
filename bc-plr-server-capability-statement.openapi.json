@@ -2,7 +2,7 @@
   "openapi": "3.0.2",
   "info": {
     "title": "BC PLR Server Capability Statement",
-    "description": "This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.\n\n* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain messages at one time\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances\n",
+    "description": "This capability statement describes the three use cases that are supported by the BC FHIR implementation of PLR.\n\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances\n",
     "license": {
       "name": "Creative Commons Zero v1.0 Universal",
       "url": "http://spdx.org/licenses/CC0-1.0.html"
@@ -32,11 +32,6 @@
                 "schema": {
                   "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
                 }
-              },
-              "application/fhir+xml": {
-                "schema": {
-                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
-                }
               }
             }
           },
@@ -46,11 +41,6 @@
               "application/fhir+json": {
                 "schema": {
                   "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/CapabilityStatement"
-                }
-              },
-              "application/fhir+xml": {
-                "schema": {
-                  "$ref": "https://hl7.org/fhir/R4/CapabilityStatement.xsd"
                 }
               }
             }
@@ -86,11 +76,6 @@
               "schema": {
                 "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Bundle"
               }
-            },
-            "application/fhir+xml": {
-              "schema": {
-                "$ref": "https://hl7.org/fhir/R4/Bundle.xsd"
-              }
             }
           }
         },
@@ -101,11 +86,6 @@
               "application/fhir+json": {
                 "schema": {
                   "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
-                }
-              },
-              "application/fhir+xml": {
-                "schema": {
-                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
                 }
               }
             }
@@ -124,11 +104,6 @@
               "application/fhir+json": {
                 "schema": {
                   "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Bundle"
-                }
-              },
-              "application/fhir+xml": {
-                "schema": {
-                  "$ref": "https://hl7.org/fhir/R4/Bundle.xsd"
                 }
               }
             }

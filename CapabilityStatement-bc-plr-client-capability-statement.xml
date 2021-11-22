@@ -6,11 +6,8 @@
     <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>BCPLRClientCapabilityStatement</h2><div><p>This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.</p>
 <ul>
 <li>Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location</li>
-<li>Maintain - used when an external source is communicating a change to PLR</li>
-<li>Batch - allows for the sending of multiple Maintain messages at one time</li>
-<li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances</li>
 </ul>
-</div><table><tr><td>Mode</td><td>CLIENT</td></tr><tr><td>Description</td><td/></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title="GET a resource (read interaction)">Read</b></th><th><b title="GET all set of resources of the type (search interaction)">Search</b></th><th><b title="PUT a new resource version (update interaction)">Update</b></th><th><b title="POST a new resource (create interaction)">Create</b></th></tr><tr><td>Bundle</td><td>Supported profiles:<br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle</a><br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle</a><br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle</a><br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle</a></td><td></td><td></td><td></td><td>y</td></tr></table></div>
+</div><table><tr><td>Mode</td><td>CLIENT</td></tr><tr><td>Description</td><td/></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title="GET a resource (read interaction)">Read</b></th><th><b title="GET all set of resources of the type (search interaction)">Search</b></th><th><b title="PUT a new resource version (update interaction)">Update</b></th><th><b title="POST a new resource (create interaction)">Create</b></th></tr><tr><td>Bundle</td><td>Supported profiles:<br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle</a><br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle</a><br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle</a></td><td></td><td></td><td></td><td>y</td></tr></table></div>
   </text>
   <url value="http://hl7.org/fhir/ca-bc/provider/CapabilityStatement/bc-plr-client-capability-statement"/>
   <version value="0.1.0"/>
@@ -26,7 +23,7 @@
       <value value="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"/>
     </telecom>
   </contact>
-  <description value="This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.&#xA;&#xA;* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location&#xA;* Maintain - used when an external source is communicating a change to PLR&#xA;* Batch - allows for the sending of multiple Maintain messages at one time&#xA;* Queries - a set of operations are defined that allow the querying of PLR FHIR instances&#xA;"/>
+  <description value="This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.&#xA;&#xA;* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location&#xA;"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -34,13 +31,14 @@
       <display value="Canada"/>
     </coding>
   </jurisdiction>
-  <kind value="capability"/>
-  <software>
-    <name value="BC PLR FHIR Implementation"/>
-  </software>
+  <kind value="requirements"/>
   <fhirVersion value="4.0.1"/>
-  <format value="xml"/>
-  <format value="json"/>
+  <format value="json">
+    <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+      <valueCode value="SHALL"/>
+    </extension>
+  </format>
+  <implementationGuide value="http://hl7.org/fhir/ca-bc/provider/ImplementationGuide/fhir.ca-bc.provider"/>
   <rest>
     <mode value="client"/>
     <resource>
@@ -48,9 +46,12 @@
       <supportedProfile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"/>
       <supportedProfile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle"/>
       <supportedProfile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle"/>
-      <supportedProfile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle"/>
       <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
         <code value="create"/>
+        <documentation value="Client applications shall support the three different types of Distribution transactions."/>
       </interaction>
     </resource>
   </rest>
