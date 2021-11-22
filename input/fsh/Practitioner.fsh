@@ -68,18 +68,21 @@ Id: bc-practitioner-deathdate-extension
 Title: "BC Practitioner Date of Death Extension"
 Description: "The Date of Death of a Practitioner."
 * value[x] only dateTime
+* value[x] 1..1 MS
 
 Extension: BirthTimeExtension
 Id: bc-birthtime-extension
 Title: "BC Birth Time Extension"
 Description: "Adds birth time to the birth date."
 * value[x] only dateTime
+* value[x] 1..1 MS
 
 Extension: BirthPlaceExtension
 Id: bc-birthplace-extension
 Title: "BC Birth Place Extension"
 Description: "Captures the place where a patient/practitioner/person was born."
 * value[x] only Address
+* value[x] 1..1 MS
 
 Extension: PractitionerConfidentialityExtension
 Id: bc-practitioner-confidentiality-extension
@@ -87,6 +90,7 @@ Title: "BC Practitioner Confidentiality Extension"
 Description: "Indicates the confidentiality of the practitioner's information."
 * extension contains code 1..1 MS and PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[code].value[x] only CodeableConcept
+* extension[code].value[x] 1..1 MS
 * extension[code].valueCodeableConcept from http://terminology.hl7.org/ValueSet/v3-ConfidentialityClassification (required)
 
 Extension: PractitionerRelationshipExtension
@@ -95,7 +99,9 @@ Title: "BC Practitioner to Practitioner Relationship Extension"
 Description: "Allows for relationships of practitioners to practitioners without needing CareTeam semantics."
 * extension contains PeriodExtension named period 1..1 MS and practitioner 1..1 MS and type 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[practitioner].value[x] only Reference(BCPractitioner)
+* extension[practitioner].value[x] 1..1 MS
 * extension[type].value[x] only CodeableConcept
+* extension[type].value[x] 1..1 MS
 
 Extension: PractitionerDiscplinaryActionExtension
 Id: bc-practitioner-disciplinary-action-extension
@@ -103,9 +109,13 @@ Title: "BC Practitioner Disciplinary Actions Extension"
 Description: "Provides details of disciplinary actions against the provider."
 * extension contains identifier 1..1 MS and description 1..1 MS and PeriodExtension named period 1..1 MS and archiveDate 1..1 MS and displayFlag 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[identifier].value[x] only Identifier
+* extension[identifier].value[x] 1..1 MS
 * extension[description].value[x] only string
+* extension[description].value[x] 1..1 MS
 * extension[archiveDate].value[x] only dateTime
+* extension[archiveDate].value[x] 1..1 MS
 * extension[displayFlag].value[x] only boolean
+* extension[displayFlag].value[x] 1..1 MS
 
 Extension: NoteExtension
 Id: bc-note-extension
@@ -113,7 +123,9 @@ Title: "BC Notes Extension"
 Description: "Notes about the practitioner/location/organization."
 * extension contains identifier 1..1 MS and text 1..1 MS and PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[identifier].value[x] only Identifier
+* extension[identifier].value[x] 1..1 MS
 * extension[text].value[x] only string
+* extension[text].value[x] 1..1 MS
 
 Extension: PractitionerConditionExtension
 Id: bc-practitioner-condition-extension
@@ -121,15 +133,20 @@ Title: "BC Practitioner Conditions Extension"
 Description: "Conditions on the provider's role"
 * extension contains identifier 1..1 MS and PeriodExtension named period 1..1 MS and restriction 1..1 MS and restrictionText 1..1 MS and code 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[identifier].value[x] only Identifier
+* extension[identifier].value[x] 1..1 MS
 * extension[restriction].value[x] only boolean
+* extension[restriction].value[x] 1..1 MS
 * extension[restrictionText].value[x] only string
+* extension[restrictionText].value[x] 1..1 MS
 * extension[code].value[x] only CodeableConcept
+* extension[code].value[x] 1..1 MS
 
 Extension: PractitionerQualificationIssueDateExtension
 Id: bc-practitioner-qualification-issue-date-extension
 Title: "BC Practitioner Qualification Issue Date Extensino"
 Description: "The issue date of the practitioner's qualification."
 * value[x] only dateTime
+* value[x] 1..1 MS
 
 Extension: LicenseStatusExtension
 Id: bc-license-status-extension
@@ -137,11 +154,17 @@ Title: "BC License Status Extension"
 Description: "Tracking the status and changes to the status of a practitioner/organization license."
 * extension contains statusCode 1..1 MS and period 1..1 MS and statusReasonCode 1..1 MS and endReasonCode 0..1 MS and custodianId 0..1 MS
 * extension[statusCode].value[x] only CodeableConcept
+* extension[statusCode].value[x] 1..1 MS
 * extension[statusCode].valueCodeableConcept from $StatusVS (required)
+* extension[statusCode].valueCodeableConcept 1..1 MS
 * extension[period].value[x] only Period
+* extension[period].value[x] 1..1 MS
 * extension[statusReasonCode].value[x] only CodeableConcept
+* extension[statusReasonCode].value[x] 1..1 MS
 * extension[endReasonCode].value[x] only CodeableConcept
+* extension[endReasonCode].value[x] 1..1 MS
 * extension[custodianId].value[x] only Identifier
+* extension[custodianId].value[x] 1..1 MS
 
 Profile: BCPractitionerBundle
 Parent: Bundle

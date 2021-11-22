@@ -31,6 +31,7 @@ Id: bc-name-use-extension
 Title: "BC Name Use Extension"
 Description: "Allows for use on a simple name string."
 * value[x] only code
+* value[x] 1..1 MS
 * valueCode from http://hl7.org/fhir/ValueSet/name-use (required)
 
 Extension: EndReasonExtension
@@ -39,10 +40,13 @@ Title: "BC End Reason Extension"
 Description: "Tracking end reasons."
 * extension contains endReasonCode 0..1 MS and custodianId 0..1 MS
 * extension[endReasonCode].value[x] only CodeableConcept
+* extension[endReasonCode].value[x] 1..1 MS
 * extension[custodianId].value[x] only Identifier
+* extension[custodianId].value[x] 1..1 MS
 
 Extension: PeriodExtension
 Id: bc-period-extension
 Title: "BC Valid Period Extension"
 Description: "The period for when the extended element is valid."
 * value[x] only Period
+* value[x] 1..1 MS

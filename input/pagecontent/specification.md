@@ -28,21 +28,22 @@ A practitioner providing services in multiple roles, for example, as a Nurse or 
 #### Provider to Provider Relationships
 
 ##### Individual Provider to Individual Provider
+Individual provider to provider relationships are used for showing how providers are related to each other.  For instance, a LOCUM provider can be referenced using this capability.
 To show the relationship between two individual providers, the [BC Practitioner Relationship extension](StructureDefinition-bc-practitioner-relationship-extension.html) was created.  This allows for a relationship type and a linkage between two BC Practitioners to be stated.  NOTE: It is expected that the relationship would be found on both Practitioner instances.
 
 ##### Individual Provider to Organizational Provider
-To show the relationship between an individual Provider and an organizational Provider, the [BC PractitionerRole profile](StructureDefinition-bc-practitioner-role.html) is used.  This resource has a practitioner data element and an organization data element along with a code that is used to say what role the individual provider plays at the organization.
+To show the relationship between an individual Provider and an organizational Provider (i.e. a hospital that has providers working at it), the [BC PractitionerRole profile](StructureDefinition-bc-practitioner-role.html) is used.  This resource has a practitioner data element and an organization data element along with a code that is used to say what role the individual provider plays at the organization.
 
 ##### Organizational Provider to Organizational Provider
-To show the relationship between two organizational providers, the [BC OrganizationAffiliation profile](StructureDefinition-bc-organization-affiliation.html) is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.
+To show the relationship between two organizational providers (i.e. a subsidiary organization), the [BC OrganizationAffiliation profile](StructureDefinition-bc-organization-affiliation.html) is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.
 
 #### Provider to Facility Relationships
 
 ##### Individual Provider to Facility
-To show the relationship between an individual provider and a facility, the [BC PractitionerRole profile](StructureDefinition-bc-practitioner-role.html) is used.  Instead of the organization data element, the location data element is used to indicate that a provider is related to a facility.
+To show the relationship between an individual provider and a facility (i.e. a works-at relationship), the [BC PractitionerRole profile](StructureDefinition-bc-practitioner-role.html) is used.  Instead of the organization data element, the location data element is used to indicate that a provider is related to a facility.
 
 ##### Organization Provider to Facility
-To show the relationship between an organizational provider and a facility, the [BC OrganizationAffiliation profile](StructureDefinition-bc-organization-affiliation.html) is used.  Instead of the participating organization data element, the location data element is used to indicate that an organization is related to a facility.
+To show the relationship between an organizational provider and a facility (i.e. facilities where the organization does its work), the [BC OrganizationAffiliation profile](StructureDefinition-bc-organization-affiliation.html) is used.  Instead of the participating organization data element, the location data element is used to indicate that an organization is related to a facility.
 
 ### Use Cases
 There are a number of use cases that support the existing PLR functionality:

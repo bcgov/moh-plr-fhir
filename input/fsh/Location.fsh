@@ -35,21 +35,27 @@ Title: "BC Facility Details Extension"
 Description: "Provides the details of a facility as represented by a FHIR location."
 * extension contains campusOfCare 0..1 MS and operatorName 0..1 MS and ownerName 0..1 MS and contactName 0..1 MS and PeriodExtension named period 1..1 MS  and EndReasonExtension named endReason 0..1 MS
 * extension[campusOfCare].value[x] only string
+* extension[campusOfCare].value[x] 1..1 MS
 * extension[operatorName].value[x] only string
+* extension[operatorName].value[x] 1..1 MS
 * extension[ownerName].value[x] only string
+* extension[ownerName].value[x] 1..1 MS
 * extension[contactName].value[x] only string
+* extension[contactName].value[x] 1..1 MS
 
 Extension: CommunityHealthServiceArea
 Id: bc-facility-community-health-service-area-extension
 Title: "BC Facility Community Health Service Area Extension"
 Description: "A code that represents the community health service area that the location is a part of."
 * value[x] only CodeableConcept
+* value[x] 1..1 MS
 
 Extension: MailingAddress
 Id: bc-facility-mailing-address-extension
 Title: "BC Facility Mailing Address Extension"
 Description: "An optional mailing address for the facility."
 * value[x] only BCAddress
+* value[x] 1..1 MS
 
 Profile: BCLocationBundle
 Parent: Bundle
