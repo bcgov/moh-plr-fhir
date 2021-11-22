@@ -102,19 +102,22 @@
         <a href="artifacts.html#1">Capabilities</a>
       </li>
       <li>
-        <a href="artifacts.html#2">Practitioner</a>
+        <a href="artifacts.html#2">Operations</a>
       </li>
       <li>
-        <a href="artifacts.html#3">Organization</a>
+        <a href="artifacts.html#3">Practitioner</a>
       </li>
       <li>
-        <a href="artifacts.html#4">Facility</a>
+        <a href="artifacts.html#4">Organization</a>
       </li>
       <li>
-        <a href="artifacts.html#5">Common</a>
+        <a href="artifacts.html#5">Facility</a>
       </li>
       <li>
-        <a href="artifacts.html#6">Datatypes</a>
+        <a href="artifacts.html#6">Common</a>
+      </li>
+      <li>
+        <a href="artifacts.html#7">Datatypes</a>
       </li>
     </ul>
   </li>
@@ -169,19 +172,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#1">Capabilities</a>
       </li>
       <li>
-         <a href="#2">Practitioner</a>
+         <a href="#2">Operations</a>
       </li>
       <li>
-         <a href="#3">Organization</a>
+         <a href="#3">Bundles</a>
       </li>
       <li>
-         <a href="#4">Facility</a>
+         <a href="#4">Practitioner</a>
       </li>
       <li>
-         <a href="#5">Common</a>
+         <a href="#5">Organization</a>
       </li>
       <li>
-         <a href="#6">Datatypes</a>
+         <a href="#6">Facility</a>
+      </li>
+      <li>
+         <a href="#7">Common</a>
+      </li>
+      <li>
+         <a href="#8">Datatypes</a>
       </li>
    </ul>
 </div>
@@ -192,7 +201,117 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <a name="1"> </a>
    <h3>Capabilities </h3>
    <p>
-    <p>PLR CapabilityStatement, the defined Operations and the Bundle profiles associated with them</p>
+    <p>PLR Capability Statements</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CapabilityStatement-bc-plr-client-capability-statement.html"
+                     title="CapabilityStatement/bc-plr-client-capability-statement">BCPLRClientCapabilityStatement</a>
+               </td>
+               <td>
+<p>This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.</p>
+
+<ul>
+  <li>Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location</li>
+  <li>Maintain - used when an external source is communicating a change to PLR</li>
+  <li>Batch - allows for the sending of multiple Maintain messages at one time</li>
+  <li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances</li>
+</ul>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CapabilityStatement-bc-plr-server-capability-statement.html"
+                     title="CapabilityStatement/bc-plr-server-capability-statement">BCPLRServerCapabilityStatement</a>
+               </td>
+               <td>
+<p>This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.</p>
+
+<ul>
+  <li>Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location</li>
+  <li>Maintain - used when an external source is communicating a change to PLR</li>
+  <li>Batch - allows for the sending of multiple Maintain messages at one time</li>
+  <li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances</li>
+</ul>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="2"> </a>
+   <h3>Operations </h3>
+   <p>
+    <p>Operation definitions</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="OperationDefinition-bc-entity-location-query.html"
+                     title="OperationDefinition/bc-entity-location-query">EntityLocationQuery</a>
+               </td>
+               <td>
+<p>This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="OperationDefinition-bc-entity-organization-query.html"
+                     title="OperationDefinition/bc-entity-organization-query">EntityOrganizationQuery</a>
+               </td>
+               <td>
+<p>This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="OperationDefinition-bc-entity-practitioner-query.html"
+                     title="OperationDefinition/bc-entity-practitioner-query">EntityPractitionerQuery</a>
+               </td>
+               <td>
+<p>This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="OperationDefinition-bc-extended-location-query.html"
+                     title="OperationDefinition/bc-extended-location-query">ExtendedLocationQuery</a>
+               </td>
+               <td>
+<p>This operation is used to query for an location and will return the information for that location along with any instances that can be found by following associations to other providers, organizations, or location.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="OperationDefinition-bc-extended-organization-query.html"
+                     title="OperationDefinition/bc-extended-organization-query">ExtendedOrganizationQuery</a>
+               </td>
+               <td>
+<p>This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="OperationDefinition-bc-extended-practitioner-query.html"
+                     title="OperationDefinition/bc-extended-practitioner-query">ExtendedPractitionerQuery</a>
+               </td>
+               <td>
+<p>This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities.</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="3"> </a>
+   <h3>Bundles </h3>
+   <p>
+    <p>Distribution/Maintain and Batch Bundles</p>
 </p>
    <p>
       <table class="grid">
@@ -270,80 +389,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>An example of a Batch Bundle that contains one each of a Practitioner bundle, Organization bundle, and a Location bundle.</p>
 </td>
             </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-dereference-location-query.html"
-                     title="OperationDefinition/bc-dereference-location-query">DereferenceLocationQuery</a>
-               </td>
-               <td>
-<p>This operation is used to query for an location and will return the information for that location along with any instances that can be found by following associations to other providers, organizations, or location.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-dereference-organization-query.html"
-                     title="OperationDefinition/bc-dereference-organization-query">DereferenceOrganizationQuery</a>
-               </td>
-               <td>
-<p>This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-dereference-practitioner-query.html"
-                     title="OperationDefinition/bc-dereference-practitioner-query">DereferencePractitionerQuery</a>
-               </td>
-               <td>
-<p>This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-full-location-query.html"
-                     title="OperationDefinition/bc-full-location-query">FullLocationQuery</a>
-               </td>
-               <td>
-<p>This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-full-organization-query.html"
-                     title="OperationDefinition/bc-full-organization-query">FullOrganizationQuery</a>
-               </td>
-               <td>
-<p>This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-full-practitioner-query.html"
-                     title="OperationDefinition/bc-full-practitioner-query">FullPractitionerQuery</a>
-               </td>
-               <td>
-<p>This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="CapabilityStatement-bc-plr-capability-statement.html"
-                     title="CapabilityStatement/bc-plr-capability-statement">BCPLRCapabilityStatement</a>
-               </td>
-               <td>
-<p>This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.</p>
-
-<ul>
-  <li>Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location</li>
-  <li>Maintain - used when an external source is communicating a change to PLR</li>
-  <li>Batch - allows for the sending of multiple Maintain messages at one time</li>
-  <li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances</li>
-</ul>
-</td>
-            </tr>
          </tbody>
       </table>
    </p>
-   <a name="2"> </a>
+   <a name="4"> </a>
    <h3>Practitioner </h3>
    <p>
     <p>Artifacts associated with Practitioners</p>
@@ -382,7 +431,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-bc-birthtime-extension.html"
-                     title="StructureDefinition/bc-birthtime-extension">BC Extra birth time information</a>
+                     title="StructureDefinition/bc-birthtime-extension">BC Birth Time Extension</a>
                </td>
                <td>
 <p>Adds birth time to the birth date.</p>
@@ -400,7 +449,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-bc-practitioner-condition-extension.html"
-                     title="StructureDefinition/bc-practitioner-condition-extension">BC Practitioner Conditions</a>
+                     title="StructureDefinition/bc-practitioner-condition-extension">BC Practitioner Conditions Extension</a>
                </td>
                <td>
 <p>Conditions on the provider’s role</p>
@@ -412,13 +461,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                      title="StructureDefinition/bc-practitioner-confidentiality-extension">BC Practitioner Confidentiality Extension</a>
                </td>
                <td>
-<p>Indicates the confidentality of the practitioner’s information.</p>
+<p>Indicates the confidentiality of the practitioner’s information.</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-bc-practitioner-disciplinary-action-extension.html"
-                     title="StructureDefinition/bc-practitioner-disciplinary-action-extension">BC Practitioner Disciplinary Actions</a>
+                     title="StructureDefinition/bc-practitioner-disciplinary-action-extension">BC Practitioner Disciplinary Actions Extension</a>
                </td>
                <td>
 <p>Provides details of disciplinary actions against the provider.</p>
@@ -427,7 +476,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-bc-practitioner-qualification-issue-date-extension.html"
-                     title="StructureDefinition/bc-practitioner-qualification-issue-date-extension">BC Practitioner Qualification Issue Date</a>
+                     title="StructureDefinition/bc-practitioner-qualification-issue-date-extension">BC Practitioner Qualification Issue Date Extensino</a>
                </td>
                <td>
 <p>The issue date of the practitioner’s qualification.</p>
@@ -436,7 +485,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-bc-practitioner-relationship-extension.html"
-                     title="StructureDefinition/bc-practitioner-relationship-extension">BC Practitioner to Practitioner Relationship</a>
+                     title="StructureDefinition/bc-practitioner-relationship-extension">BC Practitioner to Practitioner Relationship Extension</a>
                </td>
                <td>
 <p>Allows for relationships of practitioners to practitioners without needing CareTeam semantics.</p>
@@ -481,7 +530,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="3"> </a>
+   <a name="5"> </a>
    <h3>Organization </h3>
    <p>
     <p>Artifacts associated with Organizations</p>
@@ -529,7 +578,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="4"> </a>
+   <a name="6"> </a>
    <h3>Facility </h3>
    <p>
     <p>Artifacts associated with Facilities</p>
@@ -550,7 +599,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-bc-facility-community-health-service-area-extension.html"
-                     title="StructureDefinition/bc-facility-community-health-service-area-extension">BC Facility Community Health Service Area</a>
+                     title="StructureDefinition/bc-facility-community-health-service-area-extension">BC Facility Community Health Service Area Extension</a>
                </td>
                <td>
 <p>A code that represents the community health service area that the location is a part of.</p>
@@ -568,7 +617,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-bc-facility-mailing-address-extension.html"
-                     title="StructureDefinition/bc-facility-mailing-address-extension">BC Facility Mailing Address</a>
+                     title="StructureDefinition/bc-facility-mailing-address-extension">BC Facility Mailing Address Extension</a>
                </td>
                <td>
 <p>An optional mailing address for the facility.</p>
@@ -589,13 +638,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                      title="Location/Example-AddPractitioner-WorkLocation">Example-AddPractitioner-WorkLocation</a>
                </td>
                <td>
-<p>Example of a Location (facility) that is the affiliated with an Organization.</p>
+<p>Example of a Location (Facility) that is the affiliated with an Organization.</p>
 </td>
             </tr>
          </tbody>
       </table>
    </p>
-   <a name="5"> </a>
+   <a name="7"> </a>
    <h3>Common </h3>
    <p>
     <p>Artifacts used across all groupings</p>
@@ -634,7 +683,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-bc-note-extension.html"
-                     title="StructureDefinition/bc-note-extension">BC Notes</a>
+                     title="StructureDefinition/bc-note-extension">BC Notes Extension</a>
                </td>
                <td>
 <p>Notes about the practitioner/location/organization.</p>
@@ -643,7 +692,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-bc-period-extension.html"
-                     title="StructureDefinition/bc-period-extension">BC Valid Period</a>
+                     title="StructureDefinition/bc-period-extension">BC Valid Period Extension</a>
                </td>
                <td>
 <p>The period for when the extended element is valid.</p>
@@ -652,7 +701,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="6"> </a>
+   <a name="8"> </a>
    <h3>Datatypes </h3>
    <p>
     <p>Artifacts associated with datatypes</p>
@@ -685,7 +734,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                      title="StructureDefinition/bc-humanName">BCHumanName</a>
                </td>
                <td>
-<p>Adds an end resaon and a use code to a name.</p>
+<p>Adds an end reason and a use code to a name.</p>
 </td>
             </tr>
             <tr>
@@ -724,7 +773,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 22, 2021 19:27+0000">2021-11-22</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 22, 2021 19:57+0000">2021-11-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="bc-plr-server-capability-statement"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>BCPLRServerCapabilityStatement</h2><div><p>This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.</p>
+<ul>
+<li>Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location</li>
+<li>Maintain - used when an external source is communicating a change to PLR</li>
+<li>Batch - allows for the sending of multiple Maintain messages at one time</li>
+<li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances</li>
+</ul>
+</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td/></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title="GET a resource (read interaction)">Read</b></th><th><b title="GET all set of resources of the type (search interaction)">Search</b></th><th><b title="PUT a new resource version (update interaction)">Update</b></th><th><b title="POST a new resource (create interaction)">Create</b></th></tr><tr><td>Bundle</td><td>Supported profiles:<br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle</a><br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle</a><br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle</a></td><td></td><td></td><td></td><td>y</td></tr><tr><td>Practitioner</td><td> </td><td></td><td></td><td></td><td></td></tr><tr><td>Organization</td><td> </td><td></td><td></td><td></td><td></td></tr><tr><td>Location</td><td> </td><td></td><td></td><td></td><td></td></tr></table></div>
+  </text>
+  <url value="http://hl7.org/fhir/ca-bc/provider/CapabilityStatement/bc-plr-server-capability-statement"/>
+  <version value="0.1.0"/>
+  <name value="BCPLRServerCapabilityStatement"/>
+  <title value="BC PLR Server Capability Statement"/>
+  <status value="draft"/>
+  <date value="2021-03-31"/>
+  <publisher value="BC Ministry of Health"/>
+  <contact>
+    <name value="BC Ministry of Health"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"/>
+    </telecom>
+  </contact>
+  <description value="This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.&#xA;&#xA;* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location&#xA;* Maintain - used when an external source is communicating a change to PLR&#xA;* Batch - allows for the sending of multiple Maintain messages at one time&#xA;* Queries - a set of operations are defined that allow the querying of PLR FHIR instances&#xA;"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="CA"/>
+      <display value="Canada"/>
+    </coding>
+  </jurisdiction>
+  <kind value="capability"/>
+  <software>
+    <name value="BC PLR FHIR Implementation"/>
+  </software>
+  <fhirVersion value="4.0.1"/>
+  <format value="xml"/>
+  <format value="json"/>
+  <rest>
+    <mode value="server"/>
+    <resource>
+      <type value="Bundle"/>
+      <supportedProfile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"/>
+      <supportedProfile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle"/>
+      <supportedProfile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Practitioner"/>
+      <operation>
+        <name value="entityQuery"/>
+        <definition value="http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-entity-practitioner-query"/>
+      </operation>
+      <operation>
+        <name value="extendedQuery"/>
+        <definition value="http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-location-query"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="Organization"/>
+      <operation>
+        <name value="entityQuery"/>
+        <definition value="http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-entity-organization-query"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="Location"/>
+      <operation>
+        <name value="entityQuery"/>
+        <definition value="http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-entity-location-query"/>
+      </operation>
+    </resource>
+  </rest>
+</CapabilityStatement>

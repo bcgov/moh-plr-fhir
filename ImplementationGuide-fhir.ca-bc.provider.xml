@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2021-11-22T19:27:26+00:00"/>
+  <date value="2021-11-22T19:57:31+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -186,7 +186,15 @@
     </extension>
     <grouping id="Capabilities">
       <name value="Capabilities"/>
-      <description value="PLR CapabilityStatement, the defined Operations and the Bundle profiles associated with them"/>
+      <description value="PLR Capability Statements"/>
+    </grouping>
+    <grouping id="Operations">
+      <name value="Operations"/>
+      <description value="Operation definitions"/>
+    </grouping>
+    <grouping id="Bundles">
+      <name value="Bundles"/>
+      <description value="Distribution/Maintain and Batch Bundles"/>
     </grouping>
     <grouping id="Practitioner">
       <name value="Practitioner"/>
@@ -230,7 +238,7 @@
       <name value="BCBatchBundle"/>
       <description value="A Bundle that is used in the PLR Batch operation."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Capabilities"/>
+      <groupingId value="Bundles"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -252,7 +260,7 @@
         <reference value="StructureDefinition/bc-humanName"/>
       </reference>
       <name value="BCHumanName"/>
-      <description value="Adds an end resaon and a use code to a name."/>
+      <description value="Adds an end reason and a use code to a name."/>
       <exampleBoolean value="false"/>
       <groupingId value="Datatypes"/>
     </resource>
@@ -290,7 +298,7 @@
       <name value="BCLocationBundle"/>
       <description value="A bundle that submits Location information."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Capabilities"/>
+      <groupingId value="Bundles"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -326,7 +334,7 @@
       <name value="BCOrganizationBundle"/>
       <description value="A bundle that submits Organization and OrganizationAffiliation information."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Capabilities"/>
+      <groupingId value="Bundles"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -350,7 +358,7 @@
       <name value="BCPractitionerBundle"/>
       <description value="A bundle that submits Practitioner and PractitionerRole information."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Capabilities"/>
+      <groupingId value="Bundles"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -383,7 +391,7 @@
       <reference>
         <reference value="StructureDefinition/bc-birthtime-extension"/>
       </reference>
-      <name value="BC Extra birth time information"/>
+      <name value="BC Birth Time Extension"/>
       <description value="Adds birth time to the birth date."/>
       <exampleBoolean value="false"/>
       <groupingId value="Practitioner"/>
@@ -395,7 +403,7 @@
       <reference>
         <reference value="StructureDefinition/bc-facility-community-health-service-area-extension"/>
       </reference>
-      <name value="BC Facility Community Health Service Area"/>
+      <name value="BC Facility Community Health Service Area Extension"/>
       <description value="A code that represents the community health service area that the location is a part of."/>
       <exampleBoolean value="false"/>
       <groupingId value="Facility"/>
@@ -455,7 +463,7 @@
       <reference>
         <reference value="StructureDefinition/bc-facility-mailing-address-extension"/>
       </reference>
-      <name value="BC Facility Mailing Address"/>
+      <name value="BC Facility Mailing Address Extension"/>
       <description value="An optional mailing address for the facility."/>
       <exampleBoolean value="false"/>
       <groupingId value="Facility"/>
@@ -479,7 +487,7 @@
       <reference>
         <reference value="StructureDefinition/bc-note-extension"/>
       </reference>
-      <name value="BC Notes"/>
+      <name value="BC Notes Extension"/>
       <description value="Notes about the practitioner/location/organization."/>
       <exampleBoolean value="false"/>
       <groupingId value="Common"/>
@@ -491,7 +499,7 @@
       <reference>
         <reference value="StructureDefinition/bc-period-extension"/>
       </reference>
-      <name value="BC Valid Period"/>
+      <name value="BC Valid Period Extension"/>
       <description value="The period for when the extended element is valid."/>
       <exampleBoolean value="false"/>
       <groupingId value="Common"/>
@@ -503,7 +511,7 @@
       <reference>
         <reference value="StructureDefinition/bc-practitioner-condition-extension"/>
       </reference>
-      <name value="BC Practitioner Conditions"/>
+      <name value="BC Practitioner Conditions Extension"/>
       <description value="Conditions on the provider&#39;s role"/>
       <exampleBoolean value="false"/>
       <groupingId value="Practitioner"/>
@@ -516,7 +524,7 @@
         <reference value="StructureDefinition/bc-practitioner-confidentiality-extension"/>
       </reference>
       <name value="BC Practitioner Confidentiality Extension"/>
-      <description value="Indicates the confidentality of the practitioner&#39;s information."/>
+      <description value="Indicates the confidentiality of the practitioner&#39;s information."/>
       <exampleBoolean value="false"/>
       <groupingId value="Practitioner"/>
     </resource>
@@ -527,7 +535,7 @@
       <reference>
         <reference value="StructureDefinition/bc-practitioner-disciplinary-action-extension"/>
       </reference>
-      <name value="BC Practitioner Disciplinary Actions"/>
+      <name value="BC Practitioner Disciplinary Actions Extension"/>
       <description value="Provides details of disciplinary actions against the provider."/>
       <exampleBoolean value="false"/>
       <groupingId value="Practitioner"/>
@@ -539,7 +547,7 @@
       <reference>
         <reference value="StructureDefinition/bc-practitioner-qualification-issue-date-extension"/>
       </reference>
-      <name value="BC Practitioner Qualification Issue Date"/>
+      <name value="BC Practitioner Qualification Issue Date Extensino"/>
       <description value="The issue date of the practitioner&#39;s qualification."/>
       <exampleBoolean value="false"/>
       <groupingId value="Practitioner"/>
@@ -551,7 +559,7 @@
       <reference>
         <reference value="StructureDefinition/bc-practitioner-relationship-extension"/>
       </reference>
-      <name value="BC Practitioner to Practitioner Relationship"/>
+      <name value="BC Practitioner to Practitioner Relationship Extension"/>
       <description value="Allows for relationships of practitioners to practitioners without needing CareTeam semantics."/>
       <exampleBoolean value="false"/>
       <groupingId value="Practitioner"/>
@@ -566,7 +574,7 @@
       <name value="Example-AddLocation-Bundle"/>
       <description value="An example of bundle that is adding a location."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle"/>
-      <groupingId value="Capabilities"/>
+      <groupingId value="Bundles"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -578,7 +586,7 @@
       <name value="Example-AddOrganization-Bundle"/>
       <description value="Example of a Bundle of resources that are needed to create an Organization."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle"/>
-      <groupingId value="Capabilities"/>
+      <groupingId value="Bundles"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -626,7 +634,7 @@
       <name value="Example-AddPractitioner-Bundle"/>
       <description value="Example of a bundle of resources sent when requesting a practitioner create."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"/>
-      <groupingId value="Capabilities"/>
+      <groupingId value="Bundles"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -672,7 +680,7 @@
         <reference value="Location/Example-AddPractitioner-WorkLocation"/>
       </reference>
       <name value="Example-AddPractitioner-WorkLocation"/>
-      <description value="Example of a Location (facility) that is the affiliated with an Organization."/>
+      <description value="Example of a Location (Facility) that is the affiliated with an Organization."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location"/>
       <groupingId value="Facility"/>
     </resource>
@@ -686,7 +694,7 @@
       <name value="Example-Batch-Bundle"/>
       <description value="An example of a Batch Bundle that contains one each of a Practitioner bundle, Organization bundle, and a Location bundle."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle"/>
-      <groupingId value="Capabilities"/>
+      <groupingId value="Bundles"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -705,71 +713,83 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/bc-dereference-location-query"/>
+        <reference value="OperationDefinition/bc-entity-location-query"/>
       </reference>
-      <name value="DereferenceLocationQuery"/>
-      <description value="This operation is used to query for an location and will return the information for that location along with any instances that can be found by following associations to other providers, organizations, or location."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="Capabilities"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="OperationDefinition"/>
-      </extension>
-      <reference>
-        <reference value="OperationDefinition/bc-dereference-organization-query"/>
-      </reference>
-      <name value="DereferenceOrganizationQuery"/>
-      <description value="This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="Capabilities"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="OperationDefinition"/>
-      </extension>
-      <reference>
-        <reference value="OperationDefinition/bc-dereference-practitioner-query"/>
-      </reference>
-      <name value="DereferencePractitionerQuery"/>
-      <description value="This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="Capabilities"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="OperationDefinition"/>
-      </extension>
-      <reference>
-        <reference value="OperationDefinition/bc-full-location-query"/>
-      </reference>
-      <name value="FullLocationQuery"/>
+      <name value="EntityLocationQuery"/>
       <description value="This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Capabilities"/>
+      <groupingId value="Operations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/bc-full-organization-query"/>
+        <reference value="OperationDefinition/bc-entity-organization-query"/>
       </reference>
-      <name value="FullOrganizationQuery"/>
+      <name value="EntityOrganizationQuery"/>
       <description value="This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Capabilities"/>
+      <groupingId value="Operations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/bc-full-practitioner-query"/>
+        <reference value="OperationDefinition/bc-entity-practitioner-query"/>
       </reference>
-      <name value="FullPractitionerQuery"/>
+      <name value="EntityPractitionerQuery"/>
       <description value="This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Operations"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/bc-extended-location-query"/>
+      </reference>
+      <name value="ExtendedLocationQuery"/>
+      <description value="This operation is used to query for an location and will return the information for that location along with any instances that can be found by following associations to other providers, organizations, or location."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Operations"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/bc-extended-organization-query"/>
+      </reference>
+      <name value="ExtendedOrganizationQuery"/>
+      <description value="This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Operations"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/bc-extended-practitioner-query"/>
+      </reference>
+      <name value="ExtendedPractitionerQuery"/>
+      <description value="This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Operations"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/bc-plr-client-capability-statement"/>
+      </reference>
+      <name value="BCPLRClientCapabilityStatement"/>
+      <description value="This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.&#xA;&#xA;* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location&#xA;* Maintain - used when an external source is communicating a change to PLR&#xA;* Batch - allows for the sending of multiple Maintain messages at one time&#xA;* Queries - a set of operations are defined that allow the querying of PLR FHIR instances"/>
+      <exampleBoolean value="true"/>
       <groupingId value="Capabilities"/>
     </resource>
     <resource>
@@ -777,9 +797,9 @@
         <valueString value="CapabilityStatement"/>
       </extension>
       <reference>
-        <reference value="CapabilityStatement/bc-plr-capability-statement"/>
+        <reference value="CapabilityStatement/bc-plr-server-capability-statement"/>
       </reference>
-      <name value="BCPLRCapabilityStatement"/>
+      <name value="BCPLRServerCapabilityStatement"/>
       <description value="This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.&#xA;&#xA;* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location&#xA;* Maintain - used when an external source is communicating a change to PLR&#xA;* Batch - allows for the sending of multiple Maintain messages at one time&#xA;* Queries - a set of operations are defined that allow the querying of PLR FHIR instances"/>
       <exampleBoolean value="true"/>
       <groupingId value="Capabilities"/>
