@@ -1,0 +1,142 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ca-bc/provider/Bundle/Example-AddOrganization-Bundle> a fhir:Bundle;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "Example-AddOrganization-Bundle"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle>
+     ]
+  ];
+  fhir:Bundle.type [ fhir:value "transaction"];
+  fhir:Bundle.entry [
+     fhir:index 0;
+     fhir:Bundle.entry.fullUrl [ fhir:value "http://plr.moh.bc.ca/fhir/Organization/12345" ];
+     fhir:Bundle.entry.resource <http://plr.moh.bc.ca/fhir/Organization/12345>;
+     fhir:Bundle.entry.request [
+       fhir:Bundle.entry.request.method [ fhir:value "POST" ];
+       fhir:Bundle.entry.request.url [ fhir:value "http://plr.moh.bc.ca/fhir/Organization" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Bundle.entry.fullUrl [ fhir:value "http://plr.moh.bc.ca/fhir/OrganizationAffiliation/12345" ];
+     fhir:Bundle.entry.resource <http://plr.moh.bc.ca/fhir/OrganizationAffiliation/12345>;
+     fhir:Bundle.entry.request [
+       fhir:Bundle.entry.request.method [ fhir:value "POST" ];
+       fhir:Bundle.entry.request.url [ fhir:value "http://plr.moh.bc.ca/fhir/OrganizationAffiliation" ]
+     ]
+  ] .
+
+<http://plr.moh.bc.ca/fhir/Organization/12345> a fhir:Organization;
+  fhir:Resource.id [ fhir:value "Example-AddOrganization-Organization"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddOrganization-Organization\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><p><b>identifier</b>: id: CPN.00147422.BC.PRS, id: IPC.00147422.BC.PRS, id: 1000095892</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585(WORK)</p><p><b>address</b>: 2541 Townsend Rd Sooke BC V4R8T8 CA (WORK)</p></div>"
+  ];
+  fhir:Organization.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.3" ];
+     fhir:Identifier.value [ fhir:value "CPN.00147422.BC.PRS" ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.8" ];
+     fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ]
+  ], [
+     fhir:index 2;
+     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.23" ];
+     fhir:Identifier.value [ fhir:value "1000095892" ]
+  ];
+  fhir:Organization.active [ fhir:value "true"^^xsd:boolean];
+  fhir:Organization.name [
+     fhir:value "Kelowna Clinic";
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-name-use-extension" ];
+       fhir:Extension.valueCode [ fhir:value "official" ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2014-01-31T00:00:00-07:00"^^xsd:dateTime ]
+       ]
+     ]
+  ];
+  fhir:Organization.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "7786428585" ];
+     fhir:ContactPoint.use [ fhir:value "work" ];
+     fhir:ContactPoint.period [
+       fhir:Period.start [ fhir:value "2014-01-31T00:00:00-07:00"^^xsd:dateTime ]
+     ]
+  ];
+  fhir:Organization.address [
+     fhir:index 0;
+     fhir:Address.use [ fhir:value "work" ];
+     fhir:Address.type [ fhir:value "postal" ];
+     fhir:Address.line [
+       fhir:value "2541 Townsend Rd";
+       fhir:index 0
+     ];
+     fhir:Address.city [ fhir:value "Sooke" ];
+     fhir:Address.state [ fhir:value "BC" ];
+     fhir:Address.postalCode [ fhir:value "V4R8T8" ];
+     fhir:Address.country [ fhir:value "CA" ];
+     fhir:Address.period [
+       fhir:Period.start [ fhir:value "2014-01-31T00:00:00-07:00"^^xsd:dateTime ]
+     ]
+  ] .
+
+<http://plr.moh.bc.ca/fhir/OrganizationAffiliation/12345> a fhir:OrganizationAffiliation;
+  fhir:Resource.id [ fhir:value "Example-AddOrganization-OrganizationAffiliation"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddOrganization-OrganizationAffiliation\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>active</b>: true</p><p><b>period</b>: 1989-04-04T00:00:00-07:00 --&gt; (ongoing)</p><p><b>organization</b>: <a href=\"#Organization_Example-AddOrganization-Organization\">See above (Organization/Example-AddOrganization-Organization)</a></p><p><b>location</b>: <a href=\"Location-Example-AddOrganization-Location.html\">Location/Example-AddOrganization-Location</a> \"General Hospital\"</p></div>"
+  ];
+  fhir:OrganizationAffiliation.active [ fhir:value "true"^^xsd:boolean];
+  fhir:OrganizationAffiliation.period [
+     fhir:Period.start [ fhir:value "1989-04-04T00:00:00-07:00"^^xsd:dateTime ]
+  ];
+  fhir:OrganizationAffiliation.organization [
+     fhir:link <http://hl7.org/fhir/ca-bc/provider/Organization/Example-AddOrganization-Organization>;
+     fhir:Reference.reference [ fhir:value "Organization/Example-AddOrganization-Organization" ]
+  ];
+  fhir:OrganizationAffiliation.location [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/ca-bc/provider/Location/Example-AddOrganization-Location>;
+     fhir:Reference.reference [ fhir:value "Location/Example-AddOrganization-Location" ]
+  ] .
+
+<http://hl7.org/fhir/ca-bc/provider/Organization/Example-AddOrganization-Organization> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/Location/Example-AddOrganization-Location> a fhir:ca-bc .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ca-bc/provider/Bundle/Example-AddOrganization-Bundle.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ca-bc/provider/Bundle/Example-AddOrganization-Bundle.ttl> .
+
+# -------------------------------------------------------------------------------------
+
