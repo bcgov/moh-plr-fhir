@@ -21,11 +21,12 @@ menu:
   Future Plans: future.html
   Artifacts:
     Capabilities: artifacts.html#1
-    Practitioner: artifacts.html#2
-    Organization: artifacts.html#3
-    Facility: artifacts.html#4
-    Common: artifacts.html#5
-    Datatypes: artifacts.html#6
+    Operations: artifacts.html#2
+    Practitioner: artifacts.html#3
+    Organization: artifacts.html#4
+    Facility: artifacts.html#5
+    Common: artifacts.html#6
+    Datatypes: artifacts.html#7
   Glossary: glossary.html
   Credits: credits.html
   
@@ -48,15 +49,24 @@ pages:
 groups:
   Capabilities:
     name: Capabilities
-    description: PLR CapabilityStatement, the defined Operations and the Bundle profiles associated with them
+    description: PLR Capability Statements
     resources:
-      - CapabilityStatement/bc-plr-capability-statement
-      - OperationDefinition/bc-full-practitioner-query
-      - OperationDefinition/bc-full-location-query
-      - OperationDefinition/bc-full-organization-query
-      - OperationDefinition/bc-dereference-practitioner-query
-      - OperationDefinition/bc-dereference-organization-query
-      - OperationDefinition/bc-dereference-location-query
+      - CapabilityStatement/bc-plr-client-capability-statement
+      - CapabilityStatement/bc-plr-server-capability-statement
+  Operations:
+    name: Operations
+    description: Operation definitions
+    resources:
+      - OperationDefinition/bc-entity-practitioner-query
+      - OperationDefinition/bc-entity-location-query
+      - OperationDefinition/bc-entity-organization-query
+      - OperationDefinition/bc-extended-practitioner-query
+      - OperationDefinition/bc-extended-organization-query
+      - OperationDefinition/bc-extended-location-query
+  Bundles:
+    name: Bundles
+    description: Distribution/Maintain and Batch Bundles
+    resources:
       - StructureDefinition/bc-batch-bundle
       - StructureDefinition/bc-practitioner-bundle
       - StructureDefinition/bc-organization-bundle

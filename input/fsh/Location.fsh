@@ -41,13 +41,13 @@ Description: "Provides the details of a facility as represented by a FHIR locati
 
 Extension: CommunityHealthServiceArea
 Id: bc-facility-community-health-service-area-extension
-Title: "BC Facility Community Health Service Area"
+Title: "BC Facility Community Health Service Area Extension"
 Description: "A code that represents the community health service area that the location is a part of."
 * value[x] only CodeableConcept
 
 Extension: MailingAddress
 Id: bc-facility-mailing-address-extension
-Title: "BC Facility Mailing Address"
+Title: "BC Facility Mailing Address Extension"
 Description: "An optional mailing address for the facility."
 * value[x] only BCAddress
 
@@ -84,7 +84,7 @@ Description: "An example of bundle that is adding a location."
 
 Instance: Example-AddPractitioner-WorkLocation
 InstanceOf: BCLocation
-Description: "Example of a Location (facility) that is the affiliated with an Organization."
+Description: "Example of a Location (Facility) that is the affiliated with an Organization."
 * extension[facilityDetails].extension[ownerName].valueString = "OPERATOR NAME"
 * extension[facilityDetails].extension[period].valuePeriod.start = "2000-01-01"
 * extension[serviceArea].valueCodeableConcept = http://example.org/CodeSystem/HealthServiceAreas#MAINLAND

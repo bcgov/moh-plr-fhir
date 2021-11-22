@@ -71,7 +71,7 @@ Description: "The Date of Death of a Practitioner."
 
 Extension: BirthTimeExtension
 Id: bc-birthtime-extension
-Title: "BC Extra birth time information"
+Title: "BC Birth Time Extension"
 Description: "Adds birth time to the birth date."
 * value[x] only dateTime
 
@@ -84,14 +84,14 @@ Description: "Captures the place where a patient/practitioner/person was born."
 Extension: PractitionerConfidentialityExtension
 Id: bc-practitioner-confidentiality-extension
 Title: "BC Practitioner Confidentiality Extension"
-Description: "Indicates the confidentality of the practitioner's information."
+Description: "Indicates the confidentiality of the practitioner's information."
 * extension contains code 1..1 MS and PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[code].value[x] only CodeableConcept
 * extension[code].valueCodeableConcept from http://terminology.hl7.org/ValueSet/v3-ConfidentialityClassification (required)
 
 Extension: PractitionerRelationshipExtension
 Id: bc-practitioner-relationship-extension
-Title: "BC Practitioner to Practitioner Relationship"
+Title: "BC Practitioner to Practitioner Relationship Extension"
 Description: "Allows for relationships of practitioners to practitioners without needing CareTeam semantics."
 * extension contains PeriodExtension named period 1..1 MS and practitioner 1..1 MS and type 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[practitioner].value[x] only Reference(BCPractitioner)
@@ -99,7 +99,7 @@ Description: "Allows for relationships of practitioners to practitioners without
 
 Extension: PractitionerDiscplinaryActionExtension
 Id: bc-practitioner-disciplinary-action-extension
-Title: "BC Practitioner Disciplinary Actions"
+Title: "BC Practitioner Disciplinary Actions Extension"
 Description: "Provides details of disciplinary actions against the provider."
 * extension contains identifier 1..1 MS and description 1..1 MS and PeriodExtension named period 1..1 MS and archiveDate 1..1 MS and displayFlag 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[identifier].value[x] only Identifier
@@ -109,7 +109,7 @@ Description: "Provides details of disciplinary actions against the provider."
 
 Extension: NoteExtension
 Id: bc-note-extension
-Title: "BC Notes"
+Title: "BC Notes Extension"
 Description: "Notes about the practitioner/location/organization."
 * extension contains identifier 1..1 MS and text 1..1 MS and PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[identifier].value[x] only Identifier
@@ -117,7 +117,7 @@ Description: "Notes about the practitioner/location/organization."
 
 Extension: PractitionerConditionExtension
 Id: bc-practitioner-condition-extension
-Title: "BC Practitioner Conditions"
+Title: "BC Practitioner Conditions Extension"
 Description: "Conditions on the provider's role"
 * extension contains identifier 1..1 MS and PeriodExtension named period 1..1 MS and restriction 1..1 MS and restrictionText 1..1 MS and code 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * extension[identifier].value[x] only Identifier
@@ -127,7 +127,7 @@ Description: "Conditions on the provider's role"
 
 Extension: PractitionerQualificationIssueDateExtension
 Id: bc-practitioner-qualification-issue-date-extension
-Title: "BC Practitioner Qualification Issue Date"
+Title: "BC Practitioner Qualification Issue Date Extensino"
 Description: "The issue date of the practitioner's qualification."
 * value[x] only dateTime
 

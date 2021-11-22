@@ -85,8 +85,8 @@ PLR FHIR has defined a set of FHIR Operations to search for Providers and Facili
 
 The two query operations are:
 
-* $entityQuery - used to return the full [provider](OperationDefinition-bc-full-practitioner-query.html) or [organization or facility](OperationDefinition-bc-full-organization-facility-query.html) without following relationships
-* $extendedQuery - used to return the full [provider](OperationDefinition-bc-dereference-practitioner-query.html) or [organization or facility](OperationDefinition-bc-dereference-organization-facility-query.html) along with all directly referenced providers or facilities
+* $entityQuery - used to return the full [provider](OperationDefinition-bc-entity-practitioner-query.html) or [organization](OperationDefinition-bc-entity-organization-query.html) or [facility](OperationDefinition-bc-entity-location-query.html) without following relationships
+* $extendedQuery - used to return the full [provider](OperationDefinition-bc-extended-practitioner-query.html) or [organization](OperationDefinition-bc-extended-organization-query.html) or [facility](OperationDefinition-bc-extended-location-query.html) along with all directly referenced providers or facilities
 
 The syntax for the $entityQuery operation is:
 

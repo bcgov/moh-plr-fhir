@@ -1,14 +1,14 @@
-Instance: FullPractitionerQuery
+Instance: EntityPractitionerQuery
 InstanceOf: OperationDefinition
 Description: "This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities."
 Usage: #definition
-* id = "bc-full-practitioner-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-practitioner-query"
-* name = "FullPractitionerQuery"
-* title = "Full Query for a practitioner"
+* id = "bc-entity-practitioner-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-entity-practitioner-query"
+* name = "PractitionerEntityQuery"
+* title = "Query for a practitioner without returning associations"
 * status = #draft
 * kind = #query
-* code = #full
+* code = #entityQuery
 * resource[0] = #Practitioner
 * system = false
 * type = true
@@ -77,43 +77,18 @@ Usage: #definition
 * parameter[8].type = #string
 * parameter[8].searchType = #token
 
-/*
-Instance: FullOrganizationFacilityQuery
-InstanceOf: OperationDefinition
-Description: "This operation is used to query for an organization or facility and will return the information for that organization or facility without following associations to other practitioner, organizations, or location."
-Usage: #definition
-* id = "bc-full-organization-facility-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-organization-facility-query"
-* name = "FullOrganizationFacilityQuery"
-* title = "Full Query for an organization or location"
-* status = #draft
-* kind = #query
-* code = #full
-* resource[0] = #Organization
-* resource[1] = #Location
-* system = false
-* type = true
-* instance = true
-* parameter[0].name = #name
-* parameter[0].use = #in
-* parameter[0].min = 0
-* parameter[0].max = "1"
-* parameter[0].documentation = "Search for organizations or locations with the specified name."
-* parameter[0].type = #string
-* parameter[0].searchType = #string
-*/
 
-Instance: FullLocationQuery
+Instance: EntityLocationQuery
 InstanceOf: OperationDefinition
 Description: "This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations."
 Usage: #definition
-* id = "bc-full-location-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-location-query"
-* name = "FullLocationQuery"
-* title = "Full Query for an location"
+* id = "bc-entity-location-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-entity-location-query"
+* name = "LocationEntityQuery"
+* title = "Query for a location without returning associations"
 * status = #draft
 * kind = #query
-* code = #full
+* code = #entityQuery
 * resource[0] = #Location
 * system = false
 * type = true
@@ -176,17 +151,17 @@ Usage: #definition
 * parameter[7].searchType = #string
 
 
-Instance: FullOrganizationQuery
+Instance: EntityOrganizationQuery
 InstanceOf: OperationDefinition
 Description: "This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities."
 Usage: #definition
-* id = "bc-full-organization-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-full-organization-query"
-* name = "FullOrganizationQuery"
-* title = "Full Query for an organization"
+* id = "bc-entity-organization-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-entity-organization-query"
+* name = "OrganizationEntityQuery"
+* title = "Query for an organization without returning associations"
 * status = #draft
 * kind = #query
-* code = #full
+* code = #entityQuery
 * resource[0] = #Organization
 * system = false
 * type = true
@@ -207,17 +182,17 @@ Usage: #definition
 * parameter[1].searchType = #string
 
 
-Instance: DereferencePractitionerQuery
+Instance: ExtendedPractitionerQuery
 InstanceOf: OperationDefinition
 Description: "This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities."
 Usage: #definition
-* id = "bc-dereference-practitioner-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-practitioner-query"
-* name = "DereferencePractitionerQuery"
-* title = "Dereferenced Query for a Practitioner"
+* id = "bc-extended-practitioner-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-practitioner-query"
+* name = "PractitionerExtendedQuery"
+* title = "Query for a Practitioner that returns associated resources"
 * status = #draft
 * kind = #query
-* code = #dereference
+* code = #dereferenceQuery
 * resource[0] = #Practitioner
 * system = false
 * type = true
@@ -286,43 +261,17 @@ Usage: #definition
 * parameter[8].type = #string
 * parameter[8].searchType = #token
 
-/*
-Instance: DereferenceOrganizationFacilityQuery
-InstanceOf: OperationDefinition
-Description: "This operation is used to query for an organization or facility and will return the information for that organization or facility along with any instances that can be found by following associations to other providers, organizations, or facilities."
-Usage: #definition
-* id = "bc-dereference-organization-facility-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-organization-facility-query"
-* name = "DereferenceOrganizationFacilityQuery"
-* title = "Dereference Query for an organization or location"
-* status = #draft
-* kind = #query
-* code = #dereference
-* resource[0] = #Organization
-* resource[1] = #Location
-* system = false
-* type = true
-* instance = true
-* parameter[0].name = #name
-* parameter[0].use = #in
-* parameter[0].min = 0
-* parameter[0].max = "1"
-* parameter[0].documentation = "Search for organizations or locations with the specified name."
-* parameter[0].type = #string
-* parameter[0].searchType = #string
-*/
-
-Instance: DereferenceOrganizationQuery
+Instance: ExtendedOrganizationQuery
 InstanceOf: OperationDefinition
 Description: "This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations."
 Usage: #definition
-* id = "bc-dereference-organization-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-organization-query"
-* name = "DereferenceOrganizationQuery"
-* title = "Dereference Query for an organization"
+* id = "bc-extended-organization-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-organization-query"
+* name = "OrganizationExtendedQuery"
+* title = "Query for an organization that returns associated resources"
 * status = #draft
 * kind = #query
-* code = #dereference
+* code = #extendedQuery
 * resource[0] = #Organization
 * system = false
 * type = true
@@ -343,17 +292,17 @@ Usage: #definition
 * parameter[1].searchType = #string
 
 
-Instance: DereferenceLocationQuery
+Instance: ExtendedLocationQuery
 InstanceOf: OperationDefinition
 Description: "This operation is used to query for an location and will return the information for that location along with any instances that can be found by following associations to other providers, organizations, or location."
 Usage: #definition
-* id = "bc-dereference-location-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-dereference-location-query"
-* name = "DereferenceLocationQuery"
-* title = "Dereference Query for an location"
+* id = "bc-extended-location-query"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-location-query"
+* name = "LocationExtendedQuery"
+* title = "Query for a location that returns associated resources"
 * status = #draft
 * kind = #query
-* code = #dereference
+* code = #extendedQuery
 * resource[0] = #Location
 * system = false
 * type = true

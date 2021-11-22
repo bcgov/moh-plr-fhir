@@ -22,7 +22,7 @@ Description: "Adds an end reason to the address."
 Profile: BCHumanName
 Id: bc-humanName
 Parent: HumanName
-Description: "Adds an end resaon and a use code to a name."
+Description: "Adds an end reason and a use code to a name."
 * extension contains NameUseExtension named use 0..1 MS and 
 	EndReasonExtension named endReason 0..1 MS
 
@@ -43,6 +43,6 @@ Description: "Tracking end reasons."
 
 Extension: PeriodExtension
 Id: bc-period-extension
-Title: "BC Valid Period"
+Title: "BC Valid Period Extension"
 Description: "The period for when the extended element is valid."
 * value[x] only Period
