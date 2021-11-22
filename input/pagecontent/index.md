@@ -43,7 +43,7 @@ The information recorded for Providers consists of unique identifiers, names, ad
 </figure>
 {::options parse_block_html="true" /}
 
-The relationships above are compositions, the children cannot exist without the parent(s).  I.e. the Individual or Organization Provider cannot exist without a Party and Role.  And each of the Facility - Provider or Provider - Provider relationships must be realted to existing Facilities or Providers.
+The relationships above are compositions, the children cannot exist without the parent(s).  I.e. the Individual or Organization Provider cannot exist without a Party and Role.  And each of the Facility-to-Provider or Provider-to-Provider relationships must be connected to existing Facilities or Providers.
 
 ### Facilities
 
@@ -82,8 +82,7 @@ The above diagram outlines the different entities that compose a facility:
 
 ### Relation to CA Baseline and other IGs
 
-Currently this guide is based on the international FHIR R4 specification.  The intent is to move to based on the CA Baseline however there are a few conflicts and these are being worked on with the Canadian standards team.  
->When (if) this changes to the CA baseline we'll reword this section
+This Implementation Guide was written based on resource profiles from CA Baseline where available (Practitioner, Organization, and Location) and otherwise from FHIR R4 (OrganizationAffiliation and PractitionerRole).  The PractitionerRole profile from CA Baseline was not used because we feel that it is over-constrained for use in a Provider Directory.  As well, we maintained alignment with the Ontario PPR project where possible.
 
 ### Miscellaneous
 
@@ -91,13 +90,16 @@ Currently this guide is based on the international FHIR R4 specification.  The i
 
 The PLR User Guide provides a detailed overview of the current PLR functionality.  Please contact the [registry administrator](mailto:HLTH.REGISTRIESADMIN@gov.bc.ca) to request a copy of the User Guide.
 
+#### Conformance Requirements
+
+Conformance verbs - SHALL, SHOULD, MAY - used in this guide are defined in [FHIR Conformance Rules](http://hl7.org/fhir/conformance-rules.html#conflang).
+
 #### Data Absent Reason 
 
-No form of data absent reason is supported; manadatory data must always be present.
+No form of data absent reason is supported; mandatory data must always be present.
 
 #### Must Support
 
-Beyond privacy and security PLR places no constraints on any element regarding the FHIR definition of MustSupport.  I.e. This guide will not mark any field as MustSupport or make clear exactly what kind of 'support' is required.  For example, expired records are evident by examining the effective start and end dates.  A PLR user may choose to discard expired records, or use the last expired record as it is the 'best' record they have, but PLR doesn't require either of those actions, to support the record's effective dates, be executed.
+All of the PLR Profiles include elements that are marked as 'Must Support'.  For the purposes of this guide, Must Support is intended to represent those fields that will be exchanged between client applications and the PLR server.  Client applications who are receving PLR information SHALL be able to receive all fields marked as Must Support without raising an exception.  When sending information to the PLR server, client applications SHOULD be able to send any fields marked as Must Support, with the additional expectation that they SHALL send any fields that they collect. 
 
 The privacy and security requried to handle PLR data is fully described in the conformance guides.
-
