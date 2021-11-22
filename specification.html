@@ -210,21 +210,22 @@ This specification is currently published as a Draft Standard on the ministry gi
 <h4 id="provider-to-provider-relationships">Provider to Provider Relationships</h4>
 
 <h5 id="individual-provider-to-individual-provider">Individual Provider to Individual Provider</h5>
-<p>To show the relationship between two individual providers, the <a href="StructureDefinition-bc-practitioner-relationship-extension.html">BC Practitioner Relationship extension</a> was created.  This allows for a relationship type and a linkage between two BC Practitioners to be stated.  NOTE: It is expected that the relationship would be found on both Practitioner instances.</p>
+<p>Individual provider to provider relationships are used for showing how providers are related to each other.  For instance, a LOCUM provider can be referenced using this capability.
+To show the relationship between two individual providers, the <a href="StructureDefinition-bc-practitioner-relationship-extension.html">BC Practitioner Relationship extension</a> was created.  This allows for a relationship type and a linkage between two BC Practitioners to be stated.  NOTE: It is expected that the relationship would be found on both Practitioner instances.</p>
 
 <h5 id="individual-provider-to-organizational-provider">Individual Provider to Organizational Provider</h5>
-<p>To show the relationship between an individual Provider and an organizational Provider, the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  This resource has a practitioner data element and an organization data element along with a code that is used to say what role the individual provider plays at the organization.</p>
+<p>To show the relationship between an individual Provider and an organizational Provider (i.e. a hospital that has providers working at it), the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  This resource has a practitioner data element and an organization data element along with a code that is used to say what role the individual provider plays at the organization.</p>
 
 <h5 id="organizational-provider-to-organizational-provider">Organizational Provider to Organizational Provider</h5>
-<p>To show the relationship between two organizational providers, the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.</p>
+<p>To show the relationship between two organizational providers (i.e. a subsidiary organization), the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.</p>
 
 <h4 id="provider-to-facility-relationships">Provider to Facility Relationships</h4>
 
 <h5 id="individual-provider-to-facility">Individual Provider to Facility</h5>
-<p>To show the relationship between an individual provider and a facility, the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  Instead of the organization data element, the location data element is used to indicate that a provider is related to a facility.</p>
+<p>To show the relationship between an individual provider and a facility (i.e. a works-at relationship), the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  Instead of the organization data element, the location data element is used to indicate that a provider is related to a facility.</p>
 
 <h5 id="organization-provider-to-facility">Organization Provider to Facility</h5>
-<p>To show the relationship between an organizational provider and a facility, the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  Instead of the participating organization data element, the location data element is used to indicate that an organization is related to a facility.</p>
+<p>To show the relationship between an organizational provider and a facility (i.e. facilities where the organization does its work), the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  Instead of the participating organization data element, the location data element is used to indicate that an organization is related to a facility.</p>
 
 <h3 id="use-cases">Use Cases</h3>
 <p>There are a number of use cases that support the existing PLR functionality:</p>
@@ -410,7 +411,7 @@ This specification is currently published as a Draft Standard on the ministry gi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 22, 2021 20:15+0000">2021-11-22</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 22, 2021 21:41+0000">2021-11-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
