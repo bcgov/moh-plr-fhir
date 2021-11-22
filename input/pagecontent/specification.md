@@ -107,7 +107,7 @@ The parameters for the $extendedQuery operation will be the search parameters li
 ##### Query Supported Search Parameters
 
 | Resource | Search Parameter Name |
-| ---- | :----: |
+|----|:----|
 | Practitioner | given |
 | | surname |
 | | role |
