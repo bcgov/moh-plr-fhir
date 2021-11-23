@@ -376,6 +376,9 @@ Description: "A Bundle that is used in the PLR Batch operation."
 * entry.fullUrl 1..1 MS
 * entry.search 0..0
 * entry.request 1..1 MS
+* entry.request.method 1..1 MS
+* entry.request.method = #PUT
+* entry.request.url 1..1 MS
 * entry.response 0..0
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
@@ -392,14 +395,11 @@ Description: "An example of a Batch Bundle that contains one each of a Practitio
 * type = #batch
 * entry[0].fullUrl = "http://plr.moh.bc.ca/fhir/Bundle/12345"
 * entry[0].resource = Example-AddPractitioner-Bundle
-* entry[0].request.method = #POST
 * entry[0].request.url = "http://plr.moh.bc.ca/fhir/Bundle"
 * entry[1].fullUrl = "http://plr.moh.bc.ca/fhir/Bundle/23456"
 * entry[1].resource = Example-AddOrganization-Bundle
-* entry[1].request.method = #POST
 * entry[1].request.url = "http://plr.moh.bc.ca/fhir/Bundle"
 * entry[2].fullUrl = "http://plr.moh.bc.ca/fhir/Bundle/34567"
 * entry[2].resource = Example-AddLocation-Bundle
-* entry[2].request.method = #POST
 * entry[2].request.url = "http://plr.moh.bc.ca/fhir/Bundle"
 
