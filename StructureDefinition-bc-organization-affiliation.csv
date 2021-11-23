@@ -38,7 +38,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "OrganizationAffiliation.period","","","",0,1,"Y","","Y","Period {[]} {[]}
 ","The period during which the participatingOrganization is affiliated with the primary organization","The period during which the participatingOrganization is affiliated with the primary organization.","","An affiliation may be created ahead of time and only be active for a defined period of time. Once the affiliation is complete, the fact that it existed may still be required.","","","","","","","",,,,,"",,,,"OrganizationAffiliation.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".performance[@typeCode <= 'PPRF'].ActDefinitionOrEvent.effectiveTime","FiveWs.done[x]"
-"OrganizationAffiliation.organization","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization]]}
+"OrganizationAffiliation.organization","","","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization]]}
 ","Organization where the role is available","Organization where the role is available (primary organization/has members).","","","","","","","","","",,,,,"",,,,"OrganizationAffiliation.organization",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".scoper"
 "OrganizationAffiliation.participatingOrganization","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization]]}
@@ -75,13 +75,13 @@ Reference is intended to point to a structure that can potentially be expressed 
 "OrganizationAffiliation.participatingOrganization.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Text alternative for the resource","Plain text narrative that identifies the resource in addition to the resource reference.","This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.","","","","","","","","",,,,,"",,,,"Reference.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"
-"OrganizationAffiliation.network","","","",0,*,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
+"OrganizationAffiliation.network","","","",0,*,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Health insurance provider network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined)","Health insurance provider network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined).","","","","","","","","","",,,,,"",,,,"OrganizationAffiliation.network",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "OrganizationAffiliation.code","","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
 ","Definition of the role the participatingOrganization plays","Definition of the role the participatingOrganization plays in the association.","","","","","","","","","",,"example","The role the participating organization providing services to the primary organization.","http://hl7.org/fhir/ValueSet/organization-role","",,,,"OrganizationAffiliation.code",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".code"
-"OrganizationAffiliation.specialty","","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+"OrganizationAffiliation.specialty","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
 ","Specific specialty of the participatingOrganization in the context of the role","Specific specialty of the participatingOrganization in the context of the role.","","","","","","","","","",,"preferred","Specific specialty associated with the participating organization.","http://hl7.org/fhir/ValueSet/c80-practice-codes","",,,,"OrganizationAffiliation.specialty",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".player.HealthCareProvider[@classCode = 'PROV'].code"
 "OrganizationAffiliation.location","","","",0,*,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location]]}
@@ -121,10 +121,9 @@ Reference is intended to point to a structure that can potentially be expressed 
 "OrganizationAffiliation.healthcareService","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/HealthcareService]]}
 ","Healthcare services provided through the role","Healthcare services provided through the role.","","","","","","","","","",,,,,"",,,,"OrganizationAffiliation.healthcareService",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".player.QualifiedEntity[@classCode = 'QUAL'].code"
-"OrganizationAffiliation.telecom","","","",0,*,"Y","","","ContactPoint {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-contactPoint]]} {[]}
-","Details of a Technology mediated contact point (phone, fax, email, etc.)","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","","Sometimes a participating organization provides dedicated contacts to handle enquiries specifically for the role provided to the affiliated organization.","","","","","","","",,,,,"",,,,"OrganizationAffiliation.telecom",0,*,"ele-1
-","cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}
-ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}","n/a","TEL"
+"OrganizationAffiliation.telecom","","","",0,*,"","","Y","ContactPoint {[]} {[]}
+","Contact details at the participatingOrganization relevant to this Affiliation","Contact details at the participatingOrganization relevant to this Affiliation.","","Sometimes a participating organization provides dedicated contacts to handle enquiries specifically for the role provided to the affiliated organization.","","","","","","","",,,,,"",,,,"OrganizationAffiliation.telecom",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+",".telecom"
 "OrganizationAffiliation.endpoint","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Endpoint]]}
 ","Technical endpoints providing access to services operated for this role","Technical endpoints providing access to services operated for this role.","","","","","","","","","",,,,,"",,,,"OrganizationAffiliation.endpoint",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a"

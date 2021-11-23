@@ -238,7 +238,7 @@
 <tr><td>Defining URL:</td><td>http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role</td></tr>
  <tr><td>Version:</td><td>0.1.0</td></tr>
  <tr><td>Name:</td><td>BCPractitionerRole</td></tr>
- <tr><td>Status:</td><td>Active as of 11/23/21, 2:50 AM</td></tr>
+ <tr><td>Status:</td><td>Active as of 11/23/21, 6:12 AM</td></tr>
  <tr><td>Definition:</td><td><p>General constraints on the PractitionerRole resource for use in the BC Provider Registry project.</p>
 </td></tr>
  <tr><td>Publisher:</td><td>BC Ministry of Health</td></tr>
@@ -252,6 +252,57 @@
   <pre>http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role</pre>
 
 <!-- insert intro if present -->
+
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>This profile sets the minimum expectations for a PractitionerRole resource.  This resource is used to convey relationships between a Practitioner and an Organization and/or a Practitioner and a Location.</p>
+
+<p>There will be one PractitionerRole with no reference to an Organization or a Location.  This instance details the roles in general that a specific Practitioner performs.  There will be a number of PractitionerRoles with a reference to an Organzation.  These instances indicate the specific roles that the Practitioner performs at the given Organization.  Finally, there will be instances with a reference to a Location.  These indicate the roles that the Practitioner performs at different places they work at.</p>
+
+<h3 id="mandatory-and-must-support-data-elements">Mandatory and Must Support Data Elements</h3>
+
+<p>This PractitionerRole profile has the following mandatory elements:</p>
+
+<p><strong>Each PractitionerRole must have:</strong></p>
+
+<ol>
+  <li>a reference to a BC Practitioner</li>
+</ol>
+
+<p><strong>Each PractitionerRole may also have either:</strong></p>
+
+<ol>
+  <li>a reference to an Organization where the Practitioner performs services, including an optional reason code for why the practitioner no longer performs for this Organization, or</li>
+  <li>a reference to an Location where the Practitioner works at, including a period during which the Practitioner works at this Location and an optional reason code for why the Practitioner no longer works at this Location.</li>
+</ol>
+
+<p><strong>Each Practitioner must support:</strong></p>
+
+<ol>
+  <li>whether the role information is active or not</li>
+  <li>the period during which the role was active</li>
+  <li>an identifier for the role</li>
+  <li>codes that identify the roles the practitioner has, either by themselves, at an organization, or at a Location</li>
+  <li>codes that identify the specialties the practitioner has, including:
+    <ol>
+      <li>the period during which the specialty was active</li>
+      <li>an optional reason code for why the specialty is no longer active</li>
+    </ol>
+  </li>
+  <li>contact point information for the practitioner in this role</li>
+</ol>
+
+<h3 id="examples">Examples</h3>
+
+<ul>
+  <li><a href="PractitionerRole-Example-AddPractitioner-PractitionerRole.html">PractitionerRole Example</a></li>
+</ul>
+
+
+</div>
 
 
 
@@ -885,7 +936,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 23, 2021 02:50+0000">2021-11-23</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 23, 2021 06:12+0000">2021-11-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

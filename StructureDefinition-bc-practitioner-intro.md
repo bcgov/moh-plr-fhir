@@ -18,12 +18,12 @@ This Practitioner profile has the following mandatory elements:
 3.  an Address
 4.  Gender
 5.  Birth Date (with optional Birth Time extension)
-6.  Qualifications, including:
+6.  Qualification information:
 	1.  code
 	2.  Issue Date Extension
 	3.  identifier (optional)
 	4.  period (optional)
-	5.  Issuing Organization (optional)
+	5.  Issuing Organization (optional).  NOTE: the given reference will be to a contained instance of an organization that has a name and an optional identifier.
 	6.  End Reason Extension (optional)
 7.  Communication information
 	1.  coding
@@ -38,6 +38,10 @@ This Practitioner profile has the following mandatory elements:
 14.  Conditions Extension (optional)
 15.  Notes Extension (optional)
 16.  Practitioner to Practitioner Relationship Extension (optional)
+
+### Contained Resources
+
+This Practitioner profile has a list of contained Organizations that are referenced by the Qualification information.  There will be no separate instance of an issuing organization.
 
 ### Examples
 

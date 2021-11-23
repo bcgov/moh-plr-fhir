@@ -238,7 +238,7 @@
 <tr><td>Defining URL:</td><td>http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner</td></tr>
  <tr><td>Version:</td><td>0.1.0</td></tr>
  <tr><td>Name:</td><td>BCPractitioner</td></tr>
- <tr><td>Status:</td><td>Active as of 11/23/21, 2:50 AM</td></tr>
+ <tr><td>Status:</td><td>Active as of 11/23/21, 6:12 AM</td></tr>
  <tr><td>Definition:</td><td><p>General constraints on the Practitioner resource for use in the BC Provider Registry project.</p>
 </td></tr>
  <tr><td>Publisher:</td><td>BC Ministry of Health</td></tr>
@@ -280,13 +280,13 @@
   <li>an Address</li>
   <li>Gender</li>
   <li>Birth Date (with optional Birth Time extension)</li>
-  <li>Qualifications, including:
+  <li>Qualification information:
     <ol>
       <li>code</li>
       <li>Issue Date Extension</li>
       <li>identifier (optional)</li>
       <li>period (optional)</li>
-      <li>Issuing Organization (optional)</li>
+      <li>Issuing Organization (optional).  NOTE: the given reference will be to a contained instance of an organization that has a name and an optional identifier.</li>
       <li>End Reason Extension (optional)</li>
     </ol>
   </li>
@@ -307,6 +307,10 @@
   <li>Notes Extension (optional)</li>
   <li>Practitioner to Practitioner Relationship Extension (optional)</li>
 </ol>
+
+<h3 id="contained-resources">Contained Resources</h3>
+
+<p>This Practitioner profile has a list of contained Organizations that are referenced by the Qualification information.  There will be no separate instance of an issuing organization.</p>
 
 <h3 id="examples">Examples</h3>
 
@@ -1050,7 +1054,7 @@ Not handled yet: complex extension http://hl7.org/fhir/ca-bc/provider/StructureD
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 23, 2021 02:50+0000">2021-11-23</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 23, 2021 06:12+0000">2021-11-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

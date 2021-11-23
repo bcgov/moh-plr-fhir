@@ -10,6 +10,12 @@
     single schematron that validates contained resources (if you have any) 
   -->
   <sch:pattern>
+    <sch:title>f:OrganizationAffiliation</sch:title>
+    <sch:rule context="f:OrganizationAffiliation">
+      <sch:assert test="count(f:organization) &gt;= 1">organization: minimum cardinality of 'organization' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>OrganizationAffiliation</sch:title>
     <sch:rule context="f:OrganizationAffiliation">
       <sch:assert test="not(parent::f:contained and f:contained)">If the resource is contained in another resource, it SHALL NOT contain nested Resources (inherited)</sch:assert>
@@ -208,7 +214,6 @@
   <sch:pattern>
     <sch:title>OrganizationAffiliation.telecom</sch:title>
     <sch:rule context="f:OrganizationAffiliation/f:telecom">
-      <sch:assert test="not(exists(f:value)) or exists(f:system)">A system is required if a value is provided. (inherited)</sch:assert>
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
     </sch:rule>
   </sch:pattern>
