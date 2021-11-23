@@ -9,21 +9,12 @@ Description: "General constraints on the Location resource for use in the BC Pro
 * name.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * alias MS
 * description MS
-* mode MS
 * type 1..* MS
 * type from $LocationType (required)
 * telecom only BCContactPoint 
 * telecom MS
 * address only BCAddress 
 * address 1..1 MS
-* physicalType MS
-* position MS
-* position.longitude MS
-* position.latitude MS
-* managingOrganization MS
-* managingOrganization only Reference(BCOrganization)
-* partOf MS
-* partOf only Reference(BCLocation)
 * extension contains NoteExtension named note 0..* MS and
 	FacilityDetailsExtension named facilityDetails 0..1 MS and
 	CommunityHealthServiceArea named serviceArea 0..1 MS and
@@ -90,7 +81,7 @@ Description: "An example of bundle that is adding a location."
 
 Instance: Example-AddPractitioner-WorkLocation
 InstanceOf: BCLocation
-Description: "Example of a Location (Facility) that is the affiliated with an Organization."
+Description: "Example of a Location (Facility) that is the work location for a Practitioner."
 * extension[facilityDetails].extension[ownerName].valueString = "OPERATOR NAME"
 * extension[facilityDetails].extension[period].valuePeriod.start = "2000-01-01"
 * extension[serviceArea].valueCodeableConcept = http://example.org/CodeSystem/HealthServiceAreas#MAINLAND
@@ -131,7 +122,7 @@ Description: "Example of a Location (Facility) that is the affiliated with an Or
 
 Instance: Example-AddOrganization-Location
 InstanceOf: BCLocation
-Description: "Example of a Location (Facility) that exists on its own."
+Description: "Example of a Location (Facility) that is associated with an Organization."
 * identifier.system = "urn:oid:2.16.840.1.113883.3.40.1.10"
 * identifier.value = "111"
 * name = "General Hospital"

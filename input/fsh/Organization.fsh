@@ -24,19 +24,15 @@ Description: "General constraints on the OrganizationAffiliation resource for us
 * identifier 0..*  MS
 * active MS
 * period MS
-* organization MS
+* organization 1..1 MS
 * organization only Reference(BCOrganization)
 * participatingOrganization MS
 * participatingOrganization only Reference(BCOrganization)
 * participatingOrganization.extension contains EndReasonExtension named endReason 0..1 MS
-* network MS
 * code MS
-* specialty MS
 * location MS
 * location only Reference(BCLocation)
 * location.extension contains EndReasonExtension named endReason 0..1 MS
-* telecom only BCContactPoint
-* telecom MS
 
 Instance: Example-Qualification-Organization
 InstanceOf: BCOrganization
