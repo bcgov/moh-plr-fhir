@@ -5,7 +5,7 @@ This specification is currently published as a Draft Standard on the ministry gi
 </blockquote>
 {% endraw %}
 ### PLR Application Overview
-The Provider and Location Registry (PLR) is a centralized repository of core information about health service providers, e.g., physicians, nurses, pharmacists.  Information is supplied by authorized sources such as professional colleges. PLR ensures the security of patient health information by employing or enabling proven security and privacy techniques. Data in the repository is available to authorized organizations to facilitate the transmission of provider information between authorized organizations in real time.  This makes PLR a cornerstone in the development of the Electronic Health Record (EHR).
+The Provider and Location Registry (PLR) is a centralized repository of core information about health service providers, e.g., physicians, nurses, pharmacists.  Information is supplied by authorized sources such as professional colleges. PLR ensures the security of provider information by employing or enabling proven security and privacy techniques. Data in the repository is available to authorized organizations to facilitate the transmission of provider information between authorized organizations in real time.  This makes PLR a cornerstone in the development of the Electronic Health Record (EHR).
 
 PLR supports BC Health stakeholder needs for a comprehensive, trusted and reliable custodian and source of core health provider, location and facility information. PLR is the authoritative registry of British Columbia healthcare Providers’ demographic and professional information which supports activities such as:
 
@@ -24,11 +24,11 @@ The PLR contains information for each Provider (e.g. personal demographics, Coll
 * College of Psychologists of BC
 * College of Optometrists of BC
 
-Any given Point of service (PoS) can only access the Provider data fields that are included in the relevant information sharing agreements with the Ministry of Health. Specific data permissions are set within the PLR.  A PoS application can use the PLR as the sole source of Provider information or to complement existing retained Provider information.
+Any given point of service (PoS) can only access the Provider data fields that are included in the relevant information sharing agreements with the Ministry of Health. Specific data permissions are set within the PLR.  A PoS application can use the PLR as the sole source of Provider information or to complement existing retained Provider information.
 
 ### Providers
 
-A *Provider* is a person / individual or an organization acting in a role. The PLR uses the terms individual Provider and organization Provider to distinguish between the two role types.
+A *Provider* is a person / individual or an organization acting in a role. The PLR uses the terms individual Provider and organization Provider to distinguish between the two types.
 Examples:
 
 * Persons / Individual Provider – Dr. Sara Scalpel in the role of medical doctor.
@@ -47,12 +47,11 @@ The relationships above are compositions, the children cannot exist without the 
 
 ### Facilities
 
-A Facility is an identified, named place, piece of equipment, or amenity of interest to BC Health which may be physical (e.g. a building or vehicle).  It can be a a particular place or position which may be physically/spatially related.  Facilities have names, unique types and purposes, and may have other communication mechanisms: mailing addresses, telephone numbers, etc.  As well, multiple organizations or individual providers can be related to a facility.
+A Facility is an identified, named place, piece of equipment, or amenity of interest to BC Health which is physical (e.g. a building or vehicle).  It can be a a particular place or position which may be physically/spatially related.  Facilities have names, and may have other communication mechanisms: mailing addresses, telephone numbers, etc.  As well, multiple organizations or individual providers can be related to a facility.
 
 A Facility is a unique civic address in BC and may be:
 
 * A single building (most frequent case).
-* A unit within a building.
 * One of several assigned to very large buildings with multiple entrances (e.g. Vancouver General).
 
 Examples: Long term care facility, Walk-in Clinic, Urgent Care Centre, Public Health Office, Hospitals, Ambulances, Pharmacies, Laboratory offices, Community Medical Imaging Clinics.
@@ -67,7 +66,7 @@ This enables:
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_facility.png" alt="BC PLR Facility"/>
+  <img style="padding-top:0;padding-bottom:30px" width="450px" src="bc_facility.png" alt="BC PLR Facility"/>
   <figcaption>Figure 1.2 - BC PLR Facility</figcaption>
 </figure>
 {::options parse_block_html="true" /}
@@ -75,10 +74,10 @@ This enables:
 The above diagram outlines the different entities that compose a facility:
 
 * Facility Name - name and description
-* Facility Details - type and purpose, owner, operator
-* Facility Type - physical, mobile or possibly virtual
+* Facility Details - owner, operator, effective dates
 * Civic Address - civic address along with latitude/longitude and community health service area (CHSA) codes and code descriptions
-* Facility Identifier - identifier with identifier type
+* Facility Identifier - identifier(s) with identifier type
+* Community Health Service Area - a health boundary within the Province of BC
 
 ### Relation to CA Baseline and other IGs
 
@@ -100,6 +99,6 @@ No form of data absent reason is supported; mandatory data must always be presen
 
 #### Must Support
 
-All of the PLR Profiles include elements that are marked as 'Must Support'.  For the purposes of this guide, Must Support is intended to represent those fields that will be exchanged between client applications and the PLR server.  Client applications who are receving PLR information SHALL be able to receive all fields marked as Must Support without raising an exception.  When sending information to the PLR server, client applications SHOULD be able to send any fields marked as Must Support, with the additional expectation that they SHALL send any fields that they collect. 
+All of the PLR Profiles include elements that are marked as 'Must Support'.  For the purposes of this guide, Must Support is intended to represent those fields that will be exchanged between client applications and the PLR server.  Client applications who are receving PLR information SHALL be able to receive all fields marked as Must Support without raising an exception.  When sending information to the PLR server, client applications SHOULD be able to send any fields marked as Must Support. 
 
 The privacy and security requried to handle PLR data is fully described in the conformance guides.

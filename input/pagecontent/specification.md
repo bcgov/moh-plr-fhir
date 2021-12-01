@@ -8,7 +8,7 @@ This specification is currently published as a Draft Standard on the ministry gi
 
 In FHIR, the resources used are named Practitioner, Organization, and Location.  BC has created profiles of each of these resources for use in the PLR system.
 
-Each Individual Provider is composed of a [Practitioner instance](StructureDefinition-bc-practitioner.html) and at least one [PractitionerRole instance](StructureDefinition-bc-practitioner-role.html) which holds the Practitioner's role, such as Nurse or Dentist.  Other PractitionerRole instances will hold the relationship between an Practitioner and their Work Locations via the PractitionerRole.location reference and to Organizational Providers via the PractitionerRole.organization.
+Each Individual Provider is composed of a [Practitioner instance](StructureDefinition-bc-practitioner.html) and at least one [PractitionerRole instance](StructureDefinition-bc-practitioner-role.html) which holds the Practitioner's role, such as Nurse or Dentist.  Other PractitionerRole instances will hold the relationship between an Practitioner and related Facilities via the PractitionerRole.location reference and to Organizational Providers via the PractitionerRole.organization reference.
 
 Each Organizational Provider is composed of an [Organization instance](StructureDefinition-bc-organization.html) with zero or more [OrganizationAffiliation instances](StructureDefinition-bc-organization-affiliation.html) that hold the relationship betwen two different Organizations as well as the relationship between an Organization and the locations where it provides services.
 
@@ -28,22 +28,22 @@ A practitioner providing services in multiple roles, for example, as a Nurse or 
 #### Provider to Provider Relationships
 
 ##### Individual Provider to Individual Provider
-Individual provider to provider relationships are used for showing how providers are related to each other.  For instance, a LOCUM provider can be referenced using this capability.
-To show the relationship between two individual providers, the [BC Practitioner Relationship extension](StructureDefinition-bc-practitioner-relationship-extension.html) was created.  This allows for a relationship type and a linkage between two BC Practitioners to be stated.  NOTE: It is expected that the relationship would be found on both Practitioner instances.
+Individual Provider to Provider relationships are used for showing how Providers are related to each other.  For instance, a LOCUM Provider can be referenced using this capability.
+To show the relationship between two Individual Providers, the [BC Practitioner Relationship extension](StructureDefinition-bc-practitioner-relationship-extension.html) was created.  This allows for a relationship type and a linkage between two BC Practitioners to be stated.  NOTE: It is expected that the relationship would be found on both Practitioner instances.
 
 ##### Individual Provider to Organizational Provider
-To show the relationship between an individual Provider and an organizational Provider (i.e. a hospital that has providers working at it), the [BC PractitionerRole profile](StructureDefinition-bc-practitioner-role.html) is used.  This resource has a practitioner data element and an organization data element along with a code that is used to say what role the individual provider plays at the organization.
+To show the relationship between an Individual Provider and an Organizational Provider (i.e. a hospital that has Providers working at it), the [BC PractitionerRole profile](StructureDefinition-bc-practitioner-role.html) is used.  This resource has a practitioner data element and an organization data element along with a code that is used to say what role the Individual Provider plays at the organization.
 
 ##### Organizational Provider to Organizational Provider
-To show the relationship between two organizational providers (i.e. a subsidiary organization), the [BC OrganizationAffiliation profile](StructureDefinition-bc-organization-affiliation.html) is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.
+To show the relationship between two Organizational Providers (i.e. a subsidiary organization or a care team related to Good Health Clinic Inc.), the [BC OrganizationAffiliation profile](StructureDefinition-bc-organization-affiliation.html) is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.
 
 #### Provider to Facility Relationships
 
 ##### Individual Provider to Facility
-To show the relationship between an individual provider and a facility (i.e. a works-at relationship), the [BC PractitionerRole profile](StructureDefinition-bc-practitioner-role.html) is used.  Instead of the organization data element, the location data element is used to indicate that a provider is related to a facility.
+To show the relationship between an Individual Provider and a Facility (i.e. a works-at relationship), the [BC PractitionerRole profile](StructureDefinition-bc-practitioner-role.html) is used.  Instead of the organization data element, the location data element is used to indicate that a Provider is related to a Facility.
 
 ##### Organization Provider to Facility
-To show the relationship between an organizational provider and a facility (i.e. facilities where the organization does its work), the [BC OrganizationAffiliation profile](StructureDefinition-bc-organization-affiliation.html) is used.  Instead of the participating organization data element, the location data element is used to indicate that an organization is related to a facility.
+To show the relationship between an Organizational Provider and a Facility (i.e. facilities where the organization does its work), the [BC OrganizationAffiliation profile](StructureDefinition-bc-organization-affiliation.html) is used.  Instead of the participating organization data element, the location data element is used to indicate that an organization is related to a Facility.
 
 ### Use Cases
 There are a number of use cases that support the existing PLR functionality:
@@ -86,13 +86,13 @@ PLR FHIR has defined a set of FHIR Operations to search for Providers and Facili
 
 The two query operations are:
 
-* $entityQuery - used to return the full [provider](OperationDefinition-bc-entity-practitioner-query.html) or [organization](OperationDefinition-bc-entity-organization-query.html) or [facility](OperationDefinition-bc-entity-location-query.html) without following relationships
-* $extendedQuery - used to return the full [provider](OperationDefinition-bc-extended-practitioner-query.html) or [organization](OperationDefinition-bc-extended-organization-query.html) or [facility](OperationDefinition-bc-extended-location-query.html) along with all directly referenced providers or facilities
+* $entityQuery - used to return the full [Provider](OperationDefinition-bc-entity-practitioner-query.html) or [organization](OperationDefinition-bc-entity-organization-query.html) or [Facility](OperationDefinition-bc-entity-location-query.html) without following relationships
+* $extendedQuery - used to return the full [Provider](OperationDefinition-bc-extended-practitioner-query.html) or [organization](OperationDefinition-bc-extended-organization-query.html) or [Facility](OperationDefinition-bc-extended-location-query.html) along with all directly referenced Providers or facilities
 
 The syntax for the $entityQuery operation is:
 
-* GET /resource/id/$entityQuery to retrieve a specific provider or facility where the id is known
-* GET /resource/$entityQuery?param1&param2&... to search for a provider or facility with search parameters instead of an id
+* GET /resource/id/$entityQuery to retrieve a specific Provider or Facility where the id is known
+* GET /resource/$entityQuery?param1&param2&... to search for a Provider or Facility with search parameters instead of an id
 
 Although PLR supports many different types of identifiers, the resource id is the identifier assigned by PLR when the resource is created, internally called the IPC for Providers and IFC for Facilities.  This id is always returned in the response and should be persisted by the requestor.  To search for other identifiers stored in PLR and attached to Providers or Facilities, the search parameter 'identifier' should be used.
 
@@ -100,8 +100,8 @@ The parameters for the $entityQuery operation will be the search parameters list
 
 The syntax for the $extendedQuery operation is:
 
-* GET /resource/id/$extendedQuery to retrieve the full information about a specific provider or facility where the id is known
-* GET /resource/$extendedQuery?param1&param2&... to search and retrieve the full information about a provider or facility
+* GET /resource/id/$extendedQuery to retrieve the full information about a specific Provider or Facility where the id is known
+* GET /resource/$extendedQuery?param1&param2&... to search and retrieve the full information about a Provider or Facility
 
 The parameters for the $extendedQuery operation will be the search parameters listed below.
 
@@ -118,11 +118,9 @@ The parameters for the $extendedQuery operation will be the search parameters li
 ||status-reason|
 ||address-city|
 |Organization|name|
-||city|
+||address-city|
 |Location|name|
-||city|
-||type|
-||purpose|
+||address-city|
 ||healthAuthority|
 ||healthServiceDeliveryArea|
 ||localHealthArea|
