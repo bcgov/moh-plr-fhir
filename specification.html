@@ -193,7 +193,7 @@ This specification is currently published as a Draft Standard on the ministry gi
 
 <p>In FHIR, the resources used are named Practitioner, Organization, and Location.  BC has created profiles of each of these resources for use in the PLR system.</p>
 
-<p>Each Individual Provider is composed of a <a href="StructureDefinition-bc-practitioner.html">Practitioner instance</a> and at least one <a href="StructureDefinition-bc-practitioner-role.html">PractitionerRole instance</a> which holds the Practitioner’s role, such as Nurse or Dentist.  Other PractitionerRole instances will hold the relationship between an Practitioner and their Work Locations via the PractitionerRole.location reference and to Organizational Providers via the PractitionerRole.organization.</p>
+<p>Each Individual Provider is composed of a <a href="StructureDefinition-bc-practitioner.html">Practitioner instance</a> and at least one <a href="StructureDefinition-bc-practitioner-role.html">PractitionerRole instance</a> which holds the Practitioner’s role, such as Nurse or Dentist.  Other PractitionerRole instances will hold the relationship between an Practitioner and related Facilities via the PractitionerRole.location reference and to Organizational Providers via the PractitionerRole.organization reference.</p>
 
 <p>Each Organizational Provider is composed of an <a href="StructureDefinition-bc-organization.html">Organization instance</a> with zero or more <a href="StructureDefinition-bc-organization-affiliation.html">OrganizationAffiliation instances</a> that hold the relationship betwen two different Organizations as well as the relationship between an Organization and the locations where it provides services.</p>
 
@@ -210,22 +210,22 @@ This specification is currently published as a Draft Standard on the ministry gi
 <h4 id="provider-to-provider-relationships">Provider to Provider Relationships</h4>
 
 <h5 id="individual-provider-to-individual-provider">Individual Provider to Individual Provider</h5>
-<p>Individual provider to provider relationships are used for showing how providers are related to each other.  For instance, a LOCUM provider can be referenced using this capability.
-To show the relationship between two individual providers, the <a href="StructureDefinition-bc-practitioner-relationship-extension.html">BC Practitioner Relationship extension</a> was created.  This allows for a relationship type and a linkage between two BC Practitioners to be stated.  NOTE: It is expected that the relationship would be found on both Practitioner instances.</p>
+<p>Individual Provider to Provider relationships are used for showing how Providers are related to each other.  For instance, a LOCUM Provider can be referenced using this capability.
+To show the relationship between two Individual Providers, the <a href="StructureDefinition-bc-practitioner-relationship-extension.html">BC Practitioner Relationship extension</a> was created.  This allows for a relationship type and a linkage between two BC Practitioners to be stated.  NOTE: It is expected that the relationship would be found on both Practitioner instances.</p>
 
 <h5 id="individual-provider-to-organizational-provider">Individual Provider to Organizational Provider</h5>
-<p>To show the relationship between an individual Provider and an organizational Provider (i.e. a hospital that has providers working at it), the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  This resource has a practitioner data element and an organization data element along with a code that is used to say what role the individual provider plays at the organization.</p>
+<p>To show the relationship between an Individual Provider and an Organizational Provider (i.e. a hospital that has Providers working at it), the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  This resource has a practitioner data element and an organization data element along with a code that is used to say what role the Individual Provider plays at the organization.</p>
 
 <h5 id="organizational-provider-to-organizational-provider">Organizational Provider to Organizational Provider</h5>
-<p>To show the relationship between two organizational providers (i.e. a subsidiary organization), the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.</p>
+<p>To show the relationship between two Organizational Providers (i.e. a subsidiary organization or a care team related to Good Health Clinic Inc.), the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.</p>
 
 <h4 id="provider-to-facility-relationships">Provider to Facility Relationships</h4>
 
 <h5 id="individual-provider-to-facility">Individual Provider to Facility</h5>
-<p>To show the relationship between an individual provider and a facility (i.e. a works-at relationship), the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  Instead of the organization data element, the location data element is used to indicate that a provider is related to a facility.</p>
+<p>To show the relationship between an Individual Provider and a Facility (i.e. a works-at relationship), the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  Instead of the organization data element, the location data element is used to indicate that a Provider is related to a Facility.</p>
 
 <h5 id="organization-provider-to-facility">Organization Provider to Facility</h5>
-<p>To show the relationship between an organizational provider and a facility (i.e. facilities where the organization does its work), the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  Instead of the participating organization data element, the location data element is used to indicate that an organization is related to a facility.</p>
+<p>To show the relationship between an Organizational Provider and a Facility (i.e. facilities where the organization does its work), the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  Instead of the participating organization data element, the location data element is used to indicate that an organization is related to a Facility.</p>
 
 <h3 id="use-cases">Use Cases</h3>
 <p>There are a number of use cases that support the existing PLR functionality:</p>
@@ -275,15 +275,15 @@ To show the relationship between two individual providers, the <a href="Structur
 <p>The two query operations are:</p>
 
 <ul>
-  <li>$entityQuery - used to return the full <a href="OperationDefinition-bc-entity-practitioner-query.html">provider</a> or <a href="OperationDefinition-bc-entity-organization-query.html">organization</a> or <a href="OperationDefinition-bc-entity-location-query.html">facility</a> without following relationships</li>
-  <li>$extendedQuery - used to return the full <a href="OperationDefinition-bc-extended-practitioner-query.html">provider</a> or <a href="OperationDefinition-bc-extended-organization-query.html">organization</a> or <a href="OperationDefinition-bc-extended-location-query.html">facility</a> along with all directly referenced providers or facilities</li>
+  <li>$entityQuery - used to return the full <a href="OperationDefinition-bc-entity-practitioner-query.html">Provider</a> or <a href="OperationDefinition-bc-entity-organization-query.html">organization</a> or <a href="OperationDefinition-bc-entity-location-query.html">Facility</a> without following relationships</li>
+  <li>$extendedQuery - used to return the full <a href="OperationDefinition-bc-extended-practitioner-query.html">Provider</a> or <a href="OperationDefinition-bc-extended-organization-query.html">organization</a> or <a href="OperationDefinition-bc-extended-location-query.html">Facility</a> along with all directly referenced Providers or facilities</li>
 </ul>
 
 <p>The syntax for the $entityQuery operation is:</p>
 
 <ul>
-  <li>GET /resource/id/$entityQuery to retrieve a specific provider or facility where the id is known</li>
-  <li>GET /resource/$entityQuery?param1&amp;param2&amp;… to search for a provider or facility with search parameters instead of an id</li>
+  <li>GET /resource/id/$entityQuery to retrieve a specific Provider or Facility where the id is known</li>
+  <li>GET /resource/$entityQuery?param1&amp;param2&amp;… to search for a Provider or Facility with search parameters instead of an id</li>
 </ul>
 
 <p>Although PLR supports many different types of identifiers, the resource id is the identifier assigned by PLR when the resource is created, internally called the IPC for Providers and IFC for Facilities.  This id is always returned in the response and should be persisted by the requestor.  To search for other identifiers stored in PLR and attached to Providers or Facilities, the search parameter ‘identifier’ should be used.</p>
@@ -293,8 +293,8 @@ To show the relationship between two individual providers, the <a href="Structur
 <p>The syntax for the $extendedQuery operation is:</p>
 
 <ul>
-  <li>GET /resource/id/$extendedQuery to retrieve the full information about a specific provider or facility where the id is known</li>
-  <li>GET /resource/$extendedQuery?param1&amp;param2&amp;… to search and retrieve the full information about a provider or facility</li>
+  <li>GET /resource/id/$extendedQuery to retrieve the full information about a specific Provider or Facility where the id is known</li>
+  <li>GET /resource/$extendedQuery?param1&amp;param2&amp;… to search and retrieve the full information about a Provider or Facility</li>
 </ul>
 
 <p>The parameters for the $extendedQuery operation will be the search parameters listed below.</p>
@@ -347,7 +347,7 @@ To show the relationship between two individual providers, the <a href="Structur
     </tr>
     <tr>
       <td> </td>
-      <td style="text-align: left">city</td>
+      <td style="text-align: left">address-city</td>
     </tr>
     <tr>
       <td>Location</td>
@@ -355,15 +355,7 @@ To show the relationship between two individual providers, the <a href="Structur
     </tr>
     <tr>
       <td> </td>
-      <td style="text-align: left">city</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td style="text-align: left">type</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td style="text-align: left">purpose</td>
+      <td style="text-align: left">address-city</td>
     </tr>
     <tr>
       <td> </td>
@@ -411,7 +403,7 @@ To show the relationship between two individual providers, the <a href="Structur
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 23, 2021 06:12+0000">2021-11-23</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 1, 2021 17:57+0000">2021-12-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
