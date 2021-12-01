@@ -3,7 +3,7 @@
 <OperationDefinition xmlns="http://hl7.org/fhir">
   <id value="bc-extended-practitioner-query"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>PractitionerExtendedQuery</h2><p>QUERY: PractitionerExtendedQuery</p><p>The official URL for this operation definition is: </p><pre>http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-practitioner-query</pre><p>URL: [base]/Practitioner/$dereferenceQuery</p><p>URL: [base]/Practitioner/[id]/$dereferenceQuery</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>surname</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for practitioners with the specified surname.</p>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>PractitionerExtendedQuery</h2><p>QUERY: PractitionerExtendedQuery</p><p>The official URL for this operation definition is: </p><pre>http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-practitioner-query</pre><p>URL: [base]/Practitioner/$extendedQuery</p><p>URL: [base]/Practitioner/[id]/$extendedQuery</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>surname</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for practitioners with the specified surname.</p>
 </div></td></tr><tr><td>IN</td><td>given</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for practitioners with the specified given name.</p>
 </div></td></tr><tr><td>IN</td><td>status</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners with a license that has the specified status.</p>
 </div></td></tr><tr><td>IN</td><td>address-city</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for practitioners with an address that includes the given city.</p>
@@ -20,7 +20,7 @@
   <title value="Query for a Practitioner that returns associated resources"/>
   <status value="draft"/>
   <kind value="query"/>
-  <date value="2021-12-01T17:57:28+00:00"/>
+  <date value="2021-12-01T22:25:03+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -36,7 +36,7 @@
       <display value="Canada"/>
     </coding>
   </jurisdiction>
-  <code value="dereferenceQuery"/>
+  <code value="extendedQuery"/>
   <resource value="Practitioner"/>
   <system value="false"/>
   <type value="true"/>
