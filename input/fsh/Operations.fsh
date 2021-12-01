@@ -178,7 +178,7 @@ Usage: #definition
 * title = "Query for a Practitioner that returns associated resources"
 * status = #draft
 * kind = #query
-* code = #dereferenceQuery
+* code = #extendedQuery
 * resource[0] = #Practitioner
 * system = false
 * type = true
