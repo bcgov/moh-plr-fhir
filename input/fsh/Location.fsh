@@ -9,8 +9,6 @@ Description: "General constraints on the Location resource for use in the BC Pro
 * name.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * alias MS
 * description MS
-* type 1..* MS
-* type from $LocationType (required)
 * telecom only BCContactPoint 
 * telecom MS
 * address only BCAddress 
@@ -97,7 +95,6 @@ Description: "Example of a Location (Facility) that is the work location for a P
 * identifier.value = "1"
 * name = "WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT"
 * name.extension[period].valuePeriod.start = "2000-01-01"
-* type = $RoleCode#HD
 * telecom[0].use = #work
 * telecom[0].system = #email
 * telecom[0].value = "joe@gmail.com"
@@ -127,7 +124,6 @@ Description: "Example of a Location (Facility) that is associated with an Organi
 * identifier.value = "111"
 * name = "General Hospital"
 * name.extension[period].valuePeriod.start = "2000-01-01"
-* type = $RoleCode#HOSP
 * telecom[0].use = #work
 * telecom[0].system = #fax
 * telecom[0].period.start = "1982-03-04T00:00:00-07:00"

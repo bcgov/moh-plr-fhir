@@ -11,20 +11,16 @@ This Location profile has the following mandatory elements:
 2. a name, with optional
 	1.  Period Extension
 	2.  End Reason Extension
-3. a coded type
-4. an address
+3. an address
 
 **Each Location must support:**
 
-1.  whether the Organization is active or not
-2.  the type of Organization
-3.  alternate names
 4.  description
-5.  ContactPoint
-6.  Note Extension
-7.  Mailing Address Extension
-8.  Community Health Service Area Extension
-9.  Details Extension, including:
+5.  telecom
+6.  the Note Extension
+7.  the Mailing Address Extension
+8.  the Community Health Service Area Extension
+9.  the Details Extension, including:
 	1.  Owner Name
 	2.  Contact Name
 	3.  Operator Name
