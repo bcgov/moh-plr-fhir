@@ -20,7 +20,7 @@ Usage: #definition
 * parameter[0].documentation = "Search for practitioners with the specified surname."
 * parameter[0].type = #string
 * parameter[0].searchType = #string
-* parameter[1].name = #given
+* parameter[1].name = #given-name
 * parameter[1].use = #in
 * parameter[1].min = 0
 * parameter[1].max = "1"
@@ -190,7 +190,7 @@ Usage: #definition
 * parameter[0].documentation = "Search for practitioners with the specified surname."
 * parameter[0].type = #string
 * parameter[0].searchType = #string
-* parameter[1].name = #given
+* parameter[1].name = #given-name
 * parameter[1].use = #in
 * parameter[1].min = 0
 * parameter[1].max = "1"
