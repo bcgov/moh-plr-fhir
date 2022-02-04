@@ -8,7 +8,7 @@ InstanceOf: CapabilityStatement
 * status = #draft
 * date = "2021-03-31"
 * publisher = "BC Ministry of Health"
-* description = "This capability statement describes the four use cases that are supported by the BC FHIR implementation of PLR.
+* description = "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.
 
 * Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location
 "

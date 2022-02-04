@@ -109,7 +109,7 @@ The parameters for the $extendedQuery operation will be the search parameters li
 
 |Resource|Search Parameter Name|
 |----|:----|
-|Practitioner|given|
+|Practitioner|given-name|
 ||surname|
 ||role|
 ||language|
