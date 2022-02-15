@@ -1,14 +1,14 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 33, warn = 1, info = 1
+err = 42, warn = 1, info = 1
 IG Publisher Version: 1.1.103
-Generated Tue Feb 15 20:22:25 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
+Generated Tue Feb 15 22:21:59 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
  Build Errors : 6 / 0 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 0 / 4
  /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 0 / 0 / 7
- /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle : 10 / 4 / 13
- /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 10 / 4 / 41
+ /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle : 13 / 4 / 12
+ /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 13 / 4 / 40
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-client-capability-statement : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-server-capability-statement : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ImplementationGuide-fhir.ca-bc.provider : 0 / 0 / 1
@@ -25,7 +25,7 @@ Generated Tue Feb 15 20:22:25 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/OrganizationAffiliation-Example-AddOrganization-OrganizationAffiliation : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-Practitioner : 10 / 2 / 5
  /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-RelatedPractitioner : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole : 0 / 2 / 3
+ /github/workspace/fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole : 3 / 2 / 2
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-address : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-batch-bundle : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-birthplace-extension : 0 / 0 / 1
@@ -78,6 +78,9 @@ ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Pr
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[9].extension[2].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-relationship-type-code' does not resolve
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).communication[0].coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-language-code'
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
+ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-end-reason-code'
+ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-end-reason-code' does not resolve
+ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[1].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-owner-code' does not resolve
 == fsh-generated/resources/Bundle-Example-Batch-Bundle.json ==
 INFORMATION: Bundle/Example-Batch-Bundle: Bundle.entry[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[1].extension[2].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-status-reason-code'
@@ -90,6 +93,9 @@ ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.o
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[9].extension[2].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-relationship-type-code' does not resolve
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).communication[0].coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-language-code'
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-end-reason-code'
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-end-reason-code' does not resolve
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[1].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-owner-code' does not resolve
 == fsh-generated/resources/CapabilityStatement-bc-plr-client-capability-statement.json ==
 == fsh-generated/resources/CapabilityStatement-bc-plr-server-capability-statement.json ==
 == fsh-generated/resources/ImplementationGuide-fhir.ca-bc.provider.json ==
@@ -117,6 +123,9 @@ ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.communica
 ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
 == fsh-generated/resources/Practitioner-Example-AddPractitioner-RelatedPractitioner.json ==
 == fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole.json ==
+ERROR: PractitionerRole/Example-AddPractitioner-PractitionerRole: PractitionerRole.specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-end-reason-code'
+ERROR: PractitionerRole/Example-AddPractitioner-PractitionerRole: PractitionerRole.specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-end-reason-code' does not resolve
+ERROR: PractitionerRole/Example-AddPractitioner-PractitionerRole: PractitionerRole.specialty[0].extension[1].extension[1].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-owner-code' does not resolve
 == fsh-generated/resources/StructureDefinition-bc-address.json ==
 == fsh-generated/resources/StructureDefinition-bc-batch-bundle.json ==
 == fsh-generated/resources/StructureDefinition-bc-birthplace-extension.json ==
