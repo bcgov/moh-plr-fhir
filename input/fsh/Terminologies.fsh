@@ -6,3 +6,7 @@ Alias: $SCPType = https://fhir.infoway-inforoute.ca/CodeSystem/scptype
 Alias: $PracSpecialty = https://fhir.infoway-inforoute.ca/ValueSet/practitionerspecialty
 Alias: $PracQualification = https://fhir.infoway-inforoute.ca/ValueSet/qualifiedroletype
 Alias: $SCPQual = https://fhir.infoway-inforoute.ca/CodeSystem/scpqual
+Alias: $PLRStatusReason = http://hl7.org/fhir/bc-plr/bc-status-reason-code
+Alias: $PLRConditionType = http://hl7.org/fhir/bc-plr/bc-condition-type-code
+Alias: $PLRRelationshipType = http://hl7.org/fhir/bc-plr/bc-relationship-type-code
+Alias: $PLRLanguage = http://hl7.org/fhir/bc-plr/bc-language-code

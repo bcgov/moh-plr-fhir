@@ -21,7 +21,7 @@ Description: "General constraints on the Practitioner resource for use in the BC
 * birthDate MS
 * birthDate.extension contains BirthTimeExtension named birthTime 0..1 MS
 * qualification MS
-* qualification.extension contains PractitionerQualificationIssueDateExtension named issueDate 1..1 MS and EndReasonExtension named endReason 0..1 MS
+* qualification.extension contains PractitionerQualificationExtension named qualificationExtension 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * qualification.identifier MS
 * qualification.code MS
 * qualification.code from $PracQualification (required)
@@ -29,7 +29,7 @@ Description: "General constraints on the Practitioner resource for use in the BC
 * qualification.issuer MS
 * qualification.issuer only Reference(BCOrganization)
 * communication MS
-* communication.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
+* communication.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named languageSource 0..1 MS
 * extension contains PeriodExtension named demographicsPeriod 1..1 MS and EndReasonExtension named demographicsEndReason 0..1 MS and 
     LicenseStatusExtension named status 0..* MS and 
 	DeathDateExtension named deathDate 0..1 MS and 
@@ -56,12 +56,19 @@ Description: "General constraints on the PractitionerRole resource for use in th
 * code from $PracRoleCode (required)
 * specialty MS
 * specialty from $PracSpecialty (required)
-* specialty.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
+* specialty.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named specialtySource 0..1 MS
 * location MS
 * location only Reference(BCLocation)
 * location.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * telecom only BCContactPoint
 * telecom MS
+
+Extension: SpecialtySourceExtension
+Id: bc-specialty-source-extension
+Title: "Specialty Source Extension"
+Description: "The specialty source."
+* value[x] only string
+* value[x] 1..1 MS
 
 Extension: DeathDateExtension
 Id: bc-practitioner-deathdate-extension
@@ -148,6 +155,21 @@ Description: "The issue date of the practitioner's qualification."
 * value[x] only dateTime
 * value[x] 1..1 MS
 
+Extension:  PractitionerQualificationExtension
+Id: bc-practitioner-qualification-extension
+Title: "BC Practitioner Qualification Extension"
+Description: "The qualifications extensions."
+* extension contains designation 1..1 MS and registrationNumber 0..1 MS and equivalencyFlag 1..1 MS and issuedDate 0..1 MS
+* extension[designation].value[x] only string
+* extension[designation].value[x] 1..1 MS
+* extension[registrationNumber].value[x] only string
+* extension[registrationNumber].value[x] 0..1 MS
+* extension[equivalencyFlag].value[x] only boolean
+* extension[equivalencyFlag].value[x] 1..1 MS
+* extension[issuedDate].value[x] only dateTime
+* extension[issuedDate].value[x] 0..1 MS
+
+
 Extension: LicenseStatusExtension
 Id: bc-license-status-extension
 Title: "BC License Status Extension"
@@ -207,10 +229,10 @@ Description: "Example of a BC practitioner that is being created."
 * extension[status].extension[period].valuePeriod.end = "2020-01-01"
 * extension[status].extension[custodianId].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.16"
 * extension[status].extension[custodianId].valueIdentifier.value = "RNA"
-* extension[status].extension[statusReasonCode].valueCodeableConcept = http://example.org/status_reason_code#PRAC
+* extension[status].extension[statusReasonCode].valueCodeableConcept = $PLRStatusReason#PRAC
 * extension[demographicsEndReason].extension[custodianId].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.16"
 * extension[demographicsEndReason].extension[custodianId].valueIdentifier.value = "RNA"
-* extension[demographicsEndReason].extension[endReasonCode].valueCodeableConcept = http://example.org/status_reason_code#PRAC
+* extension[demographicsEndReason].extension[endReasonCode].valueCodeableConcept = $PLRStatusReason#PRAC
 * extension[deathDate].valueDateTime = "2000-02-01"
 * extension[birthplace].valueAddress.state = "AL"
 * extension[birthplace].valueAddress.country = "US"
@@ -235,10 +257,10 @@ Description: "Example of a BC practitioner that is being created."
 * extension[condition].extension[period].valuePeriod.end = "2020-01-01"
 * extension[condition].extension[restriction].valueBoolean = true
 * extension[condition].extension[restrictionText].valueString = "CONDITION_RESTRICTION_EXPLANATION TEXT"
-* extension[condition].extension[code].valueCodeableConcept = http://example.org/condition_type_code#LOC
+* extension[condition].extension[code].valueCodeableConcept = $PLRConditionType#LOC
 * extension[relationship].extension[period].valuePeriod.start = "2000-01-01"
 * extension[relationship].extension[period].valuePeriod.end = "2020-01-01"
-* extension[relationship].extension[type].valueCodeableConcept = http://example.org/provider_relationship_type_code#LOC
+* extension[relationship].extension[type].valueCodeableConcept = $PLRRelationshipType#LOC
 * extension[relationship].extension[practitioner].valueReference = Reference(Example-AddPractitioner-RelatedPractitioner)
 * extension[demographicsPeriod].valuePeriod.start = "2000-01-01"
 * extension[demographicsPeriod].valuePeriod.end = "2020-01-01"
@@ -288,7 +310,14 @@ Description: "Example of a BC practitioner that is being created."
 * qualification.period.start = "2000-01-01"
 * qualification.period.end = "2020-01-01"
 * qualification.issuer.reference = "#qualificationOrganization"
-* qualification.extension[issueDate].valueDateTime = "2001"
+* qualification.extension[qualificationExtension].extension[designation].valueString = "designation"
+* qualification.extension[qualificationExtension].extension[equivalencyFlag].valueBoolean = true
+* qualification.extension[qualificationExtension].extension[registrationNumber].valueString = "registration number"
+* qualification.extension[qualificationExtension].extension[issuedDate].valueDateTime = "2000-01-01"
+* communication.coding = $PLRLanguage#EN
+* communication.extension[period].valuePeriod.start = "2000-01-01"
+* communication.extension[languageSource].valueString = "Language Source"
+
 
 Instance: Example-AddPractitioner-RelatedPractitioner
 InstanceOf: BCPractitioner
@@ -310,6 +339,8 @@ Description: "Example of the role that the created practitioner is playing."
 * specialty.extension[endReason].extension[endReasonCode].valueCodeableConcept = http://example.org/status_reason_code#PRAC
 * specialty.extension[endReason].extension[custodianId].valueIdentifier.system = "http://example.org/custodian-ids"
 * specialty.extension[endReason].extension[custodianId].valueIdentifier.value = "123456679"
+* specialty.extension[specialtySource].valueString = "Source"
 * location = Reference(Example-AddPractitioner-WorkLocation)
 * location.extension[period].valuePeriod.start = "2000-01-01"
 * location.extension[period].valuePeriod.end = "2020-01-01"
+
