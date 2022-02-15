@@ -10,3 +10,6 @@ Alias: $PLRStatusReason = http://hl7.org/fhir/bc-plr/bc-status-reason-code
 Alias: $PLRConditionType = http://hl7.org/fhir/bc-plr/bc-condition-type-code
 Alias: $PLRRelationshipType = http://hl7.org/fhir/bc-plr/bc-relationship-type-code
 Alias: $PLRLanguage = http://hl7.org/fhir/bc-plr/bc-language-code
+Alias: $PLRHealthServiceAreas = http://hl7.org/fhir/bc-plr/bc-health-service-area-code
+Alias: $PLREndReason = http://hl7.org/fhir/bc-plr/bc-end-reason-code
+Alias: $PLROwner = http://hl7.org/fhir/bc-plr/bc-owner-code

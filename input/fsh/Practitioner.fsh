@@ -336,8 +336,8 @@ Description: "Example of the role that the created practitioner is playing."
 * specialty = http://snomed.info/sct#419772000
 * specialty.extension[period].valuePeriod.start = "2000-01-01"
 * specialty.extension[period].valuePeriod.end = "2020-01-01"
-* specialty.extension[endReason].extension[endReasonCode].valueCodeableConcept = http://example.org/status_reason_code#PRAC
-* specialty.extension[endReason].extension[custodianId].valueIdentifier.system = "http://example.org/custodian-ids"
+* specialty.extension[endReason].extension[endReasonCode].valueCodeableConcept = $PLREndReason#CORR
+* specialty.extension[endReason].extension[custodianId].valueIdentifier.system = $PLROwner
 * specialty.extension[endReason].extension[custodianId].valueIdentifier.value = "123456679"
 * specialty.extension[specialtySource].valueString = "Source"
 * location = Reference(Example-AddPractitioner-WorkLocation)
