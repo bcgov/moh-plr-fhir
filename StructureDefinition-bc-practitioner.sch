@@ -170,8 +170,8 @@
   <sch:pattern>
     <sch:title>f:Practitioner/f:qualification</sch:title>
     <sch:rule context="f:Practitioner/f:qualification">
-      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-issue-date-extension']) &gt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-issue-date-extension': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-issue-date-extension']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-issue-date-extension': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-extension']) &gt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-extension': minimum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-extension']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-extension': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -230,6 +230,7 @@
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension']) &gt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:text) &lt;= 1">text: maximum cardinality of 'text' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -242,6 +243,8 @@
   <sch:pattern>
     <sch:title>Practitioner.communication.extension</sch:title>
     <sch:rule context="f:Practitioner/f:communication/f:extension">
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])">Must have either extensions or value[x], not both (inherited)</sch:assert>
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
       <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])">Must have either extensions or value[x], not both (inherited)</sch:assert>
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>

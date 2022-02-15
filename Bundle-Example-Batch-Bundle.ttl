@@ -131,7 +131,7 @@
        fhir:Extension.valueCodeableConcept [
          fhir:CodeableConcept.coding [
            fhir:index 0;
-           fhir:Coding.system [ fhir:value "http://example.org/status_reason_code" ];
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-status-reason-code" ];
            fhir:Coding.code [ fhir:value "PRAC" ]
          ]
        ]
@@ -159,7 +159,7 @@
        fhir:Extension.valueCodeableConcept [
          fhir:CodeableConcept.coding [
            fhir:index 0;
-           fhir:Coding.system [ fhir:value "http://example.org/status_reason_code" ];
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-status-reason-code" ];
            fhir:Coding.code [ fhir:value "PRAC" ]
          ]
        ]
@@ -279,7 +279,7 @@
        fhir:Extension.valueCodeableConcept [
          fhir:CodeableConcept.coding [
            fhir:index 0;
-           fhir:Coding.system [ fhir:value "http://example.org/condition_type_code" ];
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-condition-type-code" ];
            fhir:Coding.code [ fhir:value "LOC" ]
          ]
        ]
@@ -307,7 +307,7 @@
        fhir:Extension.valueCodeableConcept [
          fhir:CodeableConcept.coding [
            fhir:index 0;
-           fhir:Coding.system [ fhir:value "http://example.org/provider_relationship_type_code" ];
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-relationship-type-code" ];
            fhir:Coding.code [ fhir:value "LOC" ]
          ]
        ]
@@ -405,8 +405,24 @@
      fhir:index 0;
      fhir:Element.extension [
        fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-issue-date-extension" ];
-       fhir:Extension.valueDateTime [ fhir:value "2001"^^xsd:gYear ]
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "designation" ];
+         fhir:Extension.valueString [ fhir:value "designation" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "equivalencyFlag" ];
+         fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+       ], [
+         fhir:index 2;
+         fhir:Extension.url [ fhir:value "registrationNumber" ];
+         fhir:Extension.valueString [ fhir:value "registration number" ]
+       ], [
+         fhir:index 3;
+         fhir:Extension.url [ fhir:value "issuedDate" ];
+         fhir:Extension.valueDateTime [ fhir:value "2000-01-01"^^xsd:date ]
+       ];
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-extension" ]
      ];
      fhir:Practitioner.qualification.identifier [
        fhir:index 0;
@@ -427,6 +443,25 @@
      ];
      fhir:Practitioner.qualification.issuer [
        fhir:Reference.reference [ fhir:value "#qualificationOrganization" ]
+     ]
+  ];
+  fhir:Practitioner.communication [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension" ];
+       fhir:Extension.valueString [ fhir:value "Language Source" ]
+     ];
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-language-code" ];
+       fhir:Coding.code [ fhir:value "EN" ]
      ]
   ] .
 
@@ -486,6 +521,10 @@
          ]
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension" ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension" ];
+       fhir:Extension.valueString [ fhir:value "Source" ]
      ];
      fhir:CodeableConcept.coding [
        fhir:index 0;
