@@ -1,0 +1,383 @@
+{
+  "resourceType": "Bundle",
+  "id": "Example-Individual-Provider-Bundle",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"
+    ]
+  },
+  "type": "transaction",
+  "timestamp": "2022-02-02T13:23:13.000-08:00",
+  "entry": [
+    {
+      "fullUrl": "https://plr.hlth.gov.bc.ca/plr/fhir/Practitioner/234234",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "Example-Practitioner",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"
+          ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-Practitioner\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner.html\">BCPractitioner</a></p></div><p><b>BC Valid Period Extension</b>: 2012-12-07 --&gt; (ongoing)</p><p><b>BC Birth Place Extension</b>: Ottawa CA </p><blockquote><p><b>BC License Status Extension</b></p><p><b>value</b>: ACTIVE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status#ACTIVE)</span></p><p><b>value</b>: 2022-02-07 --&gt; 2023-02-07</p><p><b>value</b>: GS <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-reason#GS)</span></p></blockquote><blockquote><p><b>BC Practitioner Disciplinary Actions Extension</b></p><p><b>value</b>: id: DA-1</p><p><b>value</b>: Description</p><p><b>value</b>: 2000-01-01</p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p><p><b>value</b>: false</p></blockquote><blockquote><p><b>BC Notes Extension</b></p><p><b>value</b>: id: Note-2</p><p><b>value</b>: Note text</p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p></blockquote><blockquote><p><b>BC Practitioner Conditions Extension</b></p><p><b>value</b>: id: Condition-1</p><p><b>value</b>: false</p><p><b>value</b>: Restriction text</p><p><b>value</b>: EXP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-condition-restriction-code#EXP)</span></p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p></blockquote><p><b>identifier</b>: id: 23423234, id: 23423234, id: 89745</p><p><b>name</b>: GivenName FamilyName </p><p><b>telecom</b>: ph: -unknown-(WORK)</p><p><b>address</b>: (WORK)</p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1934-01-02</p><h3>Qualifications</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Code</b></td><td><b>Period</b></td><td><b>Issuer</b></td></tr><tr><td>*</td><td></td><td>BD <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-scpqual.html\">pan-Canadian Provider Qualification Types</a>#BD)</span></td><td>2000-01-01 --&gt; (ongoing)</td><td><a name=\"grantingInstitution\"> </a><blockquote><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"grantingInstitution\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><p><b>name</b>: University of Calgary</p><p><b>address</b>: CALGARY AB CA </p></blockquote></td></tr></table><p><b>communication</b>: EN <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-language-code#EN)</span></p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "grantingInstitution",
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"
+              ]
+            },
+            "name": "University of Calgary",
+            "address": [
+              {
+                "city": "CALGARY",
+                "state": "AB",
+                "country": "CA"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+            "valuePeriod": {
+              "start": "2012-12-07"
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthplace-extension",
+            "valueAddress": {
+              "city": "Ottawa",
+              "country": "CA"
+            }
+          },
+          {
+            "extension": [
+              {
+                "url": "statusCode",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://hlth.gov.bc.ca/fhir/provider/bc-license-status",
+                      "code": "ACTIVE"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "period",
+                "valuePeriod": {
+                  "start": "2022-02-07",
+                  "end": "2023-02-07"
+                }
+              },
+              {
+                "url": "statusReasonCode",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://hlth.gov.bc.ca/fhir/provider/bc-license-status-reason",
+                      "code": "GS"
+                    }
+                  ]
+                }
+              }
+            ],
+            "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension"
+          },
+          {
+            "extension": [
+              {
+                "url": "identifier",
+                "valueIdentifier": {
+                  "value": "DA-1"
+                }
+              },
+              {
+                "url": "description",
+                "valueString": "Description"
+              },
+              {
+                "url": "archiveDate",
+                "valueDateTime": "2000-01-01"
+              },
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+                "valuePeriod": {
+                  "start": "1998-01-02"
+                }
+              },
+              {
+                "url": "displayFlag",
+                "valueBoolean": false
+              }
+            ],
+            "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension"
+          },
+          {
+            "extension": [
+              {
+                "url": "identifier",
+                "valueIdentifier": {
+                  "value": "Note-2"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Note text"
+              },
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+                "valuePeriod": {
+                  "start": "1998-01-02"
+                }
+              }
+            ],
+            "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension"
+          },
+          {
+            "extension": [
+              {
+                "url": "identifier",
+                "valueIdentifier": {
+                  "value": "Condition-1"
+                }
+              },
+              {
+                "url": "restriction",
+                "valueBoolean": false
+              },
+              {
+                "url": "restrictionText",
+                "valueString": "Restriction text"
+              },
+              {
+                "url": "code",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://hlth.gov.bc.ca/fhir/provider/bc-condition-restriction-code",
+                      "code": "EXP"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+                "valuePeriod": {
+                  "start": "1998-01-02"
+                }
+              }
+            ],
+            "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-condition-extension"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.3.40.2.8",
+            "value": "23423234",
+            "period": {
+              "start": "2022-02-07"
+            }
+          },
+          {
+            "system": "urn:oid:2.16.840.1.113883.3.40.2.3",
+            "value": "23423234",
+            "period": {
+              "start": "2022-02-07"
+            }
+          },
+          {
+            "system": "urn:oid:2.16.840.1.113883.3.40.2.4",
+            "value": "89745",
+            "period": {
+              "start": "2022-02-07"
+            }
+          }
+        ],
+        "name": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-name-use-extension",
+                "valueCode": "official"
+              }
+            ],
+            "family": "FamilyName",
+            "given": [
+              "GivenName"
+            ],
+            "period": {
+              "start": "2012-12-07"
+            }
+          }
+        ],
+        "telecom": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-area",
+                "valueString": "250"
+              },
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-local",
+                "valueString": "111-2234"
+              },
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-extension",
+                "valueString": "3432"
+              }
+            ],
+            "system": "phone",
+            "use": "work",
+            "period": {
+              "start": "2000-02-02"
+            }
+          }
+        ],
+        "address": [
+          {
+            "use": "work",
+            "type": "postal",
+            "period": {
+              "start": "2000-02-02"
+            }
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1934-01-02",
+        "qualification": [
+          {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "designation",
+                    "valueString": "Designation"
+                  },
+                  {
+                    "url": "equivalencyFlag",
+                    "valueBoolean": false
+                  },
+                  {
+                    "url": "registrationNumber",
+                    "valueString": "Registration No."
+                  },
+                  {
+                    "url": "issuedDate",
+                    "valueDateTime": "2000-02-03"
+                  }
+                ],
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-extension"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "https://fhir.infoway-inforoute.ca/CodeSystem/scpqual",
+                  "code": "BD"
+                }
+              ]
+            },
+            "period": {
+              "start": "2000-01-01"
+            },
+            "issuer": {
+              "reference": "#grantingInstitution"
+            }
+          }
+        ],
+        "communication": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+                "valuePeriod": {
+                  "start": "2000-01-01"
+                }
+              },
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension",
+                "valueString": "Language Source"
+              }
+            ],
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/bc-plr/bc-language-code",
+                "code": "EN"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "http://plr.moh.bc.ca/fhir/Practitioner"
+      }
+    },
+    {
+      "fullUrl": "https://plr.hlth.gov.bc.ca/plr/fhir/PractitionerRole/234234",
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "Example-PractitionerRole",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>practitioner</b>: <a href=\"#Practitioner_Example-Practitioner\">See above (Practitioner/Example-Practitioner)</a></p><p><b>organization</b>: <span>: BC</span></p><p><b>code</b>: MD <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-scptype.html\">pan-Canadian Provider Types</a>#MD)</span></p><p><b>specialty</b>: Family practice (qualifier value) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#419772000)</span></p></div>"
+        },
+        "practitioner": {
+          "reference": "Practitioner/Example-Practitioner"
+        },
+        "organization": {
+          "display": "BC"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.infoway-inforoute.ca/CodeSystem/scptype",
+                "code": "MD"
+              }
+            ]
+          }
+        ],
+        "specialty": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+                "valuePeriod": {
+                  "start": "2000-01-01",
+                  "end": "2020-01-01"
+                }
+              },
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension",
+                "valueString": "Expertise source"
+              }
+            ],
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "419772000"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "http://plr.moh.bc.ca/fhir/PractitionerRole"
+      }
+    }
+  ]
+}
