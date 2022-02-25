@@ -32,13 +32,13 @@ Description: "Example of generic Practitioner."
 // license status
 * extension[2].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension"
 * extension[2].extension[0].url = "statusCode"
-* extension[2].extension[0].valueCodeableConcept.coding.system = "http://hlth.gov.bc.ca/fhir/provider/bc-license-status"
+* extension[2].extension[0].valueCodeableConcept.coding.system = $RoleStatus
 * extension[2].extension[0].valueCodeableConcept.coding.code = #ACTIVE
 * extension[2].extension[1].url = "period"
 * extension[2].extension[1].valuePeriod.start = "2022-02-07"
 * extension[2].extension[1].valuePeriod.end = "2023-02-07"
 * extension[2].extension[2].url = "statusReasonCode"
-* extension[2].extension[2].valueCodeableConcept.coding.system = "http://hlth.gov.bc.ca/fhir/provider/bc-license-status-reason"
+* extension[2].extension[2].valueCodeableConcept.coding.system = $PLRStatusReason
 * extension[2].extension[2].valueCodeableConcept.coding.code = #GS
 
 // disciplinary action
@@ -72,7 +72,7 @@ Description: "Example of generic Practitioner."
 * extension[5].extension[2].url = "restrictionText"
 * extension[5].extension[2].valueString = "Restriction text"
 * extension[5].extension[3].url = "code"
-* extension[5].extension[3].valueCodeableConcept.coding.system = "http://hlth.gov.bc.ca/fhir/provider/bc-condition-restriction-code"
+* extension[5].extension[3].valueCodeableConcept.coding.system = $PLRConditionType
 * extension[5].extension[3].valueCodeableConcept.coding.code = #EXP
 * extension[5].extension[4].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[5].extension[4].valuePeriod.start = "1998-01-02"

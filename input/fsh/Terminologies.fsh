@@ -13,3 +13,4 @@ Alias: $PLRLanguage = http://hl7.org/fhir/bc-plr/bc-language-code
 Alias: $PLRHealthServiceAreas = http://hl7.org/fhir/bc-plr/bc-health-service-area-code
 Alias: $PLREndReason = http://hl7.org/fhir/bc-plr/bc-end-reason-code
 Alias: $PLROwner = http://hl7.org/fhir/bc-plr/bc-owner-code
+Alias: $PLRError = http://hl7.org/fhir/bc-plr/bc-error-codes
