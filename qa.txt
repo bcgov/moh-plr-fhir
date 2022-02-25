@@ -1,16 +1,16 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 45, warn = 1, info = 16
+err = 68, warn = 1, info = 3
 IG Publisher Version: 1.1.108
-Generated Fri Feb 25 21:35:11 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
+Generated Fri Feb 25 23:45:25 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
  Build Errors : 0 / 0 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 0 / 4
  /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 0 / 0 / 7
  /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle : 13 / 4 / 12
  /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 13 / 4 / 40
- /github/workspace/fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle : 2 / 4 / 15
- /github/workspace/fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider : 2 / 4 / 21
+ /github/workspace/fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle : 7 / 4 / 12
+ /github/workspace/fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider : 9 / 4 / 17
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-client-capability-statement : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-server-capability-statement : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ImplementationGuide-fhir.ca-bc.provider : 0 / 0 / 1
@@ -22,16 +22,16 @@ Generated Fri Feb 25 21:35:11 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/OperationDefinition-bc-extended-location-query : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/OperationDefinition-bc-extended-organization-query : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/OperationDefinition-bc-extended-practitioner-query : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7018 : 0 / 0 / 2
- /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7047 : 0 / 0 / 2
- /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7049 : 0 / 0 / 2
+ /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7018 : 2 / 0 / 1
+ /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7047 : 2 / 0 / 1
+ /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7049 : 2 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-Example-AddOrganization-Organization : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-Example-Credential-Granting-Institution : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-Example-Qualification-Organization : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/OrganizationAffiliation-Example-AddOrganization-OrganizationAffiliation : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-Practitioner : 10 / 2 / 5
  /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-RelatedPractitioner : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/Practitioner-Example-Practitioner : 2 / 2 / 8
+ /github/workspace/fsh-generated/resources/Practitioner-Example-Practitioner : 7 / 2 / 5
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole : 3 / 2 / 2
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole : 0 / 2 / 2
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-address : 0 / 0 / 1
@@ -99,16 +99,21 @@ ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.o
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-end-reason-code' does not resolve
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[1].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-owner-code' does not resolve
 == fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle.json ==
-INFORMATION: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[2].extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-license-status' is unknown so the code cannot be validated
-INFORMATION: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[2].extension[2].value.ofType(CodeableConcept).coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-license-status-reason' is unknown so the code cannot be validated
-INFORMATION: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[5].extension[3].value.ofType(CodeableConcept).coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-condition-restriction-code' is unknown so the code cannot be validated
+ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[2].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code http://terminology.hl7.org/CodeSystem/v3-RoleStatus#ACTIVE in http://terminology.hl7.org/CodeSystem/v3-RoleStatus for 'http://terminology.hl7.org/CodeSystem/v3-RoleStatus#ACTIVE'
+ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[2].extension[2].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-status-reason-code'
+ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[2].extension[2].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-status-reason-code' does not resolve
+ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[5].extension[3].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-condition-type-code'
+ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[5].extension[3].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-condition-type-code' does not resolve
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).communication[0].coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-language-code'
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
 == fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider.json ==
-INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[0].resource.ofType(OperationOutcome).issue[0].details.coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-oo-codes' is unknown so the code cannot be validated
-INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).extension[2].extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-license-status' is unknown so the code cannot be validated
-INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).extension[2].extension[2].value.ofType(CodeableConcept).coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-license-status-reason' is unknown so the code cannot be validated
-INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).extension[5].extension[3].value.ofType(CodeableConcept).coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-condition-restriction-code' is unknown so the code cannot be validated
+ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[0].resource.ofType(OperationOutcome).issue[0].details.coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-error-codes'
+ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[0].resource.ofType(OperationOutcome).issue[0].details.coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-error-codes' does not resolve
+ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).extension[2].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code http://terminology.hl7.org/CodeSystem/v3-RoleStatus#ACTIVE in http://terminology.hl7.org/CodeSystem/v3-RoleStatus for 'http://terminology.hl7.org/CodeSystem/v3-RoleStatus#ACTIVE'
+ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).extension[2].extension[2].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-status-reason-code'
+ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).extension[2].extension[2].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-status-reason-code' does not resolve
+ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).extension[5].extension[3].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-condition-type-code'
+ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).extension[5].extension[3].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-condition-type-code' does not resolve
 INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).communication[0]: None of the codings provided are in the value set 'Common Languages' (http://hl7.org/fhir/ValueSet/languages), and a coding is recommended to come from this value set) (codes = http://hl7.org/fhir/bc-plr/bc-language-code#EN)
 ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).communication[0].coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-language-code'
 ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
@@ -125,11 +130,14 @@ INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bund
 == fsh-generated/resources/OperationDefinition-bc-extended-organization-query.json ==
 == fsh-generated/resources/OperationDefinition-bc-extended-practitioner-query.json ==
 == fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7018.json ==
-INFORMATION: OperationOutcome/Example-OperationOutcome-7018: OperationOutcome.issue[0].details.coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-oo-codes' is unknown so the code cannot be validated
+ERROR: OperationOutcome/Example-OperationOutcome-7018: OperationOutcome.issue[0].details.coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-error-codes'
+ERROR: OperationOutcome/Example-OperationOutcome-7018: OperationOutcome.issue[0].details.coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-error-codes' does not resolve
 == fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7047.json ==
-INFORMATION: OperationOutcome/Example-OperationOutcome-7047: OperationOutcome.issue[0].details.coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-oo-codes' is unknown so the code cannot be validated
+ERROR: OperationOutcome/Example-OperationOutcome-7047: OperationOutcome.issue[0].details.coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-error-codes'
+ERROR: OperationOutcome/Example-OperationOutcome-7047: OperationOutcome.issue[0].details.coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-error-codes' does not resolve
 == fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7049.json ==
-INFORMATION: OperationOutcome/Example-OperationOutcome-7049: OperationOutcome.issue[0].details.coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-oo-codes' is unknown so the code cannot be validated
+ERROR: OperationOutcome/Example-OperationOutcome-7049: OperationOutcome.issue[0].details.coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-error-codes'
+ERROR: OperationOutcome/Example-OperationOutcome-7049: OperationOutcome.issue[0].details.coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-error-codes' does not resolve
 == fsh-generated/resources/Organization-Example-AddOrganization-Organization.json ==
 == fsh-generated/resources/Organization-Example-Credential-Granting-Institution.json ==
 == fsh-generated/resources/Organization-Example-Qualification-Organization.json ==
@@ -147,9 +155,11 @@ ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.communica
 ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
 == fsh-generated/resources/Practitioner-Example-AddPractitioner-RelatedPractitioner.json ==
 == fsh-generated/resources/Practitioner-Example-Practitioner.json ==
-INFORMATION: Practitioner/Example-Practitioner: Practitioner.extension[2].extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-license-status' is unknown so the code cannot be validated
-INFORMATION: Practitioner/Example-Practitioner: Practitioner.extension[2].extension[2].value.ofType(CodeableConcept).coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-license-status-reason' is unknown so the code cannot be validated
-INFORMATION: Practitioner/Example-Practitioner: Practitioner.extension[5].extension[3].value.ofType(CodeableConcept).coding[0]: Code System URI 'http://hlth.gov.bc.ca/fhir/provider/bc-condition-restriction-code' is unknown so the code cannot be validated
+ERROR: Practitioner/Example-Practitioner: Practitioner.extension[2].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code http://terminology.hl7.org/CodeSystem/v3-RoleStatus#ACTIVE in http://terminology.hl7.org/CodeSystem/v3-RoleStatus for 'http://terminology.hl7.org/CodeSystem/v3-RoleStatus#ACTIVE'
+ERROR: Practitioner/Example-Practitioner: Practitioner.extension[2].extension[2].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-status-reason-code'
+ERROR: Practitioner/Example-Practitioner: Practitioner.extension[2].extension[2].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-status-reason-code' does not resolve
+ERROR: Practitioner/Example-Practitioner: Practitioner.extension[5].extension[3].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-condition-type-code'
+ERROR: Practitioner/Example-Practitioner: Practitioner.extension[5].extension[3].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-condition-type-code' does not resolve
 ERROR: Practitioner/Example-Practitioner: Practitioner.communication[0].coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-language-code'
 ERROR: Practitioner/Example-Practitioner: Practitioner.communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
 == fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole.json ==
