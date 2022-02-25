@@ -375,3 +375,4 @@ Description: "An example of a Batch Bundle that contains one each of a Practitio
 * entry[2].resource = Example-AddLocation-Bundle
 * entry[2].request.url = "http://plr.moh.bc.ca/fhir/Bundle"
 
+

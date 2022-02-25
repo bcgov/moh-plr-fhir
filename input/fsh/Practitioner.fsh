@@ -303,8 +303,9 @@ Description: "Example of a BC practitioner that is being created."
 * gender = #female
 * birthDate = "1951-11-12"
 * birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
-* qualification.identifier.system = "urn:oid:2.16.840.1.113883.3.40.1.2"
-* qualification.identifier.value = "CREDENTIAL_REGISTRATIONNUMBERTXT"
+//* qualification.identifier.system = "urn:oid:2.16.840.1.113883.3.40.1.2"
+//* qualification.identifier.value = "CREDENTIAL_REGISTRATIONNUMBERTXT"
+//* qualification.code.text = "CREDENTIAL_CREDENTIALDESIGNATIONTXT"
 * qualification.code = $SCPQual#BD
 * qualification.code.text = "CREDENTIAL_CREDENTIALDESIGNATIONTXT"
 * qualification.period.start = "2000-01-01"
