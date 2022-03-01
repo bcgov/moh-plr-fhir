@@ -17,19 +17,37 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddOrganization-Organization\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><p><b>identifier</b>: id: CPN.00147422.BC.PRS, id: IPC.00147422.BC.PRS, id: 1000095892</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585(WORK)</p><p><b>address</b>: 2541 Townsend Rd Sooke BC V4R8T8 CA (WORK)</p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddOrganization-Organization\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><p><b>identifier</b>: CPN: CPN.00147422.BC.PRS, IPC: IPC.00147422.BC.PRS, ORGID: 1000095892</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585(WORK)</p><p><b>address</b>: 2541 Townsend Rd Sooke BC V4R8T8 CA (WORK)</p></div>"
   ];
   fhir:Organization.identifier [
      fhir:index 0;
-     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.3" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "CPN" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
      fhir:Identifier.value [ fhir:value "CPN.00147422.BC.PRS" ]
   ], [
      fhir:index 1;
-     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.8" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "IPC" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
      fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ]
   ], [
      fhir:index 2;
-     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.23" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "ORGID" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
      fhir:Identifier.value [ fhir:value "1000095892" ]
   ];
   fhir:Organization.active [ fhir:value "true"^^xsd:boolean];

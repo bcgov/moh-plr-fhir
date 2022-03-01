@@ -1,21 +1,21 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 68, warn = 1, info = 3
-IG Publisher Version: 1.1.108
-Generated Fri Feb 25 23:45:25 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
+err = 106, warn = 23, info = 5
+IG Publisher Version: 1.1.111
+Generated Tue Mar 01 22:25:59 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
  Build Errors : 0 / 0 / 0
- /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 0 / 4
- /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 0 / 0 / 7
- /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle : 13 / 4 / 12
- /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 13 / 4 / 40
- /github/workspace/fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle : 7 / 4 / 12
- /github/workspace/fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider : 9 / 4 / 17
+ /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 1 / 1 / 4
+ /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 3 / 3 / 7
+ /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle : 18 / 4 / 12
+ /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 22 / 8 / 40
+ /github/workspace/fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle : 10 / 7 / 12
+ /github/workspace/fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider : 12 / 7 / 17
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-client-capability-statement : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-server-capability-statement : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ImplementationGuide-fhir.ca-bc.provider : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/Location-Example-AddOrganization-Location : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/Location-Example-AddPractitioner-WorkLocation : 0 / 0 / 2
+ /github/workspace/fsh-generated/resources/Location-Example-AddOrganization-Location : 1 / 1 / 1
+ /github/workspace/fsh-generated/resources/Location-Example-AddPractitioner-WorkLocation : 1 / 0 / 2
  /github/workspace/fsh-generated/resources/OperationDefinition-bc-entity-location-query : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/OperationDefinition-bc-entity-organization-query : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/OperationDefinition-bc-entity-practitioner-query : 0 / 0 / 1
@@ -25,13 +25,13 @@ Generated Fri Feb 25 23:45:25 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7018 : 2 / 0 / 1
  /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7047 : 2 / 0 / 1
  /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7049 : 2 / 0 / 1
- /github/workspace/fsh-generated/resources/Organization-Example-AddOrganization-Organization : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/Organization-Example-AddOrganization-Organization : 3 / 3 / 1
  /github/workspace/fsh-generated/resources/Organization-Example-Credential-Granting-Institution : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-Example-Qualification-Organization : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/OrganizationAffiliation-Example-AddOrganization-OrganizationAffiliation : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-Practitioner : 10 / 2 / 5
- /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-RelatedPractitioner : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/Practitioner-Example-Practitioner : 7 / 2 / 5
+ /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-Practitioner : 15 / 2 / 5
+ /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-RelatedPractitioner : 1 / 1 / 1
+ /github/workspace/fsh-generated/resources/Practitioner-Example-Practitioner : 10 / 5 / 5
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole : 3 / 2 / 2
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole : 0 / 2 / 2
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-address : 0 / 0 / 1
@@ -68,12 +68,25 @@ Generated Fri Feb 25 23:45:25 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
 </table>
 == n/a ==
 == fsh-generated/resources/Bundle-Example-AddLocation-Bundle.json ==
+WARNING: Bundle/Example-AddLocation-Bundle: Bundle.entry[0].resource.ofType(Location).identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-AddLocation-Bundle: Bundle.entry[0].resource.ofType(Location).identifier[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-location-identifier-type-code' does not resolve
 == fsh-generated/resources/Bundle-Example-AddOrganization-Bundle.json ==
+WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.ofType(Organization).identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.ofType(Organization).identifier[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.ofType(Organization).identifier[1].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.ofType(Organization).identifier[1].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.ofType(Organization).identifier[2].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.ofType(Organization).identifier[2].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
 == fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle.json ==
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[1].extension[2].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-status-reason-code'
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[1].extension[2].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-status-reason-code' does not resolve
+ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[1].extension[3].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-owner-code' does not resolve
+ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[2].extension[0].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-owner-code' does not resolve
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[2].extension[1].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-status-reason-code'
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[2].extension[1].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-status-reason-code' does not resolve
+ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[5].extension[0].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-disciplinary-action-id' does not resolve
+ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[7].extension[0].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-note-id' does not resolve
+ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[8].extension[0].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-condition-type-code' does not resolve
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[8].extension[4].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-condition-type-code'
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[8].extension[4].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-condition-type-code' does not resolve
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[9].extension[2].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-relationship-type-code'
@@ -85,10 +98,17 @@ ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[1].resource.ofType(Pr
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[1].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-owner-code' does not resolve
 == fsh-generated/resources/Bundle-Example-Batch-Bundle.json ==
 INFORMATION: Bundle/Example-Batch-Bundle: Bundle.entry[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle
+INFORMATION: Bundle/Example-Batch-Bundle: Bundle.entry[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle
+INFORMATION: Bundle/Example-Batch-Bundle: Bundle.entry[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[1].extension[2].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-status-reason-code'
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[1].extension[2].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-status-reason-code' does not resolve
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[1].extension[3].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-owner-code' does not resolve
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[2].extension[0].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-owner-code' does not resolve
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[2].extension[1].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-status-reason-code'
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[2].extension[1].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-status-reason-code' does not resolve
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[5].extension[0].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-disciplinary-action-id' does not resolve
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[7].extension[0].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-note-id' does not resolve
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[8].extension[0].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-condition-type-code' does not resolve
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[8].extension[4].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-condition-type-code'
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[8].extension[4].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-condition-type-code' does not resolve
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).extension[9].extension[2].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-relationship-type-code'
@@ -98,12 +118,26 @@ ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.o
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-end-reason-code'
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-end-reason-code' does not resolve
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[1].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-owner-code' does not resolve
+WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource.ofType(Organization).identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource.ofType(Organization).identifier[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource.ofType(Organization).identifier[1].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource.ofType(Organization).identifier[1].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource.ofType(Organization).identifier[2].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource.ofType(Organization).identifier[2].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[2].resource.entry[0].resource.ofType(Location).identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[2].resource.entry[0].resource.ofType(Location).identifier[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-location-identifier-type-code' does not resolve
 == fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle.json ==
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[2].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code http://terminology.hl7.org/CodeSystem/v3-RoleStatus#ACTIVE in http://terminology.hl7.org/CodeSystem/v3-RoleStatus for 'http://terminology.hl7.org/CodeSystem/v3-RoleStatus#ACTIVE'
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[2].extension[2].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-status-reason-code'
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[2].extension[2].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-status-reason-code' does not resolve
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[5].extension[3].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-condition-type-code'
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).extension[5].extension[3].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-condition-type-code' does not resolve
+WARNING: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).identifier[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).identifier[1].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).identifier[1].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).identifier[2].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).identifier[2].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).communication[0].coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-language-code'
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
 == fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider.json ==
@@ -114,6 +148,12 @@ ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.ent
 ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).extension[2].extension[2].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-status-reason-code' does not resolve
 ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).extension[5].extension[3].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-condition-type-code'
 ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).extension[5].extension[3].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-condition-type-code' does not resolve
+WARNING: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).identifier[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).identifier[1].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).identifier[1].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).identifier[2].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).identifier[2].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
 INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).communication[0]: None of the codings provided are in the value set 'Common Languages' (http://hl7.org/fhir/ValueSet/languages), and a coding is recommended to come from this value set) (codes = http://hl7.org/fhir/bc-plr/bc-language-code#EN)
 ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).communication[0].coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-language-code'
 ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
@@ -122,7 +162,10 @@ INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bund
 == fsh-generated/resources/CapabilityStatement-bc-plr-server-capability-statement.json ==
 == fsh-generated/resources/ImplementationGuide-fhir.ca-bc.provider.json ==
 == fsh-generated/resources/Location-Example-AddOrganization-Location.json ==
+WARNING: Location/Example-AddOrganization-Location: Location.identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Location/Example-AddOrganization-Location: Location.identifier[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-location-identifier-type-code' does not resolve
 == fsh-generated/resources/Location-Example-AddPractitioner-WorkLocation.json ==
+ERROR: Location/Example-AddPractitioner-WorkLocation: Location.identifier[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-work-location-id' does not resolve
 == fsh-generated/resources/OperationDefinition-bc-entity-location-query.json ==
 == fsh-generated/resources/OperationDefinition-bc-entity-organization-query.json ==
 == fsh-generated/resources/OperationDefinition-bc-entity-practitioner-query.json ==
@@ -139,14 +182,25 @@ ERROR: OperationOutcome/Example-OperationOutcome-7047: OperationOutcome.issue[0]
 ERROR: OperationOutcome/Example-OperationOutcome-7049: OperationOutcome.issue[0].details.coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-error-codes'
 ERROR: OperationOutcome/Example-OperationOutcome-7049: OperationOutcome.issue[0].details.coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-error-codes' does not resolve
 == fsh-generated/resources/Organization-Example-AddOrganization-Organization.json ==
+WARNING: Organization/Example-AddOrganization-Organization: Organization.identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Organization/Example-AddOrganization-Organization: Organization.identifier[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Organization/Example-AddOrganization-Organization: Organization.identifier[1].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Organization/Example-AddOrganization-Organization: Organization.identifier[1].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Organization/Example-AddOrganization-Organization: Organization.identifier[2].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Organization/Example-AddOrganization-Organization: Organization.identifier[2].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
 == fsh-generated/resources/Organization-Example-Credential-Granting-Institution.json ==
 == fsh-generated/resources/Organization-Example-Qualification-Organization.json ==
 == fsh-generated/resources/OrganizationAffiliation-Example-AddOrganization-OrganizationAffiliation.json ==
 == fsh-generated/resources/Practitioner-Example-AddPractitioner-Practitioner.json ==
 ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension[1].extension[2].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-status-reason-code'
 ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension[1].extension[2].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-status-reason-code' does not resolve
+ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension[1].extension[3].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-owner-code' does not resolve
+ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension[2].extension[0].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-owner-code' does not resolve
 ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension[2].extension[1].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-status-reason-code'
 ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension[2].extension[1].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-status-reason-code' does not resolve
+ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension[5].extension[0].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-disciplinary-action-id' does not resolve
+ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension[7].extension[0].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-note-id' does not resolve
+ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension[8].extension[0].value.ofType(Identifier).system: URL value 'http://hl7.org/fhir/bc-plr/bc-condition-type-code' does not resolve
 ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension[8].extension[4].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-condition-type-code'
 ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension[8].extension[4].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-condition-type-code' does not resolve
 ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension[9].extension[2].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-relationship-type-code'
@@ -154,12 +208,20 @@ ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.extension
 ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.communication[0].coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-language-code'
 ERROR: Practitioner/Example-AddPractitioner-Practitioner: Practitioner.communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
 == fsh-generated/resources/Practitioner-Example-AddPractitioner-RelatedPractitioner.json ==
+WARNING: Practitioner/Example-AddPractitioner-RelatedPractitioner: Practitioner.identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Practitioner/Example-AddPractitioner-RelatedPractitioner: Practitioner.identifier[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
 == fsh-generated/resources/Practitioner-Example-Practitioner.json ==
 ERROR: Practitioner/Example-Practitioner: Practitioner.extension[2].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code http://terminology.hl7.org/CodeSystem/v3-RoleStatus#ACTIVE in http://terminology.hl7.org/CodeSystem/v3-RoleStatus for 'http://terminology.hl7.org/CodeSystem/v3-RoleStatus#ACTIVE'
 ERROR: Practitioner/Example-Practitioner: Practitioner.extension[2].extension[2].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-status-reason-code'
 ERROR: Practitioner/Example-Practitioner: Practitioner.extension[2].extension[2].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-status-reason-code' does not resolve
 ERROR: Practitioner/Example-Practitioner: Practitioner.extension[5].extension[3].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-condition-type-code'
 ERROR: Practitioner/Example-Practitioner: Practitioner.extension[5].extension[3].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-condition-type-code' does not resolve
+WARNING: Practitioner/Example-Practitioner: Practitioner.identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Practitioner/Example-Practitioner: Practitioner.identifier[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Practitioner/Example-Practitioner: Practitioner.identifier[1].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Practitioner/Example-Practitioner: Practitioner.identifier[1].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
+WARNING: Practitioner/Example-Practitioner: Practitioner.identifier[2].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Practitioner/Example-Practitioner: Practitioner.identifier[2].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
 ERROR: Practitioner/Example-Practitioner: Practitioner.communication[0].coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-language-code'
 ERROR: Practitioner/Example-Practitioner: Practitioner.communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
 == fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole.json ==

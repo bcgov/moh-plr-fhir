@@ -239,21 +239,39 @@
   ];
   fhir:Practitioner.identifier [
      fhir:index 0;
-     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.8" ];
-     fhir:Identifier.value [ fhir:value "23423234" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "IPC" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
+     fhir:Identifier.value [ fhir:value "IPC.23423234.BC.PRS" ];
      fhir:Identifier.period [
        fhir:Period.start [ fhir:value "2022-02-07"^^xsd:date ]
      ]
   ], [
      fhir:index 1;
-     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.3" ];
-     fhir:Identifier.value [ fhir:value "23423234" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "CPN" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
+     fhir:Identifier.value [ fhir:value "CPN.23423234.BC.PRS" ];
      fhir:Identifier.period [
        fhir:Period.start [ fhir:value "2022-02-07"^^xsd:date ]
      ]
   ], [
      fhir:index 2;
-     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.4" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "CPSID" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
      fhir:Identifier.value [ fhir:value "89745" ];
      fhir:Identifier.period [
        fhir:Period.start [ fhir:value "2022-02-07"^^xsd:date ]

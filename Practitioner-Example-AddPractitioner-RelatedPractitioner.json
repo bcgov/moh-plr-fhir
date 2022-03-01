@@ -8,7 +8,7 @@
   },
   "text": {
     "status": "extensions",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddPractitioner-RelatedPractitioner\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner.html\">BCPractitioner</a></p></div><p><b>BC Valid Period Extension</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>identifier</b>: id: 3DEGDIDERCHIDMAY22T02</p><p><b>name</b>: 23</p></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddPractitioner-RelatedPractitioner\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner.html\">BCPractitioner</a></p></div><p><b>BC Valid Period Extension</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>identifier</b>: RNID: 123123123</p><p><b>name</b>: 23</p></div>"
   },
   "extension": [
     {
@@ -20,8 +20,15 @@
   ],
   "identifier": [
     {
-      "system": "urn:oid:2.16.840.1.113883.3.40.20.19",
-      "value": "3DEGDIDERCHIDMAY22T02"
+      "type": {
+        "coding": [
+          {
+            "code": "RNID"
+          }
+        ]
+      },
+      "system": "http://hl7.org/fhir/bc-plr/bc-identifer-type-code",
+      "value": "123123123"
     }
   ],
   "name": [

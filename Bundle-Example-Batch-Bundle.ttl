@@ -139,7 +139,7 @@
        fhir:index 3;
        fhir:Extension.url [ fhir:value "custodianId" ];
        fhir:Extension.valueIdentifier [
-         fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.16" ];
+         fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-owner-code" ];
          fhir:Identifier.value [ fhir:value "RNA" ]
        ]
      ];
@@ -150,7 +150,7 @@
        fhir:index 0;
        fhir:Extension.url [ fhir:value "custodianId" ];
        fhir:Extension.valueIdentifier [
-         fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.16" ];
+         fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-owner-code" ];
          fhir:Identifier.value [ fhir:value "RNA" ]
        ]
      ], [
@@ -182,7 +182,7 @@
        fhir:index 0;
        fhir:Extension.url [ fhir:value "identifier" ];
        fhir:Extension.valueIdentifier [
-         fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.4" ];
+         fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-disciplinary-action-id" ];
          fhir:Identifier.value [ fhir:value "DISCIPLINARY_ACTION_TEST1" ]
        ]
      ], [
@@ -233,7 +233,7 @@
        fhir:index 0;
        fhir:Extension.url [ fhir:value "identifier" ];
        fhir:Extension.valueIdentifier [
-         fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.6" ];
+         fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-note-id" ];
          fhir:Identifier.value [ fhir:value "noteID1" ]
        ]
      ], [
@@ -255,7 +255,7 @@
        fhir:index 0;
        fhir:Extension.url [ fhir:value "identifier" ];
        fhir:Extension.valueIdentifier [
-         fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.1" ];
+         fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-condition-type-code" ];
          fhir:Identifier.value [ fhir:value "23" ]
        ]
      ], [
@@ -585,15 +585,33 @@
   ];
   fhir:Organization.identifier [
      fhir:index 0;
-     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.3" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "CPN" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
      fhir:Identifier.value [ fhir:value "CPN.00147422.BC.PRS" ]
   ], [
      fhir:index 1;
-     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.8" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "IPC" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
      fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ]
   ], [
      fhir:index 2;
-     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.23" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "ORGID" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
      fhir:Identifier.value [ fhir:value "1000095892" ]
   ];
   fhir:Organization.active [ fhir:value "true"^^xsd:boolean];
@@ -695,7 +713,13 @@
   ];
   fhir:Location.identifier [
      fhir:index 0;
-     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.1.10" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "IFC" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-location-identifier-type-code" ];
      fhir:Identifier.value [ fhir:value "111" ]
   ];
   fhir:Location.name [
