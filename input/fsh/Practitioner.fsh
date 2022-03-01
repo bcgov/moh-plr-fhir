@@ -227,16 +227,16 @@ Description: "Example of a BC practitioner that is being created."
 * extension[status].extension[statusCode].valueCodeableConcept = $RoleStatus#active
 * extension[status].extension[period].valuePeriod.start = "2000-01-01"
 * extension[status].extension[period].valuePeriod.end = "2020-01-01"
-* extension[status].extension[custodianId].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.16"
+* extension[status].extension[custodianId].valueIdentifier.system = $PLROwnerCode
 * extension[status].extension[custodianId].valueIdentifier.value = "RNA"
 * extension[status].extension[statusReasonCode].valueCodeableConcept = $PLRStatusReason#PRAC
-* extension[demographicsEndReason].extension[custodianId].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.16"
+* extension[demographicsEndReason].extension[custodianId].valueIdentifier.system = $PLROwnerCode
 * extension[demographicsEndReason].extension[custodianId].valueIdentifier.value = "RNA"
 * extension[demographicsEndReason].extension[endReasonCode].valueCodeableConcept = $PLRStatusReason#PRAC
 * extension[deathDate].valueDateTime = "2000-02-01"
 * extension[birthplace].valueAddress.state = "AL"
 * extension[birthplace].valueAddress.country = "US"
-* extension[disciplinaryAction].extension[identifier].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.4"
+* extension[disciplinaryAction].extension[identifier].valueIdentifier.system = $PLRDisciplinaryActionID
 * extension[disciplinaryAction].extension[identifier].valueIdentifier.value = "DISCIPLINARY_ACTION_TEST1"
 * extension[disciplinaryAction].extension[description].valueString = "DISCIPLINARYACTION_DESCRIPTIONTXT_1"
 * extension[disciplinaryAction].extension[period].valuePeriod.start = "1950-11-20T00:00:00-07:00"
@@ -246,12 +246,12 @@ Description: "Example of a BC practitioner that is being created."
 * extension[confidentiality].extension[code].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * extension[confidentiality].extension[period].valuePeriod.start = "2000-01-01"
 * extension[confidentiality].extension[period].valuePeriod.end = "2020-01-01"
-* extension[note].extension[identifier].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.6"
+* extension[note].extension[identifier].valueIdentifier.system = $PLRNoteID
 * extension[note].extension[identifier].valueIdentifier.value = "noteID1"
 * extension[note].extension[text].valueString = "Note text sample"
 * extension[note].extension[period].valuePeriod.start = "2000-01-01"
 * extension[note].extension[period].valuePeriod.end = "2020-01-01"
-* extension[condition].extension[identifier].valueIdentifier.system = "urn:oid:2.16.840.1.113883.3.40.1.1"
+* extension[condition].extension[identifier].valueIdentifier.system = $PLRConditionType
 * extension[condition].extension[identifier].valueIdentifier.value = "23"
 * extension[condition].extension[period].valuePeriod.start = "2000-01-01"
 * extension[condition].extension[period].valuePeriod.end = "2020-01-01"
@@ -303,9 +303,6 @@ Description: "Example of a BC practitioner that is being created."
 * gender = #female
 * birthDate = "1951-11-12"
 * birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
-//* qualification.identifier.system = "urn:oid:2.16.840.1.113883.3.40.1.2"
-//* qualification.identifier.value = "CREDENTIAL_REGISTRATIONNUMBERTXT"
-//* qualification.code.text = "CREDENTIAL_CREDENTIALDESIGNATIONTXT"
 * qualification.code = $SCPQual#BD
 * qualification.code.text = "CREDENTIAL_CREDENTIALDESIGNATIONTXT"
 * qualification.period.start = "2000-01-01"
@@ -324,8 +321,9 @@ Instance: Example-AddPractitioner-RelatedPractitioner
 InstanceOf: BCPractitioner
 Description: "Example of a practitioner that has a relationship to the example created practitioner."
 * extension[demographicsPeriod].valuePeriod.start = "2000-01-01"
-* identifier.system = "urn:oid:2.16.840.1.113883.3.40.20.19"
-* identifier.value = "3DEGDIDERCHIDMAY22T02"
+* identifier.system = $PLRIdentifierType
+* identifier.value = "123123123"
+* identifier.type = #RNID
 * name.text = "23"
 
 Instance: Example-AddPractitioner-PractitionerRole

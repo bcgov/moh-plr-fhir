@@ -12,15 +12,18 @@ Description: "Example of generic Practitioner."
 * extension[1].valueAddress.country = "CA"
 
 // identifier
-* identifier[0].system = "urn:oid:2.16.840.1.113883.3.40.2.8"
-* identifier[0].value = "23423234"
+* identifier[0].system = $PLRIdentifierType
+* identifier[0].value = "IPC.23423234.BC.PRS"
+* identifier[0].type = #IPC
 * identifier[0].period.start = "2022-02-07"
-* identifier[1].system = "urn:oid:2.16.840.1.113883.3.40.2.3"
-* identifier[1].value = "23423234"
+* identifier[1].system = $PLRIdentifierType
+* identifier[1].value = "CPN.23423234.BC.PRS"
 * identifier[1].period.start = "2022-02-07"
-* identifier[2].system = "urn:oid:2.16.840.1.113883.3.40.2.4"
+* identifier[1].type = #CPN
+* identifier[2].system = $PLRIdentifierType
 * identifier[2].value = "89745"
 * identifier[2].period.start = "2022-02-07"
+* identifier[2].type = #CPSID
 
 // name
 * name.family = "FamilyName"

@@ -91,7 +91,7 @@ Description: "Example of a Location (Facility) that is the work location for a P
 * extension[mailingAddress].valueAddress.postalCode = "V6P7B8"
 * extension[mailingAddress].valueAddress.state = "BC"
 * extension[mailingAddress].valueAddress.country = "CA"
-* identifier.system = "urn:oid:2.16.840.1.113883.3.40.1.10"
+* identifier.system = $PLRWorkLocationID
 * identifier.value = "1"
 * name = "WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT"
 * name.extension[period].valuePeriod.start = "2000-01-01"
@@ -120,8 +120,9 @@ Description: "Example of a Location (Facility) that is the work location for a P
 Instance: Example-AddOrganization-Location
 InstanceOf: BCLocation
 Description: "Example of a Location (Facility) that is associated with an Organization."
-* identifier.system = "urn:oid:2.16.840.1.113883.3.40.1.10"
+* identifier.system = $PLRFacilityIdentifierType
 * identifier.value = "111"
+* identifier.type = #IFC
 * name = "General Hospital"
 * name.extension[period].valuePeriod.start = "2000-01-01"
 * telecom[0].use = #work

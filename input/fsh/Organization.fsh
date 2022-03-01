@@ -79,12 +79,15 @@ Description: "Example of a Bundle of resources that are needed to create an Orga
 Instance: Example-AddOrganization-Organization
 InstanceOf: BCOrganization
 Description: "Example of an Organization that is being created."
-* identifier[0].system = "urn:oid:2.16.840.1.113883.3.40.2.3"
+* identifier[0].system = $PLRIdentifierType
 * identifier[0].value = "CPN.00147422.BC.PRS"
-* identifier[1].system = "urn:oid:2.16.840.1.113883.3.40.2.8"
+* identifier[0].type = #CPN
+* identifier[1].system = $PLRIdentifierType
 * identifier[1].value = "IPC.00147422.BC.PRS"
-* identifier[2].system = "urn:oid:2.16.840.1.113883.3.40.2.23"
+* identifier[1].type = #IPC
+* identifier[2].system = $PLRIdentifierType
 * identifier[2].value = "1000095892"
+* identifier[2].type = #ORGID
 * name = "Kelowna Clinic"
 * name.extension[use].valueCode = #official
 * name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
