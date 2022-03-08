@@ -1,16 +1,16 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 110, warn = 23, info = 5
+err = 106, warn = 23, info = 5
 IG Publisher Version: 1.1.111
-Generated Tue Mar 08 22:03:48 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
+Generated Tue Mar 08 23:15:48 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
  Build Errors : 0 / 0 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 1 / 1 / 4
  /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 3 / 3 / 7
  /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle : 18 / 4 / 12
  /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 22 / 8 / 40
  /github/workspace/fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle : 10 / 7 / 12
- /github/workspace/fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider : 13 / 7 / 17
+ /github/workspace/fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider : 12 / 7 / 17
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-client-capability-statement : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-server-capability-statement : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ImplementationGuide-fhir.ca-bc.provider : 0 / 0 / 1
@@ -22,9 +22,9 @@ Generated Tue Mar 08 22:03:48 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/OperationDefinition-bc-extended-location-query : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/OperationDefinition-bc-extended-organization-query : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/OperationDefinition-bc-extended-practitioner-query : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7018 : 3 / 0 / 1
- /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7047 : 3 / 0 / 1
- /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7049 : 3 / 0 / 1
+ /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7018 : 2 / 0 / 1
+ /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7047 : 2 / 0 / 1
+ /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7049 : 2 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-Example-AddOrganization-Organization : 3 / 3 / 1
  /github/workspace/fsh-generated/resources/Organization-Example-Credential-Granting-Institution : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-Example-Qualification-Organization : 0 / 0 / 1
@@ -141,7 +141,6 @@ ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofTyp
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).communication[0].coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-language-code'
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0].resource.ofType(Practitioner).communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
 == fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider.json ==
-ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[0].resource.ofType(OperationOutcome).issue[0].severity: No code provided, and a code is required from the value set
 ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[0].resource.ofType(OperationOutcome).issue[0].details.coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-error-codes'
 ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[0].resource.ofType(OperationOutcome).issue[0].details.coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-error-codes' does not resolve
 ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).extension[2].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code http://terminology.hl7.org/CodeSystem/v3-RoleStatus#ACTIVE in http://terminology.hl7.org/CodeSystem/v3-RoleStatus for 'http://terminology.hl7.org/CodeSystem/v3-RoleStatus#ACTIVE'
@@ -174,15 +173,12 @@ ERROR: Location/Example-AddPractitioner-WorkLocation: Location.identifier[0].sys
 == fsh-generated/resources/OperationDefinition-bc-extended-organization-query.json ==
 == fsh-generated/resources/OperationDefinition-bc-extended-practitioner-query.json ==
 == fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7018.json ==
-ERROR: OperationOutcome/Example-OperationOutcome-7018: OperationOutcome.issue[0].severity: No code provided, and a code is required from the value set
 ERROR: OperationOutcome/Example-OperationOutcome-7018: OperationOutcome.issue[0].details.coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-error-codes'
 ERROR: OperationOutcome/Example-OperationOutcome-7018: OperationOutcome.issue[0].details.coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-error-codes' does not resolve
 == fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7047.json ==
-ERROR: OperationOutcome/Example-OperationOutcome-7047: OperationOutcome.issue[0].severity: No code provided, and a code is required from the value set
 ERROR: OperationOutcome/Example-OperationOutcome-7047: OperationOutcome.issue[0].details.coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-error-codes'
 ERROR: OperationOutcome/Example-OperationOutcome-7047: OperationOutcome.issue[0].details.coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-error-codes' does not resolve
 == fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7049.json ==
-ERROR: OperationOutcome/Example-OperationOutcome-7049: OperationOutcome.issue[0].severity: No code provided, and a code is required from the value set
 ERROR: OperationOutcome/Example-OperationOutcome-7049: OperationOutcome.issue[0].details.coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-error-codes'
 ERROR: OperationOutcome/Example-OperationOutcome-7049: OperationOutcome.issue[0].details.coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-error-codes' does not resolve
 == fsh-generated/resources/Organization-Example-AddOrganization-Organization.json ==
