@@ -1,8 +1,7 @@
 Instance: Example-OperationOutcome-7049
 InstanceOf: OperationOutcome
 Description: "OperationOutcome example for Individual Provider search - too many results."
-* issue[0].severity.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-* issue[0].severity.extension.valueCode = #unsupported
+* issue[0].severity = #warning
 * issue[0].code = #business-rule
 * issue[0].details.coding.system = $PLRError
 * issue[0].details.coding.code = #GRS.DPS.UNK.UNK.0.0.7049
@@ -11,8 +10,7 @@ Description: "OperationOutcome example for Individual Provider search - too many
 Instance: Example-OperationOutcome-7047
 InstanceOf: OperationOutcome
 Description: "OperationOutcome example for Individual Provider search - no provider records found."
-* issue[0].severity.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-* issue[0].severity.extension.valueCode = #unsupported
+* issue[0].severity = #warning
 * issue[0].code = #business-rule
 * issue[0].details.coding.system = $PLRError
 * issue[0].details.coding.code = #GRS.DPS.UNK.UNK.0.0.7047
@@ -21,8 +19,7 @@ Description: "OperationOutcome example for Individual Provider search - no provi
 Instance: Example-OperationOutcome-7018
 InstanceOf: OperationOutcome
 Description: "OperationOutcome example for Individual Provider search - wildcard error."
-* issue[0].severity.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-* issue[0].severity.extension.valueCode = #unsupported
+* issue[0].severity = #warning
 * issue[0].code = #business-rule
 * issue[0].details.coding.system = $PLRError
 * issue[0].details.coding.code = #GRS.DPS.UNK.UNK.0.0.7018
