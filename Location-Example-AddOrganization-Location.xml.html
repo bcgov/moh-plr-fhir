@@ -242,7 +242,7 @@
   &lt;/meta&gt;
   &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Resource &quot;Example-AddOrganization-Location&quot; &lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Profile: &lt;a href=&quot;StructureDefinition-bc-location.html&quot;&gt;BCLocation&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: IFC: 111&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: General Hospital&lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: fax: 55555555551(WORK), fax: 55555555555(HOME), &lt;a href=&quot;ftp://someftp.com&quot;&gt;ftp://someftp.com&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;address&lt;/b&gt;: wl line 11 wl line 22 wl line 33 wl city 2 BC V8V 8V8 CA (WORK)&lt;/p&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Resource &quot;Example-AddOrganization-Location&quot; &lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Profile: &lt;a href=&quot;StructureDefinition-bc-location.html&quot;&gt;BCLocation&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: IFC: 111&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: General Hospital&lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: fax: 55555555551, fax: 55555555555, &lt;a href=&quot;ftp://someftp.com&quot;&gt;ftp://someftp.com&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;address&lt;/b&gt;: wl line 11 wl line 22 wl line 33 wl city 2 BC V8V 8V8 CA &lt;/p&gt;&lt;/div&gt;<a name="end-xhtml"></a>
   &lt;/text&gt;
   &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.identifier">identifier</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>&gt;
@@ -262,31 +262,67 @@
     &lt;/extension&gt;
   &lt;/name&gt;
   &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.telecom">telecom</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.extension">extension</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-communication-purpose-code&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;BC&quot;/&gt;
+        &lt;/coding&gt;
+      &lt;/valueCodeableConcept&gt;
+    &lt;/extension&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;fax&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;55555555551&quot;/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;work&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.period">period</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;1982-03-04T00:00:00-07:00&quot;/&gt;
     &lt;/period&gt;
   &lt;/telecom&gt;
   &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.telecom">telecom</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.extension">extension</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-communication-purpose-code&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;HC&quot;/&gt;
+        &lt;/coding&gt;
+      &lt;/valueCodeableConcept&gt;
+    &lt;/extension&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;fax&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;55555555555&quot;/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;home&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.period">period</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;1981-04-04T00:00:00-07:00&quot;/&gt;
     &lt;/period&gt;
   &lt;/telecom&gt;
   &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.telecom">telecom</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.extension">extension</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-communication-purpose-code&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;MC&quot;/&gt;
+        &lt;/coding&gt;
+      &lt;/valueCodeableConcept&gt;
+    &lt;/extension&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;url&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ftp://someftp.com&quot;/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mobile&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.period">period</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;1991-01-01T00:00:00-07:00&quot;/&gt;
     &lt;/period&gt;
   &lt;/telecom&gt;
   &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.address">address</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;work&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.extension">extension</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-communication-purpose-code&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;BC&quot;/&gt;
+        &lt;/coding&gt;
+      &lt;/valueCodeableConcept&gt;
+    &lt;/extension&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;postal&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.line">line</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;wl line 11&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.line">line</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;wl line 22&quot;/&gt;
@@ -329,7 +365,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 8, 2022 23:12+0000">2022-03-08</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 10, 2022 19:28+0000">2022-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

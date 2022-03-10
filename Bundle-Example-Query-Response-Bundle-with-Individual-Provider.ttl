@@ -307,16 +307,35 @@
        fhir:index 2;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/contactpoint-extension" ];
        fhir:Extension.valueString [ fhir:value "3432" ]
+     ], [
+       fhir:index 3;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-communication-purpose-code" ];
+           fhir:Coding.code [ fhir:value "BC" ]
+         ]
+       ]
      ];
      fhir:ContactPoint.system [ fhir:value "phone" ];
-     fhir:ContactPoint.use [ fhir:value "work" ];
      fhir:ContactPoint.period [
        fhir:Period.start [ fhir:value "2000-02-02"^^xsd:date ]
      ]
   ];
   fhir:Practitioner.address [
      fhir:index 0;
-     fhir:Address.use [ fhir:value "work" ];
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-communication-purpose-code" ];
+           fhir:Coding.code [ fhir:value "BC" ]
+         ]
+       ]
+     ];
      fhir:Address.type [ fhir:value "postal" ];
      fhir:Address.period [
        fhir:Period.start [ fhir:value "2000-02-02"^^xsd:date ]

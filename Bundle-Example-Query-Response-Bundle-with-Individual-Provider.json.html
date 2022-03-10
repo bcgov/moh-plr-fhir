@@ -43,8 +43,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"8.59"}
-    h3,h4,h5,h6{--heading-prefix:"8.59"}</style>
+    <style type="text/css">h2{--heading-prefix:"8.60"}
+    h3,h4,h5,h6{--heading-prefix:"8.60"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Left logo - typically the publisher's logo - project or affiliate -->
@@ -527,10 +527,20 @@
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/contactpoint-extension",
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>" : "3432"
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
+                        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                          {
+                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/bc-plr/bc-communication-purpose-code",
+                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "BC"
+                          }
+                        ]
+                      }
                     }
                   ],
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "phone",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.use">use</a>" : "work",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.period">period</a>" : {
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-02-02"
                   }
@@ -538,7 +548,19 @@
               ],
               "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.address">address</a>" : [
                 {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.use">use</a>" : "work",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.extension">extension</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
+                        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                          {
+                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/bc-plr/bc-communication-purpose-code",
+                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "BC"
+                          }
+                        ]
+                      }
+                    }
+                  ],
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.type">type</a>" : "postal",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.period">period</a>" : {
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-02-02"
@@ -708,7 +730,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 8, 2022 23:12+0000">2022-03-08</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 10, 2022 19:28+0000">2022-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

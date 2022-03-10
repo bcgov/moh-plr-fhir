@@ -20,7 +20,7 @@
         },
         "text": {
           "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddOrganization-Location\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-location.html\">BCLocation</a></p></div><p><b>identifier</b>: IFC: 111</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551(WORK), fax: 55555555555(HOME), <a href=\"ftp://someftp.com\">ftp://someftp.com</a></p><p><b>address</b>: wl line 11 wl line 22 wl line 33 wl city 2 BC V8V 8V8 CA (WORK)</p></div>"
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddOrganization-Location\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-location.html\">BCLocation</a></p></div><p><b>identifier</b>: IFC: 111</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href=\"ftp://someftp.com\">ftp://someftp.com</a></p><p><b>address</b>: wl line 11 wl line 22 wl line 33 wl city 2 BC V8V 8V8 CA </p></div>"
         },
         "identifier": [
           {
@@ -48,32 +48,80 @@
         },
         "telecom": [
           {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/bc-plr/bc-communication-purpose-code",
+                      "code": "BC"
+                    }
+                  ]
+                }
+              }
+            ],
             "system": "fax",
             "value": "55555555551",
-            "use": "work",
             "period": {
               "start": "1982-03-04T00:00:00-07:00"
             }
           },
           {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/bc-plr/bc-communication-purpose-code",
+                      "code": "HC"
+                    }
+                  ]
+                }
+              }
+            ],
             "system": "fax",
             "value": "55555555555",
-            "use": "home",
             "period": {
               "start": "1981-04-04T00:00:00-07:00"
             }
           },
           {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/bc-plr/bc-communication-purpose-code",
+                      "code": "MC"
+                    }
+                  ]
+                }
+              }
+            ],
             "system": "url",
             "value": "ftp://someftp.com",
-            "use": "mobile",
             "period": {
               "start": "1991-01-01T00:00:00-07:00"
             }
           }
         ],
         "address": {
-          "use": "work",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/bc-plr/bc-communication-purpose-code",
+                    "code": "BC"
+                  }
+                ]
+              }
+            }
+          ],
           "type": "postal",
           "line": [
             "wl line 11",
