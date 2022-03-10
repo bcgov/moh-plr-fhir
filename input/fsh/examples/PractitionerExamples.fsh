@@ -82,16 +82,20 @@ Description: "Example of generic Practitioner."
 
 // telephone
 * telecom.period.start = "2000-02-02"
-* telecom.use = #work
 * telecom.system = #phone
 * telecom.extension[areaCode].valueString = "250"
 * telecom.extension[local].valueString = "111-2234"
 * telecom.extension[extension].valueString = "3432"
+* telecom.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* telecom.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 
 // address
 * address.period.start = "2000-02-02"
-* address.use = #work
 * address.type = #postal
+* address.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* address.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* address.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 
 // credentials
 * qualification.period.start = "2000-01-01"

@@ -280,17 +280,24 @@ Description: "Example of a BC practitioner that is being created."
 * name.period.start = "2000-01-01"
 * name.period.end = "2020-01-01"
 * name.use = #official
+
 * telecom[0].system = #phone
-* telecom[0].use = #home
+* telecom[0].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #HC
 * telecom[0].value = "2507654333"
 * telecom[0].period.start = "2000-01-01"
 * telecom[0].period.end = "2020-01-01"
+
 * telecom[1].system = #email
-* telecom[1].use = #work
 * telecom[1].value = "hey@day.com"
 * telecom[1].period.start = "2000-01-01"
 * telecom[1].period.end = "2020-01-01"
-* address.use = #work
+* telecom[1].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
+
+//* address.use = #work
 * address.type = #postal
 * address.line = "91 RD"
 * address.line[1] = "ADDRESS ADDRESSLINE2TXT"
@@ -300,6 +307,11 @@ Description: "Example of a BC practitioner that is being created."
 * address.postalCode = "V8V8V8"
 * address.period.start = "2000-01-01"
 * address.period.end = "2020-01-01"
+* address.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* address.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* address.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
+
+
 * gender = #female
 * birthDate = "1951-11-12"
 * birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"

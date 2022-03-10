@@ -7,7 +7,8 @@ Description: "General constraints on the Organization resource for use in the BC
 * active MS
 * type MS
 * name 1..1 MS
-* name.extension contains NameUseExtension named use 0..1 MS and 
+* name.extension contains 
+	NameUseExtension named use 0..1 MS and 
 	PeriodExtension named period 0..1 MS and
 	EndReasonExtension named endReason 0..1 MS
 * telecom only BCContactPoint 
@@ -91,7 +92,9 @@ Description: "Example of an Organization that is being created."
 * name = "Kelowna Clinic"
 * name.extension[use].valueCode = #official
 * name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
-* address.use = #work
+* address.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* address.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* address.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 * address.type = #postal
 * address.line = "2541 Townsend Rd"
 * address.city = "Sooke"
@@ -99,10 +102,12 @@ Description: "Example of an Organization that is being created."
 * address.country = "CA"
 * address.postalCode = "V4R8T8"
 * address.period.start = "2014-01-31T00:00:00-07:00"
-* telecom[0].use = #work
 * telecom[0].system = #phone
 * telecom[0].value = "7786428585"
 * telecom[0].period.start = "2014-01-31T00:00:00-07:00"
+* telecom[0].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 * active = true
 
 Instance: Example-AddOrganization-OrganizationAffiliation

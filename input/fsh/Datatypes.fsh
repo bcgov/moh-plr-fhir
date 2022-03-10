@@ -8,22 +8,27 @@ Profile: BCContactPoint
 Id: bc-contactPoint
 Parent: ContactPoint
 Description: "Adds an end reason and extra contact information."
-* extension contains http://hl7.org/fhir/StructureDefinition/contactpoint-country named country 0..1 MS and 	http://hl7.org/fhir/StructureDefinition/contactpoint-area named areaCode 0..1 MS and
+* use 0..0
+* extension contains 
+	http://hl7.org/fhir/StructureDefinition/contactpoint-country named country 0..1 MS and 
+	http://hl7.org/fhir/StructureDefinition/contactpoint-area named areaCode 0..1 MS and
 	http://hl7.org/fhir/StructureDefinition/contactpoint-local named local 0..1 MS and
 	http://hl7.org/fhir/StructureDefinition/contactpoint-extension named extension 0..1 MS and
-	EndReasonExtension named endReason 0..1 MS
+	EndReasonExtension named endReason 0..1 MS and 
+	CommunicationPurposeExtension named commPurposeExtension 0..1 MS
 	
 Profile: BCAddress
 Id: bc-address
 Parent: Address
 Description: "Adds an end reason to the address."
-* extension contains EndReasonExtension named endReason 0..1 MS
+* use 0..0
+* extension contains EndReasonExtension named endReason 0..1 MS and CommunicationPurposeExtension named commPurposeExtension 0..1 MS
 
 Profile: BCHumanName
 Id: bc-humanName
 Parent: HumanName
 Description: "Adds an end reason and a use code to a name."
-* extension contains NameUseExtension named use 0..1 MS and 
+* extension contains 
 	EndReasonExtension named endReason 0..1 MS
 
 Extension: NameUseExtension
@@ -50,3 +55,11 @@ Title: "BC Valid Period Extension"
 Description: "The period for when the extended element is valid."
 * value[x] only Period
 * value[x] 1..1 MS
+
+Extension: CommunicationPurposeExtension
+Id: bc-communication-purpose-code-extension
+Title: "BC extension for communication purpose codes"
+Description: "BC extension for communication purpose codes."
+* value[x] only CodeableConcept
+* value[x] 1..1 MS
+

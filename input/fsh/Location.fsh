@@ -95,19 +95,22 @@ Description: "Example of a Location (Facility) that is the work location for a P
 * identifier.value = "1"
 * name = "WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT"
 * name.extension[period].valuePeriod.start = "2000-01-01"
-* telecom[0].use = #work
 * telecom[0].system = #email
 * telecom[0].value = "joe@gmail.com"
 * telecom[0].period.start = "2000-01-01"
 * telecom[0].period.end = "2020-01-01"
-* telecom[1].use = #home
+* telecom[0].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 * telecom[1].system = #phone
 * telecom[1].value = "2509876555"
 * telecom[1].period.start = "2000-01-01"
 * telecom[1].period.end = "2020-01-01"
+* telecom[1].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.code = #HC
 * address.period.start = "2000-01-01"
 * address.period.end = "2020-01-01"
-* address.use = #work
 * address.type = #postal
 * address.line[0] = "19 ST"
 * address.line[1] = "ADDRESS ADDRESSLINE2TXT"
@@ -116,6 +119,9 @@ Description: "Example of a Location (Facility) that is the work location for a P
 * address.postalCode = "V6P7B8"
 * address.state = "BC"
 * address.country = "CA"
+* address.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* address.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* address.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 
 Instance: Example-AddOrganization-Location
 InstanceOf: BCLocation
@@ -125,19 +131,24 @@ Description: "Example of a Location (Facility) that is associated with an Organi
 * identifier.type = #IFC
 * name = "General Hospital"
 * name.extension[period].valuePeriod.start = "2000-01-01"
-* telecom[0].use = #work
 * telecom[0].system = #fax
 * telecom[0].period.start = "1982-03-04T00:00:00-07:00"
 * telecom[0].value = "55555555551"
-* telecom[1].use = #home
+* telecom[0].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 * telecom[1].system = #fax
 * telecom[1].period.start = "1981-04-04T00:00:00-07:00"
 * telecom[1].value = "55555555555"
-* telecom[2].use = #mobile
+* telecom[1].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.code = #HC
 * telecom[2].system = #url
 * telecom[2].period.start = "1991-01-01T00:00:00-07:00"
 * telecom[2].value = "ftp://someftp.com"
-* address.use = #work
+* telecom[2].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.code = #MC
 * address.type = #postal
 * address.period.start = "1988-10-10T00:00:00-07:00"
 * address.line[0] = "wl line 11"
@@ -147,3 +158,6 @@ Description: "Example of a Location (Facility) that is associated with an Organi
 * address.state = "BC"
 * address.country = "CA"
 * address.postalCode = "V8V 8V8"
+* address.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* address.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* address.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
