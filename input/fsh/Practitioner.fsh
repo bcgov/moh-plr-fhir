@@ -65,7 +65,7 @@ Description: "General constraints on the PractitionerRole resource for use in th
 
 Extension: SpecialtySourceExtension
 Id: bc-specialty-source-extension
-Title: "Specialty Source Extension"
+Title: "BC Specialty Source Extension"
 Description: "The specialty source."
 * value[x] only string
 * value[x] 1..1 MS
@@ -174,19 +174,15 @@ Extension: LicenseStatusExtension
 Id: bc-license-status-extension
 Title: "BC License Status Extension"
 Description: "Tracking the status and changes to the status of a practitioner/organization license."
-* extension contains statusCode 1..1 MS and period 1..1 MS and statusReasonCode 1..1 MS and endReasonCode 0..1 MS and custodianId 0..1 MS
+* extension contains statusCode 1..1 MS and statusReasonCode 1..1 MS and statusClassCode 0..1 MS and PeriodExtension named period 0..1 MS and EndReasonExtension named endReasonCodeAndOwner 0..1 MS
 * extension[statusCode].value[x] only CodeableConcept
 * extension[statusCode].value[x] 1..1 MS
 * extension[statusCode].valueCodeableConcept from $StatusVS (required)
 * extension[statusCode].valueCodeableConcept 1..1 MS
-* extension[period].value[x] only Period
-* extension[period].value[x] 1..1 MS
 * extension[statusReasonCode].value[x] only CodeableConcept
 * extension[statusReasonCode].value[x] 1..1 MS
-* extension[endReasonCode].value[x] only CodeableConcept
-* extension[endReasonCode].value[x] 1..1 MS
-* extension[custodianId].value[x] only Identifier
-* extension[custodianId].value[x] 1..1 MS
+* extension[statusClassCode].value[x] only CodeableConcept
+* extension[statusClassCode].value[x] 0..1 MS
 
 Profile: BCPractitionerBundle
 Parent: Bundle
@@ -225,11 +221,12 @@ Instance: Example-AddPractitioner-Practitioner
 InstanceOf: BCPractitioner
 Description: "Example of a BC practitioner that is being created."
 * extension[status].extension[statusCode].valueCodeableConcept = $RoleStatus#active
+* extension[status].extension[statusReasonCode].valueCodeableConcept = $PLRStatusReason#PRAC
+* extension[status].extension[statusClassCode].valueCodeableConcept = $PLRStatusClass#LIC
+* extension[status].extension[endReasonCodeAndOwner].extension[custodianId].valueIdentifier.system = $PLROwnerCode
+* extension[status].extension[endReasonCodeAndOwner].extension[custodianId].valueIdentifier.value = "RNA"
 * extension[status].extension[period].valuePeriod.start = "2000-01-01"
 * extension[status].extension[period].valuePeriod.end = "2020-01-01"
-* extension[status].extension[custodianId].valueIdentifier.system = $PLROwnerCode
-* extension[status].extension[custodianId].valueIdentifier.value = "RNA"
-* extension[status].extension[statusReasonCode].valueCodeableConcept = $PLRStatusReason#PRAC
 * extension[demographicsEndReason].extension[custodianId].valueIdentifier.system = $PLROwnerCode
 * extension[demographicsEndReason].extension[custodianId].valueIdentifier.value = "RNA"
 * extension[demographicsEndReason].extension[endReasonCode].valueCodeableConcept = $PLRStatusReason#PRAC

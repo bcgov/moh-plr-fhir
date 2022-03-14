@@ -58,7 +58,7 @@ Description: "The period for when the extended element is valid."
 
 Extension: CommunicationPurposeExtension
 Id: bc-communication-purpose-code-extension
-Title: "BC extension for communication purpose codes"
+Title: "BC Communication Purpose Extension"
 Description: "BC extension for communication purpose codes."
 * value[x] only CodeableConcept
 * value[x] 1..1 MS

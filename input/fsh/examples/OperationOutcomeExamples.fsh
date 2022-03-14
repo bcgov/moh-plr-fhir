@@ -1,7 +1,7 @@
 Instance: Example-OperationOutcome-7049
 InstanceOf: OperationOutcome
 Description: "OperationOutcome example for Individual Provider search - too many results."
-* issue[0].severity = #warning
+* issue[0].severity = #error
 * issue[0].code = #business-rule
 * issue[0].details.coding.system = $PLRError
 * issue[0].details.coding.code = #GRS.DPS.UNK.UNK.0.0.7049
@@ -19,7 +19,7 @@ Description: "OperationOutcome example for Individual Provider search - no provi
 Instance: Example-OperationOutcome-7018
 InstanceOf: OperationOutcome
 Description: "OperationOutcome example for Individual Provider search - wildcard error."
-* issue[0].severity = #warning
+* issue[0].severity = #error
 * issue[0].code = #business-rule
 * issue[0].details.coding.system = $PLRError
 * issue[0].details.coding.code = #GRS.DPS.UNK.UNK.0.0.7018
