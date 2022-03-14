@@ -63,7 +63,7 @@
 
 
 
-  <img alt="Canada flag" src="assets/images/can.svg" height="16" title="Canada"/>
+  <span title="Canada">CA</span>
 
 
             </span>
@@ -306,13 +306,6 @@
                       }
                     },
                     {
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "period",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valuePeriod</a>" : {
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01",
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">end</a>" : "2020-01-01"
-                      }
-                    },
-                    {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "statusReasonCode",
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
                         "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
@@ -324,10 +317,33 @@
                       }
                     },
                     {
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "custodianId",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>" : {
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://hl7.org/fhir/bc-plr/bc-owner-code",
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "RNA"
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "statusClassCode",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
+                        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                          {
+                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/bc-plr/bc-status-class-code",
+                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "LIC"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "custodianId",
+                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>" : {
+                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://hl7.org/fhir/bc-plr/bc-owner-code",
+                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "RNA"
+                          }
+                        }
+                      ],
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valuePeriod</a>" : {
+                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01",
+                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">end</a>" : "2020-01-01"
                       }
                     }
                   ],
@@ -1142,7 +1158,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 10, 2022 19:28+0000">2022-03-10</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 14, 2022 17:32+0000">2022-03-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
