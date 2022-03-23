@@ -223,12 +223,10 @@ Description: "Example of a BC practitioner that is being created."
 * extension[status].extension[statusCode].valueCodeableConcept = $RoleStatus#active
 * extension[status].extension[statusReasonCode].valueCodeableConcept = $PLRStatusReason#PRAC
 * extension[status].extension[statusClassCode].valueCodeableConcept = $PLRStatusClass#LIC
-* extension[status].extension[endReasonCodeAndOwner].extension[custodianId].valueIdentifier.system = $PLROwnerCode
-* extension[status].extension[endReasonCodeAndOwner].extension[custodianId].valueIdentifier.value = "RNA"
+* extension[status].extension[endReasonCodeAndOwner].extension[custodianId].valueIdentifier.assigner.display = "RNA"
 * extension[status].extension[period].valuePeriod.start = "2000-01-01"
 * extension[status].extension[period].valuePeriod.end = "2020-01-01"
-* extension[demographicsEndReason].extension[custodianId].valueIdentifier.system = $PLROwnerCode
-* extension[demographicsEndReason].extension[custodianId].valueIdentifier.value = "RNA"
+* extension[demographicsEndReason].extension[custodianId].valueIdentifier.assigner.display = "RNA"
 * extension[demographicsEndReason].extension[endReasonCode].valueCodeableConcept = $PLRStatusReason#PRAC
 * extension[deathDate].valueDateTime = "2000-02-01"
 * extension[birthplace].valueAddress.state = "AL"
@@ -345,8 +343,7 @@ Description: "Example of the role that the created practitioner is playing."
 * specialty.extension[period].valuePeriod.start = "2000-01-01"
 * specialty.extension[period].valuePeriod.end = "2020-01-01"
 * specialty.extension[endReason].extension[endReasonCode].valueCodeableConcept = $PLREndReason#CORR
-* specialty.extension[endReason].extension[custodianId].valueIdentifier.system = $PLROwner
-* specialty.extension[endReason].extension[custodianId].valueIdentifier.value = "123456679"
+* specialty.extension[endReason].extension[custodianId].valueIdentifier.assigner.display = "RNA"
 * specialty.extension[specialtySource].valueString = "Source"
 * location = Reference(Example-AddPractitioner-WorkLocation)
 * location.extension[period].valuePeriod.start = "2000-01-01"
