@@ -52,7 +52,9 @@ Description: "General constraints on the PractitionerRole resource for use in th
 * organization MS
 * organization only Reference(BCOrganization)
 * organization.extension contains EndReasonExtension named endReason 0..1 MS
-* code MS
+  and RelationshipTypeExtension named typeExtension 0..1 MS
+* organization.type 0..0
+* code MS 
 * code from $PracRoleCode (required)
 * specialty MS
 * specialty from $PracSpecialty (required)
@@ -62,6 +64,13 @@ Description: "General constraints on the PractitionerRole resource for use in th
 * location.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
 * telecom only BCContactPoint
 * telecom MS
+
+Extension: RelationshipTypeExtension
+Id: bc-relationship-type-extension
+Title: "BC Practitioner to Organization Type Extension."
+Description: "The relationship type."
+* value[x] only CodeableConcept
+* value[x] 1..1 MS
 
 Extension: SpecialtySourceExtension
 Id: bc-specialty-source-extension
