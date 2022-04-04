@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2022-03-23T21:05:38+00:00"/>
+  <date value="2022-04-04T22:47:24+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -208,6 +208,14 @@
         <valueString value="true"/>
       </extension>
     </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
     <grouping id="Capabilities">
       <name value="Capabilities"/>
       <description value="PLR Capability Statements"/>
@@ -236,10 +244,6 @@
       <name value="Common"/>
       <description value="Artifacts used across all groupings"/>
     </grouping>
-    <grouping id="Datatypes">
-      <name value="Datatypes"/>
-      <description value="Artifacts associated with datatypes"/>
-    </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:complex-type"/>
@@ -250,7 +254,6 @@
       <name value="BCAddress"/>
       <description value="Adds an end reason to the address."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Datatypes"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -274,7 +277,6 @@
       <name value="BCContactPoint"/>
       <description value="Adds an end reason and extra contact information."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Datatypes"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -286,7 +288,6 @@
       <name value="BCHumanName"/>
       <description value="Adds an end reason and a use code to a name."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Datatypes"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -298,7 +299,6 @@
       <name value="BCIdentifier"/>
       <description value="Adds an end reason to the identifier."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Datatypes"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -611,6 +611,18 @@
       <description value="Allows for relationships of practitioners to practitioners without needing CareTeam semantics."/>
       <exampleBoolean value="false"/>
       <groupingId value="Practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-relationship-type-extension"/>
+      </reference>
+      <name value="BC Practitioner to Organization Type Extension."/>
+      <description value="The relationship type."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Common"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

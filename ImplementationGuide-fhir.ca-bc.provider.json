@@ -10,7 +10,7 @@
   "name": "BCProviderRegistry",
   "title": "BC Provider Location Registry FHIR Implementation Guide",
   "status": "draft",
-  "date": "2022-03-23T21:05:38+00:00",
+  "date": "2022-04-04T22:47:24+00:00",
   "publisher": "BC Ministry of Health",
   "contact": [
     {
@@ -327,6 +327,19 @@
           }
         ],
         "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "excludelogbinaryformat"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
       }
     ],
     "grouping": [
@@ -364,11 +377,6 @@
         "id": "Common",
         "name": "Common",
         "description": "Artifacts used across all groupings"
-      },
-      {
-        "id": "Datatypes",
-        "name": "Datatypes",
-        "description": "Artifacts associated with datatypes"
       }
     ],
     "resource": [
@@ -384,8 +392,7 @@
         },
         "name": "BCAddress",
         "description": "Adds an end reason to the address.",
-        "exampleBoolean": false,
-        "groupingId": "Datatypes"
+        "exampleBoolean": false
       },
       {
         "extension": [
@@ -414,8 +421,7 @@
         },
         "name": "BCContactPoint",
         "description": "Adds an end reason and extra contact information.",
-        "exampleBoolean": false,
-        "groupingId": "Datatypes"
+        "exampleBoolean": false
       },
       {
         "extension": [
@@ -429,8 +435,7 @@
         },
         "name": "BCHumanName",
         "description": "Adds an end reason and a use code to a name.",
-        "exampleBoolean": false,
-        "groupingId": "Datatypes"
+        "exampleBoolean": false
       },
       {
         "extension": [
@@ -444,8 +449,7 @@
         },
         "name": "BCIdentifier",
         "description": "Adds an end reason to the identifier.",
-        "exampleBoolean": false,
-        "groupingId": "Datatypes"
+        "exampleBoolean": false
       },
       {
         "extension": [
@@ -836,6 +840,21 @@
         "description": "Allows for relationships of practitioners to practitioners without needing CareTeam semantics.",
         "exampleBoolean": false,
         "groupingId": "Practitioner"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-relationship-type-extension"
+        },
+        "name": "BC Practitioner to Organization Type Extension.",
+        "description": "The relationship type.",
+        "exampleBoolean": false,
+        "groupingId": "Common"
       },
       {
         "extension": [
