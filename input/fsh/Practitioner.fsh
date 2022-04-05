@@ -61,7 +61,7 @@ Description: "General constraints on the PractitionerRole resource for use in th
 * specialty.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named specialtySource 0..1 MS
 * location MS
 * location only Reference(BCLocation)
-* location.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
+* location.extension contains EndReasonExtension named endReason 0..1 MS
 * telecom only BCContactPoint
 * telecom MS
 
