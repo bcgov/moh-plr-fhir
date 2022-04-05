@@ -51,8 +51,10 @@ Description: "General constraints on the PractitionerRole resource for use in th
 * practitioner only Reference(BCPractitioner) 
 * organization MS
 * organization only Reference(BCOrganization)
-* organization.extension contains EndReasonExtension named endReason 0..1 MS
-  and RelationshipTypeExtension named typeExtension 0..1 MS
+* organization.extension contains 
+           EndReasonExtension named endReason 0..1 MS
+           and RelationshipTypeExtension named typeExtension 0..1 MS 
+           and PeriodExtension named period 0..1 MS
 * organization.type 0..0
 * code MS 
 * code from $PracRoleCode (required)
