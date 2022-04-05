@@ -1,14 +1,14 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 178, warn = 23, info = 11
+err = 181, warn = 23, info = 14
 IG Publisher Version: 1.1.114
-Generated Tue Apr 05 19:30:45 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
+Generated Tue Apr 05 19:45:08 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
  Build Errors : 0 / 0 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 9 / 1 / 4
  /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 7 / 3 / 7
- /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle : 23 / 4 / 12
- /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 39 / 8 / 40
+ /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle : 24 / 4 / 13
+ /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 40 / 8 / 41
  /github/workspace/fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle : 15 / 7 / 14
  /github/workspace/fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider : 17 / 7 / 19
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-client-capability-statement : 0 / 0 / 1
@@ -32,7 +32,7 @@ Generated Tue Apr 05 19:30:45 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-Practitioner : 21 / 2 / 5
  /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-RelatedPractitioner : 1 / 1 / 1
  /github/workspace/fsh-generated/resources/Practitioner-Example-Practitioner : 15 / 5 / 7
- /github/workspace/fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole : 2 / 2 / 2
+ /github/workspace/fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole : 3 / 2 / 3
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole : 0 / 2 / 2
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-address : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-batch-bundle : 0 / 0 / 1
@@ -115,6 +115,8 @@ ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Pr
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-end-reason-code'
 ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-end-reason-code' does not resolve
+ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).location[0]: The modifier extension http://hl7.org/fhir/StructureDefinition/organization-period is not allowed to be used at this point (allowed = e:Organization; this element is [[Bundle.entry.resource.ofType(PractitionerRole).location, BackboneElement.resource.location, PractitionerRole.location, Reference])
+INFORMATION: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).location[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role
 == fsh-generated/resources/Bundle-Example-Batch-Bundle.json ==
 INFORMATION: Bundle/Example-Batch-Bundle: Bundle.entry[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle
 INFORMATION: Bundle/Example-Batch-Bundle: Bundle.entry[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle
@@ -142,6 +144,8 @@ ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.o
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[0].resource.ofType(Practitioner).communication[0].coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-language-code' does not resolve
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-end-reason-code'
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-end-reason-code' does not resolve
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).location[0]: The modifier extension http://hl7.org/fhir/StructureDefinition/organization-period is not allowed to be used at this point (allowed = e:Organization; this element is [[Bundle.entry.resource.entry.resource.ofType(PractitionerRole).location, Bundle.entry.resource.location, BackboneElement.resource.location, PractitionerRole.location, Reference])
+INFORMATION: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).location[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role
 WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource.ofType(Organization).identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
 ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource.ofType(Organization).identifier[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-identifer-type-code' does not resolve
 WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource.ofType(Organization).identifier[1].type.coding[0]: A code with no system has no defined meaning. A system should be provided
@@ -308,6 +312,8 @@ ERROR: Practitioner/Example-Practitioner: Practitioner.communication[0].coding[0
 == fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole.json ==
 ERROR: PractitionerRole/Example-AddPractitioner-PractitionerRole: PractitionerRole.specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code System 'http://hl7.org/fhir/bc-plr/bc-end-reason-code'
 ERROR: PractitionerRole/Example-AddPractitioner-PractitionerRole: PractitionerRole.specialty[0].extension[1].extension[0].value.ofType(CodeableConcept).coding[0].system: URL value 'http://hl7.org/fhir/bc-plr/bc-end-reason-code' does not resolve
+ERROR: PractitionerRole/Example-AddPractitioner-PractitionerRole: PractitionerRole.location[0]: The modifier extension http://hl7.org/fhir/StructureDefinition/organization-period is not allowed to be used at this point (allowed = e:Organization; this element is [[PractitionerRole.location, Reference])
+INFORMATION: PractitionerRole/Example-AddPractitioner-PractitionerRole: PractitionerRole.location[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role
 == fsh-generated/resources/PractitionerRole-Example-PractitionerRole.json ==
 == fsh-generated/resources/StructureDefinition-bc-address.json ==
 == fsh-generated/resources/StructureDefinition-bc-batch-bundle.json ==
