@@ -105,6 +105,19 @@ The syntax for the $extendedQuery operation is:
 
 The parameters for the $extendedQuery operation will be the search parameters listed below.
 
+##### Example Search Set Response Bundle
+
+Below is a sample search set response bundle.  It shows the structure at a highlevel, as described on this web page.  If this was an Organization search the structure is the same, however the transaction Bundles would include Organization and OrganizationAffilication(s).
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_searchset_bundle_practitioner_response.png" alt="BC FHIR Resources"/>
+  <figcaption>Figure 2.2 - BC FHIR Query Response Bundle Structure</figcaption>
+</figure>
+{::options parse_block_html="true" /}
+
+A FHIR example of a real message can be found [here](Bundle-Example-Query-Response-Bundle-with-Individual-Provider.html).
+
 ##### Query Supported Search Parameters
 
 |Resource|Search Parameter Name|
