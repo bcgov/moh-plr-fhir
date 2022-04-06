@@ -54,7 +54,7 @@
         "timestamp": "2022-02-02T13:23:13.000-08:00",
         "entry": [
           {
-            "fullUrl": "https://plr.hlth.gov.bc.ca/plr/fhir/Practitioner/234234",
+            "fullUrl": "https://plr.hlth.gov.bc.ca/plr/fhir/Practitioner/IPC.00000023.BC.PRS/$entityQuery",
             "resource": {
               "resourceType": "Practitioner",
               "id": "Example-Practitioner",
@@ -400,21 +400,20 @@
             },
             "request": {
               "method": "POST",
-              "url": "http://plr.moh.bc.ca/fhir/Practitioner"
+              "url": "http://plr.moh.bc.ca/fhir/Practitioner/IPC/$requestEntity"
             }
           },
           {
-            "fullUrl": "https://plr.hlth.gov.bc.ca/plr/fhir/PractitionerRole/234234",
             "resource": {
               "resourceType": "PractitionerRole",
-              "id": "Example-PractitionerRole",
+              "id": "Example-PractitionerRole-1",
               "meta": {
                 "profile": [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
                 ]
               },
               "practitioner": {
-                "reference": "Practitioner/Example-Practitioner"
+                "reference": "Practitioner/IPC.00000023.BC.PRS/$entityQuery"
               },
               "organization": {
                 "display": "BC"
@@ -452,10 +451,74 @@
                   ]
                 }
               ]
-            },
-            "request": {
-              "method": "POST",
-              "url": "http://plr.moh.bc.ca/fhir/PractitionerRole"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "PractitionerRole",
+              "id": "Example-PractitionerRole-2",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+                ]
+              },
+              "period": {
+                "start": "2000-01-01"
+              },
+              "practitioner": {
+                "reference": "Practitioner/IPC.00000023.BC.PRS/$entityQuery"
+              },
+              "organization": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://hl7.org/fhir/bc-plr/bc-relationship-type-code",
+                          "code": "EMPLOYEE"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "reference": "Organization/IPC.00002035.BC.PRS/$entityQuery"
+              }
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "PractitionerRole",
+              "id": "Example-PractitionerRole-3",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+                ]
+              },
+              "period": {
+                "start": "2000-01-01"
+              },
+              "practitioner": {
+                "reference": "Practitioner/IPC.00000023.BC.PRS/$entityQuery"
+              },
+              "location": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/bc-plr/bc-location-relationship-type-code",
+                            "code": "WORKSAT"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "reference": "Location/IFC.00034523.BC.PRS/$entityQuery"
+                }
+              ]
             }
           }
         ]

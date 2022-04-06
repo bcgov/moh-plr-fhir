@@ -1,0 +1,52 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "Example-PractitionerRole-1",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole-1\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>practitioner</b>: <a href=\"Practitioner/IPC.00000023.BC.PRS/$entityQuery\">Practitioner/IPC.00000023.BC.PRS/$entityQuery</a></p><p><b>organization</b>: <span>: BC</span></p><p><b>code</b>: MD <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-scptype.html\">pan-Canadian Provider Types</a>#MD)</span></p><p><b>specialty</b>: Family practice (qualifier value) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#419772000)</span></p></div>"
+  },
+  "practitioner": {
+    "reference": "Practitioner/IPC.00000023.BC.PRS/$entityQuery"
+  },
+  "organization": {
+    "display": "BC"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "https://fhir.infoway-inforoute.ca/CodeSystem/scptype",
+          "code": "MD"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+          "valuePeriod": {
+            "start": "2000-01-01",
+            "end": "2020-01-01"
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension",
+          "valueString": "Expertise source"
+        }
+      ],
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "419772000"
+        }
+      ]
+    }
+  ]
+}

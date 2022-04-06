@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2022-04-05T19:41:50+00:00"/>
+  <date value="2022-04-06T13:16:59+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -497,6 +497,18 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/bc-location-relationship-type-extension"/>
+      </reference>
+      <name value="BC Practitioner to Location Type Extension."/>
+      <description value="The relationship type of a Practitioner to Location relationship."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Common"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/bc-facility-mailing-address-extension"/>
       </reference>
       <name value="BC Facility Mailing Address Extension"/>
@@ -619,8 +631,8 @@
       <reference>
         <reference value="StructureDefinition/bc-relationship-type-extension"/>
       </reference>
-      <name value="BC Practitioner to Organization Type Extension."/>
-      <description value="The relationship type."/>
+      <name value="BC Practitioner to Organization or Practitioner to Practitioner Type Extension."/>
+      <description value="The relationship type of a Practitioner to Organization or Practitioner to Practitioner relationship."/>
       <exampleBoolean value="false"/>
       <groupingId value="Common"/>
     </resource>
@@ -839,10 +851,32 @@
         <valueString value="PractitionerRole"/>
       </extension>
       <reference>
-        <reference value="PractitionerRole/Example-PractitionerRole"/>
+        <reference value="PractitionerRole/Example-PractitionerRole-1"/>
       </reference>
-      <name value="Example-PractitionerRole"/>
-      <description value="Example of the PractitionerRole."/>
+      <name value="Example-PractitionerRole-1"/>
+      <description value="Example of the PractitionerRole with Speciality."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/Example-PractitionerRole-2"/>
+      </reference>
+      <name value="Example-PractitionerRole-2"/>
+      <description value="Example of the PractitionerRole for Practitioner to Organization relationship."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/Example-PractitionerRole-3"/>
+      </reference>
+      <name value="Example-PractitionerRole-3"/>
+      <description value="Example of the PractitionerRole for Practitioner to Location relationship."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
     </resource>
     <resource>

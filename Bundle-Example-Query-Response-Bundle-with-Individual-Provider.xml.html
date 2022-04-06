@@ -43,8 +43,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"8.61"}
-    h3,h4,h5,h6{--heading-prefix:"8.61"}</style>
+    <style type="text/css">h2{--heading-prefix:"8.64"}
+    h3,h4,h5,h6{--heading-prefix:"8.64"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Left logo - typically the publisher's logo - project or affiliate -->
@@ -285,7 +285,7 @@
         &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.timestamp">timestamp</a> <a href="http://hl7.org/fhir/R4/datatypes.html#instant">value</a>=&quot;2022-02-02T13:23:13.000-08:00&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://plr.hlth.gov.bc.ca/plr/fhir/Practitioner/234234&quot;/&gt;
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://plr.hlth.gov.bc.ca/plr/fhir/Practitioner/IPC.00000023.BC.PRS/$entityQuery&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">resource</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">Practitioner</a>&gt;
               &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Example-Practitioner&quot;/&gt;
@@ -563,21 +563,20 @@
           &lt;/resource&gt;
           &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request">request</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request.method">method</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;POST&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request.url">url</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://plr.moh.bc.ca/fhir/Practitioner&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request.url">url</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://plr.moh.bc.ca/fhir/Practitioner/IPC/$requestEntity&quot;/&gt;
           &lt;/request&gt;
         &lt;/entry&gt;
         &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://plr.hlth.gov.bc.ca/plr/fhir/PractitionerRole/234234&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">resource</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">PractitionerRole</a>&gt;
-              &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Example-PractitionerRole&quot;/&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Example-PractitionerRole-1&quot;/&gt;
               &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.meta">meta</a>&gt;
                 &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                          <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role&quot;/&gt;
               &lt;/meta&gt;
               &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.practitioner">practitioner</a>&gt;
-                &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Practitioner/Example-Practitioner&quot;/&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Practitioner/IPC.00000023.BC.PRS/$entityQuery&quot;/&gt;
               &lt;/practitioner&gt;
               &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.organization">organization</a>&gt;
                 &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;BC&quot;/&gt;
@@ -608,10 +607,66 @@
               &lt;/specialty&gt;
             &lt;/PractitionerRole&gt;
           &lt;/resource&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request">request</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request.method">method</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;POST&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request.url">url</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://plr.moh.bc.ca/fhir/PractitionerRole&quot;/&gt;
-          &lt;/request&gt;
+        &lt;/entry&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">resource</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">PractitionerRole</a>&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Example-PractitionerRole-2&quot;/&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.meta">meta</a>&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+                         <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role&quot;/&gt;
+              &lt;/meta&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.period">period</a>&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
+              &lt;/period&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.practitioner">practitioner</a>&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Practitioner/IPC.00000023.BC.PRS/$entityQuery&quot;/&gt;
+              &lt;/practitioner&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.organization">organization</a>&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.extension">extension</a>
+                           <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension&quot;&gt;
+                  &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
+                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+                      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-relationship-type-code&quot;/&gt;
+                      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;EMPLOYEE&quot;/&gt;
+                    &lt;/coding&gt;
+                  &lt;/valueCodeableConcept&gt;
+                &lt;/extension&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Organization/IPC.00002035.BC.PRS/$entityQuery&quot;/&gt;
+              &lt;/organization&gt;
+            &lt;/PractitionerRole&gt;
+          &lt;/resource&gt;
+        &lt;/entry&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">resource</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">PractitionerRole</a>&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Example-PractitionerRole-3&quot;/&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.meta">meta</a>&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+                         <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role&quot;/&gt;
+              &lt;/meta&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.period">period</a>&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
+              &lt;/period&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.practitioner">practitioner</a>&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Practitioner/IPC.00000023.BC.PRS/$entityQuery&quot;/&gt;
+              &lt;/practitioner&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.location">location</a>&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.extension">extension</a>
+                           <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension&quot;&gt;
+                  &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
+                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+                      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-location-relationship-type-code&quot;/&gt;
+                      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;WORKSAT&quot;/&gt;
+                    &lt;/coding&gt;
+                  &lt;/valueCodeableConcept&gt;
+                &lt;/extension&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Location/IFC.00034523.BC.PRS/$entityQuery&quot;/&gt;
+              &lt;/location&gt;
+            &lt;/PractitionerRole&gt;
+          &lt;/resource&gt;
         &lt;/entry&gt;
       &lt;/Bundle&gt;
     &lt;/resource&gt;
@@ -649,7 +704,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 5, 2022 19:41+0000">2022-04-05</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 6, 2022 13:16+0000">2022-04-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

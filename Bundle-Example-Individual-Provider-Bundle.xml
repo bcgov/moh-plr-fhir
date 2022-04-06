@@ -8,7 +8,7 @@
   <type value="transaction"/>
   <timestamp value="2022-02-02T13:23:13.000-08:00"/>
   <entry>
-    <fullUrl value="https://plr.hlth.gov.bc.ca/plr/fhir/Practitioner/234234"/>
+    <fullUrl value="https://plr.hlth.gov.bc.ca/plr/fhir/Practitioner/IPC.00000023.BC.PRS/$entityQuery"/>
     <resource>
       <Practitioner>
         <id value="Example-Practitioner"/>
@@ -260,22 +260,21 @@
     </resource>
     <request>
       <method value="POST"/>
-      <url value="http://plr.moh.bc.ca/fhir/Practitioner"/>
+      <url value="http://plr.moh.bc.ca/fhir/Practitioner/IPC/$requestEntity"/>
     </request>
   </entry>
   <entry>
-    <fullUrl value="https://plr.hlth.gov.bc.ca/plr/fhir/PractitionerRole/234234"/>
     <resource>
       <PractitionerRole>
-        <id value="Example-PractitionerRole"/>
+        <id value="Example-PractitionerRole-1"/>
         <meta>
           <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-PractitionerRole" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a></p></div><p><b>practitioner</b>: <a href="#Practitioner_Example-Practitioner">See above (Practitioner/Example-Practitioner)</a></p><p><b>organization</b>: <span>: BC</span></p><p><b>code</b>: MD <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-v3-scptype.html">pan-Canadian Provider Types</a>#MD)</span></p><p><b>specialty</b>: Family practice (qualifier value) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#419772000)</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-PractitionerRole-1" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a></p></div><p><b>practitioner</b>: <a href="Practitioner/IPC.00000023.BC.PRS/$entityQuery">Practitioner/IPC.00000023.BC.PRS/$entityQuery</a></p><p><b>organization</b>: <span>: BC</span></p><p><b>code</b>: MD <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-v3-scptype.html">pan-Canadian Provider Types</a>#MD)</span></p><p><b>specialty</b>: Family practice (qualifier value) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#419772000)</span></p></div>
         </text>
         <practitioner>
-          <reference value="Practitioner/Example-Practitioner"/>
+          <reference value="Practitioner/IPC.00000023.BC.PRS/$entityQuery"/>
         </practitioner>
         <organization>
           <display value="BC"/>
@@ -303,9 +302,65 @@
         </specialty>
       </PractitionerRole>
     </resource>
-    <request>
-      <method value="POST"/>
-      <url value="http://plr.moh.bc.ca/fhir/PractitionerRole"/>
-    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PractitionerRole>
+        <id value="Example-PractitionerRole-2"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-PractitionerRole-2" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <a href="Practitioner/IPC.00000023.BC.PRS/$entityQuery">Practitioner/IPC.00000023.BC.PRS/$entityQuery</a></p><p><b>organization</b>: <a href="Organization/IPC.00002035.BC.PRS/$entityQuery">Organization/IPC.00002035.BC.PRS/$entityQuery</a></p></div>
+        </text>
+        <period>
+          <start value="2000-01-01"/>
+        </period>
+        <practitioner>
+          <reference value="Practitioner/IPC.00000023.BC.PRS/$entityQuery"/>
+        </practitioner>
+        <organization>
+          <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/bc-plr/bc-relationship-type-code"/>
+                <code value="EMPLOYEE"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <reference value="Organization/IPC.00002035.BC.PRS/$entityQuery"/>
+        </organization>
+      </PractitionerRole>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <PractitionerRole>
+        <id value="Example-PractitionerRole-3"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-PractitionerRole-3" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <a href="Practitioner/IPC.00000023.BC.PRS/$entityQuery">Practitioner/IPC.00000023.BC.PRS/$entityQuery</a></p><p><b>location</b>: <a href="Location/IFC.00034523.BC.PRS/$entityQuery">Location/IFC.00034523.BC.PRS/$entityQuery</a></p></div>
+        </text>
+        <period>
+          <start value="2000-01-01"/>
+        </period>
+        <practitioner>
+          <reference value="Practitioner/IPC.00000023.BC.PRS/$entityQuery"/>
+        </practitioner>
+        <location>
+          <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/bc-plr/bc-location-relationship-type-code"/>
+                <code value="WORKSAT"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <reference value="Location/IFC.00034523.BC.PRS/$entityQuery"/>
+        </location>
+      </PractitionerRole>
+    </resource>
   </entry>
 </Bundle>

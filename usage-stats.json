@@ -218,6 +218,13 @@
       ]
     },
     {
+      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension",
+      "title": "BC Practitioner to Location Type Extension.",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
       "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-name-use-extension",
       "title": "BC Name Use Extension",
       "types": [
@@ -601,7 +608,7 @@
     },
     {
       "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
-      "title": "BC Practitioner to Organization Type Extension.",
+      "title": "BC Practitioner to Organization or Practitioner to Practitioner Type Extension.",
       "types": [
         "CodeableConcept"
       ]
@@ -780,6 +787,11 @@
       "Organization",
       "Practitioner"
     ],
+    "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension": [
+      "Bundle.entry.resource.entry.resource.location",
+      "Bundle.entry.resource.location",
+      "PractitionerRole.location"
+    ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-name-use-extension": [
       "Bundle.entry.resource.entry.resource.name",
       "Bundle.entry.resource.name",
@@ -840,6 +852,8 @@
       "Practitioner"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension": [
+      "Bundle.entry.resource.entry.resource.organization",
+      "Bundle.entry.resource.organization",
       "Extension",
       "PractitionerRole.organization"
     ],
