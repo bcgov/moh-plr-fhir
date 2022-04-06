@@ -61,14 +61,21 @@ Description: "General constraints on the PractitionerRole resource for use in th
 * specialty.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named specialtySource 0..1 MS
 * location MS
 * location only Reference(BCLocation)
-* location.extension contains EndReasonExtension named endReason 0..1 MS
+* location.extension contains EndReasonExtension named endReason 0..1 MS and LocationRelationshipTypeExtension named locRelationshipType 0..1 MS
 * telecom only BCContactPoint
 * telecom MS
 
 Extension: RelationshipTypeExtension
 Id: bc-relationship-type-extension
-Title: "BC Practitioner to Organization Type Extension."
-Description: "The relationship type."
+Title: "BC Practitioner to Organization or Practitioner to Practitioner Type Extension."
+Description: "The relationship type of a Practitioner to Organization or Practitioner to Practitioner relationship."
+* value[x] only CodeableConcept
+* value[x] 1..1 MS
+
+Extension: LocationRelationshipTypeExtension
+Id: bc-location-relationship-type-extension
+Title: "BC Practitioner to Location Type Extension."
+Description: "The relationship type of a Practitioner to Location relationship."
 * value[x] only CodeableConcept
 * value[x] 1..1 MS
 
@@ -201,9 +208,9 @@ Description: "A bundle that submits Practitioner and PractitionerRole informatio
 * type = #transaction (exactly)
 * entry 1..*
 * entry.resource 1..1 MS
-* entry.fullUrl 1..1 MS
+* entry.fullUrl 0..1 MS
 * entry.search 0..0
-* entry.request 1..1 MS
+* entry.request 0..1 MS
 * entry.response 0..0
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"

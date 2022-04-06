@@ -114,16 +114,36 @@ Description: "Example of generic Practitioner."
 * communication.extension[languageSource].valueString = "Language Source"
 
 
-Instance: Example-PractitionerRole
+Instance: Example-PractitionerRole-1
 InstanceOf: BCPractitionerRole
-Description: "Example of the PractitionerRole."
-* practitioner = Reference(Example-Practitioner)
+Description: "Example of the PractitionerRole with Speciality."
+* practitioner.reference = "Practitioner/IPC.00000023.BC.PRS/$entityQuery"
 * organization.display = "BC"
 * code = $SCPType#MD
 * specialty = http://snomed.info/sct#419772000
 * specialty.extension[period].valuePeriod.start = "2000-01-01"
 * specialty.extension[period].valuePeriod.end = "2020-01-01"
 * specialty.extension[specialtySource].valueString = "Expertise source"
+
+Instance: Example-PractitionerRole-2
+InstanceOf: BCPractitionerRole
+Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
+* practitioner.reference = "Practitioner/IPC.00000023.BC.PRS/$entityQuery"
+* organization.extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
+* organization.extension[0].valueCodeableConcept.coding.system = "http://hl7.org/fhir/bc-plr/bc-relationship-type-code"
+* organization.extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
+* period.start = "2000-01-01"
+* organization.reference = "Organization/IPC.00002035.BC.PRS/$entityQuery"
+
+Instance: Example-PractitionerRole-3
+InstanceOf: BCPractitionerRole
+Description: "Example of the PractitionerRole for Practitioner to Location relationship."
+* practitioner.reference = "Practitioner/IPC.00000023.BC.PRS/$entityQuery"
+* location.extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension"
+* location.extension[0].valueCodeableConcept.coding.system = "http://hl7.org/fhir/bc-plr/bc-location-relationship-type-code"
+* location.extension[0].valueCodeableConcept.coding.code = #WORKSAT
+* period.start = "2000-01-01"
+* location.reference = "Location/IFC.00034523.BC.PRS/$entityQuery"
 
 Instance: Example-Query-Response-Bundle-with-Individual-Provider
 InstanceOf: Bundle
@@ -145,14 +165,14 @@ InstanceOf: BCPractitionerBundle
 Description: "An example of a Provider Bundle, i.e. A Practitioner and PractitionerRole in a Bundle that represents a PLR Individual Provider."
 * type = #transaction
 * timestamp = "2022-02-02T13:23:13.000-08:00"
-* entry[0].fullUrl = "https://plr.hlth.gov.bc.ca/plr/fhir/Practitioner/234234"
+* entry[Practitioner].fullUrl = "https://plr.hlth.gov.bc.ca/plr/fhir/Practitioner/IPC.00000023.BC.PRS/$entityQuery"
 * entry[0].resource = Example-Practitioner
 * entry[0].request.method = #POST
-* entry[0].request.url = "http://plr.moh.bc.ca/fhir/Practitioner"
-* entry[1].fullUrl = "https://plr.hlth.gov.bc.ca/plr/fhir/PractitionerRole/234234"
-* entry[1].resource = Example-PractitionerRole
-* entry[1].request.method = #POST
-* entry[1].request.url = "http://plr.moh.bc.ca/fhir/PractitionerRole"
+* entry[0].request.url = "http://plr.moh.bc.ca/fhir/Practitioner/IPC/$requestEntity"
+
+* entry[1].resource = Example-PractitionerRole-1
+* entry[2].resource = Example-PractitionerRole-2
+* entry[3].resource = Example-PractitionerRole-3
 
 
 Instance: Example-Credential-Granting-Institution
