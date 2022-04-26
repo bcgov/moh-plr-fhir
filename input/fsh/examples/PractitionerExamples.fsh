@@ -96,6 +96,11 @@ Description: "Example of generic Practitioner."
 * address.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * address.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * address.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
+* address.line[0] = "1175 Douglas St."
+* address.city = "Victoria"
+* address.state = "BC"
+* address.postalCode = "V8W 2E1"
+* address.country = "CA"
 
 // credentials
 * qualification.period.start = "2000-01-01"
@@ -167,6 +172,7 @@ Description: "An example of a Provider Bundle, i.e. A Practitioner and Practitio
 * timestamp = "2022-02-02T13:23:13.000-08:00"
 * entry[Practitioner].fullUrl = "https://plr.hlth.gov.bc.ca/plr/fhir/Practitioner/IPC.00000023.BC.PRS/$entityQuery"
 * entry[0].resource = Example-Practitioner
+* entry[0].resource.id = "IPC.23423234.BC.PRS"
 * entry[0].request.method = #POST
 * entry[0].request.url = "http://plr.moh.bc.ca/fhir/Practitioner/IPC/$requestEntity"
 
