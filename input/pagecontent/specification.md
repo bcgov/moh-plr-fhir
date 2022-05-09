@@ -130,8 +130,10 @@ A FHIR example of a real message can be found [here](Bundle-Example-Query-Respon
 ||status|
 ||status-reason|
 ||address-city|
+||withHistory|
 |Organization|name|
 ||address-city|
+||withHistory|
 |Location|name|
 ||address-city|
 ||healthAuthority|
@@ -140,4 +142,6 @@ A FHIR example of a real message can be found [here](Bundle-Example-Query-Respon
 ||communityHealthServiceArea|
 
 NOTE: Wild cards requirements are valid as per the Web interface and requirements which can be found in the PLR User Guide.
+
+The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.
 
