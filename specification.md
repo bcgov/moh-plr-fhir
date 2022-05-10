@@ -131,15 +131,21 @@ A FHIR example of a real message can be found [here](Bundle-Example-Query-Respon
 ||status-reason|
 ||address-city|
 ||withHistory|
+||identifier|
+||identifier-type|
 |Organization|name|
 ||address-city|
 ||withHistory|
+||identifier|
+||identifier-type|
 |Location|name|
 ||address-city|
 ||healthAuthority|
 ||healthServiceDeliveryArea|
 ||localHealthArea|
 ||communityHealthServiceArea|
+||identifier|
+||identifier-type|
 
 NOTE: Wild cards requirements are valid as per the Web interface and requirements which can be found in the PLR User Guide.
 
