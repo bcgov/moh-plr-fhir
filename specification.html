@@ -269,7 +269,7 @@ To show the relationship between two Individual Providers, the <a href="Structur
 <h4 id="maintain">Maintain</h4>
 <p>Maintain Provider and Facility will be exactly like Distributions above, but the interaction we be directed to PLR rather than directed to a client’s sytem.  The rules for Distributions apply to Maintain Bundles.</p>
 
-<p>The PLR FHIR Server response will be a Bundle with type set to “transaction- response” that contains one entry for each entry in the request, in the same order, with the outcome of processing the entry. For a failed transaction, the PLR FHIR Server returns a single OperationOutcome instead of a Bundle.  A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR, otherwise the whole transaction Bundle is rolled back.</p>
+<p>The PLR FHIR Server response will be a Bundle with type set to “transaction- response” that contains one entry for each entry in the request, in the same order, with the outcome of processing the entry. A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.</p>
 
 <h4 id="batch">Batch</h4>
 <p>Batch also uses Bundles, but a batch Bundle (Bundle.type = ‘batch’), that wraps a number of transaction Bundles.  A batch Bundle therefore allows for many independent transactions to be sent in a single operation.  The batch Bundle must contain at least one or more of:</p>
@@ -461,7 +461,7 @@ To show the relationship between two Individual Providers, the <a href="Structur
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 10, 2022 17:43+0000">2022-05-10</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 11, 2022 20:17+0000">2022-05-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
