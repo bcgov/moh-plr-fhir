@@ -70,7 +70,7 @@ The response to a distribution SHALL be HTTP 200 or 201 OK.  Anything else and t
 #### Maintain
 Maintain Provider and Facility will be exactly like Distributions above, but the interaction we be directed to PLR rather than directed to a client's sytem.  The rules for Distributions apply to Maintain Bundles.
 
-The PLR FHIR Server response will be a Bundle with type set to “transaction- response” that contains one entry for each entry in the request, in the same order, with the outcome of processing the entry. For a failed transaction, the PLR FHIR Server returns a single OperationOutcome instead of a Bundle.  A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR, otherwise the whole transaction Bundle is rolled back.
+The PLR FHIR Server response will be a Bundle with type set to “transaction- response” that contains one entry for each entry in the request, in the same order, with the outcome of processing the entry. A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.
 
 #### Batch
 Batch also uses Bundles, but a batch Bundle (Bundle.type = 'batch'), that wraps a number of transaction Bundles.  A batch Bundle therefore allows for many independent transactions to be sent in a single operation.  The batch Bundle must contain at least one or more of:
