@@ -83,14 +83,7 @@ Description: "Example of a Location (Facility) that is the work location for a P
 * extension[facilityDetails].extension[ownerName].valueString = "OPERATOR NAME"
 * extension[facilityDetails].extension[period].valuePeriod.start = "2000-01-01"
 * extension[serviceArea].valueCodeableConcept = http://example.org/CodeSystem/HealthServiceAreas#MAINLAND
-* extension[mailingAddress].valueAddress.type = #postal
-* extension[mailingAddress].valueAddress.line[0] = "19 ST"
-* extension[mailingAddress].valueAddress.line[1] = "ADDRESS ADDRESSLINE2TXT"
-* extension[mailingAddress].valueAddress.line[2] = "ADDRESS ADDRESSLINE3TXT"
-* extension[mailingAddress].valueAddress.city = "VICTORIA"
-* extension[mailingAddress].valueAddress.postalCode = "V6P7B8"
-* extension[mailingAddress].valueAddress.state = "BC"
-* extension[mailingAddress].valueAddress.country = "CA"
+* extension[mailingAddress].valueAddress = Example-Address-Valid
 * identifier.system = $PLRWorkLocationID
 * identifier.value = "1"
 * name = "WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT"
@@ -109,19 +102,7 @@ Description: "Example of a Location (Facility) that is the work location for a P
 * telecom[1].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.code = #HC
-* address.period.start = "2000-01-01"
-* address.period.end = "2020-01-01"
-* address.type = #postal
-* address.line[0] = "19 ST"
-* address.line[1] = "ADDRESS ADDRESSLINE2TXT"
-* address.line[2] = "ADDRESS ADDRESSLINE3TXT"
-* address.city = "VICTORIA"
-* address.postalCode = "V6P7B8"
-* address.state = "BC"
-* address.country = "CA"
-* address.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* address.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* address.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
+* address = Example-Address-Valid
 
 Instance: Example-AddOrganization-Location
 InstanceOf: BCLocation
@@ -149,15 +130,4 @@ Description: "Example of a Location (Facility) that is associated with an Organi
 * telecom[2].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.code = #MC
-* address.type = #postal
-* address.period.start = "1988-10-10T00:00:00-07:00"
-* address.line[0] = "wl line 11"
-* address.line[1] = "wl line 22"
-* address.line[2] = "wl line 33"
-* address.city = "wl city 2"
-* address.state = "BC"
-* address.country = "CA"
-* address.postalCode = "V8V 8V8"
-* address.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* address.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* address.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
+* address = Example-Address-Valid

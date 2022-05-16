@@ -43,3 +43,4 @@ Alias: $PLROwnerCode = http://hl7.org/fhir/bc-plr/bc-owner-code
 Alias: $PLRDisciplinaryActionID = http://hl7.org/fhir/bc-plr/bc-disciplinary-action-id
 Alias: $PLRNoteID = http://hl7.org/fhir/bc-plr/bc-note-id
 Alias: $PLRCommPurpose = http://hl7.org/fhir/bc-plr/bc-communication-purpose-code
+Alias: $PLRAddressValStatus = http://hl7.org/fhir/bc-plr/bc-address-validation-status-code

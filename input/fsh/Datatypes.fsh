@@ -20,9 +20,11 @@ Description: "Adds an end reason and extra contact information."
 Profile: BCAddress
 Id: bc-address
 Parent: Address
-Description: "Adds an end reason to the address."
+Description: "Adds an end reason, communication purpose and validation status to the address."
 * use 0..0
-* extension contains EndReasonExtension named endReason 0..1 MS and CommunicationPurposeExtension named commPurposeExtension 0..1 MS
+* extension contains EndReasonExtension named endReason 0..1 MS and 
+    CommunicationPurposeExtension named commPurposeExtension 0..1 MS and
+    AddressValidationStatusExtension named validationStatus 0..1 MS
 
 Profile: BCHumanName
 Id: bc-humanName
@@ -63,3 +65,9 @@ Description: "BC extension for communication purpose codes."
 * value[x] only CodeableConcept
 * value[x] 1..1 MS
 
+Extension: AddressValidationStatusExtension
+Id: bc-address-validation-status-extension
+Title: "BC Address Validataion Extension"
+Description: "BC extension for address validation status codes."
+* value[x] only CodeableConcept
+* value[x] 1..1 MS

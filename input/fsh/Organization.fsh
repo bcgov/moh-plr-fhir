@@ -92,16 +92,7 @@ Description: "Example of an Organization that is being created."
 * name = "Kelowna Clinic"
 * name.extension[use].valueCode = #official
 * name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
-* address.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* address.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* address.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
-* address.type = #postal
-* address.line = "2541 Townsend Rd"
-* address.city = "Sooke"
-* address.state = "BC"
-* address.country = "CA"
-* address.postalCode = "V4R8T8"
-* address.period.start = "2014-01-31T00:00:00-07:00"
+* address = Example-Address-Valid
 * telecom[0].system = #phone
 * telecom[0].value = "7786428585"
 * telecom[0].period.start = "2014-01-31T00:00:00-07:00"

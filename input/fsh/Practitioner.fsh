@@ -307,22 +307,7 @@ Description: "Example of a BC practitioner that is being created."
 * telecom[1].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
-
-//* address.use = #work
-* address.type = #postal
-* address.line = "91 RD"
-* address.line[1] = "ADDRESS ADDRESSLINE2TXT"
-* address.line[2] = "ADDRESS ADDRESSLINE3TXT"
-* address.city = "VICTORIA"
-* address.state = "BC"
-* address.postalCode = "V8V8V8"
-* address.period.start = "2000-01-01"
-* address.period.end = "2020-01-01"
-* address.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* address.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* address.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
-
-
+* address = Example-Address-Valid
 * gender = #female
 * birthDate = "1951-11-12"
 * birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"

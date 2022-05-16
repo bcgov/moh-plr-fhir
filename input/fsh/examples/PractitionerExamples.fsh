@@ -91,16 +91,7 @@ Description: "Example of generic Practitioner."
 * telecom.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 
 // address
-* address.period.start = "2000-02-02"
-* address.type = #postal
-* address.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* address.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* address.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
-* address.line[0] = "1175 Douglas St."
-* address.city = "Victoria"
-* address.state = "BC"
-* address.postalCode = "V8W 2E1"
-* address.country = "CA"
+* address = Example-Address-Valid
 
 // credentials
 * qualification.period.start = "2000-01-01"
