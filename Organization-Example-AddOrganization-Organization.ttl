@@ -17,7 +17,7 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddOrganization-Organization\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><p><b>identifier</b>: CPN: CPN.00147422.BC.PRS, IPC: IPC.00147422.BC.PRS, ORGID: 1000095892</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 2541 Townsend Rd Sooke BC V4R8T8 CA </p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddOrganization-Organization\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><p><b>identifier</b>: CPN: CPN.00147422.BC.PRS, IPC: IPC.00147422.BC.PRS, ORGID: 1000095892</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
   ];
   fhir:Organization.identifier [
      fhir:index 0;
@@ -96,19 +96,32 @@
            fhir:Coding.code [ fhir:value "BC" ]
          ]
        ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-address-validation-status-extension" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-address-validation-status-code" ];
+           fhir:Coding.code [ fhir:value "V" ]
+         ]
+       ]
      ];
      fhir:Address.type [ fhir:value "postal" ];
      fhir:Address.line [
-       fhir:value "2541 Townsend Rd";
+       fhir:value "19 ST";
        fhir:index 0
+     ], [
+       fhir:value "ADDRESS ADDRESSLINE2TXT";
+       fhir:index 1
+     ], [
+       fhir:value "ADDRESS ADDRESSLINE3TXT";
+       fhir:index 2
      ];
-     fhir:Address.city [ fhir:value "Sooke" ];
+     fhir:Address.city [ fhir:value "VICTORIA" ];
      fhir:Address.state [ fhir:value "BC" ];
-     fhir:Address.postalCode [ fhir:value "V4R8T8" ];
-     fhir:Address.country [ fhir:value "CA" ];
-     fhir:Address.period [
-       fhir:Period.start [ fhir:value "2014-01-31T00:00:00-07:00"^^xsd:dateTime ]
-     ]
+     fhir:Address.postalCode [ fhir:value "V6P7B8" ];
+     fhir:Address.country [ fhir:value "CA" ]
   ] .
 
 # - ontology header ------------------------------------------------------------

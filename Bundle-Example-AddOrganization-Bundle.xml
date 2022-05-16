@@ -15,7 +15,7 @@
           <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-AddOrganization-Organization" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization.html">BCOrganization</a></p></div><p><b>identifier</b>: CPN: CPN.00147422.BC.PRS, IPC: IPC.00147422.BC.PRS, ORGID: 1000095892</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 2541 Townsend Rd Sooke BC V4R8T8 CA </p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-AddOrganization-Organization" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization.html">BCOrganization</a></p></div><p><b>identifier</b>: CPN: CPN.00147422.BC.PRS, IPC: IPC.00147422.BC.PRS, ORGID: 1000095892</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>
         </text>
         <identifier>
           <type>
@@ -79,15 +79,22 @@
               </coding>
             </valueCodeableConcept>
           </extension>
+          <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-address-validation-status-extension">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/bc-plr/bc-address-validation-status-code"/>
+                <code value="V"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
           <type value="postal"/>
-          <line value="2541 Townsend Rd"/>
-          <city value="Sooke"/>
+          <line value="19 ST"/>
+          <line value="ADDRESS ADDRESSLINE2TXT"/>
+          <line value="ADDRESS ADDRESSLINE3TXT"/>
+          <city value="VICTORIA"/>
           <state value="BC"/>
-          <postalCode value="V4R8T8"/>
+          <postalCode value="V6P7B8"/>
           <country value="CA"/>
-          <period>
-            <start value="2014-01-31T00:00:00-07:00"/>
-          </period>
         </address>
       </Organization>
     </resource>

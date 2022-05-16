@@ -10,7 +10,7 @@
   "name": "BCProviderRegistry",
   "title": "BC Provider Location Registry FHIR Implementation Guide",
   "status": "draft",
-  "date": "2022-05-11T20:17:39+00:00",
+  "date": "2022-05-16T21:00:38+00:00",
   "publisher": "BC Ministry of Health",
   "contact": [
     {
@@ -39,6 +39,14 @@
   "license": "CC0-1.0",
   "fhirVersion": [
     "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "id": "hl7tx",
+      "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+      "packageId": "hl7.terminology.r4",
+      "version": "3.1.0"
+    }
   ],
   "definition": {
     "extension": [
@@ -391,7 +399,7 @@
           "reference": "StructureDefinition/bc-address"
         },
         "name": "BCAddress",
-        "description": "Adds an end reason to the address.",
+        "description": "Adds an end reason, communication purpose and validation status to the address.",
         "exampleBoolean": false
       },
       {
@@ -570,6 +578,21 @@
         "description": "General constraints on the PractitionerRole resource for use in the BC Provider Registry project.",
         "exampleBoolean": false,
         "groupingId": "Practitioner"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/bc-address-validation-status-extension"
+        },
+        "name": "BC Address Validataion Extension",
+        "description": "BC extension for address validation status codes.",
+        "exampleBoolean": false,
+        "groupingId": "Common"
       },
       {
         "extension": [

@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2022-05-11T20:17:39+00:00"/>
+  <date value="2022-05-16T21:00:38+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -31,6 +31,11 @@
   <packageId value="fhir.ca-bc.provider"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="3.1.0"/>
+  </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -252,7 +257,7 @@
         <reference value="StructureDefinition/bc-address"/>
       </reference>
       <name value="BCAddress"/>
-      <description value="Adds an end reason to the address."/>
+      <description value="Adds an end reason, communication purpose and validation status to the address."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -395,6 +400,18 @@
       <description value="General constraints on the PractitionerRole resource for use in the BC Provider Registry project."/>
       <exampleBoolean value="false"/>
       <groupingId value="Practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-address-validation-status-extension"/>
+      </reference>
+      <name value="BC Address Validataion Extension"/>
+      <description value="BC extension for address validation status codes."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Common"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
