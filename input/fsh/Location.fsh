@@ -107,9 +107,7 @@ Description: "Example of a Location (Facility) that is the work location for a P
 Instance: Example-AddOrganization-Location
 InstanceOf: BCLocation
 Description: "Example of a Location (Facility) that is associated with an Organization."
-* identifier.system = $PLRFacilityIdentifierType
-* identifier.value = "111"
-* identifier.type = #IFC
+* identifier = Example-Identifier-IFC
 * name = "General Hospital"
 * name.extension[period].valuePeriod.start = "2000-01-01"
 * telecom[0].system = #fax

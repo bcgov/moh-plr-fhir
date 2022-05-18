@@ -1,6 +1,7 @@
 Instance: Example-Practitioner
 InstanceOf: BCPractitioner
 Description: "Example of generic Practitioner."
+* id = "IPC.00147422.BC.PRS"
 
 // demographics
 * extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
@@ -12,31 +13,18 @@ Description: "Example of generic Practitioner."
 * extension[1].valueAddress.country = "CA"
 
 // identifier
-* identifier[0].system = $PLRIdentifierType
-* identifier[0].value = "IPC.23423234.BC.PRS"
-* identifier[0].type = #IPC
-* identifier[0].period.start = "2022-02-07"
-* identifier[1].system = $PLRIdentifierType
-* identifier[1].value = "CPN.23423234.BC.PRS"
-* identifier[1].period.start = "2022-02-07"
-* identifier[1].type = #CPN
-* identifier[2].system = $PLRIdentifierType
-* identifier[2].value = "89745"
-* identifier[2].period.start = "2022-02-07"
-* identifier[2].type = #CPSID
+* identifier[0] = Example-Identifier-IPC
+* identifier[1] = Example-Identifier-CPN
+* identifier[2] = Example-Identifier-CPSID
 
 // name
-* name.family = "FamilyName"
-* name.given = "GivenName"
-* name.period.start = "2012-12-07"
-* name.extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-name-use-extension"
-* name.extension[0].valueCode = #official
+* name = Example-Name-Official
 
 // license status
 * extension[2].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension"
 * extension[2].extension[0].url = "statusCode"
 * extension[2].extension[0].valueCodeableConcept.coding.system = $RoleStatus
-* extension[2].extension[0].valueCodeableConcept.coding.code = #ACTIVE
+* extension[2].extension[0].valueCodeableConcept.coding.code = #active
 * extension[2].extension[1].url = "period"
 * extension[2].extension[1].valuePeriod.start = "2022-02-07"
 * extension[2].extension[1].valuePeriod.end = "2023-02-07"
@@ -113,7 +101,7 @@ Description: "Example of generic Practitioner."
 Instance: Example-PractitionerRole-1
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
-* practitioner.reference = "Practitioner/IPC.00000023.BC.PRS/$entityQuery"
+* practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
 * organization.display = "BC"
 * code = $SCPType#MD
 * specialty = http://snomed.info/sct#419772000
@@ -124,22 +112,23 @@ Description: "Example of the PractitionerRole with Speciality."
 Instance: Example-PractitionerRole-2
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
-* practitioner.reference = "Practitioner/IPC.00000023.BC.PRS/$entityQuery"
+* practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
 * organization.extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
 * organization.extension[0].valueCodeableConcept.coding.system = "http://hl7.org/fhir/bc-plr/bc-relationship-type-code"
 * organization.extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
 * period.start = "2000-01-01"
-* organization.reference = "Organization/IPC.00002035.BC.PRS/$entityQuery"
+* organization.reference = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00002035.BC.PRS/$entityQuery"
 
 Instance: Example-PractitionerRole-3
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole for Practitioner to Location relationship."
-* practitioner.reference = "Practitioner/IPC.00000023.BC.PRS/$entityQuery"
+* practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+//* practitioner.type = "Practitioner"
 * location.extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension"
 * location.extension[0].valueCodeableConcept.coding.system = "http://hl7.org/fhir/bc-plr/bc-location-relationship-type-code"
 * location.extension[0].valueCodeableConcept.coding.code = #WORKSAT
 * period.start = "2000-01-01"
-* location.reference = "Location/IFC.00034523.BC.PRS/$entityQuery"
+* location.reference = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00034523.BC.PRS/$entityQuery"
 
 Instance: Example-Query-Response-Bundle-with-Individual-Provider
 InstanceOf: Bundle
@@ -148,11 +137,11 @@ Description: "An example search response bundle."
 * timestamp = "2022-02-02T13:23:13.000-08:00"
 * total = 1
 * link.relation = "self"
-* link.url = "https://plr.hlth.gov.bc.ca/plr/fhir/Practitioner/32/$entityQuery"
-* entry[0].fullUrl = "7bf3d69a-482a-472e-9003-2ade5e0ccd11"
+* link.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC32/$entityQuery"
+* entry[0].fullUrl = "urn:uuid:7bf3d69a-482a-472e-9003-2ade5e0ccd11"
 * entry[0].resource = Example-OperationOutcome-7049
 * entry[0].search.mode = #outcome
-* entry[1].fullUrl = "bbc6d830-d93f-4f9a-b955-b7d7e0ae68a7"
+* entry[1].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00000023.BC.PRS/$entityQuery"
 * entry[1].search.mode = #match
 * entry[1].resource = Example-Individual-Provider-Bundle
 
@@ -161,15 +150,17 @@ InstanceOf: BCPractitionerBundle
 Description: "An example of a Provider Bundle, i.e. A Practitioner and PractitionerRole in a Bundle that represents a PLR Individual Provider."
 * type = #transaction
 * timestamp = "2022-02-02T13:23:13.000-08:00"
-* entry[Practitioner].fullUrl = "https://plr.hlth.gov.bc.ca/plr/fhir/Practitioner/IPC.00000023.BC.PRS/$entityQuery"
+* entry[Practitioner].fullUrl = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
 * entry[0].resource = Example-Practitioner
-* entry[0].resource.id = "IPC.23423234.BC.PRS"
 * entry[0].request.method = #POST
-* entry[0].request.url = "http://plr.moh.bc.ca/fhir/Practitioner/IPC/$requestEntity"
+* entry[0].request.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC/$entityQuery"
 
 * entry[1].resource = Example-PractitionerRole-1
+* entry[1].fullUrl = "urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c"
 * entry[2].resource = Example-PractitionerRole-2
+* entry[2].fullUrl = "urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03"
 * entry[3].resource = Example-PractitionerRole-3
+* entry[3].fullUrl = "urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5"
 
 
 Instance: Example-Credential-Granting-Institution

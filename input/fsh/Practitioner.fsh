@@ -190,7 +190,7 @@ Extension: LicenseStatusExtension
 Id: bc-license-status-extension
 Title: "BC License Status Extension"
 Description: "Tracking the status and changes to the status of a practitioner/organization license."
-* extension contains statusCode 1..1 MS and statusReasonCode 1..1 MS and statusClassCode 0..1 MS and PeriodExtension named period 0..1 MS and EndReasonExtension named endReasonCodeAndOwner 0..1 MS
+* extension contains statusCode 1..1 MS and statusReasonCode 1..1 MS and statusClassCode 0..1 MS and period 1..1 MS and EndReasonExtension named endReasonCodeAndOwner 0..1 MS
 * extension[statusCode].value[x] only CodeableConcept
 * extension[statusCode].value[x] 1..1 MS
 * extension[statusCode].valueCodeableConcept from $StatusVS (required)
@@ -199,6 +199,8 @@ Description: "Tracking the status and changes to the status of a practitioner/or
 * extension[statusReasonCode].value[x] 1..1 MS
 * extension[statusClassCode].value[x] only CodeableConcept
 * extension[statusClassCode].value[x] 0..1 MS
+* extension[period].value[x] only Period
+* extension[period].value[x] 1..1 MS
 
 Profile: BCPractitionerBundle
 Parent: Bundle
@@ -277,10 +279,7 @@ Description: "Example of a BC practitioner that is being created."
 * extension[demographicsPeriod].valuePeriod.end = "2020-01-01"
 * contained[QualificationOrganization] = Example-Qualification-Organization
 * contained[QualificationOrganization].id = "qualificationOrganization"
-* identifier.system = "urn:oid:2.16.840.1.113883.3.40.2.4"
-* identifier.value = "MD20180719V01"
-* identifier.period.start = "2000-01-01"
-* identifier.period.end = "2020-01-01"
+* identifier = Example-Identifier-CPSID
 * active = true
 * name.family = "KELASEY"
 * name.given = "SONYA"
@@ -329,9 +328,7 @@ Instance: Example-AddPractitioner-RelatedPractitioner
 InstanceOf: BCPractitioner
 Description: "Example of a practitioner that has a relationship to the example created practitioner."
 * extension[demographicsPeriod].valuePeriod.start = "2000-01-01"
-* identifier.system = $PLRIdentifierType
-* identifier.value = "123123123"
-* identifier.type = #RNID
+* identifier = Example-Identifier-RNID
 * name.text = "23"
 
 Instance: Example-AddPractitioner-PractitionerRole
@@ -347,6 +344,4 @@ Description: "Example of the role that the created practitioner is playing."
 * specialty.extension[endReason].extension[custodianId].valueIdentifier.assigner.display = "RNA"
 * specialty.extension[specialtySource].valueString = "Source"
 * location = Reference(Example-AddPractitioner-WorkLocation)
-* location.extension[period].valuePeriod.start = "2000-01-01"
-* location.extension[period].valuePeriod.end = "2020-01-01"
 
