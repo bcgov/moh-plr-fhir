@@ -82,6 +82,13 @@
                       }
                     },
                     {
+                      "url": "period",
+                      "valuePeriod": {
+                        "start": "2000-01-01",
+                        "end": "2020-01-01"
+                      }
+                    },
+                    {
                       "url": "statusClassCode",
                       "valueCodeableConcept": {
                         "coding": [
@@ -104,13 +111,6 @@
                         }
                       ],
                       "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
-                      "valuePeriod": {
-                        "start": "2000-01-01",
-                        "end": "2020-01-01"
-                      }
                     }
                   ],
                   "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension"
@@ -297,11 +297,17 @@
               ],
               "identifier": [
                 {
-                  "system": "urn:oid:2.16.840.1.113883.3.40.2.4",
-                  "value": "MD20180719V01",
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/bc-plr/bc-identifer-type-code",
+                        "code": "CPSID"
+                      }
+                    ]
+                  },
+                  "value": "123454",
                   "period": {
-                    "start": "2000-01-01",
-                    "end": "2020-01-01"
+                    "start": "2000-01-01"
                   }
                 }
               ],
@@ -565,15 +571,6 @@
               ],
               "location": [
                 {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/organization-period",
-                      "valuePeriod": {
-                        "start": "2000-01-01",
-                        "end": "2020-01-01"
-                      }
-                    }
-                  ],
                   "reference": "Location/Example-AddPractitioner-WorkLocation"
                 }
               ]
@@ -617,34 +614,43 @@
                   "type": {
                     "coding": [
                       {
+                        "system": "http://hl7.org/fhir/bc-plr/bc-identifer-type-code",
                         "code": "CPN"
                       }
                     ]
                   },
-                  "system": "http://hl7.org/fhir/bc-plr/bc-identifer-type-code",
-                  "value": "CPN.00147422.BC.PRS"
+                  "value": "CPN.00147422.BC.PRS",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
                 },
                 {
                   "type": {
                     "coding": [
                       {
-                        "code": "IPC"
+                        "system": "http://hl7.org/fhir/bc-plr/bc-identifer-type-code",
+                        "code": "IFC"
                       }
                     ]
                   },
-                  "system": "http://hl7.org/fhir/bc-plr/bc-identifer-type-code",
-                  "value": "IPC.00147422.BC.PRS"
+                  "value": "IFC.00147422.BC.PRS",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
                 },
                 {
                   "type": {
                     "coding": [
                       {
+                        "system": "http://hl7.org/fhir/bc-plr/bc-identifer-type-code",
                         "code": "ORGID"
                       }
                     ]
                   },
-                  "system": "http://hl7.org/fhir/bc-plr/bc-identifer-type-code",
-                  "value": "1000095892"
+                  "value": "123123123",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
                 }
               ],
               "active": true,
@@ -791,12 +797,15 @@
                   "type": {
                     "coding": [
                       {
+                        "system": "http://hl7.org/fhir/bc-plr/bc-identifer-type-code",
                         "code": "IFC"
                       }
                     ]
                   },
-                  "system": "http://hl7.org/fhir/bc-plr/bc-location-identifier-type-code",
-                  "value": "111"
+                  "value": "IFC.00147422.BC.PRS",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
                 }
               ],
               "name": "General Hospital",

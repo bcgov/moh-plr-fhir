@@ -130,6 +130,13 @@
        ]
      ], [
        fhir:index 2;
+       fhir:Extension.url [ fhir:value "period" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 3;
        fhir:Extension.url [ fhir:value "statusClassCode" ];
        fhir:Extension.valueCodeableConcept [
          fhir:CodeableConcept.coding [
@@ -139,7 +146,7 @@
          ]
        ]
      ], [
-       fhir:index 3;
+       fhir:index 4;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "custodianId" ];
@@ -150,13 +157,6 @@
          ]
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension" ]
-     ], [
-       fhir:index 4;
-       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
-       fhir:Extension.valuePeriod [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
-         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
-       ]
      ];
      fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension" ]
   ], [
@@ -332,11 +332,16 @@
   ];
   fhir:Practitioner.identifier [
      fhir:index 0;
-     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.3.40.2.4" ];
-     fhir:Identifier.value [ fhir:value "MD20180719V01" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
+         fhir:Coding.code [ fhir:value "CPSID" ]
+       ]
+     ];
+     fhir:Identifier.value [ fhir:value "123454" ];
      fhir:Identifier.period [
-       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
-       fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
      ]
   ];
   fhir:Practitioner.active [ fhir:value "true"^^xsd:boolean];
@@ -585,14 +590,6 @@
   fhir:PractitionerRole.location [
      fhir:index 0;
      fhir:link <http://hl7.org/fhir/ca-bc/provider/Location/Example-AddPractitioner-WorkLocation>;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/organization-period" ];
-       fhir:Extension.valuePeriod [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
-         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
-       ]
-     ];
      fhir:Reference.reference [ fhir:value "Location/Example-AddPractitioner-WorkLocation" ]
   ] .
 
@@ -642,31 +639,40 @@
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
          fhir:Coding.code [ fhir:value "CPN" ]
        ]
      ];
-     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
-     fhir:Identifier.value [ fhir:value "CPN.00147422.BC.PRS" ]
+     fhir:Identifier.value [ fhir:value "CPN.00147422.BC.PRS" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
   ], [
      fhir:index 1;
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-         fhir:Coding.code [ fhir:value "IPC" ]
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
+         fhir:Coding.code [ fhir:value "IFC" ]
        ]
      ];
-     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
-     fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ]
+     fhir:Identifier.value [ fhir:value "IFC.00147422.BC.PRS" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
   ], [
      fhir:index 2;
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
          fhir:Coding.code [ fhir:value "ORGID" ]
        ]
      ];
-     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
-     fhir:Identifier.value [ fhir:value "1000095892" ]
+     fhir:Identifier.value [ fhir:value "123123123" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
   ];
   fhir:Organization.active [ fhir:value "true"^^xsd:boolean];
   fhir:Organization.name [
@@ -803,11 +809,14 @@
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
          fhir:Coding.code [ fhir:value "IFC" ]
        ]
      ];
-     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-location-identifier-type-code" ];
-     fhir:Identifier.value [ fhir:value "111" ]
+     fhir:Identifier.value [ fhir:value "IFC.00147422.BC.PRS" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
   ];
   fhir:Location.name [
      fhir:value "General Hospital";

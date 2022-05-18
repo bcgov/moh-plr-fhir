@@ -37,18 +37,21 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddOrganization-Location\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-location.html\">BCLocation</a></p></div><p><b>identifier</b>: IFC: 111</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href=\"ftp://someftp.com\">ftp://someftp.com</a></p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddOrganization-Location\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-location.html\">BCLocation</a></p></div><p><b>identifier</b>: IFC: IFC.00147422.BC.PRS</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href=\"ftp://someftp.com\">ftp://someftp.com</a></p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
   ];
   fhir:Location.identifier [
      fhir:index 0;
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
          fhir:Coding.code [ fhir:value "IFC" ]
        ]
      ];
-     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-location-identifier-type-code" ];
-     fhir:Identifier.value [ fhir:value "111" ]
+     fhir:Identifier.value [ fhir:value "IFC.00147422.BC.PRS" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
   ];
   fhir:Location.name [
      fhir:value "General Hospital";

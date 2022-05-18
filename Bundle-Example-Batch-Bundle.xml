@@ -60,6 +60,12 @@
                     </coding>
                   </valueCodeableConcept>
                 </extension>
+                <extension url="period">
+                  <valuePeriod>
+                    <start value="2000-01-01"/>
+                    <end value="2020-01-01"/>
+                  </valuePeriod>
+                </extension>
                 <extension url="statusClassCode">
                   <valueCodeableConcept>
                     <coding>
@@ -76,12 +82,6 @@
                       </assigner>
                     </valueIdentifier>
                   </extension>
-                </extension>
-                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension">
-                  <valuePeriod>
-                    <start value="2000-01-01"/>
-                    <end value="2020-01-01"/>
-                  </valuePeriod>
                 </extension>
               </extension>
               <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
@@ -216,11 +216,15 @@
                 </extension>
               </extension>
               <identifier>
-                <system value="urn:oid:2.16.840.1.113883.3.40.2.4"/>
-                <value value="MD20180719V01"/>
+                <type>
+                  <coding>
+                    <system value="http://hl7.org/fhir/bc-plr/bc-identifer-type-code"/>
+                    <code value="CPSID"/>
+                  </coding>
+                </type>
+                <value value="123454"/>
                 <period>
                   <start value="2000-01-01"/>
-                  <end value="2020-01-01"/>
                 </period>
               </identifier>
               <active value="true"/>
@@ -405,12 +409,6 @@
                 </coding>
               </specialty>
               <location>
-                <extension url="http://hl7.org/fhir/StructureDefinition/organization-period">
-                  <valuePeriod>
-                    <start value="2000-01-01"/>
-                    <end value="2020-01-01"/>
-                  </valuePeriod>
-                </extension>
                 <reference value="Location/Example-AddPractitioner-WorkLocation"/>
               </location>
             </PractitionerRole>
@@ -447,29 +445,38 @@
               <identifier>
                 <type>
                   <coding>
+                    <system value="http://hl7.org/fhir/bc-plr/bc-identifer-type-code"/>
                     <code value="CPN"/>
                   </coding>
                 </type>
-                <system value="http://hl7.org/fhir/bc-plr/bc-identifer-type-code"/>
                 <value value="CPN.00147422.BC.PRS"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
               </identifier>
               <identifier>
                 <type>
                   <coding>
-                    <code value="IPC"/>
+                    <system value="http://hl7.org/fhir/bc-plr/bc-identifer-type-code"/>
+                    <code value="IFC"/>
                   </coding>
                 </type>
-                <system value="http://hl7.org/fhir/bc-plr/bc-identifer-type-code"/>
-                <value value="IPC.00147422.BC.PRS"/>
+                <value value="IFC.00147422.BC.PRS"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
               </identifier>
               <identifier>
                 <type>
                   <coding>
+                    <system value="http://hl7.org/fhir/bc-plr/bc-identifer-type-code"/>
                     <code value="ORGID"/>
                   </coding>
                 </type>
-                <system value="http://hl7.org/fhir/bc-plr/bc-identifer-type-code"/>
-                <value value="1000095892"/>
+                <value value="123123123"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
               </identifier>
               <active value="true"/>
               <name value="Kelowna Clinic">
@@ -582,11 +589,14 @@
               <identifier>
                 <type>
                   <coding>
+                    <system value="http://hl7.org/fhir/bc-plr/bc-identifer-type-code"/>
                     <code value="IFC"/>
                   </coding>
                 </type>
-                <system value="http://hl7.org/fhir/bc-plr/bc-location-identifier-type-code"/>
-                <value value="111"/>
+                <value value="IFC.00147422.BC.PRS"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
               </identifier>
               <name value="General Hospital">
                 <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension">

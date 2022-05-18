@@ -304,6 +304,12 @@
                     &lt;/coding&gt;
                   &lt;/valueCodeableConcept&gt;
                 &lt;/extension&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;period&quot;&gt;
+                  &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valuePeriod</a>&gt;
+                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
+                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">end</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2020-01-01&quot;/&gt;
+                  &lt;/valuePeriod&gt;
+                &lt;/extension&gt;
                 &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;statusClassCode&quot;&gt;
                   &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
                     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
@@ -322,13 +328,6 @@
                       &lt;/assigner&gt;
                     &lt;/valueIdentifier&gt;
                   &lt;/extension&gt;
-                &lt;/extension&gt;
-                &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a>
-                           <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension&quot;&gt;
-                  &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valuePeriod</a>&gt;
-                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
-                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">end</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2020-01-01&quot;/&gt;
-                  &lt;/valuePeriod&gt;
                 &lt;/extension&gt;
               &lt;/extension&gt;
               &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.extension">extension</a>
@@ -484,11 +483,16 @@
                 &lt;/extension&gt;
               &lt;/extension&gt;
               &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">identifier</a>&gt;
-                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:oid:2.16.840.1.113883.3.40.2.4&quot;/&gt;
-                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;MD20180719V01&quot;/&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>&gt;
+                  &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                            <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-identifer-type-code&quot;/&gt;
+                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;CPSID&quot;/&gt;
+                  &lt;/coding&gt;
+                &lt;/type&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;123454&quot;/&gt;
                 &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>&gt;
                   &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
-                  &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">end</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2020-01-01&quot;/&gt;
                 &lt;/period&gt;
               &lt;/identifier&gt;
               &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.active">active</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
@@ -693,13 +697,6 @@
                 &lt;/coding&gt;
               &lt;/specialty&gt;
               &lt;<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.location">location</a>&gt;
-                &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.extension">extension</a>
-                           <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/organization-period&quot;&gt;
-                  &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valuePeriod</a>&gt;
-                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
-                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">end</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2020-01-01&quot;/&gt;
-                  &lt;/valuePeriod&gt;
-                &lt;/extension&gt;
                 &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Location/Example-AddPractitioner-WorkLocation&quot;/&gt;
               &lt;/location&gt;
             &lt;/PractitionerRole&gt;
@@ -738,32 +735,41 @@
               &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization.identifier">identifier</a>&gt;
                 &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>&gt;
                   &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                            <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-identifer-type-code&quot;/&gt;
                     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;CPN&quot;/&gt;
                   &lt;/coding&gt;
                 &lt;/type&gt;
-                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
-                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-identifer-type-code&quot;/&gt;
                 &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;CPN.00147422.BC.PRS&quot;/&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>&gt;
+                  &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
+                &lt;/period&gt;
               &lt;/identifier&gt;
               &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization.identifier">identifier</a>&gt;
                 &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>&gt;
                   &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;IPC&quot;/&gt;
+                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                            <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-identifer-type-code&quot;/&gt;
+                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;IFC&quot;/&gt;
                   &lt;/coding&gt;
                 &lt;/type&gt;
-                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
-                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-identifer-type-code&quot;/&gt;
-                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;IPC.00147422.BC.PRS&quot;/&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;IFC.00147422.BC.PRS&quot;/&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>&gt;
+                  &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
+                &lt;/period&gt;
               &lt;/identifier&gt;
               &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization.identifier">identifier</a>&gt;
                 &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>&gt;
                   &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                            <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-identifer-type-code&quot;/&gt;
                     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;ORGID&quot;/&gt;
                   &lt;/coding&gt;
                 &lt;/type&gt;
-                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
-                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-identifer-type-code&quot;/&gt;
-                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1000095892&quot;/&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;123123123&quot;/&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>&gt;
+                  &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
+                &lt;/period&gt;
               &lt;/identifier&gt;
               &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization.active">active</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
               &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Kelowna Clinic&quot;&gt;
@@ -889,12 +895,15 @@
               &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.identifier">identifier</a>&gt;
                 &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>&gt;
                   &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+                    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                            <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-identifer-type-code&quot;/&gt;
                     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;IFC&quot;/&gt;
                   &lt;/coding&gt;
                 &lt;/type&gt;
-                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
-                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/bc-plr/bc-location-identifier-type-code&quot;/&gt;
-                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;111&quot;/&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;IFC.00147422.BC.PRS&quot;/&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>&gt;
+                  &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
+                &lt;/period&gt;
               &lt;/identifier&gt;
               &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;General Hospital&quot;&gt;
                 &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#string#string.extension">extension</a>
@@ -1029,7 +1038,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, May 16, 2022 21:00+0000">2022-05-16</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 18, 2022 16:55+0000">2022-05-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

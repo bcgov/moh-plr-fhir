@@ -45,38 +45,47 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddOrganization-Organization\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><p><b>identifier</b>: CPN: CPN.00147422.BC.PRS, IPC: IPC.00147422.BC.PRS, ORGID: 1000095892</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddOrganization-Organization\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><p><b>identifier</b>: CPN: CPN.00147422.BC.PRS, IFC: IFC.00147422.BC.PRS, ORGID: 123123123</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
   ];
   fhir:Organization.identifier [
      fhir:index 0;
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
          fhir:Coding.code [ fhir:value "CPN" ]
        ]
      ];
-     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
-     fhir:Identifier.value [ fhir:value "CPN.00147422.BC.PRS" ]
+     fhir:Identifier.value [ fhir:value "CPN.00147422.BC.PRS" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
   ], [
      fhir:index 1;
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-         fhir:Coding.code [ fhir:value "IPC" ]
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
+         fhir:Coding.code [ fhir:value "IFC" ]
        ]
      ];
-     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
-     fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ]
+     fhir:Identifier.value [ fhir:value "IFC.00147422.BC.PRS" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
   ], [
      fhir:index 2;
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
          fhir:Coding.code [ fhir:value "ORGID" ]
        ]
      ];
-     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
-     fhir:Identifier.value [ fhir:value "1000095892" ]
+     fhir:Identifier.value [ fhir:value "123123123" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
   ];
   fhir:Organization.active [ fhir:value "true"^^xsd:boolean];
   fhir:Organization.name [

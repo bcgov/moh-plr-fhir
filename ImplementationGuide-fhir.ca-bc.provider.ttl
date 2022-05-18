@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "BCProviderRegistry"];
   fhir:ImplementationGuide.title [ fhir:value "BC Provider Location Registry FHIR Implementation Guide"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2022-05-16T21:00:38+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2022-05-18T16:55:23+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "BC Ministry of Health"];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -1168,23 +1168,6 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "Practitioner" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-Practitioner>;
-         fhir:Reference.reference [ fhir:value "Practitioner/Example-Practitioner" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Practitioner" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of generic Practitioner." ];
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner";
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner>
-       ]
-     ], [
-       fhir:index 52;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
@@ -1198,7 +1181,7 @@
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
        ]
      ], [
-       fhir:index 53;
+       fhir:index 52;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1215,7 +1198,7 @@
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
        ]
      ], [
-       fhir:index 54;
+       fhir:index 53;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1232,7 +1215,7 @@
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
        ]
      ], [
-       fhir:index 55;
+       fhir:index 54;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1250,7 +1233,7 @@
        ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
-       fhir:index 56;
+       fhir:index 55;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1263,6 +1246,23 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Query-Response-Bundle-with-Individual-Provider" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "An example search response bundle." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 56;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Practitioner" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Practitioner/IPC.00147422.BC.PRS>;
+         fhir:Reference.reference [ fhir:value "Practitioner/IPC.00147422.BC.PRS" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Practitioner" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of generic Practitioner." ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner>
+       ]
      ], [
        fhir:index 57;
        fhir:Element.extension [
@@ -1602,8 +1602,6 @@
 
 <http://hl7.org/fhir/ca-bc/provider/OperationOutcome/Example-OperationOutcome-7049> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-Practitioner> a fhir:ca-bc .
-
 <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-1> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-2> a fhir:ca-bc .
@@ -1613,6 +1611,8 @@
 <http://hl7.org/fhir/ca-bc/provider/Organization/Example-Qualification-Organization> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Query-Response-Bundle-with-Individual-Provider> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/Practitioner/IPC.00147422.BC.PRS> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-entity-location-query> a fhir:ca-bc .
 

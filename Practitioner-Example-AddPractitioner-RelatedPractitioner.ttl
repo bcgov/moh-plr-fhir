@@ -17,7 +17,7 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddPractitioner-RelatedPractitioner\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner.html\">BCPractitioner</a></p></div><p><b>BC Valid Period Extension</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>identifier</b>: RNID: 123123123</p><p><b>name</b>: 23</p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-AddPractitioner-RelatedPractitioner\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner.html\">BCPractitioner</a></p></div><p><b>BC Valid Period Extension</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>identifier</b>: RNID: 123454</p><p><b>name</b>: 23</p></div>"
   ];
   fhir:DomainResource.extension [
      fhir:index 0;
@@ -31,11 +31,14 @@
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
          fhir:Coding.code [ fhir:value "RNID" ]
        ]
      ];
-     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/bc-plr/bc-identifer-type-code" ];
-     fhir:Identifier.value [ fhir:value "123123123" ]
+     fhir:Identifier.value [ fhir:value "123454" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
   ];
   fhir:Practitioner.name [
      fhir:index 0;
