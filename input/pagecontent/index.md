@@ -28,11 +28,11 @@ Any given point of service (PoS) can only access the Provider data fields that a
 
 ### Providers
 
-A *Provider* is a person / individual or an organization acting in a role. The PLR uses the terms individual Provider and organization Provider to distinguish between the two types.
+A *Provider* is a person / individual or an organization acting in a role. The PLR uses the terms Individual Provider and Organizational Provider to distinguish between the two types.
 Examples:
 
 * Persons / Individual Provider – Dr. Sara Scalpel in the role of medical doctor.
-* Organization Provider – Local Drug Mart #44 in the role of a Pharmacy.
+* Organizational Provider – Local Drug Mart #44 in the role of a Pharmacy.
 
 The information recorded for Providers consists of unique identifiers, names, addresses, telecommunication numbers, electronic addresses, expertise, credentials, statuses, conditions, notes, relationships, disciplinary actions, and work locations. Information for Individual Providers also includes demographic details.
 
