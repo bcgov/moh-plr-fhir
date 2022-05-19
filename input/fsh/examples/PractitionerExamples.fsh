@@ -114,7 +114,7 @@ InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
 * practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
 * organization.extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
-* organization.extension[0].valueCodeableConcept.coding.system = "http://hl7.org/fhir/bc-plr/bc-relationship-type-code"
+* organization.extension[0].valueCodeableConcept.coding.system = $PLRRelationshipType
 * organization.extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
 * period.start = "2000-01-01"
 * organization.reference = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00002035.BC.PRS/$entityQuery"
@@ -125,7 +125,7 @@ Description: "Example of the PractitionerRole for Practitioner to Location relat
 * practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
 //* practitioner.type = "Practitioner"
 * location.extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension"
-* location.extension[0].valueCodeableConcept.coding.system = "http://hl7.org/fhir/bc-plr/bc-location-relationship-type-code"
+* location.extension[0].valueCodeableConcept.coding.system = $PLRLocationRelationshipType
 * location.extension[0].valueCodeableConcept.coding.code = #WORKSAT
 * period.start = "2000-01-01"
 * location.reference = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00034523.BC.PRS/$entityQuery"
