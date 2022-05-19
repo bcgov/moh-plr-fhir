@@ -36,7 +36,7 @@ GET Organization/IPC.00012343.BC.PRS
 GET PractitionerRole?organization=Organization/IPC.00012343.BC.PRS  
 GET PractitionerRole/Relationship1-ID  
 GET PractitionerRole/Relationship2-ID  
-GET OrganizationAffiliation?organization=Organization/IPC.00012343.BC.PRS  
+GET OrganizationAffiliation?participatingOrganization=Organization/IPC.00012343.BC.PRS  
 GET OrganizationAffiliation/Relationship3-ID  
 GET OrganizationAffiliation/Relationship4-ID  
 
