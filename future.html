@@ -206,6 +206,48 @@ This specification is currently published as a Draft Standard on the ministry gi
   <li>Publication to BC’s FHIR Portal</li>
 </ul>
 
+<h3 id="supporting-resource-restful-interactions">Supporting Resource RESTful Interactions</h3>
+
+<p>The initial design covers all the use cases where the user is interested in recieving or updating the full  Provider (Individual or Organizational) or Facility dataset.  As a result several FHIR resources are returned or submitted in a Bundle; those resources represent the full dataset.  A resource based RESTful approach could be implemented if there is enough interest to warrant further design and development.</p>
+
+<p>E.g. The currrent operations, i.e. Practitioner/IPC/$entityQuery, Location/IFC/$entityQuery and Organization/IPC/$entityQuery could be broken down into more atomic, resource focused, interactions.</p>
+
+<p>For example, the full Provider returned by the following in a Bundle with several resources</p>
+
+<p>GET Practitioner/IPC.00012343.BC.PRS/$entityQuery</p>
+
+<p>could also be accomplished by a more ‘chatty’ interfaces:</p>
+
+<p>GET Practitioner/IPC.00012343.BC.PRS<br />
+GET PractitionerRole/IPC.00012343.BC.PRS**<br />
+GET PractitionerRole?practitioner=Practitioner/IPC.00012343.BC.PRS*<br />
+GET PractitionerRole/Relationship1-ID**<br />
+GET PractitionerRole/Relationship2-ID**<br />
+GET PractitionerRole/Relationship3-ID**</p>
+
+<p>Or in the case of Organization:</p>
+
+<p>GET Organization/IPC.00012343.BC.PRS<br />
+GET PractitionerRole?organization=Organization/IPC.00012343.BC.PRS<br />
+GET PractitionerRole/Relationship1-ID<br />
+GET PractitionerRole/Relationship2-ID<br />
+GET OrganizationAffiliation?organization=Organization/IPC.00012343.BC.PRS<br />
+GET OrganizationAffiliation/Relationship3-ID<br />
+GET OrganizationAffiliation/Relationship4-ID</p>
+
+<p>The same applies to Locations:</p>
+
+<p>GET Location/12343<br />
+GET PractitionerRole?location=Location/12343<br />
+GET PractitionerRole/Relationship1-ID<br />
+GET PractitionerRole/Relationship2-ID<br />
+GET OrganizationAffiliation?location=Location/12343<br />
+GET OrganizationAffiliation/Relationship3-ID<br />
+GET OrganizationAffiliation/Relationship4-ID</p>
+
+<p>* this type of query returns all the PractitionerRoles related to a Practitioner<br />
+** this type of query reutrns a single PractitionerRole related to a Practitioner</p>
+
 
 
 
@@ -231,7 +273,7 @@ This specification is currently published as a Draft Standard on the ministry gi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 19, 2022 16:14+0000">2022-05-19</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 19, 2022 19:35+0000">2022-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
