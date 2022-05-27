@@ -1,19 +1,15 @@
 Instance: Example-Practitioner
 InstanceOf: BCPractitioner
 Description: "Example of generic Practitioner."
-* id = "IPC.00147422.BC.PRS"
 
 // demographics
-* extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
-* extension[0].valuePeriod.start = "2012-12-07"
+* extension[0] = Example-Demographics-1
 * gender = #male
 * birthDate = "1934-01-02"
-* extension[1].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthplace-extension"
-* extension[1].valueAddress.city = "Ottawa"
-* extension[1].valueAddress.country = "CA"
+* extension[1] = Example-Demographics-2
 
 // identifier
-* identifier[0] = Example-Identifier-IPC
+* identifier[0] = Example-Identifier-IPC-Ind
 * identifier[1] = Example-Identifier-CPN
 * identifier[2] = Example-Identifier-CPSID
 
@@ -21,62 +17,19 @@ Description: "Example of generic Practitioner."
 * name = Example-Name-Official
 
 // license status
-* extension[2].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension"
-* extension[2].extension[0].url = "statusCode"
-* extension[2].extension[0].valueCodeableConcept.coding.system = $RoleStatus
-* extension[2].extension[0].valueCodeableConcept.coding.code = #active
-* extension[2].extension[1].url = "period"
-* extension[2].extension[1].valuePeriod.start = "2022-02-07"
-* extension[2].extension[1].valuePeriod.end = "2023-02-07"
-* extension[2].extension[2].url = "statusReasonCode"
-* extension[2].extension[2].valueCodeableConcept.coding.system = $PLRStatusReason
-* extension[2].extension[2].valueCodeableConcept.coding.code = #GS
+* extension[2] = Example-License-Status
 
 // disciplinary action
-* extension[3].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension"
-* extension[3].extension[0].url = "identifier"
-* extension[3].extension[0].valueIdentifier.value = "DA-1"
-* extension[3].extension[1].url = "description"
-* extension[3].extension[1].valueString = "Description"
-* extension[3].extension[2].url = "archiveDate"
-* extension[3].extension[2].valueDateTime = "2000-01-01"
-* extension[3].extension[3].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
-* extension[3].extension[3].valuePeriod.start = "1998-01-02"
-* extension[3].extension[4].url = "displayFlag"
-* extension[3].extension[4].valueBoolean = false
+* extension[3] = Example-DisciplinaryAction
 
 // note
-* extension[4].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension"
-* extension[4].extension[0].url = "identifier"
-* extension[4].extension[0].valueIdentifier.value = "Note-2"
-* extension[4].extension[1].url = "text"
-* extension[4].extension[1].valueString = "Note text"
-* extension[4].extension[2].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
-* extension[4].extension[2].valuePeriod.start = "1998-01-02"
+* extension[4] = Example-Note
 
 // conditions
-* extension[5].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-condition-extension"
-* extension[5].extension[0].url = "identifier"
-* extension[5].extension[0].valueIdentifier.value = "Condition-1"
-* extension[5].extension[1].url = "restriction"
-* extension[5].extension[1].valueBoolean = false
-* extension[5].extension[2].url = "restrictionText"
-* extension[5].extension[2].valueString = "Restriction text"
-* extension[5].extension[3].url = "code"
-* extension[5].extension[3].valueCodeableConcept.coding.system = $PLRConditionType
-* extension[5].extension[3].valueCodeableConcept.coding.code = #EXP
-* extension[5].extension[4].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
-* extension[5].extension[4].valuePeriod.start = "1998-01-02"
+* extension[5] = Example-Condition
 
 // telephone
-* telecom.period.start = "2000-02-02"
-* telecom.system = #phone
-* telecom.extension[areaCode].valueString = "250"
-* telecom.extension[local].valueString = "111-2234"
-* telecom.extension[extension].valueString = "3432"
-* telecom.extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* telecom.extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* telecom.extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
+* telecom = Example-ContactPoint-Phone
 
 // address
 * address = Example-Address-Valid
@@ -88,85 +41,106 @@ Description: "Example of generic Practitioner."
 * qualification.extension[qualificationExtension].extension[equivalencyFlag].valueBoolean = false
 * qualification.extension[qualificationExtension].extension[registrationNumber].valueString = "Registration No."
 * qualification.extension[qualificationExtension].extension[issuedDate].valueDateTime = "2000-02-03"
-* qualification.issuer.reference = "#grantingInstitution"
+* qualification.issuer.reference = "#grantingInstitution"	
 * contained[QualificationOrganization] = Example-Credential-Granting-Institution
 * contained[QualificationOrganization].id = "grantingInstitution"
 
 // language
+* communication = Example-Language
+
+Instance: Example-AddPractitioner-Practitioner
+InstanceOf: BCPractitioner
+Description: "Example of a BC practitioner that is being created."
+* extension[status].extension[statusCode].valueCodeableConcept = $RoleStatus#active
+* extension[status].extension[statusReasonCode].valueCodeableConcept = $PLRStatusReason#PRAC
+* extension[status].extension[statusClassCode].valueCodeableConcept = $PLRStatusClass#LIC
+* extension[status].extension[endReasonCodeAndOwner].extension[custodianId].valueIdentifier.assigner.display = "RNA"
+* extension[status].extension[period].valuePeriod.start = "2000-01-01"
+* extension[status].extension[period].valuePeriod.end = "2020-01-01"
+* extension[demographicsEndReason].extension[custodianId].valueIdentifier.assigner.display = "RNA"
+* extension[demographicsEndReason].extension[endReasonCode].valueCodeableConcept = $PLRStatusReason#PRAC
+* extension[deathDate].valueDateTime = "2000-02-01"
+* extension[birthplace].valueAddress.state = "AL"
+* extension[birthplace].valueAddress.country = "US"
+* extension[disciplinaryAction].extension[identifier].valueIdentifier.system = $PLRDisciplinaryActionID
+* extension[disciplinaryAction].extension[identifier].valueIdentifier.value = "DISCIPLINARY_ACTION_TEST1"
+* extension[disciplinaryAction].extension[description].valueString = "DISCIPLINARYACTION_DESCRIPTIONTXT_1"
+* extension[disciplinaryAction].extension[period].valuePeriod.start = "1950-11-20T00:00:00-07:00"
+* extension[disciplinaryAction].extension[period].valuePeriod.end = "2020-01-01"
+* extension[disciplinaryAction].extension[archiveDate].valueDateTime = "2020-01-01"
+* extension[disciplinaryAction].extension[displayFlag].valueBoolean = true
+* extension[confidentiality].extension[code].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
+* extension[confidentiality].extension[period].valuePeriod.start = "2000-01-01"
+* extension[confidentiality].extension[period].valuePeriod.end = "2020-01-01"
+* extension[note].extension[identifier].valueIdentifier.system = $PLRNoteID
+* extension[note].extension[identifier].valueIdentifier.value = "noteID1"
+* extension[note].extension[text].valueString = "Note text sample"
+* extension[note].extension[period].valuePeriod.start = "2000-01-01"
+* extension[note].extension[period].valuePeriod.end = "2020-01-01"
+* extension[condition].extension[identifier].valueIdentifier.system = $PLRConditionType
+* extension[condition].extension[identifier].valueIdentifier.value = "23"
+* extension[condition].extension[period].valuePeriod.start = "2000-01-01"
+* extension[condition].extension[period].valuePeriod.end = "2020-01-01"
+* extension[condition].extension[restriction].valueBoolean = true
+* extension[condition].extension[restrictionText].valueString = "CONDITION_RESTRICTION_EXPLANATION TEXT"
+* extension[condition].extension[code].valueCodeableConcept = $PLRConditionType#LOC
+* extension[relationship].extension[period].valuePeriod.start = "2000-01-01"
+* extension[relationship].extension[period].valuePeriod.end = "2020-01-01"
+* extension[relationship].extension[type].valueCodeableConcept = $PLRRelationshipType#LOC
+* extension[relationship].extension[practitioner].valueReference = Reference(Example-AddPractitioner-RelatedPractitioner)
+* extension[demographicsPeriod].valuePeriod.start = "2000-01-01"
+* extension[demographicsPeriod].valuePeriod.end = "2020-01-01"
+* contained[QualificationOrganization] = Example-Qualification-Organization
+* contained[QualificationOrganization].id = "qualificationOrganization"
+* identifier = Example-Identifier-CPSID
+* active = true
+* name.family = "KELASEY"
+* name.given = "SONYA"
+* name.given[1] = "NAME PRSNSECONDGIVENNAMETXT"
+* name.given[2] = "NAME PRSNTHIRDGIVENNAMETXT"
+* name.prefix = "PRSNPREFIX"
+* name.suffix = "PRSNSUFFIX"
+* name.period.start = "2000-01-01"
+* name.period.end = "2020-01-01"
+* name.use = #official
+
+* telecom[0].system = #phone
+* telecom[0].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #HC
+* telecom[0].value = "2507654333"
+* telecom[0].period.start = "2000-01-01"
+* telecom[0].period.end = "2020-01-01"
+
+* telecom[1].system = #email
+* telecom[1].value = "hey@day.com"
+* telecom[1].period.start = "2000-01-01"
+* telecom[1].period.end = "2020-01-01"
+* telecom[1].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
+* telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
+* address = Example-Address-Valid
+* gender = #female
+* birthDate = "1951-11-12"
+* birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
+* qualification.code = $SCPQual#BD
+* qualification.code.text = "CREDENTIAL_CREDENTIALDESIGNATIONTXT"
+* qualification.period.start = "2000-01-01"
+* qualification.period.end = "2020-01-01"
+* qualification.issuer.reference = "#qualificationOrganization"
+* qualification.extension[qualificationExtension].extension[designation].valueString = "designation"
+* qualification.extension[qualificationExtension].extension[equivalencyFlag].valueBoolean = true
+* qualification.extension[qualificationExtension].extension[registrationNumber].valueString = "registration number"
+* qualification.extension[qualificationExtension].extension[issuedDate].valueDateTime = "2000-01-01"
 * communication.coding = $PLRLanguage#EN
 * communication.extension[period].valuePeriod.start = "2000-01-01"
 * communication.extension[languageSource].valueString = "Language Source"
 
 
-Instance: Example-PractitionerRole-1
-InstanceOf: BCPractitionerRole
-Description: "Example of the PractitionerRole with Speciality."
-* practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-* organization.display = "BC"
-* code = $SCPType#MD
-* specialty = http://snomed.info/sct#419772000
-* specialty.extension[period].valuePeriod.start = "2000-01-01"
-* specialty.extension[period].valuePeriod.end = "2020-01-01"
-* specialty.extension[specialtySource].valueString = "Expertise source"
+Instance: Example-AddPractitioner-RelatedPractitioner
+InstanceOf: BCPractitioner
+Description: "Example of a practitioner that has a relationship to the example created practitioner."
+* extension[demographicsPeriod].valuePeriod.start = "2000-01-01"
+* identifier = Example-Identifier-RNID
+* name.text = "23"
 
-Instance: Example-PractitionerRole-2
-InstanceOf: BCPractitionerRole
-Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
-* practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-* organization.extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
-* organization.extension[0].valueCodeableConcept.coding.system = $PLRRelationshipType
-* organization.extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
-* period.start = "2000-01-01"
-* organization.reference = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00002035.BC.PRS/$entityQuery"
-
-Instance: Example-PractitionerRole-3
-InstanceOf: BCPractitionerRole
-Description: "Example of the PractitionerRole for Practitioner to Location relationship."
-* practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-//* practitioner.type = "Practitioner"
-* location.extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension"
-* location.extension[0].valueCodeableConcept.coding.system = $PLRLocationRelationshipType
-* location.extension[0].valueCodeableConcept.coding.code = #WORKSAT
-* period.start = "2000-01-01"
-* location.reference = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00034523.BC.PRS/$entityQuery"
-
-Instance: Example-Query-Response-Bundle-with-Individual-Provider
-InstanceOf: Bundle
-Description: "An example search response bundle."
-* type = #searchset
-* timestamp = "2022-02-02T13:23:13.000-08:00"
-* total = 1
-* link.relation = "self"
-* link.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC32/$entityQuery"
-* entry[0].fullUrl = "urn:uuid:7bf3d69a-482a-472e-9003-2ade5e0ccd11"
-* entry[0].resource = Example-OperationOutcome-7049
-* entry[0].search.mode = #outcome
-* entry[1].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00000023.BC.PRS/$entityQuery"
-* entry[1].search.mode = #match
-* entry[1].resource = Example-Individual-Provider-Bundle
-
-Instance: Example-Individual-Provider-Bundle
-InstanceOf: BCPractitionerBundle
-Description: "An example of a Provider Bundle, i.e. A Practitioner and PractitionerRole in a Bundle that represents a PLR Individual Provider."
-* type = #transaction
-* timestamp = "2022-02-02T13:23:13.000-08:00"
-* entry[Practitioner].fullUrl = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-* entry[0].resource = Example-Practitioner
-* entry[0].request.method = #POST
-* entry[0].request.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC/$entityQuery"
-
-* entry[1].resource = Example-PractitionerRole-1
-* entry[1].fullUrl = "urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c"
-* entry[2].resource = Example-PractitionerRole-2
-* entry[2].fullUrl = "urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03"
-* entry[3].resource = Example-PractitionerRole-3
-* entry[3].fullUrl = "urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5"
-
-
-Instance: Example-Credential-Granting-Institution
-InstanceOf: BCOrganization
-Description: "Example of an credential granting institution."
-* name = "University of Calgary"
-* address.city = "CALGARY"
-* address.state = "AB"
-* address.country = "CA"

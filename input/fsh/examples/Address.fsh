@@ -16,3 +16,4 @@ Usage: #inline
 * extension[validationStatus].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-address-validation-status-extension"
 * extension[validationStatus].valueCodeableConcept.coding.system = $PLRAddressValStatus
 * extension[validationStatus].valueCodeableConcept.coding.code = #V
+* period.start = "2000-01-01"

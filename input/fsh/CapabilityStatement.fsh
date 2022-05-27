@@ -25,7 +25,7 @@ InstanceOf: CapabilityStatement
 * rest[0].resource[0].supportedProfile[2] = Canonical(BCLocationBundle)
 * rest[0].resource[0].interaction[0].code = #create
 * rest[0].resource[0].interaction[0].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[0].resource[0].interaction[0].documentation = "Client applications shall support the three different types of Distribution transactions."
+* rest[0].resource[0].interaction[0].documentation = "Client applications shall support the three different types of Distributions."
 
 Instance: BCPLRServerCapabilityStatement
 InstanceOf: CapabilityStatement

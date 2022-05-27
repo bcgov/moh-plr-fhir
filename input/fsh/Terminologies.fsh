@@ -18,8 +18,9 @@ Alias: $PracRoleCode = https://fhir.infoway-inforoute.ca/ValueSet/healthcareprov
 Alias: $SCPType = https://fhir.infoway-inforoute.ca/CodeSystem/scptype
 
 // expertise 
-Alias: $PracSpecialty = https://fhir.infoway-inforoute.ca/ValueSet/practitionerspecialty
- 
+//Alias: $PracSpecialty = https://fhir.infoway-inforoute.ca/ValueSet/practitionerspecialty
+Alias: $PracSpecialty = https://fhir.infoway-inforoute.ca/CodeSystem/scpqual 
+
 // credentials value set
 Alias: $PracQualification = https://fhir.infoway-inforoute.ca/ValueSet/qualifiedroletype
 

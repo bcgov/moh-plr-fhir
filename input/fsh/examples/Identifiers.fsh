@@ -7,12 +7,21 @@ Usage: #inline
 * type.coding.code = #CPN
 * period.start = "2000-01-01"
 
-Instance: Example-Identifier-IPC
+Instance: Example-Identifier-IPC-Ind
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
 * type.coding.system = $PLRIdentifierType
 * value = "IPC.00147422.BC.PRS"
+* type.coding.code = #IPC
+* period.start = "2000-01-01"
+
+Instance: Example-Identifier-IPC-Org
+InstanceOf: Identifier
+Description: "Identifier example for IPC."
+Usage: #inline
+* type.coding.system = $PLRIdentifierType
+* value = "IPC.00147433.BC.PRS"
 * type.coding.code = #IPC
 * period.start = "2000-01-01"
 

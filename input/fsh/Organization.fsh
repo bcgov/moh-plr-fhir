@@ -48,12 +48,12 @@ Parent: Bundle
 Id: bc-organization-bundle
 Description: "A bundle that submits Organization and OrganizationAffiliation information."
 * type 1..1 MS
-* type = #transaction (exactly)
+* type = #collection (exactly)
 * entry 1..*
 * entry.resource 1..1 MS
 * entry.fullUrl 1..1 MS
 * entry.search 0..0
-* entry.request 1..1 MS
+* entry.request 0..1 MS
 * entry.response 0..0
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
@@ -64,41 +64,4 @@ Description: "A bundle that submits Organization and OrganizationAffiliation inf
 * entry[OrganizationAffiliation].resource only BCOrganizationAffiliation
 * entry[PractitionerRole].resource only BCPractitionerRole
 
-Instance: Example-AddOrganization-Bundle
-InstanceOf: BCOrganizationBundle
-Description: "Example of a Bundle of resources that are needed to create an Organization."
-* type = #transaction
-* entry[0].fullUrl = "http://plr.moh.bc.ca/fhir/Organization/12345"
-* entry[0].resource = Example-AddOrganization-Organization
-* entry[0].request.method = #POST
-* entry[0].request.url = "http://plr.moh.bc.ca/fhir/Organization"
-* entry[1].fullUrl = "http://plr.moh.bc.ca/fhir/OrganizationAffiliation/12345"
-* entry[1].resource = Example-AddOrganization-OrganizationAffiliation
-* entry[1].request.method = #POST
-* entry[1].request.url = "http://plr.moh.bc.ca/fhir/OrganizationAffiliation"
 
-Instance: Example-AddOrganization-Organization
-InstanceOf: BCOrganization
-Description: "Example of an Organization that is being created."
-* identifier[0] = Example-Identifier-CPN
-* identifier[1] = Example-Identifier-IFC
-* identifier[2] = Example-Identifier-ORGID
-* name = "Kelowna Clinic"
-* name.extension[use].valueCode = #official
-* name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
-* address = Example-Address-Valid
-* telecom[0].system = #phone
-* telecom[0].value = "7786428585"
-* telecom[0].period.start = "2014-01-31T00:00:00-07:00"
-* telecom[0].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
-* active = true
-
-Instance: Example-AddOrganization-OrganizationAffiliation
-InstanceOf: BCOrganizationAffiliation
-Description: "Example of a relationship between an Organization and its Locations (facilities)."
-* active = true
-* period.start = "1989-04-04T00:00:00-07:00"
-* organization = Reference(Example-AddOrganization-Organization)
-* location = Reference(Example-AddOrganization-Location)

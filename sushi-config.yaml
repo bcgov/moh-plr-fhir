@@ -34,11 +34,13 @@ menu:
     All: artifacts.html
     Capabilities: artifacts.html#1
     Operations: artifacts.html#2
-    Practitioner: artifacts.html#3
-    Organization: artifacts.html#4
-    Facility: artifacts.html#5
-    Common: artifacts.html#6
-    Datatypes: artifacts.html#7
+    Operations Response Examples: artifacts.html#3
+    Bundles: artifacts.html#4
+    Practitioner: artifacts.html#5
+    Organization: artifacts.html#6
+    Facility: artifacts.html#7
+    Common: artifacts.html#8
+    Datatypes: artifacts.html#9
   Glossary: glossary.html
   Credits: credits.html
   
@@ -75,6 +77,12 @@ groups:
       - OperationDefinition/bc-extended-practitioner-query
       - OperationDefinition/bc-extended-organization-query
       - OperationDefinition/bc-extended-location-query
+  OperationsResponseExamples:
+    name: Operations Response Examples
+    description: Operation response examples
+    resources:
+      - Bundle/Example-Query-Response-Bundle-with-Individual-Provider
+      - Bundle/Example-Query-Response-Bundle-with-Organizational-Provider
   Bundles:
     name: Bundles
     description: Distribution/Maintain and Batch Bundles
@@ -85,6 +93,7 @@ groups:
       - StructureDefinition/bc-location-bundle
       - Bundle/Example-Batch-Bundle
       - Bundle/Example-AddPractitioner-Bundle
+      - Bundle/Example-DistributePractitioner-Bundle
       - Bundle/Example-AddOrganization-Bundle
       - Bundle/Example-AddLocation-Bundle
   Practitioner:
@@ -96,11 +105,6 @@ groups:
       - StructureDefinition/bc-practitioner-deathdate-extension
       - StructureDefinition/bc-birthtime-extension
       - StructureDefinition/bc-birthplace-extension
-      - StructureDefinition/bc-practitioner-confidentiality-extension
-      - StructureDefinition/bc-practitioner-relationship-extension
-      - StructureDefinition/bc-practitioner-disciplinary-action-extension
-      - StructureDefinition/bc-practitioner-condition-extension
-      - StructureDefinition/bc-practitioner-qualification-issue-date-extension
       - Practitioner/Example-AddPractitioner-Practitioner
       - Practitioner/Example-AddPractitioner-RelatedPractitioner
       - PractitionerRole/Example-AddPractitioner-PractitionerRole
@@ -111,8 +115,7 @@ groups:
     resources:
       - StructureDefinition/bc-organization
       - StructureDefinition/bc-organization-affiliation
-      - Organization/Example-AddOrganization-Organization
-      - OrganizationAffiliation/Example-AddOrganization-OrganizationAffiliation
+      - OrganizationAffiliation/Example-OrganizationAffiliation-1
   Facility:
     name: Facility
     description: Artifacts associated with Facilities
@@ -122,7 +125,7 @@ groups:
       - StructureDefinition/bc-facility-community-health-service-area-extension
       - StructureDefinition/bc-facility-mailing-address-extension
       - Location/Example-AddPractitioner-WorkLocation
-      - Location/Example-AddOrganization-Location
+      - Location/Example-Location
   Common:
     name: Common
     description: Artifacts used across all groupings
@@ -138,6 +141,11 @@ groups:
       - StructureDefinition/bc-relationship-type-extension  
       - StructureDefinition/bc-location-relationship-type-extension  
       - StructureDefinition/bc-address-validation-status-extension
+      - StructureDefinition/bc-practitioner-confidentiality-extension
+      - StructureDefinition/bc-practitioner-relationship-extension
+      - StructureDefinition/bc-practitioner-disciplinary-action-extension
+      - StructureDefinition/bc-practitioner-condition-extension
+      - StructureDefinition/bc-practitioner-qualification-issue-date-extension
 Datatypes:
     name: Datatypes
     description: Artifacts associated with datatypes
