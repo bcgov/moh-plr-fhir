@@ -5,17 +5,17 @@
   <meta>
     <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle"/>
   </meta>
-  <type value="transaction"/>
+  <type value="collection"/>
   <entry>
-    <fullUrl value="http://plr.moh.bc.ca/fhir/Organization/12345"/>
+    <fullUrl value="urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"/>
     <resource>
       <Organization>
-        <id value="Example-AddOrganization-Organization"/>
+        <id value="Example-Organization-1"/>
         <meta>
           <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-AddOrganization-Organization" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization.html">BCOrganization</a></p></div><p><b>identifier</b>: CPN: CPN.00147422.BC.PRS, IFC: IFC.00147422.BC.PRS, ORGID: 123123123</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-Organization-1" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization.html">BCOrganization</a></p></div><p><b>identifier</b>: CPN: CPN.00147422.BC.PRS, IPC: IPC.00147433.BC.PRS, ORGID: 123123123</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>
         </text>
         <identifier>
           <type>
@@ -33,10 +33,10 @@
           <type>
             <coding>
               <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
-              <code value="IFC"/>
+              <code value="IPC"/>
             </coding>
           </type>
-          <value value="IFC.00147422.BC.PRS"/>
+          <value value="IPC.00147433.BC.PRS"/>
           <period>
             <start value="2000-01-01"/>
           </period>
@@ -104,40 +104,54 @@
           <state value="BC"/>
           <postalCode value="V6P7B8"/>
           <country value="CA"/>
+          <period>
+            <start value="2000-01-01"/>
+          </period>
         </address>
       </Organization>
     </resource>
-    <request>
-      <method value="POST"/>
-      <url value="http://plr.moh.bc.ca/fhir/Organization"/>
-    </request>
   </entry>
   <entry>
-    <fullUrl value="http://plr.moh.bc.ca/fhir/OrganizationAffiliation/12345"/>
+    <fullUrl value="urn:uuid:f41c4f5f-43eb-497c-8baa-e800fe3fe4fa"/>
     <resource>
       <OrganizationAffiliation>
-        <id value="Example-AddOrganization-OrganizationAffiliation"/>
+        <id value="Example-OrganizationAffiliation-1"/>
         <meta>
           <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-AddOrganization-OrganizationAffiliation" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization-affiliation.html">BCOrganizationAffiliation</a></p></div><p><b>active</b>: true</p><p><b>period</b>: 1989-04-04 12:00:00-0700 --&gt; (ongoing)</p><p><b>organization</b>: <a href="#Organization_Example-AddOrganization-Organization">See above (Organization/Example-AddOrganization-Organization)</a></p><p><b>location</b>: <a href="Location-Example-AddOrganization-Location.html">Location/Example-AddOrganization-Location</a> "General Hospital"</p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-OrganizationAffiliation-1" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization-affiliation.html">BCOrganizationAffiliation</a></p></div><p><b>active</b>: true</p><p><b>period</b>: 1989-04-04 12:00:00-0700 --&gt; (ongoing)</p><p><b>organization</b>: <a href="#Organization_Example-Organization-1">See above (urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf)</a></p><p><b>location</b>: <span></span></p></div>
         </text>
         <active value="true"/>
         <period>
           <start value="1989-04-04T00:00:00-07:00"/>
         </period>
         <organization>
-          <reference value="Organization/Example-AddOrganization-Organization"/>
+          <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
+            <valueCodeableConcept>
+              <coding>
+                <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code"/>
+                <code value="DEPTOF"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <reference value="urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"/>
         </organization>
         <location>
-          <reference value="Location/Example-AddOrganization-Location"/>
+          <identifier>
+            <type>
+              <coding>
+                <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
+                <code value="IFC"/>
+              </coding>
+            </type>
+            <value value="IFC.00147422.BC.PRS"/>
+            <period>
+              <start value="2000-01-01"/>
+            </period>
+          </identifier>
         </location>
       </OrganizationAffiliation>
     </resource>
-    <request>
-      <method value="POST"/>
-      <url value="http://plr.moh.bc.ca/fhir/OrganizationAffiliation"/>
-    </request>
   </entry>
 </Bundle>

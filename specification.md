@@ -55,7 +55,7 @@ There are a number of use cases that support the existing PLR functionality:
 
 #### Distributions
 
-A Distribution is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.  The distribution is sent from PLR to a client application by sending a transaction (a FHIR Bundle of type 'transaction') via a RESTful PUT to a client nominated endpoint URL.  The transaction Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity (see [FHIR Transaction Processing Rules](http://hl7.org/fhir/http.html#trules)).  The transaction Bundle includes one of the following sets:
+A Distribution is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.  The distribution is sent from PLR to a client application by sending a Bundle (of type 'collection') via a RESTful PUT to a client nominated endpoint URL.  The Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity.  The Bundle includes one of the following sets:
 
 1.	PractitionerRole(s) and Practitioner;
 2.	OrganizationAffiliation(s), PractitionerRole(s) and Organization;
@@ -70,16 +70,16 @@ The response to a distribution SHALL be HTTP 200 or 201 OK.  Anything else and t
 #### Maintain
 Maintain Provider and Facility will be exactly like Distributions above, but the interaction we be directed to PLR rather than directed to a client's sytem.  The rules for Distributions apply to Maintain Bundles.
 
-The PLR FHIR Server response will be a Bundle with type set to “transaction- response” that contains one entry for each entry in the request, in the same order, with the outcome of processing the entry. A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.
+The PLR FHIR Server response will be a Bundle with type set to “collection” that contains one entry for each entry in the request, in the same order, with the outcome of processing the entry. A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.
 
 #### Batch
-Batch also uses Bundles, but a batch Bundle (Bundle.type = 'batch'), that wraps a number of transaction Bundles.  A batch Bundle therefore allows for many independent transactions to be sent in a single operation.  The batch Bundle must contain at least one or more of:
+Batch also uses Bundles, but a batch Bundle (Bundle.type = 'batch'), that wraps a number of Bundles.  A batch Bundle therefore allows for many independent transactions to be sent in a single operation.  The batch Bundle must contain at least one or more of:
 
-1.	a transaction Bundle (with PractitionerRole(s) and Practitioner) to add/update an Individual Provider
-2.	a transaction Bundle (with OrganizationAffiliation(s), PractitionerRole(s) and Organization) to add/update an Organizational Provider
-3.	a transaction Bundle (with OrganizationAffiliations(s), PractitionerRole(s), and Location) to add/update a Facility
+1.	a collection-Bundle (with PractitionerRole(s) and Practitioner) to add/update an Individual Provider
+2.	a collection-Bundle (with OrganizationAffiliation(s), PractitionerRole(s) and Organization) to add/update an Organizational Provider
+3.	a collection-Bundle (with OrganizationAffiliations(s), PractitionerRole(s), and Location) to add/update a Facility
 
-The response Bundle is similarly structured to the request, populating and echoing back the results of each contained transaction Bundle.  The only difference is that OperationOutcome SHALL also be included for each transaction Bundle for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn't processed due to validation or non-business errors.
+The response Bundle is similarly structured to the request, populating and echoing back the results of each contained Bundle.  The only difference is that OperationOutcome SHALL also be included for each collection-Bundle for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn't processed due to validation or non-business errors.
 
 #### Query
 PLR FHIR has defined a set of FHIR Operations to search for Providers and Facilities.  These are the only queries that are supported by PLR.  RESTful queries on the support resources are not allowed.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR's case, the server would need to include resources that make up the full Provider and additionally return related Providers or Facilities.  Queries using PractitionerRole and OrganizationAffiliation are not permitted and unnecessary.
@@ -107,7 +107,7 @@ The parameters for the $extendedQuery operation will be the search parameters li
 
 ##### Example Search Set Response Bundle
 
-Below is a sample search set response bundle.  It shows the structure at a highlevel, as described on this web page.  If this was an Organization search the structure is the same, however the transaction Bundles would include Organization and OrganizationAffilication(s).
+Below is a sample search set response bundle.  It shows the structure at a highlevel, as described on this web page.  If this was an Organization search the structure is the same, however the Bundles would include Organization and OrganizationAffilication(s).
 
 {::options parse_block_html="false" /}
 <figure>

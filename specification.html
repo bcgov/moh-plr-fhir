@@ -118,19 +118,25 @@
         <a href="artifacts.html#2">Operations</a>
       </li>
       <li>
-        <a href="artifacts.html#3">Practitioner</a>
+        <a href="artifacts.html#3">Operations Response Examples</a>
       </li>
       <li>
-        <a href="artifacts.html#4">Organization</a>
+        <a href="artifacts.html#4">Bundles</a>
       </li>
       <li>
-        <a href="artifacts.html#5">Facility</a>
+        <a href="artifacts.html#5">Practitioner</a>
       </li>
       <li>
-        <a href="artifacts.html#6">Common</a>
+        <a href="artifacts.html#6">Organization</a>
       </li>
       <li>
-        <a href="artifacts.html#7">Datatypes</a>
+        <a href="artifacts.html#7">Facility</a>
+      </li>
+      <li>
+        <a href="artifacts.html#8">Common</a>
+      </li>
+      <li>
+        <a href="artifacts.html#9">Datatypes</a>
       </li>
     </ul>
   </li>
@@ -252,7 +258,7 @@ To show the relationship between two Individual Providers, the <a href="Structur
 
 <h4 id="distributions">Distributions</h4>
 
-<p>A Distribution is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.  The distribution is sent from PLR to a client application by sending a transaction (a FHIR Bundle of type ‘transaction’) via a RESTful PUT to a client nominated endpoint URL.  The transaction Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity (see <a href="http://hl7.org/fhir/http.html#trules">FHIR Transaction Processing Rules</a>).  The transaction Bundle includes one of the following sets:</p>
+<p>A Distribution is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.  The distribution is sent from PLR to a client application by sending a Bundle (of type ‘collection’) via a RESTful PUT to a client nominated endpoint URL.  The Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity.  The Bundle includes one of the following sets:</p>
 
 <ol>
   <li>PractitionerRole(s) and Practitioner;</li>
@@ -269,18 +275,18 @@ To show the relationship between two Individual Providers, the <a href="Structur
 <h4 id="maintain">Maintain</h4>
 <p>Maintain Provider and Facility will be exactly like Distributions above, but the interaction we be directed to PLR rather than directed to a client’s sytem.  The rules for Distributions apply to Maintain Bundles.</p>
 
-<p>The PLR FHIR Server response will be a Bundle with type set to “transaction- response” that contains one entry for each entry in the request, in the same order, with the outcome of processing the entry. A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.</p>
+<p>The PLR FHIR Server response will be a Bundle with type set to “collection” that contains one entry for each entry in the request, in the same order, with the outcome of processing the entry. A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.</p>
 
 <h4 id="batch">Batch</h4>
-<p>Batch also uses Bundles, but a batch Bundle (Bundle.type = ‘batch’), that wraps a number of transaction Bundles.  A batch Bundle therefore allows for many independent transactions to be sent in a single operation.  The batch Bundle must contain at least one or more of:</p>
+<p>Batch also uses Bundles, but a batch Bundle (Bundle.type = ‘batch’), that wraps a number of Bundles.  A batch Bundle therefore allows for many independent transactions to be sent in a single operation.  The batch Bundle must contain at least one or more of:</p>
 
 <ol>
-  <li>a transaction Bundle (with PractitionerRole(s) and Practitioner) to add/update an Individual Provider</li>
-  <li>a transaction Bundle (with OrganizationAffiliation(s), PractitionerRole(s) and Organization) to add/update an Organizational Provider</li>
-  <li>a transaction Bundle (with OrganizationAffiliations(s), PractitionerRole(s), and Location) to add/update a Facility</li>
+  <li>a collection-Bundle (with PractitionerRole(s) and Practitioner) to add/update an Individual Provider</li>
+  <li>a collection-Bundle (with OrganizationAffiliation(s), PractitionerRole(s) and Organization) to add/update an Organizational Provider</li>
+  <li>a collection-Bundle (with OrganizationAffiliations(s), PractitionerRole(s), and Location) to add/update a Facility</li>
 </ol>
 
-<p>The response Bundle is similarly structured to the request, populating and echoing back the results of each contained transaction Bundle.  The only difference is that OperationOutcome SHALL also be included for each transaction Bundle for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn’t processed due to validation or non-business errors.</p>
+<p>The response Bundle is similarly structured to the request, populating and echoing back the results of each contained Bundle.  The only difference is that OperationOutcome SHALL also be included for each collection-Bundle for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn’t processed due to validation or non-business errors.</p>
 
 <h4 id="query">Query</h4>
 <p>PLR FHIR has defined a set of FHIR Operations to search for Providers and Facilities.  These are the only queries that are supported by PLR.  RESTful queries on the support resources are not allowed.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR’s case, the server would need to include resources that make up the full Provider and additionally return related Providers or Facilities.  Queries using PractitionerRole and OrganizationAffiliation are not permitted and unnecessary.</p>
@@ -314,7 +320,7 @@ To show the relationship between two Individual Providers, the <a href="Structur
 
 <h5 id="example-search-set-response-bundle">Example Search Set Response Bundle</h5>
 
-<p>Below is a sample search set response bundle.  It shows the structure at a highlevel, as described on this web page.  If this was an Organization search the structure is the same, however the transaction Bundles would include Organization and OrganizationAffilication(s).</p>
+<p>Below is a sample search set response bundle.  It shows the structure at a highlevel, as described on this web page.  If this was an Organization search the structure is the same, however the Bundles would include Organization and OrganizationAffilication(s).</p>
 
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_searchset_bundle_practitioner_response.png" alt="BC FHIR Resources" />
@@ -461,7 +467,7 @@ To show the relationship between two Individual Providers, the <a href="Structur
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 19, 2022 22:20+0000">2022-05-19</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 27, 2022 21:15+0000">2022-05-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

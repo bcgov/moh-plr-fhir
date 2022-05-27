@@ -9,7 +9,7 @@
   "type": "batch",
   "entry": [
     {
-      "fullUrl": "http://plr.moh.bc.ca/fhir/Bundle/12345",
+      "fullUrl": "urn:uuid:afe28d6d-4db2-49aa-96af-c115cdfc108c",
       "resource": {
         "resourceType": "Bundle",
         "id": "Example-AddPractitioner-Bundle",
@@ -18,13 +18,13 @@
             "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"
           ]
         },
-        "type": "transaction",
+        "type": "collection",
         "entry": [
           {
-            "fullUrl": "http://plr.moh.bc.ca/fhir/Practitioner/12345",
+            "fullUrl": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87",
             "resource": {
               "resourceType": "Practitioner",
-              "id": "Example-AddPractitioner-Practitioner",
+              "id": "Example-Practitioner",
               "meta": {
                 "profile": [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"
@@ -33,13 +33,13 @@
               "contained": [
                 {
                   "resourceType": "Organization",
-                  "id": "qualificationOrganization",
+                  "id": "grantingInstitution",
                   "meta": {
                     "profile": [
                       "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"
                     ]
                   },
-                  "name": "CREDENTIAL_CREDENTIALGRANTINGINSTTXT",
+                  "name": "University of Calgary",
                   "address": [
                     {
                       "city": "CALGARY",
@@ -53,8 +53,14 @@
                 {
                   "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
                   "valuePeriod": {
-                    "start": "2000-01-01",
-                    "end": "2020-01-01"
+                    "start": "2012-12-07"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthplace-extension",
+                  "valueAddress": {
+                    "city": "Ottawa",
+                    "country": "CA"
                   }
                 },
                 {
@@ -71,46 +77,22 @@
                       }
                     },
                     {
+                      "url": "period",
+                      "valuePeriod": {
+                        "start": "2022-02-07",
+                        "end": "2023-02-07"
+                      }
+                    },
+                    {
                       "url": "statusReasonCode",
                       "valueCodeableConcept": {
                         "coding": [
                           {
                             "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-status-reason-code",
-                            "code": "PRAC"
+                            "code": "GS"
                           }
                         ]
                       }
-                    },
-                    {
-                      "url": "period",
-                      "valuePeriod": {
-                        "start": "2000-01-01",
-                        "end": "2020-01-01"
-                      }
-                    },
-                    {
-                      "url": "statusClassCode",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-status-class-code",
-                            "code": "LIC"
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "custodianId",
-                          "valueIdentifier": {
-                            "assigner": {
-                              "display": "RNA"
-                            }
-                          }
-                        }
-                      ],
-                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
                     }
                   ],
                   "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension"
@@ -118,65 +100,28 @@
                 {
                   "extension": [
                     {
-                      "url": "custodianId",
-                      "valueIdentifier": {
-                        "assigner": {
-                          "display": "RNA"
-                        }
-                      }
-                    },
-                    {
-                      "url": "endReasonCode",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-status-reason-code",
-                            "code": "PRAC"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
-                },
-                {
-                  "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-deathdate-extension",
-                  "valueDateTime": "2000-02-01"
-                },
-                {
-                  "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthplace-extension",
-                  "valueAddress": {
-                    "state": "AL",
-                    "country": "US"
-                  }
-                },
-                {
-                  "extension": [
-                    {
                       "url": "identifier",
                       "valueIdentifier": {
-                        "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-disciplinary-action-id",
-                        "value": "DISCIPLINARY_ACTION_TEST1"
+                        "value": "DA-1"
                       }
                     },
                     {
                       "url": "description",
-                      "valueString": "DISCIPLINARYACTION_DESCRIPTIONTXT_1"
+                      "valueString": "Description"
+                    },
+                    {
+                      "url": "archiveDate",
+                      "valueDateTime": "2000-01-01"
                     },
                     {
                       "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
                       "valuePeriod": {
-                        "start": "1950-11-20T00:00:00-07:00",
-                        "end": "2020-01-01"
+                        "start": "1998-01-02"
                       }
                     },
                     {
-                      "url": "archiveDate",
-                      "valueDateTime": "2020-01-01"
-                    },
-                    {
                       "url": "displayFlag",
-                      "valueBoolean": true
+                      "valueBoolean": false
                     }
                   ],
                   "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension"
@@ -184,44 +129,19 @@
                 {
                   "extension": [
                     {
-                      "url": "code",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
-                            "code": "N"
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
-                      "valuePeriod": {
-                        "start": "2000-01-01",
-                        "end": "2020-01-01"
-                      }
-                    }
-                  ],
-                  "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-confidentiality-extension"
-                },
-                {
-                  "extension": [
-                    {
                       "url": "identifier",
                       "valueIdentifier": {
-                        "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-note-id",
-                        "value": "noteID1"
+                        "value": "Note-2"
                       }
                     },
                     {
                       "url": "text",
-                      "valueString": "Note text sample"
+                      "valueString": "Note text"
                     },
                     {
                       "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
                       "valuePeriod": {
-                        "start": "2000-01-01",
-                        "end": "2020-01-01"
+                        "start": "1998-01-02"
                       }
                     }
                   ],
@@ -232,24 +152,16 @@
                     {
                       "url": "identifier",
                       "valueIdentifier": {
-                        "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-condition-type-code",
-                        "value": "23"
-                      }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
-                      "valuePeriod": {
-                        "start": "2000-01-01",
-                        "end": "2020-01-01"
+                        "value": "Condition-1"
                       }
                     },
                     {
                       "url": "restriction",
-                      "valueBoolean": true
+                      "valueBoolean": false
                     },
                     {
                       "url": "restrictionText",
-                      "valueString": "CONDITION_RESTRICTION_EXPLANATION TEXT"
+                      "valueString": "Restriction text"
                     },
                     {
                       "url": "code",
@@ -257,45 +169,50 @@
                         "coding": [
                           {
                             "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-condition-type-code",
-                            "code": "LOC"
+                            "code": "EXP"
                           }
                         ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+                      "valuePeriod": {
+                        "start": "1998-01-02"
                       }
                     }
                   ],
                   "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-condition-extension"
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
-                      "valuePeriod": {
-                        "start": "2000-01-01",
-                        "end": "2020-01-01"
-                      }
-                    },
-                    {
-                      "url": "practitioner",
-                      "valueReference": {
-                        "reference": "Practitioner/Example-AddPractitioner-RelatedPractitioner"
-                      }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
-                            "code": "LOC"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension"
                 }
               ],
               "identifier": [
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
+                        "code": "IPC"
+                      }
+                    ]
+                  },
+                  "value": "IPC.00147422.BC.PRS",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
+                },
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
+                        "code": "CPN"
+                      }
+                    ]
+                  },
+                  "value": "CPN.00147422.BC.PRS",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
+                },
                 {
                   "type": {
                     "coding": [
@@ -311,25 +228,15 @@
                   }
                 }
               ],
-              "active": true,
               "name": [
                 {
                   "use": "official",
-                  "family": "KELASEY",
+                  "family": "FamilyName",
                   "given": [
-                    "SONYA",
-                    "NAME PRSNSECONDGIVENNAMETXT",
-                    "NAME PRSNTHIRDGIVENNAMETXT"
-                  ],
-                  "prefix": [
-                    "PRSNPREFIX"
-                  ],
-                  "suffix": [
-                    "PRSNSUFFIX"
+                    "GivenName"
                   ],
                   "period": {
-                    "start": "2000-01-01",
-                    "end": "2020-01-01"
+                    "start": "2012-12-07"
                   }
                 }
               ],
@@ -337,26 +244,17 @@
                 {
                   "extension": [
                     {
-                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-communication-purpose-code",
-                            "code": "HC"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "system": "phone",
-                  "value": "2507654333",
-                  "period": {
-                    "start": "2000-01-01",
-                    "end": "2020-01-01"
-                  }
-                },
-                {
-                  "extension": [
+                      "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-area",
+                      "valueString": "250"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-local",
+                      "valueString": "111-2234"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-extension",
+                      "valueString": "3432"
+                    },
                     {
                       "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
                       "valueCodeableConcept": {
@@ -369,11 +267,9 @@
                       }
                     }
                   ],
-                  "system": "email",
-                  "value": "hey@day.com",
+                  "system": "phone",
                   "period": {
-                    "start": "2000-01-01",
-                    "end": "2020-01-01"
+                    "start": "2000-02-02"
                   }
                 }
               ],
@@ -412,19 +308,14 @@
                   "city": "VICTORIA",
                   "state": "BC",
                   "postalCode": "V6P7B8",
-                  "country": "CA"
+                  "country": "CA",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
                 }
               ],
-              "gender": "female",
-              "birthDate": "1951-11-12",
-              "_birthDate": {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthtime-extension",
-                    "valueDateTime": "1951-11-12T00:00:01-06:00"
-                  }
-                ]
-              },
+              "gender": "male",
+              "birthDate": "1934-01-02",
               "qualification": [
                 {
                   "extension": [
@@ -432,19 +323,19 @@
                       "extension": [
                         {
                           "url": "designation",
-                          "valueString": "designation"
+                          "valueString": "Designation"
                         },
                         {
                           "url": "equivalencyFlag",
-                          "valueBoolean": true
+                          "valueBoolean": false
                         },
                         {
                           "url": "registrationNumber",
-                          "valueString": "registration number"
+                          "valueString": "Registration No."
                         },
                         {
                           "url": "issuedDate",
-                          "valueDateTime": "2000-01-01"
+                          "valueDateTime": "2000-02-03"
                         }
                       ],
                       "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-qualification-extension"
@@ -456,15 +347,13 @@
                         "system": "https://fhir.infoway-inforoute.ca/CodeSystem/scpqual",
                         "code": "BD"
                       }
-                    ],
-                    "text": "CREDENTIAL_CREDENTIALDESIGNATIONTXT"
+                    ]
                   },
                   "period": {
-                    "start": "2000-01-01",
-                    "end": "2020-01-01"
+                    "start": "2000-01-01"
                   },
                   "issuer": {
-                    "reference": "#qualificationOrganization"
+                    "reference": "#grantingInstitution"
                   }
                 }
               ],
@@ -490,24 +379,20 @@
                   ]
                 }
               ]
-            },
-            "request": {
-              "method": "POST",
-              "url": "http://plr.moh.bc.ca/fhir/Practitioner"
             }
           },
           {
-            "fullUrl": "http://plr.moh.bc.ca/fhir/PractitionerRole/12345",
+            "fullUrl": "urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6",
             "resource": {
               "resourceType": "PractitionerRole",
-              "id": "Example-AddPractitioner-PractitionerRole",
+              "id": "Example-PractitionerRole-1-Role-FromPractitioner",
               "meta": {
                 "profile": [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
                 ]
               },
               "practitioner": {
-                "reference": "Practitioner/Example-AddPractitioner-Practitioner"
+                "reference": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
               },
               "organization": {
                 "display": "BC"
@@ -533,51 +418,114 @@
                       }
                     },
                     {
-                      "extension": [
-                        {
-                          "url": "endReasonCode",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
-                                "code": "CORR"
-                              }
-                            ]
-                          }
-                        },
-                        {
-                          "url": "custodianId",
-                          "valueIdentifier": {
-                            "assigner": {
-                              "display": "RNA"
-                            }
-                          }
-                        }
-                      ],
-                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
-                    },
-                    {
                       "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension",
-                      "valueString": "Source"
+                      "valueString": "Expertise source"
                     }
                   ],
                   "coding": [
                     {
-                      "system": "http://snomed.info/sct",
-                      "code": "419772000"
+                      "system": "https://fhir.infoway-inforoute.ca/CodeSystem/scpqual",
+                      "code": "AMD53"
                     }
                   ]
                 }
-              ],
+              ]
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7",
+            "resource": {
+              "resourceType": "PractitionerRole",
+              "id": "Example-PractitionerRole-2-OrgReference-FromPractitioner",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+                ]
+              },
+              "period": {
+                "start": "2000-01-01"
+              },
+              "practitioner": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
+                          "code": "EMPLOYEE"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "reference": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+              },
+              "organization": {
+                "identifier": {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
+                        "code": "ORGID"
+                      }
+                    ]
+                  },
+                  "value": "123123123",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9",
+            "resource": {
+              "resourceType": "PractitionerRole",
+              "id": "Example-PractitionerRole-3-LocReference-FromPractitioner",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+                ]
+              },
+              "period": {
+                "start": "2000-01-01"
+              },
+              "practitioner": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-location-relationship-type-code",
+                          "code": "WORKSAT"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "reference": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+              },
               "location": [
                 {
-                  "reference": "Location/Example-AddPractitioner-WorkLocation"
+                  "identifier": {
+                    "type": {
+                      "coding": [
+                        {
+                          "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
+                          "code": "IFC"
+                        }
+                      ]
+                    },
+                    "value": "IFC.00147422.BC.PRS",
+                    "period": {
+                      "start": "2000-01-01"
+                    }
+                  }
                 }
               ]
-            },
-            "request": {
-              "method": "POST",
-              "url": "http://plr.moh.bc.ca/fhir/PractitionerRole"
             }
           }
         ]
@@ -588,7 +536,7 @@
       }
     },
     {
-      "fullUrl": "http://plr.moh.bc.ca/fhir/Bundle/23456",
+      "fullUrl": "urn:uuid:ddab2257-0829-4e5d-a5b7-b6c24dcdb7b8",
       "resource": {
         "resourceType": "Bundle",
         "id": "Example-AddOrganization-Bundle",
@@ -597,13 +545,13 @@
             "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle"
           ]
         },
-        "type": "transaction",
+        "type": "collection",
         "entry": [
           {
-            "fullUrl": "http://plr.moh.bc.ca/fhir/Organization/12345",
+            "fullUrl": "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf",
             "resource": {
               "resourceType": "Organization",
-              "id": "Example-AddOrganization-Organization",
+              "id": "Example-Organization-1",
               "meta": {
                 "profile": [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"
@@ -629,11 +577,11 @@
                     "coding": [
                       {
                         "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
-                        "code": "IFC"
+                        "code": "IPC"
                       }
                     ]
                   },
-                  "value": "IFC.00147422.BC.PRS",
+                  "value": "IPC.00147433.BC.PRS",
                   "period": {
                     "start": "2000-01-01"
                   }
@@ -726,20 +674,19 @@
                   "city": "VICTORIA",
                   "state": "BC",
                   "postalCode": "V6P7B8",
-                  "country": "CA"
+                  "country": "CA",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
                 }
               ]
-            },
-            "request": {
-              "method": "POST",
-              "url": "http://plr.moh.bc.ca/fhir/Organization"
             }
           },
           {
-            "fullUrl": "http://plr.moh.bc.ca/fhir/OrganizationAffiliation/12345",
+            "fullUrl": "urn:uuid:f41c4f5f-43eb-497c-8baa-e800fe3fe4fa",
             "resource": {
               "resourceType": "OrganizationAffiliation",
-              "id": "Example-AddOrganization-OrganizationAffiliation",
+              "id": "Example-OrganizationAffiliation-1",
               "meta": {
                 "profile": [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"
@@ -750,17 +697,39 @@
                 "start": "1989-04-04T00:00:00-07:00"
               },
               "organization": {
-                "reference": "Organization/Example-AddOrganization-Organization"
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
+                          "code": "DEPTOF"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "reference": "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
               },
               "location": [
                 {
-                  "reference": "Location/Example-AddOrganization-Location"
+                  "identifier": {
+                    "type": {
+                      "coding": [
+                        {
+                          "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
+                          "code": "IFC"
+                        }
+                      ]
+                    },
+                    "value": "IFC.00147422.BC.PRS",
+                    "period": {
+                      "start": "2000-01-01"
+                    }
+                  }
                 }
               ]
-            },
-            "request": {
-              "method": "POST",
-              "url": "http://plr.moh.bc.ca/fhir/OrganizationAffiliation"
             }
           }
         ]
@@ -771,7 +740,7 @@
       }
     },
     {
-      "fullUrl": "http://plr.moh.bc.ca/fhir/Bundle/34567",
+      "fullUrl": "urn:uuid:09494507-e0a8-4cd4-9a25-a42822a2f552",
       "resource": {
         "resourceType": "Bundle",
         "id": "Example-AddLocation-Bundle",
@@ -780,13 +749,13 @@
             "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle"
           ]
         },
-        "type": "transaction",
+        "type": "collection",
         "entry": [
           {
-            "fullUrl": "http://plr.moh.bc.ca/fhir/Location/12345",
+            "fullUrl": "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2",
             "resource": {
               "resourceType": "Location",
-              "id": "Example-AddOrganization-Location",
+              "id": "Example-Location",
               "meta": {
                 "profile": [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location"
@@ -915,12 +884,60 @@
                 "city": "VICTORIA",
                 "state": "BC",
                 "postalCode": "V6P7B8",
-                "country": "CA"
+                "country": "CA",
+                "period": {
+                  "start": "2000-01-01"
+                }
               }
-            },
-            "request": {
-              "method": "POST",
-              "url": "http://plr.moh.bc.ca/fhir/Location"
+            }
+          },
+          {
+            "fullUrl": "urn:uuuid:4d73bc14-4332-4acc-a057-0b2ee66c3d4d",
+            "resource": {
+              "resourceType": "PractitionerRole",
+              "id": "Example-PractitionerRole-5-PracReference-FromLoc",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+                ]
+              },
+              "period": {
+                "start": "2000-01-01"
+              },
+              "practitioner": {
+                "identifier": {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
+                        "code": "IPC"
+                      }
+                    ]
+                  },
+                  "value": "IPC.00147433.BC.PRS",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
+                }
+              },
+              "location": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
+                            "code": "CARETEAM"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "reference": "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"
+                }
+              ]
             }
           }
         ]

@@ -35,20 +35,20 @@
     </search>
   </entry>
   <entry>
-    <fullUrl value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00000023.BC.PRS/$entityQuery"/>
+    <fullUrl value="urn:uuid:11e1d315-0edf-49f0-b01c-0b42da4c97a6"/>
     <resource>
       <Bundle>
         <id value="Example-Individual-Provider-Bundle"/>
         <meta>
           <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"/>
         </meta>
-        <type value="transaction"/>
+        <type value="collection"/>
         <timestamp value="2022-02-02T13:23:13.000-08:00"/>
         <entry>
           <fullUrl value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
           <resource>
             <Practitioner>
-              <id value="IPC.00147422.BC.PRS"/>
+              <id value="Example-Practitioner"/>
               <meta>
                 <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
               </meta>
@@ -255,6 +255,9 @@
                 <state value="BC"/>
                 <postalCode value="V6P7B8"/>
                 <country value="CA"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
               </address>
               <gender value="male"/>
               <birthDate value="1934-01-02"/>
@@ -302,16 +305,12 @@
               </communication>
             </Practitioner>
           </resource>
-          <request>
-            <method value="POST"/>
-            <url value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC/$entityQuery"/>
-          </request>
         </entry>
         <entry>
           <fullUrl value="urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c"/>
           <resource>
             <PractitionerRole>
-              <id value="Example-PractitionerRole-1"/>
+              <id value="Example-PractitionerRole-1-Role-FromPractitioner"/>
               <meta>
                 <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
               </meta>
@@ -338,8 +337,8 @@
                   <valueString value="Expertise source"/>
                 </extension>
                 <coding>
-                  <system value="http://snomed.info/sct"/>
-                  <code value="419772000"/>
+                  <system value="https://fhir.infoway-inforoute.ca/CodeSystem/scpqual"/>
+                  <code value="AMD53"/>
                 </coding>
               </specialty>
             </PractitionerRole>
@@ -349,7 +348,7 @@
           <fullUrl value="urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03"/>
           <resource>
             <PractitionerRole>
-              <id value="Example-PractitionerRole-2"/>
+              <id value="Example-PractitionerRole-2-OrgReference-FromPractitioner"/>
               <meta>
                 <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
               </meta>
@@ -357,9 +356,6 @@
                 <start value="2000-01-01"/>
               </period>
               <practitioner>
-                <reference value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
-              </practitioner>
-              <organization>
                 <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
                   <valueCodeableConcept>
                     <coding>
@@ -368,7 +364,21 @@
                     </coding>
                   </valueCodeableConcept>
                 </extension>
-                <reference value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00002035.BC.PRS/$entityQuery"/>
+                <reference value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
+              </practitioner>
+              <organization>
+                <identifier>
+                  <type>
+                    <coding>
+                      <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
+                      <code value="ORGID"/>
+                    </coding>
+                  </type>
+                  <value value="123123123"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
               </organization>
             </PractitionerRole>
           </resource>
@@ -377,7 +387,7 @@
           <fullUrl value="urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5"/>
           <resource>
             <PractitionerRole>
-              <id value="Example-PractitionerRole-3"/>
+              <id value="Example-PractitionerRole-3-LocReference-FromPractitioner"/>
               <meta>
                 <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
               </meta>
@@ -385,9 +395,6 @@
                 <start value="2000-01-01"/>
               </period>
               <practitioner>
-                <reference value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
-              </practitioner>
-              <location>
                 <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension">
                   <valueCodeableConcept>
                     <coding>
@@ -396,7 +403,21 @@
                     </coding>
                   </valueCodeableConcept>
                 </extension>
-                <reference value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00034523.BC.PRS/$entityQuery"/>
+                <reference value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
+              </practitioner>
+              <location>
+                <identifier>
+                  <type>
+                    <coding>
+                      <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
+                      <code value="IFC"/>
+                    </coding>
+                  </type>
+                  <value value="IFC.00147422.BC.PRS"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
               </location>
             </PractitionerRole>
           </resource>

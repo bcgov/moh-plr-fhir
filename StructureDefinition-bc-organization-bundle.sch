@@ -103,7 +103,6 @@
       <sch:assert test="count(f:fullUrl) &gt;= 1">fullUrl: minimum cardinality of 'fullUrl' is 1</sch:assert>
       <sch:assert test="count(f:resource) &gt;= 1">resource: minimum cardinality of 'resource' is 1</sch:assert>
       <sch:assert test="count(f:search) &lt;= 0">search: maximum cardinality of 'search' is 0</sch:assert>
-      <sch:assert test="count(f:request) &gt;= 1">request: minimum cardinality of 'request' is 1</sch:assert>
       <sch:assert test="count(f:response) &lt;= 0">response: maximum cardinality of 'response' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>

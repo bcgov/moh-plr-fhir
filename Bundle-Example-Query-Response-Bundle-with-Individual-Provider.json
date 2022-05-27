@@ -41,7 +41,7 @@
       }
     },
     {
-      "fullUrl": "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00000023.BC.PRS/$entityQuery",
+      "fullUrl": "urn:uuid:11e1d315-0edf-49f0-b01c-0b42da4c97a6",
       "resource": {
         "resourceType": "Bundle",
         "id": "Example-Individual-Provider-Bundle",
@@ -50,14 +50,14 @@
             "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"
           ]
         },
-        "type": "transaction",
+        "type": "collection",
         "timestamp": "2022-02-02T13:23:13.000-08:00",
         "entry": [
           {
             "fullUrl": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87",
             "resource": {
               "resourceType": "Practitioner",
-              "id": "IPC.00147422.BC.PRS",
+              "id": "Example-Practitioner",
               "meta": {
                 "profile": [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"
@@ -341,7 +341,10 @@
                   "city": "VICTORIA",
                   "state": "BC",
                   "postalCode": "V6P7B8",
-                  "country": "CA"
+                  "country": "CA",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
                 }
               ],
               "gender": "male",
@@ -409,17 +412,13 @@
                   ]
                 }
               ]
-            },
-            "request": {
-              "method": "POST",
-              "url": "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC/$entityQuery"
             }
           },
           {
             "fullUrl": "urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c",
             "resource": {
               "resourceType": "PractitionerRole",
-              "id": "Example-PractitionerRole-1",
+              "id": "Example-PractitionerRole-1-Role-FromPractitioner",
               "meta": {
                 "profile": [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
@@ -458,8 +457,8 @@
                   ],
                   "coding": [
                     {
-                      "system": "http://snomed.info/sct",
-                      "code": "419772000"
+                      "system": "https://fhir.infoway-inforoute.ca/CodeSystem/scpqual",
+                      "code": "AMD53"
                     }
                   ]
                 }
@@ -470,7 +469,7 @@
             "fullUrl": "urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03",
             "resource": {
               "resourceType": "PractitionerRole",
-              "id": "Example-PractitionerRole-2",
+              "id": "Example-PractitionerRole-2-OrgReference-FromPractitioner",
               "meta": {
                 "profile": [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
@@ -480,9 +479,6 @@
                 "start": "2000-01-01"
               },
               "practitioner": {
-                "reference": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-              },
-              "organization": {
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
@@ -496,7 +492,23 @@
                     }
                   }
                 ],
-                "reference": "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00002035.BC.PRS/$entityQuery"
+                "reference": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+              },
+              "organization": {
+                "identifier": {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
+                        "code": "ORGID"
+                      }
+                    ]
+                  },
+                  "value": "123123123",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
+                }
               }
             }
           },
@@ -504,7 +516,7 @@
             "fullUrl": "urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5",
             "resource": {
               "resourceType": "PractitionerRole",
-              "id": "Example-PractitionerRole-3",
+              "id": "Example-PractitionerRole-3-LocReference-FromPractitioner",
               "meta": {
                 "profile": [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
@@ -514,24 +526,37 @@
                 "start": "2000-01-01"
               },
               "practitioner": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-location-relationship-type-code",
+                          "code": "WORKSAT"
+                        }
+                      ]
+                    }
+                  }
+                ],
                 "reference": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
               },
               "location": [
                 {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-location-relationship-type-code",
-                            "code": "WORKSAT"
-                          }
-                        ]
-                      }
+                  "identifier": {
+                    "type": {
+                      "coding": [
+                        {
+                          "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
+                          "code": "IFC"
+                        }
+                      ]
+                    },
+                    "value": "IFC.00147422.BC.PRS",
+                    "period": {
+                      "start": "2000-01-01"
                     }
-                  ],
-                  "reference": "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00034523.BC.PRS/$entityQuery"
+                  }
                 }
               ]
             }

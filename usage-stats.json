@@ -677,6 +677,7 @@
       "Bundle.entry.resource.entry.resource.telecom",
       "Bundle.entry.resource.telecom",
       "ContactPoint",
+      "Organization.telecom",
       "Practitioner.telecom"
     ],
     "http://hl7.org/fhir/StructureDefinition/contactpoint-country": [
@@ -686,12 +687,14 @@
       "Bundle.entry.resource.entry.resource.telecom",
       "Bundle.entry.resource.telecom",
       "ContactPoint",
+      "Organization.telecom",
       "Practitioner.telecom"
     ],
     "http://hl7.org/fhir/StructureDefinition/contactpoint-local": [
       "Bundle.entry.resource.entry.resource.telecom",
       "Bundle.entry.resource.telecom",
       "ContactPoint",
+      "Organization.telecom",
       "Practitioner.telecom"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
@@ -744,8 +747,6 @@
       "Practitioner"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthtime-extension": [
-      "Bundle.entry.resource.birthDate",
-      "Bundle.entry.resource.entry.resource.birthDate",
       "Practitioner.birthDate"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension": [
@@ -764,10 +765,6 @@
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension": [
       "Address",
-      "Bundle.entry.resource",
-      "Bundle.entry.resource.entry.resource",
-      "Bundle.entry.resource.entry.resource.specialty",
-      "Bundle.entry.resource.specialty",
       "ContactPoint",
       "Extension",
       "HumanName",
@@ -781,6 +778,7 @@
       "Practitioner.qualification",
       "PractitionerRole.location",
       "PractitionerRole.organization",
+      "PractitionerRole.practitioner",
       "PractitionerRole.specialty"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-facility-community-health-service-area-extension": [
@@ -799,9 +797,10 @@
       "Practitioner"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension": [
-      "Bundle.entry.resource.entry.resource.location",
-      "Bundle.entry.resource.location",
-      "PractitionerRole.location"
+      "Bundle.entry.resource.entry.resource.practitioner",
+      "Bundle.entry.resource.practitioner",
+      "PractitionerRole.location",
+      "PractitionerRole.practitioner"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-name-use-extension": [
       "Bundle.entry.resource.entry.resource.name",
@@ -837,13 +836,9 @@
       "Practitioner"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-confidentiality-extension": [
-      "Bundle.entry.resource",
-      "Bundle.entry.resource.entry.resource",
       "Practitioner"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-deathdate-extension": [
-      "Bundle.entry.resource",
-      "Bundle.entry.resource.entry.resource",
       "Practitioner"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension": [
@@ -857,15 +852,20 @@
       "Practitioner.qualification"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension": [
-      "Bundle.entry.resource",
-      "Bundle.entry.resource.entry.resource",
       "Practitioner"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension": [
+      "Bundle.entry.resource.entry.resource.location",
       "Bundle.entry.resource.entry.resource.organization",
+      "Bundle.entry.resource.entry.resource.practitioner",
+      "Bundle.entry.resource.location",
       "Bundle.entry.resource.organization",
+      "Bundle.entry.resource.practitioner",
       "Extension",
-      "PractitionerRole.organization"
+      "OrganizationAffiliation.organization",
+      "PractitionerRole.location",
+      "PractitionerRole.organization",
+      "PractitionerRole.practitioner"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension": [
       "Bundle.entry.resource.communication",

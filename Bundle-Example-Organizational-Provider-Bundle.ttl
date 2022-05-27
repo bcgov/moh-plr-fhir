@@ -1,0 +1,381 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Organizational-Provider-Bundle> a fhir:Bundle;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "Example-Organizational-Provider-Bundle"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle>
+     ]
+  ];
+  fhir:Bundle.type [ fhir:value "collection"];
+  fhir:Bundle.timestamp [ fhir:value "2022-02-02T13:23:13.000-08:00"^^xsd:dateTime];
+  fhir:Bundle.entry [
+     fhir:index 0;
+     fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f" ];
+     fhir:Bundle.entry.resource <urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f>
+  ], [
+     fhir:index 1;
+     fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c" ];
+     fhir:Bundle.entry.resource <urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c>
+  ], [
+     fhir:index 2;
+     fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03" ];
+     fhir:Bundle.entry.resource <urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03>
+  ], [
+     fhir:index 3;
+     fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5" ];
+     fhir:Bundle.entry.resource <urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5>
+  ] .
+
+<urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f> a fhir:Organization;
+  fhir:Resource.id [ fhir:value "Example-Organization"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-Organization\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><p><b>value</b>: id: Note-2</p><p><b>value</b>: Note text</p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p></blockquote><blockquote><p><b>BC License Status Extension</b></p><p><b>value</b>: active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-RoleStatus.html\">RoleStatus</a>#active)</span></p><p><b>value</b>: 2022-02-07 --&gt; 2023-02-07</p><p><b>value</b>: ORG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-status-reason-code#ORG)</span></p></blockquote><p><b>identifier</b>: IPC: IPC.00147433.BC.PRS, CPN: CPN.00147422.BC.PRS, ORGID: 123123123</p><p><b>name</b>: ABC Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: -unknown-</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "identifier" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.value [ fhir:value "Note-2" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "text" ];
+       fhir:Extension.valueString [ fhir:value "Note text" ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "1998-01-02"^^xsd:date ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension" ]
+  ], [
+     fhir:index 1;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "statusCode" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleStatus" ];
+           fhir:Coding.code [ fhir:value "active" ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "period" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2022-02-07"^^xsd:date ];
+         fhir:Period.end [ fhir:value "2023-02-07"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "statusReasonCode" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-status-reason-code" ];
+           fhir:Coding.code [ fhir:value "ORG" ]
+         ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension" ]
+  ];
+  fhir:Organization.identifier [
+     fhir:index 0;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code" ];
+         fhir:Coding.code [ fhir:value "IPC" ]
+       ]
+     ];
+     fhir:Identifier.value [ fhir:value "IPC.00147433.BC.PRS" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code" ];
+         fhir:Coding.code [ fhir:value "CPN" ]
+       ]
+     ];
+     fhir:Identifier.value [ fhir:value "CPN.00147422.BC.PRS" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code" ];
+         fhir:Coding.code [ fhir:value "ORGID" ]
+       ]
+     ];
+     fhir:Identifier.value [ fhir:value "123123123" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
+  ];
+  fhir:Organization.name [
+     fhir:value "ABC Clinic";
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-name-use-extension" ];
+       fhir:Extension.valueCode [ fhir:value "official" ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+         fhir:Period.end [ fhir:value "2022-09-01"^^xsd:date ]
+       ]
+     ]
+  ];
+  fhir:Organization.alias [
+     fhir:value "ABC Clinic - Kelowna";
+     fhir:index 0
+  ];
+  fhir:Organization.telecom [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/contactpoint-area" ];
+       fhir:Extension.valueString [ fhir:value "250" ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/contactpoint-local" ];
+       fhir:Extension.valueString [ fhir:value "111-2234" ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/contactpoint-extension" ];
+       fhir:Extension.valueString [ fhir:value "3432" ]
+     ], [
+       fhir:index 3;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-communication-purpose-code" ];
+           fhir:Coding.code [ fhir:value "BC" ]
+         ]
+       ]
+     ];
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.period [
+       fhir:Period.start [ fhir:value "2000-02-02"^^xsd:date ]
+     ]
+  ];
+  fhir:Organization.address [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-communication-purpose-code" ];
+           fhir:Coding.code [ fhir:value "BC" ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-address-validation-status-extension" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-address-validation-status-code" ];
+           fhir:Coding.code [ fhir:value "V" ]
+         ]
+       ]
+     ];
+     fhir:Address.type [ fhir:value "postal" ];
+     fhir:Address.line [
+       fhir:value "19 ST";
+       fhir:index 0
+     ], [
+       fhir:value "ADDRESS ADDRESSLINE2TXT";
+       fhir:index 1
+     ], [
+       fhir:value "ADDRESS ADDRESSLINE3TXT";
+       fhir:index 2
+     ];
+     fhir:Address.city [ fhir:value "VICTORIA" ];
+     fhir:Address.state [ fhir:value "BC" ];
+     fhir:Address.postalCode [ fhir:value "V6P7B8" ];
+     fhir:Address.country [ fhir:value "CA" ];
+     fhir:Address.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
+  ] .
+
+<urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c> a fhir:PractitionerRole;
+  fhir:Resource.id [ fhir:value "Example-PractitionerRole-4-PracReference-FromOrg"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole-4-PracReference-FromOrg\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span></span></p><p><b>organization</b>: <a href=\"#Organization_Example-Organization\">See above (urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f)</a></p></div>"
+  ];
+  fhir:PractitionerRole.period [
+     fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:Reference.identifier [
+       fhir:Identifier.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code" ];
+           fhir:Coding.code [ fhir:value "IPC" ]
+         ]
+       ];
+       fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ];
+       fhir:Identifier.period [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
+     ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code" ];
+           fhir:Coding.code [ fhir:value "CARETEAM" ]
+         ]
+       ]
+     ];
+     fhir:Reference.reference [ fhir:value "urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f" ]
+  ] .
+
+<urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03> a fhir:OrganizationAffiliation;
+  fhir:Resource.id [ fhir:value "Example-OrganizationAffiliation-1-OrgReference-FromOrg"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-OrganizationAffiliation-1-OrgReference-FromOrg\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <a href=\"#Organization_Example-Organization\">See above (urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f)</a></p><p><b>participatingOrganization</b>: <span></span></p></div>"
+  ];
+  fhir:OrganizationAffiliation.period [
+     fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+  ];
+  fhir:OrganizationAffiliation.organization [
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code" ];
+           fhir:Coding.code [ fhir:value "DEPTOF" ]
+         ]
+       ]
+     ];
+     fhir:Reference.reference [ fhir:value "urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f" ]
+  ];
+  fhir:OrganizationAffiliation.participatingOrganization [
+     fhir:Reference.identifier [
+       fhir:Identifier.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code" ];
+           fhir:Coding.code [ fhir:value "ORGID" ]
+         ]
+       ];
+       fhir:Identifier.value [ fhir:value "123123123" ];
+       fhir:Identifier.period [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
+     ]
+  ] .
+
+<urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5> a fhir:OrganizationAffiliation;
+  fhir:Resource.id [ fhir:value "Example-OrganizationAffiliation-2-LocReference-FromOrg"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-OrganizationAffiliation-2-LocReference-FromOrg\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <a href=\"#Organization_Example-Organization\">See above (urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f)</a></p><p><b>location</b>: <span></span></p></div>"
+  ];
+  fhir:OrganizationAffiliation.period [
+     fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+  ];
+  fhir:OrganizationAffiliation.organization [
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code" ];
+           fhir:Coding.code [ fhir:value "DEPTOF" ]
+         ]
+       ]
+     ];
+     fhir:Reference.reference [ fhir:value "urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f" ]
+  ];
+  fhir:OrganizationAffiliation.location [
+     fhir:index 0;
+     fhir:Reference.identifier [
+       fhir:Identifier.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code" ];
+           fhir:Coding.code [ fhir:value "IFC" ]
+         ]
+       ];
+       fhir:Identifier.value [ fhir:value "IFC.00147422.BC.PRS" ];
+       fhir:Identifier.period [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Organizational-Provider-Bundle.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ca-bc/provider/Bundle/Example-Organizational-Provider-Bundle.ttl> .
+
+# -------------------------------------------------------------------------------------
+

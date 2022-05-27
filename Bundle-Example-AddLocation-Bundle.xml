@@ -5,17 +5,17 @@
   <meta>
     <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle"/>
   </meta>
-  <type value="transaction"/>
+  <type value="collection"/>
   <entry>
-    <fullUrl value="http://plr.moh.bc.ca/fhir/Location/12345"/>
+    <fullUrl value="urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"/>
     <resource>
       <Location>
-        <id value="Example-AddOrganization-Location"/>
+        <id value="Example-Location"/>
         <meta>
           <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-AddOrganization-Location" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-location.html">BCLocation</a></p></div><p><b>identifier</b>: IFC: IFC.00147422.BC.PRS</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href="ftp://someftp.com">ftp://someftp.com</a></p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-Location" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-location.html">BCLocation</a></p></div><p><b>identifier</b>: IFC: IFC.00147422.BC.PRS</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href="ftp://someftp.com">ftp://someftp.com</a></p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>
         </text>
         <identifier>
           <type>
@@ -106,12 +106,53 @@
           <state value="BC"/>
           <postalCode value="V6P7B8"/>
           <country value="CA"/>
+          <period>
+            <start value="2000-01-01"/>
+          </period>
         </address>
       </Location>
     </resource>
-    <request>
-      <method value="POST"/>
-      <url value="http://plr.moh.bc.ca/fhir/Location"/>
-    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuuid:4d73bc14-4332-4acc-a057-0b2ee66c3d4d"/>
+    <resource>
+      <PractitionerRole>
+        <id value="Example-PractitionerRole-5-PracReference-FromLoc"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-PractitionerRole-5-PracReference-FromLoc" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span></span></p><p><b>location</b>: <a href="#Location_Example-Location">See above (urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2)</a></p></div>
+        </text>
+        <period>
+          <start value="2000-01-01"/>
+        </period>
+        <practitioner>
+          <identifier>
+            <type>
+              <coding>
+                <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
+                <code value="IPC"/>
+              </coding>
+            </type>
+            <value value="IPC.00147433.BC.PRS"/>
+            <period>
+              <start value="2000-01-01"/>
+            </period>
+          </identifier>
+        </practitioner>
+        <location>
+          <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
+            <valueCodeableConcept>
+              <coding>
+                <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code"/>
+                <code value="CARETEAM"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <reference value="urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"/>
+        </location>
+      </PractitionerRole>
+    </resource>
   </entry>
 </Bundle>
