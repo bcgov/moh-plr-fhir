@@ -1,0 +1,50 @@
+{
+  "resourceType": "ValueSet",
+  "id": "bc-practitioner-role-value-set",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in https://fhir.infoway-inforoute.ca/ValueSet/healthcareproviderroletype</li><li>Include all codes defined in <a href=\"CodeSystem-bc-practitioner-role-code-system.html\"><code>http://hl7.org/fhir/ca-bc/provider/CodeSystem/bc-practitioner-role-code-system</code></a></li></ul></div>"
+  },
+  "url": "http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-practitioner-role-value-set",
+  "version": "0.1.0",
+  "name": "PractitionerRoleVS",
+  "title": "Practitioner Role Code Value Set",
+  "status": "active",
+  "date": "2022-06-02T17:40:37+00:00",
+  "publisher": "BC Ministry of Health",
+  "contact": [
+    {
+      "name": "BC Ministry of Health",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"
+        }
+      ]
+    }
+  ],
+  "description": "BC Practitioner Role Codes",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "CA",
+          "display": "Canada"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "valueSet": [
+          "https://fhir.infoway-inforoute.ca/ValueSet/healthcareproviderroletype"
+        ]
+      },
+      {
+        "system": "http://hl7.org/fhir/ca-bc/provider/CodeSystem/bc-practitioner-role-code-system"
+      }
+    ]
+  }
+}

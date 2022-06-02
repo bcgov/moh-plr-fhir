@@ -1,21 +1,22 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 0, warn = 9, info = 13
+err = 8, warn = 11, info = 14
 IG Publisher Version: 1.1.121
-Generated Fri May 27 21:18:07 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
+Generated Thu Jun 02 17:43:50 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
  Build Errors : 3 / 0 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 0 / 16
  /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 0 / 0 / 15
- /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle : 0 / 4 / 33
- /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 0 / 4 / 87
- /github/workspace/fsh-generated/resources/Bundle-Example-DistributePractitioner-Bundle : 0 / 4 / 33
- /github/workspace/fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle : 0 / 4 / 33
+ /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle : 1 / 3 / 33
+ /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 1 / 3 / 87
+ /github/workspace/fsh-generated/resources/Bundle-Example-DistributePractitioner-Bundle : 1 / 3 / 33
+ /github/workspace/fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle : 1 / 3 / 33
  /github/workspace/fsh-generated/resources/Bundle-Example-Organizational-Provider-Bundle : 0 / 1 / 26
- /github/workspace/fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider : 0 / 4 / 40
+ /github/workspace/fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider : 1 / 3 / 40
  /github/workspace/fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Organizational-Provider : 0 / 1 / 31
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-client-capability-statement : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-server-capability-statement : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/CodeSystem-bc-practitioner-role-code-system : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ImplementationGuide-fhir.ca-bc.provider : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Location-Example-AddPractitioner-WorkLocation : 0 / 0 / 8
  /github/workspace/fsh-generated/resources/Location-Example-Location : 0 / 0 / 7
@@ -38,8 +39,8 @@ Generated Fri May 27 21:18:07 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-Practitioner : 0 / 2 / 16
  /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-RelatedPractitioner : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/Practitioner-Example-Practitioner : 0 / 2 / 14
- /github/workspace/fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole : 0 / 2 / 4
- /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner : 0 / 2 / 3
+ /github/workspace/fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole : 1 / 1 / 4
+ /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner : 1 / 1 / 3
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-2-OrgReference-FromPractitioner : 0 / 0 / 3
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-3-LocReference-FromPractitioner : 0 / 0 / 4
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-4-PracReference-FromOrg : 0 / 0 / 3
@@ -76,10 +77,11 @@ Generated Fri May 27 21:18:07 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-qualification-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-qualification-issue-date-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-relationship-extension : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-role : 0 / 2 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-role : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-relationship-type-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-specialty-source-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ValueSet-bc-expertise-value-set : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/ValueSet-bc-practitioner-role-value-set : 1 / 1 / 1
 </table>
 == n/a ==
 ERROR: /github/workspace/output/StructureDefinition-bc-location.html#/html/body/div/div/div/div/div/div/ul/li/a at Line 354, column 8: The link 'Location-Example-AddOrganization-Location.html' for "Location Example" cannot be resolved
@@ -89,22 +91,28 @@ ERROR: /github/workspace/output/StructureDefinition-bc-organization.html#/html/b
 INFORMATION: Bundle/Example-AddLocation-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).location[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role
 == fsh-generated/resources/Bundle-Example-AddOrganization-Bundle.json ==
 == fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle.json ==
+ERROR: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).code[0]: None of the codings provided are in the value set 'Practitioner Role Code Value Set' (http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-practitioner-role-value-set), and a coding from this value set is required) (codes = https://fhir.infoway-inforoute.ca/CodeSystem/scptype#MD)
 WARNING: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).specialty[0]: [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-expertise-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scpqual' is unknown so the code cannot be validated]
 INFORMATION: Bundle/Example-AddPractitioner-Bundle: Bundle.entry[3].resource.ofType(PractitionerRole).practitioner.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role
 == fsh-generated/resources/Bundle-Example-Batch-Bundle.json ==
+INFORMATION: Bundle/Example-Batch-Bundle: Bundle.entry[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle
+ERROR: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).code[0]: None of the codings provided are in the value set 'Practitioner Role Code Value Set' (http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-practitioner-role-value-set), and a coding from this value set is required) (codes = https://fhir.infoway-inforoute.ca/CodeSystem/scptype#MD)
 WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.ofType(PractitionerRole).specialty[0]: [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-expertise-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scpqual' is unknown so the code cannot be validated]
 INFORMATION: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[3].resource.ofType(PractitionerRole).practitioner.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role
 INFORMATION: Bundle/Example-Batch-Bundle: Bundle.entry[2].resource.entry[1].resource.ofType(PractitionerRole).location[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role
 == fsh-generated/resources/Bundle-Example-DistributePractitioner-Bundle.json ==
+ERROR: Bundle/Example-DistributePractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).code[0]: None of the codings provided are in the value set 'Practitioner Role Code Value Set' (http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-practitioner-role-value-set), and a coding from this value set is required) (codes = https://fhir.infoway-inforoute.ca/CodeSystem/scptype#MD)
 WARNING: Bundle/Example-DistributePractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).specialty[0]: [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-expertise-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scpqual' is unknown so the code cannot be validated]
 INFORMATION: Bundle/Example-DistributePractitioner-Bundle: Bundle.entry[3].resource.ofType(PractitionerRole).practitioner.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role
 == fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle.json ==
+ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).code[0]: None of the codings provided are in the value set 'Practitioner Role Code Value Set' (http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-practitioner-role-value-set), and a coding from this value set is required) (codes = https://fhir.infoway-inforoute.ca/CodeSystem/scptype#MD)
 WARNING: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).specialty[0]: [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-expertise-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scpqual' is unknown so the code cannot be validated]
 INFORMATION: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[3].resource.ofType(PractitionerRole).practitioner.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role
 == fsh-generated/resources/Bundle-Example-Organizational-Provider-Bundle.json ==
 == fsh-generated/resources/Bundle-Example-Query-Response-Bundle-with-Individual-Provider.json ==
 INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).communication[0]: None of the codings provided are in the value set 'Common Languages' (http://hl7.org/fhir/ValueSet/languages), and a coding is recommended to come from this value set) (codes = https://plr.hlth.gov.bc.ca/plr/codes/bc-language-code#EN)
 INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[1].resource.ofType(PractitionerRole).specialty[0]: None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes), and a coding is recommended to come from this value set) (codes = https://fhir.infoway-inforoute.ca/CodeSystem/scpqual#AMD53)
+ERROR: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[1].resource.ofType(PractitionerRole).code[0]: None of the codings provided are in the value set 'Practitioner Role Code Value Set' (http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-practitioner-role-value-set), and a coding from this value set is required) (codes = https://fhir.infoway-inforoute.ca/CodeSystem/scptype#MD)
 WARNING: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[1].resource.ofType(PractitionerRole).specialty[0]: [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-expertise-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scpqual' is unknown so the code cannot be validated]
 INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle.entry[1].resource.ofType(Bundle).entry[3].resource.ofType(PractitionerRole).practitioner.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role
 INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bundle: No types could be determined from the search string, so the types can't be checked
@@ -112,6 +120,8 @@ INFORMATION: Bundle/Example-Query-Response-Bundle-with-Individual-Provider: Bund
 INFORMATION: Bundle/Example-Query-Response-Bundle-with-Organizational-Provider: Bundle: No types could be determined from the search string, so the types can't be checked
 == fsh-generated/resources/CapabilityStatement-bc-plr-client-capability-statement.json ==
 == fsh-generated/resources/CapabilityStatement-bc-plr-server-capability-statement.json ==
+== fsh-generated/resources/CodeSystem-bc-practitioner-role-code-system.json ==
+WARNING: CodeSystem/bc-practitioner-role-code-system: CodeSystem: HL7 Defined CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
 == fsh-generated/resources/ImplementationGuide-fhir.ca-bc.provider.json ==
 == fsh-generated/resources/Location-Example-AddPractitioner-WorkLocation.json ==
 == fsh-generated/resources/Location-Example-Location.json ==
@@ -135,8 +145,10 @@ INFORMATION: Bundle/Example-Query-Response-Bundle-with-Organizational-Provider: 
 == fsh-generated/resources/Practitioner-Example-AddPractitioner-RelatedPractitioner.json ==
 == fsh-generated/resources/Practitioner-Example-Practitioner.json ==
 == fsh-generated/resources/PractitionerRole-Example-AddPractitioner-PractitionerRole.json ==
+ERROR: PractitionerRole/Example-AddPractitioner-PractitionerRole: PractitionerRole.code[0]: None of the codings provided are in the value set 'Practitioner Role Code Value Set' (http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-practitioner-role-value-set), and a coding from this value set is required) (codes = https://fhir.infoway-inforoute.ca/CodeSystem/scptype#MD)
 WARNING: PractitionerRole/Example-AddPractitioner-PractitionerRole: PractitionerRole.specialty[0]: [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-expertise-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scpqual' is unknown so the code cannot be validated]
 == fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner.json ==
+ERROR: PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner: PractitionerRole.code[0]: None of the codings provided are in the value set 'Practitioner Role Code Value Set' (http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-practitioner-role-value-set), and a coding from this value set is required) (codes = https://fhir.infoway-inforoute.ca/CodeSystem/scptype#MD)
 WARNING: PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner: PractitionerRole.specialty[0]: [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-expertise-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scpqual' is unknown so the code cannot be validated]
 == fsh-generated/resources/PractitionerRole-Example-PractitionerRole-2-OrgReference-FromPractitioner.json ==
 == fsh-generated/resources/PractitionerRole-Example-PractitionerRole-3-LocReference-FromPractitioner.json ==
@@ -182,3 +194,6 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/ca-bc/provider/Str
 == fsh-generated/resources/StructureDefinition-bc-specialty-source-extension.json ==
 == fsh-generated/resources/ValueSet-bc-expertise-value-set.json ==
 WARNING: ValueSet.where(id = 'bc-expertise-value-set'): Error from server: Unable to provide support for code system https://fhir.infoway-inforoute.ca/CodeSystem/scpqual
+== fsh-generated/resources/ValueSet-bc-practitioner-role-value-set.json ==
+WARNING: ValueSet/bc-practitioner-role-value-set: ValueSet.compose[0].include[0].valueSet[0]: The value set import https://fhir.infoway-inforoute.ca/ValueSet/healthcareproviderroletype could not be found so cannot be checked
+ERROR: ValueSet.where(id = 'bc-practitioner-role-value-set'): Error from server: Unable to find value set "https://fhir.infoway-inforoute.ca/ValueSet/healthcareproviderroletype"
