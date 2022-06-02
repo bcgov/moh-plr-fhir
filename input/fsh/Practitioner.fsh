@@ -57,7 +57,7 @@ Description: "General constraints on the PractitionerRole resource for use in th
   and RelationshipTypeExtension named typeExtension 0..1 MS
 * organization.type 0..0
 * code MS 
-* code from $PracRoleCode (required)
+* code from PractitionerRoleVS (required)
 * specialty MS
 * specialty from ExpertiseVS (required)
 * specialty.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named specialtySource 0..1 MS
