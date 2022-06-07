@@ -81,7 +81,7 @@ The above diagram outlines the different entities that compose a facility:
 
 ### Relation to CA Baseline and other IGs
 
-This Implementation Guide was written based on resource profiles from CA Baseline where available (Practitioner, Organization, and Location) and otherwise from FHIR R4 (OrganizationAffiliation and PractitionerRole).  The PractitionerRole profile from CA Baseline was not used because we feel that it is over-constrained for use in a Provider Directory.  As well, we maintained alignment with the Ontario PPR project where possible.
+This Implementation Guide was written based on resource profiles from CA Baseline where available (Practitioner, Organization, and Location) and otherwise from FHIR R4 (OrganizationAffiliation and PractitionerRole).  At this time this IG is conformant with the CA Baseline.
 
 ### Miscellaneous
 
