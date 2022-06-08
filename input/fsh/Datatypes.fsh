@@ -1,6 +1,6 @@
 Profile: BCIdentifier
 Id: bc-identifier
-Parent: Identifier
+Parent: http://hl7.org/fhir/ca/baseline/StructureDefinition/profile-identifier
 Description: "Adds an end reason to the identifier."
 * extension contains EndReasonExtension named endReason 0..1 MS
 
