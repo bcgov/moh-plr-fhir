@@ -105,12 +105,8 @@ groups:
     resources:
       - StructureDefinition/bc-practitioner
       - StructureDefinition/bc-practitioner-role
-      - StructureDefinition/bc-practitioner-deathdate-extension
-      - StructureDefinition/bc-birthtime-extension
-      - StructureDefinition/bc-birthplace-extension
-      - Practitioner/Example-AddPractitioner-Practitioner
       - Practitioner/Example-AddPractitioner-RelatedPractitioner
-      - PractitionerRole/Example-AddPractitioner-PractitionerRole
+      - Practitioner/Example-AddPractitioner-Practitioner
       - Organization/Example-Qualification-Organization
   Organization:
     name: Organization
@@ -124,15 +120,15 @@ groups:
     description: Artifacts associated with Facilities
     resources:
       - StructureDefinition/bc-location
-      - StructureDefinition/bc-facility-details-extension
-      - StructureDefinition/bc-facility-community-health-service-area-extension
-      - StructureDefinition/bc-facility-mailing-address-extension
       - Location/Example-AddPractitioner-WorkLocation
       - Location/Example-Location
-  Common:
-    name: Common
-    description: Artifacts used across all groupings
+  Extensions:
+    name: Extensions
+    description: Extensions used across all groupings
     resources:
+      - StructureDefinition/bc-practitioner-deathdate-extension
+      - StructureDefinition/bc-birthtime-extension
+      - StructureDefinition/bc-birthplace-extension
       - StructureDefinition/bc-note-extension
       - StructureDefinition/bc-license-status-extension
       - StructureDefinition/bc-name-use-extension
@@ -149,6 +145,9 @@ groups:
       - StructureDefinition/bc-practitioner-disciplinary-action-extension
       - StructureDefinition/bc-practitioner-condition-extension
       - StructureDefinition/bc-practitioner-qualification-issue-date-extension
+      - StructureDefinition/bc-facility-details-extension
+      - StructureDefinition/bc-facility-community-health-service-area-extension
+      - StructureDefinition/bc-facility-mailing-address-extension
 Datatypes:
     name: Datatypes
     description: Artifacts associated with datatypes

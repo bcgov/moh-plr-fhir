@@ -87,17 +87,17 @@ Description: "A bundle that submits Practitioner and PractitionerRole informatio
 * entry[Practitioner].resource only BCPractitioner
 * entry[PractitionerRole].resource only BCPractitionerRole
 
-Instance: Example-AddPractitioner-PractitionerRole
-InstanceOf: BCPractitionerRole
-Description: "Example of the role that the created practitioner is playing."
-* practitioner = Reference(Example-AddPractitioner-Practitioner)
-* organization.display = "BC"
-* code = $SCPType#MD
-* specialty = $PracSpecialty#AMD17
-* specialty.extension[period].valuePeriod.start = "2000-01-01"
-* specialty.extension[period].valuePeriod.end = "2020-01-01"
-* specialty.extension[endReason].extension[endReasonCode].valueCodeableConcept = $PLREndReason#CORR
-* specialty.extension[endReason].extension[custodianId].valueIdentifier.assigner.display = "RNA"
-* specialty.extension[specialtySource].valueString = "Source"
+//Instance: Example-AddPractitioner-PractitionerRole
+//InstanceOf: BCPractitionerRole
+//Description: "Example of the role that the created practitioner is playing."
+//* practitioner = Reference(Example-AddPractitioner-Practitioner)
+//* organization.display = "BC"
+//* code = $SCPType#MD
+//* specialty = $PracSpecialty#AMD17
+//* specialty.extension[period].valuePeriod.start = "2000-01-01"
+//* specialty.extension[period].valuePeriod.end = "2020-01-01"
+//* specialty.extension[endReason].extension[endReasonCode].valueCodeableConcept = $PLREndReason#CORR
+//* specialty.extension[endReason].extension[custodianId].valueIdentifier.assigner.display = "RNA"
+//* specialty.extension[specialtySource].valueString = "Source"
 //* location = Reference(Example-AddPractitioner-WorkLocation)
 

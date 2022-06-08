@@ -1,3 +1,29 @@
+Instance: Example-IndProvider-to-IndProvider-Relationship
+InstanceOf: Extension
+Description: "Example of practitioner to practitioner relationship."
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension"
+* extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[0].valuePeriod.start = "2000-01-01"
+* extension[0].valuePeriod.end = "2020-01-01"
+* extension[1].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
+* extension[1].valueCodeableConcept = $PLRRelationshipType#LOC
+* extension[2].url = "practitioner"
+* extension[2].valueReference = Reference(Example-AddPractitioner-RelatedPractitioner)
+
+
+Instance: Example-Confidenciality-False
+InstanceOf: Extension
+Description: "Example of false confidenciality."
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-confidentiality-extension"
+* extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension"
+* extension[0].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
+* extension[1].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[1].valuePeriod.start = "2000-01-01"
+* extension[1].valuePeriod.end = "2020-01-01"
+
+
 Instance: Example-Specialty
 InstanceOf: CodeableConcept
 Description: "AMD53 specialty."
