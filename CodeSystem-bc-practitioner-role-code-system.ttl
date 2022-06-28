@@ -10,14 +10,14 @@
   fhir:Resource.id [ fhir:value "bc-practitioner-role-code-system"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system http://hl7.org/fhir/ca-bc/provider/CodeSystem/bc-practitioner-role-code-system defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td></tr></table></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system http://hl7.org/fhir/ca-bc/provider/CodeSystem/bc-practitioner-role-code-system defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">org<a name=\"bc-practitioner-role-code-system-org\"> </a></td><td>org</td><td>The organization role.</td></tr></table></div>"
   ];
   fhir:CodeSystem.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/CodeSystem/bc-practitioner-role-code-system"];
   fhir:CodeSystem.version [ fhir:value "0.1.0"];
   fhir:CodeSystem.name [ fhir:value "PractitionerRoleCS"];
   fhir:CodeSystem.title [ fhir:value "BC-Specific Practitioner Role Codes"];
   fhir:CodeSystem.status [ fhir:value "active"];
-  fhir:CodeSystem.date [ fhir:value "2022-06-08T20:49:38+00:00"^^xsd:dateTime];
+  fhir:CodeSystem.date [ fhir:value "2022-06-28T17:55:15+00:00"^^xsd:dateTime];
   fhir:CodeSystem.publisher [ fhir:value "BC Ministry of Health"];
   fhir:CodeSystem.contact [
      fhir:index 0;
@@ -38,7 +38,15 @@
        fhir:Coding.display [ fhir:value "Canada" ]
      ]
   ];
-  fhir:CodeSystem.content [ fhir:value "complete"] .
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.count [ fhir:value "1"^^xsd:nonNegativeInteger];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "org" ];
+     fhir:CodeSystem.concept.display [ fhir:value "org" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The organization role." ]
+  ] .
 
 # - ontology header ------------------------------------------------------------
 

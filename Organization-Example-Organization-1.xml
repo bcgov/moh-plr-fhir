@@ -6,39 +6,15 @@
     <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-Organization-1" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization.html">BCOrganization</a></p></div><p><b>identifier</b>: CPN: CPN.00147422.BC.PRS, IPC: IPC.00147433.BC.PRS, ORGID: 123123123</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-Organization-1" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization.html">BCOrganization</a></p></div><p><b>identifier</b>: ORGID: 123123123</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>
   </text>
   <identifier>
     <type>
       <coding>
-        <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
-        <code value="CPN"/>
-      </coding>
-    </type>
-    <value value="CPN.00147422.BC.PRS"/>
-    <period>
-      <start value="2000-01-01"/>
-    </period>
-  </identifier>
-  <identifier>
-    <type>
-      <coding>
-        <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
-        <code value="IPC"/>
-      </coding>
-    </type>
-    <value value="IPC.00147433.BC.PRS"/>
-    <period>
-      <start value="2000-01-01"/>
-    </period>
-  </identifier>
-  <identifier>
-    <type>
-      <coding>
-        <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
         <code value="ORGID"/>
       </coding>
     </type>
+    <system value="https://plr.hlth.gov.bc.ca/plr/system/organization-id-code-system"/>
     <value value="123123123"/>
     <period>
       <start value="2000-01-01"/>
@@ -86,6 +62,23 @@
           <code value="V"/>
         </coding>
       </valueCodeableConcept>
+    </extension>
+    <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+      <extension url="endReasonCode">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code"/>
+            <code value="CHG"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <extension url="custodianId">
+        <valueIdentifier>
+          <assigner>
+            <display value="CPS"/>
+          </assigner>
+        </valueIdentifier>
+      </extension>
     </extension>
     <type value="postal"/>
     <line value="19 ST"/>

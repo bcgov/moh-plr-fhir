@@ -12,20 +12,6 @@
     <start value="2000-01-01"/>
   </period>
   <practitioner>
-    <identifier>
-      <type>
-        <coding>
-          <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
-          <code value="IPC"/>
-        </coding>
-      </type>
-      <value value="IPC.00147433.BC.PRS"/>
-      <period>
-        <start value="2000-01-01"/>
-      </period>
-    </identifier>
-  </practitioner>
-  <location>
     <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
       <valueCodeableConcept>
         <coding>
@@ -34,6 +20,20 @@
         </coding>
       </valueCodeableConcept>
     </extension>
+    <identifier>
+      <type>
+        <coding>
+          <code value="IPC"/>
+        </coding>
+      </type>
+      <system value="https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system"/>
+      <value value="IPC.00147433.BC.PRS"/>
+      <period>
+        <start value="2000-01-01"/>
+      </period>
+    </identifier>
+  </practitioner>
+  <location>
     <reference value="urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"/>
   </location>
 </PractitionerRole>

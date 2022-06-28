@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2022-06-08T20:49:38+00:00"/>
+  <date value="2022-06-28T17:55:15+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -240,7 +240,7 @@
     </grouping>
     <grouping id="Bundles">
       <name value="Bundles"/>
-      <description value="Distribution/Maintain and Batch Bundles"/>
+      <description value="Inbound Distribution/Maintain and Batch Bundles"/>
     </grouping>
     <grouping id="Practitioner">
       <name value="Practitioner"/>
@@ -757,18 +757,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Practitioner"/>
-      </extension>
-      <reference>
-        <reference value="Practitioner/Example-AddPractitioner-RelatedPractitioner"/>
-      </reference>
-      <name value="Example-AddPractitioner-RelatedPractitioner"/>
-      <description value="Example of a practitioner that has a relationship to the example created practitioner."/>
-      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
-      <groupingId value="Practitioner"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Location"/>
       </extension>
       <reference>
@@ -875,10 +863,10 @@
         <valueString value="Organization"/>
       </extension>
       <reference>
-        <reference value="Organization/Example-Organization"/>
+        <reference value="Organization/Example-Organization-1"/>
       </reference>
-      <name value="Example-Organization"/>
-      <description value="Example of generic Organization."/>
+      <name value="Example-Organization-1"/>
+      <description value="Example of an Organization that is being created."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
     </resource>
     <resource>
@@ -886,10 +874,10 @@
         <valueString value="Organization"/>
       </extension>
       <reference>
-        <reference value="Organization/Example-Organization-1"/>
+        <reference value="Organization/Example-Organization-2"/>
       </reference>
-      <name value="Example-Organization-1"/>
-      <description value="Example of an Organization that is being created."/>
+      <name value="Example-Organization-2"/>
+      <description value="Example of generic Organization."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
     </resource>
     <resource>
@@ -950,12 +938,34 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/Example-Practitioner-UpdateLicense"/>
+      </reference>
+      <name value="Example-Practitioner-UpdateLicense"/>
+      <description value="Example Practitioner resource for updating License Status."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="PractitionerRole"/>
       </extension>
       <reference>
         <reference value="PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner"/>
       </reference>
       <name value="Example-PractitionerRole-1-Role-FromPractitioner"/>
+      <description value="Example of the PractitionerRole with Speciality."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Update"/>
+      </reference>
+      <name value="Example-PractitionerRole-1-Role-FromPractitioner-Update"/>
       <description value="Example of the PractitionerRole with Speciality."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
     </resource>
@@ -1038,6 +1048,17 @@
       <description value="An example search response bundle with Organizational Provider."/>
       <exampleBoolean value="true"/>
       <groupingId value="OperationsResponseExamples"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/Example-UpdatePractitioner-LicenseStatus-Bundle"/>
+      </reference>
+      <name value="Example-UpdatePractitioner-LicenseStatus-Bundle"/>
+      <description value="Example of a bundle to update an Indivivdual Provider's License Status."/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

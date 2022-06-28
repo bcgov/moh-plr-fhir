@@ -27,11 +27,11 @@
             "type": {
               "coding": [
                 {
-                  "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
                   "code": "IFC"
                 }
               ]
             },
+            "system": "https://plr.hlth.gov.bc.ca/plr/system/internal-facility-code-system",
             "value": "IFC.00147422.BC.PRS",
             "period": {
               "start": "2000-01-01"
@@ -134,6 +134,30 @@
                   }
                 ]
               }
+            },
+            {
+              "extension": [
+                {
+                  "url": "endReasonCode",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
+                        "code": "CHG"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "url": "custodianId",
+                  "valueIdentifier": {
+                    "assigner": {
+                      "display": "CPS"
+                    }
+                  }
+                }
+              ],
+              "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
             }
           ],
           "type": "postal",
@@ -170,15 +194,28 @@
           "start": "2000-01-01"
         },
         "practitioner": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
+                    "code": "CARETEAM"
+                  }
+                ]
+              }
+            }
+          ],
           "identifier": {
             "type": {
               "coding": [
                 {
-                  "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
                   "code": "IPC"
                 }
               ]
             },
+            "system": "https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system",
             "value": "IPC.00147433.BC.PRS",
             "period": {
               "start": "2000-01-01"
@@ -187,19 +224,6 @@
         },
         "location": [
           {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
-                      "code": "CARETEAM"
-                    }
-                  ]
-                }
-              }
-            ],
             "reference": "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"
           }
         ]

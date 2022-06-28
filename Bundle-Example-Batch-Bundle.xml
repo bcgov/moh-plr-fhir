@@ -53,23 +53,22 @@
                   <valueCodeableConcept>
                     <coding>
                       <system value="http://terminology.hl7.org/CodeSystem/v3-RoleStatus"/>
-                      <code value="active"/>
+                      <code value="suspended"/>
                     </coding>
                   </valueCodeableConcept>
-                </extension>
-                <extension url="period">
-                  <valuePeriod>
-                    <start value="2022-02-07"/>
-                    <end value="2023-02-07"/>
-                  </valuePeriod>
                 </extension>
                 <extension url="statusReasonCode">
                   <valueCodeableConcept>
                     <coding>
                       <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-status-reason-code"/>
-                      <code value="GS"/>
+                      <code value="LTP"/>
                     </coding>
                   </valueCodeableConcept>
+                </extension>
+                <extension url="period">
+                  <valuePeriod>
+                    <start value="2022-06-24"/>
+                  </valuePeriod>
                 </extension>
               </extension>
               <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension">
@@ -107,6 +106,23 @@
                     <start value="1998-01-02"/>
                   </valuePeriod>
                 </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="endReasonCode">
+                    <valueCodeableConcept>
+                      <coding>
+                        <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code"/>
+                        <code value="CHG"/>
+                      </coding>
+                    </valueCodeableConcept>
+                  </extension>
+                  <extension url="custodianId">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="CPS"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
+                </extension>
               </extension>
               <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-condition-extension">
                 <extension url="identifier">
@@ -135,53 +151,60 @@
                 </extension>
               </extension>
               <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-confidentiality-extension">
-                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension">
-                  <valueCodeableConcept>
-                    <coding>
-                      <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
-                      <code value="N"/>
-                    </coding>
-                  </valueCodeableConcept>
-                </extension>
                 <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension">
                   <valuePeriod>
                     <start value="2000-01-01"/>
                     <end value="2020-01-01"/>
                   </valuePeriod>
                 </extension>
+                <extension url="code">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
+                      <code value="R"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+              </extension>
+              <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension">
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="2022-06-30"/>
+                  </valuePeriod>
+                </extension>
+                <extension url="practitioner">
+                  <valueReference>
+                    <identifier>
+                      <type>
+                        <coding>
+                          <code value="IPC"/>
+                        </coding>
+                      </type>
+                      <system value="https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system"/>
+                      <value value="IPC.00763483.BC.PRS"/>
+                      <period>
+                        <start value="2000-01-01"/>
+                      </period>
+                    </identifier>
+                  </valueReference>
+                </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code"/>
+                      <code value="WORKSAT"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
               </extension>
               <identifier>
                 <type>
                   <coding>
-                    <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
                     <code value="IPC"/>
                   </coding>
                 </type>
+                <system value="https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system"/>
                 <value value="IPC.00147422.BC.PRS"/>
-                <period>
-                  <start value="2000-01-01"/>
-                </period>
-              </identifier>
-              <identifier>
-                <type>
-                  <coding>
-                    <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
-                    <code value="CPN"/>
-                  </coding>
-                </type>
-                <value value="CPN.00147422.BC.PRS"/>
-                <period>
-                  <start value="2000-01-01"/>
-                </period>
-              </identifier>
-              <identifier>
-                <type>
-                  <coding>
-                    <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
-                    <code value="CPSID"/>
-                  </coding>
-                </type>
-                <value value="123454"/>
                 <period>
                   <start value="2000-01-01"/>
                 </period>
@@ -212,6 +235,23 @@
                     </coding>
                   </valueCodeableConcept>
                 </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="endReasonCode">
+                    <valueCodeableConcept>
+                      <coding>
+                        <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code"/>
+                        <code value="CHG"/>
+                      </coding>
+                    </valueCodeableConcept>
+                  </extension>
+                  <extension url="custodianId">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="CPS"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
+                </extension>
                 <system value="phone"/>
                 <period>
                   <start value="2000-02-02"/>
@@ -233,6 +273,23 @@
                       <code value="V"/>
                     </coding>
                   </valueCodeableConcept>
+                </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="endReasonCode">
+                    <valueCodeableConcept>
+                      <coding>
+                        <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code"/>
+                        <code value="CHG"/>
+                      </coding>
+                    </valueCodeableConcept>
+                  </extension>
+                  <extension url="custodianId">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="CPS"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
                 </extension>
                 <type value="postal"/>
                 <line value="19 ST"/>
@@ -347,6 +404,9 @@
                 <start value="2000-01-01"/>
               </period>
               <practitioner>
+                <reference value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
+              </practitioner>
+              <organization>
                 <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
                   <valueCodeableConcept>
                     <coding>
@@ -355,17 +415,14 @@
                     </coding>
                   </valueCodeableConcept>
                 </extension>
-                <reference value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
-              </practitioner>
-              <organization>
                 <identifier>
                   <type>
                     <coding>
-                      <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
-                      <code value="ORGID"/>
+                      <code value="IPC"/>
                     </coding>
                   </type>
-                  <value value="123123123"/>
+                  <system value="https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system"/>
+                  <value value="IPC.00147433.BC.PRS"/>
                   <period>
                     <start value="2000-01-01"/>
                   </period>
@@ -386,6 +443,9 @@
                 <start value="2000-01-01"/>
               </period>
               <practitioner>
+                <reference value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
+              </practitioner>
+              <location>
                 <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension">
                   <valueCodeableConcept>
                     <coding>
@@ -394,16 +454,13 @@
                     </coding>
                   </valueCodeableConcept>
                 </extension>
-                <reference value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
-              </practitioner>
-              <location>
                 <identifier>
                   <type>
                     <coding>
-                      <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
                       <code value="IFC"/>
                     </coding>
                   </type>
+                  <system value="https://plr.hlth.gov.bc.ca/plr/system/internal-facility-code-system"/>
                   <value value="IFC.00147422.BC.PRS"/>
                   <period>
                     <start value="2000-01-01"/>
@@ -440,34 +497,10 @@
               <identifier>
                 <type>
                   <coding>
-                    <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
-                    <code value="CPN"/>
-                  </coding>
-                </type>
-                <value value="CPN.00147422.BC.PRS"/>
-                <period>
-                  <start value="2000-01-01"/>
-                </period>
-              </identifier>
-              <identifier>
-                <type>
-                  <coding>
-                    <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
-                    <code value="IPC"/>
-                  </coding>
-                </type>
-                <value value="IPC.00147433.BC.PRS"/>
-                <period>
-                  <start value="2000-01-01"/>
-                </period>
-              </identifier>
-              <identifier>
-                <type>
-                  <coding>
-                    <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
                     <code value="ORGID"/>
                   </coding>
                 </type>
+                <system value="https://plr.hlth.gov.bc.ca/plr/system/organization-id-code-system"/>
                 <value value="123123123"/>
                 <period>
                   <start value="2000-01-01"/>
@@ -516,6 +549,23 @@
                     </coding>
                   </valueCodeableConcept>
                 </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="endReasonCode">
+                    <valueCodeableConcept>
+                      <coding>
+                        <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code"/>
+                        <code value="CHG"/>
+                      </coding>
+                    </valueCodeableConcept>
+                  </extension>
+                  <extension url="custodianId">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="CPS"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
+                </extension>
                 <type value="postal"/>
                 <line value="19 ST"/>
                 <line value="ADDRESS ADDRESSLINE2TXT"/>
@@ -558,10 +608,10 @@
                 <identifier>
                   <type>
                     <coding>
-                      <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
                       <code value="IFC"/>
                     </coding>
                   </type>
+                  <system value="https://plr.hlth.gov.bc.ca/plr/system/internal-facility-code-system"/>
                   <value value="IFC.00147422.BC.PRS"/>
                   <period>
                     <start value="2000-01-01"/>
@@ -598,10 +648,10 @@
               <identifier>
                 <type>
                   <coding>
-                    <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
                     <code value="IFC"/>
                   </coding>
                 </type>
+                <system value="https://plr.hlth.gov.bc.ca/plr/system/internal-facility-code-system"/>
                 <value value="IFC.00147422.BC.PRS"/>
                 <period>
                   <start value="2000-01-01"/>
@@ -676,6 +726,23 @@
                     </coding>
                   </valueCodeableConcept>
                 </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="endReasonCode">
+                    <valueCodeableConcept>
+                      <coding>
+                        <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code"/>
+                        <code value="CHG"/>
+                      </coding>
+                    </valueCodeableConcept>
+                  </extension>
+                  <extension url="custodianId">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="CPS"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
+                </extension>
                 <type value="postal"/>
                 <line value="19 ST"/>
                 <line value="ADDRESS ADDRESSLINE2TXT"/>
@@ -703,20 +770,6 @@
                 <start value="2000-01-01"/>
               </period>
               <practitioner>
-                <identifier>
-                  <type>
-                    <coding>
-                      <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
-                      <code value="IPC"/>
-                    </coding>
-                  </type>
-                  <value value="IPC.00147433.BC.PRS"/>
-                  <period>
-                    <start value="2000-01-01"/>
-                  </period>
-                </identifier>
-              </practitioner>
-              <location>
                 <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
                   <valueCodeableConcept>
                     <coding>
@@ -725,6 +778,20 @@
                     </coding>
                   </valueCodeableConcept>
                 </extension>
+                <identifier>
+                  <type>
+                    <coding>
+                      <code value="IPC"/>
+                    </coding>
+                  </type>
+                  <system value="https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system"/>
+                  <value value="IPC.00147433.BC.PRS"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </practitioner>
+              <location>
                 <reference value="urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"/>
               </location>
             </PractitionerRole>

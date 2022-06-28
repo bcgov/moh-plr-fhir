@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="Example-UpdatePractitioner-LicenseStatus-Bundle"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"/>
+  </meta>
+  <type value="collection"/>
+  <entry>
+    <fullUrl value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
+    <resource>
+      <Practitioner>
+        <id value="Example-Practitioner-UpdateLicense"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-Practitioner-UpdateLicense" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-practitioner.html">BCPractitioner</a></p></div><blockquote><p><b>BC License Status Extension</b></p><p><b>value</b>: suspended <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-v3-RoleStatus.html">RoleStatus</a>#suspended)</span></p><p><b>value</b>: LTP <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (bc-status-reason-code#LTP)</span></p><p><b>value</b>: 2022-06-24 --&gt; (ongoing)</p></blockquote><p><b>identifier</b>: IPC: IPC.00147422.BC.PRS</p><p><b>name</b>: </p></div>
+        </text>
+        <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension">
+          <extension url="statusCode">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/v3-RoleStatus"/>
+                <code value="suspended"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="statusReasonCode">
+            <valueCodeableConcept>
+              <coding>
+                <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-status-reason-code"/>
+                <code value="LTP"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="period">
+            <valuePeriod>
+              <start value="2022-06-24"/>
+            </valuePeriod>
+          </extension>
+          <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+            <extension url="endReasonCode">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code"/>
+                  <code value="CHG"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+          </extension>
+        </extension>
+        <identifier>
+          <type>
+            <coding>
+              <code value="IPC"/>
+            </coding>
+          </type>
+          <system value="https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system"/>
+          <value value="IPC.00147422.BC.PRS"/>
+          <period>
+            <start value="2000-01-01"/>
+          </period>
+        </identifier>
+        <name>
+          <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+            <valueCode value="not-applicable"/>
+          </extension>
+        </name>
+      </Practitioner>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6"/>
+    <resource>
+      <PractitionerRole>
+        <id value="Example-PractitionerRole-1-Role-FromPractitioner-Update"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-PractitionerRole-1-Role-FromPractitioner-Update" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a></p></div><p><b>practitioner</b>: <a href="#Practitioner_Example-Practitioner-UpdateLicense">See above (urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87)</a></p><p><b>organization</b>: <span>: BC</span></p><p><b>code</b>: MD <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-v3-scptype.html">pan-Canadian Provider Types</a>#MD)</span></p></div>
+        </text>
+        <practitioner>
+          <reference value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
+        </practitioner>
+        <organization>
+          <display value="BC"/>
+        </organization>
+        <code>
+          <coding>
+            <system value="https://fhir.infoway-inforoute.ca/CodeSystem/scptype"/>
+            <code value="MD"/>
+          </coding>
+        </code>
+      </PractitionerRole>
+    </resource>
+  </entry>
+</Bundle>

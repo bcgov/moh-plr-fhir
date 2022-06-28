@@ -82,7 +82,7 @@
   ] .
 
 <urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f> a fhir:Organization;
-  fhir:Resource.id [ fhir:value "Example-Organization"];
+  fhir:Resource.id [ fhir:value "Example-Organization-2"];
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization";
@@ -108,6 +108,28 @@
        fhir:Extension.valuePeriod [
          fhir:Period.start [ fhir:value "1998-01-02"^^xsd:date ]
        ]
+     ], [
+       fhir:index 3;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "endReasonCode" ];
+         fhir:Extension.valueCodeableConcept [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code" ];
+             fhir:Coding.code [ fhir:value "CHG" ]
+           ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "custodianId" ];
+         fhir:Extension.valueIdentifier [
+           fhir:Identifier.assigner [
+             fhir:Reference.display [ fhir:value "CPS" ]
+           ]
+         ]
+       ];
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension" ]
      ];
      fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension" ]
   ], [
@@ -147,10 +169,10 @@
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-         fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code" ];
          fhir:Coding.code [ fhir:value "IPC" ]
        ]
      ];
+     fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system" ];
      fhir:Identifier.value [ fhir:value "IPC.00147433.BC.PRS" ];
      fhir:Identifier.period [
        fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
@@ -160,10 +182,10 @@
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-         fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code" ];
          fhir:Coding.code [ fhir:value "CPN" ]
        ]
      ];
+     fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/system/common-party-number-code-system" ];
      fhir:Identifier.value [ fhir:value "CPN.00147422.BC.PRS" ];
      fhir:Identifier.period [
        fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
@@ -173,10 +195,10 @@
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-         fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code" ];
          fhir:Coding.code [ fhir:value "ORGID" ]
        ]
      ];
+     fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/system/organization-id-code-system" ];
      fhir:Identifier.value [ fhir:value "123123123" ];
      fhir:Identifier.period [
        fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
@@ -225,6 +247,28 @@
            fhir:Coding.code [ fhir:value "BC" ]
          ]
        ]
+     ], [
+       fhir:index 4;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "endReasonCode" ];
+         fhir:Extension.valueCodeableConcept [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code" ];
+             fhir:Coding.code [ fhir:value "CHG" ]
+           ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "custodianId" ];
+         fhir:Extension.valueIdentifier [
+           fhir:Identifier.assigner [
+             fhir:Reference.display [ fhir:value "CPS" ]
+           ]
+         ]
+       ];
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension" ]
      ];
      fhir:ContactPoint.system [ fhir:value "phone" ];
      fhir:ContactPoint.period [
@@ -253,6 +297,28 @@
            fhir:Coding.code [ fhir:value "V" ]
          ]
        ]
+     ], [
+       fhir:index 2;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "endReasonCode" ];
+         fhir:Extension.valueCodeableConcept [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code" ];
+             fhir:Coding.code [ fhir:value "CHG" ]
+           ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "custodianId" ];
+         fhir:Extension.valueIdentifier [
+           fhir:Identifier.assigner [
+             fhir:Reference.display [ fhir:value "CPS" ]
+           ]
+         ]
+       ];
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension" ]
      ];
      fhir:Address.type [ fhir:value "postal" ];
      fhir:Address.line [
@@ -287,21 +353,6 @@
      fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
   ];
   fhir:PractitionerRole.practitioner [
-     fhir:Reference.identifier [
-       fhir:Identifier.type [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code" ];
-           fhir:Coding.code [ fhir:value "IPC" ]
-         ]
-       ];
-       fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ];
-       fhir:Identifier.period [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-       ]
-     ]
-  ];
-  fhir:PractitionerRole.organization [
      fhir:Element.extension [
        fhir:index 0;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension" ];
@@ -313,6 +364,21 @@
          ]
        ]
      ];
+     fhir:Reference.identifier [
+       fhir:Identifier.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "IPC" ]
+         ]
+       ];
+       fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system" ];
+       fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ];
+       fhir:Identifier.period [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
+     ]
+  ];
+  fhir:PractitionerRole.organization [
      fhir:Reference.reference [ fhir:value "urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f" ]
   ] .
 
@@ -347,10 +413,10 @@
        fhir:Identifier.type [
          fhir:CodeableConcept.coding [
            fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code" ];
            fhir:Coding.code [ fhir:value "ORGID" ]
          ]
        ];
+       fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/system/organization-id-code-system" ];
        fhir:Identifier.value [ fhir:value "123123123" ];
        fhir:Identifier.period [
          fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
@@ -390,10 +456,10 @@
        fhir:Identifier.type [
          fhir:CodeableConcept.coding [
            fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code" ];
            fhir:Coding.code [ fhir:value "IFC" ]
          ]
        ];
+       fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/system/internal-facility-code-system" ];
        fhir:Identifier.value [ fhir:value "IFC.00147422.BC.PRS" ];
        fhir:Identifier.period [
          fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]

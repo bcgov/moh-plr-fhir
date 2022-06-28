@@ -171,7 +171,6 @@
         "CodeableConcept",
         "CodeableConcept",
         "CodeableConcept",
-        "CodeableConcept",
         "Period",
         "base64Binary",
         "boolean",
@@ -697,6 +696,10 @@
       "Organization.telecom",
       "Practitioner.telecom"
     ],
+    "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
+      "Bundle.entry.resource.name",
+      "Practitioner.name"
+    ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
     ],
@@ -770,17 +773,26 @@
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension": [
       "Address",
+      "Bundle.entry.resource.address",
+      "Bundle.entry.resource.entry.resource.address",
+      "Bundle.entry.resource.entry.resource.telecom",
+      "Bundle.entry.resource.telecom",
       "ContactPoint",
       "Extension",
       "HumanName",
       "Identifier",
+      "Location.address",
       "Location.name",
+      "Organization.address",
       "Organization.name",
+      "Organization.telecom",
       "OrganizationAffiliation.location",
       "OrganizationAffiliation.participatingOrganization",
       "Practitioner",
+      "Practitioner.address",
       "Practitioner.communication",
       "Practitioner.qualification",
+      "Practitioner.telecom",
       "PractitionerRole.location",
       "PractitionerRole.organization",
       "PractitionerRole.practitioner",
@@ -802,10 +814,9 @@
       "Practitioner"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension": [
-      "Bundle.entry.resource.entry.resource.practitioner",
-      "Bundle.entry.resource.practitioner",
-      "PractitionerRole.location",
-      "PractitionerRole.practitioner"
+      "Bundle.entry.resource.entry.resource.location",
+      "Bundle.entry.resource.location",
+      "PractitionerRole.location"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-name-use-extension": [
       "Bundle.entry.resource.entry.resource.name",
@@ -859,18 +870,17 @@
       "Practitioner.qualification"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension": [
+      "Bundle.entry.resource",
+      "Bundle.entry.resource.entry.resource",
       "Practitioner"
     ],
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension": [
-      "Bundle.entry.resource.entry.resource.location",
       "Bundle.entry.resource.entry.resource.organization",
       "Bundle.entry.resource.entry.resource.practitioner",
-      "Bundle.entry.resource.location",
       "Bundle.entry.resource.organization",
       "Bundle.entry.resource.practitioner",
       "Extension",
       "OrganizationAffiliation.organization",
-      "PractitionerRole.location",
       "PractitionerRole.organization",
       "PractitionerRole.practitioner"
     ],
