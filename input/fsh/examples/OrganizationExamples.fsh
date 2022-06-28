@@ -1,9 +1,7 @@
 Instance: Example-Organization-1
 InstanceOf: BCOrganization
 Description: "Example of an Organization that is being created."
-* identifier[0] = Example-Identifier-CPN
-* identifier[1] = Example-Identifier-IPC-Org
-* identifier[2] = Example-Identifier-ORGID
+* identifier = Example-Identifier-ORGID
 * name = "Kelowna Clinic"
 * name.extension[use].valueCode = #official
 * name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
@@ -17,7 +15,7 @@ Description: "Example of an Organization that is being created."
 * active = true
 
 
-Instance: Example-Organization
+Instance: Example-Organization-2
 InstanceOf: BCOrganization
 Description: "Example of generic Organization."
 
@@ -35,17 +33,8 @@ Description: "Example of generic Organization."
 * alias = "ABC Clinic - Kelowna"
 
 * telecom = Example-ContactPoint-Phone
-
 * address = Example-Address-Valid
-
-// note
-* extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension"
-* extension[0].extension[0].url = "identifier"
-* extension[0].extension[0].valueIdentifier.value = "Note-2"
-* extension[0].extension[1].url = "text"
-* extension[0].extension[1].valueString = "Note text"
-* extension[0].extension[2].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
-* extension[0].extension[2].valuePeriod.start = "1998-01-02"
+* extension[0] = Example-Note
 
 // license status
 * extension[1].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension"

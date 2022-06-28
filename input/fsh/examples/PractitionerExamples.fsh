@@ -9,9 +9,7 @@ Description: "Example of generic Practitioner."
 * birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
 * extension[1] = Example-Demographics-2
 
-* identifier[0] = Example-Identifier-IPC-Ind
-* identifier[1] = Example-Identifier-CPN
-* identifier[2] = Example-Identifier-CPSID
+* identifier[0] = Example-Identifier-IPC-Ind-1
 
 * name = Example-Name-Official
 * extension[2] = Example-License-Status
@@ -19,12 +17,14 @@ Description: "Example of generic Practitioner."
 * extension[4] = Example-Note
 * extension[5] = Example-Condition
 * extension[6] = Example-Confidenciality-False
+* extension[7] = Example-AddPractitioner-RelatedPractitioner
 * telecom = Example-ContactPoint-Phone
 * address = Example-Address-Valid
 
 // credentials
 * qualification.period.start = "2000-01-01"
-* qualification.code = $SCPQual#BD
+* qualification.code.coding.system = "https://fhir.infoway-inforoute.ca/CodeSystem/scpqual"
+* qualification.code.coding.code = #BD
 * qualification.extension[qualificationExtension].extension[designation].valueString = "Designation"
 * qualification.extension[qualificationExtension].extension[equivalencyFlag].valueBoolean = false
 * qualification.extension[qualificationExtension].extension[registrationNumber].valueString = "Registration No."
@@ -40,7 +40,7 @@ Instance: Example-AddPractitioner-Practitioner
 InstanceOf: BCPractitioner
 Description: "Example of a BC practitioner that is being created."
 // identifier
-* identifier[0] = Example-Identifier-IPC-Ind
+* identifier[0] = Example-Identifier-IPC-Ind-1
 * identifier[1] = Example-Identifier-CPN
 * identifier[2] = Example-Identifier-CPSID
 * active = true
@@ -81,9 +81,25 @@ Description: "Example of a BC practitioner that is being created."
 
 
 Instance: Example-AddPractitioner-RelatedPractitioner
-InstanceOf: BCPractitioner
+InstanceOf: Extension
 Description: "Example of a practitioner that has a relationship to the example created practitioner."
-* extension[demographicsPeriod].valuePeriod.start = "2000-01-01"
-* identifier = Example-Identifier-RNID
-* name.text = "23"
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension"
+* extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[0].valuePeriod.start = "2022-06-30"
+* extension[1].url = "practitioner"
+* extension[1].valueReference.identifier = Example-Identifier-IPC-Ind-2
+* extension[2].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
+* extension[2].valueCodeableConcept.coding.system = $PLRRelationshipType
+* extension[2].valueCodeableConcept.coding.code = #WORKSAT 
+
+
+Instance: Example-Practitioner-UpdateLicense
+InstanceOf: BCPractitioner
+Description: "Example Practitioner resource for updating License Status."
+
+* identifier = Example-Identifier-IPC-Ind-1
+* extension = Example-License-Status-Update
+* name.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason" 
+* name.extension.valueCode = #not-applicable
 

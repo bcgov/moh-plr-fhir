@@ -56,7 +56,7 @@ Description: "An example of a Provider Bundle, i.e. A Organization and Practitio
 * type = #collection
 * timestamp = "2022-02-02T13:23:13.000-08:00"
 * entry[Organization].fullUrl = "urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f"
-* entry[0].resource = Example-Organization
+* entry[0].resource = Example-Organization-2
 * entry[1].resource = Example-PractitionerRole-4-PracReference-FromOrg
 * entry[1].fullUrl = "urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c"
 * entry[2].resource = Example-OrganizationAffiliation-1-OrgReference-FromOrg

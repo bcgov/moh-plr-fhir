@@ -21,7 +21,7 @@ Description: "General constraints on the Practitioner resource for use in the BC
 * birthDate MS
 * birthDate.extension contains BirthTimeExtension named birthTime 0..1 MS
 * qualification MS
-* qualification.extension contains PractitionerQualificationExtension named qualificationExtension 1..1 MS and EndReasonExtension named endReason 0..1 MS
+* qualification.extension contains PractitionerQualificationExtension named qualificationExtension 0..1 MS and EndReasonExtension named endReason 0..1 MS
 * qualification.identifier MS
 * qualification.code MS
 * qualification.code from $PracQualification (required)
@@ -29,8 +29,8 @@ Description: "General constraints on the Practitioner resource for use in the BC
 * qualification.issuer MS
 * qualification.issuer only Reference(BCOrganization)
 * communication MS
-* communication.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named languageSource 0..1 MS
-* extension contains PeriodExtension named demographicsPeriod 1..1 MS and EndReasonExtension named demographicsEndReason 0..1 MS and 
+* communication.extension contains PeriodExtension named period 0..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named languageSource 0..1 MS
+* extension contains PeriodExtension named demographicsPeriod 0..1 MS and EndReasonExtension named demographicsEndReason 0..1 MS and 
     LicenseStatusExtension named status 0..* MS and 
 	DeathDateExtension named deathDate 0..1 MS and 
 	BirthPlaceExtension named birthplace 0..1 MS and
@@ -60,7 +60,7 @@ Description: "General constraints on the PractitionerRole resource for use in th
 * code from PractitionerRoleVS (required)
 * specialty MS
 * specialty from ExpertiseVS (required)
-* specialty.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named specialtySource 0..1 MS
+* specialty.extension contains PeriodExtension named period 0..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named specialtySource 0..1 MS
 * location MS
 * location only Reference(BCLocation)
 * location.extension contains EndReasonExtension named endReason 0..1 MS and LocationRelationshipTypeExtension named locRelationshipType 0..1 MS

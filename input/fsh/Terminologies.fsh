@@ -46,3 +46,11 @@ Alias: $PLRDisciplinaryActionID = https://plr.hlth.gov.bc.ca/plr/codes/bc-discip
 Alias: $PLRNoteID = https://plr.hlth.gov.bc.ca/plr/codes/bc-note-id
 Alias: $PLRCommPurpose = https://plr.hlth.gov.bc.ca/plr/codes/bc-communication-purpose-code
 Alias: $PLRAddressValStatus = https://plr.hlth.gov.bc.ca/plr/codes/bc-address-validation-status-code
+
+Alias: $System_IPC = https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system
+Alias: $System_IFC = https://plr.hlth.gov.bc.ca/plr/system/internal-facility-code-system
+Alias: $System_CPN = https://plr.hlth.gov.bc.ca/plr/system/common-party-number-code-system
+Alias: $System_ORGID = https://plr.hlth.gov.bc.ca/plr/system/organization-id-code-system
+Alias: $System_CPSID = httpss://plr.hlth.gov.bc.ca/plr/system/college-physicians-id-code-system
+Alias: $System_RNID = httpss://plr.hlth.gov.bc.ca/plr/system/college-nurses-id-code-system
+

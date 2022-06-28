@@ -10,6 +10,7 @@ Usage: #inline
 * extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
+* extension[4] = Example-ERC-OC
 
 Instance: Example-ContactPoint-Email
 InstanceOf: BCContactPoint
@@ -21,4 +22,5 @@ Usage: #inline
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 * value = "bob@email.com"
+* extension[1] = Example-ERC-OC
 

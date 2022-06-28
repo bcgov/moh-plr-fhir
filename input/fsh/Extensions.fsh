@@ -146,20 +146,19 @@ Description: "The qualifications extensions."
 * extension[issuedDate].value[x] only dateTime
 * extension[issuedDate].value[x] 0..1 MS
 
-
 Extension: LicenseStatusExtension
 Id: bc-license-status-extension
 Title: "BC License Status Extension"
 Description: "Tracking the status and changes to the status of a practitioner/organization license."
 * extension contains statusCode 1..1 MS and statusReasonCode 1..1 MS and statusClassCode 0..1 MS and period 1..1 MS and EndReasonExtension named endReasonCodeAndOwner 0..1 MS
 * extension[statusCode].value[x] only CodeableConcept
+* extension[statusCode].value[x] from $StatusVS (required)
 * extension[statusCode].value[x] 1..1 MS
-* extension[statusCode].valueCodeableConcept from $StatusVS (required)
-* extension[statusCode].valueCodeableConcept 1..1 MS
 * extension[statusReasonCode].value[x] only CodeableConcept
 * extension[statusReasonCode].value[x] 1..1 MS
 * extension[statusClassCode].value[x] only CodeableConcept
 * extension[statusClassCode].value[x] 0..1 MS
 * extension[period].value[x] only Period
 * extension[period].value[x] 1..1 MS
+
 

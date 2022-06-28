@@ -56,3 +56,12 @@ Description: "An example of a Batch Bundle that contains one each of a Practitio
 * entry[2].resource = Example-AddLocation-Bundle
 * entry[2].request.url = "http://plr.moh.bc.ca/fhir/Bundle"
 
+Instance: Example-UpdatePractitioner-LicenseStatus-Bundle
+InstanceOf: BCPractitionerBundle
+Description: "Example of a bundle to update an Indivivdual Provider's License Status."
+* type = #collection
+* entry[0].fullUrl = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+* entry[0].resource = Example-Practitioner-UpdateLicense
+* entry[1].fullUrl = "urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6"
+* entry[1].resource = Example-PractitionerRole-1-Role-FromPractitioner-Update
+
