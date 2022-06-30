@@ -1,5 +1,5 @@
 Profile: BCPractitioner
-Parent: http://hl7.org/fhir/ca/baseline/StructureDefinition/profile-practitioner-registry
+Parent: Practitioner
 Id: bc-practitioner
 Description: "General constraints on the Practitioner resource for use in the BC Provider Registry project."
 * contained ^slicing.discriminator.type = #type
@@ -41,7 +41,7 @@ Description: "General constraints on the Practitioner resource for use in the BC
 	PractitionerConditionExtension named condition 0..* MS
 
 Profile: BCPractitionerRole
-Parent: http://hl7.org/fhir/ca/baseline/StructureDefinition/profile-practitionerrole-registry
+Parent: PractitionerRole
 Id: bc-practitioner-role
 Description: "General constraints on the PractitionerRole resource for use in the BC Provider Registry project."
 * identifier 0..* MS

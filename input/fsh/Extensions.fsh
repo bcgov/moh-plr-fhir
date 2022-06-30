@@ -125,13 +125,6 @@ Description: "Conditions on the provider's role"
 * extension[code].value[x] only CodeableConcept
 * extension[code].value[x] 1..1 MS
 
-Extension: PractitionerQualificationIssueDateExtension
-Id: bc-practitioner-qualification-issue-date-extension
-Title: "BC Practitioner Qualification Issue Date Extensino"
-Description: "The issue date of the practitioner's qualification."
-* value[x] only dateTime
-* value[x] 1..1 MS
-
 Extension:  PractitionerQualificationExtension
 Id: bc-practitioner-qualification-extension
 Title: "BC Practitioner Qualification Extension"

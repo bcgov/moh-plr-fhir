@@ -51,6 +51,6 @@ Alias: $System_IPC = https://plr.hlth.gov.bc.ca/plr/system/internal-provider-cod
 Alias: $System_IFC = https://plr.hlth.gov.bc.ca/plr/system/internal-facility-code-system
 Alias: $System_CPN = https://plr.hlth.gov.bc.ca/plr/system/common-party-number-code-system
 Alias: $System_ORGID = https://plr.hlth.gov.bc.ca/plr/system/organization-id-code-system
-Alias: $System_CPSID = httpss://plr.hlth.gov.bc.ca/plr/system/college-physicians-id-code-system
-Alias: $System_RNID = httpss://plr.hlth.gov.bc.ca/plr/system/college-nurses-id-code-system
+Alias: $System_CPSID = https://plr.hlth.gov.bc.ca/plr/system/college-physicians-id-code-system
+Alias: $System_RNID = https://plr.hlth.gov.bc.ca/plr/system/college-nurses-id-code-system
 

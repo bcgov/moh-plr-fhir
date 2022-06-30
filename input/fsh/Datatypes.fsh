@@ -31,7 +31,8 @@ Id: bc-humanName
 Parent: HumanName
 Description: "Adds an end reason and a use code to a name."
 * extension contains 
-	EndReasonExtension named endReason 0..1 MS
+	EndReasonExtension named endReason 0..1 MS and
+	http://hl7.org/fhir/StructureDefinition/data-absent-reason named dataAbsentReason 0..1 MS
 
 Extension: NameUseExtension
 Id: bc-name-use-extension

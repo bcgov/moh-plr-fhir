@@ -4,7 +4,7 @@ Description: "Identifier example for CPN."
 Usage: #inline
 * system = $System_CPN
 * value = "CPN.00147422.BC.PRS"
-* type.coding.code = #CPN
+* type = $PLRIdentifierType#CPN
 * period.start = "2000-01-01"
 
 Instance: Example-Identifier-IPC-Ind-1
@@ -13,7 +13,7 @@ Description: "Identifier example for IPC."
 Usage: #inline
 * system = $System_IPC
 * value = "IPC.00147422.BC.PRS"
-* type.coding.code = #IPC
+* type = $PLRIdentifierType#IPC
 * period.start = "2000-01-01"
 
 Instance: Example-Identifier-IPC-Ind-2
@@ -22,7 +22,7 @@ Description: "Identifier example for IPC."
 Usage: #inline
 * system = $System_IPC
 * value = "IPC.00763483.BC.PRS"
-* type.coding.code = #IPC
+* type = $PLRIdentifierType#IPC
 * period.start = "2000-01-01"
 
 Instance: Example-Identifier-IPC-Ind-Update
@@ -31,7 +31,7 @@ Description: "Identifier example for IPC."
 Usage: #inline
 * system = $System_IPC
 * value = "IPC.00147422.BC.PRS"
-* type.coding.code = #IPC
+* type = $PLRIdentifierType#IPC
 * period.start = "2000-01-01"
 * extension = Example-ERC-Change
 
@@ -41,7 +41,7 @@ Description: "Identifier example for IPC."
 Usage: #inline
 * system = $System_IPC
 * value = "IPC.00147433.BC.PRS"
-* type.coding.code = #IPC
+* type = $PLRIdentifierType#IPC
 * period.start = "2000-01-01"
 
 Instance: Example-Identifier-IPC-Org-Update
@@ -50,7 +50,7 @@ Description: "Identifier example for IPC."
 Usage: #inline
 * system = $System_IPC
 * value = "IPC.00147433.BC.PRS"
-* type.coding.code = #IPC
+* type = $PLRIdentifierType#IPC
 * period.start = "2000-01-01"
 * extension = Example-ERC-Change
 
@@ -60,7 +60,7 @@ Description: "Identifier example for IFC."
 Usage: #inline
 * system = $System_IFC
 * value = "IFC.00147422.BC.PRS"
-* type.coding.code = #IFC
+* type = $PLRIdentifierType#IFC
 * period.start = "2000-01-01"
 
 Instance: Example-Identifier-ORGID
@@ -69,7 +69,7 @@ Description: "Identifier example for ORGID."
 Usage: #inline
 * system = $System_ORGID
 * value = "123123123"
-* type.coding.code = #ORGID
+* type = $PLRIdentifierType#ORGID
 * period.start = "2000-01-01"
 
 Instance: Example-Identifier-ORGID-Update
@@ -78,7 +78,7 @@ Description: "Identifier example for ORGID."
 Usage: #inline
 * system = $System_ORGID
 * value = "123123123"
-* type.coding.code = #ORGID
+* type = $PLRIdentifierType#ORGID
 * period.start = "2000-01-01"
 * extension = Example-ERC-Change
 
@@ -88,7 +88,7 @@ Description: "Identifier example for CPSID."
 Usage: #inline
 * system = $System_CPSID
 * value = "123454"
-* type.coding.code = #CPSID
+* type = $PLRIdentifierType#CPSID
 * period.start = "2000-01-01"
 
 Instance: Example-Identifier-RNID
@@ -97,6 +97,6 @@ Description: "Identifier example for RNID."
 Usage: #inline
 * system = $System_RNID
 * value = "123454"
-* type.coding.code = #RNID
+* type = $PLRIdentifierType#RNID
 * period.start = "2000-01-01"
 

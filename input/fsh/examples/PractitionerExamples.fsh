@@ -69,7 +69,7 @@ Description: "Example of a BC practitioner that is being created."
 // credentials
 * contained[QualificationOrganization] = Example-Qualification-Organization
 * contained[QualificationOrganization].id = "qualificationOrganization"
-* qualification.code = $SCPQual#BD
+* qualification.code = $SCPQual#BD 
 * qualification.code.text = "CREDENTIAL_CREDENTIALDESIGNATIONTXT"
 * qualification.period.start = "2000-01-01"
 * qualification.period.end = "2020-01-01"

@@ -10,11 +10,7 @@ Usage: #inline
 * postalCode = "V6P7B8"
 * state = "BC"
 * country = "CA"
-* extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* extension[0].valueCodeableConcept.coding.system = $PLRCommPurpose
-* extension[0].valueCodeableConcept.coding.code = #BC
-* extension[1].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-address-validation-status-extension"
-* extension[1].valueCodeableConcept.coding.system = $PLRAddressValStatus
-* extension[1].valueCodeableConcept.coding.code = #V
+* extension[commPurposeExtension].valueCodeableConcept = $PLRCommPurpose#BC
+* extension[validationStatus].valueCodeableConcept = $PLRAddressValStatus#V
+* extension[endReason] = Example-ERC-OC
 * period.start = "2000-01-01"
-* extension[2] = Example-ERC-OC
