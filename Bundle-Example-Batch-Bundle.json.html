@@ -43,8 +43,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"8.18"}
-    h3,h4,h5,h6{--heading-prefix:"8.18"}</style>
+    <style type="text/css">h2{--heading-prefix:"8.25"}
+    h3,h4,h5,h6{--heading-prefix:"8.25"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Left logo - typically the publisher's logo - project or affiliate -->
@@ -120,25 +120,28 @@
         <a href="artifacts.html#2">Operations</a>
       </li>
       <li>
-        <a href="artifacts.html#3">Operations Response Examples</a>
+        <a href="artifacts.html#3">Operations Request Examples</a>
       </li>
       <li>
-        <a href="artifacts.html#4">Bundles</a>
+        <a href="artifacts.html#4">Operations Response Examples</a>
       </li>
       <li>
-        <a href="artifacts.html#5">Practitioner</a>
+        <a href="artifacts.html#5">Bundles</a>
       </li>
       <li>
-        <a href="artifacts.html#6">Organization</a>
+        <a href="artifacts.html#6">Practitioner</a>
       </li>
       <li>
-        <a href="artifacts.html#7">Facility</a>
+        <a href="artifacts.html#7">Organization</a>
       </li>
       <li>
-        <a href="artifacts.html#8">Common</a>
+        <a href="artifacts.html#8">Facility</a>
       </li>
       <li>
-        <a href="artifacts.html#9">Datatypes</a>
+        <a href="artifacts.html#9">Common</a>
+      </li>
+      <li>
+        <a href="artifacts.html#10">Datatypes</a>
       </li>
     </ul>
   </li>
@@ -373,6 +376,7 @@
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "identifier",
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>" : {
+                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-note-id",
                         "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "Note-2"
                       }
                     },
@@ -385,30 +389,6 @@
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valuePeriod</a>" : {
                         "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "1998-01-02"
                       }
-                    },
-                    {
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a>" : [
-                        {
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "endReasonCode",
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
-                            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                              {
-                                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
-                                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "CHG"
-                              }
-                            ]
-                          }
-                        },
-                        {
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "custodianId",
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>" : {
-                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
-                              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "CPS"
-                            }
-                          }
-                        }
-                      ],
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
                     }
                   ],
                   "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension"
@@ -418,6 +398,7 @@
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "identifier",
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>" : {
+                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-condition-id",
                         "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "Condition-1"
                       }
                     },
@@ -484,15 +465,7 @@
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "practitioner",
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueReference</a>" : {
                         "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
-                            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                              {
-                                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
-                                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "IPC"
-                              }
-                            ]
-                          },
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system",
+                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC",
                           "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "IPC.00763483.BC.PRS",
                           "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>" : {
                             "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
@@ -517,15 +490,7 @@
               ],
               "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">identifier</a>" : [
                 {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                      {
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "IPC"
-                      }
-                    ]
-                  },
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "IPC.00147422.BC.PRS",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>" : {
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
@@ -552,8 +517,12 @@
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>" : "250"
                     },
                     {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/contactpoint-country",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>" : "1"
+                    },
+                    {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/contactpoint-local",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>" : "111-2234"
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>" : "1112234"
                     },
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/contactpoint-extension",
@@ -569,30 +538,6 @@
                           }
                         ]
                       }
-                    },
-                    {
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a>" : [
-                        {
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "endReasonCode",
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
-                            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                              {
-                                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
-                                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "CHG"
-                              }
-                            ]
-                          }
-                        },
-                        {
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "custodianId",
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>" : {
-                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
-                              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "CPS"
-                            }
-                          }
-                        }
-                      ],
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
                     }
                   ],
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "phone",
@@ -625,30 +570,6 @@
                           }
                         ]
                       }
-                    },
-                    {
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a>" : [
-                        {
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "endReasonCode",
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
-                            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                              {
-                                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
-                                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "CHG"
-                              }
-                            ]
-                          }
-                        },
-                        {
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "custodianId",
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>" : {
-                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
-                              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "CPS"
-                            }
-                          }
-                        }
-                      ],
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
                     }
                   ],
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.type">type</a>" : "postal",
@@ -796,7 +717,7 @@
             "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7",
             "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">resource</a>" : {
               "<a href="http://hl7.org/fhir/R4/practitionerrole.html">resourceType</a>" : "PractitionerRole",
-              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a>" : "Example-PractitionerRole-2-OrgReference-FromPractitioner",
+              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a>" : "Example-PractitionerRole-2-OrgRef-FromPractitioner",
               "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.meta">meta</a>" : {
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
@@ -823,15 +744,7 @@
                   }
                 ],
                 "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                      {
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "IPC"
-                      }
-                    ]
-                  },
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "IPC.00147433.BC.PRS",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>" : {
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
@@ -844,7 +757,7 @@
             "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9",
             "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">resource</a>" : {
               "<a href="http://hl7.org/fhir/R4/practitionerrole.html">resourceType</a>" : "PractitionerRole",
-              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a>" : "Example-PractitionerRole-3-LocReference-FromPractitioner",
+              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a>" : "Example-PractitionerRole-3-LocRef-FromPractitioner",
               "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.meta">meta</a>" : {
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
@@ -872,15 +785,7 @@
                     }
                   ],
                   "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
-                      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                        {
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "IFC"
-                        }
-                      ]
-                    },
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/system/internal-facility-code-system",
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/identifier-system/IFC",
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "IFC.00147422.BC.PRS",
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>" : {
                       "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
@@ -919,17 +824,33 @@
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"
                 ]
               },
+              "<a href="http://hl7.org/fhir/R4/organization.html#Organization.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "identifier",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>" : {
+                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-note-id",
+                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "Note-2"
+                      }
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "text",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>" : "Note text"
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valuePeriod</a>" : {
+                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "1998-01-02"
+                      }
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension"
+                }
+              ],
               "<a href="http://hl7.org/fhir/R4/organization.html#Organization.identifier">identifier</a>" : [
                 {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                      {
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "ORGID"
-                      }
-                    ]
-                  },
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/system/organization-id-code-system",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/identifier-system/ORGID",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "123123123",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>" : {
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
@@ -952,9 +873,28 @@
                   }
                 ]
               },
+              "<a href="http://hl7.org/fhir/R4/organization.html#Organization.alias">alias</a>" : [
+                "ABC Clinic - Kelowna"
+              ],
               "<a href="http://hl7.org/fhir/R4/organization.html#Organization.telecom">telecom</a>" : [
                 {
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.extension">extension</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/contactpoint-area",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>" : "250"
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/contactpoint-country",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>" : "1"
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/contactpoint-local",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>" : "1112234"
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/contactpoint-extension",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>" : "3432"
+                    },
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
@@ -968,9 +908,8 @@
                     }
                   ],
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "phone",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "7786428585",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.period">period</a>" : {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2014-01-31T00:00:00-07:00"
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-02-02"
                   }
                 }
               ],
@@ -998,30 +937,6 @@
                           }
                         ]
                       }
-                    },
-                    {
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a>" : [
-                        {
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "endReasonCode",
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
-                            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                              {
-                                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
-                                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "CHG"
-                              }
-                            ]
-                          }
-                        },
-                        {
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "custodianId",
-                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>" : {
-                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
-                              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "CPS"
-                            }
-                          }
-                        }
-                      ],
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
                     }
                   ],
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.type">type</a>" : "postal",
@@ -1045,44 +960,32 @@
             "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "urn:uuid:f41c4f5f-43eb-497c-8baa-e800fe3fe4fa",
             "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation">resource</a>" : {
               "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html">resourceType</a>" : "OrganizationAffiliation",
-              "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.id">id</a>" : "Example-OrganizationAffiliation-1",
+              "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.id">id</a>" : "Example-OrganizationAffiliation-2-LocRef-FromOrg",
               "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.meta">meta</a>" : {
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"
                 ]
               },
-              "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.active">active</a>" : true,
               "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.period">period</a>" : {
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "1989-04-04T00:00:00-07:00"
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
               },
               "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.organization">organization</a>" : {
-                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.extension">extension</a>" : [
-                  {
-                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
-                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
-                      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                        {
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "DEPTOF"
-                        }
-                      ]
-                    }
-                  }
-                ],
                 "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
               },
+              "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.code">code</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-location-relationship-type-code",
+                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "operatesfrom"
+                    }
+                  ]
+                }
+              ],
               "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.location">location</a>" : [
                 {
                   "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
-                      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                        {
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "IFC"
-                        }
-                      ]
-                    },
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/system/internal-facility-code-system",
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/identifier-system/IFC",
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "IFC.00147422.BC.PRS",
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>" : {
                       "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
@@ -1090,6 +993,98 @@
                   }
                 }
               ]
+            }
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "urn:uuid:efeb9931-b4b7-4caa-9682-cc0220043d1f",
+            "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation">resource</a>" : {
+              "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html">resourceType</a>" : "OrganizationAffiliation",
+              "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.id">id</a>" : "Example-OrganizationAffiliation-1-OrgRef-FromOrg",
+              "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.meta">meta</a>" : {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+                  "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"
+                ]
+              },
+              "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.period">period</a>" : {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
+              },
+              "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.organization">organization</a>" : {
+                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+              },
+              "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.participatingOrganization">participatingOrganization</a>" : {
+                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/identifier-system/ORGID",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "123123123",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>" : {
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
+                  }
+                }
+              },
+              "<a href="http://hl7.org/fhir/R4/organizationaffiliation.html#OrganizationAffiliation.code">code</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
+                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "deptof"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "ac8569d7-4ff1-405f-9b01-a4b71cf0770d",
+            "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">resource</a>" : {
+              "<a href="http://hl7.org/fhir/R4/practitionerrole.html">resourceType</a>" : "PractitionerRole",
+              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a>" : "Example-PractitionerRole-2a-OrgRef-FromPractitioner",
+              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.meta">meta</a>" : {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+                  "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+                ]
+              },
+              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.period">period</a>" : {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
+              },
+              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.practitioner">practitioner</a>" : {
+                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.extension">extension</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "custodianId",
+                          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>" : {
+                            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
+                              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "MOH"
+                            }
+                          }
+                        }
+                      ],
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "IPC.00147422.BC.PRS",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>" : {
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
+                  }
+                }
+              },
+              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.organization">organization</a>" : {
+                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.extension">extension</a>" : [
+                  {
+                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
+                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
+                      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
+                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "EMPLOYEE"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+              }
             }
           }
         ]
@@ -1123,15 +1118,7 @@
               },
               "<a href="http://hl7.org/fhir/R4/location.html#Location.identifier">identifier</a>" : [
                 {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                      {
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "IFC"
-                      }
-                    ]
-                  },
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/system/internal-facility-code-system",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/identifier-system/IFC",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "IFC.00147422.BC.PRS",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>" : {
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
@@ -1234,30 +1221,6 @@
                         }
                       ]
                     }
-                  },
-                  {
-                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a>" : [
-                      {
-                        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "endReasonCode",
-                        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                            {
-                              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
-                              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "CHG"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "custodianId",
-                        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>" : {
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
-                            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "CPS"
-                          }
-                        }
-                      }
-                    ],
-                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
                   }
                 ],
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.type">type</a>" : "postal",
@@ -1280,7 +1243,7 @@
             "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "urn:uuuid:4d73bc14-4332-4acc-a057-0b2ee66c3d4d",
             "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">resource</a>" : {
               "<a href="http://hl7.org/fhir/R4/practitionerrole.html">resourceType</a>" : "PractitionerRole",
-              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a>" : "Example-PractitionerRole-5-PracReference-FromLoc",
+              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a>" : "Example-PractitionerRole-5-PracRef-FromLoc",
               "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.meta">meta</a>" : {
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
                   "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
@@ -1296,23 +1259,15 @@
                     "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
                       "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                         {
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "CARETEAM"
+                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-location-relationship-type-code",
+                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "worklocationfor"
                         }
                       ]
                     }
                   }
                 ],
                 "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                      {
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
-                        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "IPC"
-                      }
-                    ]
-                  },
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "IPC.00147433.BC.PRS",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>" : {
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
@@ -1364,7 +1319,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jun 30, 2022 17:20+0000">2022-06-30</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 5, 2022 22:19+0000">2022-07-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

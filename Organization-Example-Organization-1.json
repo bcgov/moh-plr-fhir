@@ -7,20 +7,36 @@
     ]
   },
   "text": {
-    "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-Organization-1\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><p><b>identifier</b>: ORGID: 123123123</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-Organization-1\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><p><b>value</b>: id: Note-2</p><p><b>value</b>: Note text</p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p></blockquote><p><b>identifier</b>: id: 123123123</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: -unknown-</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
   },
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "identifier",
+          "valueIdentifier": {
+            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-note-id",
+            "value": "Note-2"
+          }
+        },
+        {
+          "url": "text",
+          "valueString": "Note text"
+        },
+        {
+          "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+          "valuePeriod": {
+            "start": "1998-01-02"
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension"
+    }
+  ],
   "identifier": [
     {
-      "type": {
-        "coding": [
-          {
-            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
-            "code": "ORGID"
-          }
-        ]
-      },
-      "system": "https://plr.hlth.gov.bc.ca/plr/system/organization-id-code-system",
+      "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/ORGID",
       "value": "123123123",
       "period": {
         "start": "2000-01-01"
@@ -43,9 +59,28 @@
       }
     ]
   },
+  "alias": [
+    "ABC Clinic - Kelowna"
+  ],
   "telecom": [
     {
       "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-area",
+          "valueString": "250"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-country",
+          "valueString": "1"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-local",
+          "valueString": "1112234"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-extension",
+          "valueString": "3432"
+        },
         {
           "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
           "valueCodeableConcept": {
@@ -59,9 +94,8 @@
         }
       ],
       "system": "phone",
-      "value": "7786428585",
       "period": {
-        "start": "2014-01-31T00:00:00-07:00"
+        "start": "2000-02-02"
       }
     }
   ],
@@ -89,30 +123,6 @@
               }
             ]
           }
-        },
-        {
-          "extension": [
-            {
-              "url": "endReasonCode",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
-                    "code": "CHG"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "custodianId",
-              "valueIdentifier": {
-                "assigner": {
-                  "display": "CPS"
-                }
-              }
-            }
-          ],
-          "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
         }
       ],
       "type": "postal",

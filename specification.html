@@ -118,25 +118,28 @@
         <a href="artifacts.html#2">Operations</a>
       </li>
       <li>
-        <a href="artifacts.html#3">Operations Response Examples</a>
+        <a href="artifacts.html#3">Operations Request Examples</a>
       </li>
       <li>
-        <a href="artifacts.html#4">Bundles</a>
+        <a href="artifacts.html#4">Operations Response Examples</a>
       </li>
       <li>
-        <a href="artifacts.html#5">Practitioner</a>
+        <a href="artifacts.html#5">Bundles</a>
       </li>
       <li>
-        <a href="artifacts.html#6">Organization</a>
+        <a href="artifacts.html#6">Practitioner</a>
       </li>
       <li>
-        <a href="artifacts.html#7">Facility</a>
+        <a href="artifacts.html#7">Organization</a>
       </li>
       <li>
-        <a href="artifacts.html#8">Common</a>
+        <a href="artifacts.html#8">Facility</a>
       </li>
       <li>
-        <a href="artifacts.html#9">Datatypes</a>
+        <a href="artifacts.html#9">Common</a>
+      </li>
+      <li>
+        <a href="artifacts.html#10">Datatypes</a>
       </li>
     </ul>
   </li>
@@ -212,13 +215,17 @@ This specification is currently published as a Draft Standard on the ministry gi
 
 <p>In FHIR, the resources used are named Practitioner, Organization, and Location.  BC has created profiles of each of these resources for use in the PLR system.</p>
 
+<h4 id="individual-provider">Individual Provider</h4>
 <p>Each Individual Provider is composed of a <a href="StructureDefinition-bc-practitioner.html">Practitioner instance</a> and at least one <a href="StructureDefinition-bc-practitioner-role.html">PractitionerRole instance</a> which holds the Practitioner’s role, such as Nurse or Dentist and specialties.</p>
 
 <p>Any other PractitionerRole instances will hold the relationships between an Individual Provider and related Facilities and to Organizational Providers.  A single PractitionerRole instance contains a single relationship.  Thus multiple PractitionerRoles will be required to represent multiple relationships.  There is an <a href="StructureDefinition-bc-practitioner-relationship-extension.html">extension</a> off Practitioner that represents relationships between Individual Providers.</p>
 
+<h4 id="organizational-provider">Organizational Provider</h4>
 <p>Each Organizational Provider is composed of an <a href="StructureDefinition-bc-organization.html">Organization instance</a> with zero or more <a href="StructureDefinition-bc-organization-affiliation.html">OrganizationAffiliation instances</a> and zero or more <a href="StructureDefinition-bc-practitioner-role.html">PractitionerRole instances</a>.</p>
 
 <p>The PractitionerRole is used to represent relationships from Organizational Providers to Individual Providers. OrganizationAffiliation holds the relationship betwen two different Organizational Providers as well as the relationship between an Organizational Provider and Facilities.  A single OrganizationAffilication instance contains a single relationship.  Thus multiple OrganizationAffilications will be required to represent multiple relationships.  The same applies to PractitionerRole.</p>
+
+<h4 id="facility">Facility</h4>
 
 <p>Each Facility is composed of a <a href="StructureDefinition-bc-location.html">Location instance</a>.</p>
 
@@ -236,11 +243,11 @@ This specification is currently published as a Draft Standard on the ministry gi
 <h4 id="provider-to-provider-relationships">Provider to Provider Relationships</h4>
 
 <h5 id="individual-provider-to-individual-provider">Individual Provider to Individual Provider</h5>
-<p>Individual Provider to Provider relationships are used for showing how Providers are related to each other.  For instance, a LOCUM Provider can be referenced using this capability.
-To show the relationship between two Individual Providers, the <a href="StructureDefinition-bc-practitioner-relationship-extension.html">BC Practitioner Relationship extension</a> was created.  This allows for a relationship type and a linkage between two BC Practitioners to be stated.  NOTE: It is expected that the relationship would be found on both Practitioner instances.</p>
+<p>Individual Provider to Individual Provider relationships are used for showing how Providers are related to each other.  For instance, a LOCUM Provider can be referenced using this capability.
+To show the relationship between two Individual Providers, the <a href="StructureDefinition-bc-practitioner-relationship-extension.html">BC Practitioner Relationship extension</a> was created for the Practitioner resource.  This allows for a relationship type and a linkage between two BC Practitioners to be stated.  NOTE: It is expected that the relationship would be found on both Practitioner instances.</p>
 
 <h5 id="individual-provider-to-organizational-provider">Individual Provider to Organizational Provider</h5>
-<p>To show the relationship between an Individual Provider and an Organizational Provider (i.e. a hospital that has Providers working at it), the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  This resource has a practitioner data element and an organization data element along with a code that is used to say what role the Individual Provider plays at the organization.</p>
+<p>To show the relationship between an Individual Provider and an Organizational Provider (i.e. a Provider working at a hospital), the <a href="StructureDefinition-bc-practitioner-role.html">BC PractitionerRole profile</a> is used.  This resource has a practitioner data element and an organization data element along with an extension that is used to describe the role the Individual Provider plays at the organization, e.g. employed by.</p>
 
 <h5 id="organizational-provider-to-organizational-provider">Organizational Provider to Organizational Provider</h5>
 <p>To show the relationship between two Organizational Providers (i.e. a subsidiary organization or a care team related to Good Health Clinic Inc.), the <a href="StructureDefinition-bc-organization-affiliation.html">BC OrganizationAffiliation profile</a> is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.</p>
@@ -265,24 +272,43 @@ To show the relationship between two Individual Providers, the <a href="Structur
 
 <h4 id="distributions">Distributions</h4>
 
-<p>A Distribution is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.  The distribution is sent from PLR to a client application by sending a Bundle (of type ‘collection’) via a RESTful PUT to a client nominated endpoint URL.  The Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity.  The Bundle includes one of the following sets:</p>
+<p>A <a href="OperationDefinition-bc-distribution.html">Distribution operation</a> is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.  The distribution is sent from PLR to a client application by sending a Bundle (of type ‘collection’) via a RESTful POST to a client nominated endpoint URL.  The Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity.  The Bundle includes one of the following sets:</p>
 
 <ol>
   <li>PractitionerRole(s) and Practitioner;</li>
   <li>OrganizationAffiliation(s), PractitionerRole(s) and Organization;</li>
-  <li>Location, OrganizationAffiliation(s), PractitionerRole(s).</li>
+  <li>OrganizationAffiliation(s), PractitionerRole(s) and Location.</li>
 </ol>
 
-<p>There will be one PUT request per distribution and each distribution will have a single Practitioner, Organization, or Location.</p>
+<p>There will be one POST request per distribution and each distribution will have a single Practitioner, Organization, or Location.</p>
 
-<p>With the restriction on the content of the different Distribution Bundles, it may take multiple Bundles to convey all of the relationships between Practitioners, Organizations, and Locations.  To send a PractitionerRole, the Organization and/or Location has to already exist on the client side.  Similarly, for OrganizationAffiliations, the Organizations and/or Locations must already exist.  That could possibly mean that one would see a Distribution Bundle with just an Organization and then another Bundle with a Practitioner and a PractitionerRole linking the Practitioner and the Organization.</p>
+<p>POST https://…/Bundle/$distribution</p>
 
 <p>The response to a distribution SHALL be HTTP 200 or 201 OK.  Anything else and the reliable messaging function will retry to send the request until a 200 is received back or times out.</p>
 
 <h4 id="maintain">Maintain</h4>
-<p>Maintain Provider and Facility will be exactly like Distributions above, but the interaction we be directed to PLR rather than directed to a client’s sytem.  The rules for Distributions apply to Maintain Bundles.</p>
+<p>A <a href="OperationDefinition-bc-maintain.html">Maintain operation</a> is used by a user to communicate a change to a single Provider (Individual or Organizational) or Facility to PLR.  The Bundle includes one of the following sets:</p>
 
-<p>The PLR FHIR Server response will be a Bundle with type set to “collection” that contains one entry for each entry in the request, in the same order, with the outcome of processing the entry. A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.</p>
+<ol>
+  <li>PractitionerRole(s) and Practitioner;</li>
+  <li>OrganizationAffiliation(s), PractitionerRole(s) and Organization;</li>
+  <li>OrganizationAffiliation(s), PractitionerRole(s) and Location.</li>
+</ol>
+
+<p>POST https://…/Bundle/$maintain</p>
+
+<p>The PLR FHIR Server response will be a Bundle with type set to “collection” that contains the created or updated resources that represent the Provider (Individual or Organizational) or Facility.  The Bundle includes one of the following sets (same as request):</p>
+
+<ol>
+  <li>PractitionerRole(s) and Practitioner;</li>
+  <li>OrganizationAffiliation(s), PractitionerRole(s) and Organization;</li>
+  <li>OrganizationAffiliation(s), PractitionerRole(s) and Location;</li>
+  <li>OperationOutcome</li>
+</ol>
+
+<p>The reponse also has an entry of OperationOutcome that has information, warning or error messages.</p>
+
+<p>A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.</p>
 
 <h4 id="batch">Batch</h4>
 <p>Batch also uses Bundles, but a batch Bundle (Bundle.type = ‘batch’), that wraps a number of Bundles.  A batch Bundle therefore allows for many independent transactions to be sent in a single operation.  The batch Bundle must contain at least one or more of:</p>
@@ -334,7 +360,7 @@ To show the relationship between two Individual Providers, the <a href="Structur
   <figcaption>Figure 2.2 - BC FHIR Query Response Bundle Structure</figcaption>
 </figure>
 
-<p>A FHIR example of a real message can be found <a href="Bundle-Example-Query-Response-Bundle-with-Individual-Provider.html">here</a>.</p>
+<p>A FHIR example of a real message can be found <a href="Bundle-Example-Response-Query-Practitioner-Bundle.html">here</a>.</p>
 
 <h5 id="query-supported-search-parameters">Query Supported Search Parameters</h5>
 
@@ -393,6 +419,10 @@ To show the relationship between two Individual Providers, the <a href="Structur
     <tr>
       <td>Organization</td>
       <td style="text-align: left">name</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">description</td>
     </tr>
     <tr>
       <td> </td>
@@ -474,7 +504,7 @@ To show the relationship between two Individual Providers, the <a href="Structur
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jun 30, 2022 17:20+0000">2022-06-30</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 5, 2022 22:19+0000">2022-07-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -29,4 +29,3 @@ This PractitionerRole profile has the following mandatory elements:
 
 ### Examples
 
-- [PractitionerRole Example](PractitionerRole-Example-AddPractitioner-PractitionerRole.html)

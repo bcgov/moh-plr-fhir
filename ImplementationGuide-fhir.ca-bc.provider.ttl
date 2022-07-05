@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "BCProviderRegistry"];
   fhir:ImplementationGuide.title [ fhir:value "BC Provider Location Registry FHIR Implementation Guide"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2022-06-30T17:20:30+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2022-07-05T22:19:03+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "BC Ministry of Health"];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -353,31 +353,36 @@
        fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Operation definitions" ]
      ], [
        fhir:index 2;
+       fhir:Element.id [ fhir:value "OperationsRequestExamples" ];
+       fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Operations Request Examples" ];
+       fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Operation request examples" ]
+     ], [
+       fhir:index 3;
        fhir:Element.id [ fhir:value "OperationsResponseExamples" ];
        fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Operations Response Examples" ];
        fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Operation response examples" ]
      ], [
-       fhir:index 3;
+       fhir:index 4;
        fhir:Element.id [ fhir:value "Bundles" ];
        fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Bundles" ];
        fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Inbound Distribution/Maintain and Batch Bundles" ]
      ], [
-       fhir:index 4;
+       fhir:index 5;
        fhir:Element.id [ fhir:value "Practitioner" ];
        fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Practitioner" ];
        fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Artifacts associated with Practitioners" ]
      ], [
-       fhir:index 5;
+       fhir:index 6;
        fhir:Element.id [ fhir:value "Organization" ];
        fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Organization" ];
        fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Artifacts associated with Organizations" ]
      ], [
-       fhir:index 6;
+       fhir:index 7;
        fhir:Element.id [ fhir:value "Facility" ];
        fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Facility" ];
        fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Artifacts associated with Facilities" ]
      ], [
-       fhir:index 7;
+       fhir:index 8;
        fhir:Element.id [ fhir:value "Extensions" ];
        fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Extensions" ];
        fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Extensions used across all groupings" ]
@@ -989,6 +994,23 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Bundle" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-AddPractitioner-Bundle-Response>;
+         fhir:Reference.reference [ fhir:value "Bundle/Example-AddPractitioner-Bundle-Response" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-AddPractitioner-Bundle-Response" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a bundle of resources sent when requesting a practitioner create." ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle>
+       ]
+     ], [
+       fhir:index 41;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Practitioner" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
@@ -1003,7 +1025,7 @@
        ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
-       fhir:index 41;
+       fhir:index 42;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1021,7 +1043,7 @@
        ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Facility" ]
      ], [
-       fhir:index 42;
+       fhir:index 43;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1039,7 +1061,7 @@
        ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Bundles" ]
      ], [
-       fhir:index 43;
+       fhir:index 44;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1056,7 +1078,24 @@
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization>
        ]
      ], [
-       fhir:index 44;
+       fhir:index 45;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Bundle" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-DistributeOrganization-Bundle>;
+         fhir:Reference.reference [ fhir:value "Bundle/Example-DistributeOrganization-Bundle" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-DistributeOrganization-Bundle" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a bundle of resources sent when distributing a Organization." ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle>
+       ]
+     ], [
+       fhir:index 46;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1067,14 +1106,14 @@
          fhir:Reference.reference [ fhir:value "Bundle/Example-DistributePractitioner-Bundle" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-DistributePractitioner-Bundle" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a bundle of resources sent for a practitioner distribution." ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a bundle of resources sent when distributing a Practitioner." ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle>
        ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Bundles" ]
      ], [
-       fhir:index 45;
+       fhir:index 47;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1091,7 +1130,7 @@
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle>
        ]
      ], [
-       fhir:index 46;
+       fhir:index 48;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1109,7 +1148,7 @@
        ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Facility" ]
      ], [
-       fhir:index 47;
+       fhir:index 49;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1123,7 +1162,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "OperationOutcome example for Individual Provider search - wildcard error." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 48;
+       fhir:index 50;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1137,7 +1176,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "OperationOutcome example for Individual Provider search - no provider records found." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 49;
+       fhir:index 51;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1151,7 +1190,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "OperationOutcome example for Individual Provider search - too many results." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 50;
+       fhir:index 52;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1162,13 +1201,13 @@
          fhir:Reference.reference [ fhir:value "Organization/Example-Organization-1" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Organization-1" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of an Organization that is being created." ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of an Organization." ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization>
        ]
      ], [
-       fhir:index 51;
+       fhir:index 53;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1185,59 +1224,60 @@
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization>
        ]
      ], [
-       fhir:index 52;
+       fhir:index 54;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Organization" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Organization/Example-Organization-Response>;
+         fhir:Reference.reference [ fhir:value "Organization/Example-Organization-Response" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Organization-Response" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of an Organization that is being created." ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization>
+       ]
+     ], [
+       fhir:index 55;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "OrganizationAffiliation" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/OrganizationAffiliation/Example-OrganizationAffiliation-1>;
-         fhir:Reference.reference [ fhir:value "OrganizationAffiliation/Example-OrganizationAffiliation-1" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/OrganizationAffiliation/Example-OrganizationAffiliation-1-OrgRef-FromOrg>;
+         fhir:Reference.reference [ fhir:value "OrganizationAffiliation/Example-OrganizationAffiliation-1-OrgRef-FromOrg" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-OrganizationAffiliation-1" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a relationship between an Organization and its Locations (facilities)." ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-OrganizationAffiliation-1-OrgRef-FromOrg" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the OrganizationAffiliation for Organization to Organization relationship." ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation>
        ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Organization" ]
      ], [
-       fhir:index 53;
+       fhir:index 56;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "OrganizationAffiliation" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/OrganizationAffiliation/Example-OrganizationAffiliation-1-OrgReference-FromOrg>;
-         fhir:Reference.reference [ fhir:value "OrganizationAffiliation/Example-OrganizationAffiliation-1-OrgReference-FromOrg" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/OrganizationAffiliation/Example-OrganizationAffiliation-2-LocRef-FromOrg>;
+         fhir:Reference.reference [ fhir:value "OrganizationAffiliation/Example-OrganizationAffiliation-2-LocRef-FromOrg" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-OrganizationAffiliation-1-OrgReference-FromOrg" ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-OrganizationAffiliation-2-LocRef-FromOrg" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the OrganizationAffiliation for Organization to Organization relationship." ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation>
-       ]
-     ], [
-       fhir:index 54;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "OrganizationAffiliation" ]
        ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/OrganizationAffiliation/Example-OrganizationAffiliation-2-LocReference-FromOrg>;
-         fhir:Reference.reference [ fhir:value "OrganizationAffiliation/Example-OrganizationAffiliation-2-LocReference-FromOrg" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-OrganizationAffiliation-2-LocReference-FromOrg" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the OrganizationAffiliation for Organization to Organization relationship." ];
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation";
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation>
-       ]
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Organization" ]
      ], [
-       fhir:index 55;
+       fhir:index 57;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1254,7 +1294,7 @@
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle>
        ]
      ], [
-       fhir:index 56;
+       fhir:index 58;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1271,7 +1311,24 @@
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner>
        ]
      ], [
-       fhir:index 57;
+       fhir:index 59;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Practitioner" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-Practitioner-Response>;
+         fhir:Reference.reference [ fhir:value "Practitioner/Example-Practitioner-Response" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Practitioner-Response" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of generic Practitioner." ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner>
+       ]
+     ], [
+       fhir:index 60;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1288,7 +1345,7 @@
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner>
        ]
      ], [
-       fhir:index 58;
+       fhir:index 61;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1305,7 +1362,24 @@
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
        ]
      ], [
-       fhir:index 59;
+       fhir:index 62;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Response>;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Response" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-1-Role-FromPractitioner-Response" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the PractitionerRole with Speciality." ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ], [
+       fhir:index 63;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1322,75 +1396,177 @@
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
        ]
      ], [
-       fhir:index 60;
+       fhir:index 64;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-2-OrgReference-FromPractitioner>;
-         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-2-OrgReference-FromPractitioner" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Update-Response>;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Update-Response" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-2-OrgReference-FromPractitioner" ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-1-Role-FromPractitioner-Update-Response" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the PractitionerRole with Speciality." ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ], [
+       fhir:index 65;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-2-OrgRef-FromPractitioner>;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-2-OrgRef-FromPractitioner" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-2-OrgRef-FromPractitioner" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the PractitionerRole for Practitioner to Organization relationship." ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
        ]
      ], [
-       fhir:index 61;
+       fhir:index 66;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-3-LocReference-FromPractitioner>;
-         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-3-LocReference-FromPractitioner" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-2-OrgRef-FromPractitioner-Response>;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-2-OrgRef-FromPractitioner-Response" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-3-LocReference-FromPractitioner" ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-2-OrgRef-FromPractitioner-Response" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the PractitionerRole for Practitioner to Organization relationship." ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ], [
+       fhir:index 67;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-2a-OrgRef-FromPractitioner>;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-2a-OrgRef-FromPractitioner" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-2a-OrgRef-FromPractitioner" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the PractitionerRole for Practitioner to Organization relationship." ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ], [
+       fhir:index 68;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-3-LocRef-FromPractitioner>;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-3-LocRef-FromPractitioner" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-3-LocRef-FromPractitioner" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the PractitionerRole for Practitioner to Location relationship." ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
        ]
      ], [
-       fhir:index 62;
+       fhir:index 69;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-4-PracReference-FromOrg>;
-         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-4-PracReference-FromOrg" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-3-LocRef-FromPractitioner-Response>;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-3-LocRef-FromPractitioner-Response" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-4-PracReference-FromOrg" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the PractitionerRole for Practitioner to Practitioner relationship." ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-3-LocRef-FromPractitioner-Response" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the PractitionerRole for Practitioner to Location relationship." ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
        ]
      ], [
-       fhir:index 63;
+       fhir:index 70;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-5-PracReference-FromLoc>;
-         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-5-PracReference-FromLoc" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-4-PracRef-FromOrg>;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-4-PracRef-FromOrg" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-5-PracReference-FromLoc" ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-4-PracRef-FromOrg" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the PractitionerRole for Practitioner to Practitioner relationship." ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
        ]
      ], [
-       fhir:index 64;
+       fhir:index 71;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-4-PracRef-FromOrg-Response>;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-4-PracRef-FromOrg-Response" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-4-PracRef-FromOrg-Response" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the PractitionerRole for Practitioner to Practitioner relationship." ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ], [
+       fhir:index 72;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-5-PracRef-FromLoc>;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-5-PracRef-FromLoc" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-5-PracRef-FromLoc" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the PractitionerRole for Practitioner to Practitioner relationship." ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ], [
+       fhir:index 73;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-5-PracRef-FromLoc-Response>;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/Example-PractitionerRole-5-PracRef-FromLoc-Response" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-PractitionerRole-5-PracRef-FromLoc-Response" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the PractitionerRole for Practitioner to Practitioner relationship." ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ], [
+       fhir:index 74;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1408,37 +1584,112 @@
        ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Practitioner" ]
      ], [
-       fhir:index 65;
+       fhir:index 75;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "Bundle" ]
+         fhir:Extension.valueString [ fhir:value "Parameters" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Query-Response-Bundle-with-Individual-Provider>;
-         fhir:Reference.reference [ fhir:value "Bundle/Example-Query-Response-Bundle-with-Individual-Provider" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Parameters/Example-Request-Add-Organization>;
+         fhir:Reference.reference [ fhir:value "Parameters/Example-Request-Add-Organization" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Query-Response-Bundle-with-Individual-Provider" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "An example search response bundle with Individual Provider." ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Request-Add-Organization" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example Parameters to add an Organizational Provider." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "OperationsRequestExamples" ]
+     ], [
+       fhir:index 76;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Parameters" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Parameters/Example-Request-Add-Practitioner>;
+         fhir:Reference.reference [ fhir:value "Parameters/Example-Request-Add-Practitioner" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Request-Add-Practitioner" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example Parameters to add an Individual Provider." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "OperationsRequestExamples" ]
+     ], [
+       fhir:index 77;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Parameters" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Parameters/Example-Request-Distribution-Organization>;
+         fhir:Reference.reference [ fhir:value "Parameters/Example-Request-Distribution-Organization" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Request-Distribution-Organization" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example Parameters to distribute an Individual Provider." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "OperationsRequestExamples" ]
+     ], [
+       fhir:index 78;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Parameters" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Parameters/Example-Request-Distribution-Practitioner>;
+         fhir:Reference.reference [ fhir:value "Parameters/Example-Request-Distribution-Practitioner" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Request-Distribution-Practitioner" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example Parameters to distribute an Individual Provider." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "OperationsRequestExamples" ]
+     ], [
+       fhir:index 79;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Parameters" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Parameters/Example-Response-Add-Practitioner>;
+         fhir:Reference.reference [ fhir:value "Parameters/Example-Response-Add-Practitioner" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Response-Add-Practitioner" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example Parameters for Add Individual Provider response." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "OperationsResponseExamples" ]
      ], [
-       fhir:index 66;
+       fhir:index 80;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Bundle" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Query-Response-Bundle-with-Organizational-Provider>;
-         fhir:Reference.reference [ fhir:value "Bundle/Example-Query-Response-Bundle-with-Organizational-Provider" ]
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Response-Query-Organization-Bundle>;
+         fhir:Reference.reference [ fhir:value "Bundle/Example-Response-Query-Organization-Bundle" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Query-Response-Bundle-with-Organizational-Provider" ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Response-Query-Organization-Bundle" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "An example search response bundle with Organizational Provider." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "OperationsResponseExamples" ]
      ], [
-       fhir:index 67;
+       fhir:index 81;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Bundle" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Response-Query-Practitioner-Bundle>;
+         fhir:Reference.reference [ fhir:value "Bundle/Example-Response-Query-Practitioner-Bundle" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-Response-Query-Practitioner-Bundle" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "An example search response bundle with Individual Provider." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "OperationsResponseExamples" ]
+     ], [
+       fhir:index 82;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1455,7 +1706,22 @@
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle>
        ]
      ], [
-       fhir:index 68;
+       fhir:index 83;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "OperationDefinition" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-distribution>;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/bc-distribution" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Distribution" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This operation is used to distribute the resources that represent a Provider or Facility." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Operations" ]
+     ], [
+       fhir:index 84;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1470,7 +1736,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Operations" ]
      ], [
-       fhir:index 69;
+       fhir:index 85;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1485,7 +1751,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Operations" ]
      ], [
-       fhir:index 70;
+       fhir:index 86;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1500,7 +1766,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Operations" ]
      ], [
-       fhir:index 71;
+       fhir:index 87;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1515,7 +1781,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Operations" ]
      ], [
-       fhir:index 72;
+       fhir:index 88;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1530,7 +1796,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Operations" ]
      ], [
-       fhir:index 73;
+       fhir:index 89;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1545,7 +1811,22 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Operations" ]
      ], [
-       fhir:index 74;
+       fhir:index 90;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "OperationDefinition" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-maintain>;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/bc-maintain" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Maintain" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This operation is used to create and update the resources that represent a Provider or Facility." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Operations" ]
+     ], [
+       fhir:index 91;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1560,7 +1841,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Capabilities" ]
      ], [
-       fhir:index 75;
+       fhir:index 92;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1771,6 +2052,8 @@
 
 <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-AddPractitioner-Bundle> a fhir:ca-bc .
 
+<http://hl7.org/fhir/ca-bc/provider/Bundle/Example-AddPractitioner-Bundle-Response> a fhir:ca-bc .
+
 <http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-AddPractitioner-Practitioner> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/Location/Example-AddPractitioner-WorkLocation> a fhir:ca-bc .
@@ -1778,6 +2061,8 @@
 <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Batch-Bundle> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/Organization/Example-Credential-Granting-Institution> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/Bundle/Example-DistributeOrganization-Bundle> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-DistributePractitioner-Bundle> a fhir:ca-bc .
 
@@ -1795,37 +2080,65 @@
 
 <http://hl7.org/fhir/ca-bc/provider/Organization/Example-Organization-2> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/OrganizationAffiliation/Example-OrganizationAffiliation-1> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/Organization/Example-Organization-Response> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/OrganizationAffiliation/Example-OrganizationAffiliation-1-OrgReference-FromOrg> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/OrganizationAffiliation/Example-OrganizationAffiliation-1-OrgRef-FromOrg> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/OrganizationAffiliation/Example-OrganizationAffiliation-2-LocReference-FromOrg> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/OrganizationAffiliation/Example-OrganizationAffiliation-2-LocRef-FromOrg> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Organizational-Provider-Bundle> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-Practitioner> a fhir:ca-bc .
 
+<http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-Practitioner-Response> a fhir:ca-bc .
+
 <http://hl7.org/fhir/ca-bc/provider/Practitioner/Example-Practitioner-UpdateLicense> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner> a fhir:ca-bc .
 
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Response> a fhir:ca-bc .
+
 <http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Update> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-2-OrgReference-FromPractitioner> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Update-Response> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-3-LocReference-FromPractitioner> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-2-OrgRef-FromPractitioner> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-4-PracReference-FromOrg> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-2-OrgRef-FromPractitioner-Response> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-5-PracReference-FromLoc> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-2a-OrgRef-FromPractitioner> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-3-LocRef-FromPractitioner> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-3-LocRef-FromPractitioner-Response> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-4-PracRef-FromOrg> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-4-PracRef-FromOrg-Response> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-5-PracRef-FromLoc> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/PractitionerRole/Example-PractitionerRole-5-PracRef-FromLoc-Response> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/Organization/Example-Qualification-Organization> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Query-Response-Bundle-with-Individual-Provider> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/Parameters/Example-Request-Add-Organization> a fhir:ca-bc .
 
-<http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Query-Response-Bundle-with-Organizational-Provider> a fhir:ca-bc .
+<http://hl7.org/fhir/ca-bc/provider/Parameters/Example-Request-Add-Practitioner> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/Parameters/Example-Request-Distribution-Organization> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/Parameters/Example-Request-Distribution-Practitioner> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/Parameters/Example-Response-Add-Practitioner> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Response-Query-Organization-Bundle> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/Bundle/Example-Response-Query-Practitioner-Bundle> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/Bundle/Example-UpdatePractitioner-LicenseStatus-Bundle> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-distribution> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-entity-location-query> a fhir:ca-bc .
 
@@ -1838,6 +2151,8 @@
 <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-organization-query> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-practitioner-query> a fhir:ca-bc .
+
+<http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-maintain> a fhir:ca-bc .
 
 <http://hl7.org/fhir/ca-bc/provider/CapabilityStatement/bc-plr-client-capability-statement> a fhir:ca-bc .
 

@@ -173,6 +173,31 @@
           ]
         }
       ]
+    },
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Bundle",
+          "supportedProfile": [
+            "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle",
+            "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle",
+            "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle"
+          ],
+          "operation": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "maintain",
+              "definition": "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-maintain"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

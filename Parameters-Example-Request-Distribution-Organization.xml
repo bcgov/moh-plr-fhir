@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="Example-Request-Distribution-Organization"/>
+  <parameter>
+    <name value="messageId"/>
+    <valueString value="12344321"/>
+  </parameter>
+  <parameter>
+    <name value="messageTime"/>
+    <valueDateTime value="2022-06-27T01:01:01-08:00"/>
+  </parameter>
+  <parameter>
+    <name value="distribution"/>
+    <resource>
+      <Bundle>
+        <id value="Example-DistributeOrganization-Bundle"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle"/>
+        </meta>
+        <type value="collection"/>
+        <entry>
+          <fullUrl value="urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"/>
+          <resource>
+            <Organization>
+              <id value="Example-Organization-Response"/>
+              <meta>
+                <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
+              </meta>
+              <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension">
+                <extension url="identifier">
+                  <valueIdentifier>
+                    <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-note-id"/>
+                    <value value="Note-2"/>
+                  </valueIdentifier>
+                </extension>
+                <extension url="text">
+                  <valueString value="Note text"/>
+                </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="1998-01-02"/>
+                  </valuePeriod>
+                </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="custodianId">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="PHSA"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
+                </extension>
+              </extension>
+              <identifier>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="custodianId">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="PHSA"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
+                </extension>
+                <system value="https://plr.hlth.gov.bc.ca/plr/identifier-system/ORGID"/>
+                <value value="123123123"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+              </identifier>
+              <identifier>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="custodianId">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="MOH"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
+                </extension>
+                <system value="https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC"/>
+                <value value="IPC.00147433.BC.PRS"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+              </identifier>
+              <identifier>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="custodianId">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="PHSA"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
+                </extension>
+                <system value="https://plr.hlth.gov.bc.ca/plr/identifier-system/CPN"/>
+                <value value="CPN.00147433.BC.PRS"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+              </identifier>
+              <active value="true"/>
+              <name value="Kelowna Clinic">
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-name-use-extension">
+                  <valueCode value="official"/>
+                </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="2014-01-31T00:00:00-07:00"/>
+                  </valuePeriod>
+                </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="custodianId">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="PHSA"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
+                </extension>
+              </name>
+              <alias value="ABC Clinic - Kelowna"/>
+              <telecom>
+                <extension url="http://hl7.org/fhir/StructureDefinition/contactpoint-area">
+                  <valueString value="250"/>
+                </extension>
+                <extension url="http://hl7.org/fhir/StructureDefinition/contactpoint-country">
+                  <valueString value="1"/>
+                </extension>
+                <extension url="http://hl7.org/fhir/StructureDefinition/contactpoint-local">
+                  <valueString value="1112234"/>
+                </extension>
+                <extension url="http://hl7.org/fhir/StructureDefinition/contactpoint-extension">
+                  <valueString value="3432"/>
+                </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-communication-purpose-code"/>
+                      <code value="BC"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="custodianId">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="PHSA"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
+                </extension>
+                <system value="phone"/>
+                <period>
+                  <start value="2000-02-02"/>
+                </period>
+              </telecom>
+              <address>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-communication-purpose-code"/>
+                      <code value="BC"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-address-validation-status-extension">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-address-validation-status-code"/>
+                      <code value="V"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="custodianId">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="PHSA"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
+                </extension>
+                <type value="postal"/>
+                <line value="19 ST"/>
+                <line value="ADDRESS ADDRESSLINE2TXT"/>
+                <line value="ADDRESS ADDRESSLINE3TXT"/>
+                <city value="VICTORIA"/>
+                <state value="BC"/>
+                <postalCode value="V6P7B8"/>
+                <country value="CA"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+              </address>
+            </Organization>
+          </resource>
+        </entry>
+        <entry>
+          <fullUrl value="urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7"/>
+          <resource>
+            <PractitionerRole>
+              <id value="Example-PractitionerRole-2a-OrgRef-FromPractitioner"/>
+              <meta>
+                <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+              </meta>
+              <period>
+                <start value="2000-01-01"/>
+              </period>
+              <practitioner>
+                <identifier>
+                  <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                    <extension url="custodianId">
+                      <valueIdentifier>
+                        <assigner>
+                          <display value="MOH"/>
+                        </assigner>
+                      </valueIdentifier>
+                    </extension>
+                  </extension>
+                  <system value="https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC"/>
+                  <value value="IPC.00147422.BC.PRS"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </practitioner>
+              <organization>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code"/>
+                      <code value="EMPLOYEE"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <reference value="urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"/>
+              </organization>
+            </PractitionerRole>
+          </resource>
+        </entry>
+        <entry>
+          <fullUrl value="urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9"/>
+          <resource>
+            <OrganizationAffiliation>
+              <id value="Example-OrganizationAffiliation-2-LocRef-FromOrg"/>
+              <meta>
+                <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"/>
+              </meta>
+              <period>
+                <start value="2000-01-01"/>
+              </period>
+              <organization>
+                <reference value="urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"/>
+              </organization>
+              <code>
+                <coding>
+                  <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-location-relationship-type-code"/>
+                  <code value="operatesfrom"/>
+                </coding>
+              </code>
+              <location>
+                <identifier>
+                  <system value="https://plr.hlth.gov.bc.ca/plr/identifier-system/IFC"/>
+                  <value value="IFC.00147422.BC.PRS"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </location>
+            </OrganizationAffiliation>
+          </resource>
+        </entry>
+      </Bundle>
+    </resource>
+  </parameter>
+</Parameters>

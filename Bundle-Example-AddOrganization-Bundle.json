@@ -19,20 +19,36 @@
           ]
         },
         "text": {
-          "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-Organization-1\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><p><b>identifier</b>: ORGID: 123123123</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-Organization-1\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><p><b>value</b>: id: Note-2</p><p><b>value</b>: Note text</p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p></blockquote><p><b>identifier</b>: id: 123123123</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: -unknown-</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
         },
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "identifier",
+                "valueIdentifier": {
+                  "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-note-id",
+                  "value": "Note-2"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Note text"
+              },
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+                "valuePeriod": {
+                  "start": "1998-01-02"
+                }
+              }
+            ],
+            "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension"
+          }
+        ],
         "identifier": [
           {
-            "type": {
-              "coding": [
-                {
-                  "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
-                  "code": "ORGID"
-                }
-              ]
-            },
-            "system": "https://plr.hlth.gov.bc.ca/plr/system/organization-id-code-system",
+            "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/ORGID",
             "value": "123123123",
             "period": {
               "start": "2000-01-01"
@@ -55,9 +71,28 @@
             }
           ]
         },
+        "alias": [
+          "ABC Clinic - Kelowna"
+        ],
         "telecom": [
           {
             "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-area",
+                "valueString": "250"
+              },
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-country",
+                "valueString": "1"
+              },
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-local",
+                "valueString": "1112234"
+              },
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-extension",
+                "valueString": "3432"
+              },
               {
                 "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
                 "valueCodeableConcept": {
@@ -71,9 +106,8 @@
               }
             ],
             "system": "phone",
-            "value": "7786428585",
             "period": {
-              "start": "2014-01-31T00:00:00-07:00"
+              "start": "2000-02-02"
             }
           }
         ],
@@ -101,30 +135,6 @@
                     }
                   ]
                 }
-              },
-              {
-                "extension": [
-                  {
-                    "url": "endReasonCode",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
-                          "code": "CHG"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "custodianId",
-                    "valueIdentifier": {
-                      "assigner": {
-                        "display": "CPS"
-                      }
-                    }
-                  }
-                ],
-                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
               }
             ],
             "type": "postal",
@@ -148,7 +158,7 @@
       "fullUrl": "urn:uuid:f41c4f5f-43eb-497c-8baa-e800fe3fe4fa",
       "resource": {
         "resourceType": "OrganizationAffiliation",
-        "id": "Example-OrganizationAffiliation-1",
+        "id": "Example-OrganizationAffiliation-2-LocRef-FromOrg",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"
@@ -156,11 +166,118 @@
         },
         "text": {
           "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-OrganizationAffiliation-1\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>active</b>: true</p><p><b>period</b>: 1989-04-04 12:00:00-0700 --&gt; (ongoing)</p><p><b>organization</b>: <a href=\"#Organization_Example-Organization-1\">See above (urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf)</a></p><p><b>location</b>: <span></span></p></div>"
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-OrganizationAffiliation-2-LocRef-FromOrg\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <a href=\"#Organization_Example-Organization-1\">See above (urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf)</a></p><p><b>code</b>: operatesfrom <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code#operatesfrom)</span></p><p><b>location</b>: <span></span></p></div>"
         },
-        "active": true,
         "period": {
-          "start": "1989-04-04T00:00:00-07:00"
+          "start": "2000-01-01"
+        },
+        "organization": {
+          "reference": "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-location-relationship-type-code",
+                "code": "operatesfrom"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "identifier": {
+              "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/IFC",
+              "value": "IFC.00147422.BC.PRS",
+              "period": {
+                "start": "2000-01-01"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:efeb9931-b4b7-4caa-9682-cc0220043d1f",
+      "resource": {
+        "resourceType": "OrganizationAffiliation",
+        "id": "Example-OrganizationAffiliation-1-OrgRef-FromOrg",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-OrganizationAffiliation-1-OrgRef-FromOrg\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <a href=\"#Organization_Example-Organization-1\">See above (urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf)</a></p><p><b>participatingOrganization</b>: <span></span></p><p><b>code</b>: deptof <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code#deptof)</span></p></div>"
+        },
+        "period": {
+          "start": "2000-01-01"
+        },
+        "organization": {
+          "reference": "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+        },
+        "participatingOrganization": {
+          "identifier": {
+            "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/ORGID",
+            "value": "123123123",
+            "period": {
+              "start": "2000-01-01"
+            }
+          }
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
+                "code": "deptof"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "ac8569d7-4ff1-405f-9b01-a4b71cf0770d",
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "Example-PractitionerRole-2a-OrgRef-FromPractitioner",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole-2a-OrgRef-FromPractitioner\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span></span></p><p><b>organization</b>: <a href=\"#Organization_Example-Organization-1\">See above (urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf)</a></p></div>"
+        },
+        "period": {
+          "start": "2000-01-01"
+        },
+        "practitioner": {
+          "identifier": {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "custodianId",
+                    "valueIdentifier": {
+                      "assigner": {
+                        "display": "MOH"
+                      }
+                    }
+                  }
+                ],
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
+              }
+            ],
+            "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC",
+            "value": "IPC.00147422.BC.PRS",
+            "period": {
+              "start": "2000-01-01"
+            }
+          }
         },
         "organization": {
           "extension": [
@@ -170,33 +287,14 @@
                 "coding": [
                   {
                     "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
-                    "code": "DEPTOF"
+                    "code": "EMPLOYEE"
                   }
                 ]
               }
             }
           ],
           "reference": "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
-        },
-        "location": [
-          {
-            "identifier": {
-              "type": {
-                "coding": [
-                  {
-                    "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code",
-                    "code": "IFC"
-                  }
-                ]
-              },
-              "system": "https://plr.hlth.gov.bc.ca/plr/system/internal-facility-code-system",
-              "value": "IFC.00147422.BC.PRS",
-              "period": {
-                "start": "2000-01-01"
-              }
-            }
-          }
-        ]
+        }
       }
     }
   ]

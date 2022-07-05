@@ -118,25 +118,28 @@
         <a href="artifacts.html#2">Operations</a>
       </li>
       <li>
-        <a href="artifacts.html#3">Operations Response Examples</a>
+        <a href="artifacts.html#3">Operations Request Examples</a>
       </li>
       <li>
-        <a href="artifacts.html#4">Bundles</a>
+        <a href="artifacts.html#4">Operations Response Examples</a>
       </li>
       <li>
-        <a href="artifacts.html#5">Practitioner</a>
+        <a href="artifacts.html#5">Bundles</a>
       </li>
       <li>
-        <a href="artifacts.html#6">Organization</a>
+        <a href="artifacts.html#6">Practitioner</a>
       </li>
       <li>
-        <a href="artifacts.html#7">Facility</a>
+        <a href="artifacts.html#7">Organization</a>
       </li>
       <li>
-        <a href="artifacts.html#8">Common</a>
+        <a href="artifacts.html#8">Facility</a>
       </li>
       <li>
-        <a href="artifacts.html#9">Datatypes</a>
+        <a href="artifacts.html#9">Common</a>
+      </li>
+      <li>
+        <a href="artifacts.html#10">Datatypes</a>
       </li>
     </ul>
   </li>
@@ -196,34 +199,37 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#2">Operations</a>
       </li>
       <li>
-         <a href="#3">Operations Response Examples</a>
+         <a href="#3">Operations Request Examples</a>
       </li>
       <li>
-         <a href="#4">Bundles</a>
+         <a href="#4">Operations Response Examples</a>
       </li>
       <li>
-         <a href="#5">Practitioner</a>
+         <a href="#5">Bundles</a>
       </li>
       <li>
-         <a href="#6">Organization</a>
+         <a href="#6">Practitioner</a>
       </li>
       <li>
-         <a href="#7">Facility</a>
+         <a href="#7">Organization</a>
       </li>
       <li>
-         <a href="#8">Extensions</a>
+         <a href="#8">Facility</a>
       </li>
       <li>
-         <a href="#9">Structures: Data Type Profiles</a>
+         <a href="#9">Extensions</a>
       </li>
       <li>
-         <a href="#10">Terminology: Value Sets</a>
+         <a href="#10">Structures: Data Type Profiles</a>
       </li>
       <li>
-         <a href="#11">Terminology: Code Systems</a>
+         <a href="#11">Terminology: Value Sets</a>
       </li>
       <li>
-         <a href="#12">Example: Example Instances</a>
+         <a href="#12">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#13">Example: Example Instances</a>
       </li>
    </ul>
 </div>
@@ -282,6 +288,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
+                  <a href="OperationDefinition-bc-distribution.html"
+                     title="OperationDefinition/bc-distribution">Distribution</a>
+               </td>
+               <td>
+<p>This operation is used to distribute the resources that represent a Provider or Facility.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="OperationDefinition-bc-entity-location-query.html"
                      title="OperationDefinition/bc-entity-location-query">EntityLocationQuery</a>
                </td>
@@ -334,10 +349,67 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities.</p>
 </td>
             </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="OperationDefinition-bc-maintain.html"
+                     title="OperationDefinition/bc-maintain">Maintain</a>
+               </td>
+               <td>
+<p>This operation is used to create and update the resources that represent a Provider or Facility.</p>
+</td>
+            </tr>
          </tbody>
       </table>
    </p>
    <a name="3"> </a>
+   <h3>Operations Request Examples </h3>
+   <p>
+    <p>Operation request examples</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Parameters-Example-Request-Add-Organization.html"
+                     title="Parameters/Example-Request-Add-Organization">Example-Request-Add-Organization</a>
+               </td>
+               <td>
+<p>Example Parameters to add an Organizational Provider.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Parameters-Example-Request-Add-Practitioner.html"
+                     title="Parameters/Example-Request-Add-Practitioner">Example-Request-Add-Practitioner</a>
+               </td>
+               <td>
+<p>Example Parameters to add an Individual Provider.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Parameters-Example-Request-Distribution-Organization.html"
+                     title="Parameters/Example-Request-Distribution-Organization">Example-Request-Distribution-Organization</a>
+               </td>
+               <td>
+<p>Example Parameters to distribute an Individual Provider.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Parameters-Example-Request-Distribution-Practitioner.html"
+                     title="Parameters/Example-Request-Distribution-Practitioner">Example-Request-Distribution-Practitioner</a>
+               </td>
+               <td>
+<p>Example Parameters to distribute an Individual Provider.</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="4"> </a>
    <h3>Operations Response Examples </h3>
    <p>
     <p>Operation response examples</p>
@@ -348,26 +420,35 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="Bundle-Example-Query-Response-Bundle-with-Individual-Provider.html"
-                     title="Bundle/Example-Query-Response-Bundle-with-Individual-Provider">Example-Query-Response-Bundle-with-Individual-Provider</a>
+                  <a href="Parameters-Example-Response-Add-Practitioner.html"
+                     title="Parameters/Example-Response-Add-Practitioner">Example-Response-Add-Practitioner</a>
                </td>
                <td>
-<p>An example search response bundle with Individual Provider.</p>
+<p>Example Parameters for Add Individual Provider response.</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Bundle-Example-Query-Response-Bundle-with-Organizational-Provider.html"
-                     title="Bundle/Example-Query-Response-Bundle-with-Organizational-Provider">Example-Query-Response-Bundle-with-Organizational-Provider</a>
+                  <a href="Bundle-Example-Response-Query-Organization-Bundle.html"
+                     title="Bundle/Example-Response-Query-Organization-Bundle">Example-Response-Query-Organization-Bundle</a>
                </td>
                <td>
 <p>An example search response bundle with Organizational Provider.</p>
 </td>
             </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Bundle-Example-Response-Query-Practitioner-Bundle.html"
+                     title="Bundle/Example-Response-Query-Practitioner-Bundle">Example-Response-Query-Practitioner-Bundle</a>
+               </td>
+               <td>
+<p>An example search response bundle with Individual Provider.</p>
+</td>
+            </tr>
          </tbody>
       </table>
    </p>
-   <a name="4"> </a>
+   <a name="5"> </a>
    <h3>Bundles </h3>
    <p>
     <p>Inbound Distribution/Maintain and Batch Bundles</p>
@@ -454,13 +535,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                      title="Bundle/Example-DistributePractitioner-Bundle">Example-DistributePractitioner-Bundle</a>
                </td>
                <td>
-<p>Example of a bundle of resources sent for a practitioner distribution.</p>
+<p>Example of a bundle of resources sent when distributing a Practitioner.</p>
 </td>
             </tr>
          </tbody>
       </table>
    </p>
-   <a name="5"> </a>
+   <a name="6"> </a>
    <h3>Practitioner </h3>
    <p>
     <p>Artifacts associated with Practitioners</p>
@@ -508,7 +589,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="6"> </a>
+   <a name="7"> </a>
    <h3>Organization </h3>
    <p>
     <p>Artifacts associated with Organizations</p>
@@ -537,17 +618,26 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="OrganizationAffiliation-Example-OrganizationAffiliation-1.html"
-                     title="OrganizationAffiliation/Example-OrganizationAffiliation-1">Example-OrganizationAffiliation-1</a>
+                  <a href="OrganizationAffiliation-Example-OrganizationAffiliation-1-OrgRef-FromOrg.html"
+                     title="OrganizationAffiliation/Example-OrganizationAffiliation-1-OrgRef-FromOrg">Example-OrganizationAffiliation-1-OrgRef-FromOrg</a>
                </td>
                <td>
-<p>Example of a relationship between an Organization and its Locations (facilities).</p>
+<p>Example of the OrganizationAffiliation for Organization to Organization relationship.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="OrganizationAffiliation-Example-OrganizationAffiliation-2-LocRef-FromOrg.html"
+                     title="OrganizationAffiliation/Example-OrganizationAffiliation-2-LocRef-FromOrg">Example-OrganizationAffiliation-2-LocRef-FromOrg</a>
+               </td>
+               <td>
+<p>Example of the OrganizationAffiliation for Organization to Organization relationship.</p>
 </td>
             </tr>
          </tbody>
       </table>
    </p>
-   <a name="7"> </a>
+   <a name="8"> </a>
    <h3>Facility </h3>
    <p>
     <p>Artifacts associated with Facilities</p>
@@ -585,7 +675,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="8"> </a>
+   <a name="9"> </a>
    <h3>Extensions </h3>
    <p>
     <p>Extensions used across all groupings</p>
@@ -786,7 +876,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="9"> </a>
+   <a name="10"> </a>
    <h3>Structures: Data Type Profiles </h3>
    <p>
     <p>These define constraints on FHIR data types for systems conforming to this implementation guide</p>
@@ -834,7 +924,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="10"> </a>
+   <a name="11"> </a>
    <h3>Terminology: Value Sets </h3>
    <p>
     <p>These define sets of codes used by systems conforming to this implementation guide</p>
@@ -864,7 +954,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="11"> </a>
+   <a name="12"> </a>
    <h3>Terminology: Code Systems </h3>
    <p>
     <p>These define new code systems used by systems conforming to this implementation guide</p>
@@ -885,7 +975,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="12"> </a>
+   <a name="13"> </a>
    <h3>Example: Example Instances </h3>
    <p>
     <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like</p>
@@ -896,11 +986,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
+                  <a href="Bundle-Example-AddPractitioner-Bundle-Response.html"
+                     title="Bundle/Example-AddPractitioner-Bundle-Response">Example-AddPractitioner-Bundle-Response</a>
+               </td>
+               <td>
+<p>Example of a bundle of resources sent when requesting a practitioner create.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="Organization-Example-Credential-Granting-Institution.html"
                      title="Organization/Example-Credential-Granting-Institution">Example-Credential-Granting-Institution</a>
                </td>
                <td>
 <p>Example of an credential granting institution.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Bundle-Example-DistributeOrganization-Bundle.html"
+                     title="Bundle/Example-DistributeOrganization-Bundle">Example-DistributeOrganization-Bundle</a>
+               </td>
+               <td>
+<p>Example of a bundle of resources sent when distributing a Organization.</p>
 </td>
             </tr>
             <tr>
@@ -945,7 +1053,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                      title="Organization/Example-Organization-1">Example-Organization-1</a>
                </td>
                <td>
-<p>Example of an Organization that is being created.</p>
+<p>Example of an Organization.</p>
 </td>
             </tr>
             <tr>
@@ -959,20 +1067,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="OrganizationAffiliation-Example-OrganizationAffiliation-1-OrgReference-FromOrg.html"
-                     title="OrganizationAffiliation/Example-OrganizationAffiliation-1-OrgReference-FromOrg">Example-OrganizationAffiliation-1-OrgReference-FromOrg</a>
+                  <a href="Organization-Example-Organization-Response.html"
+                     title="Organization/Example-Organization-Response">Example-Organization-Response</a>
                </td>
                <td>
-<p>Example of the OrganizationAffiliation for Organization to Organization relationship.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="OrganizationAffiliation-Example-OrganizationAffiliation-2-LocReference-FromOrg.html"
-                     title="OrganizationAffiliation/Example-OrganizationAffiliation-2-LocReference-FromOrg">Example-OrganizationAffiliation-2-LocReference-FromOrg</a>
-               </td>
-               <td>
-<p>Example of the OrganizationAffiliation for Organization to Organization relationship.</p>
+<p>Example of an Organization that is being created.</p>
 </td>
             </tr>
             <tr>
@@ -988,6 +1087,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                <td style="column-width:30%">
                   <a href="Practitioner-Example-Practitioner.html"
                      title="Practitioner/Example-Practitioner">Example-Practitioner</a>
+               </td>
+               <td>
+<p>Example of generic Practitioner.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Practitioner-Example-Practitioner-Response.html"
+                     title="Practitioner/Example-Practitioner-Response">Example-Practitioner-Response</a>
                </td>
                <td>
 <p>Example of generic Practitioner.</p>
@@ -1013,6 +1121,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner-Response.html"
+                     title="PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Response">Example-PractitionerRole-1-Role-FromPractitioner-Response</a>
+               </td>
+               <td>
+<p>Example of the PractitionerRole with Speciality.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner-Update.html"
                      title="PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Update">Example-PractitionerRole-1-Role-FromPractitioner-Update</a>
                </td>
@@ -1022,8 +1139,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="PractitionerRole-Example-PractitionerRole-2-OrgReference-FromPractitioner.html"
-                     title="PractitionerRole/Example-PractitionerRole-2-OrgReference-FromPractitioner">Example-PractitionerRole-2-OrgReference-FromPractitioner</a>
+                  <a href="PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner-Update-Response.html"
+                     title="PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Update-Response">Example-PractitionerRole-1-Role-FromPractitioner-Update-Response</a>
+               </td>
+               <td>
+<p>Example of the PractitionerRole with Speciality.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="PractitionerRole-Example-PractitionerRole-2-OrgRef-FromPractitioner.html"
+                     title="PractitionerRole/Example-PractitionerRole-2-OrgRef-FromPractitioner">Example-PractitionerRole-2-OrgRef-FromPractitioner</a>
                </td>
                <td>
 <p>Example of the PractitionerRole for Practitioner to Organization relationship.</p>
@@ -1031,8 +1157,26 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="PractitionerRole-Example-PractitionerRole-3-LocReference-FromPractitioner.html"
-                     title="PractitionerRole/Example-PractitionerRole-3-LocReference-FromPractitioner">Example-PractitionerRole-3-LocReference-FromPractitioner</a>
+                  <a href="PractitionerRole-Example-PractitionerRole-2-OrgRef-FromPractitioner-Response.html"
+                     title="PractitionerRole/Example-PractitionerRole-2-OrgRef-FromPractitioner-Response">Example-PractitionerRole-2-OrgRef-FromPractitioner-Response</a>
+               </td>
+               <td>
+<p>Example of the PractitionerRole for Practitioner to Organization relationship.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="PractitionerRole-Example-PractitionerRole-2a-OrgRef-FromPractitioner.html"
+                     title="PractitionerRole/Example-PractitionerRole-2a-OrgRef-FromPractitioner">Example-PractitionerRole-2a-OrgRef-FromPractitioner</a>
+               </td>
+               <td>
+<p>Example of the PractitionerRole for Practitioner to Organization relationship.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="PractitionerRole-Example-PractitionerRole-3-LocRef-FromPractitioner.html"
+                     title="PractitionerRole/Example-PractitionerRole-3-LocRef-FromPractitioner">Example-PractitionerRole-3-LocRef-FromPractitioner</a>
                </td>
                <td>
 <p>Example of the PractitionerRole for Practitioner to Location relationship.</p>
@@ -1040,8 +1184,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="PractitionerRole-Example-PractitionerRole-4-PracReference-FromOrg.html"
-                     title="PractitionerRole/Example-PractitionerRole-4-PracReference-FromOrg">Example-PractitionerRole-4-PracReference-FromOrg</a>
+                  <a href="PractitionerRole-Example-PractitionerRole-3-LocRef-FromPractitioner-Response.html"
+                     title="PractitionerRole/Example-PractitionerRole-3-LocRef-FromPractitioner-Response">Example-PractitionerRole-3-LocRef-FromPractitioner-Response</a>
+               </td>
+               <td>
+<p>Example of the PractitionerRole for Practitioner to Location relationship.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="PractitionerRole-Example-PractitionerRole-4-PracRef-FromOrg.html"
+                     title="PractitionerRole/Example-PractitionerRole-4-PracRef-FromOrg">Example-PractitionerRole-4-PracRef-FromOrg</a>
                </td>
                <td>
 <p>Example of the PractitionerRole for Practitioner to Practitioner relationship.</p>
@@ -1049,8 +1202,26 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="PractitionerRole-Example-PractitionerRole-5-PracReference-FromLoc.html"
-                     title="PractitionerRole/Example-PractitionerRole-5-PracReference-FromLoc">Example-PractitionerRole-5-PracReference-FromLoc</a>
+                  <a href="PractitionerRole-Example-PractitionerRole-4-PracRef-FromOrg-Response.html"
+                     title="PractitionerRole/Example-PractitionerRole-4-PracRef-FromOrg-Response">Example-PractitionerRole-4-PracRef-FromOrg-Response</a>
+               </td>
+               <td>
+<p>Example of the PractitionerRole for Practitioner to Practitioner relationship.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="PractitionerRole-Example-PractitionerRole-5-PracRef-FromLoc.html"
+                     title="PractitionerRole/Example-PractitionerRole-5-PracRef-FromLoc">Example-PractitionerRole-5-PracRef-FromLoc</a>
+               </td>
+               <td>
+<p>Example of the PractitionerRole for Practitioner to Practitioner relationship.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="PractitionerRole-Example-PractitionerRole-5-PracRef-FromLoc-Response.html"
+                     title="PractitionerRole/Example-PractitionerRole-5-PracRef-FromLoc-Response">Example-PractitionerRole-5-PracRef-FromLoc-Response</a>
                </td>
                <td>
 <p>Example of the PractitionerRole for Practitioner to Practitioner relationship.</p>
@@ -1092,7 +1263,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jun 30, 2022 17:20+0000">2022-06-30</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 5, 2022 22:19+0000">2022-07-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

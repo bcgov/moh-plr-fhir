@@ -10,7 +10,7 @@
   "name": "BCProviderRegistry",
   "title": "BC Provider Location Registry FHIR Implementation Guide",
   "status": "draft",
-  "date": "2022-06-30T17:20:30+00:00",
+  "date": "2022-07-05T22:19:03+00:00",
   "publisher": "BC Ministry of Health",
   "contact": [
     {
@@ -366,6 +366,11 @@
         "id": "Operations",
         "name": "Operations",
         "description": "Operation definitions"
+      },
+      {
+        "id": "OperationsRequestExamples",
+        "name": "Operations Request Examples",
+        "description": "Operation request examples"
       },
       {
         "id": "OperationsResponseExamples",
@@ -996,6 +1001,20 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Bundle"
+          }
+        ],
+        "reference": {
+          "reference": "Bundle/Example-AddPractitioner-Bundle-Response"
+        },
+        "name": "Example-AddPractitioner-Bundle-Response",
+        "description": "Example of a bundle of resources sent when requesting a practitioner create.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "Practitioner"
           }
         ],
@@ -1059,10 +1078,24 @@
           }
         ],
         "reference": {
+          "reference": "Bundle/Example-DistributeOrganization-Bundle"
+        },
+        "name": "Example-DistributeOrganization-Bundle",
+        "description": "Example of a bundle of resources sent when distributing a Organization.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Bundle"
+          }
+        ],
+        "reference": {
           "reference": "Bundle/Example-DistributePractitioner-Bundle"
         },
         "name": "Example-DistributePractitioner-Bundle",
-        "description": "Example of a bundle of resources sent for a practitioner distribution.",
+        "description": "Example of a bundle of resources sent when distributing a Practitioner.",
         "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle",
         "groupingId": "Bundles"
       },
@@ -1148,7 +1181,7 @@
           "reference": "Organization/Example-Organization-1"
         },
         "name": "Example-Organization-1",
-        "description": "Example of an Organization that is being created.",
+        "description": "Example of an Organization.",
         "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"
       },
       {
@@ -1169,14 +1202,28 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Organization"
+          }
+        ],
+        "reference": {
+          "reference": "Organization/Example-Organization-Response"
+        },
+        "name": "Example-Organization-Response",
+        "description": "Example of an Organization that is being created.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "OrganizationAffiliation"
           }
         ],
         "reference": {
-          "reference": "OrganizationAffiliation/Example-OrganizationAffiliation-1"
+          "reference": "OrganizationAffiliation/Example-OrganizationAffiliation-1-OrgRef-FromOrg"
         },
-        "name": "Example-OrganizationAffiliation-1",
-        "description": "Example of a relationship between an Organization and its Locations (facilities).",
+        "name": "Example-OrganizationAffiliation-1-OrgRef-FromOrg",
+        "description": "Example of the OrganizationAffiliation for Organization to Organization relationship.",
         "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation",
         "groupingId": "Organization"
       },
@@ -1188,25 +1235,12 @@
           }
         ],
         "reference": {
-          "reference": "OrganizationAffiliation/Example-OrganizationAffiliation-1-OrgReference-FromOrg"
+          "reference": "OrganizationAffiliation/Example-OrganizationAffiliation-2-LocRef-FromOrg"
         },
-        "name": "Example-OrganizationAffiliation-1-OrgReference-FromOrg",
+        "name": "Example-OrganizationAffiliation-2-LocRef-FromOrg",
         "description": "Example of the OrganizationAffiliation for Organization to Organization relationship.",
-        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "OrganizationAffiliation"
-          }
-        ],
-        "reference": {
-          "reference": "OrganizationAffiliation/Example-OrganizationAffiliation-2-LocReference-FromOrg"
-        },
-        "name": "Example-OrganizationAffiliation-2-LocReference-FromOrg",
-        "description": "Example of the OrganizationAffiliation for Organization to Organization relationship.",
-        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation",
+        "groupingId": "Organization"
       },
       {
         "extension": [
@@ -1233,6 +1267,20 @@
           "reference": "Practitioner/Example-Practitioner"
         },
         "name": "Example-Practitioner",
+        "description": "Example of generic Practitioner.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Practitioner"
+          }
+        ],
+        "reference": {
+          "reference": "Practitioner/Example-Practitioner-Response"
+        },
+        "name": "Example-Practitioner-Response",
         "description": "Example of generic Practitioner.",
         "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"
       },
@@ -1272,6 +1320,20 @@
           }
         ],
         "reference": {
+          "reference": "PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Response"
+        },
+        "name": "Example-PractitionerRole-1-Role-FromPractitioner-Response",
+        "description": "Example of the PractitionerRole with Speciality.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PractitionerRole"
+          }
+        ],
+        "reference": {
           "reference": "PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Update"
         },
         "name": "Example-PractitionerRole-1-Role-FromPractitioner-Update",
@@ -1286,9 +1348,23 @@
           }
         ],
         "reference": {
-          "reference": "PractitionerRole/Example-PractitionerRole-2-OrgReference-FromPractitioner"
+          "reference": "PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-Update-Response"
         },
-        "name": "Example-PractitionerRole-2-OrgReference-FromPractitioner",
+        "name": "Example-PractitionerRole-1-Role-FromPractitioner-Update-Response",
+        "description": "Example of the PractitionerRole with Speciality.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PractitionerRole"
+          }
+        ],
+        "reference": {
+          "reference": "PractitionerRole/Example-PractitionerRole-2-OrgRef-FromPractitioner"
+        },
+        "name": "Example-PractitionerRole-2-OrgRef-FromPractitioner",
         "description": "Example of the PractitionerRole for Practitioner to Organization relationship.",
         "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
       },
@@ -1300,9 +1376,37 @@
           }
         ],
         "reference": {
-          "reference": "PractitionerRole/Example-PractitionerRole-3-LocReference-FromPractitioner"
+          "reference": "PractitionerRole/Example-PractitionerRole-2-OrgRef-FromPractitioner-Response"
         },
-        "name": "Example-PractitionerRole-3-LocReference-FromPractitioner",
+        "name": "Example-PractitionerRole-2-OrgRef-FromPractitioner-Response",
+        "description": "Example of the PractitionerRole for Practitioner to Organization relationship.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PractitionerRole"
+          }
+        ],
+        "reference": {
+          "reference": "PractitionerRole/Example-PractitionerRole-2a-OrgRef-FromPractitioner"
+        },
+        "name": "Example-PractitionerRole-2a-OrgRef-FromPractitioner",
+        "description": "Example of the PractitionerRole for Practitioner to Organization relationship.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PractitionerRole"
+          }
+        ],
+        "reference": {
+          "reference": "PractitionerRole/Example-PractitionerRole-3-LocRef-FromPractitioner"
+        },
+        "name": "Example-PractitionerRole-3-LocRef-FromPractitioner",
         "description": "Example of the PractitionerRole for Practitioner to Location relationship.",
         "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
       },
@@ -1314,9 +1418,23 @@
           }
         ],
         "reference": {
-          "reference": "PractitionerRole/Example-PractitionerRole-4-PracReference-FromOrg"
+          "reference": "PractitionerRole/Example-PractitionerRole-3-LocRef-FromPractitioner-Response"
         },
-        "name": "Example-PractitionerRole-4-PracReference-FromOrg",
+        "name": "Example-PractitionerRole-3-LocRef-FromPractitioner-Response",
+        "description": "Example of the PractitionerRole for Practitioner to Location relationship.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PractitionerRole"
+          }
+        ],
+        "reference": {
+          "reference": "PractitionerRole/Example-PractitionerRole-4-PracRef-FromOrg"
+        },
+        "name": "Example-PractitionerRole-4-PracRef-FromOrg",
         "description": "Example of the PractitionerRole for Practitioner to Practitioner relationship.",
         "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
       },
@@ -1328,9 +1446,37 @@
           }
         ],
         "reference": {
-          "reference": "PractitionerRole/Example-PractitionerRole-5-PracReference-FromLoc"
+          "reference": "PractitionerRole/Example-PractitionerRole-4-PracRef-FromOrg-Response"
         },
-        "name": "Example-PractitionerRole-5-PracReference-FromLoc",
+        "name": "Example-PractitionerRole-4-PracRef-FromOrg-Response",
+        "description": "Example of the PractitionerRole for Practitioner to Practitioner relationship.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PractitionerRole"
+          }
+        ],
+        "reference": {
+          "reference": "PractitionerRole/Example-PractitionerRole-5-PracRef-FromLoc"
+        },
+        "name": "Example-PractitionerRole-5-PracRef-FromLoc",
+        "description": "Example of the PractitionerRole for Practitioner to Practitioner relationship.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PractitionerRole"
+          }
+        ],
+        "reference": {
+          "reference": "PractitionerRole/Example-PractitionerRole-5-PracRef-FromLoc-Response"
+        },
+        "name": "Example-PractitionerRole-5-PracRef-FromLoc-Response",
         "description": "Example of the PractitionerRole for Practitioner to Practitioner relationship.",
         "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
       },
@@ -1353,14 +1499,74 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Bundle"
+            "valueString": "Parameters"
           }
         ],
         "reference": {
-          "reference": "Bundle/Example-Query-Response-Bundle-with-Individual-Provider"
+          "reference": "Parameters/Example-Request-Add-Organization"
         },
-        "name": "Example-Query-Response-Bundle-with-Individual-Provider",
-        "description": "An example search response bundle with Individual Provider.",
+        "name": "Example-Request-Add-Organization",
+        "description": "Example Parameters to add an Organizational Provider.",
+        "exampleBoolean": true,
+        "groupingId": "OperationsRequestExamples"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Parameters"
+          }
+        ],
+        "reference": {
+          "reference": "Parameters/Example-Request-Add-Practitioner"
+        },
+        "name": "Example-Request-Add-Practitioner",
+        "description": "Example Parameters to add an Individual Provider.",
+        "exampleBoolean": true,
+        "groupingId": "OperationsRequestExamples"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Parameters"
+          }
+        ],
+        "reference": {
+          "reference": "Parameters/Example-Request-Distribution-Organization"
+        },
+        "name": "Example-Request-Distribution-Organization",
+        "description": "Example Parameters to distribute an Individual Provider.",
+        "exampleBoolean": true,
+        "groupingId": "OperationsRequestExamples"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Parameters"
+          }
+        ],
+        "reference": {
+          "reference": "Parameters/Example-Request-Distribution-Practitioner"
+        },
+        "name": "Example-Request-Distribution-Practitioner",
+        "description": "Example Parameters to distribute an Individual Provider.",
+        "exampleBoolean": true,
+        "groupingId": "OperationsRequestExamples"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Parameters"
+          }
+        ],
+        "reference": {
+          "reference": "Parameters/Example-Response-Add-Practitioner"
+        },
+        "name": "Example-Response-Add-Practitioner",
+        "description": "Example Parameters for Add Individual Provider response.",
         "exampleBoolean": true,
         "groupingId": "OperationsResponseExamples"
       },
@@ -1372,10 +1578,25 @@
           }
         ],
         "reference": {
-          "reference": "Bundle/Example-Query-Response-Bundle-with-Organizational-Provider"
+          "reference": "Bundle/Example-Response-Query-Organization-Bundle"
         },
-        "name": "Example-Query-Response-Bundle-with-Organizational-Provider",
+        "name": "Example-Response-Query-Organization-Bundle",
         "description": "An example search response bundle with Organizational Provider.",
+        "exampleBoolean": true,
+        "groupingId": "OperationsResponseExamples"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Bundle"
+          }
+        ],
+        "reference": {
+          "reference": "Bundle/Example-Response-Query-Practitioner-Bundle"
+        },
+        "name": "Example-Response-Query-Practitioner-Bundle",
+        "description": "An example search response bundle with Individual Provider.",
         "exampleBoolean": true,
         "groupingId": "OperationsResponseExamples"
       },
@@ -1392,6 +1613,21 @@
         "name": "Example-UpdatePractitioner-LicenseStatus-Bundle",
         "description": "Example of a bundle to update an Indivivdual Provider's License Status.",
         "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "OperationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "OperationDefinition/bc-distribution"
+        },
+        "name": "Distribution",
+        "description": "This operation is used to distribute the resources that represent a Provider or Facility.",
+        "exampleBoolean": false,
+        "groupingId": "Operations"
       },
       {
         "extension": [
@@ -1480,6 +1716,21 @@
         },
         "name": "ExtendedPractitionerQuery",
         "description": "This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities.",
+        "exampleBoolean": false,
+        "groupingId": "Operations"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "OperationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "OperationDefinition/bc-maintain"
+        },
+        "name": "Maintain",
+        "description": "This operation is used to create and update the resources that represent a Provider or Facility.",
         "exampleBoolean": false,
         "groupingId": "Operations"
       },

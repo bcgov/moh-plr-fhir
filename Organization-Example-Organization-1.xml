@@ -6,16 +6,26 @@
     <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-Organization-1" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization.html">BCOrganization</a></p></div><p><b>identifier</b>: ORGID: 123123123</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>telecom</b>: ph: 7786428585</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-Organization-1" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization.html">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><p><b>value</b>: id: Note-2</p><p><b>value</b>: Note text</p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p></blockquote><p><b>identifier</b>: id: 123123123</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: -unknown-</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>
   </text>
+  <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension">
+    <extension url="identifier">
+      <valueIdentifier>
+        <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-note-id"/>
+        <value value="Note-2"/>
+      </valueIdentifier>
+    </extension>
+    <extension url="text">
+      <valueString value="Note text"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension">
+      <valuePeriod>
+        <start value="1998-01-02"/>
+      </valuePeriod>
+    </extension>
+  </extension>
   <identifier>
-    <type>
-      <coding>
-        <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code"/>
-        <code value="ORGID"/>
-      </coding>
-    </type>
-    <system value="https://plr.hlth.gov.bc.ca/plr/system/organization-id-code-system"/>
+    <system value="https://plr.hlth.gov.bc.ca/plr/identifier-system/ORGID"/>
     <value value="123123123"/>
     <period>
       <start value="2000-01-01"/>
@@ -32,7 +42,20 @@
       </valuePeriod>
     </extension>
   </name>
+  <alias value="ABC Clinic - Kelowna"/>
   <telecom>
+    <extension url="http://hl7.org/fhir/StructureDefinition/contactpoint-area">
+      <valueString value="250"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/contactpoint-country">
+      <valueString value="1"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/contactpoint-local">
+      <valueString value="1112234"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/contactpoint-extension">
+      <valueString value="3432"/>
+    </extension>
     <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension">
       <valueCodeableConcept>
         <coding>
@@ -42,9 +65,8 @@
       </valueCodeableConcept>
     </extension>
     <system value="phone"/>
-    <value value="7786428585"/>
     <period>
-      <start value="2014-01-31T00:00:00-07:00"/>
+      <start value="2000-02-02"/>
     </period>
   </telecom>
   <address>
@@ -63,23 +85,6 @@
           <code value="V"/>
         </coding>
       </valueCodeableConcept>
-    </extension>
-    <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
-      <extension url="endReasonCode">
-        <valueCodeableConcept>
-          <coding>
-            <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code"/>
-            <code value="CHG"/>
-          </coding>
-        </valueCodeableConcept>
-      </extension>
-      <extension url="custodianId">
-        <valueIdentifier>
-          <assigner>
-            <display value="CPS"/>
-          </assigner>
-        </valueIdentifier>
-      </extension>
     </extension>
     <type value="postal"/>
     <line value="19 ST"/>

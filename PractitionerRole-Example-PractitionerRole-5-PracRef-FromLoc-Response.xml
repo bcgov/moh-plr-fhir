@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PractitionerRole xmlns="http://hl7.org/fhir">
+  <id value="Example-PractitionerRole-5-PracRef-FromLoc-Response"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-PractitionerRole-5-PracRef-FromLoc-Response" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span></span></p><p><b>location</b>: <a href="Bundle-Example-AddLocation-Bundle.html#urn-uuid-18734433-5c7b-42c8-ade5-22bd2c82e4f2">urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2</a></p></div>
+  </text>
+  <period>
+    <start value="2000-01-01"/>
+  </period>
+  <practitioner>
+    <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-location-relationship-type-code"/>
+          <code value="worklocationfor"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+      <extension url="custodianId">
+        <valueIdentifier>
+          <assigner>
+            <display value="CPS"/>
+          </assigner>
+        </valueIdentifier>
+      </extension>
+    </extension>
+    <identifier>
+      <system value="https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC"/>
+      <value value="IPC.00147433.BC.PRS"/>
+      <period>
+        <start value="2000-01-01"/>
+      </period>
+    </identifier>
+  </practitioner>
+  <location>
+    <reference value="urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"/>
+  </location>
+</PractitionerRole>
