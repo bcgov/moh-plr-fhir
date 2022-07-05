@@ -16,12 +16,25 @@ InstanceOf: Extension
 Description: "Example of false confidenciality."
 Usage: #inline
 * url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-confidentiality-extension"
-* extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
-* extension[0].valuePeriod.start = "2000-01-01"
-* extension[0].valuePeriod.end = "2020-01-01"
-* extension[1].url = "code"
-* extension[1].valueCodeableConcept.coding.system = "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"
-* extension[1].valueCodeableConcept.coding.code = #R 
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "2000-01-01"
+* extension[=].valuePeriod.end = "2020-01-01"
+* extension[+].url = "code"
+* extension[=].valueCodeableConcept.coding.system = "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"
+* extension[=].valueCodeableConcept.coding.code = #R 
+
+Instance: Example-Confidenciality-False-Response
+InstanceOf: Extension
+Description: "Example of false confidenciality."
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-confidentiality-extension"
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "2000-01-01"
+* extension[=].valuePeriod.end = "2020-01-01"
+* extension[+].url = "code"
+* extension[=].valueCodeableConcept.coding.system = "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"
+* extension[=].valueCodeableConcept.coding.code = #R 
+* extension[+] = Example-ERC-JustOC
 
 Instance: Example-Specialty
 InstanceOf: CodeableConcept
@@ -29,11 +42,24 @@ Description: "AMD53 specialty."
 Usage: #inline
 * coding.code = #AMD53
 * coding.system = $PracSpecialty
-* extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
-* extension[0].valuePeriod.start = "2000-01-01"
-* extension[0].valuePeriod.end = "2020-01-01"
-* extension[1].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension"
-* extension[1].valueString = "Expertise source"
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "2000-01-01"
+* extension[=].valuePeriod.end = "2020-01-01"
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension"
+* extension[=].valueString = "Expertise source"
+
+Instance: Example-Specialty-Response
+InstanceOf: CodeableConcept
+Description: "AMD53 specialty."
+Usage: #inline
+* coding.code = #AMD53
+* coding.system = $PracSpecialty
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "2000-01-01"
+* extension[=].valuePeriod.end = "2020-01-01"
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension"
+* extension[=].valueString = "Expertise source"
+* extension[+] = Example-ERC-JustOC
 
 Instance: Example-Specialty-Update
 InstanceOf: CodeableConcept
@@ -77,6 +103,21 @@ Usage: #inline
 * extension[2].url = "period"
 * extension[2].valuePeriod.start = "2022-06-24"
 
+Instance: Example-License-Status-Response
+InstanceOf: Extension
+Description: "Example license status."
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension"
+* extension[+].url = "statusCode"
+* extension[=].valueCodeableConcept.coding.system = $RoleStatus
+* extension[=].valueCodeableConcept.coding.code = #suspended
+* extension[+].url = "statusReasonCode"
+* extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
+* extension[=].valueCodeableConcept.coding.code = #LTP
+* extension[+].url = "period"
+* extension[=].valuePeriod.start = "2022-06-24"
+* extension[+] = Example-ERC-JustOC
+
 Instance: Example-License-Status-Update
 InstanceOf: Extension
 Description: "Example license status update."
@@ -92,6 +133,29 @@ Usage: #inline
 * extension[2].valuePeriod.start = "2022-06-24"
 * extension[3] = Example-ERC-Change
 
+Instance: Example-ERC-JustOC
+InstanceOf: Extension
+Description: "General end reason and owner code example."
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
+* extension[+].url = "custodianId"
+* extension[=].valueIdentifier.assigner.display = "CPS"
+
+Instance: Example-ERC-JustOC-MOH
+InstanceOf: Extension
+Description: "General end reason and owner code example."
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
+* extension[+].url = "custodianId"
+* extension[=].valueIdentifier.assigner.display = "MOH"
+
+Instance: Example-ERC-JustOC-PHSA
+InstanceOf: Extension
+Description: "General end reason and owner code example."
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
+* extension[+].url = "custodianId"
+* extension[=].valueIdentifier.assigner.display = "PHSA"
 
 Instance: Example-ERC-OC
 InstanceOf: Extension
@@ -103,6 +167,17 @@ Usage: #inline
 * extension[0].valueCodeableConcept.coding.code = #CHG
 * extension[1].url = "custodianId"
 * extension[1].valueIdentifier.assigner.display = "CPS"
+
+Instance: Example-ERC-OC-MOH
+InstanceOf: Extension
+Description: "General end reason and owner code example."
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
+* extension[0].url = "endReasonCode"
+* extension[0].valueCodeableConcept.coding.system = $PLREndReason
+* extension[0].valueCodeableConcept.coding.code = #CHG
+* extension[1].url = "custodianId"
+* extension[1].valueIdentifier.assigner.display = "MOH"
 
 Instance: Example-ERC-Change
 InstanceOf: Extension
@@ -118,16 +193,33 @@ InstanceOf: Extension
 Description: "Example disciplinary action."
 Usage: #inline
 * url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension"
-* extension[0].url = "identifier"
-* extension[0].valueIdentifier.value = "DA-1"
-* extension[1].url = "description"
-* extension[1].valueString = "Description"
-* extension[2].url = "archiveDate"
-* extension[2].valueDateTime = "2000-01-01"
-* extension[3].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
-* extension[3].valuePeriod.start = "1998-01-02"
-* extension[4].url = "displayFlag"
-* extension[4].valueBoolean = false
+* extension[+].url = "identifier"
+* extension[=].valueIdentifier.value = "DA-1"
+* extension[+].url = "description"
+* extension[=].valueString = "Description"
+* extension[+].url = "archiveDate"
+* extension[=].valueDateTime = "2000-01-01"
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "1998-01-02"
+* extension[+].url = "displayFlag"
+* extension[=].valueBoolean = false
+
+Instance: Example-DisciplinaryAction-Response
+InstanceOf: Extension
+Description: "Example disciplinary action."
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension"
+* extension[+].url = "identifier"
+* extension[=].valueIdentifier.value = "DA-1"
+* extension[+].url = "description"
+* extension[=].valueString = "Description"
+* extension[+].url = "archiveDate"
+* extension[=].valueDateTime = "2000-01-01"
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "1998-01-02"
+* extension[+].url = "displayFlag"
+* extension[=].valueBoolean = false
+* extension[+] = Example-ERC-JustOC
 
 Instance: Example-DisciplinaryAction-Update
 InstanceOf: Extension
@@ -153,11 +245,39 @@ Usage: #inline
 * url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension"
 * extension[0].url = "identifier"
 * extension[0].valueIdentifier.value = "Note-2"
+* extension[0].valueIdentifier.system = $PLRNoteID
 * extension[1].url = "text"
 * extension[1].valueString = "Note text"
 * extension[2].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[2].valuePeriod.start = "1998-01-02"
-* extension[3] = Example-ERC-OC
+
+Instance: Example-Note-Response
+InstanceOf: Extension
+Description: "Example note."
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension"
+* extension[+].url = "identifier"
+* extension[=].valueIdentifier.value = "Note-2"
+* extension[=].valueIdentifier.system = $PLRNoteID
+* extension[+].url = "text"
+* extension[=].valueString = "Note text"
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "1998-01-02"
+* extension[+] = Example-ERC-JustOC
+
+Instance: Example-Note-Response-PHSA
+InstanceOf: Extension
+Description: "Example note."
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension"
+* extension[+].url = "identifier"
+* extension[=].valueIdentifier.value = "Note-2"
+* extension[=].valueIdentifier.system = $PLRNoteID
+* extension[+].url = "text"
+* extension[=].valueString = "Note text"
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "1998-01-02"
+* extension[+] = Example-ERC-JustOC-PHSA
 
 Instance: Example-Note-Update
 InstanceOf: Extension
@@ -165,7 +285,8 @@ Description: "Example note."
 Usage: #inline
 * url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension"
 * extension[0].url = "identifier"
-* extension[0].valueIdentifier.value = "Note-2"
+* extension[0].valueIdentifier.value = "Note-3"
+* extension[0].valueIdentifier.system = $PLRNoteID
 * extension[1].url = "text"
 * extension[1].valueString = "Note text"
 * extension[2].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
@@ -177,45 +298,77 @@ InstanceOf: Extension
 Description: "Example condition."
 Usage: #inline
 * url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-condition-extension"
-* extension[0].url = "identifier"
-* extension[0].valueIdentifier.value = "Condition-1"
-* extension[1].url = "restriction"
-* extension[1].valueBoolean = false
-* extension[2].url = "restrictionText"
-* extension[2].valueString = "Restriction text"
-* extension[3].url = "code"
-* extension[3].valueCodeableConcept.coding.system = $PLRConditionType
-* extension[3].valueCodeableConcept.coding.code = #EXP
-* extension[4].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
-* extension[4].valuePeriod.start = "1998-01-02"
+* extension[+].url = "identifier"
+* extension[=].valueIdentifier.value = "Condition-1"
+* extension[=].valueIdentifier.system = $PLRConditionID
+* extension[+].url = "restriction"
+* extension[=].valueBoolean = false
+* extension[+].url = "restrictionText"
+* extension[=].valueString = "Restriction text"
+* extension[+].url = "code"
+* extension[=].valueCodeableConcept.coding.system = $PLRConditionType
+* extension[=].valueCodeableConcept.coding.code = #EXP
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "1998-01-02"
+
+Instance: Example-Condition-Response
+InstanceOf: Extension
+Description: "Example condition."
+Usage: #inline
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-condition-extension"
+* extension[+].url = "identifier"
+* extension[=].valueIdentifier.value = "Condition-1"
+* extension[=].valueIdentifier.system = $PLRConditionID
+* extension[+].url = "restriction"
+* extension[=].valueBoolean = false
+* extension[+].url = "restrictionText"
+* extension[=].valueString = "Restriction text"
+* extension[+].url = "code"
+* extension[=].valueCodeableConcept.coding.system = $PLRConditionType
+* extension[=].valueCodeableConcept.coding.code = #EXP
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "1998-01-02"
+* extension[+] = Example-ERC-JustOC
 
 Instance: Example-Condition-Update
 InstanceOf: Extension
 Description: "Example condition."
 Usage: #inline
 * url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-condition-extension"
-* extension[0].url = "identifier"
-* extension[0].valueIdentifier.value = "Condition-1"
-* extension[1].url = "restriction"
-* extension[1].valueBoolean = false
-* extension[2].url = "restrictionText"
-* extension[2].valueString = "Restriction text"
-* extension[3].url = "code"
-* extension[3].valueCodeableConcept.coding.system = $PLRConditionType
-* extension[3].valueCodeableConcept.coding.code = #EXP
-* extension[4].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
-* extension[4].valuePeriod.start = "1998-01-02"
-* extension[5] = Example-ERC-Change
+* extension[+].url = "identifier"
+* extension[=].valueIdentifier.value = "Condition-2"
+* extension[=].valueIdentifier.system = $PLRConditionID
+* extension[+].url = "restriction"
+* extension[=].valueBoolean = false
+* extension[+].url = "restrictionText"
+* extension[=].valueString = "Restriction text"
+* extension[+].url = "code"
+* extension[=].valueCodeableConcept.coding.system = $PLRConditionType
+* extension[=].valueCodeableConcept.coding.code = #EXP
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "1998-01-02"
+* extension[+] = Example-ERC-Change
 
 Instance: Example-Language
 InstanceOf: CodeableConcept
 Description: "Example language."
 Usage: #inline
 * coding = $PLRLanguage#EN
-* extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
-* extension[0].valuePeriod.start = "2000-01-01"
-* extension[1].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension"
-* extension[1].valueString = "Language Source"
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "2000-01-01"
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension"
+* extension[=].valueString = "Language Source"
+
+Instance: Example-Language-Response
+InstanceOf: CodeableConcept
+Description: "Example language."
+Usage: #inline
+* coding = $PLRLanguage#EN
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "2000-01-01"
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension"
+* extension[=].valueString = "Language Source"
+* extension[+] = Example-ERC-JustOC
 
 Instance: Example-Language-Update
 InstanceOf: CodeableConcept

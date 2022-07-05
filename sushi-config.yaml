@@ -37,13 +37,14 @@ menu:
     All: artifacts.html
     Capabilities: artifacts.html#1
     Operations: artifacts.html#2
-    Operations Response Examples: artifacts.html#3
-    Bundles: artifacts.html#4
-    Practitioner: artifacts.html#5
-    Organization: artifacts.html#6
-    Facility: artifacts.html#7
-    Common: artifacts.html#8
-    Datatypes: artifacts.html#9
+    Operations Request Examples: artifacts.html#3
+    Operations Response Examples: artifacts.html#4
+    Bundles: artifacts.html#5
+    Practitioner: artifacts.html#6
+    Organization: artifacts.html#7
+    Facility: artifacts.html#8
+    Common: artifacts.html#9
+    Datatypes: artifacts.html#10
   Glossary: glossary.html
   Credits: credits.html
   
@@ -80,12 +81,23 @@ groups:
       - OperationDefinition/bc-extended-practitioner-query
       - OperationDefinition/bc-extended-organization-query
       - OperationDefinition/bc-extended-location-query
+      - OperationDefinition/bc-maintain
+      - OperationDefinition/bc-distribution
+  OperationsRequestExamples:
+    name: Operations Request Examples
+    description: Operation request examples
+    resources:
+      - Parameters/Example-Request-Distribution-Practitioner
+      - Parameters/Example-Request-Distribution-Organization
+      - Parameters/Example-Request-Add-Practitioner
+      - Parameters/Example-Request-Add-Organization
   OperationsResponseExamples:
     name: Operations Response Examples
     description: Operation response examples
     resources:
-      - Bundle/Example-Query-Response-Bundle-with-Individual-Provider
-      - Bundle/Example-Query-Response-Bundle-with-Organizational-Provider
+      - Bundle/Example-Response-Query-Practitioner-Bundle
+      - Bundle/Example-Response-Query-Organization-Bundle
+      - Parameters/Example-Response-Add-Practitioner
   Bundles:
     name: Bundles
     description: Inbound Distribution/Maintain and Batch Bundles
@@ -113,7 +125,8 @@ groups:
     resources:
       - StructureDefinition/bc-organization
       - StructureDefinition/bc-organization-affiliation
-      - OrganizationAffiliation/Example-OrganizationAffiliation-1
+      - OrganizationAffiliation/Example-OrganizationAffiliation-1-OrgRef-FromOrg
+      - OrganizationAffiliation/Example-OrganizationAffiliation-2-LocRef-FromOrg
   Facility:
     name: Facility
     description: Artifacts associated with Facilities

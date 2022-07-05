@@ -31,5 +31,4 @@ This Location profile has the following mandatory elements:
 
 ### Examples
 
-- [Location Example](Location-Example-AddOrganization-Location.html)
 - [Works-At Location Example](Location-Example-AddPractitioner-WorkLocation.html)

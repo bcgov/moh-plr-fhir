@@ -1,4 +1,4 @@
-Instance: Example-Query-Response-Bundle-with-Individual-Provider
+Instance: Example-Response-Query-Practitioner-Bundle
 InstanceOf: Bundle
 Description: "An example search response bundle with Individual Provider."
 * type = #searchset
@@ -21,7 +21,7 @@ Description: "Example of an credential granting institution."
 * address.state = "AB"
 * address.country = "CA"
 
-Instance: Example-Query-Response-Bundle-with-Organizational-Provider
+Instance: Example-Response-Query-Organization-Bundle
 InstanceOf: Bundle
 Description: "An example search response bundle with Organizational Provider."
 * type = #searchset
@@ -45,9 +45,9 @@ Description: "An example of a Provider Bundle, i.e. A Practitioner and Practitio
 * entry[0].resource = Example-Practitioner
 * entry[1].resource = Example-PractitionerRole-1-Role-FromPractitioner
 * entry[1].fullUrl = "urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c"
-* entry[2].resource = Example-PractitionerRole-2-OrgReference-FromPractitioner
+* entry[2].resource = Example-PractitionerRole-2-OrgRef-FromPractitioner
 * entry[2].fullUrl = "urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03"
-* entry[3].resource = Example-PractitionerRole-3-LocReference-FromPractitioner
+* entry[3].resource = Example-PractitionerRole-3-LocRef-FromPractitioner
 * entry[3].fullUrl = "urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5"
 
 Instance: Example-Organizational-Provider-Bundle
@@ -55,12 +55,12 @@ InstanceOf: BCOrganizationBundle
 Description: "An example of a Provider Bundle, i.e. A Organization and PractitionerRole and OrganizationAffiliation in a Bundle that represents a PLR Organizational Provider."
 * type = #collection
 * timestamp = "2022-02-02T13:23:13.000-08:00"
-* entry[Organization].fullUrl = "urn:uuid:f0e4e1ca-6bc7-4b8f-839b-1d715856a04f"
-* entry[0].resource = Example-Organization-2
-* entry[1].resource = Example-PractitionerRole-4-PracReference-FromOrg
-* entry[1].fullUrl = "urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c"
-* entry[2].resource = Example-OrganizationAffiliation-1-OrgReference-FromOrg
-* entry[2].fullUrl = "urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03"
-* entry[3].resource = Example-OrganizationAffiliation-2-LocReference-FromOrg
-* entry[3].fullUrl = "urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5"
+* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[=].resource = Example-Organization-2
+* entry[+].resource = Example-PractitionerRole-4-PracRef-FromOrg
+* entry[=].fullUrl = "urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c"
+* entry[+].resource = Example-OrganizationAffiliation-1-OrgRef-FromOrg
+* entry[=].fullUrl = "urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03"
+* entry[+].resource = Example-OrganizationAffiliation-2-LocRef-FromOrg
+* entry[=].fullUrl = "urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5"
 

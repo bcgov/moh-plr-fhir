@@ -337,3 +337,105 @@ Usage: #definition
 * parameter[5].searchType = #string
 
 
+Instance: Maintain
+InstanceOf: OperationDefinition
+Description: "This operation is used to create and update the resources that represent a Provider or Facility."
+Usage: #definition
+* id = "bc-maintain"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-maintain"
+* name = "Maintain"
+* title = "Maintain PLR entities."
+* status = #draft
+* kind = #operation
+* code = #maintain
+* resource[0] = #Bundle
+* system = false
+* type = true
+* instance = false
+* parameter[+].name = #messageId
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "A unique message ID."
+* parameter[=].type = #string
+* parameter[+].name = #messageTime
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "When the message was sent."
+* parameter[=].type = #dateTime
+* parameter[+].name = #maintain
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "A [BC Practitioner Bundle](StructureDefinition-bc-practitioner-bundle.html), or [BC Organization Bundle](StructureDefinition-bc-organization-bundle.html) or a [BC Location Bundle](StructureDefinition-bc-location-bundle.html)."
+* parameter[=].type = #Bundle
+
+* parameter[+].name = #messageId
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "A unique message ID."
+* parameter[=].type = #string
+
+* parameter[+].name = #messageTime
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "When the message was sent."
+* parameter[=].type = #dateTime
+
+* parameter[+].name = #requestMessageId
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The request message ID."
+* parameter[=].type = #string
+
+* parameter[+].name = #maintain
+* parameter[=].use = #out
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "A [BC Practitioner Bundle](StructureDefinition-bc-practitioner-bundle.html), or [BC Organization Bundle](StructureDefinition-bc-organization-bundle.html) or a [BC Location Bundle](StructureDefinition-bc-location-bundle.html)."
+* parameter[=].type = #Bundle
+
+* parameter[+].name = #outcome
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The operation outcome - success, warning and error messages."
+* parameter[=].type = #OperationOutcome
+
+Instance: Distribution
+InstanceOf: OperationDefinition
+Description: "This operation is used to distribute the resources that represent a Provider or Facility."
+Usage: #definition
+* id = "bc-distribution"
+* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-distribution"
+* name = "Distribution"
+* title = "PLR entities sent out in a distribution."
+* status = #draft
+* kind = #operation
+* code = #distribution
+* resource[0] = #Bundle
+* system = false
+* type = true
+* instance = false
+* parameter[+].name = #messageId
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "A unique message ID."
+* parameter[=].type = #string
+* parameter[+].name = #messageTime
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "When the message was sent."
+* parameter[=].type = #dateTime
+* parameter[+].name = #distribution
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "A [BC Practitioner Bundle](StructureDefinition-bc-practitioner-bundle.html), or [BC Organization Bundle](StructureDefinition-bc-organization-bundle.html) or a [BC Location Bundle](StructureDefinition-bc-location-bundle.html) with the latest Provider/Facility data."
+* parameter[=].type = #Bundle

@@ -1,18 +1,31 @@
 Instance: Example-Organization-1
 InstanceOf: BCOrganization
-Description: "Example of an Organization that is being created."
-* identifier = Example-Identifier-ORGID
+Description: "Example of an Organization."
+* identifier[+] = Example-Identifier-ORGID
 * name = "Kelowna Clinic"
 * name.extension[use].valueCode = #official
 * name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
+* alias = "ABC Clinic - Kelowna"
 * address = Example-Address-Valid
-* telecom[0].system = #phone
-* telecom[0].value = "7786428585"
-* telecom[0].period.start = "2014-01-31T00:00:00-07:00"
-* telecom[0].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
+* telecom = Example-ContactPoint-Phone
 * active = true
+* extension[+] = Example-Note
+
+Instance: Example-Organization-Response
+InstanceOf: BCOrganization
+Description: "Example of an Organization that is being created."
+* identifier[+] = Example-Identifier-ORGID-Response
+* identifier[+] = Example-Identifier-IPC-Org-Response
+* identifier[+] = Example-Identifier-CPN-Org-Response
+* name = "Kelowna Clinic"
+* name.extension[use].valueCode = #official
+* name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
+* name.extension[endReason] = Example-ERC-JustOC-PHSA
+* alias = "ABC Clinic - Kelowna"
+* address = Example-Address-Valid-Response
+* telecom = Example-ContactPoint-Phone-Response-PHSA
+* active = true
+* extension[+] = Example-Note-Response-PHSA
 
 
 Instance: Example-Organization-2

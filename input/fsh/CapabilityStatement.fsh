@@ -23,6 +23,8 @@ InstanceOf: CapabilityStatement
 * rest[0].resource[0].supportedProfile[0] = Canonical(BCPractitionerBundle)
 * rest[0].resource[0].supportedProfile[1] = Canonical(BCOrganizationBundle)
 * rest[0].resource[0].supportedProfile[2] = Canonical(BCLocationBundle)
+* rest[0].resource[0].operation[0].name = "distribution"
+* rest[0].resource[0].operation[0].definition = Canonical(Distribution)
 * rest[0].resource[0].interaction[0].code = #create
 * rest[0].resource[0].interaction[0].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[0].resource[0].interaction[0].documentation = "Client applications shall support the three different types of Distributions."
@@ -86,3 +88,12 @@ InstanceOf: CapabilityStatement
 * rest[3].resource[0].operation[1].name = "extendedQuery"
 * rest[3].resource[0].operation[1].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[3].resource[0].operation[1].definition = Canonical(ExtendedLocationQuery)
+
+* rest[4].mode = #server
+* rest[4].resource[0].type = #Bundle
+* rest[4].resource[0].supportedProfile[0] = Canonical(BCPractitionerBundle)
+* rest[4].resource[0].supportedProfile[1] = Canonical(BCOrganizationBundle)
+* rest[4].resource[0].supportedProfile[2] = Canonical(BCLocationBundle)
+* rest[4].resource[0].operation[0].name = "maintain"
+* rest[4].resource[0].operation[0].definition = Canonical(Maintain)
+* rest[4].resource[0].operation[0].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL

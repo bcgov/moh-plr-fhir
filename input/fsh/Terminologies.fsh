@@ -44,13 +44,17 @@ Alias: $PLRFacilityIdentifierType = https://plr.hlth.gov.bc.ca/plr/codes/bc-loca
 Alias: $PLROwnerCode = https://plr.hlth.gov.bc.ca/plr/codes/bc-owner-code
 Alias: $PLRDisciplinaryActionID = https://plr.hlth.gov.bc.ca/plr/codes/bc-disciplinary-action-id
 Alias: $PLRNoteID = https://plr.hlth.gov.bc.ca/plr/codes/bc-note-id
+Alias: $PLRConditionID = https://plr.hlth.gov.bc.ca/plr/codes/bc-condition-id
 Alias: $PLRCommPurpose = https://plr.hlth.gov.bc.ca/plr/codes/bc-communication-purpose-code
 Alias: $PLRAddressValStatus = https://plr.hlth.gov.bc.ca/plr/codes/bc-address-validation-status-code
 
-Alias: $System_IPC = https://plr.hlth.gov.bc.ca/plr/system/internal-provider-code-system
-Alias: $System_IFC = https://plr.hlth.gov.bc.ca/plr/system/internal-facility-code-system
-Alias: $System_CPN = https://plr.hlth.gov.bc.ca/plr/system/common-party-number-code-system
-Alias: $System_ORGID = https://plr.hlth.gov.bc.ca/plr/system/organization-id-code-system
-Alias: $System_CPSID = https://plr.hlth.gov.bc.ca/plr/system/college-physicians-id-code-system
-Alias: $System_RNID = https://plr.hlth.gov.bc.ca/plr/system/college-nurses-id-code-system
+//////////////////////////////
+// identifier systems
+/////////////////////////////
+Alias: $System_IPC = https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC
+Alias: $System_IFC = https://plr.hlth.gov.bc.ca/plr/identifier-system/IFC
+Alias: $System_CPN = https://plr.hlth.gov.bc.ca/plr/identifier-system/CPN
+Alias: $System_ORGID = https://plr.hlth.gov.bc.ca/plr/identifier-system/ORGID
+Alias: $System_CPSID = https://plr.hlth.gov.bc.ca/plr/identifier-system/CPSID
+Alias: $System_RNID = https://plr.hlth.gov.bc.ca/plr/identifier-system/RNID
 

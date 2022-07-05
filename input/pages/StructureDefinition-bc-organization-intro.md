@@ -25,4 +25,3 @@ This Organization profile has the following mandatory elements:
 
 ### Examples
 
-- [Organization Example](Organization-Example-AddOrganization-Organization.html)

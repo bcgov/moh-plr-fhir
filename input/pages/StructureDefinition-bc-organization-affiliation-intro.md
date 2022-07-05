@@ -24,4 +24,3 @@ This OrganizationAffiliation profile has the following mandatory elements:
 
 ### Examples
 
-- [OrganizationAffiliation Example](OrganizationAffiliation-Example-AddOrganization-OrganizationAffiliation.html)
