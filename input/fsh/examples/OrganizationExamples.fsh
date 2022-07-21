@@ -11,6 +11,20 @@ Description: "Example of an Organization."
 * active = true
 * extension[+] = Example-Note
 
+Instance: Example-Organization-1-Update
+InstanceOf: BCOrganization
+Description: "Example of an Organization."
+* identifier[+] = Example-Identifier-ORGID
+* name = "Kelowna Clinic"
+* name.extension[use].valueCode = #official
+* name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
+* name.extension[+] = Example-ERC-Change
+* alias = "ABC Clinic - Kelowna"
+* address = Example-Address-Update
+* telecom = Example-ContactPoint-Phone-Update
+* active = true
+* extension[+] = Example-Note-Update
+
 Instance: Example-Organization-Response
 InstanceOf: BCOrganization
 Description: "Example of an Organization that is being created."

@@ -1,7 +1,6 @@
 Instance: Example-Practitioner
 InstanceOf: BCPractitioner
 Description: "Example of generic Practitioner."
-
 // demographics
 * extension[0] = Example-Demographics-1
 * gender = #male
@@ -38,8 +37,7 @@ Description: "Example of generic Practitioner."
 
 Instance: Example-Practitioner-Response
 InstanceOf: BCPractitioner
-Description: "Example of generic Practitioner."
-
+Description: "Example of generic Practitioner response."
 // demographics
 * extension[+] = Example-Demographics-1
 * extension[+] = Example-ERC-JustOC
@@ -152,9 +150,16 @@ Usage: #inline
 Instance: Example-Practitioner-UpdateLicense
 InstanceOf: BCPractitioner
 Description: "Example Practitioner resource for updating License Status."
-
 * identifier = Example-Identifier-IPC-Ind-1
 * extension = Example-License-Status-Update
 * name.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason" 
 * name.extension.valueCode = #not-applicable
 
+Instance: Example-Practitioner-Update
+InstanceOf: BCPractitioner
+Description: "Example Practitioner resource for updating License Status."
+* identifier = Example-Identifier-IPC-Ind-1
+* address[+] = Example-Address-Update
+* name[+] = Example-Name-Usual-Change
+* telecom[+] = Example-ContactPoint-Phone-Update
+* telecom[+] = Example-ContactPoint-Email-Update

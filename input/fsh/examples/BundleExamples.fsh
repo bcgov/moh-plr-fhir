@@ -11,6 +11,13 @@ Description: "Example of a Bundle of resources that are needed to create an Orga
 * entry[+].fullUrl = "ac8569d7-4ff1-405f-9b01-a4b71cf0770d"
 * entry[=].resource = Example-PractitionerRole-2a-OrgRef-FromPractitioner
 
+Instance: Example-UpdateOrganization-Bundle
+InstanceOf: BCOrganizationBundle
+Description: "Example of a Bundle of resources that are needed to update an Organization."
+* type = #collection
+* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[=].resource = Example-Organization-1-Update
+
 Instance: Example-AddLocation-Bundle
 InstanceOf: BCLocationBundle
 Description: "An example of bundle that is adding a location."
@@ -54,7 +61,16 @@ Description: "Example of a bundle to update an Indivivdual Provider's License St
 * entry[0].fullUrl = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
 * entry[0].resource = Example-Practitioner-UpdateLicense
 * entry[1].fullUrl = "urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6"
-* entry[1].resource = Example-PractitionerRole-1-Role-FromPractitioner-Update
+* entry[1].resource = Example-PractitionerRole-1-Role-Update
+
+Instance: Example-UpdatePractitioner-Bundle
+InstanceOf: BCPractitionerBundle
+Description: "Example of a bundle to update an Indivivdual Provider's License Status."
+* type = #collection
+* entry[0].fullUrl = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+* entry[0].resource = Example-Practitioner-Update
+* entry[1].fullUrl = "urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6"
+* entry[1].resource = Example-PractitionerRole-1-Role-Update-Specialty
 
 Instance: Example-AddPractitioner-Bundle-Response
 InstanceOf: BCPractitionerBundle

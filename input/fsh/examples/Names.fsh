@@ -26,3 +26,13 @@ Usage: #inline
 * period.start = "2012-12-07"
 * use = #usual
 
+Instance: Example-Name-Usual-Change
+InstanceOf: BCHumanName
+Description: "Name example."
+Usage: #inline
+* family = "FamilyName"
+* given = "GivenName"
+* period.start = "2012-12-07"
+* use = #usual
+* extension[+] = Example-ERC-Change
+

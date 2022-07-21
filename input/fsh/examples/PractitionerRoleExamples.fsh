@@ -14,12 +14,20 @@ Description: "Example of the PractitionerRole with Speciality."
 * code = $SCPType#MD
 * specialty = Example-Specialty
 
-Instance: Example-PractitionerRole-1-Role-FromPractitioner-Update
+Instance: Example-PractitionerRole-1-Role-Update
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
 * practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
 * organization.display = "BC"
 * code = $SCPType#MD
+
+Instance: Example-PractitionerRole-1-Role-Update-Specialty
+InstanceOf: BCPractitionerRole
+Description: "Example of the PractitionerRole with Speciality."
+* practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+* organization.display = "BC"
+* code = $SCPType#MD
+* specialty = Example-Specialty-Update
 
 Instance: Example-PractitionerRole-1-Role-FromPractitioner-Update-Response
 InstanceOf: BCPractitionerRole
