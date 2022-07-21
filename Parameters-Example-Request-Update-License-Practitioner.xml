@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="Example-Request-Update-License-Practitioner"/>
+  <parameter>
+    <name value="messageId"/>
+    <valueString value="12344321"/>
+  </parameter>
+  <parameter>
+    <name value="messageTime"/>
+    <valueDateTime value="2022-06-27T01:01:01-08:00"/>
+  </parameter>
+  <parameter>
+    <name value="maintain"/>
+    <resource>
+      <Bundle>
+        <id value="Example-UpdatePractitioner-LicenseStatus-Bundle"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"/>
+        </meta>
+        <type value="collection"/>
+        <entry>
+          <fullUrl value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
+          <resource>
+            <Practitioner>
+              <id value="Example-Practitioner-UpdateLicense"/>
+              <meta>
+                <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
+              </meta>
+              <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension">
+                <extension url="statusCode">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="http://terminology.hl7.org/CodeSystem/v3-RoleStatus"/>
+                      <code value="suspended"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="statusReasonCode">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-status-reason-code"/>
+                      <code value="LTP"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="period">
+                  <valuePeriod>
+                    <start value="2022-06-24"/>
+                  </valuePeriod>
+                </extension>
+                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension">
+                  <extension url="endReasonCode">
+                    <valueCodeableConcept>
+                      <coding>
+                        <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code"/>
+                        <code value="CHG"/>
+                      </coding>
+                    </valueCodeableConcept>
+                  </extension>
+                </extension>
+              </extension>
+              <identifier>
+                <system value="https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC"/>
+                <value value="IPC.00147422.BC.PRS"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+              </identifier>
+              <name>
+                <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+                  <valueCode value="not-applicable"/>
+                </extension>
+              </name>
+            </Practitioner>
+          </resource>
+        </entry>
+        <entry>
+          <fullUrl value="urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6"/>
+          <resource>
+            <PractitionerRole>
+              <id value="Example-PractitionerRole-1-Role-Update"/>
+              <meta>
+                <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+              </meta>
+              <practitioner>
+                <reference value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
+              </practitioner>
+              <organization>
+                <display value="BC"/>
+              </organization>
+              <code>
+                <coding>
+                  <system value="https://fhir.infoway-inforoute.ca/CodeSystem/scptype"/>
+                  <code value="MD"/>
+                </coding>
+              </code>
+            </PractitionerRole>
+          </resource>
+        </entry>
+      </Bundle>
+    </resource>
+  </parameter>
+</Parameters>

@@ -1,0 +1,216 @@
+{
+  "resourceType": "Parameters",
+  "id": "Example-Request-Update-Organization",
+  "parameter": [
+    {
+      "name": "messageId",
+      "valueString": "12344321"
+    },
+    {
+      "name": "messageTime",
+      "valueDateTime": "2022-06-27T01:01:01-08:00"
+    },
+    {
+      "name": "maintain",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "Example-UpdateOrganization-Bundle",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle"
+          ]
+        },
+        "type": "collection",
+        "entry": [
+          {
+            "fullUrl": "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf",
+            "resource": {
+              "resourceType": "Organization",
+              "id": "Example-Organization-1-Update",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"
+                ]
+              },
+              "extension": [
+                {
+                  "extension": [
+                    {
+                      "url": "identifier",
+                      "valueIdentifier": {
+                        "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/bc-note-id",
+                        "value": "Note-3"
+                      }
+                    },
+                    {
+                      "url": "text",
+                      "valueString": "Note text"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+                      "valuePeriod": {
+                        "start": "1998-01-02"
+                      }
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "endReasonCode",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
+                                "code": "CHG"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
+                    }
+                  ],
+                  "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-note-extension"
+                }
+              ],
+              "identifier": [
+                {
+                  "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/ORGID",
+                  "value": "123123123",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
+                }
+              ],
+              "active": true,
+              "name": "Kelowna Clinic",
+              "_name": {
+                "extension": [
+                  {
+                    "extension": [
+                      {
+                        "url": "endReasonCode",
+                        "valueCodeableConcept": {
+                          "coding": [
+                            {
+                              "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
+                              "code": "CHG"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension",
+                    "valueCode": "official"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+                    "valuePeriod": {
+                      "start": "2014-01-31T00:00:00-07:00"
+                    }
+                  }
+                ]
+              },
+              "alias": [
+                "ABC Clinic - Kelowna"
+              ],
+              "telecom": [
+                {
+                  "extension": [
+                    {
+                      "extension": [
+                        {
+                          "url": "endReasonCode",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
+                                "code": "CHG"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension",
+                      "valueString": "250"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-country",
+                      "valueString": "1"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-local",
+                      "valueString": "1112234"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-extension",
+                      "valueString": "3432"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-communication-purpose-code",
+                            "code": "BC"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "system": "phone",
+                  "period": {
+                    "start": "2000-02-02"
+                  }
+                }
+              ],
+              "address": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-communication-purpose-code",
+                            "code": "BC"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "endReasonCode",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
+                                "code": "CHG"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
+                    }
+                  ],
+                  "type": "postal",
+                  "line": [
+                    "1000 DOUGLAS ST"
+                  ],
+                  "city": "VICTORIA",
+                  "state": "BC",
+                  "postalCode": "V6P7B8",
+                  "country": "CA",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

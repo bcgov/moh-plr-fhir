@@ -1,9 +1,9 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 0, warn = 0, info = 0
+err = 38, warn = 0, info = 4
 IG Publisher Version: 1.1.125
-Generated Wed Jul 20 17:49:47 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
+Generated Thu Jul 21 17:43:39 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
  Build Errors : 0 / 0 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 0 / 13
  /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 0 / 0 / 19
@@ -16,6 +16,8 @@ Generated Wed Jul 20 17:49:47 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/Bundle-Example-Organizational-Provider-Bundle : 0 / 1 / 20
  /github/workspace/fsh-generated/resources/Bundle-Example-Response-Query-Organization-Bundle : 0 / 1 / 25
  /github/workspace/fsh-generated/resources/Bundle-Example-Response-Query-Practitioner-Bundle : 0 / 4 / 35
+ /github/workspace/fsh-generated/resources/Bundle-Example-UpdateOrganization-Bundle : 6 / 0 / 10
+ /github/workspace/fsh-generated/resources/Bundle-Example-UpdatePractitioner-Bundle : 7 / 2 / 19
  /github/workspace/fsh-generated/resources/Bundle-Example-UpdatePractitioner-LicenseStatus-Bundle : 0 / 2 / 10
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-client-capability-statement : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-server-capability-statement : 0 / 0 / 1
@@ -36,6 +38,7 @@ Generated Wed Jul 20 17:49:47 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7049 : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/Organization-Example-Credential-Granting-Institution : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-Example-Organization-1 : 0 / 0 / 4
+ /github/workspace/fsh-generated/resources/Organization-Example-Organization-1-Update : 6 / 0 / 7
  /github/workspace/fsh-generated/resources/Organization-Example-Organization-2 : 0 / 1 / 5
  /github/workspace/fsh-generated/resources/Organization-Example-Organization-Response : 0 / 0 / 4
  /github/workspace/fsh-generated/resources/Organization-Example-Qualification-Organization : 0 / 0 / 1
@@ -45,15 +48,20 @@ Generated Wed Jul 20 17:49:47 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/Parameters-Example-Request-Add-Practitioner : 0 / 4 / 32
  /github/workspace/fsh-generated/resources/Parameters-Example-Request-Distribution-Organization : 0 / 0 / 17
  /github/workspace/fsh-generated/resources/Parameters-Example-Request-Distribution-Practitioner : 0 / 4 / 32
+ /github/workspace/fsh-generated/resources/Parameters-Example-Request-Update-License-Practitioner : 0 / 2 / 12
+ /github/workspace/fsh-generated/resources/Parameters-Example-Request-Update-Organization : 6 / 0 / 12
+ /github/workspace/fsh-generated/resources/Parameters-Example-Request-Update-Practitioner : 7 / 2 / 22
  /github/workspace/fsh-generated/resources/Parameters-Example-Response-Add-Practitioner : 0 / 4 / 32
  /github/workspace/fsh-generated/resources/Practitioner-Example-AddPractitioner-Practitioner : 0 / 2 / 11
  /github/workspace/fsh-generated/resources/Practitioner-Example-Practitioner : 0 / 2 / 12
  /github/workspace/fsh-generated/resources/Practitioner-Example-Practitioner-Response : 0 / 2 / 12
+ /github/workspace/fsh-generated/resources/Practitioner-Example-Practitioner-Update : 6 / 0 / 8
  /github/workspace/fsh-generated/resources/Practitioner-Example-Practitioner-UpdateLicense : 0 / 1 / 3
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner : 0 / 2 / 3
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner-Response : 0 / 2 / 3
- /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner-Update : 0 / 1 / 2
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner-Update-Response : 0 / 1 / 2
+ /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-Update : 0 / 1 / 2
+ /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-Update-Specialty : 0 / 2 / 4
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-2-OrgRef-FromPractitioner : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-2-OrgRef-FromPractitioner-Response : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-2a-OrgRef-FromPractitioner : 0 / 0 / 2
@@ -112,6 +120,23 @@ Generated Wed Jul 20 17:49:47 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
 == fsh-generated/resources/Bundle-Example-Organizational-Provider-Bundle.json ==
 == fsh-generated/resources/Bundle-Example-Response-Query-Organization-Bundle.json ==
 == fsh-generated/resources/Bundle-Example-Response-Query-Practitioner-Bundle.json ==
+== fsh-generated/resources/Bundle-Example-UpdateOrganization-Bundle.json ==
+ERROR: Bundle/Example-UpdateOrganization-Bundle: Bundle.entry[0].resource.ofType(Organization).name.extension[0]: ext-1: 'Must have either extensions or value[x], not both' Rule 'Must have either extensions or value[x], not both' Failed
+ERROR: Bundle/Example-UpdateOrganization-Bundle: Bundle.entry[0].resource.ofType(Organization).name.extension[0]: The Extension 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension' definition allows for the types [] but found type code
+ERROR: Bundle/Example-UpdateOrganization-Bundle: Bundle.entry[0].resource.ofType(Organization).name.extension[0]: Extension.value[x]: max allowed = 0, but found 1 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension)
+ERROR: Bundle/Example-UpdateOrganization-Bundle: Bundle.entry[0].resource.ofType(Organization).telecom[0].extension[0]: ext-1: 'Must have either extensions or value[x], not both' Rule 'Must have either extensions or value[x], not both' Failed
+ERROR: Bundle/Example-UpdateOrganization-Bundle: Bundle.entry[0].resource.ofType(Organization).telecom[0].extension[0]: The Extension 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension' definition allows for the types [] but found type string
+ERROR: Bundle/Example-UpdateOrganization-Bundle: Bundle.entry[0].resource.ofType(Organization).telecom[0].extension[0]: Extension.value[x]: max allowed = 0, but found 1 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension)
+== fsh-generated/resources/Bundle-Example-UpdatePractitioner-Bundle.json ==
+ERROR: Bundle/Example-UpdatePractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).telecom[0].extension[0]: ext-1: 'Must have either extensions or value[x], not both' Rule 'Must have either extensions or value[x], not both' Failed
+ERROR: Bundle/Example-UpdatePractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).telecom[0].extension[0]: The Extension 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension' definition allows for the types [] but found type string
+ERROR: Bundle/Example-UpdatePractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).telecom[0].extension[0]: Extension.value[x]: max allowed = 0, but found 1 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension)
+ERROR: Bundle/Example-UpdatePractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).telecom[1].extension[0]: ext-1: 'Must have either extensions or value[x], not both' Rule 'Must have either extensions or value[x], not both' Failed
+ERROR: Bundle/Example-UpdatePractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).telecom[1].extension[0]: The Extension 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension' definition allows for the types [] but found type CodeableConcept
+ERROR: Bundle/Example-UpdatePractitioner-Bundle: Bundle.entry[0].resource.ofType(Practitioner).telecom[1].extension[0]: Extension.value[x]: max allowed = 0, but found 1 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension)
+ERROR: Bundle/Example-UpdatePractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).practitioner: Unable to find a match for profile urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87 among choices: http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner
+INFORMATION: Bundle/Example-UpdatePractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).practitioner: Details for urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87 matching against Profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner
+INFORMATION: Bundle/Example-UpdatePractitioner-Bundle: Bundle.entry[1].resource.ofType(PractitionerRole).practitioner: Details for urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87 matching against Profile http://hl7.org/fhir/StructureDefinition/Practitioner
 == fsh-generated/resources/Bundle-Example-UpdatePractitioner-LicenseStatus-Bundle.json ==
 == fsh-generated/resources/CapabilityStatement-bc-plr-client-capability-statement.json ==
 == fsh-generated/resources/CapabilityStatement-bc-plr-server-capability-statement.json ==
@@ -132,6 +157,13 @@ Generated Wed Jul 20 17:49:47 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
 == fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7049.json ==
 == fsh-generated/resources/Organization-Example-Credential-Granting-Institution.json ==
 == fsh-generated/resources/Organization-Example-Organization-1.json ==
+== fsh-generated/resources/Organization-Example-Organization-1-Update.json ==
+ERROR: Organization/Example-Organization-1-Update: Organization.name.extension[0]: ext-1: 'Must have either extensions or value[x], not both' Rule 'Must have either extensions or value[x], not both' Failed
+ERROR: Organization/Example-Organization-1-Update: Organization.name.extension[0]: The Extension 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension' definition allows for the types [] but found type code
+ERROR: Organization/Example-Organization-1-Update: Organization.name.extension[0]: Extension.value[x]: max allowed = 0, but found 1 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension)
+ERROR: Organization/Example-Organization-1-Update: Organization.telecom[0].extension[0]: ext-1: 'Must have either extensions or value[x], not both' Rule 'Must have either extensions or value[x], not both' Failed
+ERROR: Organization/Example-Organization-1-Update: Organization.telecom[0].extension[0]: The Extension 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension' definition allows for the types [] but found type string
+ERROR: Organization/Example-Organization-1-Update: Organization.telecom[0].extension[0]: Extension.value[x]: max allowed = 0, but found 1 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension)
 == fsh-generated/resources/Organization-Example-Organization-2.json ==
 == fsh-generated/resources/Organization-Example-Organization-Response.json ==
 == fsh-generated/resources/Organization-Example-Qualification-Organization.json ==
@@ -141,15 +173,41 @@ Generated Wed Jul 20 17:49:47 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
 == fsh-generated/resources/Parameters-Example-Request-Add-Practitioner.json ==
 == fsh-generated/resources/Parameters-Example-Request-Distribution-Organization.json ==
 == fsh-generated/resources/Parameters-Example-Request-Distribution-Practitioner.json ==
+== fsh-generated/resources/Parameters-Example-Request-Update-License-Practitioner.json ==
+== fsh-generated/resources/Parameters-Example-Request-Update-Organization.json ==
+ERROR: Parameters/Example-Request-Update-Organization: Parameters.parameter[2].resource.ofType(Bundle).entry[0].resource.ofType(Organization).name.extension[0]: ext-1: 'Must have either extensions or value[x], not both' Rule 'Must have either extensions or value[x], not both' Failed
+ERROR: Parameters/Example-Request-Update-Organization: Parameters.parameter[2].resource.ofType(Bundle).entry[0].resource.ofType(Organization).name.extension[0]: The Extension 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension' definition allows for the types [] but found type code
+ERROR: Parameters/Example-Request-Update-Organization: Parameters.parameter[2].resource.ofType(Bundle).entry[0].resource.ofType(Organization).name.extension[0]: Extension.value[x]: max allowed = 0, but found 1 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension)
+ERROR: Parameters/Example-Request-Update-Organization: Parameters.parameter[2].resource.ofType(Bundle).entry[0].resource.ofType(Organization).telecom[0].extension[0]: ext-1: 'Must have either extensions or value[x], not both' Rule 'Must have either extensions or value[x], not both' Failed
+ERROR: Parameters/Example-Request-Update-Organization: Parameters.parameter[2].resource.ofType(Bundle).entry[0].resource.ofType(Organization).telecom[0].extension[0]: The Extension 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension' definition allows for the types [] but found type string
+ERROR: Parameters/Example-Request-Update-Organization: Parameters.parameter[2].resource.ofType(Bundle).entry[0].resource.ofType(Organization).telecom[0].extension[0]: Extension.value[x]: max allowed = 0, but found 1 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension)
+== fsh-generated/resources/Parameters-Example-Request-Update-Practitioner.json ==
+ERROR: Parameters/Example-Request-Update-Practitioner: Parameters.parameter[2].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).telecom[0].extension[0]: ext-1: 'Must have either extensions or value[x], not both' Rule 'Must have either extensions or value[x], not both' Failed
+ERROR: Parameters/Example-Request-Update-Practitioner: Parameters.parameter[2].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).telecom[0].extension[0]: The Extension 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension' definition allows for the types [] but found type string
+ERROR: Parameters/Example-Request-Update-Practitioner: Parameters.parameter[2].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).telecom[0].extension[0]: Extension.value[x]: max allowed = 0, but found 1 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension)
+ERROR: Parameters/Example-Request-Update-Practitioner: Parameters.parameter[2].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).telecom[1].extension[0]: ext-1: 'Must have either extensions or value[x], not both' Rule 'Must have either extensions or value[x], not both' Failed
+ERROR: Parameters/Example-Request-Update-Practitioner: Parameters.parameter[2].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).telecom[1].extension[0]: The Extension 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension' definition allows for the types [] but found type CodeableConcept
+ERROR: Parameters/Example-Request-Update-Practitioner: Parameters.parameter[2].resource.ofType(Bundle).entry[0].resource.ofType(Practitioner).telecom[1].extension[0]: Extension.value[x]: max allowed = 0, but found 1 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension)
+INFORMATION: Parameters/Example-Request-Update-Practitioner: Parameters.parameter[2].resource.ofType(Bundle).entry[1].resource.ofType(PractitionerRole).practitioner: Details for urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87 matching against Profile http://hl7.org/fhir/StructureDefinition/Practitioner
+ERROR: Parameters/Example-Request-Update-Practitioner: Parameters.parameter[2].resource.ofType(Bundle).entry[1].resource.ofType(PractitionerRole).practitioner: Unable to find a match for profile urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87 among choices: http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner
+INFORMATION: Parameters/Example-Request-Update-Practitioner: Parameters.parameter[2].resource.ofType(Bundle).entry[1].resource.ofType(PractitionerRole).practitioner: Details for urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87 matching against Profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner
 == fsh-generated/resources/Parameters-Example-Response-Add-Practitioner.json ==
 == fsh-generated/resources/Practitioner-Example-AddPractitioner-Practitioner.json ==
 == fsh-generated/resources/Practitioner-Example-Practitioner.json ==
 == fsh-generated/resources/Practitioner-Example-Practitioner-Response.json ==
+== fsh-generated/resources/Practitioner-Example-Practitioner-Update.json ==
+ERROR: Practitioner/Example-Practitioner-Update: Practitioner.telecom[0].extension[0]: ext-1: 'Must have either extensions or value[x], not both' Rule 'Must have either extensions or value[x], not both' Failed
+ERROR: Practitioner/Example-Practitioner-Update: Practitioner.telecom[0].extension[0]: The Extension 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension' definition allows for the types [] but found type string
+ERROR: Practitioner/Example-Practitioner-Update: Practitioner.telecom[0].extension[0]: Extension.value[x]: max allowed = 0, but found 1 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension)
+ERROR: Practitioner/Example-Practitioner-Update: Practitioner.telecom[1].extension[0]: ext-1: 'Must have either extensions or value[x], not both' Rule 'Must have either extensions or value[x], not both' Failed
+ERROR: Practitioner/Example-Practitioner-Update: Practitioner.telecom[1].extension[0]: The Extension 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension' definition allows for the types [] but found type CodeableConcept
+ERROR: Practitioner/Example-Practitioner-Update: Practitioner.telecom[1].extension[0]: Extension.value[x]: max allowed = 0, but found 1 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension)
 == fsh-generated/resources/Practitioner-Example-Practitioner-UpdateLicense.json ==
 == fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner.json ==
 == fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner-Response.json ==
-== fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner-Update.json ==
 == fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner-Update-Response.json ==
+== fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-Update.json ==
+== fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-Update-Specialty.json ==
 == fsh-generated/resources/PractitionerRole-Example-PractitionerRole-2-OrgRef-FromPractitioner.json ==
 == fsh-generated/resources/PractitionerRole-Example-PractitionerRole-2-OrgRef-FromPractitioner-Response.json ==
 == fsh-generated/resources/PractitionerRole-Example-PractitionerRole-2a-OrgRef-FromPractitioner.json ==

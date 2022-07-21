@@ -1,0 +1,274 @@
+{
+  "resourceType": "Parameters",
+  "id": "Example-Request-Update-Practitioner",
+  "parameter": [
+    {
+      "name": "messageId",
+      "valueString": "12344321"
+    },
+    {
+      "name": "messageTime",
+      "valueDateTime": "2022-06-27T01:01:01-08:00"
+    },
+    {
+      "name": "maintain",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "Example-UpdatePractitioner-Bundle",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"
+          ]
+        },
+        "type": "collection",
+        "entry": [
+          {
+            "fullUrl": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87",
+            "resource": {
+              "resourceType": "Practitioner",
+              "id": "Example-Practitioner-Update",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"
+                ]
+              },
+              "identifier": [
+                {
+                  "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC",
+                  "value": "IPC.00147422.BC.PRS",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
+                }
+              ],
+              "name": [
+                {
+                  "extension": [
+                    {
+                      "extension": [
+                        {
+                          "url": "endReasonCode",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
+                                "code": "CHG"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
+                    }
+                  ],
+                  "use": "usual",
+                  "family": "FamilyName",
+                  "given": [
+                    "GivenName"
+                  ],
+                  "period": {
+                    "start": "2012-12-07"
+                  }
+                }
+              ],
+              "telecom": [
+                {
+                  "extension": [
+                    {
+                      "extension": [
+                        {
+                          "url": "endReasonCode",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
+                                "code": "CHG"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension",
+                      "valueString": "250"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-country",
+                      "valueString": "1"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-local",
+                      "valueString": "1112234"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-extension",
+                      "valueString": "3432"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-communication-purpose-code",
+                            "code": "BC"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "system": "phone",
+                  "period": {
+                    "start": "2000-02-02"
+                  }
+                },
+                {
+                  "extension": [
+                    {
+                      "extension": [
+                        {
+                          "url": "endReasonCode",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
+                                "code": "CHG"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-communication-purpose-code",
+                            "code": "BC"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "system": "email",
+                  "value": "bob@email.com",
+                  "period": {
+                    "start": "2000-02-02"
+                  }
+                }
+              ],
+              "address": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-communication-purpose-code",
+                            "code": "BC"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "endReasonCode",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
+                                "code": "CHG"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
+                    }
+                  ],
+                  "type": "postal",
+                  "line": [
+                    "1000 DOUGLAS ST"
+                  ],
+                  "city": "VICTORIA",
+                  "state": "BC",
+                  "postalCode": "V6P7B8",
+                  "country": "CA",
+                  "period": {
+                    "start": "2000-01-01"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6",
+            "resource": {
+              "resourceType": "PractitionerRole",
+              "id": "Example-PractitionerRole-1-Role-Update-Specialty",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"
+                ]
+              },
+              "practitioner": {
+                "reference": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+              },
+              "organization": {
+                "display": "BC"
+              },
+              "code": [
+                {
+                  "coding": [
+                    {
+                      "system": "https://fhir.infoway-inforoute.ca/CodeSystem/scptype",
+                      "code": "MD"
+                    }
+                  ]
+                }
+              ],
+              "specialty": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension",
+                      "valuePeriod": {
+                        "start": "2000-01-01",
+                        "end": "2020-01-01"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension",
+                      "valueString": "Expertise source"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "endReasonCode",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code",
+                                "code": "CHG"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
+                    }
+                  ],
+                  "coding": [
+                    {
+                      "system": "https://fhir.infoway-inforoute.ca/CodeSystem/scpqual",
+                      "code": "AMD53"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
