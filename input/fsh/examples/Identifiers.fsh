@@ -21,7 +21,7 @@ Usage: #inline
 * system = $System_CPN
 * value = "CPN.00147433.BC.PRS"
 * period.start = "2000-01-01"
-* extension = Example-ERC-JustOC-PHSA
+* extension = Example-OC-PHSA
 
 
 Instance: Example-Identifier-CPN-Response
@@ -31,7 +31,7 @@ Usage: #inline
 * system = $System_CPN
 * value = "CPN.00147422.BC.PRS"
 * period.start = "2000-01-01"
-* extension = Example-ERC-JustOC-MOH
+* extension = Example-OC-MOH
 
 Instance: Example-Identifier-IPC-Ind-1
 InstanceOf: Identifier
@@ -48,7 +48,7 @@ Usage: #inline
 * system = $System_IPC
 * value = "IPC.00147422.BC.PRS"
 * period.start = "2000-01-01"
-* extension = Example-ERC-JustOC-MOH
+* extension = Example-OC-MOH
 
 Instance: Example-Identifier-IPC-Ind-2
 InstanceOf: Identifier
@@ -82,7 +82,7 @@ Usage: #inline
 * system = $System_IPC
 * value = "IPC.00147433.BC.PRS"
 * period.start = "2000-01-01"
-* extension = Example-ERC-JustOC-MOH
+* extension = Example-OC-MOH
 
 Instance: Example-Identifier-IPC-Org-Update
 InstanceOf: Identifier
@@ -116,7 +116,7 @@ Usage: #inline
 * system = $System_ORGID
 * value = "123123123"
 * period.start = "2000-01-01"
-* extension = Example-ERC-JustOC-PHSA
+* extension = Example-OC-PHSA
 
 Instance: Example-Identifier-ORGID-Update
 InstanceOf: Identifier
@@ -142,7 +142,7 @@ Usage: #inline
 * system = $System_CPSID
 * value = "123454"
 * period.start = "2000-01-01"
-* extension = Example-ERC-JustOC
+* extension = Example-OC-MOH
 
 Instance: Example-Identifier-RNID
 InstanceOf: Identifier

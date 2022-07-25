@@ -36,7 +36,6 @@ Alias: $PLRLocationRelationshipType = https://plr.hlth.gov.bc.ca/plr/codes/bc-lo
 Alias: $PLRLanguage = https://plr.hlth.gov.bc.ca/plr/codes/bc-language-code
 Alias: $PLRHealthServiceAreas = https://plr.hlth.gov.bc.ca/plr/codes/bc-health-service-area-code
 Alias: $PLREndReason = https://plr.hlth.gov.bc.ca/plr/codes/bc-end-reason-code
-//Alias: $PLROwner = https://plr.hlth.gov.bc.ca/plr/codes/bc-owner-code
 Alias: $PLRError = https://plr.hlth.gov.bc.ca/plr/codes/bc-error-codes
 //Alias: $PLRIdentifierType = https://plr.hlth.gov.bc.ca/plr/codes/bc-identifer-type-code
 Alias: $PLRWorkLocationID = https://plr.hlth.gov.bc.ca/plr/codes/bc-work-location-id

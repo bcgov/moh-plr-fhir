@@ -40,7 +40,7 @@ InstanceOf: BCPractitioner
 Description: "Example of generic Practitioner response."
 // demographics
 * extension[+] = Example-Demographics-1
-* extension[+] = Example-ERC-JustOC
+* extension[+] = Example-OC-MOH
 * gender = #male
 * birthDate = "1934-01-02"
 * birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
@@ -71,7 +71,7 @@ Description: "Example of generic Practitioner response."
 * qualification.issuer.reference = "#grantingInstitution"	
 * contained[QualificationOrganization] = Example-Credential-Granting-Institution
 * contained[QualificationOrganization].id = "grantingInstitution"
-* qualification.extension[1] = Example-ERC-JustOC
+* qualification.extension[1] = Example-OC-MOH
 
 // language
 * communication = Example-Language-Response
@@ -145,7 +145,7 @@ Usage: #inline
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
 * extension[=].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT 
-* extension[+] = Example-ERC-JustOC
+* extension[+] = Example-OC-MOH
 
 Instance: Example-Practitioner-UpdateLicense
 InstanceOf: BCPractitioner

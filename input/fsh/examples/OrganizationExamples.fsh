@@ -18,7 +18,8 @@ Description: "Example of an Organization."
 * name = "Kelowna Clinic"
 * name.extension[use].valueCode = #official
 * name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
-* name.extension[+] = Example-ERC-Change
+* name.extension[endReason].valueCodeableConcept.coding.system = $PLREndReason
+* name.extension[endReason].valueCodeableConcept.coding.code = #CHG
 * alias = "ABC Clinic - Kelowna"
 * address = Example-Address-Update
 * telecom = Example-ContactPoint-Phone-Update
@@ -34,7 +35,7 @@ Description: "Example of an Organization that is being created."
 * name = "Kelowna Clinic"
 * name.extension[use].valueCode = #official
 * name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
-* name.extension[endReason] = Example-ERC-JustOC-PHSA
+* name.extension[owner].valueIdentifier.assigner.display = "PHSA"
 * alias = "ABC Clinic - Kelowna"
 * address = Example-Address-Valid-Response
 * telecom = Example-ContactPoint-Phone-Response-PHSA

@@ -15,7 +15,7 @@ Usage: #inline
 * given = "GivenName"
 * period.start = "2012-12-07"
 * use = #official
-* extension = Example-ERC-JustOC
+* extension = Example-OC-MOH
 
 Instance: Example-Name-Usual
 InstanceOf: BCHumanName

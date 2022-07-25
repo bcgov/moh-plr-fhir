@@ -51,4 +51,4 @@ Usage: #inline
 * extension[=].valueCodeableConcept.coding.system = $PLRAddressValStatus
 * extension[=].valueCodeableConcept.coding.code = #V
 * period.start = "2000-01-01"
-* extension[+] = Example-ERC-JustOC-PHSA
+* extension[+] = Example-OC-PHSA

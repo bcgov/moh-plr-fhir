@@ -34,7 +34,7 @@ Usage: #inline
 * extension[+].url = "code"
 * extension[=].valueCodeableConcept.coding.system = "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"
 * extension[=].valueCodeableConcept.coding.code = #R 
-* extension[+] = Example-ERC-JustOC
+* extension[+] = Example-OC-MOH
 
 Instance: Example-Specialty
 InstanceOf: CodeableConcept
@@ -59,7 +59,7 @@ Usage: #inline
 * extension[=].valuePeriod.end = "2020-01-01"
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension"
 * extension[=].valueString = "Expertise source"
-* extension[+] = Example-ERC-JustOC
+* extension[+] = Example-OC-MOH
 
 Instance: Example-Specialty-Update
 InstanceOf: CodeableConcept
@@ -67,12 +67,12 @@ Description: "AMD53 specialty."
 Usage: #inline
 * coding.code = #AMD53
 * coding.system = $PracSpecialty
-* extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
-* extension[0].valuePeriod.start = "2000-01-01"
-* extension[0].valuePeriod.end = "2020-01-01"
-* extension[1].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension"
-* extension[1].valueString = "Expertise source"
-* extension[2] = Example-ERC-Change
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "2000-01-01"
+* extension[=].valuePeriod.end = "2020-01-01"
+* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension"
+* extension[=].valueString = "Expertise source"
+* extension[+] = Example-ERC-Change
 
 Instance: Example-Demographics-1
 InstanceOf: Extension
@@ -116,7 +116,7 @@ Usage: #inline
 * extension[=].valueCodeableConcept.coding.code = #LTP
 * extension[+].url = "period"
 * extension[=].valuePeriod.start = "2022-06-24"
-* extension[+] = Example-ERC-JustOC
+* extension[+] = Example-OC-MOH
 
 Instance: Example-License-Status-Update
 InstanceOf: Extension
@@ -133,60 +133,34 @@ Usage: #inline
 * extension[2].valuePeriod.start = "2022-06-24"
 * extension[3] = Example-ERC-Change
 
-Instance: Example-ERC-JustOC
+Instance: Example-OC-CPS
 InstanceOf: Extension
-Description: "General end reason and owner code example."
+Description: "General owner code example."
 Usage: #inline
-* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
-* extension[+].url = "custodianId"
-* extension[=].valueIdentifier.assigner.display = "CPS"
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-owner-extension"
+* valueIdentifier.assigner.display = "CPS"
 
-Instance: Example-ERC-JustOC-MOH
+Instance: Example-OC-MOH
 InstanceOf: Extension
-Description: "General end reason and owner code example."
+Description: "General owner code example."
 Usage: #inline
-* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
-* extension[+].url = "custodianId"
-* extension[=].valueIdentifier.assigner.display = "MOH"
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-owner-extension"
+* valueIdentifier.assigner.display = "MOH"
 
-Instance: Example-ERC-JustOC-PHSA
+Instance: Example-OC-PHSA
 InstanceOf: Extension
-Description: "General end reason and owner code example."
+Description: "General owner code example."
 Usage: #inline
-* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
-* extension[+].url = "custodianId"
-* extension[=].valueIdentifier.assigner.display = "PHSA"
-
-Instance: Example-ERC-OC
-InstanceOf: Extension
-Description: "General end reason and owner code example."
-Usage: #inline
-* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
-* extension[0].url = "endReasonCode"
-* extension[0].valueCodeableConcept.coding.system = $PLREndReason
-* extension[0].valueCodeableConcept.coding.code = #CHG
-* extension[1].url = "custodianId"
-* extension[1].valueIdentifier.assigner.display = "CPS"
-
-Instance: Example-ERC-OC-MOH
-InstanceOf: Extension
-Description: "General end reason and owner code example."
-Usage: #inline
-* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
-* extension[0].url = "endReasonCode"
-* extension[0].valueCodeableConcept.coding.system = $PLREndReason
-* extension[0].valueCodeableConcept.coding.code = #CHG
-* extension[1].url = "custodianId"
-* extension[1].valueIdentifier.assigner.display = "MOH"
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-owner-extension"
+* valueIdentifier.assigner.display = "PHSA"
 
 Instance: Example-ERC-Change
 InstanceOf: Extension
-Description: "General end reason and owner code example."
+Description: "General end reason example."
 Usage: #inline
 * url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension"
-* extension[0].url = "endReasonCode"
-* extension[0].valueCodeableConcept.coding.system = $PLREndReason
-* extension[0].valueCodeableConcept.coding.code = #CHG
+* valueCodeableConcept.coding.system = $PLREndReason
+* valueCodeableConcept.coding.code = #CHG
 
 Instance: Example-DisciplinaryAction
 InstanceOf: Extension
@@ -219,7 +193,7 @@ Usage: #inline
 * extension[=].valuePeriod.start = "1998-01-02"
 * extension[+].url = "displayFlag"
 * extension[=].valueBoolean = false
-* extension[+] = Example-ERC-JustOC
+* extension[+] = Example-OC-MOH
 
 Instance: Example-DisciplinaryAction-Update
 InstanceOf: Extension
@@ -263,7 +237,7 @@ Usage: #inline
 * extension[=].valueString = "Note text"
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "1998-01-02"
-* extension[+] = Example-ERC-JustOC
+* extension[+] = Example-OC-MOH
 
 Instance: Example-Note-Response-PHSA
 InstanceOf: Extension
@@ -277,7 +251,7 @@ Usage: #inline
 * extension[=].valueString = "Note text"
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "1998-01-02"
-* extension[+] = Example-ERC-JustOC-PHSA
+* extension[+] = Example-OC-PHSA
 
 Instance: Example-Note-Update
 InstanceOf: Extension
@@ -328,7 +302,7 @@ Usage: #inline
 * extension[=].valueCodeableConcept.coding.code = #EXP
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "1998-01-02"
-* extension[+] = Example-ERC-JustOC
+* extension[+] = Example-OC-MOH
 
 Instance: Example-Condition-Update
 InstanceOf: Extension
@@ -368,7 +342,7 @@ Usage: #inline
 * extension[=].valuePeriod.start = "2000-01-01"
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension"
 * extension[=].valueString = "Language Source"
-* extension[+] = Example-ERC-JustOC
+* extension[+] = Example-OC-MOH
 
 Instance: Example-Language-Update
 InstanceOf: CodeableConcept

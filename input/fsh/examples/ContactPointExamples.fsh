@@ -33,7 +33,7 @@ Usage: #inline
 * extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
-* extension[+] = Example-ERC-Change
+* extension[endReason] = Example-ERC-Change
 
 Instance: Example-ContactPoint-Phone-Response
 InstanceOf: BCContactPoint
@@ -52,7 +52,7 @@ Usage: #inline
 * extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
-* extension[endReason] = Example-ERC-JustOC
+* extension[owner] = Example-OC-MOH
 
 Instance: Example-ContactPoint-Phone-Response-PHSA
 InstanceOf: BCContactPoint
@@ -71,7 +71,7 @@ Usage: #inline
 * extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
-* extension[endReason] = Example-ERC-JustOC-PHSA
+* extension[owner] = Example-OC-PHSA
 
 Instance: Example-ContactPoint-Email
 InstanceOf: BCContactPoint
@@ -93,6 +93,6 @@ Usage: #inline
 * extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
-* extension[+] = Example-ERC-Change
+* extension[endReason] = Example-ERC-Change
 * value = "bob@email.com"
 

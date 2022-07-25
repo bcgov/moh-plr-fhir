@@ -2,7 +2,8 @@ Profile: BCIdentifier
 Id: bc-identifier
 Parent: http://hl7.org/fhir/ca/baseline/StructureDefinition/profile-identifier
 Description: "Adds an end reason to the identifier."
-* extension contains EndReasonExtension named endReason 0..1 MS
+* extension contains EndReasonExtension named endReason 0..1 MS and
+           OwnerExtension named owner 0..1 MS
 
 Profile: BCContactPoint
 Id: bc-contactPoint
@@ -15,6 +16,7 @@ Description: "Adds an end reason and extra contact information."
 	http://hl7.org/fhir/StructureDefinition/contactpoint-local named local 0..1 MS and
 	http://hl7.org/fhir/StructureDefinition/contactpoint-extension named extension 0..1 MS and
 	EndReasonExtension named endReason 0..1 MS and 
+	OwnerExtension named owner 0..1 MS and 
 	CommunicationPurposeExtension named commPurposeExtension 0..1 MS
 	
 Profile: BCAddress
@@ -23,6 +25,7 @@ Parent: Address
 Description: "Adds an end reason, communication purpose and validation status to the address."
 * use 0..0
 * extension contains EndReasonExtension named endReason 0..1 MS and 
+    OwnerExtension named owner 0..1 MS and 
     CommunicationPurposeExtension named commPurposeExtension 0..1 MS and
     AddressValidationStatusExtension named validationStatus 0..1 MS
 
@@ -32,6 +35,7 @@ Parent: HumanName
 Description: "Adds an end reason and a use code to a name."
 * extension contains 
 	EndReasonExtension named endReason 0..1 MS and
+        OwnerExtension named owner 0..1 MS and 
 	http://hl7.org/fhir/StructureDefinition/data-absent-reason named dataAbsentReason 0..1 MS
 
 Extension: NameUseExtension
@@ -45,12 +49,16 @@ Description: "Allows for use on a simple name string."
 Extension: EndReasonExtension
 Id: bc-end-reason-extension
 Title: "BC End Reason Extension"
-Description: "Tracking end reasons."
-* extension contains endReasonCode 0..1 MS and custodianId 0..1 MS
-* extension[endReasonCode].value[x] only CodeableConcept
-* extension[endReasonCode].value[x] 1..1 MS
-* extension[custodianId].value[x] only Identifier
-* extension[custodianId].value[x] 1..1 MS
+Description: "Tracking end reason."
+* value[x] only CodeableConcept
+* value[x] 1..1 MS
+
+Extension: OwnerExtension
+Id: bc-owner-extension
+Title: "BC Owner Extension"
+Description: "Tracking the owner."
+* value[x] only Identifier
+* value[x] 1..1 MS
 
 Extension: PeriodExtension
 Id: bc-period-extension

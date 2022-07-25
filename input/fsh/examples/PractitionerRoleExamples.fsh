@@ -49,7 +49,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 Instance: Example-PractitionerRole-2a-OrgRef-FromPractitioner
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
-* practitioner.identifier = Example-Identifier-IPC-Ind-1-Response
+* practitioner.identifier = Example-Identifier-IPC-Ind-1
 * organization.reference = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
 * period.start = "2000-01-01"
 * organization.extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
@@ -65,7 +65,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 * organization.extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
 * organization.extension[=].valueCodeableConcept.coding.system = $PLRRelationshipType
 * organization.extension[=].valueCodeableConcept.coding.code = #EMPLOYEE
-* organization.extension[+] = Example-ERC-JustOC
+* organization.extension[+] = Example-OC-MOH
 
 Instance: Example-PractitionerRole-3-LocRef-FromPractitioner
 InstanceOf: BCPractitionerRole
@@ -86,7 +86,7 @@ Description: "Example of the PractitionerRole for Practitioner to Location relat
 * location.extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension"
 * location.extension[=].valueCodeableConcept.coding.system = $PLRLocationRelationshipType
 * location.extension[=].valueCodeableConcept.coding.code = #WORKSAT
-* location.extension[+] = Example-ERC-JustOC
+* location.extension[+] = Example-OC-MOH
 
 Instance: Example-PractitionerRole-4-PracRef-FromOrg
 InstanceOf: BCPractitionerRole
@@ -107,7 +107,7 @@ Description: "Example of the PractitionerRole for Practitioner to Practitioner r
 * practitioner.extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
 * practitioner.extension[=].valueCodeableConcept.coding.system = $PLRRelationshipType
 * practitioner.extension[=].valueCodeableConcept.coding.code = #careteam
-* practitioner.extension[+] = Example-ERC-JustOC
+* practitioner.extension[+] = Example-OC-MOH
 
 Instance: Example-PractitionerRole-5-PracRef-FromLoc
 InstanceOf: BCPractitionerRole
@@ -128,4 +128,4 @@ Description: "Example of the PractitionerRole for Practitioner to Practitioner r
 * practitioner.extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
 * practitioner.extension[=].valueCodeableConcept.coding.system = $PLRLocationRelationshipType
 * practitioner.extension[=].valueCodeableConcept.coding.code = #worklocationfor
-* practitioner.extension[+] = Example-ERC-JustOC
+* practitioner.extension[+] = Example-OC-MOH

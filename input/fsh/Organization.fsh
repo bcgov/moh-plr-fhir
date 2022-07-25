@@ -10,7 +10,8 @@ Description: "General constraints on the Organization resource for use in the BC
 * name.extension contains 
 	NameUseExtension named use 0..1 MS and 
 	PeriodExtension named period 0..1 MS and
-	EndReasonExtension named endReason 0..1 MS
+	EndReasonExtension named endReason 0..1 MS and
+        OwnerExtension named owner 0..1 MS
 * telecom only BCContactPoint 
 * telecom MS
 * address only BCAddress
@@ -33,7 +34,9 @@ Description: "General constraints on the OrganizationAffiliation resource for us
 * code MS
 * location MS
 * location only Reference(BCLocation)
-* location.extension contains EndReasonExtension named endReason 0..1 MS
+* location.extension contains EndReasonExtension named endReason 0..1 MS and
+     OwnerExtension named owner 0..1 MS
+
 
 Instance: Example-Qualification-Organization
 InstanceOf: BCOrganization

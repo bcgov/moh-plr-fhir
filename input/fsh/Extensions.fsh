@@ -2,7 +2,13 @@ Extension: FacilityDetailsExtension
 Id: bc-facility-details-extension
 Title: "BC Facility Details Extension"
 Description: "Provides the details of a facility as represented by a FHIR location."
-* extension contains campusOfCare 0..1 MS and operatorName 0..1 MS and ownerName 0..1 MS and contactName 0..1 MS and PeriodExtension named period 1..1 MS  and EndReasonExtension named endReason 0..1 MS
+* extension contains campusOfCare 0..1 MS and 
+     operatorName 0..1 MS and 
+     ownerName 0..1 MS and 
+     contactName 0..1 MS and 
+     PeriodExtension named period 1..1 MS and 
+     EndReasonExtension named endReason 0..1 MS and
+     OwnerExtension named owner 0..1 MS
 * extension[campusOfCare].value[x] only string
 * extension[campusOfCare].value[x] 1..1 MS
 * extension[operatorName].value[x] only string
@@ -72,7 +78,10 @@ Extension: PractitionerConfidentialityExtension
 Id: bc-practitioner-confidentiality-extension
 Title: "BC Practitioner Confidentiality Extension"
 Description: "Indicates the confidentiality of the practitioner's information."
-* extension contains code 1..1 MS and PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
+* extension contains code 1..1 MS and 
+      PeriodExtension named period 1..1 MS and 
+      EndReasonExtension named endReason 0..1 MS and
+      OwnerExtension named owner 0..1 MS
 * extension[code].value[x] only CodeableConcept
 * extension[code].value[x] 1..1 MS
 * extension[code].valueCodeableConcept from http://terminology.hl7.org/ValueSet/v3-ConfidentialityClassification (required)
@@ -81,7 +90,12 @@ Extension: PractitionerRelationshipExtension
 Id: bc-practitioner-relationship-extension
 Title: "BC Practitioner to Practitioner Relationship Extension"
 Description: "Allows for relationships of practitioners to practitioners without needing CareTeam semantics."
-* extension contains PeriodExtension named period 1..1 MS and practitioner 1..1 MS and RelationshipTypeExtension named type 1..1 MS and EndReasonExtension named endReason 0..1 MS
+* extension contains 
+          PeriodExtension named period 1..1 MS and 
+          practitioner 1..1 MS and 
+          RelationshipTypeExtension named type 1..1 MS and 
+          EndReasonExtension named endReason 0..1 MS and
+          OwnerExtension named owner 0..1 MS
 * extension[practitioner].value[x] only Reference(BCPractitioner)
 * extension[practitioner].value[x] 1..1 MS
 * extension[type].value[x] only CodeableConcept
@@ -91,7 +105,13 @@ Extension: PractitionerDiscplinaryActionExtension
 Id: bc-practitioner-disciplinary-action-extension
 Title: "BC Practitioner Disciplinary Actions Extension"
 Description: "Provides details of disciplinary actions against the provider."
-* extension contains identifier 1..1 MS and description 1..1 MS and PeriodExtension named period 1..1 MS and archiveDate 1..1 MS and displayFlag 1..1 MS and EndReasonExtension named endReason 0..1 MS
+* extension contains identifier 1..1 MS 
+        and description 1..1 MS and 
+        PeriodExtension named period 1..1 MS and 
+        archiveDate 1..1 MS and 
+        displayFlag 1..1 MS and 
+        EndReasonExtension named endReason 0..1 MS and
+        OwnerExtension named owner 0..1 MS
 * extension[identifier].value[x] only Identifier
 * extension[identifier].value[x] 1..1 MS
 * extension[description].value[x] only string
@@ -105,7 +125,11 @@ Extension: NoteExtension
 Id: bc-note-extension
 Title: "BC Notes Extension"
 Description: "Notes about the practitioner/location/organization."
-* extension contains identifier 1..1 MS and text 1..1 MS and PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
+* extension contains identifier 1..1 MS and 
+      text 1..1 MS and 
+      PeriodExtension named period 1..1 MS and 
+      EndReasonExtension named endReason 0..1 MS and
+      OwnerExtension named owner 0..1 MS
 * extension[identifier].value[x] only Identifier
 * extension[identifier].value[x] 1..1 MS
 * extension[text].value[x] only string
@@ -115,7 +139,13 @@ Extension: PractitionerConditionExtension
 Id: bc-practitioner-condition-extension
 Title: "BC Practitioner Conditions Extension"
 Description: "Conditions on the provider's role"
-* extension contains identifier 1..1 MS and PeriodExtension named period 1..1 MS and restriction 1..1 MS and restrictionText 1..1 MS and code 1..1 MS and EndReasonExtension named endReason 0..1 MS
+* extension contains identifier 1..1 MS and 
+        PeriodExtension named period 1..1 MS and 
+        restriction 1..1 MS and 
+        restrictionText 1..1 MS and 
+        code 1..1 MS and 
+        EndReasonExtension named endReason 0..1 MS and
+        OwnerExtension named owner 0..1 MS
 * extension[identifier].value[x] only Identifier
 * extension[identifier].value[x] 1..1 MS
 * extension[restriction].value[x] only boolean
@@ -125,11 +155,14 @@ Description: "Conditions on the provider's role"
 * extension[code].value[x] only CodeableConcept
 * extension[code].value[x] 1..1 MS
 
-Extension:  PractitionerQualificationExtension
+Extension: PractitionerQualificationExtension
 Id: bc-practitioner-qualification-extension
 Title: "BC Practitioner Qualification Extension"
 Description: "The qualifications extensions."
-* extension contains designation 1..1 MS and registrationNumber 0..1 MS and equivalencyFlag 1..1 MS and issuedDate 0..1 MS
+* extension contains designation 1..1 MS and 
+       registrationNumber 0..1 MS and 
+       equivalencyFlag 1..1 MS and 
+       issuedDate 0..1 MS
 * extension[designation].value[x] only string
 * extension[designation].value[x] 1..1 MS
 * extension[registrationNumber].value[x] only string
@@ -143,7 +176,12 @@ Extension: LicenseStatusExtension
 Id: bc-license-status-extension
 Title: "BC License Status Extension"
 Description: "Tracking the status and changes to the status of a practitioner/organization license."
-* extension contains statusCode 1..1 MS and statusReasonCode 1..1 MS and statusClassCode 0..1 MS and period 1..1 MS and EndReasonExtension named endReasonCodeAndOwner 0..1 MS
+* extension contains statusCode 1..1 MS and 
+       statusReasonCode 1..1 MS and 
+       statusClassCode 0..1 MS and 
+       period 1..1 MS and 
+       EndReasonExtension named endReason 0..1 MS and
+       OwnerExtension named owner 0..1 MS
 * extension[statusCode].value[x] only CodeableConcept
 * extension[statusCode].value[x] from $StatusVS (required)
 * extension[statusCode].value[x] 1..1 MS
