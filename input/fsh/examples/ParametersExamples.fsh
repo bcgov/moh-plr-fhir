@@ -60,6 +60,18 @@ Description: "Example Parameters for Add Individual Provider response."
 * parameter[+].name = "maintain"
 * parameter[=].resource = Example-AddPractitioner-Bundle-Response
 
+Instance: Example-Response-Update-Practitioner
+InstanceOf: Parameters
+Description: "Example Parameters for Update Individual Provider response."
+* parameter[+].name = "messageId"
+* parameter[=].valueString = "98766789"
+* parameter[+].name = "messageTime"
+* parameter[=].valueDateTime = "2022-06-27T01:01:03-08:00"
+* parameter[+].name = "requestMessageId"
+* parameter[=].valueString = "12344321"
+* parameter[+].name = "maintain"
+* parameter[=].resource = Example-UpdatePractitioner-Bundle-Response
+
 Instance: Example-Request-Add-Organization
 InstanceOf: Parameters
 Description: "Example Parameters to add an Organizational Provider."
@@ -80,15 +92,15 @@ Description: "Example Parameters to update an Organizational Provider."
 * parameter[+].name = "maintain"
 * parameter[=].resource = Example-UpdateOrganization-Bundle
 
-//Instance: Example-Response-Add-Organization
-//InstanceOf: Parameters
-//Description: "Example Parameters for Add Organizational Provider response."
-//* parameter[+].name = "messageId"
-//* parameter[=].valueString = "98766789"
-//* parameter[+].name = "messageTime"
-//* parameter[=].valueDateTime = "2022-06-27T01:01:03-08:00"
-//* parameter[+].name = "requestMessageId"
-//* parameter[=].valueString = "12344321"
-//* parameter[+].name = "maintain"
-//* parameter[=].resource = Example-AddOrganization-Bundle-Response
+Instance: Example-Response-Update-Organization
+InstanceOf: Parameters
+Description: "Example Parameters for Update Organization Provider response."
+* parameter[+].name = "messageId"
+* parameter[=].valueString = "98766789"
+* parameter[+].name = "messageTime"
+* parameter[=].valueDateTime = "2022-06-27T01:01:03-08:00"
+* parameter[+].name = "requestMessageId"
+* parameter[=].valueString = "12344321"
+* parameter[+].name = "maintain"
+* parameter[=].resource = Example-UpdateOrganization-Bundle-Response
 

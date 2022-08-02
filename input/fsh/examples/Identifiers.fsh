@@ -23,7 +23,6 @@ Usage: #inline
 * period.start = "2000-01-01"
 * extension = Example-OC-PHSA
 
-
 Instance: Example-Identifier-CPN-Response
 InstanceOf: Identifier
 Description: "Identifier example for CPN."
@@ -74,6 +73,14 @@ Usage: #inline
 * system = $System_IPC
 * value = "IPC.00147433.BC.PRS"
 * period.start = "2000-01-01"
+
+Instance: Example-Identifier-IPC-Org-2
+InstanceOf: Identifier
+Description: "Identifier example for IPC."
+Usage: #inline
+* system = $System_IPC
+* value = "IPC.001164553.BC.PRS"
+* period.start = "2000-02-02"
 
 Instance: Example-Identifier-IPC-Org-Response
 InstanceOf: Identifier

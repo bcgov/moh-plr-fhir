@@ -24,3 +24,12 @@ Description: "OperationOutcome example for Individual Provider search - wildcard
 * issue[0].details.coding.system = $PLRError
 * issue[0].details.coding.code = #GRS.DPS.UNK.UNK.0.0.7018
 * issue[0].details.text = "Only one wildcard (*) is allowed in a field."
+
+Instance: Example-OperationOutcome-MaintainSuccess
+InstanceOf: OperationOutcome
+Description: "OperationOutcome example of a success message."
+* issue[0].severity = #information
+* issue[0].code = #business-rule
+* issue[0].details.coding.system = $PLRError
+* issue[0].details.coding.code = #PRS.PRP.MTN.UNK.0.0.0000
+* issue[0].details.text = "The provider transaction was processed."

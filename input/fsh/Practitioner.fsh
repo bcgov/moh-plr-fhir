@@ -53,14 +53,12 @@ Description: "General constraints on the PractitionerRole resource for use in th
 * period MS
 * practitioner 1..1 MS
 * practitioner only Reference(BCPractitioner) 
-* practitioner.extension contains EndReasonExtension named endReason 0..1 MS and
+* extension contains EndReasonExtension named endReason 0..1 MS and
      OwnerExtension named owner 0..1 MS and
-     RelationshipTypeExtension named typeExtension 0..1 MS
+     RelationshipTypeExtension named typeExtension 0..1 MS and
+     LocationRelationshipTypeExtension named locRelationshipType 0..1 MS
 * organization MS
 * organization only Reference(BCOrganization)
-* organization.extension contains EndReasonExtension named endReason 0..1 MS and
-     OwnerExtension named owner 0..1 MS and
-     RelationshipTypeExtension named typeExtension 0..1 MS
 * organization.type 0..0
 * code MS 
 * code from PractitionerRoleVS (required)
@@ -72,9 +70,6 @@ Description: "General constraints on the PractitionerRole resource for use in th
      SpecialtySourceExtension named specialtySource 0..1 MS
 * location MS
 * location only Reference(BCLocation)
-* location.extension contains EndReasonExtension named endReason 0..1 MS and 
-     OwnerExtension named owner 0..1 MS and
-     LocationRelationshipTypeExtension named locRelationshipType 0..1 MS
 * telecom only BCContactPoint
 * telecom MS
 
