@@ -223,24 +223,24 @@
      ]
   ];
   fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole-4-PracRef-FromOrg\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span></span></p><p><b>organization</b>: <a href=\"#Organization_Example-Organization-2\">See above (urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf)</a></p></div>"
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole-4-PracRef-FromOrg\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>BC Practitioner to Organization or Practitioner to Practitioner Type Extension.</b>: careteam <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code#careteam)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span></span></p><p><b>organization</b>: <span></span></p></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code" ];
+         fhir:Coding.code [ fhir:value "careteam" ]
+       ]
+     ]
   ];
   fhir:PractitionerRole.period [
      fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
   ];
   fhir:PractitionerRole.practitioner [
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code" ];
-           fhir:Coding.code [ fhir:value "careteam" ]
-         ]
-       ]
-     ];
      fhir:Reference.identifier [
        fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC" ];
        fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ];
@@ -250,7 +250,13 @@
      ]
   ];
   fhir:PractitionerRole.organization [
-     fhir:Reference.reference [ fhir:value "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf" ]
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/identifier-system/IFC" ];
+       fhir:Identifier.value [ fhir:value "IFC.00147422.BC.PRS" ];
+       fhir:Identifier.period [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
+     ]
   ] .
 
 <urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03> a fhir:OrganizationAffiliation;
@@ -264,20 +270,26 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-OrganizationAffiliation-1-OrgRef-FromOrg\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <a href=\"#Organization_Example-Organization-2\">See above (urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf)</a></p><p><b>participatingOrganization</b>: <span></span></p><p><b>code</b>: deptof <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code#deptof)</span></p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-OrganizationAffiliation-1-OrgRef-FromOrg\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span></span></p><p><b>participatingOrganization</b>: <span></span></p><p><b>code</b>: deptof <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code#deptof)</span></p></div>"
   ];
   fhir:OrganizationAffiliation.period [
      fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
   ];
   fhir:OrganizationAffiliation.organization [
-     fhir:Reference.reference [ fhir:value "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf" ]
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC" ];
+       fhir:Identifier.value [ fhir:value "IPC.00147433.BC.PRS" ];
+       fhir:Identifier.period [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
+     ]
   ];
   fhir:OrganizationAffiliation.participatingOrganization [
      fhir:Reference.identifier [
-       fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/identifier-system/ORGID" ];
-       fhir:Identifier.value [ fhir:value "123123123" ];
+       fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC" ];
+       fhir:Identifier.value [ fhir:value "IPC.001164553.BC.PRS" ];
        fhir:Identifier.period [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+         fhir:Period.start [ fhir:value "2000-02-02"^^xsd:date ]
        ]
      ]
   ];
@@ -301,13 +313,19 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-OrganizationAffiliation-2-LocRef-FromOrg\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <a href=\"#Organization_Example-Organization-2\">See above (urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf)</a></p><p><b>code</b>: operatesfrom <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code#operatesfrom)</span></p><p><b>location</b>: <span></span></p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-OrganizationAffiliation-2-LocRef-FromOrg\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span></span></p><p><b>code</b>: operatesfrom <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code#operatesfrom)</span></p><p><b>location</b>: <span></span></p></div>"
   ];
   fhir:OrganizationAffiliation.period [
      fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
   ];
   fhir:OrganizationAffiliation.organization [
-     fhir:Reference.reference [ fhir:value "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf" ]
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC" ];
+       fhir:Identifier.value [ fhir:value "IPC.00147433.BC.PRS" ];
+       fhir:Identifier.period [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
+     ]
   ];
   fhir:OrganizationAffiliation.code [
      fhir:index 0;

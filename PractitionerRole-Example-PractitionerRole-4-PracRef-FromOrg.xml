@@ -6,20 +6,20 @@
     <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-PractitionerRole-4-PracRef-FromOrg" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span></span></p><p><b>organization</b>: <a href="Bundle-Example-AddOrganization-Bundle.html#urn-uuid-e24cfa57-5e07-4e5b-b229-0e65c74de7bf">urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf</a></p></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Example-PractitionerRole-4-PracRef-FromOrg" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a></p></div><p><b>BC Practitioner to Organization or Practitioner to Practitioner Type Extension.</b>: careteam <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (bc-relationship-type-code#careteam)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span></span></p><p><b>organization</b>: <span></span></p></div>
   </text>
+  <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code"/>
+        <code value="careteam"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
   <period>
     <start value="2000-01-01"/>
   </period>
   <practitioner>
-    <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
-      <valueCodeableConcept>
-        <coding>
-          <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code"/>
-          <code value="careteam"/>
-        </coding>
-      </valueCodeableConcept>
-    </extension>
     <identifier>
       <system value="https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC"/>
       <value value="IPC.00147422.BC.PRS"/>
@@ -29,6 +29,12 @@
     </identifier>
   </practitioner>
   <organization>
-    <reference value="urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"/>
+    <identifier>
+      <system value="https://plr.hlth.gov.bc.ca/plr/identifier-system/IFC"/>
+      <value value="IFC.00147422.BC.PRS"/>
+      <period>
+        <start value="2000-01-01"/>
+      </period>
+    </identifier>
   </organization>
 </PractitionerRole>

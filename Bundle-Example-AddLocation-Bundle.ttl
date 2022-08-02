@@ -20,10 +20,6 @@
      fhir:index 0;
      fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2" ];
      fhir:Bundle.entry.resource <urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2>
-  ], [
-     fhir:index 1;
-     fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuuid:4d73bc14-4332-4acc-a057-0b2ee66c3d4d" ];
-     fhir:Bundle.entry.resource <urn:uuuid:4d73bc14-4332-4acc-a057-0b2ee66c3d4d>
   ] .
 
 <urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2> a fhir:Location;
@@ -146,47 +142,6 @@
      fhir:Address.period [
        fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
      ]
-  ] .
-
-<urn:uuuid:4d73bc14-4332-4acc-a057-0b2ee66c3d4d> a fhir:PractitionerRole;
-  fhir:Resource.id [ fhir:value "Example-PractitionerRole-5-PracRef-FromLoc"];
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
-       fhir:index 0;
-       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
-     ]
-  ];
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole-5-PracRef-FromLoc\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span></span></p><p><b>location</b>: <a href=\"#Location_Example-Location\">See above (urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2)</a></p></div>"
-  ];
-  fhir:PractitionerRole.period [
-     fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-  ];
-  fhir:PractitionerRole.practitioner [
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-location-relationship-type-code" ];
-           fhir:Coding.code [ fhir:value "worklocationfor" ]
-         ]
-       ]
-     ];
-     fhir:Reference.identifier [
-       fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC" ];
-       fhir:Identifier.value [ fhir:value "IPC.00147433.BC.PRS" ];
-       fhir:Identifier.period [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-       ]
-     ]
-  ];
-  fhir:PractitionerRole.location [
-     fhir:index 0;
-     fhir:Reference.reference [ fhir:value "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2" ]
   ] .
 
 # - ontology header ------------------------------------------------------------

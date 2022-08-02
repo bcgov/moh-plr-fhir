@@ -562,10 +562,26 @@
         },
         "text": {
           "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole-1-Role-FromPractitioner-Response\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>practitioner</b>: <a href=\"#Practitioner_Example-Practitioner-Response\">See above (urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87)</a></p><p><b>organization</b>: <span>: BC</span></p><p><b>code</b>: MD <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-scptype.html\">pan-Canadian Provider Types</a>#MD)</span></p><p><b>specialty</b>: AMD53 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-scpqual.html\">pan-Canadian Provider Qualification Types</a>#AMD53)</span></p></div>"
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole-1-Role-FromPractitioner-Response\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>practitioner</b>: <span></span></p><p><b>organization</b>: <span>: BC</span></p><p><b>code</b>: MD <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-scptype.html\">pan-Canadian Provider Types</a>#MD)</span></p><p><b>specialty</b>: AMD53 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-scpqual.html\">pan-Canadian Provider Qualification Types</a>#AMD53)</span></p></div>"
         },
         "practitioner": {
-          "reference": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+          "identifier": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-owner-extension",
+                "valueIdentifier": {
+                  "assigner": {
+                    "display": "MOH"
+                  }
+                }
+              }
+            ],
+            "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC",
+            "value": "IPC.00147422.BC.PRS",
+            "period": {
+              "start": "2000-01-01"
+            }
+          }
         },
         "organization": {
           "display": "BC"
@@ -593,6 +609,14 @@
               {
                 "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-specialty-source-extension",
                 "valueString": "Expertise source"
+              },
+              {
+                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-owner-extension",
+                "valueIdentifier": {
+                  "assigner": {
+                    "display": "MOH"
+                  }
+                }
               }
             ],
             "coding": [
@@ -616,29 +640,35 @@
           ]
         },
         "text": {
-          "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole-2-OrgRef-FromPractitioner\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <a href=\"#Practitioner_Example-Practitioner-Response\">See above (urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87)</a></p><p><b>organization</b>: <span></span></p></div>"
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole-2-OrgRef-FromPractitioner\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>BC Practitioner to Organization or Practitioner to Practitioner Type Extension.</b>: EMPLOYEE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code#EMPLOYEE)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span></span></p><p><b>organization</b>: <span></span></p></div>"
         },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
+                  "code": "EMPLOYEE"
+                }
+              ]
+            }
+          }
+        ],
         "period": {
           "start": "2000-01-01"
         },
         "practitioner": {
-          "reference": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+          "identifier": {
+            "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC",
+            "value": "IPC.00147422.BC.PRS",
+            "period": {
+              "start": "2000-01-01"
+            }
+          }
         },
         "organization": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code",
-                    "code": "EMPLOYEE"
-                  }
-                ]
-              }
-            }
-          ],
           "identifier": {
             "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC",
             "value": "IPC.00147433.BC.PRS",
@@ -660,30 +690,36 @@
           ]
         },
         "text": {
-          "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole-3-LocRef-FromPractitioner\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <a href=\"#Practitioner_Example-Practitioner-Response\">See above (urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87)</a></p><p><b>location</b>: <span></span></p></div>"
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Example-PractitionerRole-3-LocRef-FromPractitioner\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>BC Practitioner to Location Type Extension.</b>: WORKSAT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code#WORKSAT)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span></span></p><p><b>location</b>: <span></span></p></div>"
         },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-location-relationship-type-code",
+                  "code": "WORKSAT"
+                }
+              ]
+            }
+          }
+        ],
         "period": {
           "start": "2000-01-01"
         },
         "practitioner": {
-          "reference": "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+          "identifier": {
+            "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC",
+            "value": "IPC.00147422.BC.PRS",
+            "period": {
+              "start": "2000-01-01"
+            }
+          }
         },
         "location": [
           {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "https://plr.hlth.gov.bc.ca/plr/codes/bc-location-relationship-type-code",
-                      "code": "WORKSAT"
-                    }
-                  ]
-                }
-              }
-            ],
             "identifier": {
               "system": "https://plr.hlth.gov.bc.ca/plr/identifier-system/IFC",
               "value": "IFC.00147422.BC.PRS",
