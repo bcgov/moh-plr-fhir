@@ -33,8 +33,8 @@ Description: "General constraints on the Practitioner resource for use in the BC
 * communication MS
 * communication.extension contains PeriodExtension named period 0..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named languageSource 0..1 MS
 * extension contains PeriodExtension named demographicsPeriod 0..1 MS and 
-        EndReasonExtension named endReason 0..1 MS and 
-        OwnerExtension named owner 0..1 MS and
+        EndReasonExtension named demographicsEndReason 0..1 MS and 
+        OwnerExtension named demographicsOwner 0..1 MS and
         LicenseStatusExtension named status 0..* MS and 
 	DeathDateExtension named deathDate 0..1 MS and 
 	BirthPlaceExtension named birthplace 0..1 MS and
