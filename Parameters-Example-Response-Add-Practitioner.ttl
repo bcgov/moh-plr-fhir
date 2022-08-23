@@ -36,21 +36,48 @@
        fhir:Bundle.type [ fhir:value "collection" ];
        fhir:Bundle.entry [
          fhir:index 0;
+         fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552" ];
+         fhir:Bundle.entry.resource <urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552>
+       ], [
+         fhir:index 1;
          fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87" ];
          fhir:Bundle.entry.resource <urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87>
        ], [
-         fhir:index 1;
+         fhir:index 2;
          fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6" ];
          fhir:Bundle.entry.resource <urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6>
        ], [
-         fhir:index 2;
+         fhir:index 3;
          fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7" ];
          fhir:Bundle.entry.resource <urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7>
        ], [
-         fhir:index 3;
+         fhir:index 4;
          fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9" ];
          fhir:Bundle.entry.resource <urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9>
        ]
+     ]
+  ] .
+
+<urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552> a fhir:OperationOutcome;
+  fhir:Resource.id [ fhir:value "Example-OperationOutcome-MaintainSuccess"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-operation-outcome";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-operation-outcome>
+     ]
+  ];
+  fhir:OperationOutcome.issue [
+     fhir:index 0;
+     fhir:OperationOutcome.issue.severity [ fhir:value "information" ];
+     fhir:OperationOutcome.issue.code [ fhir:value "business-rule" ];
+     fhir:OperationOutcome.issue.details [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/codes/bc-error-codes" ];
+         fhir:Coding.code [ fhir:value "PRS.PRP.MTN.UNK.0.0.0000" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "The provider transaction was processed." ]
      ]
   ] .
 
@@ -590,9 +617,6 @@
        ]
      ]
   ];
-  fhir:PractitionerRole.organization [
-     fhir:Reference.display [ fhir:value "BC" ]
-  ];
   fhir:PractitionerRole.code [
      fhir:index 0;
      fhir:CodeableConcept.coding [
@@ -634,9 +658,9 @@
   fhir:Resource.id [ fhir:value "Example-PractitionerRole-2-OrgRef-FromPractitioner-Response"];
   fhir:Resource.meta [
      fhir:Meta.profile [
-       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships";
        fhir:index 0;
-       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships>
      ]
   ];
   fhir:DomainResource.extension [
@@ -684,9 +708,9 @@
   fhir:Resource.id [ fhir:value "Example-PractitionerRole-3-LocRef-FromPractitioner-Response"];
   fhir:Resource.meta [
      fhir:Meta.profile [
-       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
+       fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships";
        fhir:index 0;
-       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
+       fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships>
      ]
   ];
   fhir:DomainResource.extension [

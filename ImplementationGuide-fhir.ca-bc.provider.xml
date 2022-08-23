@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2022-08-08T16:02:07+00:00"/>
+  <date value="2022-08-23T21:32:32+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -347,6 +347,18 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/bc-operation-outcome"/>
+      </reference>
+      <name value="BCOperationOutcome"/>
+      <description value="OperationOutcome for BC."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Extensions"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/bc-organization"/>
       </reference>
       <name value="BCOrganization"/>
@@ -411,6 +423,18 @@
       </reference>
       <name value="BCPractitionerRole"/>
       <description value="General constraints on the PractitionerRole resource for use in the BC Provider Registry project."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-role-relationships"/>
+      </reference>
+      <name value="BCRoleRelationships"/>
+      <description value="General constraints on the PractitionerRole resource for use in the BC Provider Registry project to describe relationships."/>
       <exampleBoolean value="false"/>
       <groupingId value="Practitioner"/>
     </resource>
@@ -768,7 +792,6 @@
       <name value="Example-AddPractitioner-Practitioner"/>
       <description value="Example of a BC practitioner that is being created."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
-      <groupingId value="Practitioner"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -780,7 +803,6 @@
       <name value="Example-AddPractitioner-WorkLocation"/>
       <description value="Example of a Location (Facility) that is the work location for a Practitioner."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location"/>
-      <groupingId value="Facility"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -849,7 +871,6 @@
       <name value="Example-Location"/>
       <description value="Example of a Location."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location"/>
-      <groupingId value="Facility"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -860,7 +881,7 @@
       </reference>
       <name value="Example-OperationOutcome-7018"/>
       <description value="OperationOutcome example for Individual Provider search - wildcard error."/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-operation-outcome"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -871,7 +892,7 @@
       </reference>
       <name value="Example-OperationOutcome-7047"/>
       <description value="OperationOutcome example for Individual Provider search - no provider records found."/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-operation-outcome"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -882,7 +903,7 @@
       </reference>
       <name value="Example-OperationOutcome-7049"/>
       <description value="OperationOutcome example for Individual Provider search - too many results."/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-operation-outcome"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -893,7 +914,7 @@
       </reference>
       <name value="Example-OperationOutcome-MaintainSuccess"/>
       <description value="OperationOutcome example of a success message."/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-operation-outcome"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -949,7 +970,6 @@
       <name value="Example-OrganizationAffiliation-1-OrgRef-FromOrg"/>
       <description value="Example of the OrganizationAffiliation for Organization to Organization relationship."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"/>
-      <groupingId value="Organization"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -961,7 +981,6 @@
       <name value="Example-OrganizationAffiliation-2-LocRef-FromOrg"/>
       <description value="Example of the OrganizationAffiliation for Organization to Organization relationship."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"/>
-      <groupingId value="Organization"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1082,7 +1101,7 @@
       </reference>
       <name value="Example-PractitionerRole-2-OrgRef-FromPractitioner"/>
       <description value="Example of the PractitionerRole for Practitioner to Organization relationship."/>
-      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1093,7 +1112,7 @@
       </reference>
       <name value="Example-PractitionerRole-2-OrgRef-FromPractitioner-Response"/>
       <description value="Example of the PractitionerRole for Practitioner to Organization relationship."/>
-      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1104,7 +1123,7 @@
       </reference>
       <name value="Example-PractitionerRole-3-LocRef-FromPractitioner"/>
       <description value="Example of the PractitionerRole for Practitioner to Location relationship."/>
-      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1115,7 +1134,7 @@
       </reference>
       <name value="Example-PractitionerRole-3-LocRef-FromPractitioner-Response"/>
       <description value="Example of the PractitionerRole for Practitioner to Location relationship."/>
-      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1126,7 +1145,7 @@
       </reference>
       <name value="Example-PractitionerRole-4-PracRef-FromOrg"/>
       <description value="Example of the PractitionerRole for Practitioner to Practitioner relationship."/>
-      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1137,7 +1156,7 @@
       </reference>
       <name value="Example-PractitionerRole-4-PracRef-FromOrg-Response"/>
       <description value="Example of the PractitionerRole for Practitioner to Practitioner relationship."/>
-      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1148,7 +1167,7 @@
       </reference>
       <name value="Example-PractitionerRole-5-PracRef-FromLoc"/>
       <description value="Example of the PractitionerRole for Practitioner to Practitioner relationship."/>
-      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1159,7 +1178,7 @@
       </reference>
       <name value="Example-PractitionerRole-5-PracRef-FromLoc-Response"/>
       <description value="Example of the PractitionerRole for Practitioner to Practitioner relationship."/>
-      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+      <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1171,7 +1190,6 @@
       <name value="Example-Qualification-Organization"/>
       <description value="Example of an organization's qualifications."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
-      <groupingId value="Practitioner"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
