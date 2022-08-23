@@ -1,5 +1,5 @@
 Instance: Example-OperationOutcome-7049
-InstanceOf: OperationOutcome
+InstanceOf: BCOperationOutcome
 Description: "OperationOutcome example for Individual Provider search - too many results."
 * issue[0].severity = #error
 * issue[0].code = #business-rule
@@ -8,7 +8,7 @@ Description: "OperationOutcome example for Individual Provider search - too many
 * issue[0].details.text = "Some results were removed under data permission rules."
 
 Instance: Example-OperationOutcome-7047
-InstanceOf: OperationOutcome
+InstanceOf: BCOperationOutcome
 Description: "OperationOutcome example for Individual Provider search - no provider records found."
 * issue[0].severity = #warning
 * issue[0].code = #business-rule
@@ -17,7 +17,7 @@ Description: "OperationOutcome example for Individual Provider search - no provi
 * issue[0].details.text = "No provider records found for the input parameters."
 
 Instance: Example-OperationOutcome-7018
-InstanceOf: OperationOutcome
+InstanceOf: BCOperationOutcome
 Description: "OperationOutcome example for Individual Provider search - wildcard error."
 * issue[0].severity = #error
 * issue[0].code = #business-rule
@@ -26,7 +26,7 @@ Description: "OperationOutcome example for Individual Provider search - wildcard
 * issue[0].details.text = "Only one wildcard (*) is allowed in a field."
 
 Instance: Example-OperationOutcome-MaintainSuccess
-InstanceOf: OperationOutcome
+InstanceOf: BCOperationOutcome
 Description: "OperationOutcome example of a success message."
 * issue[0].severity = #information
 * issue[0].code = #business-rule

@@ -2,7 +2,7 @@ Instance: Example-PractitionerRole-1-Role-FromPractitioner
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
 * practitioner.identifier = Example-Identifier-IPC-Ind-1
-* organization.display = "BC"
+//* organization.display = "BC"
 * code = $SCPType#MD
 * specialty = Example-Specialty
 
@@ -10,7 +10,7 @@ Instance: Example-PractitionerRole-1-Role-FromPractitioner-Response
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
 * practitioner.identifier = Example-Identifier-IPC-Ind-1-Response
-* organization.display = "BC"
+//* organization.display = "BC"
 * code = $SCPType#MD
 * specialty = Example-Specialty-Response
 
@@ -18,14 +18,14 @@ Instance: Example-PractitionerRole-1-Role-Update
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
 * practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-* organization.display = "BC"
+//* organization.display = "BC"
 * code = $SCPType#MD
 
 Instance: Example-PractitionerRole-1-Role-Update-Specialty
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
 * practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-* organization.display = "BC"
+//* organization.display = "BC"
 * code = $SCPType#MD
 * specialty = Example-Specialty-Update
 
@@ -33,11 +33,11 @@ Instance: Example-PractitionerRole-1-Role-FromPractitioner-Update-Response
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
 * practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-* organization.display = "BC"
+//* organization.display = "BC"
 * code = $SCPType#MD
 
 Instance: Example-PractitionerRole-2-OrgRef-FromPractitioner
-InstanceOf: BCPractitionerRole
+InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
 * practitioner.identifier = Example-Identifier-IPC-Ind-1
 * period.start = "2000-01-01"
@@ -47,7 +47,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 * extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
 
 //Instance: Example-PractitionerRole-2a-OrgRef-FromPractitioner
-//InstanceOf: BCPractitionerRole
+//InstanceOf: BCPractitionerRoleRelationships
 //Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
 //* practitioner.identifier = Example-Identifier-IPC-Ind-1
 //* organization.reference = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
@@ -57,7 +57,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 //* organization.extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
 
 Instance: Example-PractitionerRole-2-OrgRef-FromPractitioner-Response
-InstanceOf: BCPractitionerRole
+InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
 * practitioner.identifier = Example-Identifier-IPC-Ind-1
 * period.start = "2000-01-01"
@@ -68,7 +68,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 * extension[+] = Example-OC-MOH
 
 Instance: Example-PractitionerRole-3-LocRef-FromPractitioner
-InstanceOf: BCPractitionerRole
+InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Location relationship."
 * practitioner.identifier = Example-Identifier-IPC-Ind-1
 * period.start = "2000-01-01"
@@ -78,7 +78,7 @@ Description: "Example of the PractitionerRole for Practitioner to Location relat
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT
 
 Instance: Example-PractitionerRole-3-LocRef-FromPractitioner-Response
-InstanceOf: BCPractitionerRole
+InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Location relationship."
 * practitioner.identifier = Example-Identifier-IPC-Ind-1
 * period.start = "2000-01-01"
@@ -89,7 +89,7 @@ Description: "Example of the PractitionerRole for Practitioner to Location relat
 * extension[+] = Example-OC-MOH
 
 Instance: Example-PractitionerRole-4-PracRef-FromOrg
-InstanceOf: BCPractitionerRole
+InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Practitioner relationship."
 * organization.identifier = Example-Identifier-IFC
 * period.start = "2000-01-01"
@@ -99,7 +99,7 @@ Description: "Example of the PractitionerRole for Practitioner to Practitioner r
 * extension[=].valueCodeableConcept.coding.code = #careteam
 
 Instance: Example-PractitionerRole-4-PracRef-FromOrg-Response
-InstanceOf: BCPractitionerRole
+InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Practitioner relationship."
 * organization.identifier = Example-Identifier-IFC
 * period.start = "2000-01-01"
@@ -110,7 +110,7 @@ Description: "Example of the PractitionerRole for Practitioner to Practitioner r
 * extension[+] = Example-OC-MOH
 
 Instance: Example-PractitionerRole-5-PracRef-FromLoc
-InstanceOf: BCPractitionerRole
+InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Practitioner relationship."
 * location.identifier = Example-Identifier-IFC
 * period.start = "2000-01-01"
@@ -120,7 +120,7 @@ Description: "Example of the PractitionerRole for Practitioner to Practitioner r
 * extension[=].valueCodeableConcept.coding.code = #worklocationfor
 
 Instance: Example-PractitionerRole-5-PracRef-FromLoc-Response
-InstanceOf: BCPractitionerRole
+InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Practitioner relationship."
 * location.identifier = Example-Identifier-IFC
 * period.start = "2000-01-01"

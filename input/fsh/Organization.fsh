@@ -58,13 +58,15 @@ Description: "A bundle that submits Organization and OrganizationAffiliation inf
 * entry.search 0..0
 * entry.request 0..1 MS
 * entry.response 0..0
-* entry ^slicing.discriminator.type = #type
+* entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for creating or updating a BC Organization."
-* entry contains Organization 1..* MS and OrganizationAffiliation 0..* MS and PractitionerRole 0..* MS
+* entry contains Organization 1..* MS and OrganizationAffiliation 0..* MS and RoleRelationship 0..* MS and OperationOutcome 0..1 MS
+* entry[OperationOutcome].resource only BCOperationOutcome
 * entry[Organization].resource only BCOrganization
 * entry[OrganizationAffiliation].resource only BCOrganizationAffiliation
-* entry[PractitionerRole].resource only BCPractitionerRole
+* entry[RoleRelationship].resource only BCRoleRelationships
+
 
 

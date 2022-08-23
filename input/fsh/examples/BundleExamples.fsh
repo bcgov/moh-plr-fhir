@@ -85,27 +85,31 @@ Instance: Example-AddPractitioner-Bundle-Response
 InstanceOf: BCPractitionerBundle
 Description: "Example of a bundle of resources sent when responding to a practitioner create."
 * type = #collection
-* entry[0].fullUrl = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-* entry[0].resource = Example-Practitioner-Response
-* entry[1].fullUrl = "urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6"
-* entry[1].resource = Example-PractitionerRole-1-Role-FromPractitioner-Response
-* entry[2].fullUrl = "urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7"
-* entry[2].resource = Example-PractitionerRole-2-OrgRef-FromPractitioner-Response
-* entry[3].fullUrl = "urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9"
-* entry[3].resource = Example-PractitionerRole-3-LocRef-FromPractitioner-Response
+* entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
+* entry[=].resource = Example-OperationOutcome-MaintainSuccess
+* entry[+].fullUrl = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+* entry[=].resource = Example-Practitioner-Response
+* entry[+].fullUrl = "urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6"
+* entry[=].resource = Example-PractitionerRole-1-Role-FromPractitioner-Response
+* entry[+].fullUrl = "urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7"
+* entry[=].resource = Example-PractitionerRole-2-OrgRef-FromPractitioner-Response
+* entry[+].fullUrl = "urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9"
+* entry[=].resource = Example-PractitionerRole-3-LocRef-FromPractitioner-Response
 
 Instance: Example-UpdatePractitioner-Bundle-Response
 InstanceOf: BCPractitionerBundle
 Description: "Example of a bundle of resources sent when responding to a practitioner update."
 * type = #collection
-* entry[0].fullUrl = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-* entry[0].resource = Example-Practitioner-Response
-* entry[1].fullUrl = "urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6"
-* entry[1].resource = Example-PractitionerRole-1-Role-FromPractitioner-Response
-* entry[2].fullUrl = "urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7"
-* entry[2].resource = Example-PractitionerRole-2-OrgRef-FromPractitioner-Response
-* entry[3].fullUrl = "urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9"
-* entry[3].resource = Example-PractitionerRole-3-LocRef-FromPractitioner-Response
+* entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
+* entry[=].resource = Example-OperationOutcome-MaintainSuccess
+* entry[+].fullUrl = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+* entry[=].resource = Example-Practitioner-Response
+* entry[+].fullUrl = "urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6"
+* entry[=].resource = Example-PractitionerRole-1-Role-FromPractitioner-Response
+* entry[+].fullUrl = "urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7"
+* entry[=].resource = Example-PractitionerRole-2-OrgRef-FromPractitioner-Response
+* entry[+].fullUrl = "urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9"
+* entry[=].resource = Example-PractitionerRole-3-LocRef-FromPractitioner-Response
 
 Instance: Example-DistributePractitioner-Bundle
 InstanceOf: BCPractitionerBundle

@@ -31,7 +31,7 @@ Description: "General constraints on the Practitioner resource for use in the BC
 * qualification.issuer MS
 * qualification.issuer only Reference(BCOrganization)
 * communication MS
-* communication.extension contains PeriodExtension named period 0..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named languageSource 0..1 MS
+* communication.extension contains PeriodExtension named period 0..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named languageSource 0..1 MS and OwnerExtension named owner 0..1 MS
 * extension contains PeriodExtension named demographicsPeriod 0..1 MS and 
         EndReasonExtension named demographicsEndReason 0..1 MS and 
         OwnerExtension named demographicsOwner 0..1 MS and
@@ -44,12 +44,21 @@ Description: "General constraints on the Practitioner resource for use in the BC
 	NoteExtension named note 0..* MS and
 	PractitionerConditionExtension named condition 0..* MS
 
-Profile: BCPractitionerRole
+Invariant: invariant-rltn-1
+Description: "One organization or one location allowed; not both."
+Expression: "organization.count()=1 xor location.count()=1"
+Severity: #error
+
+Invariant: invariant-role-1
+Description: "The organization and location references are not permitted in this profile."
+Expression: "organization.count()=0 and location.count()=0"
+Severity: #error
+
+Profile: BCRoleRelationships
 Parent: PractitionerRole
-Id: bc-practitioner-role
-Description: "General constraints on the PractitionerRole resource for use in the BC Provider Registry project."
-* identifier 0..* MS
-* active MS
+Id: bc-role-relationships
+Description: "General constraints on the PractitionerRole resource for use in the BC Provider Registry project to describe relationships."
+* obeys invariant-rltn-1
 * period MS
 * practitioner 1..1 MS
 * practitioner only Reference(BCPractitioner) 
@@ -57,19 +66,33 @@ Description: "General constraints on the PractitionerRole resource for use in th
      OwnerExtension named owner 0..1 MS and
      RelationshipTypeExtension named typeExtension 0..1 MS and
      LocationRelationshipTypeExtension named locRelationshipType 0..1 MS
-* organization MS
+* organization 0..1 MS
 * organization only Reference(BCOrganization)
 * organization.type 0..0
+* code 0..0 
+* specialty 0..0
+* location 0..1 MS
+* location only Reference(BCLocation)
+* telecom only BCContactPoint
+* telecom MS
+
+
+Profile: BCPractitionerRole
+Parent: PractitionerRole
+Id: bc-practitioner-role
+Description: "General constraints on the PractitionerRole resource for use in the BC Provider Registry project."
+* obeys invariant-role-1
+* practitioner 1..1 MS
+* practitioner only Reference(BCPractitioner) 
 * code MS 
 * code from PractitionerRoleVS (required)
 * specialty MS
 * specialty from ExpertiseVS (required)
-* specialty.extension contains PeriodExtension named period 0..1 MS and 
-     EndReasonExtension named endReason 0..1 MS and 
-     OwnerExtension named owner 0..1 MS and
+* specialty.extension contains
      SpecialtySourceExtension named specialtySource 0..1 MS
-* location MS
-* location only Reference(BCLocation)
+     and OwnerExtension named owner 0..1 MS
+     and PeriodExtension named period 0..1 MS
+     and EndReasonExtension named endReason 0..1 MS
 * telecom only BCContactPoint
 * telecom MS
 
@@ -85,11 +108,13 @@ Description: "A bundle that submits Practitioner and PractitionerRole informatio
 * entry.search 0..0
 * entry.request 0..1 MS
 * entry.response 0..0
-* entry ^slicing.discriminator.type = #type
+* entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for creating or updating a BC Practitioner."
-* entry contains Practitioner 1..1 MS and PractitionerRole 0..* MS
+* entry contains Practitioner 1..1 MS and PractitionerRole 1..1 MS and RoleRelationship 0..* MS and OperationOutcome 0..1 MS
+* entry[OperationOutcome].resource only BCOperationOutcome
 * entry[Practitioner].resource only BCPractitioner
 * entry[PractitionerRole].resource only BCPractitionerRole
+* entry[RoleRelationship].resource only BCRoleRelationships
 
