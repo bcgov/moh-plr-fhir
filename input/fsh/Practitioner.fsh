@@ -112,8 +112,7 @@ Description: "A bundle that submits Practitioner and PractitionerRole informatio
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for creating or updating a BC Practitioner."
-* entry contains Practitioner 1..1 MS and PractitionerRole 1..1 MS and RoleRelationship 0..* MS and OperationOutcome 0..1 MS
-* entry[OperationOutcome].resource only BCOperationOutcome
+* entry contains Practitioner 1..1 MS and PractitionerRole 1..1 MS and RoleRelationship 0..* MS
 * entry[Practitioner].resource only BCPractitioner
 * entry[PractitionerRole].resource only BCPractitionerRole
 * entry[RoleRelationship].resource only BCRoleRelationships

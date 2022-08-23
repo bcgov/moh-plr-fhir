@@ -59,6 +59,8 @@ Description: "Example Parameters for Add Individual Provider response."
 * parameter[=].valueString = "12344321"
 * parameter[+].name = "maintain"
 * parameter[=].resource = Example-AddPractitioner-Bundle-Response
+* parameter[+].name = "outcome"
+* parameter[=].resource = Example-OperationOutcome-MaintainSuccess
 
 Instance: Example-Response-Update-Practitioner
 InstanceOf: Parameters
@@ -71,6 +73,8 @@ Description: "Example Parameters for Update Individual Provider response."
 * parameter[=].valueString = "12344321"
 * parameter[+].name = "maintain"
 * parameter[=].resource = Example-UpdatePractitioner-Bundle-Response
+* parameter[+].name = "outcome"
+* parameter[=].resource = Example-OperationOutcome-MaintainSuccess
 
 Instance: Example-Request-Add-Organization
 InstanceOf: Parameters
@@ -103,4 +107,6 @@ Description: "Example Parameters for Update Organization Provider response."
 * parameter[=].valueString = "12344321"
 * parameter[+].name = "maintain"
 * parameter[=].resource = Example-UpdateOrganization-Bundle-Response
+* parameter[+].name = "outcome"
+* parameter[=].resource = Example-OperationOutcome-MaintainSuccess
 
