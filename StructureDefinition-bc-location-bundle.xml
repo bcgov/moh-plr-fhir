@@ -30,7 +30,7 @@
   <version value="0.1.0"/>
   <name value="BCLocationBundle"/>
   <status value="active"/>
-  <date value="2022-08-23T22:37:21+00:00"/>
+  <date value="2022-08-24T23:51:36+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -2851,6 +2851,13 @@
         <expression value="text.`div`.exists()"/>
         <xpath value="exists(f:text/h:div)"/>
         <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
+      </constraint>
+      <constraint>
+        <key value="invariant-rltn-2"/>
+        <severity value="error"/>
+        <human value="One participating organization or one location allowed; not both."/>
+        <expression value="participatingOrganization.count()=1 xor location.count()=1"/>
+        <source value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
