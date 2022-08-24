@@ -19,10 +19,16 @@ Description: "General constraints on the Organization resource for use in the BC
 * extension contains LicenseStatusExtension named status 0..* MS and
 	NoteExtension named note 0..* MS
 
+Invariant: invariant-rltn-2
+Description: "One participating organization or one location allowed; not both."
+Expression: "participatingOrganization.count()=1 xor location.count()=1"
+Severity: #error
+
 Profile: BCOrganizationAffiliation
 Parent: OrganizationAffiliation
 Id: bc-organization-affiliation
 Description: "General constraints on the OrganizationAffiliation resource for use in the BC Provider Registry project."
+* obeys invariant-rltn-2
 * identifier 0..*  MS
 * active MS
 * period MS
@@ -30,13 +36,12 @@ Description: "General constraints on the OrganizationAffiliation resource for us
 * organization only Reference(BCOrganization)
 * participatingOrganization MS
 * participatingOrganization only Reference(BCOrganization)
-* participatingOrganization.extension contains EndReasonExtension named endReason 0..1 MS
-* code MS
+* participatingOrganization.extension 
+* extension contains EndReasonExtension named endReason 0..1 MS
+     and OwnerExtension named owner 0..1 MS
+* code 1..1 MS
 * location MS
 * location only Reference(BCLocation)
-* location.extension contains EndReasonExtension named endReason 0..1 MS and
-     OwnerExtension named owner 0..1 MS
-
 
 Instance: Example-Qualification-Organization
 InstanceOf: BCOrganization

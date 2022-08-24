@@ -11,8 +11,8 @@ This OrganizationAffiliation profile has the following mandatory elements:
 
 **Each OrganizationAffiliation must have either:**
 
-1.  a reference to a participating Organization, including a reason for why the relationship has ended, or
-2.  a reference to a set of Locations, including a reason for why the relationship has ended
+1.  a reference to a participating Organization or
+2.  a reference to a single Locations
 
 **Each OrganizationAffilation must support:**
 

@@ -8,7 +8,7 @@ This Bundle profile has the following mandatory elements:
 
 **Each Bundle must have:**
 
-1. a fixed code for the type of 'transaction'
+1. a fixed code for the type of 'collection'
 
 **Each Bundle entry must support:**
 
@@ -16,7 +16,7 @@ This Bundle profile has the following mandatory elements:
 2.  a resource which is of type: 
 	*  BC Organization (mandatory)
 	*  BC Organizaiton Role (optional)
-	*. BC Practitioner Role (optional)
+	*  BC Practitioner Role (optional)
 3.  a request code
 4.  a request URL
 
