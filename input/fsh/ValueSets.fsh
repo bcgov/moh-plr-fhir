@@ -17,7 +17,7 @@ ValueSet: PractitionerRoleVS
 Title: "Practitioner Role Code Value Set"
 Id: bc-practitioner-role-value-set
 Description: "BC Practitioner Role Codes."
-//* codes from system $SCPType
+* codes from system $SCPType
 * codes from system PractitionerRoleCS
 
 CodeSystem: LicenseStatusCS
