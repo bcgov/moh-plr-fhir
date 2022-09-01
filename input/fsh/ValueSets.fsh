@@ -10,7 +10,8 @@ Id: bc-practitioner-role-code-system
 Description: "BC-Specific codes for practitioner roles."
 * ^caseSensitive = true
 * #org "org" "The organization role."
-* #MD "MD" "MD"
+* #OOP-MD "OOP-MD" "Out Of Province MD"
+// TODO add the other OOP role types
 
 ValueSet: PractitionerRoleVS
 Title: "Practitioner Role Code Value Set"
