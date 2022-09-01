@@ -41,7 +41,7 @@ InstanceOf: CodeableConcept
 Description: "AMD53 specialty."
 Usage: #inline
 * coding.code = #AMD53
-* coding.system = $PracSpecialty
+* coding.system = $SCPQual
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2000-01-01"
 * extension[=].valuePeriod.end = "2020-01-01"
@@ -53,7 +53,7 @@ InstanceOf: CodeableConcept
 Description: "AMD53 specialty."
 Usage: #inline
 * coding.code = #AMD53
-* coding.system = $PracSpecialty
+* coding.system = $SCPQual
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2000-01-01"
 * extension[=].valuePeriod.end = "2020-01-01"
@@ -66,7 +66,7 @@ InstanceOf: CodeableConcept
 Description: "AMD53 specialty."
 Usage: #inline
 * coding.code = #AMD53
-* coding.system = $PracSpecialty
+* coding.system = $SCPQual
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2000-01-01"
 * extension[=].valuePeriod.end = "2020-01-01"
@@ -124,8 +124,8 @@ Description: "Example license status update."
 Usage: #inline
 * url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension"
 * extension[0].url = "statusCode"
-* extension[0].valueCodeableConcept.coding.system = $RoleStatus
-* extension[0].valueCodeableConcept.coding.code = #suspended
+* extension[0].valueCodeableConcept.coding.system = Canonical(LicenseStatusCS)
+* extension[0].valueCodeableConcept.coding.code = #inactive
 * extension[1].url = "statusReasonCode"
 * extension[1].valueCodeableConcept.coding.system = $PLRStatusReason
 * extension[1].valueCodeableConcept.coding.code = #LTP

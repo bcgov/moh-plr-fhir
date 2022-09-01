@@ -26,7 +26,7 @@ Description: "General constraints on the Practitioner resource for use in the BC
      OwnerExtension named owner 0..1 MS
 * qualification.identifier MS
 * qualification.code MS
-* qualification.code from $PracQualification (required)
+* qualification.code from PracQualificationVS (required)
 * qualification.period MS
 * qualification.issuer MS
 * qualification.issuer only Reference(BCOrganization)
@@ -86,7 +86,7 @@ Description: "General constraints on the PractitionerRole resource for use in th
 * practitioner only Reference(BCPractitioner) 
 * code MS 
 * code from PractitionerRoleVS (required)
-* specialty MS
+* specialty 0..* MS
 * specialty from ExpertiseVS (required)
 * specialty.extension contains
      SpecialtySourceExtension named specialtySource 0..1 MS

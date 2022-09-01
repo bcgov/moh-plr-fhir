@@ -12,7 +12,7 @@ This Bundle profile has the following mandatory elements:
 
 **Each Bundle entry must support:**
 
-1.  a fullUrl
+1.  a unique fullUrl as urn:uuid
 2.  a resource which is of type: 
 	*  BC Practitioner Bundle
 	*  BC Organization Bundle

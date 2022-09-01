@@ -12,15 +12,13 @@ This Bundle profile has the following mandatory elements:
 
 **Each Bundle entry must support:**
 
-1.  a fullUrl
+1.  a unique fullUrl as urn:uuid
 2.  a resource which is of type: 
 	*  BC Location (mandatory)
 	*  BC Organizaiton Affiliation (optional)
-	*  BC Practitoner Role (optional)
-3.  a request code
-4.  a request URL
+	*  BC Role Relationship (optional)
 
 
 ### Examples
 
-- [Add Location Transaction Example](Bundle-Example-AddLocation-Bundle.html)
+- [Add Location Bundle Example](Bundle-Example-AddLocation-Bundle.html)

@@ -33,8 +33,6 @@ Description: "An example of bundle that is adding a location."
 * type = #collection
 * entry[0].fullUrl = "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"
 * entry[0].resource = Example-Location
-//* entry[1].fullUrl = "urn:uuuid:4d73bc14-4332-4acc-a057-0b2ee66c3d4d"
-//* entry[1].resource = Example-PractitionerRole-5-PracRef-FromLoc
 
 Instance: Example-AddPractitioner-Bundle
 InstanceOf: BCPractitionerBundle
@@ -51,13 +49,13 @@ Description: "An example of a Batch Bundle that contains one each of a Practitio
 * type = #batch
 * entry[0].fullUrl = "urn:uuid:afe28d6d-4db2-49aa-96af-c115cdfc108c"
 * entry[0].resource = Example-AddPractitioner-Bundle
-* entry[0].request.url = "http://plr.moh.bc.ca/fhir/Bundle"
+* entry[0].request.url = "https://plr.hlth.gov.bc.ca/HSA-web/fhir-rs/Bundle/$maintain"
 * entry[1].fullUrl = "urn:uuid:ddab2257-0829-4e5d-a5b7-b6c24dcdb7b8"
 * entry[1].resource = Example-AddOrganization-Bundle
-* entry[1].request.url = "http://plr.moh.bc.ca/fhir/Bundle"
+* entry[1].request.url = "https://plr.hlth.gov.bc.ca/HSA-web/fhir-rs/Bundle/$maintain"
 * entry[2].fullUrl = "urn:uuid:09494507-e0a8-4cd4-9a25-a42822a2f552"
 * entry[2].resource = Example-AddLocation-Bundle
-* entry[2].request.url = "http://plr.moh.bc.ca/fhir/Bundle"
+* entry[2].request.url = "https://plr.hlth.gov.bc.ca/HSA-web/fhir-rs/Bundle/$maintain"
 
 Instance: Example-UpdatePractitioner-LicenseStatus-Bundle
 InstanceOf: BCPractitionerBundle

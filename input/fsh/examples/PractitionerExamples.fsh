@@ -22,7 +22,7 @@ Description: "Example of generic Practitioner."
 
 // credentials
 * qualification.period.start = "2000-01-01"
-* qualification.code.coding.system = "https://fhir.infoway-inforoute.ca/CodeSystem/scpqual"
+* qualification.code.coding.system = $SCPQual
 * qualification.code.coding.code = #BD
 * qualification.extension[qualificationExtension].extension[designation].valueString = "Designation"
 * qualification.extension[qualificationExtension].extension[equivalencyFlag].valueBoolean = false
@@ -62,7 +62,7 @@ Description: "Example of generic Practitioner response."
 
 // credentials
 * qualification.period.start = "2000-01-01"
-* qualification.code.coding.system = "https://fhir.infoway-inforoute.ca/CodeSystem/scpqual"
+* qualification.code.coding.system = $SCPQual
 * qualification.code.coding.code = #BD
 * qualification.extension[qualificationExtension].extension[designation].valueString = "Designation"
 * qualification.extension[qualificationExtension].extension[equivalencyFlag].valueBoolean = false
