@@ -67,7 +67,7 @@ Description: "Example of generic Organization."
 // license status
 * extension[1].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension"
 * extension[1].extension[0].url = "statusCode"
-* extension[1].extension[0].valueCodeableConcept.coding.system = "http://hl7.org/fhir/v3/RoleStatus"
+* extension[1].extension[0].valueCodeableConcept.coding.system = $RoleStatus
 * extension[1].extension[0].valueCodeableConcept.coding.code = #active
 * extension[1].extension[1].url = "period"
 * extension[1].extension[1].valuePeriod.start = "2022-02-07"
