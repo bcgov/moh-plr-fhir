@@ -10,7 +10,7 @@
   "name": "BCProviderRegistry",
   "title": "BC Provider Location Registry FHIR Implementation Guide",
   "status": "draft",
-  "date": "2022-08-24T23:51:36+00:00",
+  "date": "2022-09-01T16:06:59+00:00",
   "publisher": "BC Ministry of Health",
   "contact": [
     {
@@ -977,10 +977,66 @@
           }
         ],
         "reference": {
+          "reference": "ValueSet/bc-license-status-reason-value-set"
+        },
+        "name": "BC License Status Reason Value Set",
+        "description": "BC specific license status reason value set.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/bc-license-status-value-set"
+        },
+        "name": "BC License Status Value Set",
+        "description": "BC specific license status value set.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/bc-qualification-value-set"
+        },
+        "name": "BC Practitioner QUalification Value Set",
+        "description": "BC specific qualification value set.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
           "reference": "ValueSet/bc-practitioner-role-value-set"
         },
         "name": "Practitioner Role Code Value Set",
-        "description": "BC Practitioner Role Codes",
+        "description": "BC Practitioner Role Codes.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "CodeSystem"
+          }
+        ],
+        "reference": {
+          "reference": "CodeSystem/bc-license-status-code-system"
+        },
+        "name": "BC License Status Codes",
+        "description": "BC specific license status code system.",
         "exampleBoolean": false
       },
       {
@@ -994,7 +1050,7 @@
           "reference": "CodeSystem/bc-practitioner-role-code-system"
         },
         "name": "BC-Specific Practitioner Role Codes",
-        "description": "BC-Specific codes for practitioner roles",
+        "description": "BC-Specific codes for practitioner roles.",
         "exampleBoolean": false
       },
       {

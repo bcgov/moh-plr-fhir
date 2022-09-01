@@ -12,14 +12,12 @@ This Bundle profile has the following mandatory elements
 
 **Each Bundle entry must support:**
 
-1.  a fullUrl
+1.  a unique fullUrl of urn:uuid
 2.  a resource which is of type: 
 	*  BC Practitoner (mandatory)
 	*  BC Practitoner Role (optional)
-3.  a request code
-4.  a request URL
-
+	*  BC Role Relationship (optional)
 
 ### Examples
 
-- [Add Practitioner Transaction Example](Bundle-Example-AddPractitioner-Bundle.html)
+- [Add Practitioner Bundle Example](Bundle-Example-AddPractitioner-Bundle.html)
