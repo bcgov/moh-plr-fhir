@@ -1,3 +1,9 @@
+ValueSet: LanguageVS
+Title: "BC Language Value Set"
+Id: bc-language-value-set
+Description: "BC Language value set."
+* codes from system $PLRLanguage
+
 ValueSet: ExpertiseVS
 Title: "BC Expertise Value Set"
 Id: bc-expertise-value-set
