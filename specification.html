@@ -369,115 +369,174 @@ To show the relationship between two Individual Providers, the <a href="Structur
     <tr>
       <th>Resource</th>
       <th style="text-align: left">Search Parameter Name</th>
+      <th style="text-align: left">Additional Information</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Practitioner</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td> </td>
       <td style="text-align: left">given-name</td>
+      <td style="text-align: left">String, May use trailing wildcards, e.g. Ann*</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">surname</td>
+      <td style="text-align: left">String, May use trailing wildcards, e.g. Ann*</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">role</td>
+      <td style="text-align: left">String code</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">language</td>
+      <td style="text-align: left">May be a comma separated list of language codes, e.g. F01,E09.</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">expertise</td>
+      <td style="text-align: left">May be a comma separated list of expertise codes, e.g. AM53,K34.</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">status</td>
+      <td style="text-align: left">String code</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">status-reason</td>
+      <td style="text-align: left">String code</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">address-city</td>
+      <td style="text-align: left">String, full city name, e.g. Vancouver</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">withHistory</td>
+      <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">identifier</td>
+      <td style="text-align: left">String identifier value</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">identifier-type</td>
+      <td style="text-align: left">String code, the type of Identifier, e.g. CPSID</td>
     </tr>
     <tr>
       <td>Organization</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td> </td>
       <td style="text-align: left">name</td>
+      <td style="text-align: left">String, May use trailing wildcards, e.g. Clinic*</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">description</td>
+      <td style="text-align: left">String, May use trailing wildcards, e.g. Clinic*</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">address-city</td>
+      <td style="text-align: left">String, full city name, e.g. Vancouver</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">withHistory</td>
+      <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">identifier</td>
+      <td style="text-align: left">String identifier value</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">identifier-type</td>
+      <td style="text-align: left">String identifier value, e.g. ORGID</td>
     </tr>
     <tr>
       <td>Location</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td> </td>
       <td style="text-align: left">name</td>
+      <td style="text-align: left">String, May use trailing wildcards, e.g. Clinic*</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">address-city</td>
+      <td style="text-align: left">String, full city name, e.g. Vancouver</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">healthAuthority</td>
+      <td style="text-align: left">String, only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed.  The full name is required.  E.g. Langford/Highlands</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">healthServiceDeliveryArea</td>
+      <td style="text-align: left">See healthAuthority</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">localHealthArea</td>
+      <td style="text-align: left">See healthAuthority</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">communityHealthServiceArea</td>
+      <td style="text-align: left">See healthAuthority</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">identifier</td>
+      <td style="text-align: left">String identifier value</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">identifier-type</td>
+      <td style="text-align: left">String code, the type of Identifier, e.g. LOCID</td>
     </tr>
   </tbody>
 </table>
 
-<p>NOTE: Wild cards requirements are valid as per the Web interface and requirements which can be found in the PLR User Guide.</p>
+<h6 id="query-url-examples">Query URL Examples</h6>
 
-<p>The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.</p>
+<p>Search for Individual Provider (aka Practitioner + PractitionerRoles) by FHIR system id</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  https://fhir.server/Practitioner/IPC.00012343.BC.PRS/$entityQuery
+</code></pre></div></div>
+
+<p>Search for Individiual Provider by College identifier</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  https://fhir.server/Practitioner/$entityQuery?identifier=1234&amp;identifier-type=CPSID
+</code></pre></div></div>
+
+<p>Search for an Organization by name with wildcard</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  https://fhir.server/Organization/$entityQuery?name=Jan*
+</code></pre></div></div>
+
+<p>Search for a Location by Health Authority and return all related Organizations and Providers (space in Interior Health is encoded in URL to %20)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  https://fhir.server/Location/$extendedQuery?healthAuthority=Interior%20Health
+</code></pre></div></div>
 
 
 
@@ -504,7 +563,7 @@ To show the relationship between two Individual Providers, the <a href="Structur
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Sep 1, 2022 19:48+0000">2022-09-01</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Sep 27, 2022 22:39+0000">2022-09-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

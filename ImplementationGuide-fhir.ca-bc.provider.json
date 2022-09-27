@@ -10,7 +10,7 @@
   "name": "BCProviderRegistry",
   "title": "BC Provider Location Registry FHIR Implementation Guide",
   "status": "draft",
-  "date": "2022-09-01T19:48:46+00:00",
+  "date": "2022-09-27T22:39:14+00:00",
   "publisher": "BC Ministry of Health",
   "contact": [
     {
@@ -42,16 +42,16 @@
   ],
   "dependsOn": [
     {
+      "id": "higtools",
+      "uri": "http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools",
+      "packageId": "hl7.fhir.uv.tools",
+      "version": "current"
+    },
+    {
       "id": "hl7tx",
       "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
       "packageId": "hl7.terminology.r4",
-      "version": "3.1.0"
-    },
-    {
-      "id": "hl7_fhir_ca_baseline",
-      "uri": "http://hl7.org/fhir/ca/baseline/ImplementationGuide/hl7.fhir.ca.baseline",
-      "packageId": "hl7.fhir.ca.baseline",
-      "version": "current"
+      "version": "4.0.0"
     }
   ],
   "definition": {
@@ -967,6 +967,20 @@
         },
         "name": "BC Expertise Value Set",
         "description": "BC Expertise value set.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/bc-language-value-set"
+        },
+        "name": "BC Language Value Set",
+        "description": "BC Language value set.",
         "exampleBoolean": false
       },
       {
@@ -2034,41 +2048,89 @@
       }
     ],
     "page": {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl": "toc.html"
+        }
+      ],
       "nameUrl": "toc.html",
       "title": "Table of Contents",
       "generation": "html",
       "page": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl": "index.html"
+            }
+          ],
           "nameUrl": "index.html",
           "title": "PLR Overview",
           "generation": "markdown"
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl": "specification.html"
+            }
+          ],
           "nameUrl": "specification.html",
           "title": "FHIR Design and Overview",
           "generation": "markdown"
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl": "transition.html"
+            }
+          ],
           "nameUrl": "transition.html",
           "title": "Transition from V3 Provider to FHIR",
           "generation": "markdown"
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl": "connected_partner.html"
+            }
+          ],
           "nameUrl": "connected_partner.html",
           "title": "Becoming a Connected Partner",
           "generation": "markdown"
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl": "future.html"
+            }
+          ],
           "nameUrl": "future.html",
           "title": "Future Plans",
           "generation": "markdown"
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl": "glossary.html"
+            }
+          ],
           "nameUrl": "glossary.html",
           "title": "Glossary",
           "generation": "markdown"
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl": "credits.html"
+            }
+          ],
           "nameUrl": "credits.html",
           "title": "Credits",
           "generation": "markdown"
