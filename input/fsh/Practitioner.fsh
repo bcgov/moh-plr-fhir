@@ -2,6 +2,7 @@ Profile: BCPractitioner
 Parent: Practitioner
 Id: bc-practitioner
 Description: "General constraints on the Practitioner resource for use in the BC Provider Registry project."
+* obeys invariant-qual-1
 * contained ^slicing.discriminator.type = #type
 * contained ^slicing.discriminator.path = "$this"
 * contained ^slicing.rules = #open
@@ -31,7 +32,8 @@ Description: "General constraints on the Practitioner resource for use in the BC
 * qualification.issuer MS
 * qualification.issuer only Reference(BCOrganization)
 * communication MS
-* communication.extension contains PeriodExtension named period 0..1 MS and EndReasonExtension named endReason 0..1 MS and SpecialtySourceExtension named languageSource 0..1 MS and OwnerExtension named owner 0..1 MS
+* communication.coding from LanguageVS (required)
+* communication.extension contains PeriodExtension named period 0..1 MS and EndReasonExtension named endReason 0..1 MS and OwnerExtension named owner 0..1 MS
 * extension contains PeriodExtension named demographicsPeriod 0..1 MS and 
         EndReasonExtension named demographicsEndReason 0..1 MS and 
         OwnerExtension named demographicsOwner 0..1 MS and
@@ -52,6 +54,11 @@ Severity: #error
 Invariant: invariant-role-1
 Description: "The organization and location references are not permitted in this profile."
 Expression: "organization.count()=0 and location.count()=0"
+Severity: #error
+
+Invariant: invariant-qual-1
+Description: "The number of qualifications must match the number of contained resources."
+Expression: "qualification.count()=contained.count()"
 Severity: #error
 
 Profile: BCRoleRelationships

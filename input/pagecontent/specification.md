@@ -148,35 +148,53 @@ A FHIR example of a real message can be found [here](Bundle-Example-Response-Que
 
 ##### Query Supported Search Parameters
 
-|Resource|Search Parameter Name|
-|----|:----|
-|Practitioner|given-name|
-||surname|
-||role|
-||language|
-||expertise|
-||status|
-||status-reason|
-||address-city|
-||withHistory|
-||identifier|
-||identifier-type|
-|Organization|name|
-||description|
-||address-city|
-||withHistory|
-||identifier|
-||identifier-type|
-|Location|name|
-||address-city|
-||healthAuthority|
-||healthServiceDeliveryArea|
-||localHealthArea|
-||communityHealthServiceArea|
-||identifier|
-||identifier-type|
+|Resource|Search Parameter Name|Additional Information
+|----|:----|:---|
+|Practitioner
+||given-name|String, May use trailing wildcards, e.g. Ann*|
+||surname|String, May use trailing wildcards, e.g. Ann*|
+||role|String code
+||language|May be a comma separated list of language codes, e.g. F01,E09.
+||expertise|May be a comma separated list of expertise codes, e.g. AM53,K34.
+||status|String code
+||status-reason|String code
+||address-city|String, full city name, e.g. Vancouver
+||withHistory|true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.|
+||identifier|String identifier value
+||identifier-type|String code, the type of Identifier, e.g. CPSID
+|Organization
+||name|String, May use trailing wildcards, e.g. Clinic*|
+||description|String, May use trailing wildcards, e.g. Clinic*|
+||address-city|String, full city name, e.g. Vancouver
+||withHistory|true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.|
+||identifier|String identifier value
+||identifier-type|String identifier value, e.g. ORGID
+|Location
+||name|String, May use trailing wildcards, e.g. Clinic*|
+||address-city|String, full city name, e.g. Vancouver
+||healthAuthority| String, only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed.  The full name is required.  E.g. Langford/Highlands|
+||healthServiceDeliveryArea|See healthAuthority|
+||localHealthArea|See healthAuthority|
+||communityHealthServiceArea|See healthAuthority|
+||identifier|String identifier value
+||identifier-type|String code, the type of Identifier, e.g. LOCID
 
-NOTE: Wild cards requirements are valid as per the Web interface and requirements which can be found in the PLR User Guide.
+###### Query URL Examples
 
-The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.
+Search for Individual Provider (aka Practitioner + PractitionerRoles) by FHIR system id
+
+      https://fhir.server/Practitioner/IPC.00012343.BC.PRS/$entityQuery
+
+Search for Individiual Provider by College identifier
+
+      https://fhir.server/Practitioner/$entityQuery?identifier=1234&identifier-type=CPSID
+
+Search for an Organization by name with wildcard
+
+      https://fhir.server/Organization/$entityQuery?name=Jan*
+
+Search for a Location by Health Authority and return all related Organizations and Providers (space in Interior Health is encoded in URL to %20)
+
+      https://fhir.server/Location/$extendedQuery?healthAuthority=Interior%20Health
+
 
