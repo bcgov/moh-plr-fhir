@@ -4,14 +4,7 @@ Description: "Example of generic BC Contact Point for telephone."
 Usage: #inline
 * period.start = "2000-02-02"
 * system = #phone
-* extension[areaCode].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-area"
-* extension[areaCode].valueString = "250"
-* extension[country].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-country"
-* extension[country].valueString = "1"
-* extension[local].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-local"
-* extension[local].valueString = "1112234"
-* extension[extension].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-extension"
-* extension[extension].valueString = "3432"
+* value = "2501112234"
 * extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
@@ -22,14 +15,7 @@ Description: "Example of generic BC Contact Point for telephone."
 Usage: #inline
 * period.start = "2000-02-02"
 * system = #phone
-* extension[areaCode].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-area"
-* extension[areaCode].valueString = "250"
-* extension[country].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-country"
-* extension[country].valueString = "1"
-* extension[local].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-local"
-* extension[local].valueString = "1112234"
-* extension[extension].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-extension"
-* extension[extension].valueString = "3432"
+* value = "2502222234"
 * extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
@@ -41,14 +27,7 @@ Description: "Example of generic BC Contact Point for telephone."
 Usage: #inline
 * period.start = "2000-02-02"
 * system = #phone
-* extension[areaCode].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-area"
-* extension[areaCode].valueString = "250"
-* extension[country].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-country"
-* extension[country].valueString = "1"
-* extension[local].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-local"
-* extension[local].valueString = "1112234"
-* extension[extension].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-extension"
-* extension[extension].valueString = "3432"
+* value = "2503424325"
 * extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
@@ -60,14 +39,7 @@ Description: "Example of generic BC Contact Point for telephone."
 Usage: #inline
 * period.start = "2000-02-02"
 * system = #phone
-* extension[areaCode].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-area"
-* extension[areaCode].valueString = "250"
-* extension[country].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-country"
-* extension[country].valueString = "1"
-* extension[local].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-local"
-* extension[local].valueString = "1112234"
-* extension[extension].url = "http://hl7.org/fhir/StructureDefinition/contactpoint-extension"
-* extension[extension].valueString = "3432"
+* value = "2503424343"
 * extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
