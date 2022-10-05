@@ -12,10 +12,6 @@ Parent: ContactPoint
 Description: "Adds an end reason and extra contact information."
 * use 0..0
 * extension contains 
-	http://hl7.org/fhir/StructureDefinition/contactpoint-country named country 0..1 MS and 
-	http://hl7.org/fhir/StructureDefinition/contactpoint-area named areaCode 0..1 MS and
-	http://hl7.org/fhir/StructureDefinition/contactpoint-local named local 0..1 MS and
-	http://hl7.org/fhir/StructureDefinition/contactpoint-extension named extension 0..1 MS and
 	EndReasonExtension named endReason 0..1 MS and 
 	OwnerExtension named owner 0..1 MS and 
 	CommunicationPurposeExtension named commPurposeExtension 0..1 MS
