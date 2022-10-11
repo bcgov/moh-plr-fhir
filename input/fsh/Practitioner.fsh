@@ -1,5 +1,6 @@
 Profile: BCPractitioner
-Parent: Practitioner
+Parent: http://hl7.org/fhir/ca/baseline/StructureDefinition/profile-practitioner-registry
+//Parent: Practitioner
 Id: bc-practitioner
 Description: "General constraints on the Practitioner resource for use in the BC Provider Registry project."
 * obeys invariant-qual-1
@@ -62,7 +63,8 @@ Expression: "qualification.count()=contained.count()"
 Severity: #error
 
 Profile: BCRoleRelationships
-Parent: PractitionerRole
+//Parent: PractitionerRole
+Parent: http://hl7.org/fhir/ca/baseline/StructureDefinition/profile-practitionerrole-registry
 Id: bc-role-relationships
 Description: "General constraints on the PractitionerRole resource for use in the BC Provider Registry project to describe relationships."
 * obeys invariant-rltn-1
@@ -85,7 +87,8 @@ Description: "General constraints on the PractitionerRole resource for use in th
 
 
 Profile: BCPractitionerRole
-Parent: PractitionerRole
+//Parent: PractitionerRole
+Parent: http://hl7.org/fhir/ca/baseline/StructureDefinition/profile-practitionerrole-registry
 Id: bc-practitioner-role
 Description: "General constraints on the PractitionerRole resource for use in the BC Provider Registry project."
 * obeys invariant-role-1
@@ -123,4 +126,5 @@ Description: "A bundle that submits Practitioner and PractitionerRole informatio
 * entry[Practitioner].resource only BCPractitioner
 * entry[PractitionerRole].resource only BCPractitionerRole
 * entry[RoleRelationship].resource only BCRoleRelationships
+
 

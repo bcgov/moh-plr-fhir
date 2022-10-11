@@ -1,5 +1,6 @@
 Profile: BCOrganization
-Parent: Organization
+//Parent: Organization
+Parent: http://hl7.org/fhir/ca/baseline/StructureDefinition/profile-organization
 Id: bc-organization
 Description: "General constraints on the Organization resource for use in the BC Provider Registry project."
 * identifier 0..* MS
@@ -25,7 +26,8 @@ Expression: "participatingOrganization.count()=1 xor location.count()=1"
 Severity: #error
 
 Profile: BCOrganizationAffiliation
-Parent: OrganizationAffiliation
+//Parent: OrganizationAffiliation
+Parent: http://hl7.org/fhir/ca/baseline/StructureDefinition/profile-organizationaffiliation
 Id: bc-organization-affiliation
 Description: "General constraints on the OrganizationAffiliation resource for use in the BC Provider Registry project."
 * obeys invariant-rltn-2

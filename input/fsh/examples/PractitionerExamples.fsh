@@ -127,9 +127,11 @@ Usage: #inline
 * url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension"
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2022-06-30"
-* extension[+].url = "practitioner"
+* extension[+].url = "sourcePractitioner"
+* extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-1
+* extension[+].url = "targetPractitioner"
 * extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-2
-* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
+* extension[+].url = "type"
 * extension[=].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT 
 
@@ -140,9 +142,11 @@ Usage: #inline
 * url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension"
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2022-06-30"
-* extension[+].url = "practitioner"
+* extension[+].url = "sourcePractitioner"
+* extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-1
+* extension[+].url = "targetPractitioner"
 * extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-2
-* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
+* extension[+].url = "type"
 * extension[=].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT 
 * extension[+] = Example-OC-MOH
@@ -152,8 +156,8 @@ InstanceOf: BCPractitioner
 Description: "Example Practitioner resource for updating License Status."
 * identifier = Example-Identifier-IPC-Ind-1
 * extension = Example-License-Status-Update
-* name.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason" 
-* name.extension.valueCode = #not-applicable
+* name.family.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason" 
+* name.family.extension.valueCode = #not-applicable
 
 Instance: Example-Practitioner-Update
 InstanceOf: BCPractitioner

@@ -1,5 +1,6 @@
 Profile: BCLocation
-Parent: Location
+//Parent: Location
+Parent: http://hl7.org/fhir/ca/baseline/StructureDefinition/profile-location
 Id: bc-location
 Description: "General constraints on the Location resource for use in the BC Provider Registry project."
 * identifier only BCIdentifier
