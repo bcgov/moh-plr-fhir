@@ -18,12 +18,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:title>HumanName</sch:title>
-    <sch:rule context="f:HumanName">
-      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:title>HumanName.extension</sch:title>
     <sch:rule context="f:HumanName/f:extension">
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children</sch:assert>

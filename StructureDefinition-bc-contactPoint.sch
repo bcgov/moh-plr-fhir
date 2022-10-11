@@ -19,13 +19,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:title>ContactPoint</sch:title>
-    <sch:rule context="f:ContactPoint">
-      <sch:assert test="not(exists(f:value)) or exists(f:system)">A system is required if a value is provided. (inherited)</sch:assert>
-      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:title>ContactPoint.extension</sch:title>
     <sch:rule context="f:ContactPoint/f:extension">
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children</sch:assert>

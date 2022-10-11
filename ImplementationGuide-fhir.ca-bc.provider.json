@@ -10,7 +10,7 @@
   "name": "BCProviderRegistry",
   "title": "BC Provider Location Registry FHIR Implementation Guide",
   "status": "draft",
-  "date": "2022-10-05T22:20:29+00:00",
+  "date": "2022-10-11T16:14:09+00:00",
   "publisher": "BC Ministry of Health",
   "contact": [
     {
@@ -42,16 +42,16 @@
   ],
   "dependsOn": [
     {
-      "id": "higtools",
-      "uri": "http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools",
-      "packageId": "hl7.fhir.uv.tools",
-      "version": "current"
-    },
-    {
       "id": "hl7tx",
       "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
       "packageId": "hl7.terminology.r4",
       "version": "4.0.0"
+    },
+    {
+      "id": "hl7_fhir_ca_baseline",
+      "uri": "http://hl7.org/fhir/ca/baseline/ImplementationGuide/hl7.fhir.ca.baseline",
+      "packageId": "hl7.fhir.ca.baseline",
+      "version": "current"
     }
   ],
   "definition": {
@@ -78,19 +78,6 @@
           {
             "url": "value",
             "valueString": "Build CI"
-          }
-        ],
-        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-      },
-      {
-        "extension": [
-          {
-            "url": "code",
-            "valueString": "show-inherited-invariants"
-          },
-          {
-            "url": "value",
-            "valueString": "false"
           }
         ],
         "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -2140,30 +2127,6 @@
     "parameter": [
       {
         "code": "path-resource",
-        "value": "input/resources"
-      },
-      {
-        "code": "path-resource",
-        "value": "fsh-generated/resources"
-      },
-      {
-        "code": "path-pages",
-        "value": "input/pagecontent"
-      },
-      {
-        "code": "path-pages",
-        "value": "input/pages"
-      },
-      {
-        "code": "path-pages",
-        "value": "input/notes"
-      },
-      {
-        "code": "path-pages",
-        "value": "fsh-generated/includes"
-      },
-      {
-        "code": "path-resource",
         "value": "input/capabilities"
       },
       {
@@ -2188,7 +2151,15 @@
       },
       {
         "code": "path-resource",
+        "value": "input/resources"
+      },
+      {
+        "code": "path-resource",
         "value": "input/vocabulary"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/maps"
       },
       {
         "code": "path-resource",
@@ -2197,6 +2168,10 @@
       {
         "code": "path-resource",
         "value": "input/history"
+      },
+      {
+        "code": "path-resource",
+        "value": "fsh-generated/resources"
       },
       {
         "code": "path-pages",

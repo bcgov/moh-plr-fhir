@@ -161,7 +161,18 @@
                     <start value="2022-06-30"/>
                   </valuePeriod>
                 </extension>
-                <extension url="practitioner">
+                <extension url="sourcePractitioner">
+                  <valueReference>
+                    <identifier>
+                      <system value="https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC"/>
+                      <value value="IPC.00147422.BC.PRS"/>
+                      <period>
+                        <start value="2000-01-01"/>
+                      </period>
+                    </identifier>
+                  </valueReference>
+                </extension>
+                <extension url="targetPractitioner">
                   <valueReference>
                     <identifier>
                       <system value="https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC"/>
@@ -172,7 +183,7 @@
                     </identifier>
                   </valueReference>
                 </extension>
-                <extension url="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension">
+                <extension url="type">
                   <valueCodeableConcept>
                     <coding>
                       <system value="https://plr.hlth.gov.bc.ca/plr/codes/bc-relationship-type-code"/>

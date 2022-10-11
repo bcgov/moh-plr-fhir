@@ -248,7 +248,19 @@
        ]
      ], [
        fhir:index 1;
-       fhir:Extension.url [ fhir:value "practitioner" ];
+       fhir:Extension.url [ fhir:value "sourcePractitioner" ];
+       fhir:Extension.valueReference [
+         fhir:Reference.identifier [
+           fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC" ];
+           fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ];
+           fhir:Identifier.period [
+             fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+           ]
+         ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "targetPractitioner" ];
        fhir:Extension.valueReference [
          fhir:Reference.identifier [
            fhir:Identifier.system [ fhir:value "https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC" ];
@@ -259,8 +271,8 @@
          ]
        ]
      ], [
-       fhir:index 2;
-       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension" ];
+       fhir:index 3;
+       fhir:Extension.url [ fhir:value "type" ];
        fhir:Extension.valueCodeableConcept [
          fhir:CodeableConcept.coding [
            fhir:index 0;

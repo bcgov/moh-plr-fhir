@@ -510,6 +510,8 @@
       "title": "BC Practitioner to Practitioner Relationship Extension",
       "types": [
         "Reference",
+        "Reference",
+        "CodeableConcept",
         "base64Binary",
         "boolean",
         "canonical",
@@ -632,10 +634,10 @@
       "CapabilityStatement.rest.resource.operation"
     ],
     "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
-      "Bundle.entry.resource.name",
+      "Bundle.entry.resource.name.family",
       "HumanName",
-      "Parameters.parameter.resource.entry.resource.name",
-      "Practitioner.name"
+      "Parameters.parameter.resource.entry.resource.name.family",
+      "Practitioner.name.family"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
@@ -654,6 +656,10 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
       "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-preferred": [
+      "Organization.address",
+      "Practitioner.address"
     ],
     "http://hl7.org/fhir/StructureDefinition/regex": [
       "StructureDefinition.snapshot.element.type"
@@ -870,7 +876,6 @@
     "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension": [
       "Bundle.entry.resource",
       "Bundle.entry.resource.entry.resource",
-      "Extension",
       "Parameters.parameter.resource.entry.resource",
       "PractitionerRole"
     ],
@@ -883,6 +888,19 @@
       "Parameters.parameter.resource.entry.resource.specialty",
       "Practitioner.communication",
       "PractitionerRole.specialty"
+    ],
+    "http://hl7.org/fhir/ca/baseline/StructureDefinition/ext-deceased": [
+      "Practitioner"
+    ],
+    "http://hl7.org/fhir/ca/baseline/StructureDefinition/ext-rolestatus": [
+      "PractitionerRole"
+    ],
+    "http://hl7.org/fhir/ca/baseline/StructureDefinition/ext-servicelanguage": [
+      "Location",
+      "Organization"
+    ],
+    "http://hl7.org/fhir/ca/baseline/StructureDefinition/ext-statusreason": [
+      "PractitionerRole"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
       "ImplementationGuide.definition.page",
