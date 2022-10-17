@@ -1,10 +1,10 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 8, warn = 17, info = 118
-IG Publisher Version: 1.2.6
-Generated Tue Oct 11 16:17:30 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
- Build Errors : 0 / 0 / 0
+err = 0, warn = 21, info = 118
+IG Publisher Version: 1.2.7
+Generated Mon Oct 17 23:45:07 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
+ Build Errors : 0 / 4 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 0 / 9
  /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 0 / 0 / 12
  /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle : 0 / 6 / 35
@@ -23,8 +23,8 @@ Generated Tue Oct 11 16:17:30 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/Bundle-Example-UpdatePractitioner-LicenseStatus-Bundle : 0 / 3 / 13
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-client-capability-statement : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CapabilityStatement-bc-plr-server-capability-statement : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/CodeSystem-bc-license-status-code-system : 1 / 0 / 1
- /github/workspace/fsh-generated/resources/CodeSystem-bc-practitioner-role-code-system : 1 / 0 / 1
+ /github/workspace/fsh-generated/resources/CodeSystem-bc-license-status-code-system : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/CodeSystem-bc-practitioner-role-code-system : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ImplementationGuide-fhir.ca-bc.provider : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Location-Example-AddPractitioner-WorkLocation : 0 / 0 / 7
  /github/workspace/fsh-generated/resources/Location-Example-Location : 0 / 0 / 6
@@ -113,14 +113,18 @@ Generated Tue Oct 11 16:17:30 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-relationship-type-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-role-relationships : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-specialty-source-extension : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/ValueSet-bc-expertise-value-set : 1 / 1 / 1
- /github/workspace/fsh-generated/resources/ValueSet-bc-language-value-set : 1 / 1 / 1
- /github/workspace/fsh-generated/resources/ValueSet-bc-license-status-reason-value-set : 1 / 1 / 1
- /github/workspace/fsh-generated/resources/ValueSet-bc-license-status-value-set : 1 / 0 / 1
- /github/workspace/fsh-generated/resources/ValueSet-bc-practitioner-role-value-set : 1 / 1 / 1
- /github/workspace/fsh-generated/resources/ValueSet-bc-qualification-value-set : 1 / 1 / 1
+ /github/workspace/fsh-generated/resources/ValueSet-bc-expertise-value-set : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/ValueSet-bc-language-value-set : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/ValueSet-bc-license-status-reason-value-set : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/ValueSet-bc-license-status-value-set : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/ValueSet-bc-practitioner-role-value-set : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/ValueSet-bc-qualification-value-set : 0 / 1 / 1
 </table>
 == n/a ==
+WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
+WARNING: 2: The HTML fragment 'cross-version-analysis.xhtml' is not included anywhere in the produced implementation guide
+WARNING: 3: The HTML fragment 'dependency-table.xhtml' is not included anywhere in the produced implementation guide
+WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
 == fsh-generated/resources/Bundle-Example-AddLocation-Bundle.json ==
 == fsh-generated/resources/Bundle-Example-AddOrganization-Bundle.json ==
 INFORMATION: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.address[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization
@@ -207,9 +211,7 @@ INFORMATION: Bundle/Example-UpdatePractitioner-Bundle-Response: Bundle.entry[1].
 == fsh-generated/resources/CapabilityStatement-bc-plr-client-capability-statement.json ==
 == fsh-generated/resources/CapabilityStatement-bc-plr-server-capability-statement.json ==
 == fsh-generated/resources/CodeSystem-bc-license-status-code-system.json ==
-ERROR: CodeSystem/bc-license-status-code-system: CodeSystem: The ShareableCodeSystem profile says that the experimental element is mandatory, but it is not found. HL7 Published code systems SHALL conform to the ShareableCodeSystem profile
 == fsh-generated/resources/CodeSystem-bc-practitioner-role-code-system.json ==
-ERROR: CodeSystem/bc-practitioner-role-code-system: CodeSystem: The ShareableCodeSystem profile says that the experimental element is mandatory, but it is not found. HL7 Published code systems SHALL conform to the ShareableCodeSystem profile
 == fsh-generated/resources/ImplementationGuide-fhir.ca-bc.provider.json ==
 == fsh-generated/resources/Location-Example-AddPractitioner-WorkLocation.json ==
 == fsh-generated/resources/Location-Example-Location.json ==
@@ -366,15 +368,9 @@ WARNING: StructureDefinition/bc-role-relationships: StructureDefinition.snapshot
 WARNING: StructureDefinition/bc-role-relationships: StructureDefinition.snapshot.element[27].binding: The valueSet reference https://fhir.infoway-inforoute.ca/ValueSet/practitionerspecialty on element PractitionerRole.specialty could not be resolved
 == fsh-generated/resources/StructureDefinition-bc-specialty-source-extension.json ==
 == fsh-generated/resources/ValueSet-bc-expertise-value-set.json ==
-ERROR: ValueSet/bc-expertise-value-set: ValueSet: The ShareableValueSet profile says that the experimental element is mandatory, but it is not found. HL7 Published value sets SHALL conform to the ShareableValueSet profile
 == fsh-generated/resources/ValueSet-bc-language-value-set.json ==
-ERROR: ValueSet/bc-language-value-set: ValueSet: The ShareableValueSet profile says that the experimental element is mandatory, but it is not found. HL7 Published value sets SHALL conform to the ShareableValueSet profile
 WARNING: ValueSet.where(id = 'bc-language-value-set'): Error from server: Unable to provide support for code system https://plr.hlth.gov.bc.ca/plr/codes/bc-language-code
 == fsh-generated/resources/ValueSet-bc-license-status-reason-value-set.json ==
-ERROR: ValueSet/bc-license-status-reason-value-set: ValueSet: The ShareableValueSet profile says that the experimental element is mandatory, but it is not found. HL7 Published value sets SHALL conform to the ShareableValueSet profile
 == fsh-generated/resources/ValueSet-bc-license-status-value-set.json ==
-ERROR: ValueSet/bc-license-status-value-set: ValueSet: The ShareableValueSet profile says that the experimental element is mandatory, but it is not found. HL7 Published value sets SHALL conform to the ShareableValueSet profile
 == fsh-generated/resources/ValueSet-bc-practitioner-role-value-set.json ==
-ERROR: ValueSet/bc-practitioner-role-value-set: ValueSet: The ShareableValueSet profile says that the experimental element is mandatory, but it is not found. HL7 Published value sets SHALL conform to the ShareableValueSet profile
 == fsh-generated/resources/ValueSet-bc-qualification-value-set.json ==
-ERROR: ValueSet/bc-qualification-value-set: ValueSet: The ShareableValueSet profile says that the experimental element is mandatory, but it is not found. HL7 Published value sets SHALL conform to the ShareableValueSet profile
