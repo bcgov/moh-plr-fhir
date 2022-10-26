@@ -349,8 +349,8 @@ Usage: #definition
 * kind = #operation
 * code = #maintain
 * resource[0] = #Bundle
-* system = false
-* type = true
+* system = true
+* type = false
 * instance = false
 * parameter[+].name = #messageId
 * parameter[=].use = #in
@@ -418,8 +418,8 @@ Usage: #definition
 * kind = #operation
 * code = #distribution
 * resource[0] = #Bundle
-* system = false
-* type = true
+* system = true
+* type = false
 * instance = false
 * parameter[+].name = #messageId
 * parameter[=].use = #in
