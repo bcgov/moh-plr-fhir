@@ -25,7 +25,7 @@
   fhir:StructureDefinition.version [ fhir:value "0.1.0"];
   fhir:StructureDefinition.name [ fhir:value "BCPractitionerBundle"];
   fhir:StructureDefinition.status [ fhir:value "active"];
-  fhir:StructureDefinition.date [ fhir:value "2022-10-17T23:41:26+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2022-10-27T19:03:31+00:00"^^xsd:dateTime];
   fhir:StructureDefinition.publisher [ fhir:value "BC Ministry of Health"];
   fhir:StructureDefinition.contact [
      fhir:index 0;
@@ -2383,7 +2383,7 @@
          ]
        ], [
          fhir:index 5;
-         fhir:ElementDefinition.constraint.key [ fhir:value "ca-baseline-name" ];
+         fhir:ElementDefinition.constraint.key [ fhir:value "ca-baseline-practitioner-name" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "Either name.given and/or name.family SHALL be present or a Data Absent Reason Extension SHALL be present" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "(name.family.exists() or name.given.exists()) xor extension.where(url='http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists()" ];

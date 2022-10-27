@@ -9,7 +9,7 @@
   "version": "0.1.0",
   "name": "BCPractitioner",
   "status": "active",
-  "date": "2022-10-17T23:41:26+00:00",
+  "date": "2022-10-27T19:03:31+00:00",
   "publisher": "BC Ministry of Health",
   "contact": [
     {
@@ -128,7 +128,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/DomainResource"
           },
           {
-            "key": "ca-baseline-name",
+            "key": "ca-baseline-practitioner-name",
             "severity": "error",
             "human": "Either name.given and/or name.family SHALL be present or a Data Absent Reason Extension SHALL be present",
             "expression": "(name.family.exists() or name.given.exists()) xor extension.where(url='http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists()",
@@ -582,7 +582,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
           }
         ],
-        "isModifier": false
+        "isModifierReason": "This element is labeled as a modifier because once a practitioner is marked as deceased, the clinical processes that the practitioner was involved in may be significantly different."
       },
       {
         "id": "Practitioner.extension:demographicsPeriod",
@@ -1479,7 +1479,7 @@
           }
         ],
         "condition": [
-          "ca-baseline-name"
+          "ca-baseline-practitioner-name"
         ],
         "constraint": [
           {
@@ -1532,7 +1532,7 @@
         ],
         "orderMeaning": "Given Names appear in the correct order for presenting the name",
         "condition": [
-          "ca-baseline-name"
+          "ca-baseline-practitioner-name"
         ],
         "constraint": [
           {

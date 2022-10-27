@@ -46,7 +46,7 @@
   <version value="0.1.0"/>
   <name value="BCPractitioner"/>
   <status value="active"/>
-  <date value="2022-10-17T23:41:26+00:00"/>
+  <date value="2022-10-27T19:03:31+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -148,7 +148,7 @@
         <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <constraint>
-        <key value="ca-baseline-name"/>
+        <key value="ca-baseline-practitioner-name"/>
         <severity value="error"/>
         <human value="Either name.given and/or name.family SHALL be present or a Data Absent Reason Extension SHALL be present"/>
         <expression value="(name.family.exists() or name.given.exists()) xor extension.where(url='http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists()"/>
@@ -526,7 +526,7 @@
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
-      <isModifier value="false"/>
+      <isModifierReason value="This element is labeled as a modifier because once a practitioner is marked as deceased, the clinical processes that the practitioner was involved in may be significantly different."/>
     </element>
     <element id="Practitioner.extension:demographicsPeriod">
       <path value="Practitioner.extension"/>
@@ -1264,7 +1264,7 @@
       <type>
         <code value="string"/>
       </type>
-      <condition value="ca-baseline-name"/>
+      <condition value="ca-baseline-practitioner-name"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1306,7 +1306,7 @@
         <code value="string"/>
       </type>
       <orderMeaning value="Given Names appear in the correct order for presenting the name"/>
-      <condition value="ca-baseline-name"/>
+      <condition value="ca-baseline-practitioner-name"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>

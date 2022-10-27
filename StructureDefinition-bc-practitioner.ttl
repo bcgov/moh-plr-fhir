@@ -16,7 +16,7 @@
   fhir:StructureDefinition.version [ fhir:value "0.1.0"];
   fhir:StructureDefinition.name [ fhir:value "BCPractitioner"];
   fhir:StructureDefinition.status [ fhir:value "active"];
-  fhir:StructureDefinition.date [ fhir:value "2022-10-17T23:41:26+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2022-10-27T19:03:31+00:00"^^xsd:dateTime];
   fhir:StructureDefinition.publisher [ fhir:value "BC Ministry of Health"];
   fhir:StructureDefinition.contact [
      fhir:index 0;
@@ -147,7 +147,7 @@
          ]
        ], [
          fhir:index 5;
-         fhir:ElementDefinition.constraint.key [ fhir:value "ca-baseline-name" ];
+         fhir:ElementDefinition.constraint.key [ fhir:value "ca-baseline-practitioner-name" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "Either name.given and/or name.family SHALL be present or a Data Absent Reason Extension SHALL be present" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "(name.family.exists() or name.given.exists()) xor extension.where(url='http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists()" ];
@@ -646,7 +646,7 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ];
-       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
+       fhir:ElementDefinition.isModifierReason [ fhir:value "This element is labeled as a modifier because once a practitioner is marked as deceased, the clinical processes that the practitioner was involved in may be significantly different." ]
      ], [
        fhir:index 10;
        fhir:Element.id [ fhir:value "Practitioner.extension:demographicsPeriod" ];
@@ -1626,7 +1626,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "string" ]
        ];
        fhir:ElementDefinition.condition [
-         fhir:value "ca-baseline-name";
+         fhir:value "ca-baseline-practitioner-name";
          fhir:index 0
        ];
        fhir:ElementDefinition.constraint [
@@ -1683,7 +1683,7 @@
        ];
        fhir:ElementDefinition.orderMeaning [ fhir:value "Given Names appear in the correct order for presenting the name" ];
        fhir:ElementDefinition.condition [
-         fhir:value "ca-baseline-name";
+         fhir:value "ca-baseline-practitioner-name";
          fhir:index 0
        ];
        fhir:ElementDefinition.constraint [
