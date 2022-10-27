@@ -74,7 +74,7 @@ A [Distribution operation](OperationDefinition-bc-distribution.html) is used by 
 
 There will be one POST request per distribution and each distribution will have a single Practitioner, Organization, or Location.
 
-POST https://.../Bundle/$distribution
+POST https://.../$distribution
 
 The response to a distribution SHALL be HTTP 200 or 201 OK.  Anything else and the reliable messaging function will retry to send the request until a 200 is received back or times out.
 
@@ -87,7 +87,7 @@ A [Maintain operation](OperationDefinition-bc-maintain.html) is used by a user t
 3.      OrganizationAffiliation(s), PractitionerRole(s) and Location.
 
 
-POST https://.../Bundle/$maintain
+POST https://.../$maintain
 
 The PLR FHIR Server response will be a Bundle with type set to “collection” that contains the created or updated resources that represent the Provider (Individual or Organizational) or Facility.  The Bundle includes one of the following sets (same as request):
 
