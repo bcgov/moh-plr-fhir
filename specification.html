@@ -272,7 +272,8 @@ To show the relationship between two Individual Providers, the <a href="Structur
 
 <h4 id="distributions">Distributions</h4>
 
-<p>A <a href="OperationDefinition-bc-distribution.html">Distribution operation</a> is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.  The distribution is sent from PLR to a client application by sending a Bundle (of type ‘collection’) via a RESTful POST to a client nominated endpoint URL.  The Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity.  The Bundle includes one of the following sets:</p>
+<p>A <a href="OperationDefinition-bc-distribution.html">Distribution operation</a> is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.<br />
+The distribution is sent from PLR to a client application by sending a Bundle (of type ‘collection’) wrapped in Parameters, via a RESTful POST to a client nominated endpoint URL.  The Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity.  The Bundle includes one of the following sets:</p>
 
 <ol>
   <li>PractitionerRole(s) and Practitioner;</li>
@@ -287,7 +288,7 @@ To show the relationship between two Individual Providers, the <a href="Structur
 <p>The response to a distribution SHALL be HTTP 200 or 201 OK.  Anything else and the reliable messaging function will retry to send the request until a 200 is received back or times out.</p>
 
 <h4 id="maintain">Maintain</h4>
-<p>A <a href="OperationDefinition-bc-maintain.html">Maintain operation</a> is used by a user to communicate a change to a single Provider (Individual or Organizational) or Facility to PLR.  The Bundle includes one of the following sets:</p>
+<p>A <a href="OperationDefinition-bc-maintain.html">Maintain operation</a> is used by a user to communicate a change to a single Provider (Individual or Organizational) or Facility to PLR. A Bundle is sent in the parameters and includes one of the following sets:</p>
 
 <ol>
   <li>PractitionerRole(s) and Practitioner;</li>
@@ -306,12 +307,12 @@ To show the relationship between two Individual Providers, the <a href="Structur
   <li>OperationOutcome</li>
 </ol>
 
-<p>The reponse also has an entry of OperationOutcome that has information, warning or error messages.</p>
+<p>The response also has an entry of OperationOutcome that has information, warning or error messages.</p>
 
 <p>A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.</p>
 
 <h4 id="batch">Batch</h4>
-<p>Batch also uses Bundles, but a batch Bundle (Bundle.type = ‘batch’), that wraps a number of Bundles.  A batch Bundle therefore allows for many independent transactions to be sent in a single operation.  The batch Bundle must contain at least one or more of:</p>
+<p>Batch allows for many independent transactions to be sent in a single operation. It also uses Bundles, but a batch Bundle (Bundle.type = ‘batch’), that wraps a number of Bundles. The batch Bundle is not expected in the parameters but as a JSON file. It must contain at least one or more of:</p>
 
 <ol>
   <li>a collection-Bundle (with PractitionerRole(s) and Practitioner) to add/update an Individual Provider</li>
@@ -563,7 +564,7 @@ To show the relationship between two Individual Providers, the <a href="Structur
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Oct 27, 2022 21:56+0000">2022-10-27</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 28, 2022 23:08+0000">2022-10-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
