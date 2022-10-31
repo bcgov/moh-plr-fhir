@@ -181,7 +181,7 @@ Title: "BC License Status Extension"
 Description: "Tracking the status and changes to the status of a practitioner/organization license."
 * extension contains statusCode 1..1 MS and 
        statusReasonCode 1..1 MS and 
-       statusClassCode 0..1 MS and 
+       statusClassCode 1..1 MS and 
        period 1..1 MS and 
        EndReasonExtension named endReason 0..1 MS and
        OwnerExtension named owner 0..1 MS
