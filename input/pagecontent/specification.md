@@ -66,7 +66,8 @@ There are a number of use cases that support the existing PLR functionality:
 
 #### Distributions
 
-A [Distribution operation](OperationDefinition-bc-distribution.html) is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.  The distribution is sent from PLR to a client application by sending a Bundle (of type 'collection') via a RESTful POST to a client nominated endpoint URL.  The Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity.  The Bundle includes one of the following sets:
+A [Distribution operation](OperationDefinition-bc-distribution.html) is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.  
+The distribution is sent from PLR to a client application by sending a Bundle (of type 'collection') wrapped in Parameters, via a RESTful POST to a client nominated endpoint URL.  The Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity.  The Bundle includes one of the following sets:
 
 1.	PractitionerRole(s) and Practitioner;
 2.	OrganizationAffiliation(s), PractitionerRole(s) and Organization;
@@ -80,7 +81,7 @@ The response to a distribution SHALL be HTTP 200 or 201 OK.  Anything else and t
 
 
 #### Maintain
-A [Maintain operation](OperationDefinition-bc-maintain.html) is used by a user to communicate a change to a single Provider (Individual or Organizational) or Facility to PLR.  The Bundle includes one of the following sets:
+A [Maintain operation](OperationDefinition-bc-maintain.html) is used by a user to communicate a change to a single Provider (Individual or Organizational) or Facility to PLR. A Bundle is sent in the parameters and includes one of the following sets:
 
 1.      PractitionerRole(s) and Practitioner;
 2.      OrganizationAffiliation(s), PractitionerRole(s) and Organization;
@@ -96,12 +97,12 @@ The PLR FHIR Server response will be a Bundle with type set to “collection” 
 3.      OrganizationAffiliation(s), PractitionerRole(s) and Location;
 4.      OperationOutcome
 
-The reponse also has an entry of OperationOutcome that has information, warning or error messages.
+The response also has an entry of OperationOutcome that has information, warning or error messages.
 
 A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.
 
 #### Batch
-Batch also uses Bundles, but a batch Bundle (Bundle.type = 'batch'), that wraps a number of Bundles.  A batch Bundle therefore allows for many independent transactions to be sent in a single operation.  The batch Bundle must contain at least one or more of:
+Batch allows for many independent transactions to be sent in a single operation. It also uses Bundles, but a batch Bundle (Bundle.type = 'batch'), that wraps a number of Bundles. The batch Bundle is not expected in the parameters but as a JSON file. It must contain at least one or more of:
 
 1.	a collection-Bundle (with PractitionerRole(s) and Practitioner) to add/update an Individual Provider
 2.	a collection-Bundle (with OrganizationAffiliation(s), PractitionerRole(s) and Organization) to add/update an Organizational Provider
