@@ -199,3 +199,170 @@ Search for a Location by Health Authority and return all related Organizations a
       https://fhir.server/Location/$extendedQuery?healthAuthority=Interior%20Health
 
 
+
+### Atomic Resource-based RESTful queries
+
+The initial design covers all the use cases where the user is interested in receiving or updating the full Provider (Individual or Organizational) or Facility dataset. As a result several FHIR resources are returned or submitted in a Bundle; those resources represent the full dataset. 
+
+A resource based RESTful approach is allowing the entityQuery operations described above (i.e. Practitioner/IPC/$entityQuery, Location/IFC/$entityQuery and Organization/IPC/$entityQuery) to be broken down into more atomic, resource focused, interactions.
+
+At the moment, this design will only implement the GET queries (GET by ID and GET Search queries), using these parameters:
+* practitioner
+* location
+* organization
+* participatingOrganization
+
+
+The following Profiles are needed to support the main PLR Use Cases with Restful queries:
+1.	GET Practitioner/ - instance of [BCPractitioner](StructureDefinition-bc-practitioner.html) 
+2.	GET PractitionerRole/ - will return PractitionerRole:
+* instance of [BCPractitionerRole](StructureDefinition-bc-practitioner-role.html) for the practitioner's role and specialties information
+* instance of [BCRoleRelationship](StructureDefinition-bc-role-relationships.html), for the relationships info between practitioner and organization or location
+3.	GET Location/ - instance of [BCLocation](StructureDefinition-bc-location.html)
+4.	GET Organization/ - instance of [BCOrganization](StructureDefinition-bc-organization.html)
+5.	GET OrganizationAffiliation/ - instance of [BCOrganizationAffiliation](StructureDefinition-bc-organization-affiliation.html)
+
+
+
+#### Practitioner 
+
+##### GET query 
+
+Return a single ressource - ID for Practitioner is the **IPC identifier**
+```htm
+GET Practitioner/IPC.00012343.BC.PRS 
+```
+
+ID for Practitioner is the **IPC identifier**
+
+
+#### Organization 
+
+##### GET query 
+
+Return a single ressource -  ID for Organization is the **IPC identifier**
+```htm
+GET Organization/IPC.00012343.BC.PRS
+```
+
+
+
+
+#### Location 
+
+##### GET query
+Return a single ressource - ID for Location is the **IFC identifier**
+```htm
+GET Location/12345
+``` 
+
+
+
+#### PractitionerRole 
+
+##### GET query 
+
+ID for PractitionerRole can be 
+* the **IPC identifier** for the BCPractionerRole instance carrying the Practionner's role and specialties information
+```htm
+GET PractitionerRole/IPC.00012343.BC.PRS
+```
+* or a **relationship CHID** (character id) that will return a single BCRoleRelationship instance
+```htm
+GET PractitionerRole/Relationship1-ID
+```
+
+
+
+##### GET Search query - return many PractitionerRole
+
+Parameters to search with are:
+* practitioner
+* organization
+* location
+
+
+Returns all the PractitionerRoles related to a Practitioner (BCPractionerRole and BCRoleRelationship)
+```htm
+GET PractitionerRole?practitioner=Practitioner/IPC.00012343.BC.PRS
+```
+
+Returns all the PractitionerRoles related to an Organization (of instance BCRoleRelationship only)
+```htm
+GET PractitionerRole?organization=Organization/IPC.00012343.BC.PRS
+```
+
+Returns all the PractitionerRoles related to a Location (of instance BCRoleRelationship only)
+```htm
+GET PractitionerRole?location=Location/12343
+```
+
+
+####  OrganizationAffiliation
+
+##### GET query
+
+Return a single ressource - ID for OrganizationAffiliation is a relationship CHID (character id)
+```htm
+GET OrganizationAffiliation/Relationship3-ID 
+```
+ 
+
+##### GET Search query - Return many OrganizationAffiliation
+
+Paramaters to search with are:
+* participatingOrganization
+* location
+
+
+```htm
+GET OrganizationAffiliation?participatingOrganization=Organization/IPC.00012343.BC.PRS
+GET OrganizationAffiliation?location=Location/12343
+```
+
+
+#### Examples
+
+For example, the full Provider returned in a Bundle by the following query 
+```htm
+GET Practitioner/IPC.00012343.BC.PRS/$entityQuery
+```
+can also be accomplished by a more 'chatty' interface, with multiple simple restful queries:
+```htm
+GET Practitioner/IPC.00012343.BC.PRS  
+GET PractitionerRole/IPC.00012343.BC.PRS 
+GET PractitionerRole?practitioner=Practitioner/IPC.00012343.BC.PRS
+GET PractitionerRole/Relationship1-ID 
+...
+```
+Details:
+
+2nd line will return only the unique PractionnerRole of instance BCPractitionerRole that carries the Practitionner role and specialties information.
+
+3rd line will return all the PractionnerRole for a Practionner, including the BCPractitionerRole and all the BCRoleRelationship.
+
+4th line will return a single PractionnerRole of instance BCRoleRelationship that carries some relationship information.
+
+
+Or in the case of **Organization**:
+```htm
+GET Organization/IPC.00012343.BC.PRS  
+GET PractitionerRole?organization=Organization/IPC.00012343.BC.PRS  
+GET PractitionerRole/Relationship1-ID  
+...
+GET OrganizationAffiliation?participatingOrganization=Organization/IPC.00012343.BC.PRS  
+GET OrganizationAffiliation/Relationship2-ID
+...
+```
+
+
+And the same applies to **Location**:
+```htm
+GET Location/12343  
+GET PractitionerRole?location=Location/12343  
+GET PractitionerRole/Relationship1-ID  
+... 
+GET OrganizationAffiliation?location=Location/12343  
+GET OrganizationAffiliation/Relationship3-ID  
+...
+```

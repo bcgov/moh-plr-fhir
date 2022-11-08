@@ -13,9 +13,9 @@ At this time, this Implementation Guide includes requirements for PLR Providers 
 
 ### Supporting Resource RESTful Interactions
 
-The initial design covers all the use cases where the user is interested in receiving or updating the full  Provider (Individual or Organizational) or Facility dataset.  As a result several FHIR resources are returned or submitted in a Bundle; those resources represent the full dataset.  A resource based RESTful approach could be implemented if there is enough interest to warrant further design and development.
+The initial design covers all the use cases where the user is interested in receiving or updating the full Provider (Individual or Organizational) or Facility dataset.  As a result several FHIR resources are returned or submitted in a Bundle; those resources represent the full dataset.  A resource based RESTful approach could be implemented if there is enough interest to warrant further design and development.
 
-E.g. The currrent operations, i.e. Practitioner/IPC/$entityQuery, Location/IFC/$entityQuery and Organization/IPC/$entityQuery could be broken down into more atomic, resource focused, interactions.
+E.g. The current operations, i.e. Practitioner/IPC/$entityQuery, Location/IFC/$entityQuery and Organization/IPC/$entityQuery could be broken down into more atomic, resource focused, interactions.
 
 For example, the full Provider returned by the following in a Bundle with several resources
 
