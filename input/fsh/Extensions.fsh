@@ -74,10 +74,10 @@ Description: "Captures the place where a patient/practitioner/person was born."
 * value[x] only Address
 * value[x] 1..1 MS
 
-Extension: PractitionerConfidentialityExtension
-Id: bc-practitioner-confidentiality-extension
-Title: "BC Practitioner Confidentiality Extension"
-Description: "Indicates the confidentiality of the practitioner's information."
+Extension: ConfidentialityExtension
+Id: bc-confidentiality-extension
+Title: "BC Confidentiality Extension"
+Description: "Indicates the confidentiality of a BC provider's (practitioner or organization) information."
 * extension contains code 1..1 MS and 
       PeriodExtension named period 1..1 MS and 
       EndReasonExtension named endReason 0..1 MS and

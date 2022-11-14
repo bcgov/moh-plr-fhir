@@ -15,7 +15,7 @@ Instance: Example-Confidenciality-False
 InstanceOf: Extension
 Description: "Example of false confidenciality."
 Usage: #inline
-* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-confidentiality-extension"
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-confidentiality-extension"
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2000-01-01"
 * extension[=].valuePeriod.end = "2020-01-01"
@@ -27,7 +27,7 @@ Instance: Example-Confidenciality-False-Response
 InstanceOf: Extension
 Description: "Example of false confidenciality."
 Usage: #inline
-* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-confidentiality-extension"
+* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-confidentiality-extension"
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2000-01-01"
 * extension[=].valuePeriod.end = "2020-01-01"
