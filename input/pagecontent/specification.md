@@ -233,8 +233,6 @@ Return a single ressource - ID for Practitioner is the **IPC identifier**
 GET Practitioner/IPC.00012343.BC.PRS 
 ```
 
-ID for Practitioner is the **IPC identifier**
-
 
 #### Organization 
 
@@ -244,7 +242,6 @@ Return a single ressource -  ID for Organization is the **IPC identifier**
 ```htm
 GET Organization/IPC.00012343.BC.PRS
 ```
-
 
 
 
@@ -311,12 +308,12 @@ GET OrganizationAffiliation/Relationship3-ID
 ##### GET Search query - Return many OrganizationAffiliation
 
 Paramaters to search with are:
-* participatingOrganization
+* organization
 * location
 
 
 ```htm
-GET OrganizationAffiliation?participatingOrganization=Organization/IPC.00012343.BC.PRS
+GET OrganizationAffiliation?organization=Organization/IPC.00012343.BC.PRS
 GET OrganizationAffiliation?location=Location/12343
 ```
 
@@ -350,7 +347,7 @@ GET Organization/IPC.00012343.BC.PRS
 GET PractitionerRole?organization=Organization/IPC.00012343.BC.PRS  
 GET PractitionerRole/Relationship1-ID  
 ...
-GET OrganizationAffiliation?participatingOrganization=Organization/IPC.00012343.BC.PRS  
+GET OrganizationAffiliation?organization=Organization/IPC.00012343.BC.PRS  
 GET OrganizationAffiliation/Relationship2-ID
 ...
 ```
