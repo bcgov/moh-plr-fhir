@@ -41,7 +41,7 @@ Description: "General constraints on the Practitioner resource for use in the BC
         LicenseStatusExtension named status 0..* MS and 
 	DeathDateExtension named deathDate 0..1 MS and 
 	BirthPlaceExtension named birthplace 0..1 MS and
-	PractitionerConfidentialityExtension named confidentiality 0..1 MS and
+	ConfidentialityExtension named confidentiality 0..1 MS and
 	PractitionerRelationshipExtension named relationship 0..* MS and
 	PractitionerDiscplinaryActionExtension named disciplinaryAction 0..* MS and
 	NoteExtension named note 0..* MS and
