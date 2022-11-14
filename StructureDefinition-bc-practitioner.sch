@@ -18,7 +18,7 @@
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-owner-extension']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-owner-extension': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-deathdate-extension']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-deathdate-extension': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthplace-extension']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-birthplace-extension': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-confidentiality-extension']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-confidentiality-extension': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-confidentiality-extension']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-confidentiality-extension': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

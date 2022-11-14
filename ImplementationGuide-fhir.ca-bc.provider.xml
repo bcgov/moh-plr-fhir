@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2022-11-14T22:17:10+00:00"/>
+  <date value="2022-11-14T22:35:25+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -706,6 +706,18 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/bc-confidentiality-extension"/>
+      </reference>
+      <name value="BC Confidentiality Extension"/>
+      <description value="Indicates the confidentiality of a BC provider's (practitioner or organization) information."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Extensions"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/bc-practitioner-deathdate-extension"/>
       </reference>
       <name value="BC Practitioner Date of Death Extension"/>
@@ -830,18 +842,6 @@
       </reference>
       <name value="BC Practitioner Conditions Extension"/>
       <description value="Conditions on the provider's role"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="Extensions"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/bc-practitioner-confidentiality-extension"/>
-      </reference>
-      <name value="BC Practitioner Confidentiality Extension"/>
-      <description value="Indicates the confidentiality of the practitioner's information."/>
       <exampleBoolean value="false"/>
       <groupingId value="Extensions"/>
     </resource>

@@ -10,7 +10,7 @@
   "name": "BCProviderRegistry",
   "title": "BC Provider Location Registry FHIR Implementation Guide",
   "status": "draft",
-  "date": "2022-11-14T22:17:10+00:00",
+  "date": "2022-11-14T22:35:25+00:00",
   "publisher": "BC Ministry of Health",
   "contact": [
     {
@@ -1039,6 +1039,21 @@
           }
         ],
         "reference": {
+          "reference": "StructureDefinition/bc-confidentiality-extension"
+        },
+        "name": "BC Confidentiality Extension",
+        "description": "Indicates the confidentiality of a BC provider's (practitioner or organization) information.",
+        "exampleBoolean": false,
+        "groupingId": "Extensions"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
           "reference": "StructureDefinition/bc-practitioner-deathdate-extension"
         },
         "name": "BC Practitioner Date of Death Extension",
@@ -1193,21 +1208,6 @@
         },
         "name": "BC Practitioner Conditions Extension",
         "description": "Conditions on the provider's role",
-        "exampleBoolean": false,
-        "groupingId": "Extensions"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:extension"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/bc-practitioner-confidentiality-extension"
-        },
-        "name": "BC Practitioner Confidentiality Extension",
-        "description": "Indicates the confidentiality of the practitioner's information.",
         "exampleBoolean": false,
         "groupingId": "Extensions"
       },
