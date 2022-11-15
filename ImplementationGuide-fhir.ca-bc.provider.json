@@ -10,7 +10,7 @@
   "name": "BCProviderRegistry",
   "title": "BC Provider Location Registry FHIR Implementation Guide",
   "status": "draft",
-  "date": "2022-11-14T22:35:25+00:00",
+  "date": "2022-11-15T19:54:41+00:00",
   "publisher": "BC Ministry of Health",
   "contact": [
     {
@@ -727,6 +727,11 @@
         "id": "Facility",
         "name": "Facility",
         "description": "Artifacts associated with Facilities"
+      },
+      {
+        "id": "AtomicRestfulQueryResponse",
+        "name": "Atomic Restful Query",
+        "description": "Atomic Restful Query Responses"
       },
       {
         "id": "Extensions",
@@ -1489,6 +1494,126 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Location"
+          }
+        ],
+        "reference": {
+          "reference": "Location/Example-Atomic-Location"
+        },
+        "name": "Example-Atomic-Location",
+        "description": "Example of a Location.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location",
+        "groupingId": "AtomicRestfulQueryResponse"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Organization"
+          }
+        ],
+        "reference": {
+          "reference": "Organization/Example-Atomic-Organization"
+        },
+        "name": "Example-Atomic-Organization",
+        "description": "Example of an Organization.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization",
+        "groupingId": "AtomicRestfulQueryResponse"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "OrganizationAffiliation"
+          }
+        ],
+        "reference": {
+          "reference": "OrganizationAffiliation/Example-Atomic-OrganizationAffiliation-LocRef"
+        },
+        "name": "Example-Atomic-OrganizationAffiliation-LocRef",
+        "description": "Example of the OrganizationAffiliation for Organization to Location relationship.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation",
+        "groupingId": "AtomicRestfulQueryResponse"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "OrganizationAffiliation"
+          }
+        ],
+        "reference": {
+          "reference": "OrganizationAffiliation/Example-Atomic-OrganizationAffiliation-OrgRef"
+        },
+        "name": "Example-Atomic-OrganizationAffiliation-OrgRef",
+        "description": "Example of the OrganizationAffiliation for Organization to Organization relationship.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation",
+        "groupingId": "AtomicRestfulQueryResponse"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Practitioner"
+          }
+        ],
+        "reference": {
+          "reference": "Practitioner/Example-Atomic-Practitioner"
+        },
+        "name": "Example-Atomic-Practitioner",
+        "description": "Example of generic Practitioner.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner",
+        "groupingId": "AtomicRestfulQueryResponse"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PractitionerRole"
+          }
+        ],
+        "reference": {
+          "reference": "PractitionerRole/Example-Atomic-PractitionerRole-LocRef"
+        },
+        "name": "Example-Atomic-PractitionerRole-LocRef",
+        "description": "Example of the PractitionerRole for Practitioner to Location relationship.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships",
+        "groupingId": "AtomicRestfulQueryResponse"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PractitionerRole"
+          }
+        ],
+        "reference": {
+          "reference": "PractitionerRole/Example-Atomic-PractitionerRole-OrgRef"
+        },
+        "name": "Example-Atomic-PractitionerRole-OrgRef",
+        "description": "Example of the PractitionerRole for Practitioner to Organization relationship.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships",
+        "groupingId": "AtomicRestfulQueryResponse"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PractitionerRole"
+          }
+        ],
+        "reference": {
+          "reference": "PractitionerRole/Example-Atomic-PractitionerRole-RoleSpecialty"
+        },
+        "name": "Example-Atomic-PractitionerRole-RoleSpecialty",
+        "description": "Example of the PractitionerRole with Speciality.",
+        "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role",
+        "groupingId": "AtomicRestfulQueryResponse"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "Bundle"
           }
         ],
@@ -1708,7 +1833,7 @@
           "reference": "OrganizationAffiliation/Example-OrganizationAffiliation-2-LocRef-FromOrg"
         },
         "name": "Example-OrganizationAffiliation-2-LocRef-FromOrg",
-        "description": "Example of the OrganizationAffiliation for Organization to Organization relationship.",
+        "description": "Example of the OrganizationAffiliation for Organization to Location relationship.",
         "exampleCanonical": "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"
       },
       {

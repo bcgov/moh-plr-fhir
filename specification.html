@@ -202,6 +202,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#fhir-resources" id="markdown-toc-fhir-resources">FHIR Resources</a></li>
   <li><a href="#relationships-between-resources" id="markdown-toc-relationships-between-resources">Relationships between Resources</a></li>
   <li><a href="#use-cases" id="markdown-toc-use-cases">Use Cases</a></li>
+  <li><a href="#atomic-resource-based-restful-queries" id="markdown-toc-atomic-resource-based-restful-queries">Atomic Resource-based RESTful queries</a></li>
 </ul>
 
 </div>
@@ -539,6 +540,153 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  https://fhir.server/Location/$extendedQuery?healthAuthority=Interior%20Health
 </code></pre></div></div>
 
+<h3 id="atomic-resource-based-restful-queries">Atomic Resource-based RESTful queries</h3>
+
+<p>The initial design covers all the use cases where the user is interested in receiving or updating the full Provider (Individual or Organizational) or Facility dataset. As a result several FHIR resources are returned or submitted in a Bundle; those resources represent the full dataset.</p>
+
+<p>A resource based RESTful approach is allowing the entityQuery operations described above (i.e. Practitioner/IPC/$entityQuery, Location/IFC/$entityQuery and Organization/IPC/$entityQuery) to be broken down into more atomic, resource focused, interactions.</p>
+
+<p>At the moment, this design will only implement the GET queries (GET by ID and GET Search queries), using these parameters:</p>
+<ul>
+  <li>practitioner</li>
+  <li>location</li>
+  <li>organization</li>
+  <li>participatingOrganization</li>
+</ul>
+
+<p>The following Profiles are needed to support the main PLR Use Cases with Restful queries:</p>
+<ol>
+  <li>GET Practitioner/ - instance of <a href="StructureDefinition-bc-practitioner.html">BCPractitioner</a></li>
+  <li>GET PractitionerRole/ - will return PractitionerRole:
+    <ul>
+      <li>instance of <a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a> for the practitioner’s role and specialties information</li>
+      <li>instance of <a href="StructureDefinition-bc-role-relationships.html">BCRoleRelationship</a>, for the relationships info between practitioner and organization or location</li>
+    </ul>
+  </li>
+  <li>GET Location/ - instance of <a href="StructureDefinition-bc-location.html">BCLocation</a></li>
+  <li>GET Organization/ - instance of <a href="StructureDefinition-bc-organization.html">BCOrganization</a></li>
+  <li>GET OrganizationAffiliation/ - instance of <a href="StructureDefinition-bc-organization-affiliation.html">BCOrganizationAffiliation</a></li>
+</ol>
+
+<h4 id="practitioner">Practitioner</h4>
+
+<h5 id="get-query">GET query</h5>
+
+<p>Return a single ressource - ID for Practitioner is the <strong>IPC identifier</strong></p>
+<pre><code class="language-htm">GET Practitioner/IPC.00012343.BC.PRS 
+</code></pre>
+
+<h4 id="organization">Organization</h4>
+
+<h5 id="get-query-1">GET query</h5>
+
+<p>Return a single ressource -  ID for Organization is the <strong>IPC identifier</strong></p>
+<pre><code class="language-htm">GET Organization/IPC.00012343.BC.PRS
+</code></pre>
+
+<h4 id="location">Location</h4>
+
+<h5 id="get-query-2">GET query</h5>
+<p>Return a single ressource - ID for Location is the <strong>IFC identifier</strong></p>
+<pre><code class="language-htm">GET Location/12345
+</code></pre>
+
+<h4 id="practitionerrole">PractitionerRole</h4>
+
+<h5 id="get-query-3">GET query</h5>
+
+<p>ID for PractitionerRole can be</p>
+<ul>
+  <li>the <strong>IPC identifier</strong> for the BCPractionerRole instance carrying the Practionner’s role and specialties information
+    <pre><code class="language-htm">GET PractitionerRole/IPC.00012343.BC.PRS
+</code></pre>
+  </li>
+  <li>or a <strong>relationship CHID</strong> (character id) that will return a single BCRoleRelationship instance
+    <pre><code class="language-htm">GET PractitionerRole/Relationship1-ID
+</code></pre>
+  </li>
+</ul>
+
+<h5 id="get-search-query---return-many-practitionerrole">GET Search query - return many PractitionerRole</h5>
+
+<p>Parameters to search with are:</p>
+<ul>
+  <li>practitioner</li>
+  <li>organization</li>
+  <li>location</li>
+</ul>
+
+<p>Returns all the PractitionerRoles related to a Practitioner (BCPractionerRole and BCRoleRelationship)</p>
+<pre><code class="language-htm">GET PractitionerRole?practitioner=Practitioner/IPC.00012343.BC.PRS
+</code></pre>
+
+<p>Returns all the PractitionerRoles related to an Organization (of instance BCRoleRelationship only)</p>
+<pre><code class="language-htm">GET PractitionerRole?organization=Organization/IPC.00012343.BC.PRS
+</code></pre>
+
+<p>Returns all the PractitionerRoles related to a Location (of instance BCRoleRelationship only)</p>
+<pre><code class="language-htm">GET PractitionerRole?location=Location/12343
+</code></pre>
+
+<h4 id="organizationaffiliation">OrganizationAffiliation</h4>
+
+<h5 id="get-query-4">GET query</h5>
+
+<p>Return a single ressource - ID for OrganizationAffiliation is a relationship CHID (character id)</p>
+<pre><code class="language-htm">GET OrganizationAffiliation/Relationship3-ID 
+</code></pre>
+
+<h5 id="get-search-query---return-many-organizationaffiliation">GET Search query - Return many OrganizationAffiliation</h5>
+
+<p>Paramaters to search with are:</p>
+<ul>
+  <li>organization</li>
+  <li>location</li>
+</ul>
+
+<pre><code class="language-htm">GET OrganizationAffiliation?organization=Organization/IPC.00012343.BC.PRS
+GET OrganizationAffiliation?location=Location/12343
+</code></pre>
+
+<h4 id="examples">Examples</h4>
+
+<p>For example, the full Provider returned in a Bundle by the following query</p>
+<pre><code class="language-htm">GET Practitioner/IPC.00012343.BC.PRS/$entityQuery
+</code></pre>
+<p>can also be accomplished by a more ‘chatty’ interface, with multiple simple restful queries:</p>
+<pre><code class="language-htm">GET Practitioner/IPC.00012343.BC.PRS  
+GET PractitionerRole/IPC.00012343.BC.PRS 
+GET PractitionerRole?practitioner=Practitioner/IPC.00012343.BC.PRS
+GET PractitionerRole/Relationship1-ID 
+...
+</code></pre>
+<p>Details:</p>
+
+<p>2nd line will return only the unique PractionnerRole of instance BCPractitionerRole that carries the Practitionner role and specialties information.</p>
+
+<p>3rd line will return all the PractionnerRole for a Practionner, including the BCPractitionerRole and all the BCRoleRelationship.</p>
+
+<p>4th line will return a single PractionnerRole of instance BCRoleRelationship that carries some relationship information.</p>
+
+<p>Or in the case of <strong>Organization</strong>:</p>
+<pre><code class="language-htm">GET Organization/IPC.00012343.BC.PRS  
+GET PractitionerRole?organization=Organization/IPC.00012343.BC.PRS  
+GET PractitionerRole/Relationship1-ID  
+...
+GET OrganizationAffiliation?organization=Organization/IPC.00012343.BC.PRS  
+GET OrganizationAffiliation/Relationship2-ID
+...
+</code></pre>
+
+<p>And the same applies to <strong>Location</strong>:</p>
+<pre><code class="language-htm">GET Location/12343  
+GET PractitionerRole?location=Location/12343  
+GET PractitionerRole/Relationship1-ID  
+... 
+GET OrganizationAffiliation?location=Location/12343  
+GET OrganizationAffiliation/Relationship3-ID  
+...
+</code></pre>
 
 
 
@@ -564,7 +712,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 14, 2022 22:35+0000">2022-11-14</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 15, 2022 19:54+0000">2022-11-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
