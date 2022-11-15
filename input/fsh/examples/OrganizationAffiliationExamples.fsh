@@ -9,7 +9,7 @@ Description: "Example of the OrganizationAffiliation for Organization to Organiz
 
 Instance: Example-OrganizationAffiliation-2-LocRef-FromOrg
 InstanceOf: BCOrganizationAffiliation
-Description: "Example of the OrganizationAffiliation for Organization to Organization relationship."
+Description: "Example of the OrganizationAffiliation for Organization to Location relationship."
 * organization.identifier = Example-Identifier-IPC-Org
 * code.coding.system = $PLRLocationRelationshipType
 * code.coding.code = #operatesfrom
