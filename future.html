@@ -220,15 +220,15 @@ This specification is currently published as a Draft Standard on the ministry gi
 
 <h3 id="supporting-resource-restful-interactions">Supporting Resource RESTful Interactions</h3>
 
-<p>The initial design covers all the use cases where the user is interested in receiving or updating the full  Provider (Individual or Organizational) or Facility dataset.  As a result several FHIR resources are returned or submitted in a Bundle; those resources represent the full dataset.  A resource based RESTful approach could be implemented if there is enough interest to warrant further design and development.</p>
+<p>The initial design covers all the use cases where the user is interested in receiving or updating the full Provider (Individual or Organizational) or Facility dataset.  As a result several FHIR resources are returned or submitted in a Bundle; those resources represent the full dataset.  A resource based RESTful approach is going to be implemented to allow more external partners to integrate seamlessly.</p>
 
-<p>E.g. The currrent operations, i.e. Practitioner/IPC/$entityQuery, Location/IFC/$entityQuery and Organization/IPC/$entityQuery could be broken down into more atomic, resource focused, interactions.</p>
+<p>E.g. The current operations, i.e. Practitioner/IPC/$entityQuery, Location/IFC/$entityQuery and Organization/IPC/$entityQuery could be broken down into more atomic, resource focused, interactions.</p>
 
 <p>For example, the full Provider returned by the following in a Bundle with several resources</p>
 
 <p>GET Practitioner/IPC.00012343.BC.PRS/$entityQuery</p>
 
-<p>could also be accomplished by a more ‘chatty’ interfaces:</p>
+<p>is going to be accomplished by a more ‘chatty’ interfaces:</p>
 
 <p>GET Practitioner/IPC.00012343.BC.PRS<br />
 GET PractitionerRole/IPC.00012343.BC.PRS**<br />
@@ -285,7 +285,7 @@ GET OrganizationAffiliation/Relationship4-ID</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 16, 2022 00:10+0000">2022-11-16</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 17, 2022 20:58+0000">2022-11-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

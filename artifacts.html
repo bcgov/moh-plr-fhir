@@ -220,19 +220,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#8">Facility</a>
       </li>
       <li>
-         <a href="#9">Extensions</a>
+         <a href="#9">Atomic RESTful Query</a>
       </li>
       <li>
-         <a href="#10">Structures: Data Type Profiles</a>
+         <a href="#10">Extensions</a>
       </li>
       <li>
-         <a href="#11">Terminology: Value Sets</a>
+         <a href="#11">Structures: Data Type Profiles</a>
       </li>
       <li>
-         <a href="#12">Terminology: Code Systems</a>
+         <a href="#12">Terminology: Value Sets</a>
       </li>
       <li>
-         <a href="#13">Example: Example Instances</a>
+         <a href="#13">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#14">Example: Example Instances</a>
       </li>
    </ul>
 </div>
@@ -268,13 +271,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                      title="CapabilityStatement/bc-plr-server-capability-statement">BCPLRServerCapabilityStatement</a>
                </td>
                <td>
-<p>This capability statement describes the three use cases that are supported by the BC FHIR implementation of PLR.</p>
-
+<p>This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):</p>
 <ul>
   <li>Maintain - used when an external source is communicating a change to PLR</li>
-  <li>Batch - allows for the sending of multiple Maintain transactions at one time</li>
-  <li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances</li>
+  <li>Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)</li>
+  <li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)</li>
 </ul>
+
+<p>All POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect …)</p>
 </td>
             </tr>
          </tbody>
@@ -680,6 +684,90 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </table>
    </p>
    <a name="9"> </a>
+   <h3>Atomic RESTful Query </h3>
+   <p>
+    <p>Atomic RESTful Query Responses</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Location-Example-Atomic-Location.html"
+                     title="Location/Example-Atomic-Location">Example-Atomic-Location</a>
+               </td>
+               <td>
+<p>Example of a Location.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-Example-Atomic-Organization.html"
+                     title="Organization/Example-Atomic-Organization">Example-Atomic-Organization</a>
+               </td>
+               <td>
+<p>Example of an Organization.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="OrganizationAffiliation-Example-Atomic-OrganizationAffiliation-LocRef.html"
+                     title="OrganizationAffiliation/Example-Atomic-OrganizationAffiliation-LocRef">Example-Atomic-OrganizationAffiliation-LocRef</a>
+               </td>
+               <td>
+<p>Example of the OrganizationAffiliation for Organization to Location relationship.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="OrganizationAffiliation-Example-Atomic-OrganizationAffiliation-OrgRef.html"
+                     title="OrganizationAffiliation/Example-Atomic-OrganizationAffiliation-OrgRef">Example-Atomic-OrganizationAffiliation-OrgRef</a>
+               </td>
+               <td>
+<p>Example of the OrganizationAffiliation for Organization to Organization relationship.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Practitioner-Example-Atomic-Practitioner.html"
+                     title="Practitioner/Example-Atomic-Practitioner">Example-Atomic-Practitioner</a>
+               </td>
+               <td>
+<p>Example of generic Practitioner.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="PractitionerRole-Example-Atomic-PractitionerRole-LocRef.html"
+                     title="PractitionerRole/Example-Atomic-PractitionerRole-LocRef">Example-Atomic-PractitionerRole-LocRef</a>
+               </td>
+               <td>
+<p>Example of the PractitionerRole for Practitioner to Location relationship.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="PractitionerRole-Example-Atomic-PractitionerRole-OrgRef.html"
+                     title="PractitionerRole/Example-Atomic-PractitionerRole-OrgRef">Example-Atomic-PractitionerRole-OrgRef</a>
+               </td>
+               <td>
+<p>Example of the PractitionerRole for Practitioner to Organization relationship.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="PractitionerRole-Example-Atomic-PractitionerRole-RoleSpecialty.html"
+                     title="PractitionerRole/Example-Atomic-PractitionerRole-RoleSpecialty">Example-Atomic-PractitionerRole-RoleSpecialty</a>
+               </td>
+               <td>
+<p>Example of the PractitionerRole with Speciality.</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="10"> </a>
    <h3>Extensions </h3>
    <p>
     <p>Extensions used across all groupings</p>
@@ -898,10 +986,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="10"> </a>
+   <a name="11"> </a>
    <h3>Structures: Data Type Profiles </h3>
    <p>
-    <p>These define constraints on FHIR data types for systems conforming to this implementation guide</p>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
 </p>
    <p>
       <table class="grid">
@@ -946,10 +1034,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="11"> </a>
+   <a name="12"> </a>
    <h3>Terminology: Value Sets </h3>
    <p>
-    <p>These define sets of codes used by systems conforming to this implementation guide</p>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
 </p>
    <p>
       <table class="grid">
@@ -1012,10 +1100,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="12"> </a>
+   <a name="13"> </a>
    <h3>Terminology: Code Systems </h3>
    <p>
-    <p>These define new code systems used by systems conforming to this implementation guide</p>
+    <p>These define new code systems used by systems conforming to this implementation guide.</p>
 </p>
    <p>
       <table class="grid">
@@ -1042,10 +1130,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="13"> </a>
+   <a name="14"> </a>
    <h3>Example: Example Instances </h3>
    <p>
-    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like</p>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
 </p>
    <p>
       <table class="grid">
@@ -1200,7 +1288,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                      title="OrganizationAffiliation/Example-OrganizationAffiliation-2-LocRef-FromOrg">Example-OrganizationAffiliation-2-LocRef-FromOrg</a>
                </td>
                <td>
-<p>Example of the OrganizationAffiliation for Organization to Organization relationship.</p>
+<p>Example of the OrganizationAffiliation for Organization to Location relationship.</p>
 </td>
             </tr>
             <tr>
@@ -1446,7 +1534,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 16, 2022 00:10+0000">2022-11-16</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 17, 2022 20:58+0000">2022-11-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
