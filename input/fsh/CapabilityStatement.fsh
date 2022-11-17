@@ -6,7 +6,7 @@ InstanceOf: CapabilityStatement
 * name = "BCPLRClientCapabilityStatement"
 * title = "BC PLR Client Capability Statement"
 * status = #draft
-* date = "2021-03-31"
+* date = "2022-11-15"
 * publisher = "BC Ministry of Health"
 * description = "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.
 
@@ -37,7 +37,7 @@ InstanceOf: CapabilityStatement
 * name = "BCPLRServerCapabilityStatement"
 * title = "BC PLR Server Capability Statement"
 * status = #draft
-* date = "2021-03-31"
+* date = "2022-11-15"
 * publisher = "BC Ministry of Health"
 * description = "This capability statement describes the three use cases that are supported by the BC FHIR implementation of PLR.
 
@@ -56,10 +56,8 @@ InstanceOf: CapabilityStatement
 * rest[0].resource[0].supportedProfile[0] = Canonical(BCPractitionerBundle)
 * rest[0].resource[0].supportedProfile[1] = Canonical(BCOrganizationBundle)
 * rest[0].resource[0].supportedProfile[2] = Canonical(BCLocationBundle)
-* rest[0].resource[0].supportedProfile[2] = Canonical(BCBatchBundle)
+* rest[0].resource[0].supportedProfile[3] = Canonical(BCBatchBundle)
 * rest[0].resource[0].interaction[0].code = #create
-* rest[0].resource[0].interaction[0].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[0].resource[0].interaction[0].documentation = "Servers SHALL support the BC Batch Bundle to send multiple Maintain transactions at one time.  They SHALL also support the three different types of Maintain transactions."
 
 * rest[1].mode = #server
 * rest[1].resource[0].type = #Practitioner
