@@ -41,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"9"}
-    h3,h4,h5,h6{--heading-prefix:"9.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"10"}
+    h3,h4,h5,h6{--heading-prefix:"10.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Left logo - typically the publisher's logo - project or affiliate -->
@@ -91,8 +91,18 @@
   <li>
     <a href="index.html">Overview</a>
   </li>
-  <li>
-    <a href="specification.html">FHIR Design</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Design
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="specification.html">FHIR Design and Overview</a>
+      </li>
+      <li>
+        <a href="designexamples.html">URL Examples</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="transition.html">V3 Transition</a>
@@ -220,7 +230,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#8">Facility</a>
       </li>
       <li>
-         <a href="#9">Atomic RESTful Query</a>
+         <a href="#9">Atomic Restful Query</a>
       </li>
       <li>
          <a href="#10">Extensions</a>
@@ -271,14 +281,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                      title="CapabilityStatement/bc-plr-server-capability-statement">BCPLRServerCapabilityStatement</a>
                </td>
                <td>
-<p>This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):</p>
+<p>This capability statement describes the three use cases that are supported by the BC FHIR implementation of PLR.</p>
+
 <ul>
   <li>Maintain - used when an external source is communicating a change to PLR</li>
-  <li>Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)</li>
-  <li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)</li>
+  <li>Batch - allows for the sending of multiple Maintain transactions at one time</li>
+  <li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances</li>
 </ul>
-
-<p>All POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect …)</p>
 </td>
             </tr>
          </tbody>
@@ -684,9 +693,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </table>
    </p>
    <a name="9"> </a>
-   <h3>Atomic RESTful Query </h3>
+   <h3>Atomic Restful Query </h3>
    <p>
-    <p>Atomic RESTful Query Responses</p>
+    <p>Atomic Restful Query Responses</p>
 </p>
    <p>
       <table class="grid">
@@ -1534,7 +1543,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 17, 2022 20:58+0000">2022-11-17</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 17, 2022 21:31+0000">2022-11-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

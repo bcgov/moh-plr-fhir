@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2022-11-17T20:58:34+00:00"/>
+  <date value="2022-11-17T21:31:13+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -462,8 +462,8 @@
       <description value="Artifacts associated with Facilities"/>
     </grouping>
     <grouping id="AtomicRestfulQueryResponse">
-      <name value="Atomic RESTful Query"/>
-      <description value="Atomic RESTful Query Responses"/>
+      <name value="Atomic Restful Query"/>
+      <description value="Atomic Restful Query Responses"/>
     </grouping>
     <grouping id="Extensions">
       <name value="Extensions"/>
@@ -1864,7 +1864,7 @@
         <reference value="CapabilityStatement/bc-plr-server-capability-statement"/>
       </reference>
       <name value="BCPLRServerCapabilityStatement"/>
-      <description value="This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):&#xA;* Maintain - used when an external source is communicating a change to PLR&#xA;* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)&#xA;* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)&#xA;&#xA;All POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)"/>
+      <description value="This capability statement describes the three use cases that are supported by the BC FHIR implementation of PLR.&#xA;&#xA;* Maintain - used when an external source is communicating a change to PLR&#xA;* Batch - allows for the sending of multiple Maintain transactions at one time&#xA;* Queries - a set of operations are defined that allow the querying of PLR FHIR instances"/>
       <exampleBoolean value="true"/>
       <groupingId value="Capabilities"/>
     </resource>
@@ -1937,6 +1937,14 @@
         </extension>
         <nameUrl value="techdetails.html"/>
         <title value="Techincal Details"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="designexamples.html"/>
+        </extension>
+        <nameUrl value="designexamples.html"/>
+        <title value="URL Examples"/>
         <generation value="markdown"/>
       </page>
     </page>

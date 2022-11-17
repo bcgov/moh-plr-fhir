@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "BCProviderRegistry"];
   fhir:ImplementationGuide.title [ fhir:value "BC Provider Location Registry FHIR Implementation Guide"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2022-11-17T20:58:34+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2022-11-17T21:31:13+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "BC Ministry of Health"];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -689,8 +689,8 @@
      ], [
        fhir:index 8;
        fhir:Element.id [ fhir:value "AtomicRestfulQueryResponse" ];
-       fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Atomic RESTful Query" ];
-       fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Atomic RESTful Query Responses" ]
+       fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Atomic Restful Query" ];
+       fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Atomic Restful Query Responses" ]
      ], [
        fhir:index 9;
        fhir:Element.id [ fhir:value "Extensions" ];
@@ -2618,7 +2618,7 @@
          fhir:Reference.reference [ fhir:value "CapabilityStatement/bc-plr-server-capability-statement" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BCPLRServerCapabilityStatement" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)\n\nAll POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This capability statement describes the three use cases that are supported by the BC FHIR implementation of PLR.\n\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Capabilities" ]
      ];
@@ -2710,6 +2710,16 @@
          ];
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "techdetails.html" ];
          fhir:ImplementationGuide.definition.page.title [ fhir:value "Techincal Details" ];
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 8;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ];
+           fhir:Extension.valueUrl [ fhir:value "designexamples.html" ]
+         ];
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "designexamples.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "URL Examples" ];
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ]
      ];

@@ -41,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"9.2"}
-    h3,h4,h5,h6{--heading-prefix:"9.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"10.2"}
+    h3,h4,h5,h6{--heading-prefix:"10.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Left logo - typically the publisher's logo - project or affiliate -->
@@ -91,8 +91,18 @@
   <li>
     <a href="index.html">Overview</a>
   </li>
-  <li>
-    <a href="specification.html">FHIR Design</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Design
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="specification.html">FHIR Design and Overview</a>
+      </li>
+      <li>
+        <a href="designexamples.html">URL Examples</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="transition.html">V3 Transition</a>
@@ -265,14 +275,13 @@
 
 
 <p>
-<p>This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):</p>
+<p>This capability statement describes the three use cases that are supported by the BC FHIR implementation of PLR.</p>
+
 <ul>
   <li>Maintain - used when an external source is communicating a change to PLR</li>
-  <li>Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)</li>
-  <li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)</li>
+  <li>Batch - allows for the sending of multiple Maintain transactions at one time</li>
+  <li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances</li>
 </ul>
-
-<p>All POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect …)</p>
 
 </p>
 
@@ -293,15 +302,13 @@
   
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><h2>BCPLRServerCapabilityStatement</h2><div><p>This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):</p>
+  <div xmlns="http://www.w3.org/1999/xhtml"><h2>BCPLRServerCapabilityStatement</h2><div><p>This capability statement describes the three use cases that are supported by the BC FHIR implementation of PLR.</p>
 <ul>
 <li>Maintain - used when an external source is communicating a change to PLR</li>
-<li>Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)</li>
-<li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)</li>
+<li>Batch - allows for the sending of multiple Maintain transactions at one time</li>
+<li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances</li>
 </ul>
-<p>All POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)</p>
-</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td><div><p>RESTful Atomic services</p>
-</div></td></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title="GET a resource (read interaction)">Read</b></th><th><b title="GET all set of resources of the type (search interaction)">Search</b></th><th><b title="PUT a new resource version (update interaction)">Update</b></th><th><b title="POST a new resource (create interaction)">Create</b></th></tr><tr><td>Practitioner</td><td><a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner</a><br/>Additional supported profiles:<br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle</a></td><td>y</td><td></td><td></td><td></td></tr><tr><td>PractitionerRole</td><td><a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role</a><br/>Additional supported profiles:<br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Organization</td><td><a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization</a><br/>Additional supported profiles:<br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle</a></td><td>y</td><td></td><td></td><td></td></tr><tr><td>OrganizationAffiliation</td><td><a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Location</td><td><a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location</a><br/>Additional supported profiles:<br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle</a></td><td>y</td><td></td><td></td><td></td></tr></table></div>
+</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td/></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title="GET a resource (read interaction)">Read</b></th><th><b title="GET all set of resources of the type (search interaction)">Search</b></th><th><b title="PUT a new resource version (update interaction)">Update</b></th><th><b title="POST a new resource (create interaction)">Create</b></th></tr><tr><td>Bundle</td><td>Supported profiles:<br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle</a><br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle</a><br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle</a><br/>  <a href="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle</a></td><td></td><td></td><td></td><td>y</td></tr></table></div>
 
   <!-- insert notes if present -->
   
@@ -332,7 +339,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 17, 2022 20:58+0000">2022-11-17</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 17, 2022 21:31+0000">2022-11-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
