@@ -101,7 +101,7 @@ The response also has an entry of OperationOutcome that has information, warning
 
 A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.
 
-#### Batch
+#### Batch - Not implemented yet
 Batch allows for many independent transactions to be sent in a single operation. It also uses Bundles, but a batch Bundle (Bundle.type = 'batch'), that wraps a number of Bundles. The batch Bundle is not expected in the parameters but as a JSON file. It must contain at least one or more of:
 
 1.	a collection-Bundle (with PractitionerRole(s) and Practitioner) to add/update an Individual Provider
