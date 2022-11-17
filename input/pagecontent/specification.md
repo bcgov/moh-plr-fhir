@@ -196,7 +196,7 @@ The following describes the request URL and which profiles are returned:
 |GET PractitionerRole/<IPC or Relationship-id>  |[BCPractitionerRole](StructureDefinition-bc-practitioner-role.html) for the practitioner's role and specialties information, and/or [BCRoleRelationship](StructureDefinition-bc-role-relationships.html), for the relationships info between practitioner and organization or location|
 |GET Location/<IFC> | [BCLocation](StructureDefinition-bc-location.html) |
 |GET Organization/<IPC> | [BCOrganization](StructureDefinition-bc-organization.html) |
-|GET OrganizationAffiliation/<IPC or Relationship-id> | [BCOrgnizationAffiliation](StructureDefinition-bc-organization-affiliation.html)|
+|GET OrganizationAffiliation/<IPC or Relationship-id> | [BCOrganizationAffiliation](StructureDefinition-bc-organization-affiliation.html)|
 {:.grid}
 
 ##### Practitioner 
@@ -256,14 +256,14 @@ GET PractitionerRole?location=Location/12343
 
 #####  OrganizationAffiliation
 
-This returns a single resource; id for OrganizationAffiliation is a relationship ID
+Returns a single resource; id for OrganizationAffiliation is a relationship ID
 ```htm
 GET OrganizationAffiliation/RELNS.1234.BC.PRS
 ```
  
 ###### OrganizationAffiliation - Parameters
 
-Paramaters to search with are:
+Parameters to search with are:
 * organization
 * location
 

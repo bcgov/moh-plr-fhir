@@ -91,14 +91,11 @@ Id: bc-practitioner-relationship-extension
 Title: "BC Practitioner to Practitioner Relationship Extension"
 Description: "Allows for relationships of practitioners to practitioners without needing CareTeam semantics."
 * extension contains 
-          PeriodExtension named period 1..1 MS and 
-          sourcePractitioner 1..1 MS and 
-	  targetPractitioner 1..1 MS and
+          PeriodExtension named period 1..1 MS and
+	    targetPractitioner 1..1 MS and
           type 1..1 MS and 
           EndReasonExtension named endReason 0..1 MS and
           OwnerExtension named owner 0..1 MS
-* extension[sourcePractitioner].value[x] only Reference(BCPractitioner)
-* extension[sourcePractitioner].value[x] 1..1 MS
 * extension[targetPractitioner].value[x] only Reference(BCPractitioner)
 * extension[targetPractitioner].value[x] 1..1 MS
 * extension[type].value[x] only CodeableConcept

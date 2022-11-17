@@ -127,8 +127,6 @@ Usage: #inline
 * url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension"
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2022-06-30"
-* extension[+].url = "sourcePractitioner"
-* extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-1
 * extension[+].url = "targetPractitioner"
 * extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-2
 * extension[+].url = "type"
@@ -142,8 +140,6 @@ Usage: #inline
 * url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension"
 * extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2022-06-30"
-* extension[+].url = "sourcePractitioner"
-* extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-1
 * extension[+].url = "targetPractitioner"
 * extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-2
 * extension[+].url = "type"
