@@ -10,7 +10,7 @@
   fhir:Resource.id [ fhir:value "bc-plr-server-capability-statement"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>BCPLRServerCapabilityStatement</h2><div><p>This capability statement describes the three use cases that are supported by the BC FHIR implementation of PLR.</p>\n<ul>\n<li>Maintain - used when an external source is communicating a change to PLR</li>\n<li>Batch - allows for the sending of multiple Maintain transactions at one time</li>\n<li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances</li>\n</ul>\n</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td/></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>Bundle</td><td>Supported profiles:<br/>  <a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle</a><br/>  <a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle</a><br/>  <a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle</a><br/>  <a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle</a></td><td></td><td></td><td></td><td>y</td></tr></table></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>BCPLRServerCapabilityStatement</h2><div><p>This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):</p>\n<ul>\n<li>Maintain - used when an external source is communicating a change to PLR</li>\n<li>Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)</li>\n<li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)</li>\n</ul>\n<p>All POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)</p>\n</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td><div><p>RESTful Atomic services</p>\n</div></td></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>Practitioner</td><td><a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner</a><br/>Additional supported profiles:<br/>  <a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle</a></td><td>y</td><td></td><td></td><td></td></tr><tr><td>PractitionerRole</td><td><a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role</a><br/>Additional supported profiles:<br/>  <a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Organization</td><td><a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization</a><br/>Additional supported profiles:<br/>  <a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle</a></td><td>y</td><td></td><td></td><td></td></tr><tr><td>OrganizationAffiliation</td><td><a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Location</td><td><a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location</a><br/>Additional supported profiles:<br/>  <a href=\"http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle\">http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle</a></td><td>y</td><td></td><td></td><td></td></tr></table></div>"
   ];
   fhir:CapabilityStatement.url [ fhir:value "http://hl7.org/fhir/ca-bc/provider/CapabilityStatement/bc-plr-server-capability-statement"];
   fhir:CapabilityStatement.version [ fhir:value "0.1.0"];
@@ -28,7 +28,7 @@
        fhir:ContactPoint.value [ fhir:value "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
      ]
   ];
-  fhir:CapabilityStatement.description [ fhir:value "This capability statement describes the three use cases that are supported by the BC FHIR implementation of PLR.\n\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances\n"];
+  fhir:CapabilityStatement.description [ fhir:value "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)\n\nAll POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)\n"];
   fhir:CapabilityStatement.jurisdiction [
      fhir:index 0;
      fhir:CodeableConcept.coding [
@@ -57,40 +57,23 @@
   fhir:CapabilityStatement.rest [
      fhir:index 0;
      fhir:CapabilityStatement.rest.mode [ fhir:value "server" ];
+     fhir:CapabilityStatement.rest.documentation [ fhir:value "RESTful Atomic services" ];
      fhir:CapabilityStatement.rest.resource [
        fhir:index 0;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Bundle" ];
+       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Practitioner" ];
+       fhir:CapabilityStatement.rest.resource.profile [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner>
+       ];
        fhir:CapabilityStatement.rest.resource.supportedProfile [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle";
          fhir:index 0;
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle>
-       ], [
-         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle";
-         fhir:index 1;
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle>
-       ], [
-         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle";
-         fhir:index 2;
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle>
-       ], [
-         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle";
-         fhir:index 3;
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-batch-bundle>
        ];
        fhir:CapabilityStatement.rest.resource.interaction [
          fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "create" ]
-       ]
-     ]
-  ], [
-     fhir:index 1;
-     fhir:CapabilityStatement.rest.mode [ fhir:value "server" ];
-     fhir:CapabilityStatement.rest.resource [
-       fhir:index 0;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Practitioner" ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "update" ]
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "RESTful GET service" ]
        ];
        fhir:CapabilityStatement.rest.resource.operation [
          fhir:index 0;
@@ -117,13 +100,60 @@
            fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-practitioner-query>
          ]
        ]
-     ]
-  ], [
-     fhir:index 2;
-     fhir:CapabilityStatement.rest.mode [ fhir:value "server" ];
-     fhir:CapabilityStatement.rest.resource [
-       fhir:index 0;
+     ], [
+       fhir:index 1;
+       fhir:CapabilityStatement.rest.resource.type [ fhir:value "PractitionerRole" ];
+       fhir:CapabilityStatement.rest.resource.profile [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
+       ];
+       fhir:CapabilityStatement.rest.resource.supportedProfile [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships";
+         fhir:index 0;
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships>
+       ];
+       fhir:CapabilityStatement.rest.resource.interaction [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "RESTful GET service" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "RESTful Search" ]
+       ];
+       fhir:CapabilityStatement.rest.resource.searchParam [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "organization" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Organization IPC unique identifier" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "practitioner" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Practitioner IPC unique identifier" ]
+       ], [
+         fhir:index 2;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "location" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Location IFC unique identifier" ]
+       ]
+     ], [
+       fhir:index 2;
        fhir:CapabilityStatement.rest.resource.type [ fhir:value "Organization" ];
+       fhir:CapabilityStatement.rest.resource.profile [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization>
+       ];
+       fhir:CapabilityStatement.rest.resource.supportedProfile [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle";
+         fhir:index 0;
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle>
+       ];
+       fhir:CapabilityStatement.rest.resource.interaction [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "RESTful GET service" ]
+       ];
        fhir:CapabilityStatement.rest.resource.operation [
          fhir:index 0;
          fhir:Element.extension [
@@ -149,13 +179,50 @@
            fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-organization-query>
          ]
        ]
-     ]
-  ], [
-     fhir:index 3;
-     fhir:CapabilityStatement.rest.mode [ fhir:value "server" ];
-     fhir:CapabilityStatement.rest.resource [
-       fhir:index 0;
+     ], [
+       fhir:index 3;
+       fhir:CapabilityStatement.rest.resource.type [ fhir:value "OrganizationAffiliation" ];
+       fhir:CapabilityStatement.rest.resource.profile [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation>
+       ];
+       fhir:CapabilityStatement.rest.resource.interaction [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "RESTful GET service" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "RESTful Search" ]
+       ];
+       fhir:CapabilityStatement.rest.resource.searchParam [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "organization" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Organization IPC unique identifier" ]
+       ], [
+         fhir:index 1;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "location" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ];
+         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Location IFC unique identifier" ]
+       ]
+     ], [
+       fhir:index 4;
        fhir:CapabilityStatement.rest.resource.type [ fhir:value "Location" ];
+       fhir:CapabilityStatement.rest.resource.profile [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location>
+       ];
+       fhir:CapabilityStatement.rest.resource.supportedProfile [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle";
+         fhir:index 0;
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle>
+       ];
+       fhir:CapabilityStatement.rest.resource.interaction [
+         fhir:index 0;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ];
+         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "RESTful GET service" ]
+       ];
        fhir:CapabilityStatement.rest.resource.operation [
          fhir:index 0;
          fhir:Element.extension [
@@ -181,39 +248,15 @@
            fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-location-query>
          ]
        ]
-     ]
-  ], [
-     fhir:index 4;
-     fhir:CapabilityStatement.rest.mode [ fhir:value "server" ];
-     fhir:CapabilityStatement.rest.resource [
+     ];
+     fhir:CapabilityStatement.rest.operation [
        fhir:index 0;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Bundle" ];
-       fhir:CapabilityStatement.rest.resource.supportedProfile [
-         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle";
-         fhir:index 0;
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle>
-       ], [
-         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle";
-         fhir:index 1;
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle>
-       ], [
-         fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle";
-         fhir:index 2;
-         fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-bundle>
+       fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "maintain" ];
+       fhir:CapabilityStatement.rest.resource.operation.definition [
+         fhir:value "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-maintain";
+         fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-maintain>
        ];
-       fhir:CapabilityStatement.rest.resource.operation [
-         fhir:index 0;
-         fhir:Element.extension [
-           fhir:index 0;
-           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ];
-           fhir:Extension.valueCode [ fhir:value "SHALL" ]
-         ];
-         fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "maintain" ];
-         fhir:CapabilityStatement.rest.resource.operation.definition [
-           fhir:value "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-maintain";
-           fhir:link <http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-maintain>
-         ]
-       ]
+       fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "A BC resource Bundle is sent to create/update one resource" ]
      ]
   ] .
 

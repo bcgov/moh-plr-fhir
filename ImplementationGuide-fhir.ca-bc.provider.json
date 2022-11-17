@@ -10,7 +10,7 @@
   "name": "BCProviderRegistry",
   "title": "BC Provider Location Registry FHIR Implementation Guide",
   "status": "draft",
-  "date": "2022-11-17T21:31:13+00:00",
+  "date": "2022-11-17T21:33:43+00:00",
   "publisher": "BC Ministry of Health",
   "contact": [
     {
@@ -730,8 +730,8 @@
       },
       {
         "id": "AtomicRestfulQueryResponse",
-        "name": "Atomic Restful Query",
-        "description": "Atomic Restful Query Responses"
+        "name": "Atomic RESTful Query",
+        "description": "Atomic RESTful Query Responses"
       },
       {
         "id": "Extensions",
@@ -2498,7 +2498,7 @@
           "reference": "CapabilityStatement/bc-plr-server-capability-statement"
         },
         "name": "BCPLRServerCapabilityStatement",
-        "description": "This capability statement describes the three use cases that are supported by the BC FHIR implementation of PLR.\n\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances",
+        "description": "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)\n\nAll POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)",
         "exampleBoolean": true,
         "groupingId": "Capabilities"
       }
