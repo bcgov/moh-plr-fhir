@@ -16,7 +16,7 @@ Any other PractitionerRole instances will hold the relationships between an Indi
 #### Organizational Provider
 Each Organizational Provider is composed of an [Organization instance](StructureDefinition-bc-organization.html) with zero or more [OrganizationAffiliation instances](StructureDefinition-bc-organization-affiliation.html) and zero or more [PractitionerRole instances](StructureDefinition-bc-practitioner-role.html).
 
-The PractitionerRole is used to represent relationships from Organizational Providers to Individual Providers. OrganizationAffiliation holds the relationship betwen two different Organizational Providers as well as the relationship between an Organizational Provider and Facilities.  A single OrganizationAffilication instance contains a single relationship.  Thus multiple OrganizationAffilications will be required to represent multiple relationships.  The same applies to PractitionerRole.
+The PractitionerRole is used to represent relationships from Individual Providers to Organizational Providers. OrganizationAffiliation holds the relationship betwen two different Organizational Providers as well as the relationship between an Organizational Provider and Facilities.  A single OrganizationAffilication instance contains a single relationship.  Thus multiple OrganizationAffilications will be required to represent multiple relationships.  The same applies to PractitionerRole.
 
 #### Facility
 
@@ -102,7 +102,7 @@ The response also has an entry of OperationOutcome that has information, warning
 A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.
 
 #### Batch
-Batch allows for many independent transactions to be sent in a single operation. It also uses Bundles, but a batch Bundle (Bundle.type = 'batch'), that wraps a number of Bundles. The batch Bundle is not expected in the parameters but as a JSON file. It must contain at least one or more of:
+Batch allows for many independent transactions to be sent in a single operation. It also uses Bundles, but a batch Bundle (Bundle.type = 'batch'), that wraps a number of other Bundles. It must contain at least one or more of:
 
 1.	a collection-Bundle (with PractitionerRole(s) and Practitioner) to add/update an Individual Provider
 2.	a collection-Bundle (with OrganizationAffiliation(s), PractitionerRole(s) and Organization) to add/update an Organizational Provider
@@ -110,22 +110,24 @@ Batch allows for many independent transactions to be sent in a single operation.
 
 The response Bundle is similarly structured to the request, populating and echoing back the results of each contained Bundle.  The only difference is that OperationOutcome SHALL also be included for each collection-Bundle for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn't processed due to validation or non-business errors.
 
-#### Query
-PLR FHIR has defined a set of FHIR Operations to search for Providers and Facilities.  These are the only queries that are supported by PLR.  RESTful queries on the support resources are not allowed.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR's case, the server would need to include resources that make up the full Provider and additionally return related Providers or Facilities.  Queries using PractitionerRole and OrganizationAffiliation are not permitted and unnecessary.
+The Batch interface is only available on PLR's FTP interface, not web services, at this time.
+
+#### Query Part 1 - Operations
+PLR FHIR has defined a set of FHIR Operations to search for Providers and Facilities.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR's case, the server would need to include resources that make up the full Provider and additionally return related Providers or Facilities.
 
 The two query operations are:
 
-* $entityQuery - used to return the full [Provider](OperationDefinition-bc-entity-practitioner-query.html) or [organization](OperationDefinition-bc-entity-organization-query.html) or [Facility](OperationDefinition-bc-entity-location-query.html) without following relationships
-* $extendedQuery - used to return the full [Provider](OperationDefinition-bc-extended-practitioner-query.html) or [organization](OperationDefinition-bc-extended-organization-query.html) or [Facility](OperationDefinition-bc-extended-location-query.html) along with all directly referenced Providers or facilities
+* $entityQuery - used to return the full [Individual](OperationDefinition-bc-entity-practitioner-query.html) or [Organization](OperationDefinition-bc-entity-organization-query.html) or [Facility](OperationDefinition-bc-entity-location-query.html) without following relationships
+* $extendedQuery - used to return the full [Individual](OperationDefinition-bc-extended-practitioner-query.html) or [Organization](OperationDefinition-bc-extended-organization-query.html) or [Facility](OperationDefinition-bc-extended-location-query.html) along with all directly referenced Individuals, Organizations or Facilities
 
 The syntax for the $entityQuery operation is:
 
-* GET /resource/id/$entityQuery to retrieve a specific Provider or Facility where the id is known
+* GET /resource/<id>/$entityQuery to retrieve a specific Provider or Facility where the id is known
 * GET /resource/$entityQuery?param1&param2&... to search for a Provider or Facility with search parameters instead of an id
 
-Although PLR supports many different types of identifiers, the resource id is the identifier assigned by PLR when the resource is created, internally called the IPC for Providers and IFC for Facilities.  This id is always returned in the response and should be persisted by the requestor.  To search for other identifiers stored in PLR and attached to Providers or Facilities, the search parameter 'identifier' should be used.
+Although PLR supports many different types of identifiers, the resource id is the identifier assigned by PLR when the resource is created, internally called the IPC for Providers and IFC for Facilities.  This id is always returned in the response and should be persisted by the requestor.  To search for other identifiers stored in PLR and attached to Providers or Facilities, the search parameter 'identifier' and 'identifier-type' should be used.
 
-The parameters for the $entityQuery operation will be the search parameters listed below.
+The parameters for the $entityQuery operation will be the search parameters listed further below.
 
 The syntax for the $extendedQuery operation is:
 
@@ -180,186 +182,98 @@ A FHIR example of a real message can be found [here](Bundle-Example-Response-Que
 ||identifier|String identifier value
 ||identifier-type|String code, the type of Identifier, e.g. LOCID
 
-###### Query URL Examples
+#### Query Part 2
 
-Search for Individual Provider (aka Practitioner + PractitionerRoles) by FHIR system id
+The initial design covers all the use cases where the user is interested in receiving or updating the full Provider (Individual or Organizational) or Facility (Location) dataset. As a result several FHIR resources are returned or submitted in a Bundle; those resources represent the full dataset of a Provider or Facility. 
 
-      https://fhir.server/Practitioner/IPC.00012343.BC.PRS/$entityQuery
+A resource based RESTful approach breaks down queries into resource focused, interactions.
 
-Search for Individiual Provider by College identifier
+The following describes the request URL and which profiles are returned:
 
-      https://fhir.server/Practitioner/$entityQuery?identifier=1234&identifier-type=CPSID
+|Request URL|Instance Returned|
+|:----|:----|
+|GET Practitioner/<IPC> | [BCPractitioner](StructureDefinition-bc-practitioner.html) |
+|GET PractitionerRole/<IPC or Relationship-id>  |[BCPractitionerRole](StructureDefinition-bc-practitioner-role.html) for the practitioner's role and specialties information, and/or [BCRoleRelationship](StructureDefinition-bc-role-relationships.html), for the relationships info between practitioner and organization or location|
+|GET Location/<IFC> | [BCLocation](StructureDefinition-bc-location.html) |
+|GET Organization/<IPC> | [BCOrganization](StructureDefinition-bc-organization.html) |
+|GET OrganizationAffiliation/<IPC or Relationship-id> | [BCOrgnizationAffiliation](StructureDefinition-bc-organization-affiliation.html)|
+{:.grid}
 
-Search for an Organization by name with wildcard
-
-      https://fhir.server/Organization/$entityQuery?name=Jan*
-
-Search for a Location by Health Authority and return all related Organizations and Providers (space in Interior Health is encoded in URL to %20)
-
-      https://fhir.server/Location/$extendedQuery?healthAuthority=Interior%20Health
-
-
-
-### Atomic Resource-based RESTful queries
-
-The initial design covers all the use cases where the user is interested in receiving or updating the full Provider (Individual or Organizational) or Facility dataset. As a result several FHIR resources are returned or submitted in a Bundle; those resources represent the full dataset. 
-
-A resource based RESTful approach is allowing the entityQuery operations described above (i.e. Practitioner/IPC/$entityQuery, Location/IFC/$entityQuery and Organization/IPC/$entityQuery) to be broken down into more atomic, resource focused, interactions.
-
-At the moment, this design will only implement the GET queries (GET by ID and GET Search queries), using these parameters:
-* practitioner
-* location
-* organization
-* participatingOrganization
-
-
-The following Profiles are needed to support the main PLR Use Cases with Restful queries:
-1.	GET Practitioner/ - instance of [BCPractitioner](StructureDefinition-bc-practitioner.html) 
-2.	GET PractitionerRole/ - will return PractitionerRole:
-* instance of [BCPractitionerRole](StructureDefinition-bc-practitioner-role.html) for the practitioner's role and specialties information
-* instance of [BCRoleRelationship](StructureDefinition-bc-role-relationships.html), for the relationships info between practitioner and organization or location
-3.	GET Location/ - instance of [BCLocation](StructureDefinition-bc-location.html)
-4.	GET Organization/ - instance of [BCOrganization](StructureDefinition-bc-organization.html)
-5.	GET OrganizationAffiliation/ - instance of [BCOrganizationAffiliation](StructureDefinition-bc-organization-affiliation.html)
-
-
-
-#### Practitioner 
-
-##### GET query 
-
-Return a single ressource - ID for Practitioner is the **IPC identifier**
+##### Practitioner 
+Returns a single ressource; id for Practitioner is the **IPC identifier**
 ```htm
 GET Practitioner/IPC.00012343.BC.PRS 
 ```
 
-
-#### Organization 
-
-##### GET query 
-
-Return a single ressource -  ID for Organization is the **IPC identifier**
+##### Organization 
+Returns a single resource; id for Organization is the **IPC identifier**
 ```htm
 GET Organization/IPC.00012343.BC.PRS
 ```
 
 
-
-#### Location 
-
-##### GET query
-Return a single ressource - ID for Location is the **IFC identifier**
+##### Location 
+Returns a single resource; id for Location is the **IFC identifier**
 ```htm
 GET Location/12345
 ``` 
+##### PractitionerRole 
 
-
-
-#### PractitionerRole 
-
-##### GET query 
-
-ID for PractitionerRole can be 
+Id for PractitionerRole can be 
 * the **IPC identifier** for the BCPractionerRole instance carrying the Practionner's role and specialties information
 ```htm
 GET PractitionerRole/IPC.00012343.BC.PRS
 ```
-* or a **relationship CHID** (character id) that will return a single BCRoleRelationship instance
+* or a **relationship identifier** that will return a single BCRoleRelationship instance
 ```htm
-GET PractitionerRole/Relationship1-ID
+GET PractitionerRole/RELNS.1234.BC.PRS
 ```
 
 
+###### PractitionerRole - Parameters
 
-##### GET Search query - return many PractitionerRole
-
-Parameters to search with are:
+Several search parameters are available:
 * practitioner
 * organization
 * location
 
 
-Returns all the PractitionerRoles related to a Practitioner (BCPractionerRole and BCRoleRelationship)
+This returns all the PractitionerRoles related to a Practitioner (BCPractionerRole and BCRoleRelationship)
 ```htm
 GET PractitionerRole?practitioner=Practitioner/IPC.00012343.BC.PRS
 ```
 
-Returns all the PractitionerRoles related to an Organization (of instance BCRoleRelationship only)
+This returns all the PractitionerRoles related to an Organization (of instance BCRoleRelationship only)
 ```htm
 GET PractitionerRole?organization=Organization/IPC.00012343.BC.PRS
 ```
 
-Returns all the PractitionerRoles related to a Location (of instance BCRoleRelationship only)
+This returns all the PractitionerRoles related to a Location (of instance BCRoleRelationship only)
 ```htm
 GET PractitionerRole?location=Location/12343
 ```
 
 
-####  OrganizationAffiliation
+#####  OrganizationAffiliation
 
-##### GET query
-
-Return a single ressource - ID for OrganizationAffiliation is a relationship CHID (character id)
+This returns a single resource; id for OrganizationAffiliation is a relationship ID
 ```htm
-GET OrganizationAffiliation/Relationship3-ID 
+GET OrganizationAffiliation/RELNS.1234.BC.PRS
 ```
  
-
-##### GET Search query - Return many OrganizationAffiliation
+###### OrganizationAffiliation - Parameters
 
 Paramaters to search with are:
 * organization
 * location
 
-
+This returns all OrganizationAffiliations for the specified Organization
 ```htm
 GET OrganizationAffiliation?organization=Organization/IPC.00012343.BC.PRS
+```
+
+This returns all OrganizationAffiliations for the specified Location
+```htm
 GET OrganizationAffiliation?location=Location/12343
 ```
 
-
-#### Examples
-
-For example, the full Provider returned in a Bundle by the following query 
-```htm
-GET Practitioner/IPC.00012343.BC.PRS/$entityQuery
-```
-can also be accomplished by a more 'chatty' interface, with multiple simple restful queries:
-```htm
-GET Practitioner/IPC.00012343.BC.PRS  
-GET PractitionerRole/IPC.00012343.BC.PRS 
-GET PractitionerRole?practitioner=Practitioner/IPC.00012343.BC.PRS
-GET PractitionerRole/Relationship1-ID 
-...
-```
-Details:
-
-2nd line will return only the unique PractionnerRole of instance BCPractitionerRole that carries the Practitionner role and specialties information.
-
-3rd line will return all the PractionnerRole for a Practionner, including the BCPractitionerRole and all the BCRoleRelationship.
-
-4th line will return a single PractionnerRole of instance BCRoleRelationship that carries some relationship information.
-
-
-Or in the case of **Organization**:
-```htm
-GET Organization/IPC.00012343.BC.PRS  
-GET PractitionerRole?organization=Organization/IPC.00012343.BC.PRS  
-GET PractitionerRole/Relationship1-ID  
-...
-GET OrganizationAffiliation?organization=Organization/IPC.00012343.BC.PRS  
-GET OrganizationAffiliation/Relationship2-ID
-...
-```
-
-
-And the same applies to **Location**:
-```htm
-GET Location/12343  
-GET PractitionerRole?location=Location/12343  
-GET PractitionerRole/Relationship1-ID  
-... 
-GET OrganizationAffiliation?location=Location/12343  
-GET OrganizationAffiliation/Relationship3-ID  
-...
-```
