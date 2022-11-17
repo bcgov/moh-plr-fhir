@@ -129,7 +129,7 @@ Usage: #inline
 * extension[=].valuePeriod.start = "2022-06-30"
 * extension[+].url = "targetPractitioner"
 * extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-2
-* extension[+].url = "type"
+* extension[+].url = "relationshipType"
 * extension[=].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT 
 
@@ -142,7 +142,7 @@ Usage: #inline
 * extension[=].valuePeriod.start = "2022-06-30"
 * extension[+].url = "targetPractitioner"
 * extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-2
-* extension[+].url = "type"
+* extension[+].url = "relationshipType"
 * extension[=].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT 
 * extension[+] = Example-OC-MOH
