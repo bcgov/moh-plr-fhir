@@ -1,9 +1,9 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 63, warn = 22, info = 157
-IG Publisher Version: 1.2.15
-Generated Thu Nov 17 23:38:27 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
+err = 66, warn = 24, info = 165
+IG Publisher Version: 1.2.17
+Generated Fri Nov 18 20:39:41 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#0.1.0 (canonical = http://hl7.org/fhir/ca-bc/provider)
  Build Errors : 0 / 4 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 0 / 9
  /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 0 / 0 / 12
@@ -12,6 +12,13 @@ Generated Thu Nov 17 23:38:27 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 5 / 6 / 68
  /github/workspace/fsh-generated/resources/Bundle-Example-DistributeOrganization-Bundle : 0 / 0 / 23
  /github/workspace/fsh-generated/resources/Bundle-Example-DistributePractitioner-Bundle : 3 / 6 / 46
+ /github/workspace/fsh-generated/resources/Bundle-Example-GET-Location-Response : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Bundle-Example-GET-Organization-Response : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Bundle-Example-GET-OrganizationAffiliation-Response : 0 / 0 / 7
+ /github/workspace/fsh-generated/resources/Bundle-Example-GET-OrganizationAffiliation-byOrganization-Response : 1 / 0 / 10
+ /github/workspace/fsh-generated/resources/Bundle-Example-GET-Practitioner-Response : 2 / 3 / 21
+ /github/workspace/fsh-generated/resources/Bundle-Example-GET-PractitionerRole-Response : 0 / 0 / 7
+ /github/workspace/fsh-generated/resources/Bundle-Example-GET-PractitionerRole-byPractitioner-Response : 0 / 3 / 16
  /github/workspace/fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle : 5 / 6 / 45
  /github/workspace/fsh-generated/resources/Bundle-Example-Organizational-Provider-Bundle : 5 / 2 / 29
  /github/workspace/fsh-generated/resources/Bundle-Example-Response-Query-Organization-Bundle : 3 / 1 / 28
@@ -41,6 +48,7 @@ Generated Thu Nov 17 23:38:27 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7047 : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7049 : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-MaintainSuccess : 0 / 0 / 2
+ /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-Success : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/Organization-Example-Atomic-Organization : 0 / 0 / 6
  /github/workspace/fsh-generated/resources/Organization-Example-Credential-Granting-Institution : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-Example-Organization-1 : 0 / 0 / 6
@@ -195,6 +203,26 @@ INFORMATION: Bundle/Example-DistributePractitioner-Bundle: Bundle.entry[0].resou
 INFORMATION: Bundle/Example-DistributePractitioner-Bundle: Bundle.entry[0].resource.communication[0].coding[0]: Code System URI 'https://plr.hlth.gov.bc.ca/plr/codes/bc-language-code' is unknown so the code cannot be validated
 INFORMATION: Bundle/Example-DistributePractitioner-Bundle: Bundle.entry[0].resource.communication[0].extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner|0.1.0
 WARNING: Bundle/Example-DistributePractitioner-Bundle: Bundle.entry[0].resource.communication[0].coding[0]: Unable to check whether code is in value set http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-language-value-set: [Code System URI 'https://plr.hlth.gov.bc.ca/plr/codes/bc-language-code' is unknown so the code cannot be validated]
+== fsh-generated/resources/Bundle-Example-GET-Location-Response.json ==
+== fsh-generated/resources/Bundle-Example-GET-Organization-Response.json ==
+INFORMATION: Bundle/Example-GET-Organization-Response: Bundle.entry[1].resource.ofType(Organization).address[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization|0.1.0
+INFORMATION: Bundle/Example-GET-Organization-Response: Bundle.entry[1].resource.ofType(Organization).address[0].extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization|0.1.0
+== fsh-generated/resources/Bundle-Example-GET-OrganizationAffiliation-Response.json ==
+== fsh-generated/resources/Bundle-Example-GET-OrganizationAffiliation-byOrganization-Response.json ==
+ERROR: Bundle/Example-GET-OrganizationAffiliation-byOrganization-Response: Bundle: Rule bdl-7: 'FullUrl must be unique in a bundle, or else entries with the same fullUrl must have different meta.versionId (except in history bundles)' Failed
+== fsh-generated/resources/Bundle-Example-GET-Practitioner-Response.json ==
+ERROR: Bundle/Example-GET-Practitioner-Response: Bundle.entry[1].resource.ofType(Practitioner).extension[2]: Extension.extension: minimum required = 4, but only found 3 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension|0.1.0)
+ERROR: Bundle/Example-GET-Practitioner-Response: Bundle.entry[1].resource.ofType(Practitioner).extension[2]: Extension.extension:statusClassCode: minimum required = 1, but only found 0 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension|0.1.0)
+INFORMATION: Bundle/Example-GET-Practitioner-Response: Bundle.entry[1].resource.ofType(Practitioner).communication[0]: None of the codings provided are in the value set 'Common Languages' (http://hl7.org/fhir/ValueSet/languages|4.0.1), and a coding is recommended to come from this value set) (codes = https://plr.hlth.gov.bc.ca/plr/codes/bc-language-code#EN)
+INFORMATION: Bundle/Example-GET-Practitioner-Response: Bundle.entry[1].resource.ofType(Practitioner).communication[0].coding[0]: Code System URI 'https://plr.hlth.gov.bc.ca/plr/codes/bc-language-code' is unknown so the code cannot be validated
+INFORMATION: Bundle/Example-GET-Practitioner-Response: Bundle.entry[1].resource.ofType(Practitioner).address[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner|0.1.0
+INFORMATION: Bundle/Example-GET-Practitioner-Response: Bundle.entry[1].resource.ofType(Practitioner).address[0].extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner|0.1.0
+INFORMATION: Bundle/Example-GET-Practitioner-Response: Bundle.entry[1].resource.ofType(Practitioner).communication[0].extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner|0.1.0
+WARNING: Bundle/Example-GET-Practitioner-Response: Bundle.entry[1].resource.ofType(Practitioner).communication[0].coding[0]: Unable to check whether code is in value set http://hl7.org/fhir/ca-bc/provider/ValueSet/bc-language-value-set: [Code System URI 'https://plr.hlth.gov.bc.ca/plr/codes/bc-language-code' is unknown so the code cannot be validated]
+== fsh-generated/resources/Bundle-Example-GET-PractitionerRole-Response.json ==
+== fsh-generated/resources/Bundle-Example-GET-PractitionerRole-byPractitioner-Response.json ==
+WARNING: Bundle/Example-GET-PractitionerRole-byPractitioner-Response: Bundle.entry[1].resource.ofType(PractitionerRole).practitioner: URN reference is not locally contained within the bundle urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87
+INFORMATION: Bundle/Example-GET-PractitionerRole-byPractitioner-Response: Bundle.entry[1].resource.ofType(PractitionerRole).specialty[0]: None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1), and a coding is recommended to come from this value set) (codes = https://fhir.infoway-inforoute.ca/CodeSystem/scpqual#AMD53)
 == fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle.json ==
 INFORMATION: Bundle/Example-Individual-Provider-Bundle: Bundle.entry[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle|0.1.0
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle: Bundle.entry:Practitioner: minimum required = 1, but only found 0 (from http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle|0.1.0)
@@ -292,6 +320,7 @@ INFORMATION: Bundle/Example-UpdatePractitioner-LicenseStatus-Bundle: Bundle.entr
 == fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7047.json ==
 == fsh-generated/resources/OperationOutcome-Example-OperationOutcome-7049.json ==
 == fsh-generated/resources/OperationOutcome-Example-OperationOutcome-MaintainSuccess.json ==
+== fsh-generated/resources/OperationOutcome-Example-OperationOutcome-Success.json ==
 == fsh-generated/resources/Organization-Example-Atomic-Organization.json ==
 INFORMATION: Organization/Example-Atomic-Organization: Organization.address[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization|0.1.0
 INFORMATION: Organization/Example-Atomic-Organization: Organization.address[0].extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization|0.1.0
