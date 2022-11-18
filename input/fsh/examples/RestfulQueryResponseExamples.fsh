@@ -78,6 +78,7 @@ Description: "Example of an Organization."
 * active = true
 * extension[+] = Example-Note
 
+
 Instance: Example-Atomic-OrganizationAffiliation-OrgRef
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Organization relationship."
@@ -121,3 +122,78 @@ Description: "Example of a Location."
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.code = #MC
 * address = Example-Address-Valid
+
+
+
+Instance: Example-GET-Practitioner-Response
+InstanceOf: Bundle
+Description: "Example of a response returning one Practioner."
+* type = #collection
+* entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
+* entry[=].resource = Example-OperationOutcome-Success
+* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[=].resource = Example-Atomic-Practitioner
+
+
+Instance: Example-GET-Organization-Response
+InstanceOf: Bundle
+Description: "Example of a response returning one Organization."
+* type = #collection
+* entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
+* entry[=].resource = Example-OperationOutcome-Success
+* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[=].resource = Example-Atomic-Organization
+
+
+Instance: Example-GET-Location-Response
+InstanceOf: Bundle
+Description: "Example of a response returning one Location"
+* type = #collection
+* entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
+* entry[=].resource = Example-OperationOutcome-Success
+* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[=].resource = Example-Atomic-Location
+
+
+Instance: Example-GET-OrganizationAffiliation-Response
+InstanceOf: Bundle
+Description: "Example of a response returning one OrganizationAffiliation"
+* type = #collection
+* entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
+* entry[=].resource = Example-OperationOutcome-Success
+* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[=].resource = Example-Atomic-OrganizationAffiliation-OrgRef
+
+
+Instance: Example-GET-OrganizationAffiliation-byOrganization-Response
+InstanceOf: Bundle
+Description: "Example of a response returning list of OrganizationAffiliation"
+* type = #collection
+* entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
+* entry[=].resource = Example-OperationOutcome-Success
+* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[=].resource = Example-Atomic-OrganizationAffiliation-OrgRef
+* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[=].resource = Example-Atomic-OrganizationAffiliation-LocRef
+
+Instance: Example-GET-PractitionerRole-Response
+InstanceOf: Bundle
+Description: "Example of a response returning one PractitionerRole"
+* type = #collection
+* entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
+* entry[=].resource = Example-OperationOutcome-Success
+* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[=].resource = Example-Atomic-PractitionerRole-LocRef
+
+Instance: Example-GET-PractitionerRole-byPractitioner-Response
+InstanceOf: Bundle
+Description: "Example of a response returning all the PractitionerRole for one practitioner"
+* type = #collection
+* entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
+* entry[=].resource = Example-OperationOutcome-Success
+* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[=].resource = Example-Atomic-PractitionerRole-RoleSpecialty
+* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7b2"
+* entry[=].resource = Example-Atomic-PractitionerRole-LocRef
+* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7b3"
+* entry[=].resource = Example-Atomic-PractitionerRole-OrgRef
