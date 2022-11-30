@@ -26,11 +26,11 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category">
     <valueCode value="not-classified"/>
   </extension>
-  <url value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-bundle"/>
+  <url value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"/>
   <version value="0.9.9"/>
   <name value="BCPractitionerBundle"/>
   <status value="active"/>
-  <date value="2022-11-30T20:32:54+00:00"/>
+  <date value="2022-11-30T20:54:53+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -1790,7 +1790,7 @@
       </base>
       <type>
         <code value="Practitioner"/>
-        <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
+        <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"/>
       </type>
       <constraint>
         <key value="dom-2"/>
@@ -1851,7 +1851,7 @@
         <severity value="error"/>
         <human value="The number of qualifications must match the number of contained resources."/>
         <expression value="qualification.count()=contained.count()"/>
-        <source value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
+        <source value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
@@ -2827,7 +2827,7 @@
       </base>
       <type>
         <code value="PractitionerRole"/>
-        <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+        <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"/>
       </type>
       <constraint>
         <key value="dom-2"/>
@@ -2880,7 +2880,7 @@
         <severity value="error"/>
         <human value="The organization and location references are not permitted in this profile."/>
         <expression value="organization.count()=0 and location.count()=0"/>
-        <source value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+        <source value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
@@ -3856,7 +3856,7 @@
       </base>
       <type>
         <code value="PractitionerRole"/>
-        <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
+        <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
       </type>
       <constraint>
         <key value="dom-2"/>
@@ -3909,7 +3909,7 @@
         <severity value="error"/>
         <human value="One organization or one location allowed; not both."/>
         <expression value="organization.count()=1 xor location.count()=1"/>
-        <source value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
+        <source value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
@@ -4755,7 +4755,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="Practitioner"/>
-        <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
+        <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"/>
       </type>
     </element>
     <element id="Bundle.entry:PractitionerRole">
@@ -4769,7 +4769,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="PractitionerRole"/>
-        <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
+        <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"/>
       </type>
     </element>
     <element id="Bundle.entry:RoleRelationship">
@@ -4783,7 +4783,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="PractitionerRole"/>
-        <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
+        <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
       </type>
     </element>
   </differential>

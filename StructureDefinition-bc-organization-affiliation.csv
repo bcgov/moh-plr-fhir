@@ -22,11 +22,11 @@ anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"OrganizationAffiliation.extension:endReason","OrganizationAffiliation.extension","endReason","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-end-reason-extension]]} {[]}
+"OrganizationAffiliation.extension:endReason","OrganizationAffiliation.extension","endReason","","",0,1,"Y","","","Extension {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension]]} {[]}
 ","BC End Reason Extension","Tracking end reason.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"OrganizationAffiliation.extension:owner","OrganizationAffiliation.extension","owner","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-owner-extension]]} {[]}
+"OrganizationAffiliation.extension:owner","OrganizationAffiliation.extension","owner","","",0,1,"Y","","","Extension {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension]]} {[]}
 ","BC Owner Extension","Tracking the owner.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -45,10 +45,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "OrganizationAffiliation.period","OrganizationAffiliation.period","","","",0,1,"Y","","Y","Period {[]} {[]}
 ","The period during which the participatingOrganization is affiliated with the primary organization","The period during which the participatingOrganization is affiliated with the primary organization.","","An affiliation may be created ahead of time and only be active for a defined period of time. Once the affiliation is complete, the fact that it existed may still be required.","","","","","","","",,,,,"",,,,"OrganizationAffiliation.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".performance[@typeCode <= 'PPRF'].ActDefinitionOrEvent.effectiveTime","FiveWs.done[x]"
-"OrganizationAffiliation.organization","OrganizationAffiliation.organization","","","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization]]}
+"OrganizationAffiliation.organization","OrganizationAffiliation.organization","","","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization]]}
 ","Organization where the role is available","Organization where the role is available (primary organization/has members).","","","","","","","","","",,,,,"",,,,"OrganizationAffiliation.organization",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".scoper"
-"OrganizationAffiliation.participatingOrganization","OrganizationAffiliation.participatingOrganization","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization]]}
+"OrganizationAffiliation.participatingOrganization","OrganizationAffiliation.participatingOrganization","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization]]}
 ","Organization that provides/performs the role (e.g. providing services or is a member of)","The Participating Organization provides/performs the role(s) defined by the code to the Primary Organization (e.g. providing services or is a member of).","","","","","","","","","",,,,,"",,,,"OrganizationAffiliation.participatingOrganization",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".player"
 "OrganizationAffiliation.network","OrganizationAffiliation.network","","","",0,*,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
@@ -60,7 +60,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "OrganizationAffiliation.specialty","OrganizationAffiliation.specialty","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
 ","Specific specialty of the participatingOrganization in the context of the role","Specific specialty of the participatingOrganization in the context of the role.","","","","","","","","","",,"preferred","Specific specialty associated with the participating organization.","http://hl7.org/fhir/ValueSet/c80-practice-codes","",,,,"OrganizationAffiliation.specialty",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".player.HealthCareProvider[@classCode = 'PROV'].code"
-"OrganizationAffiliation.location","OrganizationAffiliation.location","","","",0,*,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location]]}
+"OrganizationAffiliation.location","OrganizationAffiliation.location","","","",0,*,"Y","","Y","Reference {[]} {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location]]}
 ","The location(s) at which the role occurs","The location(s) at which the role occurs.","","","","","","","","","",,,,,"",,,,"OrganizationAffiliation.location",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".performance.ActDefinitionOrEvent.ServiceDeliveryLocation[@classCode = 'SDLOC']","FiveWs.where[x]"
 "OrganizationAffiliation.healthcareService","OrganizationAffiliation.healthcareService","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/HealthcareService]]}

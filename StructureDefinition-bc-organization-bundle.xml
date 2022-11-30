@@ -26,11 +26,11 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category">
     <valueCode value="not-classified"/>
   </extension>
-  <url value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-bundle"/>
+  <url value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"/>
   <version value="0.9.9"/>
   <name value="BCOrganizationBundle"/>
   <status value="active"/>
-  <date value="2022-11-30T20:32:54+00:00"/>
+  <date value="2022-11-30T20:54:53+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -1790,7 +1790,7 @@
       </base>
       <type>
         <code value="Organization"/>
-        <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
+        <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"/>
       </type>
       <constraint>
         <key value="dom-2"/>
@@ -2820,7 +2820,7 @@
       </base>
       <type>
         <code value="OrganizationAffiliation"/>
-        <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"/>
+        <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"/>
       </type>
       <constraint>
         <key value="dom-2"/>
@@ -2873,7 +2873,7 @@
         <severity value="error"/>
         <human value="One participating organization or one location allowed; not both."/>
         <expression value="participatingOrganization.count()=1 xor location.count()=1"/>
-        <source value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"/>
+        <source value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
@@ -3841,7 +3841,7 @@
       </base>
       <type>
         <code value="PractitionerRole"/>
-        <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
+        <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
       </type>
       <constraint>
         <key value="dom-2"/>
@@ -3894,7 +3894,7 @@
         <severity value="error"/>
         <human value="One organization or one location allowed; not both."/>
         <expression value="organization.count()=1 xor location.count()=1"/>
-        <source value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
+        <source value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
@@ -4741,7 +4741,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="Organization"/>
-        <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
+        <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"/>
       </type>
     </element>
     <element id="Bundle.entry:OrganizationAffiliation">
@@ -4755,7 +4755,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="OrganizationAffiliation"/>
-        <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"/>
+        <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"/>
       </type>
     </element>
     <element id="Bundle.entry:RoleRelationship">
@@ -4769,7 +4769,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="PractitionerRole"/>
-        <profile value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
+        <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
       </type>
     </element>
   </differential>
