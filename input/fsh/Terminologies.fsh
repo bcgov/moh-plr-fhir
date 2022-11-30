@@ -21,18 +21,18 @@ Alias: $PLROwnerCode = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistr
 Alias: $PLRCommPurpose = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code
 Alias: $PLRAddressValStatus = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code
 
-Alias: $PLRWorkLocationID = https://plr.hlth.gov.bc.ca/identifier-system/codes/bc-work-location-id
-Alias: $PLRNoteID = https://plr.hlth.gov.bc.ca/plr/identifier-system/bc-note-id
-Alias: $PLRConditionID = https://plr.hlth.gov.bc.ca/plr/identifier-system/bc-condition-id
-Alias: $PLRDisciplinaryActionID = https://plr.hlth.gov.bc.ca/plr/identifier-system/bc-disciplinary-action-id
+Alias: $PLRWorkLocationID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-work-location-id
+Alias: $PLRNoteID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id
+Alias: $PLRConditionID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-condition-id
+Alias: $PLRDisciplinaryActionID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-disciplinary-action-id
 
 //////////////////////////////
 // identifier systems
 /////////////////////////////
-Alias: $System_IPC = https://plr.hlth.gov.bc.ca/plr/identifier-system/IPC
-Alias: $System_IFC = https://plr.hlth.gov.bc.ca/plr/identifier-system/IFC
-Alias: $System_CPN = https://plr.hlth.gov.bc.ca/plr/identifier-system/CPN
-Alias: $System_ORGID = https://plr.hlth.gov.bc.ca/plr/identifier-system/ORGID
-Alias: $System_CPSID = https://plr.hlth.gov.bc.ca/plr/identifier-system/CPSID
-Alias: $System_RNID = https://plr.hlth.gov.bc.ca/plr/identifier-system/RNID
+Alias: $System_IPC = http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC
+Alias: $System_IFC = http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC
+Alias: $System_CPN = http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPN
+Alias: $System_ORGID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/ORGID
+Alias: $System_CPSID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPSID
+Alias: $System_RNID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/RNID
 
