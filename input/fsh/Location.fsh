@@ -56,14 +56,14 @@ Description: "Example of a Location (Facility) that is the work location for a P
 * telecom[0].value = "joe@gmail.com"
 * telecom[0].period.start = "2000-01-01"
 * telecom[0].period.end = "2020-01-01"
-* telecom[0].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[0].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 * telecom[1].system = #phone
 * telecom[1].value = "2509876555"
 * telecom[1].period.start = "2000-01-01"
 * telecom[1].period.end = "2020-01-01"
-* telecom[1].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[1].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.code = #HC
 * address = Example-Address-Valid

@@ -53,9 +53,9 @@ Description: "Example of generic Organization."
 * identifier[2] = Example-Identifier-ORGID
 
 * name = "ABC Clinic"
-* name.extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-name-use-extension"
+* name.extension[0].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension"
 * name.extension[0].valueCode = #official
-* name.extension[1].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* name.extension[1].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * name.extension[1].valuePeriod.start = "2000-01-01"
 * name.extension[1].valuePeriod.end = "2022-09-01"
 * alias = "ABC Clinic - Kelowna"
@@ -65,7 +65,7 @@ Description: "Example of generic Organization."
 * extension[0] = Example-Note
 
 // license status
-* extension[1].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-license-status-extension"
+* extension[1].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
 * extension[1].extension[0].url = "statusCode"
 * extension[1].extension[0].valueCodeableConcept.coding.system = $RoleStatus
 * extension[1].extension[0].valueCodeableConcept.coding.code = #active

@@ -5,7 +5,7 @@ Usage: #inline
 * period.start = "2000-02-02"
 * system = #phone
 * value = "2501112234"
-* extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 
@@ -16,7 +16,7 @@ Usage: #inline
 * period.start = "2000-02-02"
 * system = #phone
 * value = "2502222234"
-* extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 * extension[endReason] = Example-ERC-Change
@@ -28,7 +28,7 @@ Usage: #inline
 * period.start = "2000-02-02"
 * system = #phone
 * value = "2503424325"
-* extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 * extension[owner] = Example-OC-MOH
@@ -40,7 +40,7 @@ Usage: #inline
 * period.start = "2000-02-02"
 * system = #phone
 * value = "2503424343"
-* extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 * extension[owner] = Example-OC-PHSA
@@ -51,7 +51,7 @@ Description: "Example of generic BC Contact Point for telephone."
 Usage: #inline
 * period.start = "2000-02-02"
 * system = #email
-* extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 * value = "bob@email.com"
@@ -62,7 +62,7 @@ Description: "Example of generic BC Contact Point for telephone."
 Usage: #inline
 * period.start = "2000-02-02"
 * system = #email
-* extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 * extension[endReason] = Example-ERC-Change

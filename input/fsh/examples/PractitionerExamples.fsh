@@ -98,7 +98,7 @@ Description: "Example of a BC practitioner that is being created."
 * address = Example-Address-Valid
 
 // demographics
-* extension[5].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-deathdate-extension"
+* extension[5].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-deathdate-extension"
 * extension[5].valueDateTime = "2000-02-01"
 * gender = #female
 * extension[6] = Example-Demographics-1
@@ -124,8 +124,8 @@ Instance: Example-AddPractitioner-RelatedPractitioner
 InstanceOf: Extension
 Description: "Example of a practitioner that has a relationship to the example created practitioner."
 Usage: #inline
-* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension"
-* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-relationship-extension"
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2022-06-30"
 * extension[+].url = "targetPractitioner"
 * extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-2
@@ -137,8 +137,8 @@ Instance: Example-AddPractitioner-RelatedPractitioner-Response
 InstanceOf: Extension
 Description: "Example of a practitioner that has a relationship to the example created practitioner."
 Usage: #inline
-* url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-relationship-extension"
-* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-period-extension"
+* url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-relationship-extension"
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2022-06-30"
 * extension[+].url = "targetPractitioner"
 * extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-2

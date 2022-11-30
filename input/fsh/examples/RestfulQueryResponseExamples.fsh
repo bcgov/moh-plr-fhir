@@ -50,7 +50,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 * practitioner.identifier = Example-Identifier-IPC-Ind-1
 * period.start = "2000-01-01"
 * organization.identifier = Example-Identifier-IPC-Org
-* extension[0].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-relationship-type-extension"
+* extension[0].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"
 * extension[0].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
 
@@ -60,7 +60,7 @@ Description: "Example of the PractitionerRole for Practitioner to Location relat
 * practitioner.identifier = Example-Identifier-IPC-Ind-1
 * period.start = "2000-01-01"
 * location.identifier = Example-Identifier-IFC
-* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location-relationship-type-extension"
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension"
 * extension[=].valueCodeableConcept.coding.system = $PLRLocationRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT
 
@@ -106,19 +106,19 @@ Description: "Example of a Location."
 * telecom[0].system = #fax
 * telecom[0].period.start = "1982-03-04T00:00:00-07:00"
 * telecom[0].value = "55555555551"
-* telecom[0].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[0].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
 * telecom[1].system = #fax
 * telecom[1].period.start = "1981-04-04T00:00:00-07:00"
 * telecom[1].value = "55555555555"
-* telecom[1].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[1].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.code = #HC
 * telecom[2].system = #url
 * telecom[2].period.start = "1991-01-01T00:00:00-07:00"
 * telecom[2].value = "ftp://someftp.com"
-* telecom[2].extension[commPurposeExtension].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* telecom[2].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.code = #MC
 * address = Example-Address-Valid

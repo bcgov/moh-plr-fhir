@@ -8,10 +8,10 @@ Usage: #inline
 * postalCode = "V6P7B8"
 * state = "BC"
 * country = "CA"
-* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[=].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[=].valueCodeableConcept.coding.code = #BC
-* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-address-validation-status-extension"
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension"
 * extension[=].valueCodeableConcept.coding.system = $PLRAddressValStatus
 * extension[=].valueCodeableConcept.coding.code = #V
 * period.start = "2000-01-01"
@@ -26,7 +26,7 @@ Usage: #inline
 * postalCode = "V6P7B8"
 * state = "BC"
 * country = "CA"
-* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[=].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[=].valueCodeableConcept.coding.code = #BC
 * extension[+] = Example-ERC-Change
@@ -44,10 +44,10 @@ Usage: #inline
 * postalCode = "V6P7B8"
 * state = "BC"
 * country = "CA"
-* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-communication-purpose-code-extension"
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * extension[=].valueCodeableConcept.coding.system = $PLRCommPurpose
 * extension[=].valueCodeableConcept.coding.code = #BC
-* extension[+].url = "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-address-validation-status-extension"
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension"
 * extension[=].valueCodeableConcept.coding.system = $PLRAddressValStatus
 * extension[=].valueCodeableConcept.coding.code = #V
 * period.start = "2000-01-01"
