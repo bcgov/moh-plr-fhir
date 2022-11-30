@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "BCProviderRegistry"];
   fhir:ImplementationGuide.title [ fhir:value "BC Provider Location Registry FHIR Implementation Guide"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2022-11-30T17:04:23+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2022-11-30T20:32:54+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "BC Ministry of Health"];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -688,9 +688,9 @@
        fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Artifacts associated with Facilities" ]
      ], [
        fhir:index 8;
-       fhir:Element.id [ fhir:value "AtomicRestfulQueryResponse" ];
-       fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Atomic RESTful Query" ];
-       fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Atomic RESTful Query Responses" ]
+       fhir:Element.id [ fhir:value "RestfulQueryResponse" ];
+       fhir:ImplementationGuide.definition.grouping.name [ fhir:value "RESTful Query" ];
+       fhir:ImplementationGuide.definition.grouping.description [ fhir:value "RESTful Query Responses" ]
      ], [
        fhir:index 9;
        fhir:Element.id [ fhir:value "Extensions" ];
@@ -1481,8 +1481,7 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location>
-       ];
-       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "AtomicRestfulQueryResponse" ]
+       ]
      ], [
        fhir:index 52;
        fhir:Element.extension [
@@ -1499,8 +1498,7 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization>
-       ];
-       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "AtomicRestfulQueryResponse" ]
+       ]
      ], [
        fhir:index 53;
        fhir:Element.extension [
@@ -1517,8 +1515,7 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation>
-       ];
-       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "AtomicRestfulQueryResponse" ]
+       ]
      ], [
        fhir:index 54;
        fhir:Element.extension [
@@ -1535,8 +1532,7 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation>
-       ];
-       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "AtomicRestfulQueryResponse" ]
+       ]
      ], [
        fhir:index 55;
        fhir:Element.extension [
@@ -1553,8 +1549,7 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner>
-       ];
-       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "AtomicRestfulQueryResponse" ]
+       ]
      ], [
        fhir:index 56;
        fhir:Element.extension [
@@ -1571,8 +1566,7 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships>
-       ];
-       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "AtomicRestfulQueryResponse" ]
+       ]
      ], [
        fhir:index 57;
        fhir:Element.extension [
@@ -1589,8 +1583,7 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships>
-       ];
-       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "AtomicRestfulQueryResponse" ]
+       ]
      ], [
        fhir:index 58;
        fhir:Element.extension [
@@ -1607,8 +1600,7 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role";
          fhir:link <http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role>
-       ];
-       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "AtomicRestfulQueryResponse" ]
+       ]
      ], [
        fhir:index 59;
        fhir:Element.extension [
@@ -1692,7 +1684,8 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-GET-Location-Response" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a response returning one Location" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "RestfulQueryResponse" ]
      ], [
        fhir:index 64;
        fhir:Element.extension [
@@ -1706,7 +1699,8 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-GET-Organization-Response" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a response returning one Organization." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "RestfulQueryResponse" ]
      ], [
        fhir:index 65;
        fhir:Element.extension [
@@ -1720,7 +1714,8 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-GET-OrganizationAffiliation-Response" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a response returning one OrganizationAffiliation" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "RestfulQueryResponse" ]
      ], [
        fhir:index 66;
        fhir:Element.extension [
@@ -1734,7 +1729,8 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-GET-OrganizationAffiliation-byOrganization-Response" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a response returning list of OrganizationAffiliation" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "RestfulQueryResponse" ]
      ], [
        fhir:index 67;
        fhir:Element.extension [
@@ -1748,7 +1744,8 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-GET-Practitioner-Response" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a response returning one Practioner." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "RestfulQueryResponse" ]
      ], [
        fhir:index 68;
        fhir:Element.extension [
@@ -1762,7 +1759,8 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-GET-PractitionerRole-Response" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a response returning one PractitionerRole" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "RestfulQueryResponse" ]
      ], [
        fhir:index 69;
        fhir:Element.extension [
@@ -1776,7 +1774,8 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example-GET-PractitionerRole-byPractitioner-Response" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a response returning all the PractitionerRole for one practitioner" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "RestfulQueryResponse" ]
      ], [
        fhir:index 70;
        fhir:Element.extension [

@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2022-11-30T17:04:23+00:00"/>
+  <date value="2022-11-30T20:32:54+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -461,9 +461,9 @@
       <name value="Facility"/>
       <description value="Artifacts associated with Facilities"/>
     </grouping>
-    <grouping id="AtomicRestfulQueryResponse">
-      <name value="Atomic RESTful Query"/>
-      <description value="Atomic RESTful Query Responses"/>
+    <grouping id="RestfulQueryResponse">
+      <name value="RESTful Query"/>
+      <description value="RESTful Query Responses"/>
     </grouping>
     <grouping id="Extensions">
       <name value="Extensions"/>
@@ -1076,7 +1076,6 @@
       <name value="Example-Atomic-Location"/>
       <description value="Example of a Location."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-location"/>
-      <groupingId value="AtomicRestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1088,7 +1087,6 @@
       <name value="Example-Atomic-Organization"/>
       <description value="Example of an Organization."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization"/>
-      <groupingId value="AtomicRestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1100,7 +1098,6 @@
       <name value="Example-Atomic-OrganizationAffiliation-LocRef"/>
       <description value="Example of the OrganizationAffiliation for Organization to Location relationship."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"/>
-      <groupingId value="AtomicRestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1112,7 +1109,6 @@
       <name value="Example-Atomic-OrganizationAffiliation-OrgRef"/>
       <description value="Example of the OrganizationAffiliation for Organization to Organization relationship."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-organization-affiliation"/>
-      <groupingId value="AtomicRestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1124,7 +1120,6 @@
       <name value="Example-Atomic-Practitioner"/>
       <description value="Example of generic Practitioner."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner"/>
-      <groupingId value="AtomicRestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1136,7 +1131,6 @@
       <name value="Example-Atomic-PractitionerRole-LocRef"/>
       <description value="Example of the PractitionerRole for Practitioner to Location relationship."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
-      <groupingId value="AtomicRestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1148,7 +1142,6 @@
       <name value="Example-Atomic-PractitionerRole-OrgRef"/>
       <description value="Example of the PractitionerRole for Practitioner to Organization relationship."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-role-relationships"/>
-      <groupingId value="AtomicRestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1160,7 +1153,6 @@
       <name value="Example-Atomic-PractitionerRole-RoleSpecialty"/>
       <description value="Example of the PractitionerRole with Speciality."/>
       <exampleCanonical value="http://hl7.org/fhir/ca-bc/provider/StructureDefinition/bc-practitioner-role"/>
-      <groupingId value="AtomicRestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1218,6 +1210,7 @@
       <name value="Example-GET-Location-Response"/>
       <description value="Example of a response returning one Location"/>
       <exampleBoolean value="true"/>
+      <groupingId value="RestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1229,6 +1222,7 @@
       <name value="Example-GET-Organization-Response"/>
       <description value="Example of a response returning one Organization."/>
       <exampleBoolean value="true"/>
+      <groupingId value="RestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1240,6 +1234,7 @@
       <name value="Example-GET-OrganizationAffiliation-Response"/>
       <description value="Example of a response returning one OrganizationAffiliation"/>
       <exampleBoolean value="true"/>
+      <groupingId value="RestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1251,6 +1246,7 @@
       <name value="Example-GET-OrganizationAffiliation-byOrganization-Response"/>
       <description value="Example of a response returning list of OrganizationAffiliation"/>
       <exampleBoolean value="true"/>
+      <groupingId value="RestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1262,6 +1258,7 @@
       <name value="Example-GET-Practitioner-Response"/>
       <description value="Example of a response returning one Practioner."/>
       <exampleBoolean value="true"/>
+      <groupingId value="RestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1273,6 +1270,7 @@
       <name value="Example-GET-PractitionerRole-Response"/>
       <description value="Example of a response returning one PractitionerRole"/>
       <exampleBoolean value="true"/>
+      <groupingId value="RestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1284,6 +1282,7 @@
       <name value="Example-GET-PractitionerRole-byPractitioner-Response"/>
       <description value="Example of a response returning all the PractitionerRole for one practitioner"/>
       <exampleBoolean value="true"/>
+      <groupingId value="RestfulQueryResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
