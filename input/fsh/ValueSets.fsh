@@ -33,7 +33,7 @@ Description: "BC Practitioner Role Codes."
 * codes from system $SCPType
 * codes from system PractitionerRoleCS
 * ^experimental = false
-* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-expertise-value-set"
+* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-practitioner-role-value-set"
 
 CodeSystem: LicenseStatusCS
 Title: "BC License Status Codes"
@@ -63,7 +63,7 @@ Description: "BC specific license status reason value set."
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-reason-value-set"
 
 ValueSet: PracQualificationVS
-Title: "BC Practitioner QUalification Value Set"
+Title: "BC Practitioner Qualification Value Set"
 Id: bc-qualification-value-set
 Description: "BC specific qualification value set."
 * codes from system $SCPQual

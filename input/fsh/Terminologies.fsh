@@ -21,7 +21,7 @@ Alias: $PLROwnerCode = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistr
 Alias: $PLRCommPurpose = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code
 Alias: $PLRAddressValStatus = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code
 
-Alias: $PLRWorkLocationID = https://plr.hlth.gov.bc.ca/plr/codes/bc-work-location-id
+Alias: $PLRWorkLocationID = https://plr.hlth.gov.bc.ca/identifier-system/codes/bc-work-location-id
 Alias: $PLRNoteID = https://plr.hlth.gov.bc.ca/plr/identifier-system/bc-note-id
 Alias: $PLRConditionID = https://plr.hlth.gov.bc.ca/plr/identifier-system/bc-condition-id
 Alias: $PLRDisciplinaryActionID = https://plr.hlth.gov.bc.ca/plr/identifier-system/bc-disciplinary-action-id
