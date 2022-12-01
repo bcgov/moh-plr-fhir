@@ -11,3 +11,19 @@ At this time, this Implementation Guide includes requirements for PLR Providers 
 * Testing of the guide's operations and profiles to ensure proper coverage
 * Publication to BC's FHIR Portal
 
+#### Release 4.0 - 1 
+
+This section describes everything that is available in this release.  To access this release through messaging, in the HTTP Accept: header add fhirVersion=4.0;BCPLRVersion=1.
+
+Included in this release are two practitioner queries
+
+        GET /Practitioner/<IPC>/$entityQuery
+
+and
+
+        GET /Practitioner/$entityQuery?identifier=<value>&identifier-type=<id type>
+
+where *IPC* is an IPC identifier, like IPC.00012345.BC.PRS, and *id type* is an identifier type like CPSID or MPID and finally *value* is the value of the identifier.  
+
+See the following section for more [details](specification.html#query-part-1---operations).
+
