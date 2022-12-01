@@ -1,320 +1,262 @@
 {
-  "resourceType": "Bundle",
-  "id": "Example-UpdateOrganization-Bundle",
-  "meta": {
-    "profile": [
-      "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"
-    ]
+  "resourceType" : "Bundle",
+  "id" : "Example-UpdateOrganization-Bundle",
+  "meta" : {
+    "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"]
   },
-  "type": "collection",
-  "entry": [
-    {
-      "fullUrl": "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf",
-      "resource": {
-        "resourceType": "Organization",
-        "id": "Example-Organization-1-Update",
-        "meta": {
-          "profile": [
-            "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"
-          ]
-        },
-        "text": {
-          "status": "extensions",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"Example-Organization-1-Update\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;Example-Organization-1-Update&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><p><b>value</b>: id: Note-3</p><p><b>value</b>: Note text</p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p><p><b>value</b>: CHG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-end-reason-code#CHG)</span></p></blockquote><p><b>identifier</b>: id: 123123123 (period: 2000-01-01 --&gt; (ongoing))</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: 2502222234</p><p><b>address</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p></div>"
-        },
-        "extension": [
-          {
-            "extension": [
-              {
-                "url": "identifier",
-                "valueIdentifier": {
-                  "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id",
-                  "value": "Note-3"
-                }
-              },
-              {
-                "url": "text",
-                "valueString": "Note text"
-              },
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
-                "valuePeriod": {
-                  "start": "1998-01-02"
-                }
-              },
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code",
-                      "code": "CHG"
-                    }
-                  ]
-                }
-              }
-            ],
-            "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension"
-          }
-        ],
-        "identifier": [
-          {
-            "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/ORGID",
-            "value": "123123123",
-            "period": {
-              "start": "2000-01-01"
-            }
-          }
-        ],
-        "active": true,
-        "name": "Kelowna Clinic",
-        "_name": {
-          "extension": [
-            {
-              "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension",
-              "valueCode": "official"
-            },
-            {
-              "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
-              "valuePeriod": {
-                "start": "2014-01-31T00:00:00-07:00"
-              }
-            },
-            {
-              "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code",
-                    "code": "CHG"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        "alias": [
-          "ABC Clinic - Kelowna"
-        ],
-        "telecom": [
-          {
-            "extension": [
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code",
-                      "code": "BC"
-                    }
-                  ]
-                }
-              },
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code",
-                      "code": "CHG"
-                    }
-                  ]
-                }
-              }
-            ],
-            "system": "phone",
-            "value": "2502222234",
-            "period": {
-              "start": "2000-02-02"
-            }
-          }
-        ],
-        "address": [
-          {
-            "extension": [
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code",
-                      "code": "BC"
-                    }
-                  ]
-                }
-              },
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code",
-                      "code": "CHG"
-                    }
-                  ]
-                }
-              }
-            ],
-            "type": "postal",
-            "line": [
-              "1000 DOUGLAS ST"
-            ],
-            "city": "VICTORIA",
-            "state": "BC",
-            "postalCode": "V6P7B8",
-            "country": "CA",
-            "period": {
-              "start": "2000-01-01"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:f41c4f5f-43eb-497c-8baa-e800fe3fe4fa",
-      "resource": {
-        "resourceType": "OrganizationAffiliation",
-        "id": "Example-OrganizationAffiliation-2-LocRef-FromOrg",
-        "meta": {
-          "profile": [
-            "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"
-          ]
-        },
-        "text": {
-          "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"Example-OrganizationAffiliation-2-LocRef-FromOrg\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;Example-OrganizationAffiliation-2-LocRef-FromOrg&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: operatesfrom <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code#operatesfrom)</span></p><p><b>location</b>: <span/></p></div>"
-        },
-        "period": {
-          "start": "2000-01-01"
-        },
-        "organization": {
-          "identifier": {
-            "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-            "value": "IPC.00147433.BC.PRS",
-            "period": {
-              "start": "2000-01-01"
-            }
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf",
+    "resource" : {
+      "resourceType" : "Organization",
+      "id" : "Example-Organization-1-Update",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"Example-Organization-1-Update\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;Example-Organization-1-Update&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><p><b>value</b>: id: Note-3</p><p><b>value</b>: Note text</p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p><p><b>value</b>: CHG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-end-reason-code#CHG)</span></p></blockquote><p><b>identifier</b>: id: 123123123 (period: 2000-01-01 --&gt; (ongoing))</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: 2502222234</p><p><b>address</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p></div>"
+      },
+      "extension" : [{
+        "extension" : [{
+          "url" : "identifier",
+          "valueIdentifier" : {
+            "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id",
+            "value" : "Note-3"
           }
         },
-        "code": [
-          {
-            "coding": [
-              {
-                "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code",
-                "code": "operatesfrom"
-              }
-            ]
-          }
-        ],
-        "location": [
-          {
-            "identifier": {
-              "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC",
-              "value": "IFC.00147422.BC.PRS",
-              "period": {
-                "start": "2000-01-01"
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:efeb9931-b4b7-4caa-9682-cc0220043d1f",
-      "resource": {
-        "resourceType": "OrganizationAffiliation",
-        "id": "Example-OrganizationAffiliation-1-OrgRef-FromOrg",
-        "meta": {
-          "profile": [
-            "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"
-          ]
+        {
+          "url" : "text",
+          "valueString" : "Note text"
         },
-        "text": {
-          "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"Example-OrganizationAffiliation-1-OrgRef-FromOrg\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;Example-OrganizationAffiliation-1-OrgRef-FromOrg&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>participatingOrganization</b>: <span/></p><p><b>code</b>: deptof <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code#deptof)</span></p></div>"
-        },
-        "period": {
-          "start": "2000-01-01"
-        },
-        "organization": {
-          "identifier": {
-            "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-            "value": "IPC.00147433.BC.PRS",
-            "period": {
-              "start": "2000-01-01"
-            }
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+          "valuePeriod" : {
+            "start" : "1998-01-02"
           }
         },
-        "participatingOrganization": {
-          "identifier": {
-            "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-            "value": "IPC.001164553.BC.PRS",
-            "period": {
-              "start": "2000-02-02"
-            }
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code",
+              "code" : "CHG"
+            }]
+          }
+        }],
+        "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension"
+      }],
+      "identifier" : [{
+        "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/ORGID",
+        "value" : "123123123",
+        "period" : {
+          "start" : "2000-01-01"
+        }
+      }],
+      "active" : true,
+      "name" : "Kelowna Clinic",
+      "_name" : {
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension",
+          "valueCode" : "official"
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+          "valuePeriod" : {
+            "start" : "2014-01-31T00:00:00-07:00"
           }
         },
-        "code": [
-          {
-            "coding": [
-              {
-                "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code",
-                "code": "deptof"
-              }
-            ]
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code",
+              "code" : "CHG"
+            }]
           }
-        ]
-      }
-    },
-    {
-      "fullUrl": "ac8569d7-4ff1-405f-9b01-a4b71cf0770d",
-      "resource": {
-        "resourceType": "PractitionerRole",
-        "id": "Example-PractitionerRole-2-OrgRef-FromPractitioner",
-        "meta": {
-          "profile": [
-            "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"
-          ]
-        },
-        "text": {
-          "status": "extensions",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"Example-PractitionerRole-2-OrgRef-FromPractitioner\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;Example-PractitionerRole-2-OrgRef-FromPractitioner&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-role-relationships.html\">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Organization or Practitioner to Practitioner Type Extension.</b>: EMPLOYEE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code#EMPLOYEE)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span/></p><p><b>organization</b>: <span/></p></div>"
-        },
-        "extension": [
-          {
-            "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension",
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code",
-                  "code": "EMPLOYEE"
-                }
-              ]
-            }
-          }
-        ],
-        "period": {
-          "start": "2000-01-01"
-        },
-        "practitioner": {
-          "identifier": {
-            "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-            "value": "IPC.00147422.BC.PRS",
-            "period": {
-              "start": "2000-01-01"
-            }
+        }]
+      },
+      "alias" : ["ABC Clinic - Kelowna"],
+      "telecom" : [{
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code",
+              "code" : "BC"
+            }]
           }
         },
-        "organization": {
-          "identifier": {
-            "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-            "value": "IPC.00147433.BC.PRS",
-            "period": {
-              "start": "2000-01-01"
-            }
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code",
+              "code" : "CHG"
+            }]
+          }
+        }],
+        "system" : "phone",
+        "value" : "2502222234",
+        "period" : {
+          "start" : "2000-02-02"
+        }
+      }],
+      "address" : [{
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code",
+              "code" : "BC"
+            }]
+          }
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code",
+              "code" : "CHG"
+            }]
+          }
+        }],
+        "type" : "postal",
+        "line" : ["1000 DOUGLAS ST"],
+        "city" : "VICTORIA",
+        "state" : "BC",
+        "postalCode" : "V6P7B8",
+        "country" : "CA",
+        "period" : {
+          "start" : "2000-01-01"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:f41c4f5f-43eb-497c-8baa-e800fe3fe4fa",
+    "resource" : {
+      "resourceType" : "OrganizationAffiliation",
+      "id" : "Example-OrganizationAffiliation-2-LocRef-FromOrg",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"Example-OrganizationAffiliation-2-LocRef-FromOrg\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;Example-OrganizationAffiliation-2-LocRef-FromOrg&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: operatesfrom <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code#operatesfrom)</span></p><p><b>location</b>: <span/></p></div>"
+      },
+      "period" : {
+        "start" : "2000-01-01"
+      },
+      "organization" : {
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+          "value" : "IPC.00147433.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      },
+      "code" : [{
+        "coding" : [{
+          "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code",
+          "code" : "operatesfrom"
+        }]
+      }],
+      "location" : [{
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC",
+          "value" : "IFC.00147422.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:efeb9931-b4b7-4caa-9682-cc0220043d1f",
+    "resource" : {
+      "resourceType" : "OrganizationAffiliation",
+      "id" : "Example-OrganizationAffiliation-1-OrgRef-FromOrg",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"Example-OrganizationAffiliation-1-OrgRef-FromOrg\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;Example-OrganizationAffiliation-1-OrgRef-FromOrg&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>participatingOrganization</b>: <span/></p><p><b>code</b>: deptof <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code#deptof)</span></p></div>"
+      },
+      "period" : {
+        "start" : "2000-01-01"
+      },
+      "organization" : {
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+          "value" : "IPC.00147433.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      },
+      "participatingOrganization" : {
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+          "value" : "IPC.001164553.BC.PRS",
+          "period" : {
+            "start" : "2000-02-02"
+          }
+        }
+      },
+      "code" : [{
+        "coding" : [{
+          "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code",
+          "code" : "deptof"
+        }]
+      }]
+    }
+  },
+  {
+    "fullUrl" : "ac8569d7-4ff1-405f-9b01-a4b71cf0770d",
+    "resource" : {
+      "resourceType" : "PractitionerRole",
+      "id" : "Example-PractitionerRole-2-OrgRef-FromPractitioner",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"Example-PractitionerRole-2-OrgRef-FromPractitioner\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;Example-PractitionerRole-2-OrgRef-FromPractitioner&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-role-relationships.html\">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Organization or Practitioner to Practitioner Type Extension.</b>: EMPLOYEE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code#EMPLOYEE)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span/></p><p><b>organization</b>: <span/></p></div>"
+      },
+      "extension" : [{
+        "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code",
+            "code" : "EMPLOYEE"
+          }]
+        }
+      }],
+      "period" : {
+        "start" : "2000-01-01"
+      },
+      "practitioner" : {
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+          "value" : "IPC.00147422.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      },
+      "organization" : {
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+          "value" : "IPC.00147433.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
           }
         }
       }
     }
-  ]
+  }]
 }

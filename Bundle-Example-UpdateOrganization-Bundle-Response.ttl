@@ -7,15 +7,15 @@
 
 <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-UpdateOrganization-Bundle-Response> a fhir:Bundle;
   fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "Example-UpdateOrganization-Bundle-Response"];
+  fhir:Resource.id [ fhir:value "Example-UpdateOrganization-Bundle-Response"]; # 
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle";
        fhir:index 0;
        fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle>
      ]
-  ];
-  fhir:Bundle.type [ fhir:value "collection"];
+  ]; # 
+  fhir:Bundle.type [ fhir:value "collection"]; # 
   fhir:Bundle.entry [
      fhir:index 0;
      fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552" ];
@@ -24,21 +24,21 @@
      fhir:index 1;
      fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf" ];
      fhir:Bundle.entry.resource <urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf>
-  ] .
+  ] . # 
 
 <urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552> a fhir:OperationOutcome;
-  fhir:Resource.id [ fhir:value "Example-OperationOutcome-MaintainSuccess"];
+  fhir:Resource.id [ fhir:value "Example-OperationOutcome-MaintainSuccess"]; # 
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome";
        fhir:index 0;
        fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome>
      ]
-  ];
+  ]; # 
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OperationOutcome</b><a name=\"Example-OperationOutcome-MaintainSuccess\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OperationOutcome &quot;Example-OperationOutcome-MaintainSuccess&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-operation-outcome.html\">BCOperationOutcome</a></p></div><h3>Issues</h3><table class=\"grid\"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>information</td><td>business-rule</td><td>The provider transaction was processed. <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-error-codes#PRS.PRP.MTN.UNK.0.0.0000)</span></td></tr></table></div>"
-  ];
+  ]; # 
   fhir:OperationOutcome.issue [
      fhir:index 0;
      fhir:OperationOutcome.issue.severity [ fhir:value "information" ];
@@ -51,21 +51,21 @@
        ];
        fhir:CodeableConcept.text [ fhir:value "The provider transaction was processed." ]
      ]
-  ] .
+  ] . # 
 
 <urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf> a fhir:Organization;
-  fhir:Resource.id [ fhir:value "Example-Organization-Response"];
+  fhir:Resource.id [ fhir:value "Example-Organization-Response"]; # 
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization";
        fhir:index 0;
        fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
      ]
-  ];
+  ]; # 
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ];
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"Example-Organization-Response\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;Example-Organization-Response&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><p><b>value</b>: id: Note-2</p><p><b>value</b>: Note text</p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p><p><b>value</b>: id: ?ngen-9?</p></blockquote><p><b>identifier</b>: id: 123123123 (period: 2000-01-01 --&gt; (ongoing)), id: IPC.00147433.BC.PRS (period: 2000-01-01 --&gt; (ongoing)), id: CPN.00147433.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: 2503424343</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
-  ];
+  ]; # 
   fhir:DomainResource.extension [
      fhir:index 0;
      fhir:Element.extension [
@@ -95,7 +95,7 @@
        ]
      ];
      fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension" ]
-  ];
+  ]; # 
   fhir:Organization.identifier [
      fhir:index 0;
      fhir:Element.extension [
@@ -144,8 +144,8 @@
      fhir:Identifier.period [
        fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
      ]
-  ];
-  fhir:Organization.active [ fhir:value "true"^^xsd:boolean];
+  ]; # 
+  fhir:Organization.active [ fhir:value "true"^^xsd:boolean]; # 
   fhir:Organization.name [
      fhir:value "Kelowna Clinic";
      fhir:Element.extension [
@@ -167,11 +167,11 @@
          ]
        ]
      ]
-  ];
+  ]; # 
   fhir:Organization.alias [
      fhir:value "ABC Clinic - Kelowna";
      fhir:index 0
-  ];
+  ]; # 
   fhir:Organization.telecom [
      fhir:index 0;
      fhir:Element.extension [
@@ -198,7 +198,7 @@
      fhir:ContactPoint.period [
        fhir:Period.start [ fhir:value "2000-02-02"^^xsd:date ]
      ]
-  ];
+  ]; # 
   fhir:Organization.address [
      fhir:index 0;
      fhir:Element.extension [
@@ -248,7 +248,7 @@
      fhir:Address.period [
        fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
      ]
-  ] .
+  ] . # 
 
 # - ontology header ------------------------------------------------------------
 

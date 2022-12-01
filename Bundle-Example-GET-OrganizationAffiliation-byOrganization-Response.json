@@ -1,134 +1,112 @@
 {
-  "resourceType": "Bundle",
-  "id": "Example-GET-OrganizationAffiliation-byOrganization-Response",
-  "type": "collection",
-  "entry": [
-    {
-      "fullUrl": "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552",
-      "resource": {
-        "resourceType": "OperationOutcome",
-        "id": "Example-OperationOutcome-Success",
-        "meta": {
-          "profile": [
-            "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"
-          ]
-        },
-        "text": {
-          "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OperationOutcome</b><a name=\"Example-OperationOutcome-Success\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OperationOutcome &quot;Example-OperationOutcome-Success&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-operation-outcome.html\">BCOperationOutcome</a></p></div><h3>Issues</h3><table class=\"grid\"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>information</td><td>business-rule</td><td>The provider search is succesful <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-error-codes#PRS.PRP.MTN.UNK.0.0.0000)</span></td></tr></table></div>"
-        },
-        "issue": [
-          {
-            "severity": "information",
-            "code": "business-rule",
-            "details": {
-              "coding": [
-                {
-                  "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-codes",
-                  "code": "PRS.PRP.MTN.UNK.0.0.0000"
-                }
-              ],
-              "text": "The provider search is succesful"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf",
-      "resource": {
-        "resourceType": "OrganizationAffiliation",
-        "id": "Example-Atomic-OrganizationAffiliation-OrgRef",
-        "meta": {
-          "profile": [
-            "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"
-          ]
-        },
-        "text": {
-          "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"Example-Atomic-OrganizationAffiliation-OrgRef\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;Example-Atomic-OrganizationAffiliation-OrgRef&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>participatingOrganization</b>: <span/></p><p><b>code</b>: deptof <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code#deptof)</span></p></div>"
-        },
-        "period": {
-          "start": "2000-01-01"
-        },
-        "organization": {
-          "identifier": {
-            "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-            "value": "IPC.00147433.BC.PRS",
-            "period": {
-              "start": "2000-01-01"
-            }
-          }
-        },
-        "participatingOrganization": {
-          "identifier": {
-            "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-            "value": "IPC.001164553.BC.PRS",
-            "period": {
-              "start": "2000-02-02"
-            }
-          }
-        },
-        "code": [
-          {
-            "coding": [
-              {
-                "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code",
-                "code": "deptof"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf",
-      "resource": {
-        "resourceType": "OrganizationAffiliation",
-        "id": "Example-Atomic-OrganizationAffiliation-LocRef",
-        "meta": {
-          "profile": [
-            "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"
-          ]
-        },
-        "text": {
-          "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"Example-Atomic-OrganizationAffiliation-LocRef\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;Example-Atomic-OrganizationAffiliation-LocRef&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: operatesfrom <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code#operatesfrom)</span></p><p><b>location</b>: <span/></p></div>"
-        },
-        "period": {
-          "start": "2000-01-01"
-        },
-        "organization": {
-          "identifier": {
-            "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-            "value": "IPC.00147433.BC.PRS",
-            "period": {
-              "start": "2000-01-01"
-            }
-          }
-        },
-        "code": [
-          {
-            "coding": [
-              {
-                "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code",
-                "code": "operatesfrom"
-              }
-            ]
-          }
-        ],
-        "location": [
-          {
-            "identifier": {
-              "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC",
-              "value": "IFC.00147422.BC.PRS",
-              "period": {
-                "start": "2000-01-01"
-              }
-            }
-          }
-        ]
-      }
+  "resourceType" : "Bundle",
+  "id" : "Example-GET-OrganizationAffiliation-byOrganization-Response",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552",
+    "resource" : {
+      "resourceType" : "OperationOutcome",
+      "id" : "Example-OperationOutcome-Success",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OperationOutcome</b><a name=\"Example-OperationOutcome-Success\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OperationOutcome &quot;Example-OperationOutcome-Success&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-operation-outcome.html\">BCOperationOutcome</a></p></div><h3>Issues</h3><table class=\"grid\"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>information</td><td>business-rule</td><td>The provider search is succesful <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-error-codes#PRS.PRP.MTN.UNK.0.0.0000)</span></td></tr></table></div>"
+      },
+      "issue" : [{
+        "severity" : "information",
+        "code" : "business-rule",
+        "details" : {
+          "coding" : [{
+            "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-codes",
+            "code" : "PRS.PRP.MTN.UNK.0.0.0000"
+          }],
+          "text" : "The provider search is succesful"
+        }
+      }]
     }
-  ]
+  },
+  {
+    "fullUrl" : "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf",
+    "resource" : {
+      "resourceType" : "OrganizationAffiliation",
+      "id" : "Example-Atomic-OrganizationAffiliation-OrgRef",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"Example-Atomic-OrganizationAffiliation-OrgRef\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;Example-Atomic-OrganizationAffiliation-OrgRef&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>participatingOrganization</b>: <span/></p><p><b>code</b>: deptof <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code#deptof)</span></p></div>"
+      },
+      "period" : {
+        "start" : "2000-01-01"
+      },
+      "organization" : {
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+          "value" : "IPC.00147433.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      },
+      "participatingOrganization" : {
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+          "value" : "IPC.001164553.BC.PRS",
+          "period" : {
+            "start" : "2000-02-02"
+          }
+        }
+      },
+      "code" : [{
+        "coding" : [{
+          "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code",
+          "code" : "deptof"
+        }]
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf",
+    "resource" : {
+      "resourceType" : "OrganizationAffiliation",
+      "id" : "Example-Atomic-OrganizationAffiliation-LocRef",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"Example-Atomic-OrganizationAffiliation-LocRef\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;Example-Atomic-OrganizationAffiliation-LocRef&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: operatesfrom <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code#operatesfrom)</span></p><p><b>location</b>: <span/></p></div>"
+      },
+      "period" : {
+        "start" : "2000-01-01"
+      },
+      "organization" : {
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+          "value" : "IPC.00147433.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      },
+      "code" : [{
+        "coding" : [{
+          "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code",
+          "code" : "operatesfrom"
+        }]
+      }],
+      "location" : [{
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC",
+          "value" : "IFC.00147422.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      }]
+    }
+  }]
 }

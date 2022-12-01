@@ -1,250 +1,206 @@
 {
-  "resourceType": "Bundle",
-  "id": "Example-UpdateOrganization-Bundle-Response",
-  "meta": {
-    "profile": [
-      "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"
-    ]
+  "resourceType" : "Bundle",
+  "id" : "Example-UpdateOrganization-Bundle-Response",
+  "meta" : {
+    "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"]
   },
-  "type": "collection",
-  "entry": [
-    {
-      "fullUrl": "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552",
-      "resource": {
-        "resourceType": "OperationOutcome",
-        "id": "Example-OperationOutcome-MaintainSuccess",
-        "meta": {
-          "profile": [
-            "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"
-          ]
-        },
-        "text": {
-          "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OperationOutcome</b><a name=\"Example-OperationOutcome-MaintainSuccess\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OperationOutcome &quot;Example-OperationOutcome-MaintainSuccess&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-operation-outcome.html\">BCOperationOutcome</a></p></div><h3>Issues</h3><table class=\"grid\"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>information</td><td>business-rule</td><td>The provider transaction was processed. <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-error-codes#PRS.PRP.MTN.UNK.0.0.0000)</span></td></tr></table></div>"
-        },
-        "issue": [
-          {
-            "severity": "information",
-            "code": "business-rule",
-            "details": {
-              "coding": [
-                {
-                  "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-codes",
-                  "code": "PRS.PRP.MTN.UNK.0.0.0000"
-                }
-              ],
-              "text": "The provider transaction was processed."
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf",
-      "resource": {
-        "resourceType": "Organization",
-        "id": "Example-Organization-Response",
-        "meta": {
-          "profile": [
-            "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"
-          ]
-        },
-        "text": {
-          "status": "extensions",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"Example-Organization-Response\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;Example-Organization-Response&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><p><b>value</b>: id: Note-2</p><p><b>value</b>: Note text</p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p><p><b>value</b>: id: ?ngen-9?</p></blockquote><p><b>identifier</b>: id: 123123123 (period: 2000-01-01 --&gt; (ongoing)), id: IPC.00147433.BC.PRS (period: 2000-01-01 --&gt; (ongoing)), id: CPN.00147433.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: 2503424343</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
-        },
-        "extension": [
-          {
-            "extension": [
-              {
-                "url": "identifier",
-                "valueIdentifier": {
-                  "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id",
-                  "value": "Note-2"
-                }
-              },
-              {
-                "url": "text",
-                "valueString": "Note text"
-              },
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
-                "valuePeriod": {
-                  "start": "1998-01-02"
-                }
-              },
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
-                "valueIdentifier": {
-                  "assigner": {
-                    "display": "PHSA"
-                  }
-                }
-              }
-            ],
-            "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension"
-          }
-        ],
-        "identifier": [
-          {
-            "extension": [
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
-                "valueIdentifier": {
-                  "assigner": {
-                    "display": "PHSA"
-                  }
-                }
-              }
-            ],
-            "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/ORGID",
-            "value": "123123123",
-            "period": {
-              "start": "2000-01-01"
-            }
-          },
-          {
-            "extension": [
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
-                "valueIdentifier": {
-                  "assigner": {
-                    "display": "MOH"
-                  }
-                }
-              }
-            ],
-            "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-            "value": "IPC.00147433.BC.PRS",
-            "period": {
-              "start": "2000-01-01"
-            }
-          },
-          {
-            "extension": [
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
-                "valueIdentifier": {
-                  "assigner": {
-                    "display": "PHSA"
-                  }
-                }
-              }
-            ],
-            "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPN",
-            "value": "CPN.00147433.BC.PRS",
-            "period": {
-              "start": "2000-01-01"
-            }
-          }
-        ],
-        "active": true,
-        "name": "Kelowna Clinic",
-        "_name": {
-          "extension": [
-            {
-              "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension",
-              "valueCode": "official"
-            },
-            {
-              "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
-              "valuePeriod": {
-                "start": "2014-01-31T00:00:00-07:00"
-              }
-            },
-            {
-              "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
-              "valueIdentifier": {
-                "assigner": {
-                  "display": "PHSA"
-                }
-              }
-            }
-          ]
-        },
-        "alias": [
-          "ABC Clinic - Kelowna"
-        ],
-        "telecom": [
-          {
-            "extension": [
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code",
-                      "code": "BC"
-                    }
-                  ]
-                }
-              },
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
-                "valueIdentifier": {
-                  "assigner": {
-                    "display": "PHSA"
-                  }
-                }
-              }
-            ],
-            "system": "phone",
-            "value": "2503424343",
-            "period": {
-              "start": "2000-02-02"
-            }
-          }
-        ],
-        "address": [
-          {
-            "extension": [
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code",
-                      "code": "BC"
-                    }
-                  ]
-                }
-              },
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code",
-                      "code": "V"
-                    }
-                  ]
-                }
-              },
-              {
-                "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
-                "valueIdentifier": {
-                  "assigner": {
-                    "display": "PHSA"
-                  }
-                }
-              }
-            ],
-            "type": "postal",
-            "line": [
-              "19 ST",
-              "ADDRESS ADDRESSLINE2TXT",
-              "ADDRESS ADDRESSLINE3TXT"
-            ],
-            "city": "VICTORIA",
-            "state": "BC",
-            "postalCode": "V6P7B8",
-            "country": "CA",
-            "period": {
-              "start": "2000-01-01"
-            }
-          }
-        ]
-      }
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552",
+    "resource" : {
+      "resourceType" : "OperationOutcome",
+      "id" : "Example-OperationOutcome-MaintainSuccess",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OperationOutcome</b><a name=\"Example-OperationOutcome-MaintainSuccess\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OperationOutcome &quot;Example-OperationOutcome-MaintainSuccess&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-operation-outcome.html\">BCOperationOutcome</a></p></div><h3>Issues</h3><table class=\"grid\"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>information</td><td>business-rule</td><td>The provider transaction was processed. <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-error-codes#PRS.PRP.MTN.UNK.0.0.0000)</span></td></tr></table></div>"
+      },
+      "issue" : [{
+        "severity" : "information",
+        "code" : "business-rule",
+        "details" : {
+          "coding" : [{
+            "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-codes",
+            "code" : "PRS.PRP.MTN.UNK.0.0.0000"
+          }],
+          "text" : "The provider transaction was processed."
+        }
+      }]
     }
-  ]
+  },
+  {
+    "fullUrl" : "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf",
+    "resource" : {
+      "resourceType" : "Organization",
+      "id" : "Example-Organization-Response",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"Example-Organization-Response\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;Example-Organization-Response&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><p><b>value</b>: id: Note-2</p><p><b>value</b>: Note text</p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p><p><b>value</b>: id: ?ngen-9?</p></blockquote><p><b>identifier</b>: id: 123123123 (period: 2000-01-01 --&gt; (ongoing)), id: IPC.00147433.BC.PRS (period: 2000-01-01 --&gt; (ongoing)), id: CPN.00147433.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: 2503424343</p><p><b>address</b>: 19 ST ADDRESS ADDRESSLINE2TXT ADDRESS ADDRESSLINE3TXT VICTORIA BC V6P7B8 CA </p></div>"
+      },
+      "extension" : [{
+        "extension" : [{
+          "url" : "identifier",
+          "valueIdentifier" : {
+            "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id",
+            "value" : "Note-2"
+          }
+        },
+        {
+          "url" : "text",
+          "valueString" : "Note text"
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+          "valuePeriod" : {
+            "start" : "1998-01-02"
+          }
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+          "valueIdentifier" : {
+            "assigner" : {
+              "display" : "PHSA"
+            }
+          }
+        }],
+        "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension"
+      }],
+      "identifier" : [{
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+          "valueIdentifier" : {
+            "assigner" : {
+              "display" : "PHSA"
+            }
+          }
+        }],
+        "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/ORGID",
+        "value" : "123123123",
+        "period" : {
+          "start" : "2000-01-01"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+          "valueIdentifier" : {
+            "assigner" : {
+              "display" : "MOH"
+            }
+          }
+        }],
+        "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+        "value" : "IPC.00147433.BC.PRS",
+        "period" : {
+          "start" : "2000-01-01"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+          "valueIdentifier" : {
+            "assigner" : {
+              "display" : "PHSA"
+            }
+          }
+        }],
+        "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPN",
+        "value" : "CPN.00147433.BC.PRS",
+        "period" : {
+          "start" : "2000-01-01"
+        }
+      }],
+      "active" : true,
+      "name" : "Kelowna Clinic",
+      "_name" : {
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension",
+          "valueCode" : "official"
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+          "valuePeriod" : {
+            "start" : "2014-01-31T00:00:00-07:00"
+          }
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+          "valueIdentifier" : {
+            "assigner" : {
+              "display" : "PHSA"
+            }
+          }
+        }]
+      },
+      "alias" : ["ABC Clinic - Kelowna"],
+      "telecom" : [{
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code",
+              "code" : "BC"
+            }]
+          }
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+          "valueIdentifier" : {
+            "assigner" : {
+              "display" : "PHSA"
+            }
+          }
+        }],
+        "system" : "phone",
+        "value" : "2503424343",
+        "period" : {
+          "start" : "2000-02-02"
+        }
+      }],
+      "address" : [{
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code",
+              "code" : "BC"
+            }]
+          }
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code",
+              "code" : "V"
+            }]
+          }
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+          "valueIdentifier" : {
+            "assigner" : {
+              "display" : "PHSA"
+            }
+          }
+        }],
+        "type" : "postal",
+        "line" : ["19 ST",
+        "ADDRESS ADDRESSLINE2TXT",
+        "ADDRESS ADDRESSLINE3TXT"],
+        "city" : "VICTORIA",
+        "state" : "BC",
+        "postalCode" : "V6P7B8",
+        "country" : "CA",
+        "period" : {
+          "start" : "2000-01-01"
+        }
+      }]
+    }
+  }]
 }

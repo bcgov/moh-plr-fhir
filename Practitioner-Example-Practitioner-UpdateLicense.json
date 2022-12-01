@@ -1,80 +1,62 @@
 {
-  "resourceType": "Practitioner",
-  "id": "Example-Practitioner-UpdateLicense",
-  "meta": {
-    "profile": [
-      "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"
-    ]
+  "resourceType" : "Practitioner",
+  "id" : "Example-Practitioner-UpdateLicense",
+  "meta" : {
+    "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"]
   },
-  "text": {
-    "status": "extensions",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b><a name=\"Example-Practitioner-UpdateLicense\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;Example-Practitioner-UpdateLicense&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner.html\">BCPractitioner</a></p></div><blockquote><p><b>BC License Status Extension</b></p><p><b>value</b>: inactive <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-bc-license-status-code-system.html\">BC License Status Codes</a>#inactive)</span></p><p><b>value</b>: LTP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-status-reason-code#LTP)</span></p><p><b>value</b>: 2022-06-24 --&gt; (ongoing)</p><p><b>value</b>: CHG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-end-reason-code#CHG)</span></p></blockquote><p><b>identifier</b>: id: IPC.00147422.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: null </p></div>"
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b><a name=\"Example-Practitioner-UpdateLicense\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;Example-Practitioner-UpdateLicense&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner.html\">BCPractitioner</a></p></div><blockquote><p><b>BC License Status Extension</b></p><p><b>value</b>: inactive <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-bc-license-status-code-system.html\">BC License Status Codes</a>#inactive)</span></p><p><b>value</b>: LTP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-status-reason-code#LTP)</span></p><p><b>value</b>: 2022-06-24 --&gt; (ongoing)</p><p><b>value</b>: CHG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-end-reason-code#CHG)</span></p></blockquote><p><b>identifier</b>: id: IPC.00147422.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: null </p></div>"
   },
-  "extension": [
-    {
-      "extension": [
-        {
-          "url": "statusCode",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system",
-                "code": "inactive"
-              }
-            ]
-          }
-        },
-        {
-          "url": "statusReasonCode",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-status-reason-code",
-                "code": "LTP"
-              }
-            ]
-          }
-        },
-        {
-          "url": "period",
-          "valuePeriod": {
-            "start": "2022-06-24"
-          }
-        },
-        {
-          "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code",
-                "code": "CHG"
-              }
-            ]
-          }
-        }
-      ],
-      "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
-    }
-  ],
-  "identifier": [
-    {
-      "system": "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-      "value": "IPC.00147422.BC.PRS",
-      "period": {
-        "start": "2000-01-01"
+  "extension" : [{
+    "extension" : [{
+      "url" : "statusCode",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system",
+          "code" : "inactive"
+        }]
       }
-    }
-  ],
-  "name": [
+    },
     {
-      "_family": {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-            "valueCode": "not-applicable"
-          }
-        ]
+      "url" : "statusReasonCode",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-status-reason-code",
+          "code" : "LTP"
+        }]
       }
+    },
+    {
+      "url" : "period",
+      "valuePeriod" : {
+        "start" : "2022-06-24"
+      }
+    },
+    {
+      "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code",
+          "code" : "CHG"
+        }]
+      }
+    }],
+    "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
+  }],
+  "identifier" : [{
+    "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+    "value" : "IPC.00147422.BC.PRS",
+    "period" : {
+      "start" : "2000-01-01"
     }
-  ]
+  }],
+  "name" : [{
+    "_family" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+        "valueCode" : "not-applicable"
+      }]
+    }
+  }]
 }

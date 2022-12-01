@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FHIR.CA-BC.PROVIDER\Future Plans - FHIR v4.0.1</title>
+    <title>FHIR.CA-BC.PROVIDER\Releases and Future Plans - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">BC Provider Location Registry FHIR Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.9.9 - Build CI
+            <span style="display:inline-block;">1.0.0 - fhirVersion-4.0; BCPLRVersion=1
 
 
 
@@ -111,7 +111,7 @@
     <a href="connected_partner.html">Connected Partner</a>
   </li>
   <li>
-    <a href="future.html">Future Plans</a>
+    <a href="future.html">Releases and Future Plans</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
@@ -174,7 +174,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Future Plans</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Releases and Future Plans</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -194,8 +194,8 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">BC Provider Location Registry FHIR Implementation Guide - Local Development build (v0.9.9). See the <a href="http://hlth.gov.bc.ca/fhir/provider/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>Future Plans</h2>
+  <!--ReleaseHeader--><p id="publish-box">BC Provider Location Registry FHIR Implementation Guide - Local Development build (v1.0.0). See the <a href="http://hlth.gov.bc.ca/fhir/provider/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Releases and Future Plans</h2>
   
 
 
@@ -228,6 +228,24 @@ This specification is currently published as a Draft Standard on the ministry gi
   <li>Publication to BC’s FHIR Portal</li>
 </ul>
 
+<h4 id="release-40---1">Release 4.0 - 1</h4>
+
+<p>This section describes everything that is available in this release.  To access this release through messaging, in the HTTP Accept: header add fhirVersion=4.0;BCPLRVersion=1.</p>
+
+<p>Included in this release are two practitioner queries</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    GET /Practitioner/&lt;IPC&gt;/$entityQuery
+</code></pre></div></div>
+
+<p>and</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    GET /Practitioner/$entityQuery?identifier=&lt;value&gt;&amp;identifier-type=&lt;id type&gt;
+</code></pre></div></div>
+
+<p>where <em>IPC</em> is an IPC identifier, like IPC.00012345.BC.PRS, and <em>id type</em> is an identifier type like CPSID or MPID and finally <em>value</em> is the value of the identifier.</p>
+
+<p>See the following section for more <a href="specification.html#query-part-1---operations">details</a>.</p>
+
 
 
 
@@ -253,7 +271,7 @@ This specification is currently published as a Draft Standard on the ministry gi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#0.9.9 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 30, 2022 21:55+0000">2022-11-30</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Dec 1, 2022 19:15+0000">2022-12-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

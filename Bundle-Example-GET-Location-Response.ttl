@@ -7,8 +7,8 @@
 
 <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-Location-Response> a fhir:Bundle;
   fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "Example-GET-Location-Response"];
-  fhir:Bundle.type [ fhir:value "collection"];
+  fhir:Resource.id [ fhir:value "Example-GET-Location-Response"]; # 
+  fhir:Bundle.type [ fhir:value "collection"]; # 
   fhir:Bundle.entry [
      fhir:index 0;
      fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552" ];
@@ -17,21 +17,21 @@
      fhir:index 1;
      fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf" ];
      fhir:Bundle.entry.resource <urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf>
-  ] .
+  ] . # 
 
 <urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552> a fhir:OperationOutcome;
-  fhir:Resource.id [ fhir:value "Example-OperationOutcome-Success"];
+  fhir:Resource.id [ fhir:value "Example-OperationOutcome-Success"]; # 
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome";
        fhir:index 0;
        fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome>
      ]
-  ];
+  ]; # 
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OperationOutcome</b><a name=\"Example-OperationOutcome-Success\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OperationOutcome &quot;Example-OperationOutcome-Success&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-operation-outcome.html\">BCOperationOutcome</a></p></div><h3>Issues</h3><table class=\"grid\"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>information</td><td>business-rule</td><td>The provider search is succesful <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-error-codes#PRS.PRP.MTN.UNK.0.0.0000)</span></td></tr></table></div>"
-  ];
+  ]; # 
   fhir:OperationOutcome.issue [
      fhir:index 0;
      fhir:OperationOutcome.issue.severity [ fhir:value "information" ];
@@ -44,21 +44,21 @@
        ];
        fhir:CodeableConcept.text [ fhir:value "The provider search is succesful" ]
      ]
-  ] .
+  ] . # 
 
 <urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf> a fhir:Location;
-  fhir:Resource.id [ fhir:value "Example-Atomic-Location"];
+  fhir:Resource.id [ fhir:value "Example-Atomic-Location"]; # 
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location";
        fhir:index 0;
        fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location>
      ]
-  ];
+  ]; # 
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Location</b><a name=\"Example-Atomic-Location\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Location &quot;Example-Atomic-Location&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-location.html\">BCLocation</a></p></div><p><b>identifier</b>: id: IFC.00147422.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href=\"ftp://someftp.com\">ftp://someftp.com</a></p><p><b>address</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p></div>"
-  ];
+  ]; # 
   fhir:Location.identifier [
      fhir:index 0;
      fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC" ];
@@ -66,7 +66,7 @@
      fhir:Identifier.period [
        fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
      ]
-  ];
+  ]; # 
   fhir:Location.name [
      fhir:value "General Hospital";
      fhir:Element.extension [
@@ -76,7 +76,7 @@
          fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
        ]
      ]
-  ];
+  ]; # 
   fhir:Location.telecom [
      fhir:index 0;
      fhir:Element.extension [
@@ -131,7 +131,7 @@
      fhir:ContactPoint.period [
        fhir:Period.start [ fhir:value "1991-01-01T00:00:00-07:00"^^xsd:dateTime ]
      ]
-  ];
+  ]; # 
   fhir:Location.address [
      fhir:Element.extension [
        fhir:index 0;
@@ -166,7 +166,7 @@
      fhir:Address.period [
        fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
      ]
-  ] .
+  ] . # 
 
 # - ontology header ------------------------------------------------------------
 

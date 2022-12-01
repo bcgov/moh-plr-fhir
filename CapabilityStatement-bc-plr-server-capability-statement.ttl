@@ -7,18 +7,18 @@
 
 <http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-server-capability-statement> a fhir:CapabilityStatement;
   fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "bc-plr-server-capability-statement"];
+  fhir:Resource.id [ fhir:value "bc-plr-server-capability-statement"]; # 
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ];
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>BCPLRServerCapabilityStatement</h2><div><p>This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):</p>\n<ul>\n<li>Maintain - used when an external source is communicating a change to PLR</li>\n<li>Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)</li>\n<li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)</li>\n</ul>\n<p>All POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)</p>\n</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td><div><p>RESTful Atomic services</p>\n</div></td></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>Practitioner</td><td><a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner</a><br/>Additional supported profiles:<br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle</a></td><td>y</td><td></td><td></td><td></td></tr><tr><td>PractitionerRole</td><td><a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role</a><br/>Additional supported profiles:<br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Organization</td><td><a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization</a><br/>Additional supported profiles:<br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle</a></td><td>y</td><td></td><td></td><td></td></tr><tr><td>OrganizationAffiliation</td><td><a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Location</td><td><a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location</a><br/>Additional supported profiles:<br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle</a></td><td>y</td><td></td><td></td><td></td></tr></table></div>"
-  ];
-  fhir:CapabilityStatement.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-server-capability-statement"];
-  fhir:CapabilityStatement.version [ fhir:value "0.9.9"];
-  fhir:CapabilityStatement.name [ fhir:value "BCPLRServerCapabilityStatement"];
-  fhir:CapabilityStatement.title [ fhir:value "BC PLR Server Capability Statement"];
-  fhir:CapabilityStatement.status [ fhir:value "draft"];
-  fhir:CapabilityStatement.date [ fhir:value "2022-11-15"^^xsd:date];
-  fhir:CapabilityStatement.publisher [ fhir:value "BC Ministry of Health"];
+  ]; # 
+  fhir:CapabilityStatement.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-server-capability-statement"]; # 
+  fhir:CapabilityStatement.version [ fhir:value "1.0.0"]; # 
+  fhir:CapabilityStatement.name [ fhir:value "BCPLRServerCapabilityStatement"]; # 
+  fhir:CapabilityStatement.title [ fhir:value "BC PLR Server Capability Statement"]; # 
+  fhir:CapabilityStatement.status [ fhir:value "draft"]; # 
+  fhir:CapabilityStatement.date [ fhir:value "2022-11-15"^^xsd:date]; # 
+  fhir:CapabilityStatement.publisher [ fhir:value "BC Ministry of Health"]; # 
   fhir:CapabilityStatement.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "BC Ministry of Health" ];
@@ -27,8 +27,8 @@
        fhir:ContactPoint.system [ fhir:value "url" ];
        fhir:ContactPoint.value [ fhir:value "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
      ]
-  ];
-  fhir:CapabilityStatement.description [ fhir:value "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)\n\nAll POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)\n"];
+  ]; # 
+  fhir:CapabilityStatement.description [ fhir:value "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)\n\nAll POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)\n"]; # 
   fhir:CapabilityStatement.jurisdiction [
      fhir:index 0;
      fhir:CodeableConcept.coding [
@@ -37,9 +37,9 @@
        fhir:Coding.code [ fhir:value "CA" ];
        fhir:Coding.display [ fhir:value "Canada" ]
      ]
-  ];
-  fhir:CapabilityStatement.kind [ fhir:value "requirements"];
-  fhir:CapabilityStatement.fhirVersion [ fhir:value "4.0.1"];
+  ]; # 
+  fhir:CapabilityStatement.kind [ fhir:value "requirements"]; # 
+  fhir:CapabilityStatement.fhirVersion [ fhir:value "4.0.1"]; # 
   fhir:CapabilityStatement.format [
      fhir:value "json";
      fhir:index 0;
@@ -48,12 +48,12 @@
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ];
        fhir:Extension.valueCode [ fhir:value "SHALL" ]
      ]
-  ];
+  ]; # 
   fhir:CapabilityStatement.implementationGuide [
      fhir:value "http://hl7.org/fhir/ca-bc/provider/ImplementationGuide/fhir.ca-bc.provider";
      fhir:index 0;
      fhir:link <http://hl7.org/fhir/ca-bc/provider/ImplementationGuide/fhir.ca-bc.provider>
-  ];
+  ]; # 
   fhir:CapabilityStatement.rest [
      fhir:index 0;
      fhir:CapabilityStatement.rest.mode [ fhir:value "server" ];
@@ -258,7 +258,7 @@
        ];
        fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "A BC resource Bundle is sent to create/update one resource" ]
      ]
-  ] .
+  ] . # 
 
 # - ontology header ------------------------------------------------------------
 
