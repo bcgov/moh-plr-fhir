@@ -14,6 +14,7 @@ Description: "Example of an Organization."
 Instance: Example-Organization-1-Update
 InstanceOf: BCOrganization
 Description: "Example of an Organization."
+* id = "IPC.00147434.BC.PRS"
 * identifier[+] = Example-Identifier-ORGID
 * name = "Kelowna Clinic"
 * name.extension[use].valueCode = #official
@@ -29,6 +30,7 @@ Description: "Example of an Organization."
 Instance: Example-Organization-Response
 InstanceOf: BCOrganization
 Description: "Example of an Organization that is being created."
+* id = "IPC.00147436.BC.PRS"
 * identifier[+] = Example-Identifier-ORGID-Response
 * identifier[+] = Example-Identifier-IPC-Org-Response
 * identifier[+] = Example-Identifier-CPN-Org-Response
@@ -46,9 +48,10 @@ Description: "Example of an Organization that is being created."
 Instance: Example-Organization-2
 InstanceOf: BCOrganization
 Description: "Example of generic Organization."
+* id = "IPC.00147437.BC.PRS"
 
 // identifier
-* identifier[0] = Example-Identifier-IPC-Org
+* identifier[0] = Example-Identifier-IPC-Org-3
 * identifier[1] = Example-Identifier-CPN
 * identifier[2] = Example-Identifier-ORGID
 

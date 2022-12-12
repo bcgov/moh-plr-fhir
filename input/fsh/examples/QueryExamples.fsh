@@ -59,8 +59,8 @@ Description: "An example of a Provider Bundle, i.e. A Organization and Practitio
 * entry[=].resource = Example-Organization-2
 * entry[+].resource = Example-PractitionerRole-4-PracRef-FromOrg
 * entry[=].fullUrl = "urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c"
-* entry[+].resource = Example-OrganizationAffiliation-1-OrgRef-FromOrg
+* entry[+].resource = Example-OrganizationAffiliation-3-OrgRef-FromOrg
 * entry[=].fullUrl = "urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03"
-* entry[+].resource = Example-OrganizationAffiliation-2-LocRef-FromOrg
+* entry[+].resource = Example-OrganizationAffiliation-3-LocRef-FromOrg
 * entry[=].fullUrl = "urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5"
 

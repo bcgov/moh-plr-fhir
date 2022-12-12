@@ -1,6 +1,7 @@
 Instance: Example-Location
 InstanceOf: BCLocation
 Description: "Example of a Location."
+* id = "IFC.00147422.BC.PRS"
 * identifier = Example-Identifier-IFC
 * name = "General Hospital"
 * name.extension[period].valuePeriod.start = "2000-01-01"

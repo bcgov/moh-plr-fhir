@@ -46,6 +46,7 @@ Description: "Example of generic Practitioner response."
 * birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
 * extension[+] = Example-Demographics-2
 
+* id = "IPC.00147622.BC.PRS"
 * identifier[+] = Example-Identifier-IPC-Ind-1-Response
 * identifier[+] = Example-Identifier-CPN-Response
 * identifier[+] = Example-Identifier-CPSID-Response
@@ -150,7 +151,8 @@ Usage: #inline
 Instance: Example-Practitioner-UpdateLicense
 InstanceOf: BCPractitioner
 Description: "Example Practitioner resource for updating License Status."
-* identifier = Example-Identifier-IPC-Ind-1
+* id = "IPC.00763481.BC.PRS"
+* identifier = Example-Identifier-IPC-Ind-3
 * extension = Example-License-Status-Update
 * name.family.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason" 
 * name.family.extension.valueCode = #not-applicable
@@ -158,7 +160,8 @@ Description: "Example Practitioner resource for updating License Status."
 Instance: Example-Practitioner-Update
 InstanceOf: BCPractitioner
 Description: "Example Practitioner resource for updating License Status."
-* identifier = Example-Identifier-IPC-Ind-1
+* id = "IPC.00147433.BC.PRS"
+* identifier = Example-Identifier-IPC-Ind-147433
 * address[+] = Example-Address-Update
 * name[+] = Example-Name-Usual-Change
 * telecom[+] = Example-ContactPoint-Phone-Update
