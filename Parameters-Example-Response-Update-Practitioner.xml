@@ -24,32 +24,10 @@
         </meta>
         <type value="collection"/>
         <entry>
-          <fullUrl value="urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"/>
-          <resource>
-            <OperationOutcome>
-              <id value="Example-OperationOutcome-MaintainSuccess"/>
-              <meta>
-                <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"/>
-              </meta>
-              <issue>
-                <severity value="information"/>
-                <code value="business-rule"/>
-                <details>
-                  <coding>
-                    <system value="https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-codes"/>
-                    <code value="PRS.PRP.MTN.UNK.0.0.0000"/>
-                  </coding>
-                  <text value="The provider transaction was processed."/>
-                </details>
-              </issue>
-            </OperationOutcome>
-          </resource>
-        </entry>
-        <entry>
           <fullUrl value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
           <resource>
             <Practitioner>
-              <id value="Example-Practitioner-Response"/>
+              <id value="IPC.00147622.BC.PRS"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"/>
               </meta>
@@ -265,7 +243,7 @@
                   </valueIdentifier>
                 </extension>
                 <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                <value value="IPC.00147422.BC.PRS"/>
+                <value value="IPC.00147622.BC.PRS"/>
                 <period>
                   <start value="2000-01-01"/>
                 </period>
@@ -440,7 +418,7 @@
           <fullUrl value="urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6"/>
           <resource>
             <PractitionerRole>
-              <id value="Example-PractitionerRole-1-Role-FromPractitioner-Response"/>
+              <id value="IPC.00147622.BC.PRS"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"/>
               </meta>
@@ -454,7 +432,7 @@
                     </valueIdentifier>
                   </extension>
                   <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                  <value value="IPC.00147422.BC.PRS"/>
+                  <value value="IPC.00147622.BC.PRS"/>
                   <period>
                     <start value="2000-01-01"/>
                   </period>
@@ -495,7 +473,7 @@
           <fullUrl value="urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7"/>
           <resource>
             <PractitionerRole>
-              <id value="Example-PractitionerRole-2-OrgRef-FromPractitioner-Response"/>
+              <id value="RELN.124.PRS"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
               </meta>
@@ -519,8 +497,15 @@
               </period>
               <practitioner>
                 <identifier>
+                  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="MOH"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
                   <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                  <value value="IPC.00147422.BC.PRS"/>
+                  <value value="IPC.00147622.BC.PRS"/>
                   <period>
                     <start value="2000-01-01"/>
                   </period>
@@ -528,8 +513,15 @@
               </practitioner>
               <organization>
                 <identifier>
+                  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="MOH"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
                   <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                  <value value="IPC.00147433.BC.PRS"/>
+                  <value value="IPC.00147622.BC.PRS"/>
                   <period>
                     <start value="2000-01-01"/>
                   </period>
@@ -542,7 +534,7 @@
           <fullUrl value="urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9"/>
           <resource>
             <PractitionerRole>
-              <id value="Example-PractitionerRole-3-LocRef-FromPractitioner-Response"/>
+              <id value="RELN.126.PRS"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
               </meta>
@@ -566,8 +558,15 @@
               </period>
               <practitioner>
                 <identifier>
+                  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="MOH"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
                   <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                  <value value="IPC.00147422.BC.PRS"/>
+                  <value value="IPC.00147622.BC.PRS"/>
                   <period>
                     <start value="2000-01-01"/>
                   </period>

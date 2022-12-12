@@ -51,7 +51,7 @@
           <fullUrl value="urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"/>
           <resource>
             <Organization>
-              <id value="Example-Organization-2"/>
+              <id value="IPC.00147437.BC.PRS"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"/>
               </meta>
@@ -97,7 +97,7 @@
               </extension>
               <identifier>
                 <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                <value value="IPC.00147433.BC.PRS"/>
+                <value value="IPC.00147437.BC.PRS"/>
                 <period>
                   <start value="2000-01-01"/>
                 </period>
@@ -177,7 +177,7 @@
           <fullUrl value="urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c"/>
           <resource>
             <PractitionerRole>
-              <id value="Example-PractitionerRole-4-PracRef-FromOrg"/>
+              <id value="RELN.127.PRS"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
               </meta>
@@ -203,8 +203,8 @@
               </practitioner>
               <organization>
                 <identifier>
-                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC"/>
-                  <value value="IFC.00147422.BC.PRS"/>
+                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
+                  <value value="IPC.00147437.BC.PRS"/>
                   <period>
                     <start value="2000-01-01"/>
                   </period>
@@ -217,7 +217,7 @@
           <fullUrl value="urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03"/>
           <resource>
             <OrganizationAffiliation>
-              <id value="Example-OrganizationAffiliation-1-OrgRef-FromOrg"/>
+              <id value="RELN.141.PRS"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"/>
               </meta>
@@ -227,7 +227,7 @@
               <organization>
                 <identifier>
                   <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                  <value value="IPC.00147433.BC.PRS"/>
+                  <value value="IPC.00147437.BC.PRS"/>
                   <period>
                     <start value="2000-01-01"/>
                   </period>
@@ -255,7 +255,7 @@
           <fullUrl value="urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5"/>
           <resource>
             <OrganizationAffiliation>
-              <id value="Example-OrganizationAffiliation-2-LocRef-FromOrg"/>
+              <id value="RELN.142.PRS"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"/>
               </meta>
@@ -264,8 +264,15 @@
               </period>
               <organization>
                 <identifier>
+                  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="MOH"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
                   <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                  <value value="IPC.00147433.BC.PRS"/>
+                  <value value="IPC.00147437.BC.PRS"/>
                   <period>
                     <start value="2000-01-01"/>
                   </period>

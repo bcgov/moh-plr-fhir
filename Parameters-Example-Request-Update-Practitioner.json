@@ -22,13 +22,13 @@
         "fullUrl" : "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87",
         "resource" : {
           "resourceType" : "Practitioner",
-          "id" : "Example-Practitioner-Update",
+          "id" : "IPC.00147433.BC.PRS",
           "meta" : {
             "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"]
           },
           "identifier" : [{
             "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-            "value" : "IPC.00147422.BC.PRS",
+            "value" : "IPC.00147433.BC.PRS",
             "period" : {
               "start" : "2000-01-01"
             }
@@ -135,12 +135,18 @@
         "fullUrl" : "urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6",
         "resource" : {
           "resourceType" : "PractitionerRole",
-          "id" : "Example-PractitionerRole-1-Role-Update-Specialty",
+          "id" : "IPC.00147433.BC.PRS",
           "meta" : {
             "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"]
           },
           "practitioner" : {
-            "reference" : "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+            "identifier" : {
+              "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+              "value" : "IPC.00147433.BC.PRS",
+              "period" : {
+                "start" : "2000-01-01"
+              }
+            }
           },
           "code" : [{
             "coding" : [{
@@ -180,7 +186,7 @@
         "fullUrl" : "urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7",
         "resource" : {
           "resourceType" : "PractitionerRole",
-          "id" : "Example-PractitionerRole-2-OrgRef-FromPractitioner",
+          "id" : "RELN.173.PRS",
           "meta" : {
             "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"]
           },
@@ -199,7 +205,7 @@
           "practitioner" : {
             "identifier" : {
               "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-              "value" : "IPC.00147422.BC.PRS",
+              "value" : "IPC.00147433.BC.PRS",
               "period" : {
                 "start" : "2000-01-01"
               }
@@ -207,53 +213,21 @@
           },
           "organization" : {
             "identifier" : {
+              "extension" : [{
+                "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+                "valueIdentifier" : {
+                  "assigner" : {
+                    "display" : "MOH"
+                  }
+                }
+              }],
               "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-              "value" : "IPC.00147433.BC.PRS",
+              "value" : "IPC.00147436.BC.PRS",
               "period" : {
                 "start" : "2000-01-01"
               }
             }
           }
-        }
-      },
-      {
-        "fullUrl" : "urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9",
-        "resource" : {
-          "resourceType" : "PractitionerRole",
-          "id" : "Example-PractitionerRole-3-LocRef-FromPractitioner",
-          "meta" : {
-            "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"]
-          },
-          "extension" : [{
-            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension",
-            "valueCodeableConcept" : {
-              "coding" : [{
-                "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code",
-                "code" : "WORKSAT"
-              }]
-            }
-          }],
-          "period" : {
-            "start" : "2000-01-01"
-          },
-          "practitioner" : {
-            "identifier" : {
-              "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-              "value" : "IPC.00147422.BC.PRS",
-              "period" : {
-                "start" : "2000-01-01"
-              }
-            }
-          },
-          "location" : [{
-            "identifier" : {
-              "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC",
-              "value" : "IFC.00147422.BC.PRS",
-              "period" : {
-                "start" : "2000-01-01"
-              }
-            }
-          }]
         }
       }]
     }

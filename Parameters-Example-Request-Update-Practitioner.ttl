@@ -42,16 +42,12 @@
          fhir:index 2;
          fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7" ];
          fhir:Bundle.entry.resource <urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7>
-       ], [
-         fhir:index 3;
-         fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9" ];
-         fhir:Bundle.entry.resource <urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9>
        ]
      ]
   ] . # 
 
 <urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87> a fhir:Practitioner;
-  fhir:Resource.id [ fhir:value "Example-Practitioner-Update"]; # 
+  fhir:Resource.id [ fhir:value "IPC.00147433.BC.PRS"]; # 
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner";
@@ -62,7 +58,7 @@
   fhir:Practitioner.identifier [
      fhir:index 0;
      fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-     fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ];
+     fhir:Identifier.value [ fhir:value "IPC.00147433.BC.PRS" ];
      fhir:Identifier.period [
        fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
      ]
@@ -185,7 +181,7 @@
   ] . # 
 
 <urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6> a fhir:PractitionerRole;
-  fhir:Resource.id [ fhir:value "Example-PractitionerRole-1-Role-Update-Specialty"]; # 
+  fhir:Resource.id [ fhir:value "IPC.00147433.BC.PRS"]; # 
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role";
@@ -194,7 +190,13 @@
      ]
   ]; # 
   fhir:PractitionerRole.practitioner [
-     fhir:Reference.reference [ fhir:value "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87" ]
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
+       fhir:Identifier.value [ fhir:value "IPC.00147433.BC.PRS" ];
+       fhir:Identifier.period [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
+     ]
   ]; # 
   fhir:PractitionerRole.code [
      fhir:index 0;
@@ -236,7 +238,7 @@
   ] . # 
 
 <urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7> a fhir:PractitionerRole;
-  fhir:Resource.id [ fhir:value "Example-PractitionerRole-2-OrgRef-FromPractitioner"]; # 
+  fhir:Resource.id [ fhir:value "RELN.173.PRS"]; # 
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships";
@@ -261,7 +263,7 @@
   fhir:PractitionerRole.practitioner [
      fhir:Reference.identifier [
        fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-       fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ];
+       fhir:Identifier.value [ fhir:value "IPC.00147433.BC.PRS" ];
        fhir:Identifier.period [
          fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
        ]
@@ -269,51 +271,17 @@
   ]; # 
   fhir:PractitionerRole.organization [
      fhir:Reference.identifier [
-       fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-       fhir:Identifier.value [ fhir:value "IPC.00147433.BC.PRS" ];
-       fhir:Identifier.period [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-       ]
-     ]
-  ] . # 
-
-<urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9> a fhir:PractitionerRole;
-  fhir:Resource.id [ fhir:value "Example-PractitionerRole-3-LocRef-FromPractitioner"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships";
-       fhir:index 0;
-       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-     ]
-  ]; # 
-  fhir:DomainResource.extension [
-     fhir:index 0;
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension" ];
-     fhir:Extension.valueCodeableConcept [
-       fhir:CodeableConcept.coding [
+       fhir:Element.extension [
          fhir:index 0;
-         fhir:Coding.system [ fhir:value "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code" ];
-         fhir:Coding.code [ fhir:value "WORKSAT" ]
-       ]
-     ]
-  ]; # 
-  fhir:PractitionerRole.period [
-     fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-  ]; # 
-  fhir:PractitionerRole.practitioner [
-     fhir:Reference.identifier [
+         fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension" ];
+         fhir:Extension.valueIdentifier [
+           fhir:Identifier.assigner [
+             fhir:Reference.display [ fhir:value "MOH" ]
+           ]
+         ]
+       ];
        fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-       fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ];
-       fhir:Identifier.period [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-       ]
-     ]
-  ]; # 
-  fhir:PractitionerRole.location [
-     fhir:index 0;
-     fhir:Reference.identifier [
-       fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC" ];
-       fhir:Identifier.value [ fhir:value "IFC.00147422.BC.PRS" ];
+       fhir:Identifier.value [ fhir:value "IPC.00147436.BC.PRS" ];
        fhir:Identifier.period [
          fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
        ]

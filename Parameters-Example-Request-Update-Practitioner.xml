@@ -23,13 +23,13 @@
           <fullUrl value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
           <resource>
             <Practitioner>
-              <id value="Example-Practitioner-Update"/>
+              <id value="IPC.00147433.BC.PRS"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"/>
               </meta>
               <identifier>
                 <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                <value value="IPC.00147422.BC.PRS"/>
+                <value value="IPC.00147433.BC.PRS"/>
                 <period>
                   <start value="2000-01-01"/>
                 </period>
@@ -130,12 +130,18 @@
           <fullUrl value="urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6"/>
           <resource>
             <PractitionerRole>
-              <id value="Example-PractitionerRole-1-Role-Update-Specialty"/>
+              <id value="IPC.00147433.BC.PRS"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"/>
               </meta>
               <practitioner>
-                <reference value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
+                <identifier>
+                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
+                  <value value="IPC.00147433.BC.PRS"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
               </practitioner>
               <code>
                 <coding>
@@ -173,7 +179,7 @@
           <fullUrl value="urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7"/>
           <resource>
             <PractitionerRole>
-              <id value="Example-PractitionerRole-2-OrgRef-FromPractitioner"/>
+              <id value="RELN.173.PRS"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
               </meta>
@@ -191,7 +197,7 @@
               <practitioner>
                 <identifier>
                   <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                  <value value="IPC.00147422.BC.PRS"/>
+                  <value value="IPC.00147433.BC.PRS"/>
                   <period>
                     <start value="2000-01-01"/>
                   </period>
@@ -199,53 +205,20 @@
               </practitioner>
               <organization>
                 <identifier>
+                  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="MOH"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
                   <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                  <value value="IPC.00147433.BC.PRS"/>
+                  <value value="IPC.00147436.BC.PRS"/>
                   <period>
                     <start value="2000-01-01"/>
                   </period>
                 </identifier>
               </organization>
-            </PractitionerRole>
-          </resource>
-        </entry>
-        <entry>
-          <fullUrl value="urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9"/>
-          <resource>
-            <PractitionerRole>
-              <id value="Example-PractitionerRole-3-LocRef-FromPractitioner"/>
-              <meta>
-                <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
-              </meta>
-              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension">
-                <valueCodeableConcept>
-                  <coding>
-                    <system value="https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code"/>
-                    <code value="WORKSAT"/>
-                  </coding>
-                </valueCodeableConcept>
-              </extension>
-              <period>
-                <start value="2000-01-01"/>
-              </period>
-              <practitioner>
-                <identifier>
-                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                  <value value="IPC.00147422.BC.PRS"/>
-                  <period>
-                    <start value="2000-01-01"/>
-                  </period>
-                </identifier>
-              </practitioner>
-              <location>
-                <identifier>
-                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC"/>
-                  <value value="IFC.00147422.BC.PRS"/>
-                  <period>
-                    <start value="2000-01-01"/>
-                  </period>
-                </identifier>
-              </location>
             </PractitionerRole>
           </resource>
         </entry>

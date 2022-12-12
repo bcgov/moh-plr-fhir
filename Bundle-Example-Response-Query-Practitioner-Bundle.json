@@ -359,7 +359,7 @@
         "fullUrl" : "urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c",
         "resource" : {
           "resourceType" : "PractitionerRole",
-          "id" : "Example-PractitionerRole-1-Role-FromPractitioner",
+          "id" : "IPC.00147422.BC.PRS",
           "meta" : {
             "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"]
           },
@@ -401,7 +401,7 @@
         "fullUrl" : "urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03",
         "resource" : {
           "resourceType" : "PractitionerRole",
-          "id" : "Example-PractitionerRole-2-OrgRef-FromPractitioner",
+          "id" : "RELN.123.PRS",
           "meta" : {
             "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"]
           },
@@ -428,8 +428,16 @@
           },
           "organization" : {
             "identifier" : {
+              "extension" : [{
+                "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+                "valueIdentifier" : {
+                  "assigner" : {
+                    "display" : "MOH"
+                  }
+                }
+              }],
               "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-              "value" : "IPC.00147433.BC.PRS",
+              "value" : "IPC.00147436.BC.PRS",
               "period" : {
                 "start" : "2000-01-01"
               }
@@ -441,7 +449,7 @@
         "fullUrl" : "urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5",
         "resource" : {
           "resourceType" : "PractitionerRole",
-          "id" : "Example-PractitionerRole-3-LocRef-FromPractitioner",
+          "id" : "RELN.125.PRS",
           "meta" : {
             "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"]
           },
