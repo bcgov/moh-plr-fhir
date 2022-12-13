@@ -101,6 +101,17 @@ The response also has an entry of OperationOutcome that has information, warning
 
 A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.
 
+#### Operations FHIR Resource Structure
+
+The $maintain and $distribution FHIR Resource structure is describe on each individual Operation page; below is a summary of that structure to aid understanding.  The diagram shows a Practitioner Bundle, but it could be an Organization or Location Bundle as well.
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="Parameters-maintain-distribution.PNG" alt="Parameters Structure"/>
+  <figcaption>Figure 2.2 - BC Maintain and Distribution Structure</figcaption>
+</figure>
+{::options parse_block_html="true" /}
+
 #### Batch
 Batch allows for many independent transactions to be sent in a single operation. It also uses Bundles, but a batch Bundle (Bundle.type = 'batch'), that wraps a number of Bundles. The batch Bundle is not expected in the parameters but as a JSON file. It must contain at least one or more of:
 
@@ -122,7 +133,7 @@ The two query operations are:
 
 The syntax for the $entityQuery operation is:
 
-* GET /resource/<id>/$entityQuery to retrieve a specific Provider or Facility where the id is known
+* GET /resource/id/$entityQuery to retrieve a specific Provider or Facility where the id is known
 * GET /resource/$entityQuery?param1&param2&... to search for a Provider or Facility with search parameters instead of an id
 
 Although PLR supports many different types of identifiers, the resource id is the identifier assigned by PLR when the resource is created, internally called the IPC for Providers and IFC for Facilities.  This id is always returned in the response and should be persisted by the requestor.  To search for other identifiers stored in PLR and attached to Providers or Facilities, the search parameter 'identifier' and 'identifier-type' should be used.
@@ -143,7 +154,7 @@ Below is a sample search set response bundle.  It shows the structure at a highl
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_searchset_bundle_practitioner_response.png" alt="BC FHIR Resources"/>
-  <figcaption>Figure 2.2 - BC FHIR Query Response Bundle Structure</figcaption>
+  <figcaption>Figure 2.3 - BC FHIR Query Response Bundle Structure</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
