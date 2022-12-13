@@ -324,6 +324,15 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
 
 <p>A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.</p>
 
+<h4 id="operations-fhir-resource-structure">Operations FHIR Resource Structure</h4>
+
+<p>The $maintain and $distribution FHIR Resource structure is describe on each individual Operation page; below is a summary of that structure to aid understanding.  The diagram shows a Practitioner Bundle, but it could be an Organization or Location Bundle as well.</p>
+
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="Parameters-maintain-distribution.PNG" alt="Parameters Structure" />
+  <figcaption>Figure 2.2 - BC Maintain and Distribution Structure</figcaption>
+</figure>
+
 <h4 id="batch">Batch</h4>
 <p>Batch allows for many independent transactions to be sent in a single operation. It also uses Bundles, but a batch Bundle (Bundle.type = ‘batch’), that wraps a number of Bundles. The batch Bundle is not expected in the parameters but as a JSON file. It must contain at least one or more of:</p>
 
@@ -350,7 +359,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
 <p>The syntax for the $entityQuery operation is:</p>
 
 <ul>
-  <li>GET /resource/<id>/$entityQuery to retrieve a specific Provider or Facility where the id is known</id></li>
+  <li>GET /resource/id/$entityQuery to retrieve a specific Provider or Facility where the id is known</li>
   <li>GET /resource/$entityQuery?param1&amp;param2&amp;… to search for a Provider or Facility with search parameters instead of an id</li>
 </ul>
 
@@ -373,7 +382,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
 
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_searchset_bundle_practitioner_response.png" alt="BC FHIR Resources" />
-  <figcaption>Figure 2.2 - BC FHIR Query Response Bundle Structure</figcaption>
+  <figcaption>Figure 2.3 - BC FHIR Query Response Bundle Structure</figcaption>
 </figure>
 
 <p>A FHIR example of a real message can be found <a href="Bundle-Example-Response-Query-Practitioner-Bundle.html">here</a>.</p>
@@ -667,7 +676,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 13, 2022 17:07+0000">2022-12-13</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 13, 2022 19:55+0000">2022-12-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
