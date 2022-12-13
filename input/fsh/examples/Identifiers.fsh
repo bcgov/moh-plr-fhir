@@ -1,4 +1,4 @@
-Instance: Example-Identifier-CPN
+Instance: Example-Identifier-CPN-147422
 InstanceOf: Identifier
 Description: "Identifier example for CPN."
 Usage: #inline
@@ -6,15 +6,7 @@ Usage: #inline
 * value = "CPN.00147422.BC.PRS"
 * period.start = "2000-01-01"
 
-Instance: Example-Identifier-CPN-Org
-InstanceOf: Identifier
-Description: "Identifier example for CPN."
-Usage: #inline
-* system = $System_CPN
-* value = "CPN.00147433.BC.PRS"
-* period.start = "2000-01-01"
-
-Instance: Example-Identifier-CPN-Org-Response
+Instance: Example-Identifier-CPN-Org-Response-147433
 InstanceOf: Identifier
 Description: "Identifier example for CPN."
 Usage: #inline
@@ -23,7 +15,7 @@ Usage: #inline
 * period.start = "2000-01-01"
 * extension = Example-OC-PHSA
 
-Instance: Example-Identifier-CPN-Response
+Instance: Example-Identifier-CPN-Response-147422
 InstanceOf: Identifier
 Description: "Identifier example for CPN."
 Usage: #inline
@@ -32,7 +24,7 @@ Usage: #inline
 * period.start = "2000-01-01"
 * extension = Example-OC-MOH
 
-Instance: Example-Identifier-IPC-Ind-1
+Instance: Example-Identifier-IPC-Ind-147422
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -56,7 +48,7 @@ Usage: #inline
 * value = "IPC.00147434.BC.PRS"
 * period.start = "2000-01-01"
 
-Instance: Example-Identifier-IPC-Ind-1-Response
+Instance: Example-Identifier-IPC-Ind-Response-147622
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -65,7 +57,7 @@ Usage: #inline
 * period.start = "2000-01-01"
 * extension = Example-OC-MOH
 
-Instance: Example-Identifier-IPC-Ind-2
+Instance: Example-Identifier-IPC-Ind-763483
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -73,7 +65,7 @@ Usage: #inline
 * value = "IPC.00763483.BC.PRS"
 * period.start = "2000-01-01"
 
-Instance: Example-Identifier-IPC-Ind-3
+Instance: Example-Identifier-IPC-Ind-763481
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -81,7 +73,7 @@ Usage: #inline
 * value = "IPC.00763481.BC.PRS"
 * period.start = "2000-01-01"
 
-Instance: Example-Identifier-IPC-Ind-Update
+Instance: Example-Identifier-IPC-Ind-Update-147422
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -90,7 +82,7 @@ Usage: #inline
 * period.start = "2000-01-01"
 * extension = Example-ERC-Change
 
-Instance: Example-Identifier-IPC-Org
+Instance: Example-Identifier-IPC-Org-147436
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -98,7 +90,7 @@ Usage: #inline
 * value = "IPC.00147436.BC.PRS"
 * period.start = "2000-01-01"
 
-Instance: Example-Identifier-IPC-Org-3
+Instance: Example-Identifier-IPC-Org-147476
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -106,7 +98,7 @@ Usage: #inline
 * value = "IPC.00147437.BC.PRS"
 * period.start = "2000-01-01"
 
-Instance: Example-Identifier-IPC-Org-2
+Instance: Example-Identifier-IPC-Org-164553
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -114,7 +106,7 @@ Usage: #inline
 * value = "IPC.001164553.BC.PRS"
 * period.start = "2000-02-02"
 
-Instance: Example-Identifier-IPC-Org-Response
+Instance: Example-Identifier-IPC-Org-Response-147436
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -123,7 +115,7 @@ Usage: #inline
 * period.start = "2000-01-01"
 * extension = Example-OC-MOH
 
-Instance: Example-Identifier-IPC-Org-Response-22
+Instance: Example-Identifier-IPC-Org-Response-147434
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -132,7 +124,7 @@ Usage: #inline
 * period.start = "2000-01-01"
 * extension = Example-OC-MOH
 
-Instance: Example-Identifier-IPC-Org-Response-1
+Instance: Example-Identifier-IPC-Org-Response-147437
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -141,7 +133,7 @@ Usage: #inline
 * period.start = "2000-01-01"
 * extension = Example-OC-MOH
 
-Instance: Example-Identifier-IPC-Org-1
+Instance: Example-Identifier-IPC-Org-147622
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -150,9 +142,9 @@ Usage: #inline
 * period.start = "2000-01-01"
 * extension = Example-OC-MOH
 
-Instance: Example-Identifier-IPC-Org-Update
+Instance: Example-Identifier-IPC-Org-Update-147433
 InstanceOf: Identifier
-Description: "Identifier example for IPC."
+Description: "Identifier example for IPC in update message."
 Usage: #inline
 * system = $System_IPC
 * value = "IPC.00147433.BC.PRS"
@@ -177,7 +169,7 @@ Usage: #inline
 
 Instance: Example-Identifier-ORGID-Response
 InstanceOf: Identifier
-Description: "Identifier example for ORGID."
+Description: "Identifier example for ORGID in response."
 Usage: #inline
 * system = $System_ORGID
 * value = "123123123"
@@ -186,7 +178,7 @@ Usage: #inline
 
 Instance: Example-Identifier-ORGID-Update
 InstanceOf: Identifier
-Description: "Identifier example for ORGID."
+Description: "Identifier example for ORGID in update message."
 Usage: #inline
 * system = $System_ORGID
 * value = "123123123"
@@ -203,7 +195,7 @@ Usage: #inline
 
 Instance: Example-Identifier-CPSID-Response
 InstanceOf: Identifier
-Description: "Identifier example for CPSID."
+Description: "Identifier example for CPSID in response."
 Usage: #inline
 * system = $System_CPSID
 * value = "123454"

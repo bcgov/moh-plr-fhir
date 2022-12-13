@@ -32,8 +32,8 @@ InstanceOf: BCOrganization
 Description: "Example of an Organization that is being created."
 * id = "IPC.00147436.BC.PRS"
 * identifier[+] = Example-Identifier-ORGID-Response
-* identifier[+] = Example-Identifier-IPC-Org-Response
-* identifier[+] = Example-Identifier-CPN-Org-Response
+* identifier[+] = Example-Identifier-IPC-Org-Response-147436
+* identifier[+] = Example-Identifier-CPN-Org-Response-147433
 * name = "Kelowna Clinic"
 * name.extension[use].valueCode = #official
 * name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
@@ -51,8 +51,8 @@ Description: "Example of generic Organization."
 * id = "IPC.00147437.BC.PRS"
 
 // identifier
-* identifier[0] = Example-Identifier-IPC-Org-3
-* identifier[1] = Example-Identifier-CPN
+* identifier[0] = Example-Identifier-IPC-Org-147476
+* identifier[1] = Example-Identifier-CPN-147422
 * identifier[2] = Example-Identifier-ORGID
 
 * name = "ABC Clinic"

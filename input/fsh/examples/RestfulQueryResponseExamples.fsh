@@ -8,7 +8,7 @@ Description: "Example of generic Practitioner."
 * birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
 * extension[1] = Example-Demographics-2
 
-* identifier[0] = Example-Identifier-IPC-Ind-1
+* identifier[0] = Example-Identifier-IPC-Ind-147422
 
 * name = Example-Name-Official
 * extension[2] = Example-License-Status
@@ -47,9 +47,9 @@ Description: "Example of the PractitionerRole with Speciality."
 Instance: Example-Atomic-PractitionerRole-OrgRef
 InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
-* practitioner.identifier = Example-Identifier-IPC-Ind-1
+* practitioner.identifier = Example-Identifier-IPC-Ind-147422
 * period.start = "2000-01-01"
-* organization.identifier = Example-Identifier-IPC-Org
+* organization.identifier = Example-Identifier-IPC-Org-147436
 * extension[0].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"
 * extension[0].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
@@ -57,7 +57,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 Instance: Example-Atomic-PractitionerRole-LocRef
 InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Location relationship."
-* practitioner.identifier = Example-Identifier-IPC-Ind-1
+* practitioner.identifier = Example-Identifier-IPC-Ind-147422
 * period.start = "2000-01-01"
 * location.identifier = Example-Identifier-IFC
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension"
@@ -82,16 +82,16 @@ Description: "Example of an Organization."
 Instance: Example-Atomic-OrganizationAffiliation-OrgRef
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Organization relationship."
-* organization.identifier = Example-Identifier-IPC-Org
+* organization.identifier = Example-Identifier-IPC-Org-147436
 * code.coding.system = $PLRRelationshipType
 * code.coding.code = #deptof
 * period.start = "2000-01-01"
-* participatingOrganization.identifier = Example-Identifier-IPC-Org-2
+* participatingOrganization.identifier = Example-Identifier-IPC-Org-164553
 
 Instance: Example-Atomic-OrganizationAffiliation-LocRef
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Location relationship."
-* organization.identifier = Example-Identifier-IPC-Org
+* organization.identifier = Example-Identifier-IPC-Org-147436
 * code.coding.system = $PLRLocationRelationshipType
 * code.coding.code = #operatesfrom
 * period.start = "2000-01-01"

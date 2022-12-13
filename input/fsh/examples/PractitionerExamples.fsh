@@ -8,7 +8,7 @@ Description: "Example of generic Practitioner."
 * birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
 * extension[1] = Example-Demographics-2
 
-* identifier[0] = Example-Identifier-IPC-Ind-1
+* identifier[0] = Example-Identifier-IPC-Ind-147422
 
 * name = Example-Name-Official
 * extension[2] = Example-License-Status
@@ -47,8 +47,8 @@ Description: "Example of generic Practitioner response."
 * extension[+] = Example-Demographics-2
 
 * id = "IPC.00147622.BC.PRS"
-* identifier[+] = Example-Identifier-IPC-Ind-1-Response
-* identifier[+] = Example-Identifier-CPN-Response
+* identifier[+] = Example-Identifier-IPC-Ind-Response-147622
+* identifier[+] = Example-Identifier-CPN-Response-147422
 * identifier[+] = Example-Identifier-CPSID-Response
 
 * name = Example-Name-Official-Response
@@ -81,8 +81,8 @@ Instance: Example-AddPractitioner-Practitioner
 InstanceOf: BCPractitioner
 Description: "Example of a BC practitioner that is being created."
 // identifier
-* identifier[0] = Example-Identifier-IPC-Ind-1
-* identifier[1] = Example-Identifier-CPN
+* identifier[0] = Example-Identifier-IPC-Ind-147422
+* identifier[1] = Example-Identifier-CPN-147422
 * identifier[2] = Example-Identifier-CPSID
 * active = true
 * name = Example-Name-Official
@@ -129,7 +129,7 @@ Usage: #inline
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2022-06-30"
 * extension[+].url = "targetPractitioner"
-* extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-2
+* extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-763483
 * extension[+].url = "relationshipType"
 * extension[=].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT 
@@ -142,7 +142,7 @@ Usage: #inline
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2022-06-30"
 * extension[+].url = "targetPractitioner"
-* extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-2
+* extension[=].valueReference.identifier = Example-Identifier-IPC-Ind-763483
 * extension[+].url = "relationshipType"
 * extension[=].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT 
@@ -152,7 +152,7 @@ Instance: Example-Practitioner-UpdateLicense
 InstanceOf: BCPractitioner
 Description: "Example Practitioner resource for updating License Status."
 * id = "IPC.00763481.BC.PRS"
-* identifier = Example-Identifier-IPC-Ind-3
+* identifier = Example-Identifier-IPC-Ind-763481
 * extension = Example-License-Status-Update
 * name.family.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason" 
 * name.family.extension.valueCode = #not-applicable
