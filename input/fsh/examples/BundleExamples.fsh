@@ -39,9 +39,9 @@ InstanceOf: BCPractitionerBundle
 Description: "Example of a bundle of resources sent when requesting a practitioner create."
 * type = #collection
 * entry[0].fullUrl = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-* entry[0].resource = Example-Practitioner
+* entry[0].resource = Example-AddPractitioner-Practitioner
 * entry[1].fullUrl = "urn:uuid:f431631b-ed68-4716-80be-cca6904309fc"
-* entry[1].resource = Example-PractitionerRole-1-Role-FromPractitioner
+* entry[1].resource = Example-PractitionerRole-1-Role-FromPractitioner-CPSID
 
 Instance: Example-Batch-Bundle
 InstanceOf: BCBatchBundle
@@ -116,9 +116,9 @@ Description: "Example of a bundle of resources sent when distributing a Practiti
 * entry[1].fullUrl = "urn:uuid:e46a70b4-d0b9-4770-8ff6-989f4f847dc6"
 * entry[1].resource = Example-PractitionerRole-1-Role-FromPractitioner-Response
 * entry[2].fullUrl = "urn:uuid:e06c8673-ddf5-4190-ba1e-dd43923a66c7"
-* entry[2].resource = Example-PractitionerRole-2-OrgRef-FromPractitioner
+* entry[2].resource = Example-PractitionerRole-5-OrgRef-FromPractitioner
 * entry[3].fullUrl = "urn:uuid:529cd77a-8f57-4d2d-bf3d-38dc3c2c4ec9"
-* entry[3].resource = Example-PractitionerRole-3-LocRef-FromPractitioner
+* entry[3].resource = Example-PractitionerRole-3-LocRef-FromPractitioner-Response
 
 Instance: Example-DistributeOrganization-Bundle
 InstanceOf: BCOrganizationBundle

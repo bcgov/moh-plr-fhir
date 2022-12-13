@@ -7,7 +7,7 @@ Description: "Example of generic Practitioner."
 * birthDate = "1934-01-02"
 * birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
 * extension[1] = Example-Demographics-2
-
+* id = "IPC.00147422.BC.PRS"
 * identifier[0] = Example-Identifier-IPC-Ind-147422
 
 * name = Example-Name-Official
@@ -81,8 +81,8 @@ Instance: Example-AddPractitioner-Practitioner
 InstanceOf: BCPractitioner
 Description: "Example of a BC practitioner that is being created."
 // identifier
-* identifier[0] = Example-Identifier-IPC-Ind-147422
-* identifier[1] = Example-Identifier-CPN-147422
+//* identifier[0] = Example-Identifier-IPC-Ind-147422
+//* identifier[1] = Example-Identifier-CPN-147422
 * identifier[2] = Example-Identifier-CPSID
 * active = true
 * name = Example-Name-Official

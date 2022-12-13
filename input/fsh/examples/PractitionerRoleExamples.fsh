@@ -7,6 +7,15 @@ Description: "Example of the PractitionerRole with Speciality."
 * code = $SCPType#MD
 * specialty = Example-Specialty
 
+Instance: Example-PractitionerRole-1-Role-FromPractitioner-CPSID
+InstanceOf: BCPractitionerRole
+Description: "Example of the PractitionerRole with Speciality."
+//* id = "IPC.00147422.BC.PRS"
+* practitioner.identifier = Example-Identifier-CPSID
+//* organization.display = "BC"
+* code = $SCPType#MD
+* specialty = Example-Specialty
+
 Instance: Example-PractitionerRole-1-Role-FromPractitioner-Response
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
@@ -20,7 +29,7 @@ Instance: Example-PractitionerRole-1-Role-Update
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
 * id = "IPC.00763481.BC.PRS"
-* practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
+* practitioner.identifier = Example-Identifier-IPC-Ind-763481
 //* organization.display = "BC"
 * code.coding.system = $SCPType
 * code.coding.code = #MD
@@ -48,6 +57,17 @@ InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
 * id = "RELN.123.PRS"
 * practitioner.identifier = Example-Identifier-IPC-Ind-147422
+* period.start = "2000-01-01"
+* organization.identifier = Example-Identifier-IPC-Org-Response-147436
+* extension[0].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"
+* extension[0].valueCodeableConcept.coding.system = $PLRRelationshipType
+* extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
+
+Instance: Example-PractitionerRole-5-OrgRef-FromPractitioner
+InstanceOf: BCRoleRelationships
+Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
+* id = "RELN.153.PRS"
+* practitioner.identifier = Example-Identifier-IPC-Ind-Response-147622
 * period.start = "2000-01-01"
 * organization.identifier = Example-Identifier-IPC-Org-Response-147436
 * extension[0].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"
