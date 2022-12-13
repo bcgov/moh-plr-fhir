@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PractitionerRole xmlns="http://hl7.org/fhir">
+  <id value="Example-PractitionerRole-1-Role-FromPractitioner-CPSID"/>
+  <meta>
+    <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: PractitionerRole</b><a name="Example-PractitionerRole-1-Role-FromPractitioner-CPSID"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource PractitionerRole &quot;Example-PractitionerRole-1-Role-FromPractitioner-CPSID&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a></p></div><p><b>practitioner</b>: <span/></p><p><b>code</b>: MD <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-scptype.html">pan-Canadian Provider Types</a>#MD)</span></p><p><b>specialty</b>: AMD53 <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-scpqual.html">pan-Canadian Provider Qualification Types</a>#AMD53)</span></p></div>
+  </text>
+  <practitioner>
+    <identifier>
+      <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPSID"/>
+      <value value="123454"/>
+      <period>
+        <start value="2000-01-01"/>
+      </period>
+    </identifier>
+  </practitioner>
+  <code>
+    <coding>
+      <system value="https://fhir.infoway-inforoute.ca/CodeSystem/scptype"/>
+      <code value="MD"/>
+    </coding>
+  </code>
+  <specialty>
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+      <valuePeriod>
+        <start value="2000-01-01"/>
+        <end value="2020-01-01"/>
+      </valuePeriod>
+    </extension>
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension">
+      <valueString value="Expertise source"/>
+    </extension>
+    <coding>
+      <system value="https://fhir.infoway-inforoute.ca/CodeSystem/scpqual"/>
+      <code value="AMD53"/>
+    </coding>
+  </specialty>
+</PractitionerRole>

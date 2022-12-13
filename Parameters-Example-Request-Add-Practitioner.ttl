@@ -43,7 +43,7 @@
   ] . # 
 
 <urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87> a fhir:Practitioner;
-  fhir:Resource.id [ fhir:value "Example-Practitioner"]; # 
+  fhir:Resource.id [ fhir:value "Example-AddPractitioner-Practitioner"]; # 
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner";
@@ -54,7 +54,7 @@
   fhir:DomainResource.contained [
      a fhir:Organization;
      fhir:index 0;
-     fhir:Resource.id [ fhir:value "grantingInstitution" ];
+     fhir:Resource.id [ fhir:value "qualificationOrganization" ];
      fhir:Resource.meta [
        fhir:Meta.profile [
          fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization";
@@ -62,7 +62,7 @@
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
        ]
      ];
-     fhir:Organization.name [ fhir:value "University of Calgary" ];
+     fhir:Organization.name [ fhir:value "CREDENTIAL_CREDENTIALGRANTINGINSTTXT" ];
      fhir:Organization.address [
        fhir:index 0;
        fhir:Address.city [ fhir:value "CALGARY" ];
@@ -72,19 +72,6 @@
   ]; # 
   fhir:DomainResource.extension [
      fhir:index 0;
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
-     fhir:Extension.valuePeriod [
-       fhir:Period.start [ fhir:value "2012-12-07"^^xsd:date ]
-     ]
-  ], [
-     fhir:index 1;
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension" ];
-     fhir:Extension.valueAddress [
-       fhir:Address.city [ fhir:value "Ottawa" ];
-       fhir:Address.country [ fhir:value "CA" ]
-     ]
-  ], [
-     fhir:index 2;
      fhir:Element.extension [
        fhir:index 0;
        fhir:Extension.url [ fhir:value "statusCode" ];
@@ -114,7 +101,7 @@
      ];
      fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension" ]
   ], [
-     fhir:index 3;
+     fhir:index 1;
      fhir:Element.extension [
        fhir:index 0;
        fhir:Extension.url [ fhir:value "identifier" ];
@@ -142,7 +129,7 @@
      ];
      fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension" ]
   ], [
-     fhir:index 4;
+     fhir:index 2;
      fhir:Element.extension [
        fhir:index 0;
        fhir:Extension.url [ fhir:value "identifier" ];
@@ -163,7 +150,7 @@
      ];
      fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension" ]
   ], [
-     fhir:index 5;
+     fhir:index 3;
      fhir:Element.extension [
        fhir:index 0;
        fhir:Extension.url [ fhir:value "identifier" ];
@@ -198,7 +185,7 @@
      ];
      fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-condition-extension" ]
   ], [
-     fhir:index 6;
+     fhir:index 4;
      fhir:Element.extension [
        fhir:index 0;
        fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
@@ -219,46 +206,32 @@
      ];
      fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-confidentiality-extension" ]
   ], [
+     fhir:index 5;
+     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-deathdate-extension" ];
+     fhir:Extension.valueDateTime [ fhir:value "2000-02-01"^^xsd:date ]
+  ], [
+     fhir:index 6;
+     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
+     fhir:Extension.valuePeriod [
+       fhir:Period.start [ fhir:value "2012-12-07"^^xsd:date ]
+     ]
+  ], [
      fhir:index 7;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
-       fhir:Extension.valuePeriod [
-         fhir:Period.start [ fhir:value "2022-06-30"^^xsd:date ]
-       ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "targetPractitioner" ];
-       fhir:Extension.valueReference [
-         fhir:Reference.identifier [
-           fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-           fhir:Identifier.value [ fhir:value "IPC.00763483.BC.PRS" ];
-           fhir:Identifier.period [
-             fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-           ]
-         ]
-       ]
-     ], [
-       fhir:index 2;
-       fhir:Extension.url [ fhir:value "relationshipType" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code" ];
-           fhir:Coding.code [ fhir:value "WORKSAT" ]
-         ]
-       ]
-     ];
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-relationship-extension" ]
+     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension" ];
+     fhir:Extension.valueAddress [
+       fhir:Address.city [ fhir:value "Ottawa" ];
+       fhir:Address.country [ fhir:value "CA" ]
+     ]
   ]; # 
   fhir:Practitioner.identifier [
      fhir:index 0;
-     fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-     fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ];
+     fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPSID" ];
+     fhir:Identifier.value [ fhir:value "123454" ];
      fhir:Identifier.period [
        fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
      ]
   ]; # 
+  fhir:Practitioner.active [ fhir:value "true"^^xsd:boolean]; # 
   fhir:Practitioner.name [
      fhir:index 0;
      fhir:HumanName.use [ fhir:value "official" ];
@@ -326,7 +299,7 @@
        fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
      ]
   ]; # 
-  fhir:Practitioner.gender [ fhir:value "male"]; # 
+  fhir:Practitioner.gender [ fhir:value "female"]; # 
   fhir:Practitioner.birthDate [
      fhir:value "1934-01-02"^^xsd:date;
      fhir:Element.extension [
@@ -342,19 +315,19 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "designation" ];
-         fhir:Extension.valueString [ fhir:value "Designation" ]
+         fhir:Extension.valueString [ fhir:value "designation" ]
        ], [
          fhir:index 1;
          fhir:Extension.url [ fhir:value "equivalencyFlag" ];
-         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+         fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
        ], [
          fhir:index 2;
          fhir:Extension.url [ fhir:value "registrationNumber" ];
-         fhir:Extension.valueString [ fhir:value "Registration No." ]
+         fhir:Extension.valueString [ fhir:value "registration number" ]
        ], [
          fhir:index 3;
          fhir:Extension.url [ fhir:value "issuedDate" ];
-         fhir:Extension.valueDateTime [ fhir:value "2000-02-03"^^xsd:date ]
+         fhir:Extension.valueDateTime [ fhir:value "2000-01-01"^^xsd:date ]
        ];
        fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-qualification-extension" ]
      ];
@@ -363,13 +336,15 @@
          fhir:index 0;
          fhir:Coding.system [ fhir:value "https://fhir.infoway-inforoute.ca/CodeSystem/scpqual" ];
          fhir:Coding.code [ fhir:value "BD" ]
-       ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "CREDENTIAL_CREDENTIALDESIGNATIONTXT" ]
      ];
      fhir:Practitioner.qualification.period [
-       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
      ];
      fhir:Practitioner.qualification.issuer [
-       fhir:Reference.reference [ fhir:value "#grantingInstitution" ]
+       fhir:Reference.reference [ fhir:value "#qualificationOrganization" ]
      ]
   ]; # 
   fhir:Practitioner.communication [
@@ -393,7 +368,7 @@
   ] . # 
 
 <urn:uuid:f431631b-ed68-4716-80be-cca6904309fc> a fhir:PractitionerRole;
-  fhir:Resource.id [ fhir:value "IPC.00147422.BC.PRS"]; # 
+  fhir:Resource.id [ fhir:value "Example-PractitionerRole-1-Role-FromPractitioner-CPSID"]; # 
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role";
@@ -403,8 +378,8 @@
   ]; # 
   fhir:PractitionerRole.practitioner [
      fhir:Reference.identifier [
-       fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-       fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ];
+       fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPSID" ];
+       fhir:Identifier.value [ fhir:value "123454" ];
        fhir:Identifier.period [
          fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
        ]

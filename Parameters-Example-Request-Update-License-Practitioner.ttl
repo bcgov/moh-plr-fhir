@@ -121,7 +121,13 @@
      ]
   ]; # 
   fhir:PractitionerRole.practitioner [
-     fhir:Reference.reference [ fhir:value "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87" ]
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
+       fhir:Identifier.value [ fhir:value "IPC.00763481.BC.PRS" ];
+       fhir:Identifier.period [
+         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+       ]
+     ]
   ]; # 
   fhir:PractitionerRole.code [
      fhir:index 0;

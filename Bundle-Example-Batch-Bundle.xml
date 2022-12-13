@@ -19,17 +19,17 @@
           <fullUrl value="urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"/>
           <resource>
             <Practitioner>
-              <id value="Example-Practitioner"/>
+              <id value="Example-AddPractitioner-Practitioner"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"/>
               </meta>
               <contained>
                 <Organization>
-                  <id value="grantingInstitution"/>
+                  <id value="qualificationOrganization"/>
                   <meta>
                     <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"/>
                   </meta>
-                  <name value="University of Calgary"/>
+                  <name value="CREDENTIAL_CREDENTIALGRANTINGINSTTXT"/>
                   <address>
                     <city value="CALGARY"/>
                     <state value="AB"/>
@@ -37,17 +37,6 @@
                   </address>
                 </Organization>
               </contained>
-              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
-                <valuePeriod>
-                  <start value="2012-12-07"/>
-                </valuePeriod>
-              </extension>
-              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension">
-                <valueAddress>
-                  <city value="Ottawa"/>
-                  <country value="CA"/>
-                </valueAddress>
-              </extension>
               <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension">
                 <extension url="statusCode">
                   <valueCodeableConcept>
@@ -151,39 +140,28 @@
                   </valueCodeableConcept>
                 </extension>
               </extension>
-              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-relationship-extension">
-                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
-                  <valuePeriod>
-                    <start value="2022-06-30"/>
-                  </valuePeriod>
-                </extension>
-                <extension url="targetPractitioner">
-                  <valueReference>
-                    <identifier>
-                      <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                      <value value="IPC.00763483.BC.PRS"/>
-                      <period>
-                        <start value="2000-01-01"/>
-                      </period>
-                    </identifier>
-                  </valueReference>
-                </extension>
-                <extension url="relationshipType">
-                  <valueCodeableConcept>
-                    <coding>
-                      <system value="https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code"/>
-                      <code value="WORKSAT"/>
-                    </coding>
-                  </valueCodeableConcept>
-                </extension>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-deathdate-extension">
+                <valueDateTime value="2000-02-01"/>
+              </extension>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                <valuePeriod>
+                  <start value="2012-12-07"/>
+                </valuePeriod>
+              </extension>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension">
+                <valueAddress>
+                  <city value="Ottawa"/>
+                  <country value="CA"/>
+                </valueAddress>
               </extension>
               <identifier>
-                <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                <value value="IPC.00147422.BC.PRS"/>
+                <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPSID"/>
+                <value value="123454"/>
                 <period>
                   <start value="2000-01-01"/>
                 </period>
               </identifier>
+              <active value="true"/>
               <name>
                 <use value="official"/>
                 <family value="FamilyName"/>
@@ -234,7 +212,7 @@
                   <start value="2000-01-01"/>
                 </period>
               </address>
-              <gender value="male"/>
+              <gender value="female"/>
               <birthDate value="1934-01-02">
                 <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthtime-extension">
                   <valueDateTime value="1951-11-12T00:00:01-06:00"/>
@@ -243,16 +221,16 @@
               <qualification>
                 <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-qualification-extension">
                   <extension url="designation">
-                    <valueString value="Designation"/>
+                    <valueString value="designation"/>
                   </extension>
                   <extension url="equivalencyFlag">
-                    <valueBoolean value="false"/>
+                    <valueBoolean value="true"/>
                   </extension>
                   <extension url="registrationNumber">
-                    <valueString value="Registration No."/>
+                    <valueString value="registration number"/>
                   </extension>
                   <extension url="issuedDate">
-                    <valueDateTime value="2000-02-03"/>
+                    <valueDateTime value="2000-01-01"/>
                   </extension>
                 </extension>
                 <code>
@@ -260,12 +238,14 @@
                     <system value="https://fhir.infoway-inforoute.ca/CodeSystem/scpqual"/>
                     <code value="BD"/>
                   </coding>
+                  <text value="CREDENTIAL_CREDENTIALDESIGNATIONTXT"/>
                 </code>
                 <period>
                   <start value="2000-01-01"/>
+                  <end value="2020-01-01"/>
                 </period>
                 <issuer>
-                  <reference value="#grantingInstitution"/>
+                  <reference value="#qualificationOrganization"/>
                 </issuer>
               </qualification>
               <communication>
@@ -289,14 +269,14 @@
           <fullUrl value="urn:uuid:f431631b-ed68-4716-80be-cca6904309fc"/>
           <resource>
             <PractitionerRole>
-              <id value="IPC.00147422.BC.PRS"/>
+              <id value="Example-PractitionerRole-1-Role-FromPractitioner-CPSID"/>
               <meta>
                 <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"/>
               </meta>
               <practitioner>
                 <identifier>
-                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-                  <value value="IPC.00147422.BC.PRS"/>
+                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPSID"/>
+                  <value value="123454"/>
                   <period>
                     <start value="2000-01-01"/>
                   </period>

@@ -10,7 +10,7 @@
   "name" : "BCProviderRegistry",
   "title" : "BC Provider Location Registry FHIR Implementation Guide",
   "status" : "draft",
-  "date" : "2022-12-13T16:34:13+00:00",
+  "date" : "2022-12-13T17:07:06+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -1609,14 +1609,14 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Practitioner"
+        "valueString" : "PractitionerRole"
       }],
       "reference" : {
-        "reference" : "Practitioner/Example-Practitioner"
+        "reference" : "PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-CPSID"
       },
-      "name" : "Example-Practitioner",
-      "description" : "Example of generic Practitioner.",
-      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"
+      "name" : "Example-PractitionerRole-1-Role-FromPractitioner-CPSID",
+      "description" : "Example of the PractitionerRole with Speciality.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"
     },
     {
       "extension" : [{
@@ -1857,6 +1857,18 @@
       "name" : "Example-Location",
       "description" : "Example of a Location.",
       "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/IPC.00147422.BC.PRS"
+      },
+      "name" : "Example-Practitioner",
+      "description" : "Example of generic Practitioner.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"
     },
     {
       "extension" : [{
@@ -2133,6 +2145,18 @@
       "name" : "Example-OrganizationAffiliation-3-LocRef-FromOrg",
       "description" : "Example of the OrganizationAffiliation for Organization to Location relationship.",
       "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PractitionerRole"
+      }],
+      "reference" : {
+        "reference" : "PractitionerRole/RELN.153.PRS"
+      },
+      "name" : "Example-PractitionerRole-5-OrgRef-FromPractitioner",
+      "description" : "Example of the PractitionerRole for Practitioner to Organization relationship.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"
     },
     {
       "extension" : [{

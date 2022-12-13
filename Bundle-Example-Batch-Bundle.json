@@ -18,17 +18,17 @@
         "fullUrl" : "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87",
         "resource" : {
           "resourceType" : "Practitioner",
-          "id" : "Example-Practitioner",
+          "id" : "Example-AddPractitioner-Practitioner",
           "meta" : {
             "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"]
           },
           "contained" : [{
             "resourceType" : "Organization",
-            "id" : "grantingInstitution",
+            "id" : "qualificationOrganization",
             "meta" : {
               "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"]
             },
-            "name" : "University of Calgary",
+            "name" : "CREDENTIAL_CREDENTIALGRANTINGINSTTXT",
             "address" : [{
               "city" : "CALGARY",
               "state" : "AB",
@@ -36,19 +36,6 @@
             }]
           }],
           "extension" : [{
-            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
-            "valuePeriod" : {
-              "start" : "2012-12-07"
-            }
-          },
-          {
-            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension",
-            "valueAddress" : {
-              "city" : "Ottawa",
-              "country" : "CA"
-            }
-          },
-          {
             "extension" : [{
               "url" : "statusCode",
               "valueCodeableConcept" : {
@@ -175,42 +162,30 @@
             "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-confidentiality-extension"
           },
           {
-            "extension" : [{
-              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
-              "valuePeriod" : {
-                "start" : "2022-06-30"
-              }
-            },
-            {
-              "url" : "targetPractitioner",
-              "valueReference" : {
-                "identifier" : {
-                  "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-                  "value" : "IPC.00763483.BC.PRS",
-                  "period" : {
-                    "start" : "2000-01-01"
-                  }
-                }
-              }
-            },
-            {
-              "url" : "relationshipType",
-              "valueCodeableConcept" : {
-                "coding" : [{
-                  "system" : "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code",
-                  "code" : "WORKSAT"
-                }]
-              }
-            }],
-            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-relationship-extension"
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-deathdate-extension",
+            "valueDateTime" : "2000-02-01"
+          },
+          {
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+            "valuePeriod" : {
+              "start" : "2012-12-07"
+            }
+          },
+          {
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension",
+            "valueAddress" : {
+              "city" : "Ottawa",
+              "country" : "CA"
+            }
           }],
           "identifier" : [{
-            "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-            "value" : "IPC.00147422.BC.PRS",
+            "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPSID",
+            "value" : "123454",
             "period" : {
               "start" : "2000-01-01"
             }
           }],
+          "active" : true,
           "name" : [{
             "use" : "official",
             "family" : "FamilyName",
@@ -264,7 +239,7 @@
               "start" : "2000-01-01"
             }
           }],
-          "gender" : "male",
+          "gender" : "female",
           "birthDate" : "1934-01-02",
           "_birthDate" : {
             "extension" : [{
@@ -276,19 +251,19 @@
             "extension" : [{
               "extension" : [{
                 "url" : "designation",
-                "valueString" : "Designation"
+                "valueString" : "designation"
               },
               {
                 "url" : "equivalencyFlag",
-                "valueBoolean" : false
+                "valueBoolean" : true
               },
               {
                 "url" : "registrationNumber",
-                "valueString" : "Registration No."
+                "valueString" : "registration number"
               },
               {
                 "url" : "issuedDate",
-                "valueDateTime" : "2000-02-03"
+                "valueDateTime" : "2000-01-01"
               }],
               "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-qualification-extension"
             }],
@@ -296,13 +271,15 @@
               "coding" : [{
                 "system" : "https://fhir.infoway-inforoute.ca/CodeSystem/scpqual",
                 "code" : "BD"
-              }]
+              }],
+              "text" : "CREDENTIAL_CREDENTIALDESIGNATIONTXT"
             },
             "period" : {
-              "start" : "2000-01-01"
+              "start" : "2000-01-01",
+              "end" : "2020-01-01"
             },
             "issuer" : {
-              "reference" : "#grantingInstitution"
+              "reference" : "#qualificationOrganization"
             }
           }],
           "communication" : [{
@@ -327,14 +304,14 @@
         "fullUrl" : "urn:uuid:f431631b-ed68-4716-80be-cca6904309fc",
         "resource" : {
           "resourceType" : "PractitionerRole",
-          "id" : "IPC.00147422.BC.PRS",
+          "id" : "Example-PractitionerRole-1-Role-FromPractitioner-CPSID",
           "meta" : {
             "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"]
           },
           "practitioner" : {
             "identifier" : {
-              "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
-              "value" : "IPC.00147422.BC.PRS",
+              "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPSID",
+              "value" : "123454",
               "period" : {
                 "start" : "2000-01-01"
               }
