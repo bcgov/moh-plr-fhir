@@ -1,9 +1,9 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 95, warn = 112, info = 533
+err = 95, warn = 114, info = 527
 IG Publisher Version: 1.2.25
-Generated Fri Dec 16 17:05:36 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#1.0.0 (canonical = http://hlth.gov.bc.ca/fhir/provider)
+Generated Fri Dec 16 22:45:47 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provider#1.0.0 (canonical = http://hlth.gov.bc.ca/fhir/provider)
  Build Errors : 0 / 4 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 0 / 10
  /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 0 / 0 / 12
@@ -33,7 +33,6 @@ Generated Fri Dec 16 17:05:36 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/CodeSystem-bc-license-status-code-system : 2 / 0 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-bc-practitioner-role-code-system : 2 / 0 / 1
  /github/workspace/fsh-generated/resources/ImplementationGuide-fhir.ca-bc.provider : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/Location-Example-AddPractitioner-WorkLocation : 0 / 0 / 7
  /github/workspace/fsh-generated/resources/Location-IFC.00047422.BC.PRS : 0 / 0 / 6
  /github/workspace/fsh-generated/resources/Location-IFC.00147422.BC.PRS : 0 / 0 / 7
  /github/workspace/fsh-generated/resources/OperationDefinition-bc-distribution : 2 / 0 / 1
@@ -80,7 +79,7 @@ Generated Fri Dec 16 17:05:36 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/Practitioner-IPC.00147433.BC.PRS : 0 / 0 / 10
  /github/workspace/fsh-generated/resources/Practitioner-IPC.00147622.BC.PRS : 1 / 3 / 16
  /github/workspace/fsh-generated/resources/Practitioner-IPC.00763481.BC.PRS : 1 / 1 / 3
- /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner-CPSID : 0 / 2 / 3
+ /github/workspace/fsh-generated/resources/PractitionerRole-Example-PractitionerRole-Role-FromPrac-CPSID : 0 / 2 / 3
  /github/workspace/fsh-generated/resources/PractitionerRole-IPC.00047422.BC.PRS : 0 / 2 / 4
  /github/workspace/fsh-generated/resources/PractitionerRole-IPC.00147422.BC.PRS : 0 / 2 / 3
  /github/workspace/fsh-generated/resources/PractitionerRole-IPC.00147433.BC.PRS : 0 / 2 / 4
@@ -111,8 +110,8 @@ Generated Fri Dec 16 17:05:36 UTC 2022. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-contactPoint : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-end-reason-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-facility-community-health-service-area-extension : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-facility-details-extension : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-facility-mailing-address-extension : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-facility-details-extension : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-facility-mailing-address-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-humanName : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-identifier : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-license-status-extension : 0 / 0 / 1
@@ -576,13 +575,6 @@ ERROR: /github/workspace/fsh-generated/resources/CodeSystem-bc-license-status-co
 ERROR: CodeSystem.where(url = 'https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system'): Conformance resource /github/workspace/fsh-generated/resources/CodeSystem-bc-practitioner-role-code-system.json - the canonical URL (http://hlth.gov.bc.ca/fhir/provider/CodeSystem/bc-practitioner-role-code-system) does not match the URL (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system)
 ERROR: /github/workspace/fsh-generated/resources/CodeSystem-bc-practitioner-role-code-system: URL Mismatch http://hlth.gov.bc.ca/fhir/provider/CodeSystem/bc-practitioner-role-code-system vs https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system
 == fsh-generated/resources/ImplementationGuide-fhir.ca-bc.provider.json ==
-== fsh-generated/resources/Location-Example-AddPractitioner-WorkLocation.json ==
-INFORMATION: Location/Example-AddPractitioner-WorkLocation: Location.extension[2].value.ofType(Address).extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code' is unknown so the code cannot be validated
-INFORMATION: Location/Example-AddPractitioner-WorkLocation: Location.extension[2].value.ofType(Address).extension[1].value.ofType(CodeableConcept).coding[0]: Code System URI 'https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code' is unknown so the code cannot be validated
-INFORMATION: Location/Example-AddPractitioner-WorkLocation: Location.telecom[0].extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code' is unknown so the code cannot be validated
-INFORMATION: Location/Example-AddPractitioner-WorkLocation: Location.telecom[1].extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code' is unknown so the code cannot be validated
-INFORMATION: Location/Example-AddPractitioner-WorkLocation: Location.address.extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code' is unknown so the code cannot be validated
-INFORMATION: Location/Example-AddPractitioner-WorkLocation: Location.address.extension[1].value.ofType(CodeableConcept).coding[0]: Code System URI 'https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code' is unknown so the code cannot be validated
 == fsh-generated/resources/Location-IFC.00047422.BC.PRS.json ==
 INFORMATION: Location/IFC.00047422.BC.PRS: Location.telecom[0].extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code' is unknown so the code cannot be validated
 INFORMATION: Location/IFC.00047422.BC.PRS: Location.telecom[1].extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code' is unknown so the code cannot be validated
@@ -917,9 +909,9 @@ ERROR: Practitioner/IPC.00763481.BC.PRS: Practitioner.extension[0]: Extension.ex
 INFORMATION: Practitioner/IPC.00763481.BC.PRS: Practitioner.extension[0].extension[1].value.ofType(CodeableConcept).coding[0]: Code System URI 'https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-status-reason-code' is unknown so the code cannot be validated
 WARNING: Practitioner/IPC.00763481.BC.PRS: Practitioner.extension[0].extension[1].value.ofType(CodeableConcept): [Unable to determine whether the provided codes are in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-reason-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-status-reason-code' is unknown so the code cannot be validated]
 INFORMATION: Practitioner/IPC.00763481.BC.PRS: Practitioner.extension[0].extension[3].value.ofType(CodeableConcept).coding[0]: Code System URI 'https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code' is unknown so the code cannot be validated
-== fsh-generated/resources/PractitionerRole-Example-PractitionerRole-1-Role-FromPractitioner-CPSID.json ==
-WARNING: PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-CPSID: PractitionerRole.code[0]: [Unable to determine whether the provided codes are in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-practitioner-role-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scptype' is unknown so the code cannot be validated]
-WARNING: PractitionerRole/Example-PractitionerRole-1-Role-FromPractitioner-CPSID: PractitionerRole.specialty[0]: [Unable to determine whether the provided codes are in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-expertise-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scpqual' is unknown so the code cannot be validated]
+== fsh-generated/resources/PractitionerRole-Example-PractitionerRole-Role-FromPrac-CPSID.json ==
+WARNING: PractitionerRole/Example-PractitionerRole-Role-FromPrac-CPSID: PractitionerRole.code[0]: [Unable to determine whether the provided codes are in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-practitioner-role-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scptype' is unknown so the code cannot be validated]
+WARNING: PractitionerRole/Example-PractitionerRole-Role-FromPrac-CPSID: PractitionerRole.specialty[0]: [Unable to determine whether the provided codes are in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-expertise-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scpqual' is unknown so the code cannot be validated]
 == fsh-generated/resources/PractitionerRole-IPC.00047422.BC.PRS.json ==
 WARNING: PractitionerRole/IPC.00047422.BC.PRS: PractitionerRole.code[0]: [Unable to determine whether the provided codes are in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-practitioner-role-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scptype' is unknown so the code cannot be validated]
 WARNING: PractitionerRole/IPC.00047422.BC.PRS: PractitionerRole.specialty[0]: [Unable to determine whether the provided codes are in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-expertise-value-set because the value set or a code system it depends on is not known to the validator, Code System URI 'https://fhir.infoway-inforoute.ca/CodeSystem/scpqual' is unknown so the code cannot be validated]
@@ -977,7 +969,9 @@ INFORMATION: PractitionerRole/RELN.24.PRS: PractitionerRole.extension[0].value.o
 == fsh-generated/resources/StructureDefinition-bc-end-reason-extension.json ==
 == fsh-generated/resources/StructureDefinition-bc-facility-community-health-service-area-extension.json ==
 == fsh-generated/resources/StructureDefinition-bc-facility-details-extension.json ==
+WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-facility-mailing-address-extension.json ==
+WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-humanName.json ==
 == fsh-generated/resources/StructureDefinition-bc-identifier.json ==
 == fsh-generated/resources/StructureDefinition-bc-license-status-extension.json ==
