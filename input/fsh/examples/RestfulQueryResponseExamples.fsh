@@ -7,9 +7,8 @@ Description: "Example of generic Practitioner."
 * birthDate = "1934-01-02"
 * birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
 * extension[1] = Example-Demographics-2
-
-* identifier[0] = Example-Identifier-IPC-Ind-147422
-
+* id = "IPC.00047422.BC.PRS"
+* identifier[0] = Example-Identifier-IPC-Ind-047422
 * name = Example-Name-Official
 * extension[2] = Example-License-Status
 * extension[3] = Example-DisciplinaryAction
@@ -19,7 +18,6 @@ Description: "Example of generic Practitioner."
 * extension[7] = Example-AddPractitioner-RelatedPractitioner
 * telecom = Example-ContactPoint-Phone
 * address = Example-Address-Valid
-
 // credentials
 * qualification.period.start = "2000-01-01"
 * qualification.code.coding.system = $SCPQual
@@ -31,15 +29,14 @@ Description: "Example of generic Practitioner."
 * qualification.issuer.reference = "#grantingInstitution"	
 * contained[QualificationOrganization] = Example-Credential-Granting-Institution
 * contained[QualificationOrganization].id = "grantingInstitution"
-
 // language
 * communication = Example-Language
 
 Instance: Example-Atomic-PractitionerRole-RoleSpecialty
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
-* practitioner.reference = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-//* organization.display = "BC"
+* id = "IPC.00047422.BC.PRS"
+* practitioner.identifier = Example-Identifier-IPC-Ind-047422
 * specialty = Example-Specialty-Update
 * code.coding.system = $SCPType
 * code.coding.code = #MD
@@ -47,6 +44,7 @@ Description: "Example of the PractitionerRole with Speciality."
 Instance: Example-Atomic-PractitionerRole-OrgRef
 InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
+* id = "RELN.23.PRS"
 * practitioner.identifier = Example-Identifier-IPC-Ind-147422
 * period.start = "2000-01-01"
 * organization.identifier = Example-Identifier-IPC-Org-147436
@@ -57,6 +55,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 Instance: Example-Atomic-PractitionerRole-LocRef
 InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Location relationship."
+* id = "RELN.24.PRS"
 * practitioner.identifier = Example-Identifier-IPC-Ind-147422
 * period.start = "2000-01-01"
 * location.identifier = Example-Identifier-IFC
@@ -68,7 +67,8 @@ Description: "Example of the PractitionerRole for Practitioner to Location relat
 Instance: Example-Atomic-Organization
 InstanceOf: BCOrganization
 Description: "Example of an Organization."
-* identifier[+] = Example-Identifier-ORGID
+* id = "IPC.00047422.BC.PRS"
+* identifier[+] = Example-Identifier-IPC-Ind-047422
 * name = "Kelowna Clinic"
 * name.extension[use].valueCode = #official
 * name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
@@ -82,6 +82,7 @@ Description: "Example of an Organization."
 Instance: Example-Atomic-OrganizationAffiliation-OrgRef
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Organization relationship."
+* id = "RELN.25.PRS"
 * organization.identifier = Example-Identifier-IPC-Org-147436
 * code.coding.system = $PLRRelationshipType
 * code.coding.code = #deptof
@@ -91,6 +92,7 @@ Description: "Example of the OrganizationAffiliation for Organization to Organiz
 Instance: Example-Atomic-OrganizationAffiliation-LocRef
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Location relationship."
+* id = "RELN.26.PRS"
 * organization.identifier = Example-Identifier-IPC-Org-147436
 * code.coding.system = $PLRLocationRelationshipType
 * code.coding.code = #operatesfrom
@@ -100,7 +102,8 @@ Description: "Example of the OrganizationAffiliation for Organization to Locatio
 Instance: Example-Atomic-Location
 InstanceOf: BCLocation
 Description: "Example of a Location."
-* identifier = Example-Identifier-IFC
+* id = "IFC.00047422.BC.PRS"
+* identifier = Example-Identifier-IFC-47422
 * name = "General Hospital"
 * name.extension[period].valuePeriod.start = "2000-01-01"
 * telecom[0].system = #fax
@@ -123,15 +126,13 @@ Description: "Example of a Location."
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.code = #MC
 * address = Example-Address-Valid
 
-
-
 Instance: Example-GET-Practitioner-Response
 InstanceOf: Bundle
 Description: "Example of a response returning one Practioner."
 * type = #collection
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
-* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00047422.BC.PRS"
 * entry[=].resource = Example-Atomic-Practitioner
 
 
@@ -141,7 +142,7 @@ Description: "Example of a response returning one Organization."
 * type = #collection
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
-* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00047422.BC.PRS"
 * entry[=].resource = Example-Atomic-Organization
 
 
@@ -151,7 +152,7 @@ Description: "Example of a response returning one Location"
 * type = #collection
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
-* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00047422.BC.PRS"
 * entry[=].resource = Example-Atomic-Location
 
 
@@ -161,7 +162,7 @@ Description: "Example of a response returning one OrganizationAffiliation"
 * type = #collection
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
-* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.25.PRS"
 * entry[=].resource = Example-Atomic-OrganizationAffiliation-OrgRef
 
 
@@ -171,9 +172,9 @@ Description: "Example of a response returning list of OrganizationAffiliation"
 * type = #collection
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
-* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.25.PRS"
 * entry[=].resource = Example-Atomic-OrganizationAffiliation-OrgRef
-* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.26.PRS"
 * entry[=].resource = Example-Atomic-OrganizationAffiliation-LocRef
 
 Instance: Example-GET-PractitionerRole-Response
@@ -182,7 +183,7 @@ Description: "Example of a response returning one PractitionerRole"
 * type = #collection
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
-* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS"
 * entry[=].resource = Example-Atomic-PractitionerRole-LocRef
 
 Instance: Example-GET-PractitionerRole-byPractitioner-Response
@@ -191,9 +192,9 @@ Description: "Example of a response returning all the PractitionerRole for one p
 * type = #collection
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
-* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS"
 * entry[=].resource = Example-Atomic-PractitionerRole-RoleSpecialty
-* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7b2"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS"
 * entry[=].resource = Example-Atomic-PractitionerRole-LocRef
-* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7b3"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.23.PRS"
 * entry[=].resource = Example-Atomic-PractitionerRole-OrgRef

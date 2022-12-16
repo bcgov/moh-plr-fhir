@@ -41,26 +41,26 @@ InstanceOf: BCPractitionerBundle
 Description: "An example of a Provider Bundle, i.e. A Practitioner and PractitionerRole in a Bundle that represents a PLR Individual Provider."
 * type = #collection
 * timestamp = "2022-02-02T13:23:13.000-08:00"
-* entry[Practitioner].fullUrl = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
-* entry[+].resource = Example-Practitioner
-* entry[+].resource = Example-PractitionerRole-1-Role-FromPractitioner
-* entry[=].fullUrl = "urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c"
-* entry[+].resource = Example-PractitionerRole-2-OrgRef-FromPractitioner
-* entry[=].fullUrl = "urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03"
-* entry[+].resource = Example-PractitionerRole-3-LocRef-FromPractitioner
-* entry[=].fullUrl = "urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00147422.BC.PRS"
+* entry[=].resource = Example-Practitioner
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00147422.BC.PRS"
+* entry[=].resource = Example-PractitionerRole-1-Role-FromPractitioner
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.123.PRS"
+* entry[=].resource = Example-PractitionerRole-2-OrgRef-FromPractitioner
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS"
+* entry[=].resource = Example-PractitionerRole-3-LocRef-FromPractitioner
 
 Instance: Example-Organizational-Provider-Bundle
 InstanceOf: BCOrganizationBundle
 Description: "An example of a Provider Bundle, i.e. A Organization and PractitionerRole and OrganizationAffiliation in a Bundle that represents a PLR Organizational Provider."
 * type = #collection
 * timestamp = "2022-02-02T13:23:13.000-08:00"
-* entry[+].fullUrl = "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00147437.BC.PRS"
 * entry[=].resource = Example-Organization-2
-* entry[+].resource = Example-PractitionerRole-4-PracRef-FromOrg
-* entry[=].fullUrl = "urn:uuid:0ae7755c-42cd-4583-83c6-8a4fd7a7d05c"
-* entry[+].resource = Example-OrganizationAffiliation-3-OrgRef-FromOrg
-* entry[=].fullUrl = "urn:uuid:3d857c66-d80f-4c27-9669-8a9690817d03"
-* entry[+].resource = Example-OrganizationAffiliation-3-LocRef-FromOrg
-* entry[=].fullUrl = "urn:uuid:c04b2e7e-f507-4194-a301-844b691e49f5"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.127.PRS"
+* entry[=].resource = Example-PractitionerRole-4-PracRef-FromOrg
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.141.PRS"
+* entry[=].resource = Example-OrganizationAffiliation-3-OrgRef-FromOrg
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.142.PRS"
+* entry[=].resource = Example-OrganizationAffiliation-3-LocRef-FromOrg
 

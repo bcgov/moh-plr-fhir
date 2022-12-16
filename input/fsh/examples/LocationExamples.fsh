@@ -24,3 +24,7 @@ Description: "Example of a Location."
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.code = #MC
 * address = Example-Address-Valid
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension"
+* extension[=].valueCodeableConcept.coding.system = "https://terminology.hlth.gov.bc.ca/MinistryOfHealth/CodeSystem/communityHealthBoundaryArea"
+* extension[=].valueCodeableConcept.coding.code = #Langford/Highlands
+

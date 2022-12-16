@@ -81,9 +81,7 @@ Instance: Example-AddPractitioner-Practitioner
 InstanceOf: BCPractitioner
 Description: "Example of a BC practitioner that is being created."
 // identifier
-//* identifier[0] = Example-Identifier-IPC-Ind-147422
-//* identifier[1] = Example-Identifier-CPN-147422
-* identifier[2] = Example-Identifier-CPSID
+* identifier[0] = Example-Identifier-CPSID
 * active = true
 * name = Example-Name-Official
 * telecom = Example-ContactPoint-Phone
