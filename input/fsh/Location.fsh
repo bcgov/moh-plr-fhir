@@ -41,30 +41,3 @@ Description: "A bundle that submits Location information."
 * entry[PractitionerRole].resource only BCPractitionerRole
 
 
-Instance: Example-AddPractitioner-WorkLocation
-InstanceOf: BCLocation
-Description: "Example of a Location (Facility) that is the work location for a Practitioner."
-* extension[facilityDetails].extension[ownerName].valueString = "OPERATOR NAME"
-* extension[facilityDetails].extension[period].valuePeriod.start = "2000-01-01"
-* extension[serviceArea].valueCodeableConcept = http://example.org/CodeSystem/HealthServiceAreas#MAINLAND
-* extension[mailingAddress].valueAddress = Example-Address-Valid
-* identifier.system = $PLRWorkLocationID
-* identifier.value = "1"
-* name = "WORKLOCATIONDETAILS_WORKLOCATION NAME SAMPLE TEXT"
-* name.extension[period].valuePeriod.start = "2000-01-01"
-* telecom[0].system = #email
-* telecom[0].value = "joe@gmail.com"
-* telecom[0].period.start = "2000-01-01"
-* telecom[0].period.end = "2020-01-01"
-* telecom[0].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
-* telecom[1].system = #phone
-* telecom[1].value = "2509876555"
-* telecom[1].period.start = "2000-01-01"
-* telecom[1].period.end = "2020-01-01"
-* telecom[1].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.code = #HC
-* address = Example-Address-Valid
-

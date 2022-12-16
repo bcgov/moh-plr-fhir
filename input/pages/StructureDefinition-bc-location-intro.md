@@ -29,6 +29,3 @@ This Location profile has the following mandatory elements:
 	6.  End Reason
 
 
-### Examples
-
-- [Works-At Location Example](Location-Example-AddPractitioner-WorkLocation.html)

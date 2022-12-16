@@ -1,4 +1,4 @@
-Instance: Example-OrganizationAffiliation-1-OrgRef-FromOrg
+Instance: Example-OrganizationAffiliation-OrgRef-FromOrg-1
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Organization relationship."
 * id = "RELN.131.PRS"
@@ -8,7 +8,7 @@ Description: "Example of the OrganizationAffiliation for Organization to Organiz
 * period.start = "2000-01-01"
 * participatingOrganization.identifier = Example-Identifier-IPC-Org-164553
 
-Instance: Example-OrganizationAffiliation-1-OrgRef-FromOrg-22
+Instance: Example-OrganizationAffiliation-OrgRef-FromOrg-2
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Organization relationship."
 * id = "RELN.181.PRS"
@@ -38,7 +38,7 @@ Description: "Example of the OrganizationAffiliation for Organization to Locatio
 * period.start = "2000-01-01"
 * location.identifier = Example-Identifier-IFC
 
-Instance: Example-OrganizationAffiliation-22-LocRef-FromOrg
+Instance: Example-OrganizationAffiliation-LocRef-FromOrg-2
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Location relationship."
 * id = "RELN.182.PRS"

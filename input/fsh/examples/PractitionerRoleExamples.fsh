@@ -7,7 +7,7 @@ Description: "Example of the PractitionerRole with Speciality."
 * code = $SCPType#MD
 * specialty = Example-Specialty
 
-Instance: Example-PractitionerRole-1-Role-FromPractitioner-CPSID
+Instance: Example-PractitionerRole-Role-FromPrac-CPSID
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
 //* id = "IPC.00147422.BC.PRS"
@@ -34,7 +34,7 @@ Description: "Example of the PractitionerRole with Speciality."
 * code.coding.system = $SCPType
 * code.coding.code = #MD
 
-Instance: Example-PractitionerRole-1-Role-Update-Specialty
+Instance: Example-PractitionerRole-Role-Update-Specialty
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
 * id = "IPC.00147433.BC.PRS"
@@ -74,7 +74,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 * extension[0].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
 
-Instance: Example-PractitionerRole-22-OrgRef-FromPractitioner
+Instance: Example-PractitionerRole-OrgRef-FromPractitioner-1
 InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
 * id = "RELN.173.PRS"
@@ -85,7 +85,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 * extension[0].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
 
-Instance: Example-PractitionerRole-22-OrgRef-FromPractitioner-1
+Instance: Example-PractitionerRole-OrgRef-FromPractitioner-2
 InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Organization relationship."
 * id = "RELN.193.PRS"
@@ -119,7 +119,7 @@ Description: "Example of the PractitionerRole for Practitioner to Location relat
 * extension[=].valueCodeableConcept.coding.system = $PLRLocationRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT
 
-Instance: Example-PractitionerRole-33-LocRef-FromPractitioner
+Instance: Example-PractitionerRole-LocRef-FromPractitioner-3
 InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Location relationship."
 * id = "RELN.175.PRS"

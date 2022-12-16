@@ -21,11 +21,11 @@ Description: "Example of a Bundle of resources that are needed to update an Orga
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00147434.BC.PRS"
 * entry[=].resource = Example-Organization-1-Update
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.182.PRS"
-* entry[=].resource = Example-OrganizationAffiliation-22-LocRef-FromOrg
+* entry[=].resource = Example-OrganizationAffiliation-LocRef-FromOrg-2
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.181.PRS"
-* entry[=].resource = Example-OrganizationAffiliation-1-OrgRef-FromOrg-22
+* entry[=].resource = Example-OrganizationAffiliation-OrgRef-FromOrg-2
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.193.PRS"
-* entry[=].resource =  Example-PractitionerRole-22-OrgRef-FromPractitioner-1
+* entry[=].resource =  Example-PractitionerRole-OrgRef-FromPractitioner-2
 
 Instance: Example-AddLocation-Bundle
 InstanceOf: BCLocationBundle
@@ -41,7 +41,7 @@ Description: "Example of a bundle of resources sent when requesting a practition
 * entry[0].fullUrl = "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87"
 * entry[0].resource = Example-AddPractitioner-Practitioner
 * entry[1].fullUrl = "urn:uuid:f431631b-ed68-4716-80be-cca6904309fc"
-* entry[1].resource = Example-PractitionerRole-1-Role-FromPractitioner-CPSID
+* entry[1].resource = Example-PractitionerRole-Role-FromPrac-CPSID
 
 Instance: Example-Batch-Bundle
 InstanceOf: BCBatchBundle
@@ -73,9 +73,9 @@ Description: "Example of a bundle to update an Indivivdual Provider."
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00147433.BC.PRS"
 * entry[=].resource = Example-Practitioner-Update
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00147433.BC.PRS"
-* entry[=].resource = Example-PractitionerRole-1-Role-Update-Specialty
+* entry[=].resource = Example-PractitionerRole-Role-Update-Specialty
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.173.PRS"
-* entry[=].resource = Example-PractitionerRole-22-OrgRef-FromPractitioner
+* entry[=].resource = Example-PractitionerRole-OrgRef-FromPractitioner-1
 
 Instance: Example-AddPractitioner-Bundle-Response
 InstanceOf: BCPractitionerBundle
