@@ -13,10 +13,28 @@ Each Individual Provider is composed of a [Practitioner instance](StructureDefin
 
 Any other PractitionerRole instances will hold the relationships between an Individual Provider and related Facilities and to Organizational Providers.  A single PractitionerRole instance contains a single relationship.  Thus multiple PractitionerRoles will be required to represent multiple relationships.  There is an [extension](StructureDefinition-bc-practitioner-relationship-extension.html) off Practitioner that represents relationships between Individual Providers.
 
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="Ind_Provider_in_FHIR.PNG" alt="FHIR Resources for Individual Provider"/>
+  <figcaption>Figure 2.1 - FHIR Resources for Individual Provider</figcaption>
+</figure>
+{::options parse_block_html="true" /}
+
+
 #### Organizational Provider
 Each Organizational Provider is composed of an [Organization instance](StructureDefinition-bc-organization.html) with zero or more [OrganizationAffiliation instances](StructureDefinition-bc-organization-affiliation.html) and zero or more [PractitionerRole instances](StructureDefinition-bc-practitioner-role.html).
 
-The PractitionerRole is used to represent relationships from Individual Providers to Organizational Providers. OrganizationAffiliation holds the relationship betwen two different Organizational Providers as well as the relationship between an Organizational Provider and Facilities.  A single OrganizationAffilication instance contains a single relationship.  Thus multiple OrganizationAffilications will be required to represent multiple relationships.  The same applies to PractitionerRole.
+The PractitionerRole is used to represent relationships from Individual Providers to Organizational Providers. OrganizationAffiliation holds the relationship betwen two different Organizational Providers as well as the relationship between an Organizational Provider and Facilities.  A single OrganizationAffilication instance contains a single relationship.  Thus multiple OrganizationAffiliations will be required to represent multiple relationships.  The same applies to PractitionerRole.
+
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="Org_Provider_in_FHIR.PNG" alt="FHIR Resources for Organizational Provider"/>
+  <figcaption>Figure 2.2 - FHIR Resources for Organizational Provider</figcaption>
+</figure>
+{::options parse_block_html="true" /}
+
+
 
 #### Facility
 
@@ -24,17 +42,28 @@ Each Facility is composed of a [Location instance](StructureDefinition-bc-locati
 
 The relationship between a Facility and a Individual Provider is conveyed in a [PractitionerRole instance](StructureDefinition-bc-practitioner-role.html) while the relationship between a Facility and an Organizational Provider is conveyed in an [OrganizationAffiliation instance](StructureDefinition-bc-organization-affiliation.html).  As above multiple PractitionerRoles and OrganizationAffiliations will be required to represent multiple relationships.
 
-#### Healthcare Providers with Multiple Roles
-A practitioner providing services in multiple roles, for example, as a Nurse or a Dentist, will have a separate record in PLR for each role.  This means in FHIR there will be two Practitioner instances, one for Nurse and one for Dentist, each Practitioner instance being identical, distinguishable only by reviewing the associated Practitioner Role profile instance.  Note that strictly speaking, parts of the Practitioner instances that represent the same person may not be identical if the Provider gave the College of Nurses a slightly different name than the College of Dental Surgeons (like short forms, or last name changes).  It is best practice to treat the Dentist and Nurse as unique Practitioners in the context of FHIR interactions and BC PLR.
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_fhir_prac_org_fac.png" alt="BC FHIR Resources"/>
-  <figcaption>Figure 2.1 - BC FHIR Resources</figcaption>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="Facility_in_FHIR.PNG" alt="FHIR Resources for Location"/>
+  <figcaption>Figure 2.3 - FHIR Resources for Facility</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
 
+#### Healthcare Providers with Multiple Roles
+A practitioner providing services in multiple roles, for example, as a Nurse or a Dentist, will have a separate record in PLR for each role.  This means in FHIR for example there will be two Practitioner instances, one for Nurse and one for Dentist, each Practitioner instance being identical, distinguishable only by reviewing the associated Practitioner Role profile instance.  Note that strictly speaking, parts of the Practitioner instances that represent the same person may not be identical if the Provider gave the College of Nurses a slightly different name than the College of Dental Surgeons (like short forms, or last name changes).  It is best practice to treat the Dentist and Nurse as unique Practitioners in the context of FHIR interactions and BC PLR.
+
+<!---
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_fhir_prac_org_fac.png" alt="BC FHIR Resources"/>
+  <figcaption>Figure 2.4 - BC FHIR Resources</figcaption>
+</figure>
+{::options parse_block_html="true" /}
+--->
+
+<!---
 ### Relationships between Resources
 #### Provider to Provider Relationships
 
@@ -55,6 +84,7 @@ To show the relationship between an Individual Provider and a Facility (i.e. a w
 
 ##### Organization Provider to Facility
 To show the relationship between an Organizational Provider and a Facility (i.e. facilities where the organization does its work), the [BC OrganizationAffiliation profile](StructureDefinition-bc-organization-affiliation.html) is used.  Instead of the participating organization data element, the location data element is used to indicate that an organization is related to a Facility.
+--->
 
 ### Use Cases
 There are a number of use cases that support the existing PLR functionality:
@@ -62,7 +92,7 @@ There are a number of use cases that support the existing PLR functionality:
 * Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location
 * Maintain - used when an external source is communicating a change to a Practitioner, Organization or Location
 * Batch - allows for the sending of multiple Maintain interactions in a single request
-* Queries - a set of FHIR Operations are defined that allow the querying of PLR FHIR instances
+* Queries - a set of FHIR Operations and RESTful queries are defined that allow the querying of PLR FHIR instances
 
 #### Distributions
 
@@ -73,7 +103,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
 2.	OrganizationAffiliation(s), PractitionerRole(s) and Organization;
 3.	OrganizationAffiliation(s), PractitionerRole(s) and Location.
 
-There will be one POST request per distribution and each distribution will have a single Practitioner, Organization, or Location.
+There will be one POST request per distribution and each distribution will descirbe a single Individual Provider, Organizational Provider or Facility.
 
 POST https://.../$distribution
 
@@ -81,7 +111,7 @@ The response to a distribution SHALL be HTTP 200 or 201 OK.  Anything else and t
 
 
 #### Maintain
-A [Maintain operation](OperationDefinition-bc-maintain.html) is used by a user to communicate a change to a single Provider (Individual or Organizational) or Facility to PLR. A Bundle is sent in the parameters and includes one of the following sets:
+A [Maintain operation](OperationDefinition-bc-maintain.html) is used by a user to communicate a change to a single Provider (Individual or Organizational) or Facility to PLR. A Bundle is sent, wrapped in Parameters, and includes one of the following sets:
 
 1.      PractitionerRole(s) and Practitioner;
 2.      OrganizationAffiliation(s), PractitionerRole(s) and Organization;
@@ -90,25 +120,25 @@ A [Maintain operation](OperationDefinition-bc-maintain.html) is used by a user t
 
 POST https://.../$maintain
 
-The PLR FHIR Server response will be a Bundle with type set to “collection” that contains the created or updated resources that represent the Provider (Individual or Organizational) or Facility.  The Bundle includes one of the following sets (same as request):
+The PLR FHIR Server response will be a Bundle, wrapped in Parameters, with type set to “collection” that contains the created or updated resources that represent the Provider (Individual or Organizational) or Facility.  The Bundle includes one of the following sets (same as request):
 
 1.      PractitionerRole(s) and Practitioner;
 2.      OrganizationAffiliation(s), PractitionerRole(s) and Organization;
 3.      OrganizationAffiliation(s), PractitionerRole(s) and Location;
 4.      OperationOutcome
 
-The response also has an entry of OperationOutcome that has information, warning or error messages.
+The response also has an entry of OperationOutcome that has informational, warning or error messages.
 
 A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.
 
 #### Operations FHIR Resource Structure
 
-The $maintain and $distribution FHIR Resource structure is describe on each individual Operation page; below is a summary of that structure to aid understanding.  The diagram shows a Practitioner Bundle, but it could be an Organization or Location Bundle as well.
+The $maintain and $distribution FHIR Resource structure is described on each individual Operation page; below is a summary of that structure to aid understanding.  The diagram shows a Practitioner Bundle, but it could be an Organization or Location Bundle as well.
 
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="400px" src="Parameters-maintain-distribution.PNG" alt="Parameters Structure"/>
-  <figcaption>Figure 2.2 - BC Maintain and Distribution Structure</figcaption>
+  <figcaption>Figure 2.5 - BC Maintain and Distribution Structure</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
@@ -120,8 +150,6 @@ Batch allows for many independent transactions to be sent in a single operation.
 3.	a collection-Bundle (with OrganizationAffiliations(s), PractitionerRole(s), and Location) to add/update a Facility
 
 The response Bundle is similarly structured to the request, populating and echoing back the results of each contained Bundle.  The only difference is that OperationOutcome SHALL also be included for each collection-Bundle for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn't processed due to validation or non-business errors.
-
-The Batch interface is only available on PLR's FTP interface, not web services, at this time.
 
 #### Query Part 1 - Operations
 PLR FHIR has defined a set of FHIR Operations to search for Providers and Facilities.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR's case, the server would need to include resources that make up the full Provider and additionally return related Providers or Facilities.
@@ -136,7 +164,7 @@ The syntax for the $entityQuery operation is:
 * GET /resource/id/$entityQuery to retrieve a specific Provider or Facility where the id is known
 * GET /resource/$entityQuery?param1&param2&... to search for a Provider or Facility with search parameters instead of an id
 
-Although PLR supports many different types of identifiers, the resource id is the identifier assigned by PLR when the resource is created, internally called the IPC for Providers and IFC for Facilities.  This id is always returned in the response and should be persisted by the requestor.  To search for other identifiers stored in PLR and attached to Providers or Facilities, the search parameter 'identifier' and 'identifier-type' should be used.
+Although PLR supports many different types of identifiers, the resource id is the identifier assigned by PLR when the resource is created, internally called the IPC for Providers and IFC for Facilities.  This id is always returned in the response and should be persisted by the requestor.  To search with other identifiers stored in PLR and attached to Providers or Facilities, the search parameter 'identifier' and 'identifier-type' should be used.
 
 The parameters for the $entityQuery operation will be the search parameters listed further below.
 
@@ -154,7 +182,7 @@ Below is a sample search set response bundle.  It shows the structure at a highl
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_searchset_bundle_practitioner_response.png" alt="BC FHIR Resources"/>
-  <figcaption>Figure 2.3 - BC FHIR Query Response Bundle Structure</figcaption>
+  <figcaption>Figure 2.6 - BC FHIR Query Response Bundle Structure</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
@@ -211,7 +239,7 @@ The following describes the request URL and which profiles are returned:
 {:.grid}
 
 ##### Practitioner 
-Returns a single ressource; id for Practitioner is the **IPC identifier**
+Returns a single resource; id for Practitioner is the **IPC identifier**
 ```htm
 GET Practitioner/IPC.00012343.BC.PRS 
 ```
@@ -231,11 +259,11 @@ GET Location/12345
 ##### PractitionerRole 
 
 Id for PractitionerRole can be 
-* the **IPC identifier** for the BCPractionerRole instance carrying the Practionner's role and specialties information
+* the **IPC identifier** for the [BCPractionerRole](StructureDefinition-bc-practitioner-role.html) instance carrying the Practionner's role and specialties information
 ```htm
 GET PractitionerRole/IPC.00012343.BC.PRS
 ```
-* or a **relationship identifier** that will return a single BCRoleRelationship instance
+* or a **relationship identifier** that will return a single [BCRoleRelationship](StructureDefinition-bc-role-relationships.html) instance
 ```htm
 GET PractitionerRole/RELNS.1234.BC.PRS
 ```
@@ -261,7 +289,7 @@ GET PractitionerRole?organization=Organization/IPC.00012343.BC.PRS
 
 This returns all the PractitionerRoles related to a Location (of instance BCRoleRelationship only)
 ```htm
-GET PractitionerRole?location=Location/12343
+GET PractitionerRole?location=Location/IFC.00012343.BC.PRS
 ```
 
 
@@ -269,7 +297,7 @@ GET PractitionerRole?location=Location/12343
 
 Returns a single resource; id for OrganizationAffiliation is a relationship ID
 ```htm
-GET OrganizationAffiliation/RELNS.1234.BC.PRS
+GET OrganizationAffiliation/RELNS.1234.PRS
 ```
  
 ###### OrganizationAffiliation - Parameters
@@ -285,6 +313,6 @@ GET OrganizationAffiliation?organization=Organization/IPC.00012343.BC.PRS
 
 This returns all OrganizationAffiliations for the specified Location
 ```htm
-GET OrganizationAffiliation?location=Location/12343
+GET OrganizationAffiliation?location=Location/IFC.00012343.BC.PRS
 ```
 
