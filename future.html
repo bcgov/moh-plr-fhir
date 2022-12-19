@@ -222,13 +222,11 @@ This specification is currently published as a Draft Standard on the ministry gi
 <p>At this time, this Implementation Guide includes requirements for PLR Providers and Facilities.  The FHIR artifacts have been created according to the current understood expectations.  It still needs to undergo review and testing.  Over the next year, the following needs to be completed before this guide will be ready for implementation:</p>
 
 <ul>
-  <li>Review by BC Health Information Standards Working Group</li>
-  <li>Finalize the alignment to the Canadian Core and BC Core FHIR profiles</li>
   <li>Testing of the guide’s operations and profiles to ensure proper coverage</li>
-  <li>Publication to BC’s FHIR Portal</li>
+  <li>Publication to final website</li>
 </ul>
 
-<h4 id="release-40---1">Release 4.0 - 1</h4>
+<h4 id="release---fhir-version-40-and-bcfhir-version-1">Release - FHIR version 4.0 and BCFHIR version 1</h4>
 
 <p>This section describes everything that is available in this release.  To access this release through messaging, in the HTTP Accept: header add fhirVersion=4.0;BCPLRVersion=1.</p>
 
@@ -237,12 +235,12 @@ This specification is currently published as a Draft Standard on the ministry gi
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    GET /Practitioner/&lt;IPC&gt;/$entityQuery
 </code></pre></div></div>
 
-<p>and</p>
+<p>and where <em>IPC</em> is an IPC identifier, like IPC.00012345.BC.PRS.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    GET /Practitioner/$entityQuery?identifier=&lt;value&gt;&amp;identifier-type=&lt;id type&gt;
 </code></pre></div></div>
 
-<p>where <em>IPC</em> is an IPC identifier, like IPC.00012345.BC.PRS, and <em>id type</em> is an identifier type like CPSID or MPID and finally <em>value</em> is the value of the identifier.</p>
+<p>Users are also able to query using other PLR recognized identifiers by using parametes; <em>id type</em> is an identifier type like CPSID or MPID and <em>value</em> is the value of the identifier.  E.g.  identifer=1234&amp;identifier-type=MPID.</p>
 
 <p>See the following section for more <a href="specification.html#query-part-1---operations">details</a>.</p>
 
@@ -271,7 +269,7 @@ This specification is currently published as a Draft Standard on the ministry gi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 16, 2022 22:41+0000">2022-12-16</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 19, 2022 22:53+0000">2022-12-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
