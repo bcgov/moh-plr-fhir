@@ -7,19 +7,20 @@ Alias: $SCPType = https://fhir.infoway-inforoute.ca/CodeSystem/scptype
 // code system for provider license status
 Alias: $RoleStatus = http://terminology.hl7.org/CodeSystem/v3-RoleStatus
 
-Alias: $PLRStatusReason = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-status-reason-code
-Alias: $PLRStatusClass = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-status-class-code
-Alias: $PLRConditionType = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-condition-type-code
-Alias: $PLRRelationshipType = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code
-Alias: $PLRLocationRelationshipType = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code
-Alias: $PLRLanguage = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code
-Alias: $PLRHealthServiceAreas = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-health-service-area-code
-Alias: $PLREndReason = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code
-Alias: $PLRError = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-codes
-Alias: $PLRFacilityIdentifierType = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-identifier-type-code
-Alias: $PLROwnerCode = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystems/bc-owner-code
-Alias: $PLRCommPurpose = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code
-Alias: $PLRAddressValStatus = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code
+Alias: $PLRLicenseStatus = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system
+Alias: $PLRStatusClass = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system
+Alias: $PLRStatusReason = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system
+Alias: $PLRConditionType = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-condition-type-code-system
+Alias: $PLRRelationshipType = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system
+Alias: $PLRLocationRelationshipType = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system
+Alias: $PLRLanguage = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system
+Alias: $PLRHealthServiceAreas = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-health-service-area-code-system
+Alias: $PLREndReason = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system
+Alias: $PLRError = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system
+Alias: $PLRFacilityIdentifierType = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-identifier-type-code-system
+Alias: $PLROwnerCode = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystems/bc-owner-code-system
+Alias: $PLRCommPurpose = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system
+Alias: $PLRAddressValStatus = https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system
 
 Alias: $PLRWorkLocationID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-work-location-id
 Alias: $PLRNoteID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id

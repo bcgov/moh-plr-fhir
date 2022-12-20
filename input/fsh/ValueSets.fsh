@@ -69,3 +69,20 @@ Description: "BC specific qualification value set."
 * codes from system $SCPQual
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-qualification-value-set"
+
+CodeSystem: LicenseStatusClassCS
+Title: "BC License Status Class Code System"
+Id: bc-license-status-class-code-system
+Description: "BC specific license status class code system."
+* #lic "lic" "Licensure"
+* #ae "ae" "Assigned Entity"
+* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system"
+* ^experimental = false
+
+ValueSet: LicenseStatusClassVS
+Title: "BC License Status Class Value Set"
+Id: bc-license-status-class-value-set
+Description: "BC specific license status class value set."
+* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-class-value-set"
+* ^experimental = false
+* codes from system LicenseStatusClassCS

@@ -94,14 +94,14 @@ InstanceOf: Extension
 Description: "Example license status."
 Usage: #inline
 * url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
-* extension[0].url = "statusCode"
-* extension[0].valueCodeableConcept.coding.system = $RoleStatus
-* extension[0].valueCodeableConcept.coding.code = #suspended
-* extension[1].url = "statusReasonCode"
-* extension[1].valueCodeableConcept.coding.system = $PLRStatusReason
-* extension[1].valueCodeableConcept.coding.code = #LTP
-* extension[2].url = "period"
-* extension[2].valuePeriod.start = "2022-06-24"
+* extension[+].url = "statusCode"
+* extension[=].valueCodeableConcept.coding.system = $RoleStatus
+* extension[=].valueCodeableConcept.coding.code = #suspended
+* extension[+].url = "statusReasonCode"
+* extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
+* extension[=].valueCodeableConcept.coding.code = #LTP
+* extension[+].url = "period"
+* extension[=].valuePeriod.start = "2022-06-24"
 
 Instance: Example-License-Status-Response
 InstanceOf: Extension
@@ -123,15 +123,18 @@ InstanceOf: Extension
 Description: "Example license status update."
 Usage: #inline
 * url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
-* extension[0].url = "statusCode"
-* extension[0].valueCodeableConcept.coding.system = Canonical(LicenseStatusCS)
-* extension[0].valueCodeableConcept.coding.code = #inactive
-* extension[1].url = "statusReasonCode"
-* extension[1].valueCodeableConcept.coding.system = $PLRStatusReason
-* extension[1].valueCodeableConcept.coding.code = #LTP
-* extension[2].url = "period"
-* extension[2].valuePeriod.start = "2022-06-24"
-* extension[3] = Example-ERC-Change
+* extension[+].url = "statusCode"
+* extension[=].valueCodeableConcept.coding.system = Canonical(LicenseStatusCS)
+* extension[=].valueCodeableConcept.coding.code = #inactive
+* extension[+].url = "statusReasonCode"
+* extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
+* extension[=].valueCodeableConcept.coding.code = #LTP
+* extension[+].url = "statusClassCode"
+* extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
+* extension[=].valueCodeableConcept.coding.code = #LIC
+* extension[+].url = "period"
+* extension[=].valuePeriod.start = "2022-06-24"
+* extension[+] = Example-ERC-Change
 
 Instance: Example-OC-CPS
 InstanceOf: Extension
