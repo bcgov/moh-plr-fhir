@@ -69,23 +69,33 @@
        fhir:Extension.valueCodeableConcept [
          fhir:CodeableConcept.coding [
            fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-status-reason-code" ];
+           fhir:Coding.system [ fhir:value "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system" ];
            fhir:Coding.code [ fhir:value "LTP" ]
          ]
        ]
      ], [
        fhir:index 2;
+       fhir:Extension.url [ fhir:value "statusClassCode" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system" ];
+           fhir:Coding.code [ fhir:value "LIC" ]
+         ]
+       ]
+     ], [
+       fhir:index 3;
        fhir:Extension.url [ fhir:value "period" ];
        fhir:Extension.valuePeriod [
          fhir:Period.start [ fhir:value "2022-06-24"^^xsd:date ]
        ]
      ], [
-       fhir:index 3;
+       fhir:index 4;
        fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension" ];
        fhir:Extension.valueCodeableConcept [
          fhir:CodeableConcept.coding [
            fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code" ];
+           fhir:Coding.system [ fhir:value "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system" ];
            fhir:Coding.code [ fhir:value "CHG" ]
          ]
        ]
