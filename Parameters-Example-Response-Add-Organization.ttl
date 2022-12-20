@@ -1,0 +1,271 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/Parameters/Example-Response-Add-Organization> a fhir:Parameters;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "Example-Response-Add-Organization"]; # 
+  fhir:Parameters.parameter [
+     fhir:index 0;
+     fhir:Parameters.parameter.name [ fhir:value "messageId" ];
+     fhir:Parameters.parameter.valueString [ fhir:value "98766789" ]
+  ], [
+     fhir:index 1;
+     fhir:Parameters.parameter.name [ fhir:value "messageTime" ];
+     fhir:Parameters.parameter.valueDateTime [ fhir:value "2022-06-27T01:01:03-08:00"^^xsd:dateTime ]
+  ], [
+     fhir:index 2;
+     fhir:Parameters.parameter.name [ fhir:value "requestMessageId" ];
+     fhir:Parameters.parameter.valueString [ fhir:value "12344321" ]
+  ], [
+     fhir:index 3;
+     fhir:Parameters.parameter.name [ fhir:value "maintain" ];
+     fhir:Parameters.parameter.resource [
+       a fhir:Bundle;
+       fhir:Resource.id [ fhir:value "Example-UpdateOrganization-Bundle-Response" ];
+       fhir:Resource.meta [
+         fhir:Meta.profile [
+           fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle";
+           fhir:index 0;
+           fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle>
+         ]
+       ];
+       fhir:Bundle.type [ fhir:value "collection" ];
+       fhir:Bundle.entry [
+         fhir:index 0;
+         fhir:Bundle.entry.fullUrl [ fhir:value "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00147436.BC.PRS" ];
+         fhir:Bundle.entry.resource <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00147436.BC.PRS>
+       ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:Parameters.parameter.name [ fhir:value "outcome" ];
+     fhir:Parameters.parameter.resource [
+       a fhir:OperationOutcome;
+       fhir:Resource.id [ fhir:value "Example-OperationOutcome-MaintainSuccess" ];
+       fhir:Resource.meta [
+         fhir:Meta.profile [
+           fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome";
+           fhir:index 0;
+           fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome>
+         ]
+       ];
+       fhir:OperationOutcome.issue [
+         fhir:index 0;
+         fhir:OperationOutcome.issue.severity [ fhir:value "information" ];
+         fhir:OperationOutcome.issue.code [ fhir:value "business-rule" ];
+         fhir:OperationOutcome.issue.details [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system" ];
+             fhir:Coding.code [ fhir:value "PRS.PRP.MTN.UNK.0.0.0000" ]
+           ];
+           fhir:CodeableConcept.text [ fhir:value "The provider transaction was processed." ]
+         ]
+       ]
+     ]
+  ] . # 
+
+<https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00147436.BC.PRS> a fhir:Organization;
+  fhir:Resource.id [ fhir:value "IPC.00147436.BC.PRS"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization";
+       fhir:index 0;
+       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
+     ]
+  ]; # 
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "identifier" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id" ];
+         fhir:Identifier.value [ fhir:value "Note-2" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "text" ];
+       fhir:Extension.valueString [ fhir:value "Note text" ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "1998-01-02"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.assigner [
+           fhir:Reference.display [ fhir:value "PHSA" ]
+         ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension" ]
+  ]; # 
+  fhir:Organization.identifier [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.assigner [
+           fhir:Reference.display [ fhir:value "PHSA" ]
+         ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/ORGID" ];
+     fhir:Identifier.value [ fhir:value "123123123" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.assigner [
+           fhir:Reference.display [ fhir:value "MOH" ]
+         ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
+     fhir:Identifier.value [ fhir:value "IPC.00147436.BC.PRS" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.assigner [
+           fhir:Reference.display [ fhir:value "PHSA" ]
+         ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPN" ];
+     fhir:Identifier.value [ fhir:value "CPN.00147433.BC.PRS" ];
+     fhir:Identifier.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
+  ]; # 
+  fhir:Organization.active [ fhir:value "true"^^xsd:boolean]; # 
+  fhir:Organization.name [
+     fhir:value "Kelowna Clinic";
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension" ];
+       fhir:Extension.valueCode [ fhir:value "official" ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2014-01-31T00:00:00-07:00"^^xsd:dateTime ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.assigner [
+           fhir:Reference.display [ fhir:value "PHSA" ]
+         ]
+       ]
+     ]
+  ]; # 
+  fhir:Organization.alias [
+     fhir:value "ABC Clinic - Kelowna";
+     fhir:index 0
+  ]; # 
+  fhir:Organization.telecom [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system" ];
+           fhir:Coding.code [ fhir:value "BC" ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.assigner [
+           fhir:Reference.display [ fhir:value "PHSA" ]
+         ]
+       ]
+     ];
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "2503424343" ];
+     fhir:ContactPoint.period [
+       fhir:Period.start [ fhir:value "2000-02-02"^^xsd:date ]
+     ]
+  ]; # 
+  fhir:Organization.address [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system" ];
+           fhir:Coding.code [ fhir:value "BC" ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://teminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system" ];
+           fhir:Coding.code [ fhir:value "V" ]
+         ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension" ];
+       fhir:Extension.valueIdentifier [
+         fhir:Identifier.assigner [
+           fhir:Reference.display [ fhir:value "PHSA" ]
+         ]
+       ]
+     ];
+     fhir:Address.type [ fhir:value "postal" ];
+     fhir:Address.line [
+       fhir:value "19 ST";
+       fhir:index 0
+     ], [
+       fhir:value "ADDRESS ADDRESSLINE2TXT";
+       fhir:index 1
+     ], [
+       fhir:value "ADDRESS ADDRESSLINE3TXT";
+       fhir:index 2
+     ];
+     fhir:Address.city [ fhir:value "VICTORIA" ];
+     fhir:Address.state [ fhir:value "BC" ];
+     fhir:Address.postalCode [ fhir:value "V6P7B8" ];
+     fhir:Address.country [ fhir:value "CA" ];
+     fhir:Address.period [
+       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/Parameters/Example-Response-Add-Organization.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
