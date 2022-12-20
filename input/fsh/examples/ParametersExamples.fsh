@@ -110,3 +110,17 @@ Description: "Example Parameters for Update Organization Provider response."
 * parameter[+].name = "outcome"
 * parameter[=].resource = Example-OperationOutcome-MaintainSuccess
 
+Instance: Example-Response-Add-Organization
+InstanceOf: Parameters
+Description: "Example Parameters for Add Organization Provider response."
+* parameter[+].name = "messageId"
+* parameter[=].valueString = "98766789"
+* parameter[+].name = "messageTime"
+* parameter[=].valueDateTime = "2022-06-27T01:01:03-08:00"
+* parameter[+].name = "requestMessageId"
+* parameter[=].valueString = "12344321"
+* parameter[+].name = "maintain"
+* parameter[=].resource = Example-UpdateOrganization-Bundle-Response
+* parameter[+].name = "outcome"
+* parameter[=].resource = Example-OperationOutcome-MaintainSuccess
+
