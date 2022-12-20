@@ -14,7 +14,6 @@ Alias: $PLRConditionType = https://terminology.hlth.gov.bc.ca/ProviderLocationRe
 Alias: $PLRRelationshipType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system
 Alias: $PLRLocationRelationshipType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system
 Alias: $PLRLanguage = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system
-Alias: $PLRHealthServiceAreas = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-health-service-area-code-system
 Alias: $PLREndReason = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system
 Alias: $PLRError = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system
 Alias: $PLRFacilityIdentifierType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-identifier-type-code-system
