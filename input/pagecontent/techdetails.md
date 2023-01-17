@@ -5,7 +5,7 @@ This specification is currently published as a Draft Standard on the ministry gi
 </blockquote>
 {% endraw %}
 
-## HTTP Headers
+### HTTP Headers
 The HTTP Headers will need several specific parameters configured with each request.
 
 Parameter | Description
