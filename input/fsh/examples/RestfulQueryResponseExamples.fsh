@@ -32,6 +32,38 @@ Description: "Example of generic Practitioner."
 // language
 * communication = Example-Language
 
+Instance: Example-Another-Atomic-Practitioner
+InstanceOf: BCPractitioner
+Description: "Example of another generic Practitioner."
+// demographics
+* extension[0] = Example-Demographics-1
+* gender = #male
+* birthDate = "1962-11-02"
+* birthDate.extension[birthTime].valueDateTime = "1962-11-02T00:00:01-06:00"
+* extension[1] = Example-Demographics-2
+* id = "IPC.00187833.BC.PRS"
+* identifier[0] = Example-Identifier-IPC-Ind-187833
+* name = Example-Name-Official
+* extension[2] = Example-License-Status
+* extension[5] = Example-Condition
+* extension[6] = Example-Confidenciality-False
+* extension[7] = Example-AddPractitioner-RelatedPractitioner
+* telecom = Example-ContactPoint-Phone
+* address = Example-Address-Invalid
+// credentials
+* qualification.period.start = "2000-01-01"
+* qualification.code.coding.system = $SCPQual
+* qualification.code.coding.code = #BD
+* qualification.extension[qualificationExtension].extension[designation].valueString = "Designation"
+* qualification.extension[qualificationExtension].extension[equivalencyFlag].valueBoolean = false
+* qualification.extension[qualificationExtension].extension[registrationNumber].valueString = "Registration No."
+* qualification.extension[qualificationExtension].extension[issuedDate].valueDateTime = "2000-02-03"
+* qualification.issuer.reference = "#grantingInstitution"	
+* contained[QualificationOrganization] = Example-Credential-Granting-Institution
+* contained[QualificationOrganization].id = "grantingInstitution"
+// language
+* communication = Example-Language
+
 Instance: Example-Atomic-PractitionerRole-RoleSpecialty
 InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
@@ -128,18 +160,20 @@ Description: "Example of a Location."
 
 Instance: Example-GET-Practitioner-Response
 InstanceOf: Bundle
-Description: "Example of a response returning one Practioner."
-* type = #collection
+Description: "Example of a response returning two Practioners."
+* type = #searchset
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00047422.BC.PRS"
 * entry[=].resource = Example-Atomic-Practitioner
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00187833.BC.PRS"
+* entry[=].resource = Example-Another-Atomic-Practitioner
 
 
 Instance: Example-GET-Organization-Response
 InstanceOf: Bundle
 Description: "Example of a response returning one Organization."
-* type = #collection
+* type = #searchset
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00047422.BC.PRS"
@@ -149,7 +183,7 @@ Description: "Example of a response returning one Organization."
 Instance: Example-GET-Location-Response
 InstanceOf: Bundle
 Description: "Example of a response returning one Location"
-* type = #collection
+* type = #searchset
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00047422.BC.PRS"
@@ -159,7 +193,7 @@ Description: "Example of a response returning one Location"
 Instance: Example-GET-OrganizationAffiliation-Response
 InstanceOf: Bundle
 Description: "Example of a response returning one OrganizationAffiliation"
-* type = #collection
+* type = #searchset
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.25.PRS"
@@ -169,7 +203,7 @@ Description: "Example of a response returning one OrganizationAffiliation"
 Instance: Example-GET-OrganizationAffiliation-byOrganization-Response
 InstanceOf: Bundle
 Description: "Example of a response returning list of OrganizationAffiliation"
-* type = #collection
+* type = #searchset
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.25.PRS"
@@ -180,7 +214,7 @@ Description: "Example of a response returning list of OrganizationAffiliation"
 Instance: Example-GET-PractitionerRole-Response
 InstanceOf: Bundle
 Description: "Example of a response returning one PractitionerRole"
-* type = #collection
+* type = #searchset
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS"
@@ -189,7 +223,7 @@ Description: "Example of a response returning one PractitionerRole"
 Instance: Example-GET-PractitionerRole-byPractitioner-Response
 InstanceOf: Bundle
 Description: "Example of a response returning all the PractitionerRole for one practitioner"
-* type = #collection
+* type = #searchset
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS"
