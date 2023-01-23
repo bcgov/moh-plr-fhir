@@ -100,6 +100,9 @@ Usage: #inline
 * extension[+].url = "statusReasonCode"
 * extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
 * extension[=].valueCodeableConcept.coding.code = #LTP
+* extension[+].url = "statusClassCode"
+* extension[=].valueCodeableConcept.coding.system = $PLRStatusClass
+* extension[=].valueCodeableConcept.coding.code = #LIC
 * extension[+].url = "period"
 * extension[=].valuePeriod.start = "2022-06-24"
 
@@ -114,6 +117,9 @@ Usage: #inline
 * extension[+].url = "statusReasonCode"
 * extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
 * extension[=].valueCodeableConcept.coding.code = #LTP
+* extension[+].url = "statusClassCode"
+* extension[=].valueCodeableConcept.coding.system = $PLRStatusClass
+* extension[=].valueCodeableConcept.coding.code = #LIC
 * extension[+].url = "period"
 * extension[=].valuePeriod.start = "2022-06-24"
 * extension[+] = Example-OC-MOH

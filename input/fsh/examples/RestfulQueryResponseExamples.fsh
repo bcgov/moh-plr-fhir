@@ -45,9 +45,9 @@ Description: "Example of another generic Practitioner."
 * identifier[0] = Example-Identifier-IPC-Ind-187833
 * name = Example-Name-Official
 * extension[2] = Example-License-Status
-* extension[5] = Example-Condition
-* extension[6] = Example-Confidenciality-False
-* extension[7] = Example-AddPractitioner-RelatedPractitioner
+* extension[3] = Example-Condition
+* extension[4] = Example-Confidenciality-False
+* extension[5] = Example-AddPractitioner-RelatedPractitioner
 * telecom = Example-ContactPoint-Phone
 * address = Example-Address-Invalid
 // credentials

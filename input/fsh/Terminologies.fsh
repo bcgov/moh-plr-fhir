@@ -1,9 +1,9 @@
 // CODE SYSTEMS
 
 // code system for expertise and credentials
-Alias: $SCPQual = https://fhir.infoway-inforoute.ca/CodeSystem/scpqual
+Alias: $SCPQual = http://fhir.infoway-inforoute.ca/CodeSystem/scpqual
 // code system for provider role
-Alias: $SCPType = https://fhir.infoway-inforoute.ca/CodeSystem/scptype
+Alias: $SCPType = http://fhir.infoway-inforoute.ca/CodeSystem/scptype
 // code system for provider license status
 Alias: $RoleStatus = http://terminology.hl7.org/CodeSystem/v3-RoleStatus
 
