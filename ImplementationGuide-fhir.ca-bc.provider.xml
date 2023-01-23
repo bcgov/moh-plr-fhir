@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2023-01-17T22:49:54+00:00"/>
+  <date value="2023-01-23T22:02:59+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -42,7 +42,7 @@
   <dependsOn id="hl7_fhir_ca_baseline">
     <uri value="http://hl7.org/fhir/ca/baseline/ImplementationGuide/hl7.fhir.ca.baseline"/>
     <packageId value="hl7.fhir.ca.baseline"/>
-    <version value="current"/>
+    <version value="1.1.4"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -462,8 +462,8 @@
       <description value="Artifacts associated with Facilities"/>
     </grouping>
     <grouping id="RestfulQueryResponse">
-      <name value="RESTful Query"/>
-      <description value="RESTful Query Responses"/>
+      <name value="RESTful Query Response Examples"/>
+      <description value="RESTful Query Response Examples"/>
     </grouping>
     <grouping id="Extensions">
       <name value="Extensions"/>
@@ -1179,7 +1179,7 @@
         <reference value="Bundle/Example-GET-Practitioner-Response"/>
       </reference>
       <name value="Example-GET-Practitioner-Response"/>
-      <description value="Example of a response returning one Practioner."/>
+      <description value="Example of a response returning two Practioners."/>
       <exampleBoolean value="true"/>
       <groupingId value="RestfulQueryResponse"/>
     </resource>
@@ -1691,6 +1691,17 @@
       <name value="Example-PractitionerRole-1-Role-FromPractitioner-Update-Response"/>
       <description value="Example of the PractitionerRole with Speciality."/>
       <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/IPC.00187833.BC.PRS"/>
+      </reference>
+      <name value="Example-Another-Atomic-Practitioner"/>
+      <description value="Example of another generic Practitioner."/>
+      <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
