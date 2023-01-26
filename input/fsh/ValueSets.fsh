@@ -11,6 +11,7 @@ Title: "BC Expertise Value Set"
 Id: bc-expertise-value-set
 Description: "BC Expertise value set."
 * codes from system $SCPQual
+* codes from system $PLRExpertise
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-expertise-value-set"
 
@@ -31,7 +32,7 @@ Title: "Practitioner Role Code Value Set"
 Id: bc-practitioner-role-value-set
 Description: "BC Practitioner Role Codes."
 * codes from system $SCPType
-* codes from system https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system
+* codes from system $PLRRoleCode
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-practitioner-role-value-set"
 
@@ -49,7 +50,7 @@ ValueSet: LicenseStatusVS
 Title: "BC License Status Value Set"
 Id: bc-license-status-value-set
 Description: "BC specific license status value set."
-* codes from system https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system
+* codes from system $PLRLicenseStatus
 * codes from system $RoleStatus
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-value-set"
@@ -67,6 +68,7 @@ Title: "BC Practitioner Qualification Value Set"
 Id: bc-qualification-value-set
 Description: "BC specific qualification value set."
 * codes from system $SCPQual
+* codes from system $PLRQulaificationCode
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-qualification-value-set"
 
@@ -85,4 +87,4 @@ Id: bc-license-status-class-value-set
 Description: "BC specific license status class value set."
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-class-value-set"
 * ^experimental = false
-* codes from system https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system
+* codes from system $PLRStatusClass

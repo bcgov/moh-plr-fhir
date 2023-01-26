@@ -20,6 +20,9 @@ Alias: $PLRFacilityIdentifierType = https://terminology.hlth.gov.bc.ca/ProviderL
 Alias: $PLROwnerCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystems/bc-owner-code-system
 Alias: $PLRCommPurpose = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system
 Alias: $PLRAddressValStatus = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system
+Alias: $PLRRoleCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system
+Alias: $PLRQulaificationCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-credential-code-system
+Alias: $PLRExpertise = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-expertise-code-system
 
 Alias: $PLRWorkLocationID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-work-location-id
 Alias: $PLRNoteID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id
