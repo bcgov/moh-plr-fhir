@@ -160,75 +160,104 @@ Description: "Example of a Location."
 
 Instance: Example-GET-Practitioner-Response
 InstanceOf: Bundle
-Description: "Example of a response returning two Practioners."
+Description: "Example of a response returning one Practioners."
 * type = #searchset
+* link.relation = #self
+* link.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00047422.BC.PRS"
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
+* entry[=].search.mode = #include
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00047422.BC.PRS"
 * entry[=].resource = Example-Atomic-Practitioner
-* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00187833.BC.PRS"
-* entry[=].resource = Example-Another-Atomic-Practitioner
+* entry[=].search.mode = #match
 
 
 Instance: Example-GET-Organization-Response
 InstanceOf: Bundle
 Description: "Example of a response returning one Organization."
 * type = #searchset
+* link.relation = #self
+* link.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00047422.BC.PRS"
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
+* entry[=].search.mode = #include
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00047422.BC.PRS"
 * entry[=].resource = Example-Atomic-Organization
+* entry[=].search.mode = #match
 
 
 Instance: Example-GET-Location-Response
 InstanceOf: Bundle
 Description: "Example of a response returning one Location"
 * type = #searchset
+* link.relation = #self
+* link.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00047422.BC.PRS"
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
+* entry[=].search.mode = #include
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00047422.BC.PRS"
 * entry[=].resource = Example-Atomic-Location
+* entry[=].search.mode = #match
 
 
 Instance: Example-GET-OrganizationAffiliation-Response
 InstanceOf: Bundle
 Description: "Example of a response returning one OrganizationAffiliation"
 * type = #searchset
+* link.relation = #self
+* link.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.25.PRS"
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
+* entry[=].search.mode = #include
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.25.PRS"
 * entry[=].resource = Example-Atomic-OrganizationAffiliation-OrgRef
+* entry[=].search.mode = #match
 
 
 Instance: Example-GET-OrganizationAffiliation-byOrganization-Response
 InstanceOf: Bundle
 Description: "Example of a response returning list of OrganizationAffiliation"
 * type = #searchset
+* link.relation = #self
+* link.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/organziation=Organization/IPC.00147436.BC.PRS"
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
+* entry[=].search.mode = #include
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.25.PRS"
 * entry[=].resource = Example-Atomic-OrganizationAffiliation-OrgRef
+* entry[=].search.mode = #match
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.26.PRS"
 * entry[=].resource = Example-Atomic-OrganizationAffiliation-LocRef
+* entry[=].search.mode = #match
 
 Instance: Example-GET-PractitionerRole-Response
 InstanceOf: Bundle
 Description: "Example of a response returning one PractitionerRole"
 * type = #searchset
+* link.relation = #self
+* link.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00147422.BC.PRS"
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
+* entry[=].search.mode = #include
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS"
 * entry[=].resource = Example-Atomic-PractitionerRole-LocRef
+* entry[=].search.mode = #match
 
 Instance: Example-GET-PractitionerRole-byPractitioner-Response
 InstanceOf: Bundle
 Description: "Example of a response returning all the PractitionerRole for one practitioner"
 * type = #searchset
+* link.relation = #self
+* link.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/practitioner=Practitioner/IPC.00147422.BC.PRS"
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
+* entry[=].search.mode = #include
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS"
 * entry[=].resource = Example-Atomic-PractitionerRole-RoleSpecialty
+* entry[=].search.mode = #match
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS"
 * entry[=].resource = Example-Atomic-PractitionerRole-LocRef
+* entry[=].search.mode = #match
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.23.PRS"
 * entry[=].resource = Example-Atomic-PractitionerRole-OrgRef
+* entry[=].search.mode = #match

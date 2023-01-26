@@ -190,7 +190,7 @@ Description: "Tracking the status and changes to the status of a practitioner/or
 * extension[statusReasonCode].value[x] from LicenseReasonVS (required)
 * extension[statusClassCode].value[x] only CodeableConcept
 * extension[statusClassCode].value[x] 0..1 MS
-* extension[statusClassCode].value[x] ^short = "ae | lic"
+* extension[statusClassCode].value[x] ^short = "AE | LIC"
 * extension[statusClassCode].value[x] from LicenseStatusClassVS (required)
 * extension[period].value[x] only Period
 * extension[period].value[x] 1..1 MS

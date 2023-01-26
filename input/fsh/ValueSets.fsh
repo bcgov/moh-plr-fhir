@@ -14,15 +14,15 @@ Description: "BC Expertise value set."
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-expertise-value-set"
 
-CodeSystem: PractitionerRoleCS
-Title: "BC-Specific Practitioner Role Codes"
-Id: bc-practitioner-role-code-system
-Description: "BC-Specific codes for practitioner roles."
-* ^caseSensitive = true
-* #org "org" "The organization role."
-* #OOP-MD "OOP-MD" "Out Of Province MD"
-* ^experimental = false
-* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system"
+//CodeSystem: PractitionerRoleCS
+//Title: "BC-Specific Practitioner Role Codes"
+//Id: bc-practitioner-role-code-system
+//Description: "BC-Specific codes for practitioner roles."
+//* ^caseSensitive = true
+//* #ORG "ORG" "The organization role."
+//* #OOP-MD "OOP-MD" "Out Of Province MD"
+//* ^experimental = false
+//* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system"
 
 // TODO add the other OOP role types
 
@@ -31,25 +31,25 @@ Title: "Practitioner Role Code Value Set"
 Id: bc-practitioner-role-value-set
 Description: "BC Practitioner Role Codes."
 * codes from system $SCPType
-* codes from system PractitionerRoleCS
+* codes from system https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-practitioner-role-value-set"
 
-CodeSystem: LicenseStatusCS
-Title: "BC License Status Codes"
-Id: bc-license-status-code-system
-Description: "BC specific license status code system."
-* ^caseSensitive = true
-* #unknown "unknown" "Unknown"
-* #inactive "inactive" "Inactive"
-* ^experimental = false
-* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system"
+//CodeSystem: LicenseStatusCS
+//Title: "BC License Status Codes"
+//Id: bc-license-status-code-system
+//Description: "BC specific license status code system."
+//* ^caseSensitive = true
+//* #unknown "unknown" "Unknown"
+//* #inactive "inactive" "Inactive"
+//* ^experimental = false
+//* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system"
 
 ValueSet: LicenseStatusVS
 Title: "BC License Status Value Set"
 Id: bc-license-status-value-set
 Description: "BC specific license status value set."
-* codes from system LicenseStatusCS
+* codes from system https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system
 * codes from system $RoleStatus
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-value-set"
@@ -70,14 +70,14 @@ Description: "BC specific qualification value set."
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-qualification-value-set"
 
-CodeSystem: LicenseStatusClassCS
-Title: "BC License Status Class Code System"
-Id: bc-license-status-class-code-system
-Description: "BC specific license status class code system."
-* #lic "lic" "Licensure"
-* #ae "ae" "Assigned Entity"
-* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system"
-* ^experimental = false
+//CodeSystem: LicenseStatusClassCS
+//Title: "BC License Status Class Code System"
+//Id: bc-license-status-class-code-system
+//Description: "BC specific license status class code system."
+//* #LIC "LIC" "Licensure"
+//* #AE "AE" "Assigned Entity"
+//* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system"
+//* ^experimental = false
 
 ValueSet: LicenseStatusClassVS
 Title: "BC License Status Class Value Set"
@@ -85,4 +85,4 @@ Id: bc-license-status-class-value-set
 Description: "BC specific license status class value set."
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-class-value-set"
 * ^experimental = false
-* codes from system LicenseStatusClassCS
+* codes from system https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system

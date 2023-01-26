@@ -3,7 +3,7 @@ InstanceOf: OperationDefinition
 Description: "This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities."
 Usage: #definition
 * id = "bc-entity-practitioner-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-entity-practitioner-query"
+* url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-practitioner-query"
 * name = "PractitionerEntityQuery"
 * title = "Query for a practitioner without returning associations"
 * status = #draft
@@ -83,7 +83,7 @@ InstanceOf: OperationDefinition
 Description: "This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations."
 Usage: #definition
 * id = "bc-entity-location-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-entity-location-query"
+* url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query"
 * name = "LocationEntityQuery"
 * title = "Query for a location without returning associations"
 * status = #draft
@@ -142,7 +142,7 @@ InstanceOf: OperationDefinition
 Description: "This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities."
 Usage: #definition
 * id = "bc-entity-organization-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-entity-organization-query"
+* url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-organization-query"
 * name = "OrganizationEntityQuery"
 * title = "Query for an organization without returning associations"
 * status = #draft
@@ -173,7 +173,7 @@ InstanceOf: OperationDefinition
 Description: "This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities."
 Usage: #definition
 * id = "bc-extended-practitioner-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-practitioner-query"
+* url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-practitioner-query"
 * name = "PractitionerExtendedQuery"
 * title = "Query for a Practitioner that returns associated resources"
 * status = #draft
@@ -252,7 +252,7 @@ InstanceOf: OperationDefinition
 Description: "This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations."
 Usage: #definition
 * id = "bc-extended-organization-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-organization-query"
+* url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-organization-query"
 * name = "OrganizationExtendedQuery"
 * title = "Query for an organization that returns associated resources"
 * status = #draft
@@ -283,7 +283,7 @@ InstanceOf: OperationDefinition
 Description: "This operation is used to query for an location and will return the information for that location along with any instances that can be found by following associations to other providers, organizations, or location."
 Usage: #definition
 * id = "bc-extended-location-query"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-extended-location-query"
+* url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-location-query"
 * name = "LocationExtendedQuery"
 * title = "Query for a location that returns associated resources"
 * status = #draft
@@ -342,7 +342,7 @@ InstanceOf: OperationDefinition
 Description: "This operation is used to create and update the resources that represent a Provider or Facility."
 Usage: #definition
 * id = "bc-maintain"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-maintain"
+* url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-maintain"
 * name = "Maintain"
 * title = "Maintain PLR entities."
 * status = #draft
@@ -411,7 +411,7 @@ InstanceOf: OperationDefinition
 Description: "This operation is used to distribute the resources that represent a Provider or Facility."
 Usage: #definition
 * id = "bc-distribution"
-* url = "http://hl7.org/fhir/ca-bc/provider/OperationDefinition/bc-distribution"
+* url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution"
 * name = "Distribution"
 * title = "PLR entities sent out in a distribution."
 * status = #draft

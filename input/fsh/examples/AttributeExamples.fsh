@@ -130,13 +130,13 @@ Description: "Example license status update."
 Usage: #inline
 * url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
 * extension[+].url = "statusCode"
-* extension[=].valueCodeableConcept.coding.system = Canonical(LicenseStatusCS)
+* extension[=].valueCodeableConcept.coding.system = $PLRLicenseStatus
 * extension[=].valueCodeableConcept.coding.code = #inactive
 * extension[+].url = "statusReasonCode"
 * extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
 * extension[=].valueCodeableConcept.coding.code = #LTP
 * extension[+].url = "statusClassCode"
-* extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
+* extension[=].valueCodeableConcept.coding.system = $PLRStatusClass
 * extension[=].valueCodeableConcept.coding.code = #LIC
 * extension[+].url = "period"
 * extension[=].valuePeriod.start = "2022-06-24"
