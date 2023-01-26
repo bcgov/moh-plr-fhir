@@ -9,22 +9,39 @@
   fhir:nodeRole fhir:treeRoot;
   fhir:Resource.id [ fhir:value "Example-GET-PractitionerRole-byPractitioner-Response"]; # 
   fhir:Bundle.type [ fhir:value "searchset"]; # 
+  fhir:Bundle.link [
+     fhir:index 0;
+     fhir:Bundle.link.relation [ fhir:value "self" ];
+     fhir:Bundle.link.url [ fhir:value "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/practitioner=Practitioner/IPC.00147422.BC.PRS" ]
+  ]; # 
   fhir:Bundle.entry [
      fhir:index 0;
      fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552" ];
-     fhir:Bundle.entry.resource <urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552>
+     fhir:Bundle.entry.resource <urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "include" ]
+     ]
   ], [
      fhir:index 1;
      fhir:Bundle.entry.fullUrl [ fhir:value "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS" ];
-     fhir:Bundle.entry.resource <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS>
+     fhir:Bundle.entry.resource <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
   ], [
      fhir:index 2;
      fhir:Bundle.entry.fullUrl [ fhir:value "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS" ];
-     fhir:Bundle.entry.resource <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS>
+     fhir:Bundle.entry.resource <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
   ], [
      fhir:index 3;
      fhir:Bundle.entry.fullUrl [ fhir:value "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.23.PRS" ];
-     fhir:Bundle.entry.resource <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.23.PRS>
+     fhir:Bundle.entry.resource <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.23.PRS>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
   ] . # 
 
 <urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552> a fhir:OperationOutcome;
