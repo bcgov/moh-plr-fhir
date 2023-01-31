@@ -66,18 +66,18 @@ This enables:
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="450px" src="bc_facility.png" alt="BC PLR Facility"/>
+  <img style="padding-top:0;padding-bottom:30px" width="550px" src="bc_facility.png" alt="BC PLR Facility"/>
   <figcaption>Figure 1.2 - BC PLR Facility</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
 The above diagram outlines the different entities that compose a facility:
 
-* Facility Name - name and description
 * Facility Details - owner, operator, effective dates
 * Civic Address - civic address along with latitude/longitude and community health service area (CHSA) codes and code descriptions
 * Facility Identifier - identifier(s) with identifier type
 * Community Health Service Area - a health boundary within the Province of BC
+* Primary Care netowrk - a health boundary within the Province of BC
 
 ### Relation to CA Baseline and other IGs
 
