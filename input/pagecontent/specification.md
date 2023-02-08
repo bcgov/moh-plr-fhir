@@ -254,7 +254,7 @@ GET Organization/IPC.00012343.BC.PRS
 ##### Location 
 Returns a single resource; id for Location is the **IFC identifier**
 ```htm
-GET Location/12345
+GET Location/IFC.00876532.BC.PRS
 ``` 
 ##### PractitionerRole 
 
