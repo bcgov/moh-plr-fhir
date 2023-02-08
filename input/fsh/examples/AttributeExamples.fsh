@@ -342,6 +342,16 @@ Usage: #inline
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension"
 * extension[=].valueString = "Language Source"
 
+Instance: Example-Language-French
+InstanceOf: CodeableConcept
+Description: "Example language."
+Usage: #inline
+* coding = $PLRLanguage#FR
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "2000-01-01"
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension"
+* extension[=].valueString = "Language Source"
+
 Instance: Example-Language-Response
 InstanceOf: CodeableConcept
 Description: "Example language."

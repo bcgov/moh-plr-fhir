@@ -30,7 +30,8 @@ Description: "Example of generic Practitioner."
 * contained[QualificationOrganization] = Example-Credential-Granting-Institution
 * contained[QualificationOrganization].id = "grantingInstitution"
 // language
-* communication = Example-Language
+* communication[+] = Example-Language
+* communication[+] = Example-Language-French
 
 Instance: Example-Another-Atomic-Practitioner
 InstanceOf: BCPractitioner
@@ -62,7 +63,8 @@ Description: "Example of another generic Practitioner."
 * contained[QualificationOrganization] = Example-Credential-Granting-Institution
 * contained[QualificationOrganization].id = "grantingInstitution"
 // language
-* communication = Example-Language
+* communication[+] = Example-Language
+* communication[+] = Example-Language-French
 
 Instance: Example-Atomic-PractitionerRole-RoleSpecialty
 InstanceOf: BCPractitionerRole
@@ -163,12 +165,28 @@ InstanceOf: Bundle
 Description: "Example of a response returning one Practioners."
 * type = #searchset
 * link.relation = #self
-* link.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00047422.BC.PRS"
+* link.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00047422.BC.PRS"
 * entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
 * entry[=].resource = Example-OperationOutcome-Success
 * entry[=].search.mode = #include
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00047422.BC.PRS"
 * entry[=].resource = Example-Atomic-Practitioner
+* entry[=].search.mode = #match
+
+Instance: Example-GET-Practitioner-Param-Response
+InstanceOf: Bundle
+Description: "Example of a response returning two Practioners."
+* type = #searchset
+* link.relation = #self
+* link.url = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner?address-city=Victoria&language=FR"
+* entry[+].fullUrl = "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"
+* entry[=].resource = Example-OperationOutcome-Success
+* entry[=].search.mode = #include
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00047422.BC.PRS"
+* entry[=].resource = Example-Atomic-Practitioner
+* entry[=].search.mode = #match
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00187833.BC.PRS"
+* entry[=].resource = Example-Another-Atomic-Practitioner
 * entry[=].search.mode = #match
 
 
