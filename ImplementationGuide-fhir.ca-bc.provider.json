@@ -10,7 +10,7 @@
   "name" : "BCProviderRegistry",
   "title" : "BC Provider Location Registry FHIR Implementation Guide",
   "status" : "draft",
-  "date" : "2023-02-08T21:47:45+00:00",
+  "date" : "2023-02-21T21:05:43+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -653,6 +653,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-careteam"
+      },
+      "name" : "BCCareTeam",
+      "description" : "PLR Enhancement representing a collection of practitioners that provide services",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
       }],
       "reference" : {
@@ -660,6 +672,66 @@
       },
       "name" : "BCContactPoint",
       "description" : "Adds an end reason and extra contact information.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-enhanced-location"
+      },
+      "name" : "BCEnhancedLocation",
+      "description" : "PLR Enhancement to the Location resource",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-enhanced-org-services"
+      },
+      "name" : "BCEnhancedOrgServices",
+      "description" : "PLR Enhancement that describes services that a clinic provides.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-enhanced-organization"
+      },
+      "name" : "BCEnhancedOrganization",
+      "description" : "PLR Enhancement to the Organization resource",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-enhanced-practitioner"
+      },
+      "name" : "BCEnhancedPractitioner",
+      "description" : "PLR Enhancement to the Practitioner resource",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-enhanced-practitioner-clinic"
+      },
+      "name" : "BCEnhancedPractitionerClinic",
+      "description" : "Describes the relationship between practitioners, clinics, and the locations",
       "exampleBoolean" : false
     },
     {
@@ -802,6 +874,18 @@
       "description" : "General constraints on the PractitionerRole resource for use in the BC Provider Registry project.",
       "exampleBoolean" : false,
       "groupingId" : "Practitioner"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-primary-network"
+      },
+      "name" : "BCPrimaryNetwork",
+      "description" : "PLR Enhancement representing a primary care network of practitioners that provide services",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -1017,6 +1101,18 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/bc-enhanced-owner-name-extension"
+      },
+      "name" : "OwnerNameExtension",
+      "description" : "Represents the name of the business that owns/runs the clinic.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/bc-period-extension"
       },
       "name" : "BC Valid Period Extension",
@@ -1088,6 +1184,18 @@
       "description" : "The relationship type of a Practitioner to Organization or Practitioner to Practitioner relationship.",
       "exampleBoolean" : false,
       "groupingId" : "Extensions"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-enhanced-service-period-extension"
+      },
+      "name" : "ServicePeriodExtension",
+      "description" : "Represents the period that a service is available at a clinic or location",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
