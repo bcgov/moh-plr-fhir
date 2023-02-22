@@ -94,12 +94,15 @@ Description: "Allows for relationships of practitioners to practitioners without
           PeriodExtension named period 1..1 MS and
 	    targetPractitioner 1..1 MS and
           relationshipType 1..1 MS and 
+          logicalId 1..1 MS and 
           EndReasonExtension named endReason 0..1 MS and
           OwnerExtension named owner 0..1 MS
 * extension[targetPractitioner].value[x] only Reference(BCPractitioner)
 * extension[targetPractitioner].value[x] 1..1 MS
 * extension[relationshipType].value[x] only CodeableConcept
 * extension[relationshipType].value[x] 1..1 MS
+* extension[logicalId].value[x] 1..1 MS
+* extension[logicalId].value[x] only string 
 
 Extension: PractitionerDiscplinaryActionExtension
 Id: bc-practitioner-disciplinary-action-extension

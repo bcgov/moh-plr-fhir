@@ -10,6 +10,9 @@ Usage: #inline
 * extension[1].valueCodeableConcept = $PLRRelationshipType#LOC
 * extension[2].url = "practitioner"
 * extension[2].valueReference = Reference(Example-AddPractitioner-RelatedPractitioner)
+* extension[3].url = "logicalId"
+* extension[3].valueString = "123456"
+
 
 Instance: Example-Confidenciality-False
 InstanceOf: Extension

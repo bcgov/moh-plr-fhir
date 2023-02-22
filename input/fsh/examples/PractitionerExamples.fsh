@@ -131,6 +131,8 @@ Usage: #inline
 * extension[+].url = "relationshipType"
 * extension[=].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT 
+* extension[+].url = "logicalId"
+* extension[=].valueString = "987654"
 
 Instance: Example-AddPractitioner-RelatedPractitioner-Response
 InstanceOf: Extension
@@ -145,6 +147,8 @@ Usage: #inline
 * extension[=].valueCodeableConcept.coding.system = $PLRRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT 
 * extension[+] = Example-OC-MOH
+* extension[+].url = "logicalId"
+* extension[=].valueString = "999999"
 
 Instance: Example-Practitioner-UpdateLicense
 InstanceOf: BCPractitioner
