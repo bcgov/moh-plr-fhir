@@ -13,7 +13,7 @@ Description: "General constraints on the Location resource for use in the BC Pro
 * telecom only BCContactPoint 
 * telecom MS
 * address only BCAddress 
-* address 1..1 MS
+* address 0..1 MS
 * extension contains NoteExtension named note 0..* MS and
 	FacilityDetailsExtension named facilityDetails 0..1 MS and
 	CommunityHealthServiceArea named serviceArea 0..1 MS and
