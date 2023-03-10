@@ -1,11 +1,3 @@
-{% raw %}
-<blockquote class="stu-note">
-<p>
-This specification is currently published as a Draft Standard on the ministry github and is not intended for implementation.  Feedback is welcome but readers should understand that there is more work to be done in testing the profiles and operations defined in this guide.  For more information, please see the <a href="future.html">Future Plans</a> page in this guide.  The integration process is described in general below.
-</p>
-</blockquote>
-{% endraw %}
-
 ### Getting Started
 Vendors that are developing interfaces that correspond to those documented in this Implementation Guide need to meet all the requirements defined within the British Columbia Professional and Software Conformance Stadards.
 
