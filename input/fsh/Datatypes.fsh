@@ -73,7 +73,7 @@ Description: "BC extension for communication purpose codes."
 
 Extension: AddressValidationStatusExtension
 Id: bc-address-validation-status-extension
-Title: "BC Address Validataion Extension"
+Title: "BC Address Validation Extension"
 Description: "BC extension for address validation status codes."
 * value[x] only CodeableConcept
 * value[x] 1..1 MS

@@ -1,9 +1,4 @@
-{% raw %}
-<blockquote class="stu-note">
-<p>
-This specification is currently published as a Draft Standard on the ministry github and is not intended for implementation.  Feedback is welcome but readers should understand that there is more work to be done in testing the profiles and operations defined in this guide.  For more information, please see the <a href="future.html">Future Plans</a> page in this guide.</p>
-</blockquote>
-{% endraw %}
+
 ### PLR Application Overview
 The Provider and Location Registry (PLR) is a centralized repository of core information about health service providers, e.g., physicians, nurses, pharmacists.  Information is supplied by authorized sources such as professional colleges. PLR ensures the security of provider information by employing or enabling proven security and privacy techniques. Data in the repository is available to authorized organizations to facilitate the transmission of provider information between authorized organizations in real time.  This makes PLR a cornerstone in the development of the Electronic Health Record (EHR).
 

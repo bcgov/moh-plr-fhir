@@ -3,7 +3,7 @@ canonical: http://hlth.gov.bc.ca/fhir/provider
 name: BCProviderRegistry
 title: BC Provider Location Registry FHIR Implementation Guide
 description: FHIR Implementation Guide for BC MOH Provider Registry
-status: draft
+status: active
 version: 1.0.0
 fhirVersion: 4.0.1
 copyrightYear: 2022+
@@ -12,11 +12,12 @@ publisher:
   name: BC Ministry of Health
   url: https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health
 jurisdiction: urn:iso:std:iso:3166#CA "Canada"
-
+license: CC0-1.0
 # this is where the version listings are for hl7.fhir.ca.baseline
 # https://build.fhir.org/ig/qas.json
 dependencies:
   hl7.fhir.ca.baseline: 1.1.4
+  hl7.fhir.extensions.r5: 4.0.1
 #  hl7.fhir.ca.baseline: current
 
 ca.baselineparameters:
@@ -129,6 +130,7 @@ groups:
       - Bundle/Example-DistributePractitioner-Bundle
       - Bundle/Example-AddOrganization-Bundle
       - Bundle/Example-AddLocation-Bundle
+      - StructureDefinition/bc-operation-outcome
   Practitioner:
     name: Practitioner
     description: Artifacts associated with Practitioners
@@ -186,7 +188,6 @@ groups:
       - StructureDefinition/bc-facility-details-extension
       - StructureDefinition/bc-facility-community-health-service-area-extension
       - StructureDefinition/bc-facility-mailing-address-extension
-      - StructureDefinition/bc-operation-outcome
 Datatypes:
     name: Datatypes
     description: Artifacts associated with datatypes
