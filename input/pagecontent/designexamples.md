@@ -1,6 +1,5 @@
 
-
-#### Operational Query Examples
+### Operational Query Examples
 
 Search for Individual Provider (aka Practitioner + PractitionerRoles) by FHIR system id
 
@@ -19,7 +18,7 @@ Search for a Location by Health Authority and return all related Organizations a
       GET /Location/$extendedQuery?healthAuthority=Interior%20Health
 
 
-#### Resource Query Examples
+### Resource Query Examples
 
 Operations like the $entityQuery can also be accomplished by a more 'chatty' interface, with multiple simple restful queries.
 ```htm
@@ -43,7 +42,7 @@ GET PractitionerRole/RELN.3432.PRS
 GET OrganizationAffiliation/RELN.3112.PRS
 ```
 
-##### Resource Query Examples with Parameters
+#### Resource Query Examples with Parameters
 
 A short cut to find all PractitionerRoles associated with a Practitioner
 ```htm
