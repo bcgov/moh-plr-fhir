@@ -36,7 +36,7 @@ Usage: #definition
 * version = "1.0"
 * name = "BCPLRServerCapabilityStatement"
 * title = "BC PLR Server Capability Statement"
-* status = #draft
+* status = #active
 * date = "2022-11-15"
 * publisher = "BC Ministry of Health"
 * description = "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):
