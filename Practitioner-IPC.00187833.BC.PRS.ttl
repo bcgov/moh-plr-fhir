@@ -5,348 +5,299 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00187833.BC.PRS> a fhir:Practitioner;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "IPC.00187833.BC.PRS"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner";
-       fhir:index 0;
+<http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00187833.BC.PRS> a fhir:Practitioner ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "IPC.00187833.BC.PRS"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
        fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
-     ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b><a name=\"IPC.00187833.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;IPC.00187833.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner.html\">BCPractitioner</a></p></div><p><b>BC Valid Period Extension</b>: 2012-12-07 --&gt; (ongoing)</p><p><b>BC Birth Place Extension</b>: Ottawa CA </p><blockquote><p><b>BC License Status Extension</b></p><p><b>value</b>: suspended <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v3-RoleStatus.html\">RoleStatus</a>#suspended)</span></p><p><b>value</b>: LTP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-reason-code-system#LTP)</span></p><p><b>value</b>: LIC <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-class-code-system#LIC)</span></p><p><b>value</b>: 2022-06-24 --&gt; (ongoing)</p></blockquote><blockquote><p><b>BC Practitioner Conditions Extension</b></p><p><b>value</b>: id: Condition-1</p><p><b>value</b>: false</p><p><b>value</b>: Restriction text</p><p><b>value</b>: EXP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-condition-type-code-system#EXP)</span></p><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p></blockquote><blockquote><p><b>BC Confidentiality Extension</b></p><p><b>value</b>: 2000-01-01 --&gt; 2020-01-01</p><p><b>value</b>: restricted <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v3-Confidentiality.html\">Confidentiality</a>#R)</span></p></blockquote><blockquote><p><b>BC Practitioner to Practitioner Relationship Extension</b></p><p><b>value</b>: 2022-06-30 --&gt; (ongoing)</p><p><b>value</b>: <span/></p><p><b>value</b>: WORKSAT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code-system#WORKSAT)</span></p><p><b>value</b>: 987654</p></blockquote><p><b>identifier</b>: id: IPC.00187833.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: GivenName FamilyName (OFFICIAL)</p><p><b>telecom</b>: ph: 2501112234</p><p><b>address</b>: 1001000 DOUGLAS ST VICTORIA BC Z6P7U8 CA </p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1962-11-02</p><h3>Qualifications</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Code</b></td><td><b>Period</b></td><td><b>Issuer</b></td></tr><tr><td>*</td><td/><td>BD <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://simplifier.net/resolve?scope=hl7.fhir.ca.baseline@1.1.4&amp;canonical=http://fhir.infoway-inforoute.ca/CodeSystem/scpqual\">pan-Canadian Provider Qualification Types</a>#BD)</span></td><td>2000-01-01 --&gt; (ongoing)</td><td><a name=\"grantingInstitution\"> </a><blockquote><p/><p><a name=\"grantingInstitution\"> </a></p><p><b>name</b>: University of Calgary</p><p><b>address</b>: CALGARY AB CA </p></blockquote></td></tr></table><p><b>communication</b>: EN <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-language-code-system#EN)</span>, FR <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-language-code-system#FR)</span></p><hr/><blockquote><p><b>Generated Narrative: Organization #grantingInstitution</b><a name=\"grantingInstitution\"> </a></p><p><b>name</b>: University of Calgary</p><p><b>address</b>: CALGARY AB CA </p></blockquote></div>"
-  ]; # 
-  fhir:DomainResource.contained [
-     a fhir:Organization;
-     fhir:index 0;
-     fhir:Resource.id [ fhir:value "grantingInstitution" ];
-     fhir:Resource.meta [
-       fhir:Meta.profile [
-         fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization";
-         fhir:index 0;
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b><a name=\"IPC.00187833.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;IPC.00187833.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner.html\">BCPractitioner</a></p></div><p><b>BC Valid Period Extension</b>: 2012-12-07 --&gt; (ongoing)</p><p><b>BC Birth Place Extension</b>: Ottawa CA </p><blockquote><p><b>BC License Status Extension</b></p><blockquote><p><b>url</b></p><code>statusCode</code></blockquote><p><b>value</b>: suspended <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v3-RoleStatus.html\">RoleStatus</a>#suspended)</span></p><blockquote><p><b>url</b></p><code>statusReasonCode</code></blockquote><p><b>value</b>: LTP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-reason-code-system#LTP)</span></p><blockquote><p><b>url</b></p><code>statusClassCode</code></blockquote><p><b>value</b>: LIC <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-class-code-system#LIC)</span></p><blockquote><p><b>url</b></p><code>period</code></blockquote><p><b>value</b>: 2022-06-24 --&gt; (ongoing)</p></blockquote><blockquote><p><b>BC Practitioner Conditions Extension</b></p><blockquote><p><b>url</b></p><code>identifier</code></blockquote><p><b>value</b>: id: Condition-1</p><blockquote><p><b>url</b></p><code>restriction</code></blockquote><p><b>value</b>: false</p><blockquote><p><b>url</b></p><code>restrictionText</code></blockquote><p><b>value</b>: Restriction text</p><blockquote><p><b>url</b></p><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></blockquote><p><b>value</b>: EXP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-condition-type-code-system#EXP)</span></p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-period-extension.html\">BC Valid Period Extension</a></blockquote><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p></blockquote><blockquote><p><b>BC Confidentiality Extension</b></p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-period-extension.html\">BC Valid Period Extension</a></blockquote><p><b>value</b>: 2000-01-01 --&gt; 2020-01-01</p><blockquote><p><b>url</b></p><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></blockquote><p><b>value</b>: restricted <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v3-Confidentiality.html\">Confidentiality</a>#R)</span></p></blockquote><blockquote><p><b>BC Practitioner to Practitioner Relationship Extension</b></p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-period-extension.html\">BC Valid Period Extension</a></blockquote><p><b>value</b>: 2022-06-30 --&gt; (ongoing)</p><blockquote><p><b>url</b></p><code>targetPractitioner</code></blockquote><p><b>value</b>: <span/></p><blockquote><p><b>url</b></p><code>relationshipType</code></blockquote><p><b>value</b>: WORKSAT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code-system#WORKSAT)</span></p><blockquote><p><b>url</b></p><code>logicalId</code></blockquote><p><b>value</b>: 987654</p></blockquote><p><b>identifier</b>: id: IPC.00187833.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: GivenName FamilyName (OFFICIAL)</p><p><b>telecom</b>: ph: 2501112234</p><p><b>address</b>: 1001000 DOUGLAS ST VICTORIA BC Z6P7U8 CA </p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1962-11-02</p><h3>Qualifications</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Code</b></td><td><b>Period</b></td><td><b>Issuer</b></td></tr><tr><td>*</td><td/><td>BD <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://simplifier.net/resolve?scope=hl7.fhir.ca.baseline@1.1.4&amp;canonical=http://fhir.infoway-inforoute.ca/CodeSystem/scpqual\">pan-Canadian Provider Qualification Types</a>#BD)</span></td><td>2000-01-01 --&gt; (ongoing)</td><td><a name=\"grantingInstitution\"> </a><blockquote><p/><p><a name=\"grantingInstitution\"> </a></p><p><b>name</b>: University of Calgary</p><p><b>address</b>: CALGARY AB CA </p></blockquote></td></tr></table><p><b>communication</b>: EN <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-language-code-system#EN)</span>, FR <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-language-code-system#FR)</span></p><hr/><blockquote><p><b>Generated Narrative: Organization #grantingInstitution</b><a name=\"grantingInstitution\"> </a></p><p><b>name</b>: University of Calgary</p><p><b>address</b>: CALGARY AB CA </p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Organization ;
+     fhir:id [ fhir:v "grantingInstitution" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
-       ]
-     ];
-     fhir:Organization.name [ fhir:value "University of Calgary" ];
-     fhir:Organization.address [
-       fhir:index 0;
-       fhir:Address.city [ fhir:value "CALGARY" ];
-       fhir:Address.state [ fhir:value "AB" ];
-       fhir:Address.country [ fhir:value "CA" ]
+       ] )
+     ] ;
+     fhir:name [ fhir:v "University of Calgary" ] ;
+     fhir:address ( [
+       fhir:city [ fhir:v "CALGARY" ] ;
+       fhir:state [ fhir:v "AB" ] ;
+       fhir:country [ fhir:v "CA" ]
+     ] )
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Period ;
+       fhir:start [ fhir:v "2012-12-07"^^xsd:date ]
      ]
-  ]; # 
-  fhir:DomainResource.extension [
-     fhir:index 0;
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
-     fhir:Extension.valuePeriod [
-       fhir:Period.start [ fhir:value "2012-12-07"^^xsd:date ]
+  ] [
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Address ;
+       fhir:city [ fhir:v "Ottawa" ] ;
+       fhir:country [ fhir:v "CA" ]
      ]
-  ], [
-     fhir:index 1;
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension" ];
-     fhir:Extension.valueAddress [
-       fhir:Address.city [ fhir:value "Ottawa" ];
-       fhir:Address.country [ fhir:value "CA" ]
-     ]
-  ], [
-     fhir:index 2;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "statusCode" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleStatus" ];
-           fhir:Coding.code [ fhir:value "suspended" ]
-         ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "statusCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleStatus"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "suspended" ]
+         ] )
        ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "statusReasonCode" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system" ];
-           fhir:Coding.code [ fhir:value "LTP" ]
-         ]
+     ] [
+       fhir:url [ fhir:v "statusReasonCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "LTP" ]
+         ] )
        ]
-     ], [
-       fhir:index 2;
-       fhir:Extension.url [ fhir:value "statusClassCode" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system" ];
-           fhir:Coding.code [ fhir:value "LIC" ]
-         ]
+     ] [
+       fhir:url [ fhir:v "statusClassCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "LIC" ]
+         ] )
        ]
-     ], [
-       fhir:index 3;
-       fhir:Extension.url [ fhir:value "period" ];
-       fhir:Extension.valuePeriod [
-         fhir:Period.start [ fhir:value "2022-06-24"^^xsd:date ]
+     ] [
+       fhir:url [ fhir:v "period"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2022-06-24"^^xsd:date ]
        ]
-     ];
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension" ]
-  ], [
-     fhir:index 3;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "identifier" ];
-       fhir:Extension.valueIdentifier [
-         fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-condition-id" ];
-         fhir:Identifier.value [ fhir:value "Condition-1" ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "identifier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Identifier ;
+         fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-condition-id"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition-1" ]
        ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "restriction" ];
-       fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 2;
-       fhir:Extension.url [ fhir:value "restrictionText" ];
-       fhir:Extension.valueString [ fhir:value "Restriction text" ]
-     ], [
-       fhir:index 3;
-       fhir:Extension.url [ fhir:value "code" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-condition-type-code-system" ];
-           fhir:Coding.code [ fhir:value "EXP" ]
-         ]
+     ] [
+       fhir:url [ fhir:v "restriction"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:url [ fhir:v "restrictionText"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Restriction text" ]
+     ] [
+       fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-condition-type-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "EXP" ]
+         ] )
        ]
-     ], [
-       fhir:index 4;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
-       fhir:Extension.valuePeriod [
-         fhir:Period.start [ fhir:value "1998-01-02"^^xsd:date ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "1998-01-02"^^xsd:date ]
        ]
-     ];
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-condition-extension" ]
-  ], [
-     fhir:index 4;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
-       fhir:Extension.valuePeriod [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
-         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-condition-extension"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ] ;
+         fhir:end [ fhir:v "2020-01-01"^^xsd:date ]
        ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "code" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-Confidentiality" ];
-           fhir:Coding.code [ fhir:value "R" ]
-         ]
+     ] [
+       fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "R" ]
+         ] )
        ]
-     ];
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-confidentiality-extension" ]
-  ], [
-     fhir:index 5;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
-       fhir:Extension.valuePeriod [
-         fhir:Period.start [ fhir:value "2022-06-30"^^xsd:date ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-confidentiality-extension"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2022-06-30"^^xsd:date ]
        ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "targetPractitioner" ];
-       fhir:Extension.valueReference [
-         fhir:Reference.identifier [
-           fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-           fhir:Identifier.value [ fhir:value "IPC.00763483.BC.PRS" ];
-           fhir:Identifier.period [
-             fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ] [
+       fhir:url [ fhir:v "targetPractitioner"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Reference ;
+         fhir:identifier [
+           fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "IPC.00763483.BC.PRS" ] ;
+           fhir:period [
+             fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
            ]
          ]
        ]
-     ], [
-       fhir:index 2;
-       fhir:Extension.url [ fhir:value "relationshipType" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system" ];
-           fhir:Coding.code [ fhir:value "WORKSAT" ]
-         ]
+     ] [
+       fhir:url [ fhir:v "relationshipType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "WORKSAT" ]
+         ] )
        ]
-     ], [
-       fhir:index 3;
-       fhir:Extension.url [ fhir:value "logicalId" ];
-       fhir:Extension.valueString [ fhir:value "987654" ]
-     ];
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-relationship-extension" ]
-  ]; # 
-  fhir:Practitioner.identifier [
-     fhir:index 0;
-     fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-     fhir:Identifier.value [ fhir:value "IPC.00187833.BC.PRS" ];
-     fhir:Identifier.period [
-       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ] [
+       fhir:url [ fhir:v "logicalId"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "987654" ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-relationship-extension"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "IPC.00187833.BC.PRS" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
      ]
-  ]; # 
-  fhir:Practitioner.name [
-     fhir:index 0;
-     fhir:HumanName.use [ fhir:value "official" ];
-     fhir:HumanName.family [ fhir:value "FamilyName" ];
-     fhir:HumanName.given [
-       fhir:value "GivenName";
-       fhir:index 0
-     ];
-     fhir:HumanName.period [
-       fhir:Period.start [ fhir:value "2012-12-07"^^xsd:date ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "FamilyName" ] ;
+     fhir:given ( [ fhir:v "GivenName" ] ) ;
+     fhir:period [
+       fhir:start [ fhir:v "2012-12-07"^^xsd:date ]
      ]
-  ]; # 
-  fhir:Practitioner.telecom [
-     fhir:index 0;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system" ];
-           fhir:Coding.code [ fhir:value "BC" ]
-         ]
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "BC" ]
+         ] )
        ]
-     ];
-     fhir:ContactPoint.system [ fhir:value "phone" ];
-     fhir:ContactPoint.value [ fhir:value "2501112234" ];
-     fhir:ContactPoint.period [
-       fhir:Period.start [ fhir:value "2000-02-02"^^xsd:date ]
+     ] ) ;
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "2501112234" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-02-02"^^xsd:date ]
      ]
-  ]; # 
-  fhir:Practitioner.address [
-     fhir:index 0;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system" ];
-           fhir:Coding.code [ fhir:value "BC" ]
-         ]
+  ] ) ; # 
+  fhir:address ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "BC" ]
+         ] )
        ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system" ];
-           fhir:Coding.code [ fhir:value "I" ]
-         ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I" ]
+         ] )
        ]
-     ];
-     fhir:Address.type [ fhir:value "postal" ];
-     fhir:Address.line [
-       fhir:value "1001000 DOUGLAS ST";
-       fhir:index 0
-     ];
-     fhir:Address.city [ fhir:value "VICTORIA" ];
-     fhir:Address.state [ fhir:value "BC" ];
-     fhir:Address.postalCode [ fhir:value "Z6P7U8" ];
-     fhir:Address.country [ fhir:value "CA" ];
-     fhir:Address.period [
-       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ] ) ;
+     fhir:type [ fhir:v "postal" ] ;
+     fhir:line ( [ fhir:v "1001000 DOUGLAS ST" ] ) ;
+     fhir:city [ fhir:v "VICTORIA" ] ;
+     fhir:state [ fhir:v "BC" ] ;
+     fhir:postalCode [ fhir:v "Z6P7U8" ] ;
+     fhir:country [ fhir:v "CA" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
      ]
-  ]; # 
-  fhir:Practitioner.gender [ fhir:value "male"]; # 
-  fhir:Practitioner.birthDate [
-     fhir:value "1962-11-02"^^xsd:date;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthtime-extension" ];
-       fhir:Extension.valueDateTime [ fhir:value "1962-11-02T00:00:01-06:00"^^xsd:dateTime ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [
+     fhir:v "1962-11-02"^^xsd:date ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthtime-extension"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "1962-11-02T00:00:01-06:00"^^xsd:dateTime ]
+     ] )
+  ] ; # 
+  fhir:qualification ( [
+     fhir:extension ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "designation"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Designation" ]
+       ] [
+         fhir:url [ fhir:v "equivalencyFlag"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "false"^^xsd:boolean ]
+       ] [
+         fhir:url [ fhir:v "registrationNumber"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Registration No." ]
+       ] [
+         fhir:url [ fhir:v "issuedDate"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "2000-02-03"^^xsd:date ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-qualification-extension"^^xsd:anyURI ]
+     ] ) ;
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://fhir.infoway-inforoute.ca/CodeSystem/scpqual"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "BD" ]
+       ] )
+     ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+     ] ;
+     fhir:issuer [
+       fhir:reference [ fhir:v "#grantingInstitution" ]
      ]
-  ]; # 
-  fhir:Practitioner.qualification [
-     fhir:index 0;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "designation" ];
-         fhir:Extension.valueString [ fhir:value "Designation" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "equivalencyFlag" ];
-         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
-       ], [
-         fhir:index 2;
-         fhir:Extension.url [ fhir:value "registrationNumber" ];
-         fhir:Extension.valueString [ fhir:value "Registration No." ]
-       ], [
-         fhir:index 3;
-         fhir:Extension.url [ fhir:value "issuedDate" ];
-         fhir:Extension.valueDateTime [ fhir:value "2000-02-03"^^xsd:date ]
-       ];
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-qualification-extension" ]
-     ];
-     fhir:Practitioner.qualification.code [
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "http://fhir.infoway-inforoute.ca/CodeSystem/scpqual" ];
-         fhir:Coding.code [ fhir:value "BD" ]
+  ] ) ; # 
+  fhir:communication ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]
-     ];
-     fhir:Practitioner.qualification.period [
-       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-     ];
-     fhir:Practitioner.qualification.issuer [
-       fhir:Reference.reference [ fhir:value "#grantingInstitution" ]
-     ]
-  ]; # 
-  fhir:Practitioner.communication [
-     fhir:index 0;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
-       fhir:Extension.valuePeriod [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Language Source" ]
+     ] ) ;
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "EN" ]
+     ] )
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension" ];
-       fhir:Extension.valueString [ fhir:value "Language Source" ]
-     ];
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system" ];
-       fhir:Coding.code [ fhir:value "EN" ]
-     ]
-  ], [
-     fhir:index 1;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
-       fhir:Extension.valuePeriod [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-       ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension" ];
-       fhir:Extension.valueString [ fhir:value "Language Source" ]
-     ];
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system" ];
-       fhir:Coding.code [ fhir:value "FR" ]
-     ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00187833.BC.PRS.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Language Source" ]
+     ] ) ;
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "FR" ]
+     ] )
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

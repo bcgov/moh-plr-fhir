@@ -5,230 +5,205 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-PractitionerRole-byPractitioner-Response> a fhir:Bundle;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "Example-GET-PractitionerRole-byPractitioner-Response"]; # 
-  fhir:Bundle.type [ fhir:value "searchset"]; # 
-  fhir:Bundle.link [
-     fhir:index 0;
-     fhir:Bundle.link.relation [ fhir:value "self" ];
-     fhir:Bundle.link.url [ fhir:value "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/practitioner=Practitioner/IPC.00147422.BC.PRS" ]
-  ]; # 
-  fhir:Bundle.entry [
-     fhir:index 0;
-     fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552" ];
-     fhir:Bundle.entry.resource <urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552>;
-     fhir:Bundle.entry.search [
-       fhir:Bundle.entry.search.mode [ fhir:value "include" ]
+<http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-PractitionerRole-byPractitioner-Response> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Example-GET-PractitionerRole-byPractitioner-Response"] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/practitioner=Practitioner/IPC.00147422.BC.PRS"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"^^xsd:anyURI ] ;
+     fhir:resource ( <urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
      ]
-  ], [
-     fhir:index 1;
-     fhir:Bundle.entry.fullUrl [ fhir:value "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS" ];
-     fhir:Bundle.entry.resource <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS>;
-     fhir:Bundle.entry.search [
-       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS"^^xsd:anyURI ] ;
+     fhir:resource ( <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
      ]
-  ], [
-     fhir:index 2;
-     fhir:Bundle.entry.fullUrl [ fhir:value "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS" ];
-     fhir:Bundle.entry.resource <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS>;
-     fhir:Bundle.entry.search [
-       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS"^^xsd:anyURI ] ;
+     fhir:resource ( <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
      ]
-  ], [
-     fhir:index 3;
-     fhir:Bundle.entry.fullUrl [ fhir:value "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.23.PRS" ];
-     fhir:Bundle.entry.resource <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.23.PRS>;
-     fhir:Bundle.entry.search [
-       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.23.PRS"^^xsd:anyURI ] ;
+     fhir:resource ( <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.23.PRS> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
      ]
-  ] . # 
+  ] ) . # 
 
-<urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552> a fhir:OperationOutcome;
-  fhir:Resource.id [ fhir:value "Example-OperationOutcome-Success"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome";
-       fhir:index 0;
+<urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552> a fhir:OperationOutcome ;
+  fhir:id [ fhir:v "Example-OperationOutcome-Success"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"^^xsd:anyURI ;
        fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OperationOutcome</b><a name=\"Example-OperationOutcome-Success\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OperationOutcome &quot;Example-OperationOutcome-Success&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-operation-outcome.html\">BCOperationOutcome</a></p></div><h3>Issues</h3><table class=\"grid\"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>information</td><td>business-rule</td><td>The provider search is succesful <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-error-code-system#PRS.PRP.MTN.UNK.0.0.0000)</span></td></tr></table></div>"
+  ] ; # 
+  fhir:issue ( [
+     fhir:severity [ fhir:v "information" ] ;
+     fhir:code [ fhir:v "business-rule" ] ;
+     fhir:details [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "PRS.PRP.MTN.UNK.0.0.0000" ]
+       ] ) ;
+       fhir:text [ fhir:v "The provider search is succesful" ]
      ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OperationOutcome</b><a name=\"Example-OperationOutcome-Success\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OperationOutcome &quot;Example-OperationOutcome-Success&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-operation-outcome.html\">BCOperationOutcome</a></p></div><h3>Issues</h3><table class=\"grid\"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>information</td><td>business-rule</td><td>The provider search is succesful <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-error-code-system#PRS.PRP.MTN.UNK.0.0.0000)</span></td></tr></table></div>"
-  ]; # 
-  fhir:OperationOutcome.issue [
-     fhir:index 0;
-     fhir:OperationOutcome.issue.severity [ fhir:value "information" ];
-     fhir:OperationOutcome.issue.code [ fhir:value "business-rule" ];
-     fhir:OperationOutcome.issue.details [
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system" ];
-         fhir:Coding.code [ fhir:value "PRS.PRP.MTN.UNK.0.0.0000" ]
-       ];
-       fhir:CodeableConcept.text [ fhir:value "The provider search is succesful" ]
-     ]
-  ] . # 
+  ] ) . # 
 
-<https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS> a fhir:PractitionerRole;
-  fhir:Resource.id [ fhir:value "IPC.00047422.BC.PRS"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role";
-       fhir:index 0;
+<https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS> a fhir:PractitionerRole ;
+  fhir:id [ fhir:v "IPC.00047422.BC.PRS"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
        fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
-     ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"IPC.00047422.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;IPC.00047422.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>practitioner</b>: <span/></p><p><b>code</b>: MD <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (scptype#MD)</span></p><p><b>specialty</b>: AMD53 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://simplifier.net/resolve?scope=hl7.fhir.ca.baseline@1.1.4&amp;canonical=http://fhir.infoway-inforoute.ca/CodeSystem/scpqual\">pan-Canadian Provider Qualification Types</a>#AMD53)</span></p></div>"
-  ]; # 
-  fhir:PractitionerRole.practitioner [
-     fhir:Reference.identifier [
-       fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-       fhir:Identifier.value [ fhir:value "IPC.00047422.BC.PRS" ];
-       fhir:Identifier.period [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"IPC.00047422.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;IPC.00047422.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>practitioner</b>: <span/></p><p><b>code</b>: MD <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (scptype#MD)</span></p><p><b>specialty</b>: AMD53 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://simplifier.net/resolve?scope=hl7.fhir.ca.baseline@1.1.4&amp;canonical=http://fhir.infoway-inforoute.ca/CodeSystem/scpqual\">pan-Canadian Provider Qualification Types</a>#AMD53)</span></p></div>"
+  ] ; # 
+  fhir:practitioner [
+     fhir:identifier [
+       fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "IPC.00047422.BC.PRS" ] ;
+       fhir:period [
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]
      ]
-  ]; # 
-  fhir:PractitionerRole.code [
-     fhir:index 0;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "http://fhir.infoway-inforoute.ca/CodeSystem/scptype" ];
-       fhir:Coding.code [ fhir:value "MD" ]
-     ]
-  ]; # 
-  fhir:PractitionerRole.specialty [
-     fhir:index 0;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension" ];
-       fhir:Extension.valuePeriod [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ];
-         fhir:Period.end [ fhir:value "2020-01-01"^^xsd:date ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://fhir.infoway-inforoute.ca/CodeSystem/scptype"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "MD" ]
+     ] )
+  ] ) ; # 
+  fhir:specialty ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ] ;
+         fhir:end [ fhir:v "2020-01-01"^^xsd:date ]
        ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension" ];
-       fhir:Extension.valueString [ fhir:value "Expertise source" ]
-     ], [
-       fhir:index 2;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system" ];
-           fhir:Coding.code [ fhir:value "CHG" ]
-         ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Expertise source" ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "CHG" ]
+         ] )
        ]
-     ];
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "http://fhir.infoway-inforoute.ca/CodeSystem/scpqual" ];
-       fhir:Coding.code [ fhir:value "AMD53" ]
-     ]
-  ] . # 
+     ] ) ;
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://fhir.infoway-inforoute.ca/CodeSystem/scpqual"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "AMD53" ]
+     ] )
+  ] ) . # 
 
-<https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS> a fhir:PractitionerRole;
-  fhir:Resource.id [ fhir:value "RELN.24.PRS"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships";
-       fhir:index 0;
+<https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS> a fhir:PractitionerRole ;
+  fhir:id [ fhir:v "RELN.24.PRS"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
        fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"RELN.24.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;RELN.24.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-role-relationships.html\">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Location Type Extension.</b>: WORKSAT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code-system#WORKSAT)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span/></p><p><b>location</b>: <span/></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "WORKSAT" ]
+       ] )
      ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"RELN.24.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;RELN.24.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-role-relationships.html\">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Location Type Extension.</b>: WORKSAT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code-system#WORKSAT)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span/></p><p><b>location</b>: <span/></p></div>"
-  ]; # 
-  fhir:DomainResource.extension [
-     fhir:index 0;
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension" ];
-     fhir:Extension.valueCodeableConcept [
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system" ];
-         fhir:Coding.code [ fhir:value "WORKSAT" ]
+  ] ) ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+  ] ; # 
+  fhir:practitioner [
+     fhir:identifier [
+       fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "IPC.00147422.BC.PRS" ] ;
+       fhir:period [
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]
      ]
-  ]; # 
-  fhir:PractitionerRole.period [
-     fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-  ]; # 
-  fhir:PractitionerRole.practitioner [
-     fhir:Reference.identifier [
-       fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-       fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ];
-       fhir:Identifier.period [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+  ] ; # 
+  fhir:location ( [
+     fhir:identifier [
+       fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "IFC.00147422.BC.PRS" ] ;
+       fhir:period [
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]
      ]
-  ]; # 
-  fhir:PractitionerRole.location [
-     fhir:index 0;
-     fhir:Reference.identifier [
-       fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC" ];
-       fhir:Identifier.value [ fhir:value "IFC.00147422.BC.PRS" ];
-       fhir:Identifier.period [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-       ]
-     ]
-  ] . # 
+  ] ) . # 
 
-<https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.23.PRS> a fhir:PractitionerRole;
-  fhir:Resource.id [ fhir:value "RELN.23.PRS"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships";
-       fhir:index 0;
+<https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.23.PRS> a fhir:PractitionerRole ;
+  fhir:id [ fhir:v "RELN.23.PRS"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
        fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"RELN.23.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;RELN.23.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-role-relationships.html\">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Organization or Practitioner to Practitioner Type Extension.</b>: EMPLOYEE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code-system#EMPLOYEE)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span/></p><p><b>organization</b>: <span/></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "EMPLOYEE" ]
+       ] )
      ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"RELN.23.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;RELN.23.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-role-relationships.html\">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Organization or Practitioner to Practitioner Type Extension.</b>: EMPLOYEE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-relationship-type-code-system#EMPLOYEE)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span/></p><p><b>organization</b>: <span/></p></div>"
-  ]; # 
-  fhir:DomainResource.extension [
-     fhir:index 0;
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension" ];
-     fhir:Extension.valueCodeableConcept [
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system" ];
-         fhir:Coding.code [ fhir:value "EMPLOYEE" ]
+  ] ) ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+  ] ; # 
+  fhir:practitioner [
+     fhir:identifier [
+       fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "IPC.00147422.BC.PRS" ] ;
+       fhir:period [
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]
      ]
-  ]; # 
-  fhir:PractitionerRole.period [
-     fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-  ]; # 
-  fhir:PractitionerRole.practitioner [
-     fhir:Reference.identifier [
-       fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-       fhir:Identifier.value [ fhir:value "IPC.00147422.BC.PRS" ];
-       fhir:Identifier.period [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
-       ]
-     ]
-  ]; # 
-  fhir:PractitionerRole.organization [
-     fhir:Reference.identifier [
-       fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-       fhir:Identifier.value [ fhir:value "IPC.00147436.BC.PRS" ];
-       fhir:Identifier.period [
-         fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+  ] ; # 
+  fhir:organization [
+     fhir:identifier [
+       fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "IPC.00147436.BC.PRS" ] ;
+       fhir:period [
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]
      ]
   ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-PractitionerRole-byPractitioner-Response.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

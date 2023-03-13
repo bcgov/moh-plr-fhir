@@ -5,38 +5,30 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://hlth.gov.bc.ca/fhir/provider/OperationOutcome/Example-OperationOutcome-7047> a fhir:OperationOutcome;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "Example-OperationOutcome-7047"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome";
-       fhir:index 0;
+<http://hlth.gov.bc.ca/fhir/provider/OperationOutcome/Example-OperationOutcome-7047> a fhir:OperationOutcome ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Example-OperationOutcome-7047"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"^^xsd:anyURI ;
        fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OperationOutcome</b><a name=\"Example-OperationOutcome-7047\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OperationOutcome &quot;Example-OperationOutcome-7047&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-operation-outcome.html\">BCOperationOutcome</a></p></div><h3>Issues</h3><table class=\"grid\"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>warning</td><td>business-rule</td><td>No provider records found for the input parameters. <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-error-code-system#GRS.DPS.UNK.UNK.0.0.7047)</span></td></tr></table></div>"
+  ] ; # 
+  fhir:issue ( [
+     fhir:severity [ fhir:v "warning" ] ;
+     fhir:code [ fhir:v "business-rule" ] ;
+     fhir:details [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "GRS.DPS.UNK.UNK.0.0.7047" ]
+       ] ) ;
+       fhir:text [ fhir:v "No provider records found for the input parameters." ]
      ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OperationOutcome</b><a name=\"Example-OperationOutcome-7047\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OperationOutcome &quot;Example-OperationOutcome-7047&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-operation-outcome.html\">BCOperationOutcome</a></p></div><h3>Issues</h3><table class=\"grid\"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>warning</td><td>business-rule</td><td>No provider records found for the input parameters. <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-error-code-system#GRS.DPS.UNK.UNK.0.0.7047)</span></td></tr></table></div>"
-  ]; # 
-  fhir:OperationOutcome.issue [
-     fhir:index 0;
-     fhir:OperationOutcome.issue.severity [ fhir:value "warning" ];
-     fhir:OperationOutcome.issue.code [ fhir:value "business-rule" ];
-     fhir:OperationOutcome.issue.details [
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system" ];
-         fhir:Coding.code [ fhir:value "GRS.DPS.UNK.UNK.0.0.7047" ]
-       ];
-       fhir:CodeableConcept.text [ fhir:value "No provider records found for the input parameters." ]
-     ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<http://hlth.gov.bc.ca/fhir/provider/OperationOutcome/Example-OperationOutcome-7047.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

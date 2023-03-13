@@ -5,94 +5,80 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00763481.BC.PRS> a fhir:Practitioner;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "IPC.00763481.BC.PRS"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner";
-       fhir:index 0;
+<http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00763481.BC.PRS> a fhir:Practitioner ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "IPC.00763481.BC.PRS"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
        fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b><a name=\"IPC.00763481.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;IPC.00763481.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner.html\">BCPractitioner</a></p></div><blockquote><p><b>BC License Status Extension</b></p><blockquote><p><b>url</b></p><code>statusCode</code></blockquote><p><b>value</b>: inactive <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-code-system#inactive)</span></p><blockquote><p><b>url</b></p><code>statusReasonCode</code></blockquote><p><b>value</b>: LTP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-reason-code-system#LTP)</span></p><blockquote><p><b>url</b></p><code>statusClassCode</code></blockquote><p><b>value</b>: LIC <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-class-code-system#LIC)</span></p><blockquote><p><b>url</b></p><code>period</code></blockquote><p><b>value</b>: 2022-06-24 --&gt; (ongoing)</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-end-reason-extension.html\">BC End Reason Extension</a></blockquote><p><b>value</b>: CHG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-end-reason-code-system#CHG)</span></p></blockquote><p><b>identifier</b>: id: IPC.00763481.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: null </p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "statusCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "inactive" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "statusReasonCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "LTP" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "statusClassCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "LIC" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "period"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2022-06-24"^^xsd:date ]
+       ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "CHG" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "IPC.00763481.BC.PRS" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
      ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b><a name=\"IPC.00763481.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;IPC.00763481.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner.html\">BCPractitioner</a></p></div><blockquote><p><b>BC License Status Extension</b></p><p><b>value</b>: inactive <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-code-system#inactive)</span></p><p><b>value</b>: LTP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-reason-code-system#LTP)</span></p><p><b>value</b>: LIC <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-class-code-system#LIC)</span></p><p><b>value</b>: 2022-06-24 --&gt; (ongoing)</p><p><b>value</b>: CHG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-end-reason-code-system#CHG)</span></p></blockquote><p><b>identifier</b>: id: IPC.00763481.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: null </p></div>"
-  ]; # 
-  fhir:DomainResource.extension [
-     fhir:index 0;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "statusCode" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system" ];
-           fhir:Coding.code [ fhir:value "inactive" ]
-         ]
-       ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "statusReasonCode" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system" ];
-           fhir:Coding.code [ fhir:value "LTP" ]
-         ]
-       ]
-     ], [
-       fhir:index 2;
-       fhir:Extension.url [ fhir:value "statusClassCode" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system" ];
-           fhir:Coding.code [ fhir:value "LIC" ]
-         ]
-       ]
-     ], [
-       fhir:index 3;
-       fhir:Extension.url [ fhir:value "period" ];
-       fhir:Extension.valuePeriod [
-         fhir:Period.start [ fhir:value "2022-06-24"^^xsd:date ]
-       ]
-     ], [
-       fhir:index 4;
-       fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension" ];
-       fhir:Extension.valueCodeableConcept [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           fhir:Coding.system [ fhir:value "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system" ];
-           fhir:Coding.code [ fhir:value "CHG" ]
-         ]
-       ]
-     ];
-     fhir:Extension.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension" ]
-  ]; # 
-  fhir:Practitioner.identifier [
-     fhir:index 0;
-     fhir:Identifier.system [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC" ];
-     fhir:Identifier.value [ fhir:value "IPC.00763481.BC.PRS" ];
-     fhir:Identifier.period [
-       fhir:Period.start [ fhir:value "2000-01-01"^^xsd:date ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:family [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "not-applicable" ]
+       ] )
      ]
-  ]; # 
-  fhir:Practitioner.name [
-     fhir:index 0;
-     fhir:HumanName.family [
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/data-absent-reason" ];
-         fhir:Extension.valueCode [ fhir:value "not-applicable" ]
-       ]
-     ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00763481.BC.PRS.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

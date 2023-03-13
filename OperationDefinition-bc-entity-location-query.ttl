@@ -5,107 +5,89 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query> a fhir:OperationDefinition;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "bc-entity-location-query"]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>URL: [base]/Location/$entityQuery</p><p>URL: [base]/Location/[id]/$entityQuery</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>name</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations with the specified name.</p>\n</div></td></tr><tr><td>IN</td><td>address-city</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations with the specified city.</p>\n</div></td></tr><tr><td>IN</td><td>healthAuthority</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.</p>\n</div></td></tr><tr><td>IN</td><td>healthServiceDeliveryArea</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.</p>\n</div></td></tr><tr><td>IN</td><td>localHealthArea</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.</p>\n</div></td></tr><tr><td>IN</td><td>communityHealthServiceArea</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations within the specified local community health service area.  See <a href=\"https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries\">this site</a> for a list of accepteable strings.</p>\n</div></td></tr></table></div>"
-  ]; # 
-  fhir:OperationDefinition.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query"]; # 
-  fhir:OperationDefinition.version [ fhir:value "1.0.0"]; # 
-  fhir:OperationDefinition.name [ fhir:value "LocationEntityQuery"]; # 
-  fhir:OperationDefinition.title [ fhir:value "Query for a location without returning associations"]; # 
-  fhir:OperationDefinition.status [ fhir:value "draft"]; # 
-  fhir:OperationDefinition.kind [ fhir:value "query"]; # 
-  fhir:OperationDefinition.date [ fhir:value "2023-02-23T19:09:50+00:00"^^xsd:dateTime]; # 
-  fhir:OperationDefinition.publisher [ fhir:value "BC Ministry of Health"]; # 
-  fhir:OperationDefinition.contact [
-     fhir:index 0;
-     fhir:ContactDetail.name [ fhir:value "BC Ministry of Health" ];
-     fhir:ContactDetail.telecom [
-       fhir:index 0;
-       fhir:ContactPoint.system [ fhir:value "url" ];
-       fhir:ContactPoint.value [ fhir:value "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
-     ]
-  ]; # 
-  fhir:OperationDefinition.jurisdiction [
-     fhir:index 0;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
-       fhir:Coding.code [ fhir:value "CA" ];
-       fhir:Coding.display [ fhir:value "Canada" ]
-     ]
-  ]; # 
-  fhir:OperationDefinition.code [ fhir:value "entityQuery"]; # 
-  fhir:OperationDefinition.resource [
-     fhir:value "Location";
-     fhir:index 0
-  ]; # 
-  fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean]; # 
-  fhir:OperationDefinition.type [ fhir:value "true"^^xsd:boolean]; # 
-  fhir:OperationDefinition.instance [ fhir:value "true"^^xsd:boolean]; # 
-  fhir:OperationDefinition.parameter [
-     fhir:index 0;
-     fhir:OperationDefinition.parameter.name [ fhir:value "name" ];
-     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
-     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
-     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
-     fhir:OperationDefinition.parameter.documentation [ fhir:value "Search for locations with the specified name." ];
-     fhir:OperationDefinition.parameter.type [ fhir:value "string" ];
-     fhir:OperationDefinition.parameter.searchType [ fhir:value "string" ]
-  ], [
-     fhir:index 1;
-     fhir:OperationDefinition.parameter.name [ fhir:value "address-city" ];
-     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
-     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
-     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
-     fhir:OperationDefinition.parameter.documentation [ fhir:value "Search for locations with the specified city." ];
-     fhir:OperationDefinition.parameter.type [ fhir:value "string" ];
-     fhir:OperationDefinition.parameter.searchType [ fhir:value "string" ]
-  ], [
-     fhir:index 2;
-     fhir:OperationDefinition.parameter.name [ fhir:value "healthAuthority" ];
-     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
-     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
-     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
-     fhir:OperationDefinition.parameter.documentation [ fhir:value "Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ];
-     fhir:OperationDefinition.parameter.type [ fhir:value "string" ];
-     fhir:OperationDefinition.parameter.searchType [ fhir:value "string" ]
-  ], [
-     fhir:index 3;
-     fhir:OperationDefinition.parameter.name [ fhir:value "healthServiceDeliveryArea" ];
-     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
-     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
-     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
-     fhir:OperationDefinition.parameter.documentation [ fhir:value "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ];
-     fhir:OperationDefinition.parameter.type [ fhir:value "string" ];
-     fhir:OperationDefinition.parameter.searchType [ fhir:value "string" ]
-  ], [
-     fhir:index 4;
-     fhir:OperationDefinition.parameter.name [ fhir:value "localHealthArea" ];
-     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
-     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
-     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
-     fhir:OperationDefinition.parameter.documentation [ fhir:value "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ];
-     fhir:OperationDefinition.parameter.type [ fhir:value "string" ];
-     fhir:OperationDefinition.parameter.searchType [ fhir:value "string" ]
-  ], [
-     fhir:index 5;
-     fhir:OperationDefinition.parameter.name [ fhir:value "communityHealthServiceArea" ];
-     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
-     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
-     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
-     fhir:OperationDefinition.parameter.documentation [ fhir:value "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ];
-     fhir:OperationDefinition.parameter.type [ fhir:value "string" ];
-     fhir:OperationDefinition.parameter.searchType [ fhir:value "string" ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+<http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "bc-entity-location-query"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>URL: [base]/Location/$entityQuery</p><p>URL: [base]/Location/[id]/$entityQuery</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>name</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations with the specified name.</p>\n</div></td></tr><tr><td>IN</td><td>address-city</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations with the specified city.</p>\n</div></td></tr><tr><td>IN</td><td>healthAuthority</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.</p>\n</div></td></tr><tr><td>IN</td><td>healthServiceDeliveryArea</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.</p>\n</div></td></tr><tr><td>IN</td><td>localHealthArea</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.</p>\n</div></td></tr><tr><td>IN</td><td>communityHealthServiceArea</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations within the specified local community health service area.  See <a href=\"https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries\">this site</a> for a list of accepteable strings.</p>\n</div></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "LocationEntityQuery"] ; # 
+  fhir:title [ fhir:v "Query for a location without returning associations"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:kind [ fhir:v "query"] ; # 
+  fhir:date [ fhir:v "2023-03-13T17:50:39+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "BC Ministry of Health" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
+     ] )
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "CA" ] ;
+       fhir:display [ fhir:v "Canada" ]
+     ] )
+  ] ) ; # 
+  fhir:code [ fhir:v "entityQuery"] ; # 
+  fhir:resource ( [ fhir:v "Location"] ) ; # 
+  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "name" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Search for locations with the specified name." ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "address-city" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Search for locations with the specified city." ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "healthAuthority" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "healthServiceDeliveryArea" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "localHealthArea" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "communityHealthServiceArea" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "string" ]
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

@@ -5,99 +5,79 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-client-capability-statement> a fhir:CapabilityStatement;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "bc-plr-client-capability-statement"]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>BCPLRClientCapabilityStatement</h2><div><p>This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.</p>\n<ul>\n<li>Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location</li>\n</ul>\n</div><table><tr><td>Mode</td><td>CLIENT</td></tr><tr><td>Description</td><td/></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>Bundle</td><td>Supported profiles:<br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle</a><br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle</a><br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle</a></td><td></td><td></td><td></td><td>y</td></tr></table></div>"
-  ]; # 
-  fhir:CapabilityStatement.url [ fhir:value "http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-client-capability-statement"]; # 
-  fhir:CapabilityStatement.version [ fhir:value "1.0.0"]; # 
-  fhir:CapabilityStatement.name [ fhir:value "BCPLRClientCapabilityStatement"]; # 
-  fhir:CapabilityStatement.title [ fhir:value "BC PLR Client Capability Statement"]; # 
-  fhir:CapabilityStatement.status [ fhir:value "draft"]; # 
-  fhir:CapabilityStatement.date [ fhir:value "2022-11-15"^^xsd:date]; # 
-  fhir:CapabilityStatement.publisher [ fhir:value "BC Ministry of Health"]; # 
-  fhir:CapabilityStatement.contact [
-     fhir:index 0;
-     fhir:ContactDetail.name [ fhir:value "BC Ministry of Health" ];
-     fhir:ContactDetail.telecom [
-       fhir:index 0;
-       fhir:ContactPoint.system [ fhir:value "url" ];
-       fhir:ContactPoint.value [ fhir:value "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
-     ]
-  ]; # 
-  fhir:CapabilityStatement.description [ fhir:value "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.\n\n* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location\n"]; # 
-  fhir:CapabilityStatement.jurisdiction [
-     fhir:index 0;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
-       fhir:Coding.code [ fhir:value "CA" ];
-       fhir:Coding.display [ fhir:value "Canada" ]
-     ]
-  ]; # 
-  fhir:CapabilityStatement.kind [ fhir:value "requirements"]; # 
-  fhir:CapabilityStatement.fhirVersion [ fhir:value "4.0.1"]; # 
-  fhir:CapabilityStatement.format [
-     fhir:value "json";
-     fhir:index 0;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ];
-       fhir:Extension.valueCode [ fhir:value "SHALL" ]
-     ]
-  ]; # 
-  fhir:CapabilityStatement.implementationGuide [
-     fhir:value "http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider";
-     fhir:index 0;
+<http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-client-capability-statement> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "bc-plr-client-capability-statement"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>BCPLRClientCapabilityStatement</h2><div><p>This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.</p>\n<ul>\n<li>Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location</li>\n</ul>\n</div><table><tr><td>Mode</td><td>CLIENT</td></tr><tr><td>Description</td><td/></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>Bundle</td><td>Supported profiles:<br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle</a><br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle</a><br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle</a></td><td></td><td></td><td></td><td>y</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-client-capability-statement"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "BCPLRClientCapabilityStatement"] ; # 
+  fhir:title [ fhir:v "BC PLR Client Capability Statement"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2022-11-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "BC Ministry of Health" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.\n\n* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location\n"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "CA" ] ;
+       fhir:display [ fhir:v "Canada" ]
+     ] )
+  ] ) ; # 
+  fhir:kind [ fhir:v "requirements"] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:format ( [
+     fhir:v "json" ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "SHALL" ]
+     ] )
+  ] ) ; # 
+  fhir:implementationGuide ( [
+     fhir:v "http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider"^^xsd:anyURI ;
      fhir:link <http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider>
-  ]; # 
-  fhir:CapabilityStatement.rest [
-     fhir:index 0;
-     fhir:CapabilityStatement.rest.mode [ fhir:value "client" ];
-     fhir:CapabilityStatement.rest.resource [
-       fhir:index 0;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Bundle" ];
-       fhir:CapabilityStatement.rest.resource.supportedProfile [
-         fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle";
-         fhir:index 0;
+  ] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "client" ] ;
+     fhir:resource ( [
+       fhir:type [ fhir:v "Bundle" ] ;
+       fhir:supportedProfile ( [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"^^xsd:anyURI ;
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle>
-       ], [
-         fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle";
-         fhir:index 1;
+       ] [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"^^xsd:anyURI ;
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle>
-       ], [
-         fhir:value "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle";
-         fhir:index 2;
+       ] [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle"^^xsd:anyURI ;
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle>
-       ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:Element.extension [
-           fhir:index 0;
-           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ];
-           fhir:Extension.valueCode [ fhir:value "SHALL" ]
-         ];
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "create" ];
-         fhir:CapabilityStatement.rest.resource.interaction.documentation [ fhir:value "Client applications shall support the three different types of Distributions." ]
-       ];
-       fhir:CapabilityStatement.rest.resource.operation [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "distribution" ];
-         fhir:CapabilityStatement.rest.resource.operation.definition [
-           fhir:value "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution";
+       ] ) ;
+       fhir:interaction ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "SHALL" ]
+         ] ) ;
+         fhir:code [ fhir:v "create" ] ;
+         fhir:documentation [ fhir:v "Client applications shall support the three different types of Distributions." ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "distribution" ] ;
+         fhir:definition [
+           fhir:v "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution"^^xsd:anyURI ;
            fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution>
          ]
-       ]
-     ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-client-capability-statement.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+       ] )
+     ] )
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 
