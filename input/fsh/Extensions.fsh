@@ -108,7 +108,7 @@ Extension: PractitionerDiscplinaryActionExtension
 Id: bc-practitioner-disciplinary-action-extension
 Title: "BC Practitioner Disciplinary Actions Extension"
 Description: "Provides details of disciplinary actions against the provider."
-* extension contains identifier 1..1 MS 
+* extension contains identifier 0..1 MS 
         and description 1..1 MS and 
         PeriodExtension named period 1..1 MS and 
         archiveDate 1..1 MS and 
@@ -116,7 +116,7 @@ Description: "Provides details of disciplinary actions against the provider."
         EndReasonExtension named endReason 0..1 MS and
         OwnerExtension named owner 0..1 MS
 * extension[identifier].value[x] only Identifier
-* extension[identifier].value[x] 1..1 MS
+* extension[identifier].value[x] 0..1 MS
 * extension[description].value[x] only string
 * extension[description].value[x] 1..1 MS
 * extension[archiveDate].value[x] only dateTime
