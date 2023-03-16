@@ -64,6 +64,14 @@ Usage: #inline
 * value = "IPC.00147434.BC.PRS"
 * period.start = "2000-01-01"
 
+Instance: Example-Identifier-IPC-Ind-147434
+InstanceOf: Identifier
+Description: "Identifier example for IPC."
+Usage: #inline
+* system = $System_IPC
+* value = "IPC.00147434.BC.PRS"
+* period.start = "2000-01-01"
+
 Instance: Example-Identifier-IPC-Ind-Response-147622
 InstanceOf: Identifier
 Description: "Identifier example for IPC."

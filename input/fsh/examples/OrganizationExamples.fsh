@@ -16,6 +16,7 @@ InstanceOf: BCOrganization
 Description: "Example of an Organization."
 * id = "IPC.00147434.BC.PRS"
 * identifier[+] = Example-Identifier-ORGID
+* identifier[+] = Example-Identifier-IPC-Ind-147434
 * name = "Kelowna Clinic"
 * name.extension[use].valueCode = #official
 * name.extension[period].valuePeriod.start = "2014-01-31T00:00:00-07:00"
