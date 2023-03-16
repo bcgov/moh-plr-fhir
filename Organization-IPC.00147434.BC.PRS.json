@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "extensions",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"IPC.00147434.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;IPC.00147434.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><blockquote><p><b>url</b></p><code>identifier</code></blockquote><p><b>value</b>: id:\u00a0Note-3</p><blockquote><p><b>url</b></p><code>text</code></blockquote><p><b>value</b>: Note text</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-period-extension.html\">BC Valid Period Extension</a></blockquote><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-end-reason-extension.html\">BC End Reason Extension</a></blockquote><p><b>value</b>: CHG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-end-reason-code-system#CHG)</span></p></blockquote><p><b>identifier</b>: id:\u00a0123123123\u00a0(period:\u00a02000-01-01 --&gt; (ongoing))</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: 2502222234</p><p><b>address</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"IPC.00147434.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;IPC.00147434.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><blockquote><p><b>url</b></p><code>identifier</code></blockquote><p><b>value</b>: id:\u00a0Note-3</p><blockquote><p><b>url</b></p><code>text</code></blockquote><p><b>value</b>: Note text</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-period-extension.html\">BC Valid Period Extension</a></blockquote><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-end-reason-extension.html\">BC End Reason Extension</a></blockquote><p><b>value</b>: CHG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-end-reason-code-system#CHG)</span></p></blockquote><p><b>identifier</b>: id:\u00a0123123123\u00a0(period:\u00a02000-01-01 --&gt; (ongoing)), id:\u00a0IPC.00147434.BC.PRS\u00a0(period:\u00a02000-01-01 --&gt; (ongoing))</p><p><b>active</b>: true</p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: 2502222234</p><p><b>address</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p></div>"
   },
   "extension" : [{
     "extension" : [{
@@ -40,6 +40,13 @@
   "identifier" : [{
     "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/ORGID",
     "value" : "123123123",
+    "period" : {
+      "start" : "2000-01-01"
+    }
+  },
+  {
+    "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+    "value" : "IPC.00147434.BC.PRS",
     "period" : {
       "start" : "2000-01-01"
     }

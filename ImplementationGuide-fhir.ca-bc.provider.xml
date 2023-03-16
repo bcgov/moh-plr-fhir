@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2023-03-13T17:50:39+00:00"/>
+  <date value="2023-03-16T20:48:21+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -1095,6 +1095,17 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
+        <reference value="Bundle/Example-DistributePractitioner-Bundle-forTesting"/>
+      </reference>
+      <name value="Example-DistributePractitioner-Bundle-forTesting"/>
+      <description value="Example of a bundle of resources sent when distributing a Practitioner."/>
+      <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
         <reference value="Bundle/Example-GET-Location-Response"/>
       </reference>
       <name value="Example-GET-Location-Response"/>
@@ -1668,6 +1679,28 @@
         <reference value="PractitionerRole/IPC.00147633.BC.PRS"/>
       </reference>
       <name value="Example-PractitionerRole-1-Role-FromPractitioner-Update-Response"/>
+      <description value="Example of the PractitionerRole with Speciality."/>
+      <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/IPC.00147699.BC.PRS"/>
+      </reference>
+      <name value="Example-Practitioner-Response-test"/>
+      <description value="Example of generic Practitioner response."/>
+      <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/IPC.00147699.BC.PRS"/>
+      </reference>
+      <name value="Example-PractitionerRole-1-Role-FromPractitioner-Response-test"/>
       <description value="Example of the PractitionerRole with Speciality."/>
       <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"/>
     </resource>

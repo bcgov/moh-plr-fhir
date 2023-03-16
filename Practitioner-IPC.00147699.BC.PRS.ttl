@@ -1,0 +1,116 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00147699.BC.PRS> a fhir:Practitioner ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "IPC.00147699.BC.PRS"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
+       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b><a name=\"IPC.00147699.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;IPC.00147699.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner.html\">BCPractitioner</a></p></div><p><b>BC Valid Period Extension</b>: 2012-12-07 --&gt; (ongoing)</p><p><b>BC Owner Extension</b>: id: ?ngen-9?</p><p><b>BC Birth Place Extension</b>: Ottawa CA </p><p><b>identifier</b>: id: IPC.00147622.BC.PRS (period: 2000-01-01 --&gt; (ongoing)), id: CPN.00147422.BC.PRS (period: 2000-01-01 --&gt; (ongoing)), id: 123454 (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: GivenName FamilyName (OFFICIAL)</p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1934-01-02</p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Period ;
+       fhir:start [ fhir:v "2012-12-07"^^xsd:date ]
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Identifier ;
+       fhir:assigner [
+         fhir:display [ fhir:v "MOH" ]
+       ]
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Address ;
+       fhir:city [ fhir:v "Ottawa" ] ;
+       fhir:country [ fhir:v "CA" ]
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Identifier ;
+         fhir:assigner [
+           fhir:display [ fhir:v "MOH" ]
+         ]
+       ]
+     ] ) ;
+     fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "IPC.00147622.BC.PRS" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Identifier ;
+         fhir:assigner [
+           fhir:display [ fhir:v "MOH" ]
+         ]
+       ]
+     ] ) ;
+     fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPN"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "CPN.00147422.BC.PRS" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Identifier ;
+         fhir:assigner [
+           fhir:display [ fhir:v "MOH" ]
+         ]
+       ]
+     ] ) ;
+     fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPSID"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "123454" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+     ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Identifier ;
+         fhir:assigner [
+           fhir:display [ fhir:v "MOH" ]
+         ]
+       ]
+     ] ) ;
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "FamilyName" ] ;
+     fhir:given ( [ fhir:v "GivenName" ] ) ;
+     fhir:period [
+       fhir:start [ fhir:v "2012-12-07"^^xsd:date ]
+     ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [
+     fhir:v "1934-01-02"^^xsd:date ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthtime-extension"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "1951-11-12T00:00:01-06:00"^^xsd:dateTime ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
