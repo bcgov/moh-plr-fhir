@@ -94,7 +94,7 @@ Description: "Allows for relationships of practitioners to practitioners without
           PeriodExtension named period 1..1 MS and
 	    targetPractitioner 1..1 MS and
           relationshipType 1..1 MS and 
-          logicalId 1..1 MS and 
+          logicalId 0..1 MS and 
           EndReasonExtension named endReason 0..1 MS and
           OwnerExtension named owner 0..1 MS
 * extension[targetPractitioner].value[x] only Reference(BCPractitioner)
