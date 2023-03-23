@@ -23,6 +23,10 @@ Profile: BCLocationBundle
 Parent: Bundle
 Id: bc-location-bundle
 Description: "A bundle that submits Location information."
+* obeys invariant-loc-bundle-1
+* obeys invariant-loc-bundle-2
+* obeys invariant-loc-bundle-3
+* obeys invariant-loc-bundle-4
 * type 1..1 MS
 * type = #collection (exactly)
 * entry 1..*
@@ -39,5 +43,26 @@ Description: "A bundle that submits Location information."
 * entry[Location].resource only BCLocation
 * entry[OrganizationAffiliation].resource only BCOrganizationAffiliation
 * entry[PractitionerRole].resource only BCPractitionerRole
+
+Invariant: invariant-loc-bundle-1
+Description: "In a Location Bundle, OrganizationAffiliation.location.identifiers should match other entries' OrganizationAffiliation.location.identifiers in the Bundle."
+Expression: "Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).location.identifier.value.distinct().count() = 1)"
+Severity: #warning
+
+Invariant: invariant-loc-bundle-2
+Description: "In a Location Bundle, PractitionerRole.location.identifiers should match other entries' PractitionerRole.location.identifiers in the Bundle."
+Expression: "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).location.identifier.value.distinct().count() = 1)"
+Severity: #warning
+
+Invariant: invariant-loc-bundle-3
+Description: "In a Location Bundle, PractitionerRole.location.identifier should match at least one idenitifer in Practitioner."
+Expression: "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).location.identifier.value.distinct() in Bundle.entry.resource.ofType(Location).identifier.value)"
+Severity: #error
+
+Invariant: invariant-loc-bundle-4
+Description: "In a Location Bundle, OrganizationAffiliation.location.identifier should match at least one idenitifer in Practitioner."
+Expression: "Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).location.identifier.value.distinct() in Bundle.entry.resource.ofType(Location).identifier.value)"
+Severity: #error
+
 
 

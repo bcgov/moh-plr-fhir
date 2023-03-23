@@ -39,6 +39,7 @@ InstanceOf: BCPractitionerRole
 Description: "Example of the PractitionerRole with Speciality."
 * id = "IPC.00147433.BC.PRS"
 * practitioner.identifier = Example-Identifier-IPC-Ind-147433
+//* practitioner.identifier = Example-Identifier-IPC-Ind-Response-147622
 //* organization.display = "BC"
 * specialty = Example-Specialty-Update
 * code.coding.system = $SCPType

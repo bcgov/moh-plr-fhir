@@ -58,6 +58,10 @@ Profile: BCOrganizationBundle
 Parent: Bundle
 Id: bc-organization-bundle
 Description: "A bundle that submits Organization and OrganizationAffiliation information."
+* obeys invariant-org-bundle-1
+* obeys invariant-org-bundle-2
+* obeys invariant-org-bundle-3
+* obeys invariant-org-bundle-4
 * type 1..1 MS
 * type = #collection (exactly)
 * entry 1..*
@@ -75,5 +79,24 @@ Description: "A bundle that submits Organization and OrganizationAffiliation inf
 * entry[OrganizationAffiliation].resource only BCOrganizationAffiliation
 * entry[RoleRelationship].resource only BCRoleRelationships
 
+Invariant: invariant-org-bundle-1
+Description: "In a Organization Bundle, OrganizationAffiliation.organization.identifiers should match other entries' OrganizationAffiliation.organization.identifiers in the Bundle."
+Expression: "Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).organization.identifier.value.distinct().count() = 1)"
+Severity: #warning
+
+Invariant: invariant-org-bundle-2
+Description: "In a Organization Bundle, PractitionerRole.organization.identifiers should match other entries' PractitionerRole.organization.identifiers in the Bundle."
+Expression: "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).organization.identifier.value.distinct().count() = 1)"
+Severity: #warning
+
+Invariant: invariant-org-bundle-3
+Description: "In a Organization Bundle, PractitionerRole.organization.identifier should match at least one idenitifer in Practitioner."
+Expression: "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).organization.identifier.value.distinct() in Bundle.entry.resource.ofType(Organization).identifier.value)"
+Severity: #error
+
+Invariant: invariant-org-bundle-4
+Description: "In a Organization Bundle, OrganizationAffiliation.organization.identifier should match at least one idenitifer in Practitioner."
+Expression: "Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).organization.identifier.value.distinct() in Bundle.entry.resource.ofType(Organization).identifier.value)"
+Severity: #error
 
 

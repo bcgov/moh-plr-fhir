@@ -131,3 +131,44 @@ Description: "Example of a bundle of resources sent when distributing a Organiza
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.132.PRS"
 * entry[=].resource = Example-OrganizationAffiliation-2-LocRef-FromOrg
 
+
+Instance: Example-DistributePractitioner-Bundle-forTesting
+InstanceOf: BCPractitionerBundle
+Description: "Example of a bundle of resources sent when distributing a Practitioner."
+* type = #collection
+* entry[0].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00147622.BC.PRS"
+* entry[0].resource = Example-Practitioner-Response-test
+* entry[1].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00147622.BC.PRS"
+* entry[1].resource = Example-PractitionerRole-1-Role-FromPractitioner-Response-test
+* entry[2].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.153.PRS"
+* entry[2].resource = Example-PractitionerRole-5-OrgRef-FromPractitioner
+* entry[3].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS"
+* entry[3].resource = Example-PractitionerRole-3-LocRef-FromPractitioner-Response
+
+Instance: Example-Practitioner-Response-test
+InstanceOf: BCPractitioner
+Description: "Example of generic Practitioner response."
+* extension[+] = Example-Demographics-1
+* extension[+] = Example-OC-MOH
+* gender = #male
+* birthDate = "1934-01-02"
+* birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
+* extension[+] = Example-Demographics-2
+* id = "IPC.00147699.BC.PRS"
+* identifier[+] = Example-Identifier-IPC-Ind-Response-147622
+* identifier[+] = Example-Identifier-CPN-Response-147422
+* identifier[+] = Example-Identifier-CPSID-Response
+* name = Example-Name-Official-Response
+
+Instance: Example-PractitionerRole-1-Role-FromPractitioner-Response-test
+InstanceOf: BCPractitionerRole
+Description: "Example of the PractitionerRole with Speciality."
+* id = "IPC.00147699.BC.PRS"
+//* practitioner.identifier = Example-Identifier-IPC-Ind-Response-147622
+* practitioner.identifier = Example-Identifier-CPN-Response-147422
+//* practitioner.identifier = Example-Identifier-IPC-Ind-147422
+//* organization.display = "BC"
+* code = $SCPType#MD
+* specialty = Example-Specialty-Response
+
+
