@@ -168,3 +168,14 @@ Description: "Example Practitioner resource for updating License Status."
 * name[+] = Example-Name-Usual-Change
 * telecom[+] = Example-ContactPoint-Phone-Update
 * telecom[+] = Example-ContactPoint-Email-Update
+* extension[+] = Example-License-Status-Update
+* extension[+] = Example-DisciplinaryAction-Update
+* extension[+] = Example-Note-Update
+* extension[+] = Example-Condition-Update
+* extension[+] = Example-Confidenciality-False-Update
+* extension[+] = Example-Demographics-1
+* extension[+] = Example-Demographics-2
+* extension[+] = Example-ERC-Change
+* gender = #male
+* birthDate = "1934-01-02"
+* birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"

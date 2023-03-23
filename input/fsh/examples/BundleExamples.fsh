@@ -75,7 +75,7 @@ Description: "Example of a bundle to update an Indivivdual Provider."
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00147433.BC.PRS"
 * entry[=].resource = Example-PractitionerRole-Role-Update-Specialty
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.173.PRS"
-* entry[=].resource = Example-PractitionerRole-OrgRef-FromPractitioner-1
+* entry[=].resource = Example-PractitionerRole-OrgRef-FromPrac-1-Update
 
 Instance: Example-AddPractitioner-Bundle-Response
 InstanceOf: BCPractitionerBundle

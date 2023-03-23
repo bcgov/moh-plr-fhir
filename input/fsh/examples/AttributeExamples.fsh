@@ -26,6 +26,19 @@ Usage: #inline
 * extension[=].valueCodeableConcept.coding.system = "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"
 * extension[=].valueCodeableConcept.coding.code = #R 
 
+Instance: Example-Confidenciality-False-Update
+InstanceOf: Extension
+Description: "Example of false confidenciality."
+Usage: #inline
+* url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-confidentiality-extension"
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
+* extension[=].valuePeriod.start = "2000-01-01"
+* extension[=].valuePeriod.end = "2020-01-01"
+* extension[+].url = "code"
+* extension[=].valueCodeableConcept.coding.system = "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"
+* extension[=].valueCodeableConcept.coding.code = #R 
+* extension[+] = Example-ERC-Cease
+
 Instance: Example-Confidenciality-False-Response
 InstanceOf: Extension
 Description: "Example of false confidenciality."
@@ -90,6 +103,7 @@ Description: "Example of Demographics part 2."
 Usage: #inline
 * url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension"
 * valueAddress.city = "Ottawa"
+* valueAddress.state = "ON"
 * valueAddress.country = "CA"
 
 Instance: Example-License-Status
@@ -98,8 +112,8 @@ Description: "Example license status."
 Usage: #inline
 * url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
 * extension[+].url = "statusCode"
-* extension[=].valueCodeableConcept.coding.system = $RoleStatus
-* extension[=].valueCodeableConcept.coding.code = #suspended
+* extension[=].valueCodeableConcept.coding.system = $PLRLicenseStatus
+* extension[=].valueCodeableConcept.coding.code = #SUSPENDED
 * extension[+].url = "statusReasonCode"
 * extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
 * extension[=].valueCodeableConcept.coding.code = #LTP
@@ -115,8 +129,8 @@ Description: "Example license status."
 Usage: #inline
 * url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
 * extension[+].url = "statusCode"
-* extension[=].valueCodeableConcept.coding.system = $RoleStatus
-* extension[=].valueCodeableConcept.coding.code = #suspended
+* extension[=].valueCodeableConcept.coding.system = $PLRLicenseStatus
+* extension[=].valueCodeableConcept.coding.code = #SUSPENDED
 * extension[+].url = "statusReasonCode"
 * extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
 * extension[=].valueCodeableConcept.coding.code = #LTP
@@ -134,7 +148,7 @@ Usage: #inline
 * url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
 * extension[+].url = "statusCode"
 * extension[=].valueCodeableConcept.coding.system = $PLRLicenseStatus
-* extension[=].valueCodeableConcept.coding.code = #inactive
+* extension[=].valueCodeableConcept.coding.code = #INACTIVE
 * extension[+].url = "statusReasonCode"
 * extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
 * extension[=].valueCodeableConcept.coding.code = #LTP
@@ -173,6 +187,14 @@ Usage: #inline
 * url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension"
 * valueCodeableConcept.coding.system = $PLREndReason
 * valueCodeableConcept.coding.code = #CHG
+
+Instance: Example-ERC-Cease
+InstanceOf: Extension
+Description: "General end reason example."
+Usage: #inline
+* url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension"
+* valueCodeableConcept.coding.system = $PLREndReason
+* valueCodeableConcept.coding.code = #CEASE
 
 Instance: Example-DisciplinaryAction
 InstanceOf: Extension

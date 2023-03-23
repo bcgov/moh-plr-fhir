@@ -62,7 +62,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 * organization.identifier = Example-Identifier-IPC-Org-Response-147436
 * extension[0].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"
 * extension[0].valueCodeableConcept.coding.system = $PLRRelationshipType
-* extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
+* extension[0].valueCodeableConcept.coding.code = #EE
 
 Instance: Example-PractitionerRole-5-OrgRef-FromPractitioner
 InstanceOf: BCRoleRelationships
@@ -73,7 +73,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 * organization.identifier = Example-Identifier-IPC-Org-Response-147436
 * extension[0].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"
 * extension[0].valueCodeableConcept.coding.system = $PLRRelationshipType
-* extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
+* extension[0].valueCodeableConcept.coding.code = #EE
 
 Instance: Example-PractitionerRole-OrgRef-FromPractitioner-1
 InstanceOf: BCRoleRelationships
@@ -84,7 +84,19 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 * organization.identifier = Example-Identifier-IPC-Org-Response-147436
 * extension[0].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"
 * extension[0].valueCodeableConcept.coding.system = $PLRRelationshipType
-* extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
+* extension[0].valueCodeableConcept.coding.code = #EE
+
+Instance: Example-PractitionerRole-OrgRef-FromPrac-1-Update
+InstanceOf: BCRoleRelationships
+Description: "Example of the PractitionerRole for Practitioner to Organization relationship update."
+* id = "RELN.12373.PRS"
+* practitioner.identifier = Example-Identifier-IPC-Ind-147433
+* period.start = "2000-01-01"
+* organization.identifier = Example-Identifier-IPC-Org-Response-147436
+* extension[0].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"
+* extension[0].valueCodeableConcept.coding.system = $PLRRelationshipType
+* extension[0].valueCodeableConcept.coding.code = #EE
+* extension[+] = Example-ERC-Change
 
 Instance: Example-PractitionerRole-OrgRef-FromPractitioner-2
 InstanceOf: BCRoleRelationships
@@ -95,7 +107,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 * organization.identifier = Example-Identifier-IPC-Org-Response-147434
 * extension[0].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"
 * extension[0].valueCodeableConcept.coding.system = $PLRRelationshipType
-* extension[0].valueCodeableConcept.coding.code = #EMPLOYEE
+* extension[0].valueCodeableConcept.coding.code = #EE
 
 Instance: Example-PractitionerRole-2-OrgRef-FromPractitioner-Response
 InstanceOf: BCRoleRelationships
@@ -106,7 +118,7 @@ Description: "Example of the PractitionerRole for Practitioner to Organization r
 * organization.identifier = Example-Identifier-IPC-Org-147622
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"
 * extension[=].valueCodeableConcept.coding.system = $PLRRelationshipType
-* extension[=].valueCodeableConcept.coding.code = #EMPLOYEE
+* extension[=].valueCodeableConcept.coding.code = #EE
 * extension[+] = Example-OC-MOH
 
 Instance: Example-PractitionerRole-3-LocRef-FromPractitioner
