@@ -18,7 +18,6 @@
       <sch:assert test="count(f:extension[@url = 'targetPractitioner']) &lt;= 1">extension with URL = 'targetPractitioner': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'relationshipType']) &gt;= 1">extension with URL = 'relationshipType': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'relationshipType']) &lt;= 1">extension with URL = 'relationshipType': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'logicalId']) &gt;= 1">extension with URL = 'logicalId': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'logicalId']) &lt;= 1">extension with URL = 'logicalId': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension']) &lt;= 1">extension with URL = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension']) &lt;= 1">extension with URL = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension': maximum cardinality of 'extension' is 1</sch:assert>
