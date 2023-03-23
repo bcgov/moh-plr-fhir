@@ -101,7 +101,7 @@ Description: "Allows for relationships of practitioners to practitioners without
 * extension[targetPractitioner].value[x] 1..1 MS
 * extension[relationshipType].value[x] only CodeableConcept
 * extension[relationshipType].value[x] 1..1 MS
-* extension[logicalId].value[x] 1..1 MS
+* extension[logicalId].value[x] 0..1 MS
 * extension[logicalId].value[x] only string 
 
 Extension: PractitionerDiscplinaryActionExtension
