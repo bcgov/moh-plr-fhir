@@ -207,6 +207,7 @@ A FHIR example of a real message can be found [here](Bundle-Example-Response-Que
 |Organization
 ||name|String, May use trailing wildcards, e.g. Clinic*|
 ||description|String, May use trailing wildcards, e.g. Clinic*|
+||role|String code
 ||address-city|String, full city name, e.g. Vancouver
 ||withHistory|true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.|
 ||identifier|String identifier value
