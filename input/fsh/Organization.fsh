@@ -7,6 +7,7 @@ Description: "General constraints on the Organization resource for use in the BC
 * identifier only BCIdentifier
 * active MS
 * type MS
+* type from OrganizationRoleVS (required)
 * name 1..1 MS
 * name.extension contains 
 	NameUseExtension named use 0..1 MS and 

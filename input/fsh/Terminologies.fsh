@@ -21,6 +21,7 @@ Alias: $PLROwnerCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegist
 Alias: $PLRCommPurpose = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system
 Alias: $PLRAddressValStatus = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system
 Alias: $PLRRoleCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system
+Alias: $PLROrganizationRoleCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system
 Alias: $PLRQulaificationCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-credential-code-system
 Alias: $PLRExpertise = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-expertise-code-system
 

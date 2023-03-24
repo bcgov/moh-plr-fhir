@@ -15,18 +15,6 @@ Description: "BC Expertise value set."
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-expertise-value-set"
 
-//CodeSystem: PractitionerRoleCS
-//Title: "BC-Specific Practitioner Role Codes"
-//Id: bc-practitioner-role-code-system
-//Description: "BC-Specific codes for practitioner roles."
-//* ^caseSensitive = true
-//* #ORG "ORG" "The organization role."
-//* #OOP-MD "OOP-MD" "Out Of Province MD"
-//* ^experimental = false
-//* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system"
-
-// TODO add the other OOP role types
-
 ValueSet: PractitionerRoleVS
 Title: "Practitioner Role Code Value Set"
 Id: bc-practitioner-role-value-set
@@ -36,15 +24,13 @@ Description: "BC Practitioner Role Codes."
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-practitioner-role-value-set"
 
-//CodeSystem: LicenseStatusCS
-//Title: "BC License Status Codes"
-//Id: bc-license-status-code-system
-//Description: "BC specific license status code system."
-//* ^caseSensitive = true
-//* #unknown "unknown" "Unknown"
-//* #inactive "inactive" "Inactive"
-//* ^experimental = false
-//* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system"
+ValueSet: OrganizationRoleVS
+Title: "Organization Role Code Value Set"
+Id: bc-organization-role-value-set
+Description: "BC Practitioner Role Codes."
+* codes from system $PLROrganizationRoleCode
+* ^experimental = false
+* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-organziation-role-value-set"
 
 ValueSet: LicenseStatusVS
 Title: "BC License Status Value Set"
@@ -71,15 +57,6 @@ Description: "BC specific qualification value set."
 * codes from system $PLRQulaificationCode
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-qualification-value-set"
-
-//CodeSystem: LicenseStatusClassCS
-//Title: "BC License Status Class Code System"
-//Id: bc-license-status-class-code-system
-//Description: "BC specific license status class code system."
-//* #LIC "LIC" "Licensure"
-//* #AE "AE" "Assigned Entity"
-//* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system"
-//* ^experimental = false
 
 ValueSet: LicenseStatusClassVS
 Title: "BC License Status Class Value Set"

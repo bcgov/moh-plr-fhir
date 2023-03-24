@@ -10,6 +10,7 @@ Description: "Example of an Organization."
 * telecom = Example-ContactPoint-Phone
 * active = true
 * extension[+] = Example-Note
+* type = $PLROrganizationRoleCode#ORG
 
 Instance: Example-Organization-1-Update
 InstanceOf: BCOrganization
@@ -27,6 +28,7 @@ Description: "Example of an Organization."
 * telecom = Example-ContactPoint-Phone-Update
 * active = true
 * extension[+] = Example-Note-Update
+* type = $PLROrganizationRoleCode#ORG
 
 Instance: Example-Organization-Response
 InstanceOf: BCOrganization
@@ -44,12 +46,14 @@ Description: "Example of an Organization that is being created."
 * telecom = Example-ContactPoint-Phone-Response-PHSA
 * active = true
 * extension[+] = Example-Note-Response-PHSA
+* type = $PLROrganizationRoleCode#ORG
 
 
 Instance: Example-Organization-2
 InstanceOf: BCOrganization
 Description: "Example of generic Organization."
 * id = "IPC.00147437.BC.PRS"
+* type = $PLROrganizationRoleCode#ORG
 
 // identifier
 * identifier[0] = Example-Identifier-IPC-Org-147476
