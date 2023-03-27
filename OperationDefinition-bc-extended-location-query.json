@@ -1,0 +1,89 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "bc-extended-location-query",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>URL: [base]/Location/$extendedQuery</p><p>URL: [base]/Location/[id]/$extendedQuery</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>name</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations with the specified name.</p>\n</div></td></tr><tr><td>IN</td><td>address-city</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations with the specified city.</p>\n</div></td></tr><tr><td>IN</td><td>healthAuthority</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.</p>\n</div></td></tr><tr><td>IN</td><td>healthServiceDeliveryArea</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.</p>\n</div></td></tr><tr><td>IN</td><td>localHealthArea</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.</p>\n</div></td></tr><tr><td>IN</td><td>communityHealthServiceArea</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for locations within the specified local community health service area.  See <a href=\"https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries\">this site</a> for a list of accepteable strings.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-location-query",
+  "version" : "1.0.0",
+  "name" : "LocationExtendedQuery",
+  "title" : "Query for a location that returns associated resources",
+  "status" : "draft",
+  "kind" : "query",
+  "date" : "2023-03-27T20:46:29+00:00",
+  "publisher" : "BC Ministry of Health",
+  "contact" : [{
+    "name" : "BC Ministry of Health",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CA",
+      "display" : "Canada"
+    }]
+  }],
+  "code" : "extendedQuery",
+  "resource" : ["Location"],
+  "system" : false,
+  "type" : true,
+  "instance" : true,
+  "parameter" : [{
+    "name" : "name",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations with the specified name.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "address-city",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations with the specified city.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "healthAuthority",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "healthServiceDeliveryArea",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "localHealthArea",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "communityHealthServiceArea",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.",
+    "type" : "string",
+    "searchType" : "string"
+  }]
+}

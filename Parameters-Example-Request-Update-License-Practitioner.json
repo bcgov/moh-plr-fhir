@@ -1,0 +1,118 @@
+{
+  "resourceType" : "Parameters",
+  "id" : "Example-Request-Update-License-Practitioner",
+  "parameter" : [{
+    "name" : "messageId",
+    "valueString" : "12344321"
+  },
+  {
+    "name" : "messageTime",
+    "valueDateTime" : "2022-06-27T01:01:01-08:00"
+  },
+  {
+    "name" : "maintain",
+    "resource" : {
+      "resourceType" : "Bundle",
+      "id" : "Example-UpdatePractitioner-LicenseStatus-Bundle",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"]
+      },
+      "type" : "collection",
+      "entry" : [{
+        "fullUrl" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00763481.BC.PRS",
+        "resource" : {
+          "resourceType" : "Practitioner",
+          "id" : "IPC.00763481.BC.PRS",
+          "meta" : {
+            "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"]
+          },
+          "extension" : [{
+            "extension" : [{
+              "url" : "statusCode",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system",
+                  "code" : "INACTIVE"
+                }]
+              }
+            },
+            {
+              "url" : "statusReasonCode",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system",
+                  "code" : "LTP"
+                }]
+              }
+            },
+            {
+              "url" : "statusClassCode",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system",
+                  "code" : "LIC"
+                }]
+              }
+            },
+            {
+              "url" : "period",
+              "valuePeriod" : {
+                "start" : "2022-06-24"
+              }
+            },
+            {
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system",
+                  "code" : "CHG"
+                }]
+              }
+            }],
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
+          }],
+          "identifier" : [{
+            "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+            "value" : "IPC.00763481.BC.PRS",
+            "period" : {
+              "start" : "2000-01-01"
+            }
+          }],
+          "name" : [{
+            "_family" : {
+              "extension" : [{
+                "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                "valueCode" : "not-applicable"
+              }]
+            }
+          }]
+        }
+      },
+      {
+        "fullUrl" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00763481.BC.PRS",
+        "resource" : {
+          "resourceType" : "PractitionerRole",
+          "id" : "IPC.00763481.BC.PRS",
+          "meta" : {
+            "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"]
+          },
+          "practitioner" : {
+            "identifier" : {
+              "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+              "value" : "IPC.00763481.BC.PRS",
+              "period" : {
+                "start" : "2000-01-01"
+              }
+            }
+          },
+          "code" : [{
+            "coding" : [{
+              "system" : "http://fhir.infoway-inforoute.ca/CodeSystem/scptype",
+              "code" : "MD"
+            }]
+          }]
+        }
+      }]
+    }
+  }]
+}

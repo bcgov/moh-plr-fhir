@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="Example-Response-Add-Organization"/>
+  <parameter>
+    <name value="messageId"/>
+    <valueString value="98766789"/>
+  </parameter>
+  <parameter>
+    <name value="messageTime"/>
+    <valueDateTime value="2022-06-27T01:01:03-08:00"/>
+  </parameter>
+  <parameter>
+    <name value="requestMessageId"/>
+    <valueString value="12344321"/>
+  </parameter>
+  <parameter>
+    <name value="maintain"/>
+    <resource>
+      <Bundle>
+        <id value="Example-UpdateOrganization-Bundle-Response"/>
+        <meta>
+          <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"/>
+        </meta>
+        <type value="collection"/>
+        <entry>
+          <fullUrl value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00147436.BC.PRS"/>
+          <resource>
+            <Organization>
+              <id value="IPC.00147436.BC.PRS"/>
+              <meta>
+                <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"/>
+              </meta>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension">
+                <extension url="identifier">
+                  <valueIdentifier>
+                    <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id"/>
+                    <value value="Note-2"/>
+                  </valueIdentifier>
+                </extension>
+                <extension url="text">
+                  <valueString value="Note text"/>
+                </extension>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="1998-01-02"/>
+                  </valuePeriod>
+                </extension>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                  <valueIdentifier>
+                    <assigner>
+                      <display value="PHSA"/>
+                    </assigner>
+                  </valueIdentifier>
+                </extension>
+              </extension>
+              <identifier>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                  <valueIdentifier>
+                    <assigner>
+                      <display value="PHSA"/>
+                    </assigner>
+                  </valueIdentifier>
+                </extension>
+                <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/ORGID"/>
+                <value value="123123123"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+              </identifier>
+              <identifier>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                  <valueIdentifier>
+                    <assigner>
+                      <display value="MOH"/>
+                    </assigner>
+                  </valueIdentifier>
+                </extension>
+                <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
+                <value value="IPC.00147436.BC.PRS"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+              </identifier>
+              <identifier>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                  <valueIdentifier>
+                    <assigner>
+                      <display value="PHSA"/>
+                    </assigner>
+                  </valueIdentifier>
+                </extension>
+                <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPN"/>
+                <value value="CPN.00147433.BC.PRS"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+              </identifier>
+              <active value="true"/>
+              <type>
+                <coding>
+                  <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system"/>
+                  <code value="CLINIC"/>
+                </coding>
+              </type>
+              <name value="Kelowna Clinic">
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension">
+                  <valueCode value="official"/>
+                </extension>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="2014-01-31T00:00:00-07:00"/>
+                  </valuePeriod>
+                </extension>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                  <valueIdentifier>
+                    <assigner>
+                      <display value="PHSA"/>
+                    </assigner>
+                  </valueIdentifier>
+                </extension>
+              </name>
+              <alias value="ABC Clinic - Kelowna"/>
+              <telecom>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
+                      <code value="BC"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                  <valueIdentifier>
+                    <assigner>
+                      <display value="PHSA"/>
+                    </assigner>
+                  </valueIdentifier>
+                </extension>
+                <system value="phone"/>
+                <value value="2503424343"/>
+                <period>
+                  <start value="2000-02-02"/>
+                </period>
+              </telecom>
+              <address>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
+                      <code value="BC"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system"/>
+                      <code value="V"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                  <valueIdentifier>
+                    <assigner>
+                      <display value="PHSA"/>
+                    </assigner>
+                  </valueIdentifier>
+                </extension>
+                <type value="postal"/>
+                <line value="19 ST"/>
+                <line value="ADDRESS ADDRESSLINE2TXT"/>
+                <line value="ADDRESS ADDRESSLINE3TXT"/>
+                <city value="VICTORIA"/>
+                <state value="BC"/>
+                <postalCode value="V6P7B8"/>
+                <country value="CA"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+              </address>
+            </Organization>
+          </resource>
+        </entry>
+      </Bundle>
+    </resource>
+  </parameter>
+  <parameter>
+    <name value="outcome"/>
+    <resource>
+      <OperationOutcome>
+        <id value="Example-OperationOutcome-MaintainSuccess"/>
+        <meta>
+          <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"/>
+        </meta>
+        <issue>
+          <severity value="information"/>
+          <code value="business-rule"/>
+          <details>
+            <coding>
+              <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system"/>
+              <code value="PRS.PRP.MTN.UNK.0.0.0000"/>
+            </coding>
+            <text value="The provider transaction was processed."/>
+          </details>
+        </issue>
+      </OperationOutcome>
+    </resource>
+  </parameter>
+</Parameters>

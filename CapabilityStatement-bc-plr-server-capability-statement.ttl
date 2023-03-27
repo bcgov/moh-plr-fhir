@@ -1,0 +1,222 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-server-capability-statement> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "bc-plr-server-capability-statement"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>BCPLRServerCapabilityStatement</h2><div><p>This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):</p>\n<ul>\n<li>Maintain - used when an external source is communicating a change to PLR</li>\n<li>Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)</li>\n<li>Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)</li>\n</ul>\n<p>All POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)</p>\n</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td><div><p>RESTful Atomic services</p>\n</div></td></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>Practitioner</td><td><a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner</a><br/>Additional supported profiles:<br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle</a></td><td>y</td><td></td><td></td><td></td></tr><tr><td>PractitionerRole</td><td><a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role</a><br/>Additional supported profiles:<br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Organization</td><td><a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization</a><br/>Additional supported profiles:<br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle</a></td><td>y</td><td></td><td></td><td></td></tr><tr><td>OrganizationAffiliation</td><td><a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Location</td><td><a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location</a><br/>Additional supported profiles:<br/>  <a href=\"http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle\">http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle</a></td><td>y</td><td></td><td></td><td></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-server-capability-statement"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "BCPLRServerCapabilityStatement"] ; # 
+  fhir:title [ fhir:v "BC PLR Server Capability Statement"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2022-11-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "BC Ministry of Health" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)\n\nAll POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)\n"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "CA" ] ;
+       fhir:display [ fhir:v "Canada" ]
+     ] )
+  ] ) ; # 
+  fhir:kind [ fhir:v "requirements"] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:format ( [
+     fhir:v "json" ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "SHALL" ]
+     ] )
+  ] ) ; # 
+  fhir:implementationGuide ( [
+     fhir:v "http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider"^^xsd:anyURI ;
+     fhir:link <http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider>
+  ] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "server" ] ;
+     fhir:documentation [ fhir:v "RESTful Atomic services" ] ;
+     fhir:resource ( [
+       fhir:type [ fhir:v "Practitioner" ] ;
+       fhir:profile [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
+       ] ;
+       fhir:supportedProfile ( [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle>
+       ] ) ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ] ;
+         fhir:documentation [ fhir:v "RESTful GET service" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "SHALL" ]
+         ] ) ;
+         fhir:name [ fhir:v "entityQuery" ] ;
+         fhir:definition [
+           fhir:v "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-practitioner-query"^^xsd:anyURI ;
+           fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-practitioner-query>
+         ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "SHALL" ]
+         ] ) ;
+         fhir:name [ fhir:v "extendedQuery" ] ;
+         fhir:definition [
+           fhir:v "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-practitioner-query"^^xsd:anyURI ;
+           fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-practitioner-query>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "PractitionerRole" ] ;
+       fhir:profile [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
+       ] ;
+       fhir:supportedProfile ( [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ] ) ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ] ;
+         fhir:documentation [ fhir:v "RESTful GET service" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ] ;
+         fhir:documentation [ fhir:v "RESTful Search" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "organization" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Organization IPC unique identifier" ]
+       ] [
+         fhir:name [ fhir:v "practitioner" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Practitioner IPC unique identifier" ]
+       ] [
+         fhir:name [ fhir:v "location" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Location IFC unique identifier" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Organization" ] ;
+       fhir:profile [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
+       ] ;
+       fhir:supportedProfile ( [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle>
+       ] ) ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ] ;
+         fhir:documentation [ fhir:v "RESTful GET service" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "SHALL" ]
+         ] ) ;
+         fhir:name [ fhir:v "entityQuery" ] ;
+         fhir:definition [
+           fhir:v "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-organization-query"^^xsd:anyURI ;
+           fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-organization-query>
+         ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "SHALL" ]
+         ] ) ;
+         fhir:name [ fhir:v "extendedQuery" ] ;
+         fhir:definition [
+           fhir:v "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-organization-query"^^xsd:anyURI ;
+           fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-organization-query>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "OrganizationAffiliation" ] ;
+       fhir:profile [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ] ;
+         fhir:documentation [ fhir:v "RESTful GET service" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ] ;
+         fhir:documentation [ fhir:v "RESTful Search" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "organization" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Organization IPC unique identifier" ]
+       ] [
+         fhir:name [ fhir:v "location" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Location IFC unique identifier" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Location" ] ;
+       fhir:profile [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location>
+       ] ;
+       fhir:supportedProfile ( [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle>
+       ] ) ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ] ;
+         fhir:documentation [ fhir:v "RESTful GET service" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "SHALL" ]
+         ] ) ;
+         fhir:name [ fhir:v "entityQuery" ] ;
+         fhir:definition [
+           fhir:v "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query"^^xsd:anyURI ;
+           fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query>
+         ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "SHALL" ]
+         ] ) ;
+         fhir:name [ fhir:v "extendedQuery" ] ;
+         fhir:definition [
+           fhir:v "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-location-query"^^xsd:anyURI ;
+           fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-location-query>
+         ]
+       ] )
+     ] ) ;
+     fhir:operation ( [
+       fhir:name [ fhir:v "maintain" ] ;
+       fhir:definition [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-maintain"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-maintain>
+       ] ;
+       fhir:documentation [ fhir:v "A BC resource Bundle is sent to create/update one resource" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

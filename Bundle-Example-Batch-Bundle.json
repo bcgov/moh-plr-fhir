@@ -1,0 +1,603 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "Example-Batch-Bundle",
+  "meta" : {
+    "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-batch-bundle"]
+  },
+  "type" : "batch",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:afe28d6d-4db2-49aa-96af-c115cdfc108c",
+    "resource" : {
+      "resourceType" : "Bundle",
+      "id" : "Example-AddPractitioner-Bundle",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"]
+      },
+      "type" : "collection",
+      "entry" : [{
+        "fullUrl" : "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87",
+        "resource" : {
+          "resourceType" : "Practitioner",
+          "id" : "Example-AddPractitioner-Practitioner",
+          "meta" : {
+            "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"]
+          },
+          "contained" : [{
+            "resourceType" : "Organization",
+            "id" : "qualificationOrganization",
+            "meta" : {
+              "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"]
+            },
+            "name" : "CREDENTIAL_CREDENTIALGRANTINGINSTTXT",
+            "address" : [{
+              "city" : "CALGARY",
+              "state" : "AB",
+              "country" : "CA"
+            }]
+          }],
+          "extension" : [{
+            "extension" : [{
+              "url" : "statusCode",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system",
+                  "code" : "SUSPENDED"
+                }]
+              }
+            },
+            {
+              "url" : "statusReasonCode",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system",
+                  "code" : "LTP"
+                }]
+              }
+            },
+            {
+              "url" : "statusClassCode",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system",
+                  "code" : "LIC"
+                }]
+              }
+            },
+            {
+              "url" : "period",
+              "valuePeriod" : {
+                "start" : "2022-06-24"
+              }
+            }],
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
+          },
+          {
+            "extension" : [{
+              "url" : "identifier",
+              "valueIdentifier" : {
+                "value" : "DA-1"
+              }
+            },
+            {
+              "url" : "description",
+              "valueString" : "Description"
+            },
+            {
+              "url" : "archiveDate",
+              "valueDateTime" : "2000-01-01"
+            },
+            {
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+              "valuePeriod" : {
+                "start" : "1998-01-02"
+              }
+            },
+            {
+              "url" : "displayFlag",
+              "valueBoolean" : false
+            }],
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension"
+          },
+          {
+            "extension" : [{
+              "url" : "identifier",
+              "valueIdentifier" : {
+                "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id",
+                "value" : "Note-2"
+              }
+            },
+            {
+              "url" : "text",
+              "valueString" : "Note text"
+            },
+            {
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+              "valuePeriod" : {
+                "start" : "1998-01-02"
+              }
+            }],
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension"
+          },
+          {
+            "extension" : [{
+              "url" : "identifier",
+              "valueIdentifier" : {
+                "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-condition-id",
+                "value" : "Condition-1"
+              }
+            },
+            {
+              "url" : "restriction",
+              "valueBoolean" : false
+            },
+            {
+              "url" : "restrictionText",
+              "valueString" : "Restriction text"
+            },
+            {
+              "url" : "code",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-condition-type-code-system",
+                  "code" : "EXP"
+                }]
+              }
+            },
+            {
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+              "valuePeriod" : {
+                "start" : "1998-01-02"
+              }
+            }],
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-condition-extension"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+              "valuePeriod" : {
+                "start" : "2000-01-01",
+                "end" : "2020-01-01"
+              }
+            },
+            {
+              "url" : "code",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                  "code" : "R"
+                }]
+              }
+            }],
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-confidentiality-extension"
+          },
+          {
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-deathdate-extension",
+            "valueDateTime" : "2000-02-01"
+          },
+          {
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+            "valuePeriod" : {
+              "start" : "2012-12-07"
+            }
+          },
+          {
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension",
+            "valueAddress" : {
+              "city" : "Ottawa",
+              "state" : "ON",
+              "country" : "CA"
+            }
+          }],
+          "identifier" : [{
+            "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPSID",
+            "value" : "123454",
+            "period" : {
+              "start" : "2000-01-01"
+            }
+          }],
+          "active" : true,
+          "name" : [{
+            "use" : "official",
+            "family" : "FamilyName",
+            "given" : ["GivenName"],
+            "period" : {
+              "start" : "2012-12-07"
+            }
+          }],
+          "telecom" : [{
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+                  "code" : "BC"
+                }]
+              }
+            }],
+            "system" : "phone",
+            "value" : "2501112234",
+            "period" : {
+              "start" : "2000-02-02"
+            }
+          }],
+          "address" : [{
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+                  "code" : "BC"
+                }]
+              }
+            },
+            {
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system",
+                  "code" : "V"
+                }]
+              }
+            }],
+            "type" : "postal",
+            "line" : ["1000 DOUGLAS ST"],
+            "city" : "VICTORIA",
+            "state" : "BC",
+            "postalCode" : "V6P7B8",
+            "country" : "CA",
+            "period" : {
+              "start" : "2000-01-01"
+            }
+          }],
+          "gender" : "female",
+          "birthDate" : "1934-01-02",
+          "_birthDate" : {
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthtime-extension",
+              "valueDateTime" : "1951-11-12T00:00:01-06:00"
+            }]
+          },
+          "qualification" : [{
+            "extension" : [{
+              "extension" : [{
+                "url" : "designation",
+                "valueString" : "designation"
+              },
+              {
+                "url" : "equivalencyFlag",
+                "valueBoolean" : true
+              },
+              {
+                "url" : "registrationNumber",
+                "valueString" : "registration number"
+              },
+              {
+                "url" : "issuedDate",
+                "valueDateTime" : "2000-01-01"
+              }],
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-qualification-extension"
+            }],
+            "code" : {
+              "coding" : [{
+                "system" : "http://fhir.infoway-inforoute.ca/CodeSystem/scpqual",
+                "code" : "BD"
+              }],
+              "text" : "CREDENTIAL_CREDENTIALDESIGNATIONTXT"
+            },
+            "period" : {
+              "start" : "2000-01-01",
+              "end" : "2020-01-01"
+            },
+            "issuer" : {
+              "reference" : "#qualificationOrganization"
+            }
+          }],
+          "communication" : [{
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+              "valuePeriod" : {
+                "start" : "2000-01-01"
+              }
+            },
+            {
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension",
+              "valueString" : "Language Source"
+            }],
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system",
+              "code" : "EN"
+            }]
+          }]
+        }
+      },
+      {
+        "fullUrl" : "urn:uuid:f431631b-ed68-4716-80be-cca6904309fc",
+        "resource" : {
+          "resourceType" : "PractitionerRole",
+          "id" : "Example-PractitionerRole-Role-FromPrac-CPSID",
+          "meta" : {
+            "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"]
+          },
+          "practitioner" : {
+            "identifier" : {
+              "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPSID",
+              "value" : "123454",
+              "period" : {
+                "start" : "2000-01-01"
+              }
+            }
+          },
+          "code" : [{
+            "coding" : [{
+              "system" : "http://fhir.infoway-inforoute.ca/CodeSystem/scptype",
+              "code" : "MD"
+            }]
+          }],
+          "specialty" : [{
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+              "valuePeriod" : {
+                "start" : "2000-01-01",
+                "end" : "2020-01-01"
+              }
+            },
+            {
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension",
+              "valueString" : "Expertise source"
+            }],
+            "coding" : [{
+              "system" : "http://fhir.infoway-inforoute.ca/CodeSystem/scpqual",
+              "code" : "AMD53"
+            }]
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "https://plr.hlth.gov.bc.ca/HSA-web/fhir-rs/$maintain"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:ddab2257-0829-4e5d-a5b7-b6c24dcdb7b8",
+    "resource" : {
+      "resourceType" : "Bundle",
+      "id" : "Example-AddOrganization-Bundle",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"]
+      },
+      "type" : "collection",
+      "entry" : [{
+        "fullUrl" : "urn:uuid:e24cfa57-5e07-4e5b-b229-0e65c74de7bf",
+        "resource" : {
+          "resourceType" : "Organization",
+          "id" : "Example-Organization-1",
+          "meta" : {
+            "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"]
+          },
+          "extension" : [{
+            "extension" : [{
+              "url" : "identifier",
+              "valueIdentifier" : {
+                "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id",
+                "value" : "Note-2"
+              }
+            },
+            {
+              "url" : "text",
+              "valueString" : "Note text"
+            },
+            {
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+              "valuePeriod" : {
+                "start" : "1998-01-02"
+              }
+            }],
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension"
+          }],
+          "identifier" : [{
+            "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/ORGID",
+            "value" : "123123123",
+            "period" : {
+              "start" : "2000-01-01"
+            }
+          }],
+          "active" : true,
+          "type" : [{
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system",
+              "code" : "ORG"
+            }]
+          }],
+          "name" : "Kelowna Clinic",
+          "_name" : {
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension",
+              "valueCode" : "official"
+            },
+            {
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+              "valuePeriod" : {
+                "start" : "2014-01-31T00:00:00-07:00"
+              }
+            }]
+          },
+          "alias" : ["ABC Clinic - Kelowna"],
+          "telecom" : [{
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+                  "code" : "BC"
+                }]
+              }
+            }],
+            "system" : "phone",
+            "value" : "2501112234",
+            "period" : {
+              "start" : "2000-02-02"
+            }
+          }],
+          "address" : [{
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+                  "code" : "BC"
+                }]
+              }
+            },
+            {
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system",
+                  "code" : "V"
+                }]
+              }
+            }],
+            "type" : "postal",
+            "line" : ["1000 DOUGLAS ST"],
+            "city" : "VICTORIA",
+            "state" : "BC",
+            "postalCode" : "V6P7B8",
+            "country" : "CA",
+            "period" : {
+              "start" : "2000-01-01"
+            }
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "https://plr.hlth.gov.bc.ca/HSA-web/fhir-rs/$maintain"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:09494507-e0a8-4cd4-9a25-a42822a2f552",
+    "resource" : {
+      "resourceType" : "Bundle",
+      "id" : "Example-AddLocation-Bundle",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle"]
+      },
+      "type" : "collection",
+      "entry" : [{
+        "fullUrl" : "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2",
+        "resource" : {
+          "resourceType" : "Location",
+          "id" : "IFC.00147422.BC.PRS",
+          "meta" : {
+            "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"]
+          },
+          "extension" : [{
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension",
+            "valueCodeableConcept" : {
+              "text" : "Langford/Highlands"
+            }
+          }],
+          "identifier" : [{
+            "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC",
+            "value" : "IFC.00147422.BC.PRS",
+            "period" : {
+              "start" : "2000-01-01"
+            }
+          }],
+          "name" : "General Hospital",
+          "_name" : {
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+              "valuePeriod" : {
+                "start" : "2000-01-01"
+              }
+            }]
+          },
+          "telecom" : [{
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+                  "code" : "BC"
+                }]
+              }
+            }],
+            "system" : "fax",
+            "value" : "55555555551",
+            "period" : {
+              "start" : "1982-03-04T00:00:00-07:00"
+            }
+          },
+          {
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+                  "code" : "HC"
+                }]
+              }
+            }],
+            "system" : "fax",
+            "value" : "55555555555",
+            "period" : {
+              "start" : "1981-04-04T00:00:00-07:00"
+            }
+          },
+          {
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+                  "code" : "MC"
+                }]
+              }
+            }],
+            "system" : "url",
+            "value" : "ftp://someftp.com",
+            "period" : {
+              "start" : "1991-01-01T00:00:00-07:00"
+            }
+          }],
+          "address" : {
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+                  "code" : "BC"
+                }]
+              }
+            },
+            {
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system",
+                  "code" : "V"
+                }]
+              }
+            }],
+            "type" : "postal",
+            "line" : ["1000 DOUGLAS ST"],
+            "city" : "VICTORIA",
+            "state" : "BC",
+            "postalCode" : "V6P7B8",
+            "country" : "CA",
+            "period" : {
+              "start" : "2000-01-01"
+            }
+          }
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "https://plr.hlth.gov.bc.ca/HSA-web/fhir-rs/$maintain"
+    }
+  }]
+}
