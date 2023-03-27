@@ -46,7 +46,7 @@ Description: "Example of an Organization that is being created."
 * telecom = Example-ContactPoint-Phone-Response-PHSA
 * active = true
 * extension[+] = Example-Note-Response-PHSA
-* type = $PLROrganizationRoleCode#ORG
+* type = $PLROrganizationRoleCode#CLINIC
 
 
 Instance: Example-Organization-2
