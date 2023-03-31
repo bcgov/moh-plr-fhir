@@ -16,7 +16,7 @@ Description: "BC Expertise value set."
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-expertise-value-set"
 
 ValueSet: PractitionerRoleVS
-Title: "Practitioner Role Code Value Set"
+Title: "BC Practitioner Role Code Value Set"
 Id: bc-practitioner-role-value-set
 Description: "BC Practitioner Role Codes."
 * codes from system $SCPType
@@ -25,12 +25,12 @@ Description: "BC Practitioner Role Codes."
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-practitioner-role-value-set"
 
 ValueSet: OrganizationRoleVS
-Title: "Organization Role Code Value Set"
+Title: "BC Organization Role Code Value Set"
 Id: bc-organization-role-value-set
-Description: "BC Practitioner Role Codes."
+Description: "BC Organization Role Codes."
 * codes from system $PLROrganizationRoleCode
 * ^experimental = false
-* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-organziation-role-value-set"
+* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-organization-role-value-set"
 
 ValueSet: LicenseStatusVS
 Title: "BC License Status Value Set"
