@@ -92,7 +92,7 @@ Description: "Example of the PractitionerRole for Practitioner to Location relat
 * id = "RELN.24.PRS"
 * practitioner.identifier = Example-Identifier-IPC-Ind-147422
 * period.start = "2000-01-01"
-* location.identifier = Example-Identifier-IFC
+* location.identifier = Example-Identifier-IFC-47422
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension"
 * extension[=].valueCodeableConcept.coding.system = $PLRLocationRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #WORKSAT
@@ -131,7 +131,7 @@ Description: "Example of the OrganizationAffiliation for Organization to Locatio
 * code.coding.system = $PLRLocationRelationshipType
 * code.coding.code = #operatesfrom
 * period.start = "2000-01-01"
-* location.identifier = Example-Identifier-IFC
+* location.identifier = Example-Identifier-IFC-47422
 
 Instance: Example-Atomic-Location
 InstanceOf: BCLocation

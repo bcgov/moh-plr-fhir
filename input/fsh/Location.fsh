@@ -42,7 +42,7 @@ Description: "A bundle that submits Location information."
 * entry contains Location 1..* MS and OrganizationAffiliation 0..* MS and PractitionerRole 0..* MS
 * entry[Location].resource only BCLocation
 * entry[OrganizationAffiliation].resource only BCOrganizationAffiliation
-* entry[PractitionerRole].resource only BCPractitionerRole
+* entry[PractitionerRole].resource only BCRoleRelationships
 
 Invariant: invariant-loc-bundle-1
 Description: "In a Location Bundle, OrganizationAffiliation.location.identifiers should match other entries' OrganizationAffiliation.location.identifiers in the Bundle."
@@ -55,12 +55,12 @@ Expression: "Bundle.entry.select(resource as PractitionerRole).where(meta.profil
 Severity: #warning
 
 Invariant: invariant-loc-bundle-3
-Description: "In a Location Bundle, PractitionerRole.location.identifier should match at least one idenitifer in Practitioner."
+Description: "In a Location Bundle, PractitionerRole.location.identifier should match at least one identifier in Location."
 Expression: "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).location.identifier.value.distinct() in Bundle.entry.resource.ofType(Location).identifier.value)"
 Severity: #error
 
 Invariant: invariant-loc-bundle-4
-Description: "In a Location Bundle, OrganizationAffiliation.location.identifier should match at least one idenitifer in Practitioner."
+Description: "In a Location Bundle, OrganizationAffiliation.location.identifier should match at least one identifier in Location."
 Expression: "Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).location.identifier.value.distinct() in Bundle.entry.resource.ofType(Location).identifier.value)"
 Severity: #error
 

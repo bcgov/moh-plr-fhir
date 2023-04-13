@@ -12,7 +12,7 @@ Instance: Example-OrganizationAffiliation-OrgRef-FromOrg-2
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Organization relationship."
 * id = "RELN.181.PRS"
-* organization.identifier = Example-Identifier-IPC-Org-Response-147434
+* organization.identifier = Example-Identifier-IPC-Org-147434
 * code.coding.system = $PLRRelationshipType
 * code.coding.code = #deptof
 * period.start = "2000-01-01"
@@ -36,17 +36,17 @@ Description: "Example of the OrganizationAffiliation for Organization to Locatio
 * code.coding.system = $PLRLocationRelationshipType
 * code.coding.code = #operatesfrom
 * period.start = "2000-01-01"
-* location.identifier = Example-Identifier-IFC
+* location.identifier = Example-Identifier-IFC-47422
 
 Instance: Example-OrganizationAffiliation-LocRef-FromOrg-2
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Location relationship."
 * id = "RELN.182.PRS"
-* organization.identifier = Example-Identifier-IPC-Org-Response-147434
+* organization.identifier = Example-Identifier-IPC-Org-147434
 * code.coding.system = $PLRLocationRelationshipType
 * code.coding.code = #operatesfrom
 * period.start = "2000-01-01"
-* location.identifier = Example-Identifier-IFC
+* location.identifier = Example-Identifier-IFC-47422
 
 Instance: Example-OrganizationAffiliation-3-LocRef-FromOrg
 InstanceOf: BCOrganizationAffiliation
@@ -56,5 +56,5 @@ Description: "Example of the OrganizationAffiliation for Organization to Locatio
 * code.coding.system = $PLRLocationRelationshipType
 * code.coding.code = #operatesfrom
 * period.start = "2000-01-01"
-* location.identifier = Example-Identifier-IFC
+* location.identifier = Example-Identifier-IFC-47422
 

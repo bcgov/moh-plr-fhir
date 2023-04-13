@@ -47,14 +47,6 @@ Description: "General constraints on the OrganizationAffiliation resource for us
 * location MS
 * location only Reference(BCLocation)
 
-Instance: Example-Qualification-Organization
-InstanceOf: BCOrganization
-Description: "Example of an organization's qualifications."
-* name = "CREDENTIAL_CREDENTIALGRANTINGINSTTXT"
-* address.city = "CALGARY"
-* address.state = "AB"
-* address.country = "CA"
-
 Profile: BCOrganizationBundle
 Parent: Bundle
 Id: bc-organization-bundle
@@ -91,12 +83,12 @@ Expression: "Bundle.entry.select(resource as PractitionerRole).where(meta.profil
 Severity: #warning
 
 Invariant: invariant-org-bundle-3
-Description: "In a Organization Bundle, PractitionerRole.organization.identifier should match at least one idenitifer in Practitioner."
+Description: "In a Organization Bundle, PractitionerRole.organization.identifier should match at least one identifier in Organization."
 Expression: "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).organization.identifier.value.distinct() in Bundle.entry.resource.ofType(Organization).identifier.value)"
 Severity: #error
 
 Invariant: invariant-org-bundle-4
-Description: "In a Organization Bundle, OrganizationAffiliation.organization.identifier should match at least one idenitifer in Practitioner."
+Description: "In a Organization Bundle, OrganizationAffiliation.organization.identifier should match at least one identifier in Organization."
 Expression: "Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).organization.identifier.value.distinct() in Bundle.entry.resource.ofType(Organization).identifier.value)"
 Severity: #error
 

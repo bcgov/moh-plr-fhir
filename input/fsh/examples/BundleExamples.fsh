@@ -34,6 +34,21 @@ Description: "An example of bundle that is adding a location."
 * entry[0].fullUrl = "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"
 * entry[0].resource = Example-Location
 
+
+Instance: Example-AddLocationWithLinks-Bundle
+InstanceOf: BCLocationBundle
+Description: "An example of bundle that is adding a location."
+* type = #collection
+* entry[0].fullUrl = "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"
+* entry[0].resource = Example-Location
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.182.PRS"
+* entry[=].resource = Example-OrganizationAffiliation-LocRef-FromOrg-2
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.142.PRS"
+* entry[=].resource = Example-OrganizationAffiliation-3-LocRef-FromOrg
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS"
+* entry[=].resource = Example-PractitionerRole-3-LocRef-FromPractitioner
+
+
 Instance: Example-AddPractitioner-Bundle
 InstanceOf: BCPractitionerBundle
 Description: "Example of a bundle of resources sent when requesting a practitioner create."

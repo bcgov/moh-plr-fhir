@@ -60,7 +60,6 @@ Description: "Example of generic Practitioner response."
 * extension[+] = Example-AddPractitioner-RelatedPractitioner-Response
 * telecom = Example-ContactPoint-Phone-Response
 * address = Example-Address-Valid-Response
-
 // credentials
 * qualification.period.start = "2000-01-01"
 * qualification.code.coding.system = $SCPQual
@@ -73,7 +72,6 @@ Description: "Example of generic Practitioner response."
 * contained[QualificationOrganization] = Example-Credential-Granting-Institution
 * contained[QualificationOrganization].id = "grantingInstitution"
 * qualification.extension[1] = Example-OC-MOH
-
 // language
 * communication = Example-Language-Response
 
@@ -95,7 +93,6 @@ Description: "Example of a BC practitioner that is being created."
 * extension[4] = Example-Confidenciality-False
 * telecom = Example-ContactPoint-Phone
 * address = Example-Address-Valid
-
 // demographics
 * extension[5].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-deathdate-extension"
 * extension[5].valueDateTime = "2000-02-01"
@@ -104,7 +101,6 @@ Description: "Example of a BC practitioner that is being created."
 * birthDate = "1934-01-02"
 * birthDate.extension[birthTime].valueDateTime = "1951-11-12T00:00:01-06:00"
 * extension[7] = Example-Demographics-2
-
 // credentials
 * contained[QualificationOrganization] = Example-Qualification-Organization
 * contained[QualificationOrganization].id = "qualificationOrganization"
@@ -118,6 +114,13 @@ Description: "Example of a BC practitioner that is being created."
 * qualification.extension[qualificationExtension].extension[registrationNumber].valueString = "registration number"
 * qualification.extension[qualificationExtension].extension[issuedDate].valueDateTime = "2000-01-01"
 
+Instance: Example-Qualification-Organization
+InstanceOf: BCOrganization
+Description: "Example of an organization's qualifications."
+* name = "CREDENTIAL_CREDENTIALGRANTINGINSTTXT"
+* address.city = "CALGARY"
+* address.state = "AB"
+* address.country = "CA"
 
 Instance: Example-AddPractitioner-RelatedPractitioner
 InstanceOf: Extension

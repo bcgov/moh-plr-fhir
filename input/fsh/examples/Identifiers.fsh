@@ -139,7 +139,7 @@ Usage: #inline
 * period.start = "2000-01-01"
 * extension = Example-OC-MOH
 
-Instance: Example-Identifier-IPC-Org-Response-147434
+Instance: Example-Identifier-IPC-Org-147434
 InstanceOf: Identifier
 Description: "Identifier example for IPC."
 Usage: #inline
@@ -175,12 +175,12 @@ Usage: #inline
 * period.start = "2000-01-01"
 * extension = Example-ERC-Change
 
-Instance: Example-Identifier-IFC
+Instance: Example-Identifier-IFC-47421
 InstanceOf: Identifier
 Description: "Identifier example for IFC."
 Usage: #inline
 * system = $System_IFC
-* value = "IFC.00147422.BC.PRS"
+* value = "IFC.00147421.BC.PRS"
 * period.start = "2000-01-01"
 
 Instance: Example-Identifier-IFC-47422
