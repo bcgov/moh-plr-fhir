@@ -1,0 +1,263 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "Example-AddLocationWithLinks-Bundle",
+  "meta" : {
+    "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle"]
+  },
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2",
+    "resource" : {
+      "resourceType" : "Location",
+      "id" : "IFC.00147422.BC.PRS",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Location</b><a name=\"IFC.00147422.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Location &quot;IFC.00147422.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-location.html\">BCLocation</a></p></div><p><b>BC Facility Community Health Service Area Extension</b>: Langford/Highlands <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>identifier</b>: id:\u00a0IFC.00047422.BC.PRS\u00a0(period:\u00a02000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href=\"ftp://someftp.com\">ftp://someftp.com</a></p><p><b>address</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p></div>"
+      },
+      "extension" : [{
+        "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension",
+        "valueCodeableConcept" : {
+          "text" : "Langford/Highlands"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC",
+        "value" : "IFC.00047422.BC.PRS",
+        "period" : {
+          "start" : "2000-01-01"
+        }
+      }],
+      "name" : "General Hospital",
+      "_name" : {
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+          "valuePeriod" : {
+            "start" : "2000-01-01"
+          }
+        }]
+      },
+      "telecom" : [{
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+              "code" : "BC"
+            }]
+          }
+        }],
+        "system" : "fax",
+        "value" : "55555555551",
+        "period" : {
+          "start" : "1982-03-04T00:00:00-07:00"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+              "code" : "HC"
+            }]
+          }
+        }],
+        "system" : "fax",
+        "value" : "55555555555",
+        "period" : {
+          "start" : "1981-04-04T00:00:00-07:00"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+              "code" : "MC"
+            }]
+          }
+        }],
+        "system" : "url",
+        "value" : "ftp://someftp.com",
+        "period" : {
+          "start" : "1991-01-01T00:00:00-07:00"
+        }
+      }],
+      "address" : {
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+              "code" : "BC"
+            }]
+          }
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system",
+              "code" : "V"
+            }]
+          }
+        }],
+        "type" : "postal",
+        "line" : ["1000 DOUGLAS ST"],
+        "city" : "VICTORIA",
+        "state" : "BC",
+        "postalCode" : "V6P7B8",
+        "country" : "CA",
+        "period" : {
+          "start" : "2000-01-01"
+        }
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.182.PRS",
+    "resource" : {
+      "resourceType" : "OrganizationAffiliation",
+      "id" : "RELN.182.PRS",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"RELN.182.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;RELN.182.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: operatesfrom <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code-system#operatesfrom)</span></p><p><b>location</b>: <span/></p></div>"
+      },
+      "period" : {
+        "start" : "2000-01-01"
+      },
+      "organization" : {
+        "identifier" : {
+          "extension" : [{
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+            "valueIdentifier" : {
+              "assigner" : {
+                "display" : "MOH"
+              }
+            }
+          }],
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+          "value" : "IPC.00147434.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      },
+      "code" : [{
+        "coding" : [{
+          "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system",
+          "code" : "operatesfrom"
+        }]
+      }],
+      "location" : [{
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC",
+          "value" : "IFC.00047422.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.142.PRS",
+    "resource" : {
+      "resourceType" : "OrganizationAffiliation",
+      "id" : "RELN.142.PRS",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"RELN.142.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;RELN.142.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: operatesfrom <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code-system#operatesfrom)</span></p><p><b>location</b>: <span/></p></div>"
+      },
+      "period" : {
+        "start" : "2000-01-01"
+      },
+      "organization" : {
+        "identifier" : {
+          "extension" : [{
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+            "valueIdentifier" : {
+              "assigner" : {
+                "display" : "MOH"
+              }
+            }
+          }],
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+          "value" : "IPC.00147437.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      },
+      "code" : [{
+        "coding" : [{
+          "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system",
+          "code" : "operatesfrom"
+        }]
+      }],
+      "location" : [{
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC",
+          "value" : "IFC.00047422.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS",
+    "resource" : {
+      "resourceType" : "PractitionerRole",
+      "id" : "RELN.125.PRS",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"RELN.125.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;RELN.125.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-role-relationships.html\">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Location Type Extension.</b>: WORKSAT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code-system#WORKSAT)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span/></p><p><b>location</b>: <span/></p></div>"
+      },
+      "extension" : [{
+        "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system",
+            "code" : "WORKSAT"
+          }]
+        }
+      }],
+      "period" : {
+        "start" : "2000-01-01"
+      },
+      "practitioner" : {
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC",
+          "value" : "IPC.00147422.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      },
+      "location" : [{
+        "identifier" : {
+          "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC",
+          "value" : "IFC.00047422.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      }]
+    }
+  }]
+}

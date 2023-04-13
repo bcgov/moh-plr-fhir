@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "1.0.0"] ; # 
   fhir:name [ fhir:v "BCBatchBundle"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-03-31T19:02:02+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-04-13T21:33:55+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -2061,7 +2061,7 @@
        ] [
          fhir:key [ fhir:v "invariant-prac-bundle-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "In a Practitioner Bundle, PractitionerRole.practitioner.identifier must match at least one idenitifer in Practitioner." ] ;
+         fhir:human [ fhir:v "In a Practitioner Bundle, PractitionerRole.practitioner.identifier must match at least one identifier in Practitioner." ] ;
          fhir:expression [ fhir:v "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-practitioner-role')).practitioner.identifier.value in Bundle.entry.resource.ofType(Practitioner).identifier.value" ] ;
          fhir:source [
            fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"^^xsd:anyURI ;
@@ -2070,7 +2070,7 @@
        ] [
          fhir:key [ fhir:v "invariant-prac-bundle-2" ] ;
          fhir:severity [ fhir:v "warning" ] ;
-         fhir:human [ fhir:v "In a Practitioner Bundle, PractitionerRole.practitioner.identifiers should match other PractitionerRole practitioner identifiers in the Bundle." ] ;
+         fhir:human [ fhir:v "In a Practitioner Bundle, PractitionerRole.practitioner.identifier should match other PractitionerRole practitioner identifiers in the Bundle." ] ;
          fhir:expression [ fhir:v "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).practitioner.identifier.value.distinct().count() = 1)" ] ;
          fhir:source [
            fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"^^xsd:anyURI ;
@@ -2079,7 +2079,7 @@
        ] [
          fhir:key [ fhir:v "invariant-prac-bundle-3" ] ;
          fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "In a Practitioner Bundle, each PractitionerRole.practitioner.identifier should match at least one idenitifer in Practitioner." ] ;
+         fhir:human [ fhir:v "In a Practitioner Bundle, each PractitionerRole.practitioner.identifier should match at least one identifier in Practitioner." ] ;
          fhir:expression [ fhir:v "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).practitioner.identifier.value.distinct() in Bundle.entry.resource.ofType(Practitioner).identifier.value)" ] ;
          fhir:source [
            fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"^^xsd:anyURI ;
@@ -3271,7 +3271,7 @@
        ] [
          fhir:key [ fhir:v "invariant-org-bundle-3" ] ;
          fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "In a Organization Bundle, PractitionerRole.organization.identifier should match at least one idenitifer in Practitioner." ] ;
+         fhir:human [ fhir:v "In a Organization Bundle, PractitionerRole.organization.identifier should match at least one identifier in Organization." ] ;
          fhir:expression [ fhir:v "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).organization.identifier.value.distinct() in Bundle.entry.resource.ofType(Organization).identifier.value)" ] ;
          fhir:source [
            fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"^^xsd:anyURI ;
@@ -3280,7 +3280,7 @@
        ] [
          fhir:key [ fhir:v "invariant-org-bundle-4" ] ;
          fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "In a Organization Bundle, OrganizationAffiliation.organization.identifier should match at least one idenitifer in Practitioner." ] ;
+         fhir:human [ fhir:v "In a Organization Bundle, OrganizationAffiliation.organization.identifier should match at least one identifier in Organization." ] ;
          fhir:expression [ fhir:v "Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).organization.identifier.value.distinct() in Bundle.entry.resource.ofType(Organization).identifier.value)" ] ;
          fhir:source [
            fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"^^xsd:anyURI ;
@@ -4472,7 +4472,7 @@
        ] [
          fhir:key [ fhir:v "invariant-loc-bundle-3" ] ;
          fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "In a Location Bundle, PractitionerRole.location.identifier should match at least one idenitifer in Practitioner." ] ;
+         fhir:human [ fhir:v "In a Location Bundle, PractitionerRole.location.identifier should match at least one identifier in Location." ] ;
          fhir:expression [ fhir:v "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).location.identifier.value.distinct() in Bundle.entry.resource.ofType(Location).identifier.value)" ] ;
          fhir:source [
            fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle"^^xsd:anyURI ;
@@ -4481,7 +4481,7 @@
        ] [
          fhir:key [ fhir:v "invariant-loc-bundle-4" ] ;
          fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "In a Location Bundle, OrganizationAffiliation.location.identifier should match at least one idenitifer in Practitioner." ] ;
+         fhir:human [ fhir:v "In a Location Bundle, OrganizationAffiliation.location.identifier should match at least one identifier in Location." ] ;
          fhir:expression [ fhir:v "Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).location.identifier.value.distinct() in Bundle.entry.resource.ofType(Location).identifier.value)" ] ;
          fhir:source [
            fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle"^^xsd:anyURI ;

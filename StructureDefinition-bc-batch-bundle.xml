@@ -26,7 +26,7 @@
   <version value="1.0.0"/>
   <name value="BCBatchBundle"/>
   <status value="active"/>
-  <date value="2023-03-31T19:02:02+00:00"/>
+  <date value="2023-04-13T21:33:55+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -1866,21 +1866,21 @@
       <constraint>
         <key value="invariant-prac-bundle-1"/>
         <severity value="error"/>
-        <human value="In a Practitioner Bundle, PractitionerRole.practitioner.identifier must match at least one idenitifer in Practitioner."/>
+        <human value="In a Practitioner Bundle, PractitionerRole.practitioner.identifier must match at least one identifier in Practitioner."/>
         <expression value="Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-practitioner-role')).practitioner.identifier.value in Bundle.entry.resource.ofType(Practitioner).identifier.value"/>
         <source value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"/>
       </constraint>
       <constraint>
         <key value="invariant-prac-bundle-2"/>
         <severity value="warning"/>
-        <human value="In a Practitioner Bundle, PractitionerRole.practitioner.identifiers should match other PractitionerRole practitioner identifiers in the Bundle."/>
+        <human value="In a Practitioner Bundle, PractitionerRole.practitioner.identifier should match other PractitionerRole practitioner identifiers in the Bundle."/>
         <expression value="Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).practitioner.identifier.value.distinct().count() = 1)"/>
         <source value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"/>
       </constraint>
       <constraint>
         <key value="invariant-prac-bundle-3"/>
         <severity value="error"/>
-        <human value="In a Practitioner Bundle, each PractitionerRole.practitioner.identifier should match at least one idenitifer in Practitioner."/>
+        <human value="In a Practitioner Bundle, each PractitionerRole.practitioner.identifier should match at least one identifier in Practitioner."/>
         <expression value="Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).practitioner.identifier.value.distinct() in Bundle.entry.resource.ofType(Practitioner).identifier.value)"/>
         <source value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"/>
       </constraint>
@@ -2949,14 +2949,14 @@
       <constraint>
         <key value="invariant-org-bundle-3"/>
         <severity value="error"/>
-        <human value="In a Organization Bundle, PractitionerRole.organization.identifier should match at least one idenitifer in Practitioner."/>
+        <human value="In a Organization Bundle, PractitionerRole.organization.identifier should match at least one identifier in Organization."/>
         <expression value="Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).organization.identifier.value.distinct() in Bundle.entry.resource.ofType(Organization).identifier.value)"/>
         <source value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"/>
       </constraint>
       <constraint>
         <key value="invariant-org-bundle-4"/>
         <severity value="error"/>
-        <human value="In a Organization Bundle, OrganizationAffiliation.organization.identifier should match at least one idenitifer in Practitioner."/>
+        <human value="In a Organization Bundle, OrganizationAffiliation.organization.identifier should match at least one identifier in Organization."/>
         <expression value="Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).organization.identifier.value.distinct() in Bundle.entry.resource.ofType(Organization).identifier.value)"/>
         <source value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"/>
       </constraint>
@@ -4025,14 +4025,14 @@
       <constraint>
         <key value="invariant-loc-bundle-3"/>
         <severity value="error"/>
-        <human value="In a Location Bundle, PractitionerRole.location.identifier should match at least one idenitifer in Practitioner."/>
+        <human value="In a Location Bundle, PractitionerRole.location.identifier should match at least one identifier in Location."/>
         <expression value="Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).location.identifier.value.distinct() in Bundle.entry.resource.ofType(Location).identifier.value)"/>
         <source value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle"/>
       </constraint>
       <constraint>
         <key value="invariant-loc-bundle-4"/>
         <severity value="error"/>
-        <human value="In a Location Bundle, OrganizationAffiliation.location.identifier should match at least one idenitifer in Practitioner."/>
+        <human value="In a Location Bundle, OrganizationAffiliation.location.identifier should match at least one identifier in Location."/>
         <expression value="Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).location.identifier.value.distinct() in Bundle.entry.resource.ofType(Location).identifier.value)"/>
         <source value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle"/>
       </constraint>
