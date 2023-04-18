@@ -131,17 +131,17 @@ Description: "A bundle that submits Practitioner and PractitionerRole informatio
 * entry[RoleRelationship].resource only BCRoleRelationships
 
 Invariant: invariant-prac-bundle-1
-Description: "In a Practitioner Bundle, PractitionerRole.practitioner.identifier must match at least one idenitifer in Practitioner."
+Description: "In a Practitioner Bundle, PractitionerRole.practitioner.identifier must match at least one identifier in Practitioner."
 Expression: "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-practitioner-role')).practitioner.identifier.value in Bundle.entry.resource.ofType(Practitioner).identifier.value"
 Severity: #error
 
 Invariant: invariant-prac-bundle-2
-Description: "In a Practitioner Bundle, PractitionerRole.practitioner.identifiers should match other PractitionerRole practitioner identifiers in the Bundle."
+Description: "In a Practitioner Bundle, PractitionerRole.practitioner.identifier should match other PractitionerRole practitioner identifiers in the Bundle."
 Expression: "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).practitioner.identifier.value.distinct().count() = 1)"
 Severity: #warning
 
 Invariant: invariant-prac-bundle-3
-Description: "In a Practitioner Bundle, each PractitionerRole.practitioner.identifier should match at least one idenitifer in Practitioner."
+Description: "In a Practitioner Bundle, each PractitionerRole.practitioner.identifier should match at least one identifier in Practitioner."
 Expression: "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).practitioner.identifier.value.distinct() in Bundle.entry.resource.ofType(Practitioner).identifier.value)"
 Severity: #error
 
