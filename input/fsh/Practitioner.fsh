@@ -33,7 +33,7 @@ Description: "General constraints on the Practitioner resource for use in the BC
 * qualification.issuer MS
 * qualification.issuer only Reference(BCOrganization)
 * communication MS
-* communication.coding from LanguageVS (required)
+* communication from LanguageVS (required)
 * communication.extension contains PeriodExtension named period 0..1 MS and EndReasonExtension named endReason 0..1 MS and OwnerExtension named owner 0..1 MS
 * extension contains PeriodExtension named demographicsPeriod 0..1 MS and 
         EndReasonExtension named demographicsEndReason 0..1 MS and 
