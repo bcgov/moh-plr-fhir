@@ -1,46 +1,50 @@
+Instance: Example-Request-Add-Location
+InstanceOf: Parameters
+Description: "Example Parameters to add an Location (aka Facility)."
+* parameter[+].name = "messageId"
+* parameter[=].valueString = "12344321"
+* parameter[+].name = "messageTime"
+* parameter[=].valueDateTime = "2022-06-27T01:01:01-08:00"
+* parameter[+].name = "maintain"
+* parameter[=].resource = Example-AddLocationWithLinks-Bundle
+
 Instance: Example-AddLocationWithLinks-Bundle
 InstanceOf: BCLocationBundle
 Description: "An example of bundle that is adding a location."
 * type = #collection
 * entry[0].fullUrl = "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"
 * entry[0].resource = Example-Location-For-Add
-* entry[+].fullUrl = "162587c8-eb05-40be-a3a2-ca16d52f73b3"
+* entry[+].fullUrl = "urn:uuid:162587c8-eb05-40be-a3a2-ca16d52f73b3"
 * entry[=].resource = Example-OrganizationAffiliation-Loc1
-* entry[+].fullUrl = "809e0074-ded0-11ed-b5ea-0242ac120002"
+* entry[+].fullUrl = "urn:uuid:809e0074-ded0-11ed-b5ea-0242ac120002"
 * entry[=].resource = Example-OrganizationAffiliation-Loc2
-* entry[+].fullUrl = "ef046dcc-7ebe-401b-b44e-594ed21bed81"
+* entry[+].fullUrl = "urn:uuid:ef046dcc-7ebe-401b-b44e-594ed21bed81"
 * entry[=].resource = Example-PractitionerRole-Loc3
 
 Instance: Example-Location-For-Add
 InstanceOf: BCLocation
 Description: "Example of a Location."
 //* id = "IFC.00147422.BC.PRS"
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension"
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
+* extension[=].extension[=].valuePeriod.start = "2000-01-01"
 * identifier = Example-Identifier-FACID-22
 * name = "General Hospital"
 * name.extension[period].valuePeriod.start = "2000-01-01"
+* alias = "Long name or alias or description"
 * telecom[0].system = #fax
 * telecom[0].period.start = "1982-03-04T00:00:00-07:00"
 * telecom[0].value = "55555555551"
 * telecom[0].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #BC
-* telecom[1].system = #fax
-* telecom[1].period.start = "1981-04-04T00:00:00-07:00"
-* telecom[1].value = "55555555555"
-* telecom[1].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* telecom[1].extension[commPurposeExtension].valueCodeableConcept.coding.code = #HC
-* telecom[2].system = #url
-* telecom[2].period.start = "1991-01-01T00:00:00-07:00"
-* telecom[2].value = "ftp://someftp.com"
-* telecom[2].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.code = #MC
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #FC
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension"
 * extension[=].valueAddress = Example-Address-Fac
 //* address = Example-Address-Fac
 //* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension"
 //* extension[=].valueCodeableConcept.text = "Langford/Highlands"
+* physicalType.coding.code = #bu
+* physicalType.coding.system = "http://terminology.hl7.org/CodeSystem/location-physical-type"
 
 Instance: Example-Address-Fac
 InstanceOf: BCAddress
