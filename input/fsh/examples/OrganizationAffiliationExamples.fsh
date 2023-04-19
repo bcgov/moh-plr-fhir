@@ -48,6 +48,7 @@ Description: "Example of the OrganizationAffiliation for Organization to Locatio
 * period.start = "2000-01-01"
 * location.identifier = Example-Identifier-IFC-47422
 
+
 Instance: Example-OrganizationAffiliation-3-LocRef-FromOrg
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Location relationship."

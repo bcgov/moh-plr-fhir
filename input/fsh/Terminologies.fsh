@@ -39,4 +39,5 @@ Alias: $System_CPN = http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPN
 Alias: $System_ORGID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/ORGID
 Alias: $System_CPSID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPSID
 Alias: $System_RNID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/RNID
+Alias: $System_FACID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID
 
