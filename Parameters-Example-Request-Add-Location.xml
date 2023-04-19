@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="Example-Request-Add-Location"/>
+  <parameter>
+    <name value="messageId"/>
+    <valueString value="12344321"/>
+  </parameter>
+  <parameter>
+    <name value="messageTime"/>
+    <valueDateTime value="2022-06-27T01:01:01-08:00"/>
+  </parameter>
+  <parameter>
+    <name value="maintain"/>
+    <resource>
+      <Bundle>
+        <id value="Example-AddLocationWithLinks-Bundle"/>
+        <meta>
+          <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle"/>
+        </meta>
+        <type value="collection"/>
+        <entry>
+          <fullUrl value="urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"/>
+          <resource>
+            <Location>
+              <id value="Example-Location-For-Add"/>
+              <meta>
+                <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"/>
+              </meta>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension">
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="2000-01-01"/>
+                  </valuePeriod>
+                </extension>
+              </extension>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension">
+                <valueAddress>
+                  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
+                    <valueCodeableConcept>
+                      <coding>
+                        <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
+                        <code value="FC"/>
+                      </coding>
+                    </valueCodeableConcept>
+                  </extension>
+                  <type value="physical"/>
+                  <line value="1000 DOUGLAS ST"/>
+                  <city value="VICTORIA"/>
+                  <state value="BC"/>
+                  <postalCode value="V6P7B8"/>
+                  <country value="CA"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </valueAddress>
+              </extension>
+              <identifier>
+                <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"/>
+                <value value="22"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+              </identifier>
+              <name value="General Hospital">
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="2000-01-01"/>
+                  </valuePeriod>
+                </extension>
+              </name>
+              <alias value="Long name or alias or description"/>
+              <telecom>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
+                      <code value="FC"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <system value="fax"/>
+                <value value="55555555551"/>
+                <period>
+                  <start value="1982-03-04T00:00:00-07:00"/>
+                </period>
+              </telecom>
+              <physicalType>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/location-physical-type"/>
+                  <code value="bu"/>
+                </coding>
+              </physicalType>
+            </Location>
+          </resource>
+        </entry>
+        <entry>
+          <fullUrl value="urn:uuid:162587c8-eb05-40be-a3a2-ca16d52f73b3"/>
+          <resource>
+            <OrganizationAffiliation>
+              <id value="Example-OrganizationAffiliation-Loc1"/>
+              <meta>
+                <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"/>
+              </meta>
+              <period>
+                <start value="2000-01-01"/>
+              </period>
+              <organization>
+                <identifier>
+                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
+                  <value value="IPC.70007000.PRS.BC"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </organization>
+              <code>
+                <coding>
+                  <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"/>
+                  <code value="OPERATES"/>
+                </coding>
+              </code>
+              <location>
+                <identifier>
+                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"/>
+                  <value value="22"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </location>
+            </OrganizationAffiliation>
+          </resource>
+        </entry>
+        <entry>
+          <fullUrl value="urn:uuid:809e0074-ded0-11ed-b5ea-0242ac120002"/>
+          <resource>
+            <OrganizationAffiliation>
+              <id value="Example-OrganizationAffiliation-Loc2"/>
+              <meta>
+                <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"/>
+              </meta>
+              <period>
+                <start value="2000-01-01"/>
+              </period>
+              <organization>
+                <identifier>
+                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
+                  <value value="IPC.90009000.PRS.BC"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </organization>
+              <code>
+                <coding>
+                  <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"/>
+                  <code value="OWNS"/>
+                </coding>
+              </code>
+              <location>
+                <identifier>
+                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"/>
+                  <value value="22"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </location>
+            </OrganizationAffiliation>
+          </resource>
+        </entry>
+        <entry>
+          <fullUrl value="urn:uuid:ef046dcc-7ebe-401b-b44e-594ed21bed81"/>
+          <resource>
+            <PractitionerRole>
+              <id value="Example-PractitionerRole-Loc3"/>
+              <meta>
+                <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
+              </meta>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension">
+                <valueCodeableConcept>
+                  <coding>
+                    <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"/>
+                    <code value="PRACTICES_AT"/>
+                  </coding>
+                </valueCodeableConcept>
+              </extension>
+              <period>
+                <start value="2000-01-01"/>
+              </period>
+              <practitioner>
+                <identifier>
+                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
+                  <value value="IPC.80008000.PRS.BC"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </practitioner>
+              <location>
+                <identifier>
+                  <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"/>
+                  <value value="22"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </location>
+            </PractitionerRole>
+          </resource>
+        </entry>
+      </Bundle>
+    </resource>
+  </parameter>
+</Parameters>

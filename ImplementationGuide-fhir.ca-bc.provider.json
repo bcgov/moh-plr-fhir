@@ -10,7 +10,7 @@
   "name" : "BCProviderRegistry",
   "title" : "BC Provider Location Registry FHIR Implementation Guide",
   "status" : "draft",
-  "date" : "2023-04-19T20:43:06+00:00",
+  "date" : "2023-04-19T22:41:00+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -1613,6 +1613,19 @@
         "valueString" : "Parameters"
       }],
       "reference" : {
+        "reference" : "Parameters/Example-Request-Add-Location"
+      },
+      "name" : "Example-Request-Add-Location",
+      "description" : "Example Parameters to add an Location (aka Facility).",
+      "exampleBoolean" : true,
+      "groupingId" : "OperationsRequestExamples"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
         "reference" : "Parameters/Example-Request-Add-Organization"
       },
       "name" : "Example-Request-Add-Organization",
@@ -1669,6 +1682,19 @@
       },
       "name" : "Example-Request-Update-License-Practitioner",
       "description" : "Example Parameters to update the license of an Individual Provider.",
+      "exampleBoolean" : true,
+      "groupingId" : "OperationsRequestExamples"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/Example-Request-Update-Location"
+      },
+      "name" : "Example-Request-Update-Location",
+      "description" : "Example Parameters to update a Location (aka Facility).",
       "exampleBoolean" : true,
       "groupingId" : "OperationsRequestExamples"
     },
@@ -1781,6 +1807,18 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
+        "reference" : "Bundle/Example-UpdateLocationWithLinks-Bundle"
+      },
+      "name" : "Example-UpdateLocationWithLinks-Bundle",
+      "description" : "An example of bundle that is updating a location.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
         "reference" : "Bundle/Example-UpdateOrganization-Bundle"
       },
       "name" : "Example-UpdateOrganization-Bundle",
@@ -1845,6 +1883,18 @@
       },
       "name" : "Example-Atomic-Location",
       "description" : "Example of a Location.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Location"
+      }],
+      "reference" : {
+        "reference" : "Location/IFC.00147422.BC.PRS"
+      },
+      "name" : "Example-Location-For-Update",
+      "description" : "Example of a Location for update.",
       "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"
     },
     {
@@ -2062,6 +2112,42 @@
       "name" : "Example-PractitionerRole-1-Role-Update",
       "description" : "Example of the PractitionerRole with Speciality.",
       "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PractitionerRole"
+      }],
+      "reference" : {
+        "reference" : "PractitionerRole/RELN.1125.PRS"
+      },
+      "name" : "Example-PractitionerRole-Loc3-U",
+      "description" : "Example of the PractitionerRole for Practitioner to Location relationship.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OrganizationAffiliation"
+      }],
+      "reference" : {
+        "reference" : "OrganizationAffiliation/RELN.1142.PRS"
+      },
+      "name" : "Example-OrganizationAffiliation-Loc2-U",
+      "description" : "Example of the OrganizationAffiliation for Organization to Location relationship.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OrganizationAffiliation"
+      }],
+      "reference" : {
+        "reference" : "OrganizationAffiliation/RELN.1182.PRS"
+      },
+      "name" : "Example-OrganizationAffiliation-Loc1-U",
+      "description" : "Example of the OrganizationAffiliation for Organization to Location relationship.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"
     },
     {
       "extension" : [{

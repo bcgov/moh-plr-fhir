@@ -6,8 +6,15 @@
     <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"/>
   </meta>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Location</b><a name="Example-Location-For-Add"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Location &quot;Example-Location-For-Add&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-location.html">BCLocation</a></p></div><p><b>BC Facility Mailing Address Extension</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p><p><b>identifier</b>: id: 22 (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href="ftp://someftp.com">ftp://someftp.com</a></p></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Location</b><a name="Example-Location-For-Add"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Location &quot;Example-Location-For-Add&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-location.html">BCLocation</a></p></div><blockquote><p><b>BC Facility Details Extension</b></p><blockquote><p><b>url</b></p><a href="StructureDefinition-bc-period-extension.html">BC Valid Period Extension</a></blockquote><p><b>value</b>: 2000-01-01 --&gt; (ongoing)</p></blockquote><p><b>BC Facility Mailing Address Extension</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p><p><b>identifier</b>: id: 22 (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>alias</b>: Long name or alias or description</p><p><b>telecom</b>: fax: 55555555551</p><p><b>physicalType</b>: Building <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-location-physical-type.html">Location type</a>#bu)</span></p></div>
   </text>
+  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension">
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+      <valuePeriod>
+        <start value="2000-01-01"/>
+      </valuePeriod>
+    </extension>
+  </extension>
   <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension">
     <valueAddress>
       <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
@@ -43,12 +50,13 @@
       </valuePeriod>
     </extension>
   </name>
+  <alias value="Long name or alias or description"/>
   <telecom>
     <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
       <valueCodeableConcept>
         <coding>
           <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
-          <code value="BC"/>
+          <code value="FC"/>
         </coding>
       </valueCodeableConcept>
     </extension>
@@ -58,34 +66,10 @@
       <start value="1982-03-04T00:00:00-07:00"/>
     </period>
   </telecom>
-  <telecom>
-    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
-      <valueCodeableConcept>
-        <coding>
-          <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
-          <code value="HC"/>
-        </coding>
-      </valueCodeableConcept>
-    </extension>
-    <system value="fax"/>
-    <value value="55555555555"/>
-    <period>
-      <start value="1981-04-04T00:00:00-07:00"/>
-    </period>
-  </telecom>
-  <telecom>
-    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
-      <valueCodeableConcept>
-        <coding>
-          <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
-          <code value="MC"/>
-        </coding>
-      </valueCodeableConcept>
-    </extension>
-    <system value="url"/>
-    <value value="ftp://someftp.com"/>
-    <period>
-      <start value="1991-01-01T00:00:00-07:00"/>
-    </period>
-  </telecom>
+  <physicalType>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/location-physical-type"/>
+      <code value="bu"/>
+    </coding>
+  </physicalType>
 </Location>

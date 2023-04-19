@@ -494,6 +494,15 @@
             "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"]
           },
           "extension" : [{
+            "extension" : [{
+              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+              "valuePeriod" : {
+                "start" : "2000-01-01"
+              }
+            }],
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension"
+          },
+          {
             "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension",
             "valueAddress" : {
               "extension" : [{
@@ -532,13 +541,14 @@
               }
             }]
           },
+          "alias" : ["Long name or alias or description"],
           "telecom" : [{
             "extension" : [{
               "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
               "valueCodeableConcept" : {
                 "coding" : [{
                   "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
-                  "code" : "BC"
+                  "code" : "FC"
                 }]
               }
             }],
@@ -547,39 +557,13 @@
             "period" : {
               "start" : "1982-03-04T00:00:00-07:00"
             }
-          },
-          {
-            "extension" : [{
-              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
-              "valueCodeableConcept" : {
-                "coding" : [{
-                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
-                  "code" : "HC"
-                }]
-              }
-            }],
-            "system" : "fax",
-            "value" : "55555555555",
-            "period" : {
-              "start" : "1981-04-04T00:00:00-07:00"
-            }
-          },
-          {
-            "extension" : [{
-              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
-              "valueCodeableConcept" : {
-                "coding" : [{
-                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
-                  "code" : "MC"
-                }]
-              }
-            }],
-            "system" : "url",
-            "value" : "ftp://someftp.com",
-            "period" : {
-              "start" : "1991-01-01T00:00:00-07:00"
-            }
-          }]
+          }],
+          "physicalType" : {
+            "coding" : [{
+              "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code" : "bu"
+            }]
+          }
         }
       }]
     },
