@@ -489,19 +489,36 @@
         "fullUrl" : "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2",
         "resource" : {
           "resourceType" : "Location",
-          "id" : "IFC.00147422.BC.PRS",
+          "id" : "Example-Location-For-Add",
           "meta" : {
             "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"]
           },
           "extension" : [{
-            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension",
-            "valueCodeableConcept" : {
-              "text" : "Langford/Highlands"
+            "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension",
+            "valueAddress" : {
+              "extension" : [{
+                "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+                "valueCodeableConcept" : {
+                  "coding" : [{
+                    "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+                    "code" : "FC"
+                  }]
+                }
+              }],
+              "type" : "physical",
+              "line" : ["1000 DOUGLAS ST"],
+              "city" : "VICTORIA",
+              "state" : "BC",
+              "postalCode" : "V6P7B8",
+              "country" : "CA",
+              "period" : {
+                "start" : "2000-01-01"
+              }
             }
           }],
           "identifier" : [{
-            "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC",
-            "value" : "IFC.00047422.BC.PRS",
+            "system" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID",
+            "value" : "22",
             "period" : {
               "start" : "2000-01-01"
             }
@@ -562,36 +579,7 @@
             "period" : {
               "start" : "1991-01-01T00:00:00-07:00"
             }
-          }],
-          "address" : {
-            "extension" : [{
-              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
-              "valueCodeableConcept" : {
-                "coding" : [{
-                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
-                  "code" : "BC"
-                }]
-              }
-            },
-            {
-              "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension",
-              "valueCodeableConcept" : {
-                "coding" : [{
-                  "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system",
-                  "code" : "V"
-                }]
-              }
-            }],
-            "type" : "postal",
-            "line" : ["1000 DOUGLAS ST"],
-            "city" : "VICTORIA",
-            "state" : "BC",
-            "postalCode" : "V6P7B8",
-            "country" : "CA",
-            "period" : {
-              "start" : "2000-01-01"
-            }
-          }
+          }]
         }
       }]
     },

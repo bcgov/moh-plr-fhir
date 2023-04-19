@@ -19,18 +19,18 @@
      fhir:fullUrl [ fhir:v "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"^^xsd:anyURI ] ;
      fhir:resource ( <urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2> )
   ] [
-     fhir:fullUrl [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.182.PRS"^^xsd:anyURI ] ;
-     fhir:resource ( <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.182.PRS> )
+     fhir:fullUrl [ fhir:v "162587c8-eb05-40be-a3a2-ca16d52f73b3"^^xsd:anyURI ] ;
+     fhir:resource ( <162587c8-eb05-40be-a3a2-ca16d52f73b3> )
   ] [
-     fhir:fullUrl [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.142.PRS"^^xsd:anyURI ] ;
-     fhir:resource ( <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.142.PRS> )
+     fhir:fullUrl [ fhir:v "809e0074-ded0-11ed-b5ea-0242ac120002"^^xsd:anyURI ] ;
+     fhir:resource ( <809e0074-ded0-11ed-b5ea-0242ac120002> )
   ] [
-     fhir:fullUrl [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS"^^xsd:anyURI ] ;
-     fhir:resource ( <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS> )
+     fhir:fullUrl [ fhir:v "ef046dcc-7ebe-401b-b44e-594ed21bed81"^^xsd:anyURI ] ;
+     fhir:resource ( <ef046dcc-7ebe-401b-b44e-594ed21bed81> )
   ] ) . # 
 
 <urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2> a fhir:Location ;
-  fhir:id [ fhir:v "IFC.00147422.BC.PRS"] ; # 
+  fhir:id [ fhir:v "Example-Location-For-Add"] ; # 
   fhir:meta [
      fhir:profile ( [
        fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"^^xsd:anyURI ;
@@ -39,18 +39,36 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Location</b><a name=\"IFC.00147422.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Location &quot;IFC.00147422.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-location.html\">BCLocation</a></p></div><p><b>BC Facility Community Health Service Area Extension</b>: Langford/Highlands <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>identifier</b>: id: IFC.00047422.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href=\"ftp://someftp.com\">ftp://someftp.com</a></p><p><b>address</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Location</b><a name=\"Example-Location-For-Add\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Location &quot;Example-Location-For-Add&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-location.html\">BCLocation</a></p></div><p><b>BC Facility Mailing Address Extension</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p><p><b>identifier</b>: id: 22 (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href=\"ftp://someftp.com\">ftp://someftp.com</a></p></div>"
   ] ; # 
   fhir:extension ( [
-     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension"^^xsd:anyURI ] ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension"^^xsd:anyURI ] ;
      fhir:value [
-       a fhir:CodeableConcept ;
-       fhir:text [ fhir:v "Langford/Highlands" ]
+       a fhir:Address ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "FC" ]
+           ] )
+         ]
+       ] ) ;
+       fhir:type [ fhir:v "physical" ] ;
+       fhir:line ( [ fhir:v "1000 DOUGLAS ST" ] ) ;
+       fhir:city [ fhir:v "VICTORIA" ] ;
+       fhir:state [ fhir:v "BC" ] ;
+       fhir:postalCode [ fhir:v "V6P7B8" ] ;
+       fhir:country [ fhir:v "CA" ] ;
+       fhir:period [
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+       ]
      ]
   ] ) ; # 
   fhir:identifier ( [
-     fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "IFC.00047422.BC.PRS" ] ;
+     fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "22" ] ;
      fhir:period [
        fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
      ]
@@ -113,40 +131,10 @@
      fhir:period [
        fhir:start [ fhir:v "1991-01-01T00:00:00-07:00"^^xsd:dateTime ]
      ]
-  ] ) ; # 
-  fhir:address [
-     fhir:extension ( [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
-       fhir:value [
-         a fhir:CodeableConcept ;
-         fhir:coding ( [
-           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
-           fhir:code [ fhir:v "BC" ]
-         ] )
-       ]
-     ] [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension"^^xsd:anyURI ] ;
-       fhir:value [
-         a fhir:CodeableConcept ;
-         fhir:coding ( [
-           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system"^^xsd:anyURI ] ;
-           fhir:code [ fhir:v "V" ]
-         ] )
-       ]
-     ] ) ;
-     fhir:type [ fhir:v "postal" ] ;
-     fhir:line ( [ fhir:v "1000 DOUGLAS ST" ] ) ;
-     fhir:city [ fhir:v "VICTORIA" ] ;
-     fhir:state [ fhir:v "BC" ] ;
-     fhir:postalCode [ fhir:v "V6P7B8" ] ;
-     fhir:country [ fhir:v "CA" ] ;
-     fhir:period [
-       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
-     ]
-  ] . # 
+  ] ) . # 
 
-<https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.182.PRS> a fhir:OrganizationAffiliation ;
-  fhir:id [ fhir:v "RELN.182.PRS"] ; # 
+<162587c8-eb05-40be-a3a2-ca16d52f73b3> a fhir:OrganizationAffiliation ;
+  fhir:id [ fhir:v "Example-OrganizationAffiliation-Loc1"] ; # 
   fhir:meta [
      fhir:profile ( [
        fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
@@ -155,24 +143,15 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"RELN.182.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;RELN.182.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: operatesfrom <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code-system#operatesfrom)</span></p><p><b>location</b>: <span/></p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"Example-OrganizationAffiliation-Loc1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;Example-OrganizationAffiliation-Loc1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: OPERATES <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code-system#OPERATES)</span></p><p><b>location</b>: <span/></p></div>"
   ] ; # 
   fhir:period [
      fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
   ] ; # 
   fhir:organization [
      fhir:identifier [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:Identifier ;
-           fhir:assigner [
-             fhir:display [ fhir:v "MOH" ]
-           ]
-         ]
-       ] ) ;
        fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "IPC.00147434.BC.PRS" ] ;
+       fhir:value [ fhir:v "IPC.70007000.PRS.BC" ] ;
        fhir:period [
          fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]
@@ -181,21 +160,21 @@
   fhir:code ( [
      fhir:coding ( [
        fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "operatesfrom" ]
+       fhir:code [ fhir:v "OPERATES" ]
      ] )
   ] ) ; # 
   fhir:location ( [
      fhir:identifier [
-       fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "IFC.00047422.BC.PRS" ] ;
+       fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "22" ] ;
        fhir:period [
          fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]
      ]
   ] ) . # 
 
-<https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.142.PRS> a fhir:OrganizationAffiliation ;
-  fhir:id [ fhir:v "RELN.142.PRS"] ; # 
+<809e0074-ded0-11ed-b5ea-0242ac120002> a fhir:OrganizationAffiliation ;
+  fhir:id [ fhir:v "Example-OrganizationAffiliation-Loc2"] ; # 
   fhir:meta [
      fhir:profile ( [
        fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
@@ -204,24 +183,15 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"RELN.142.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;RELN.142.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: operatesfrom <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code-system#operatesfrom)</span></p><p><b>location</b>: <span/></p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: OrganizationAffiliation</b><a name=\"Example-OrganizationAffiliation-Loc2\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource OrganizationAffiliation &quot;Example-OrganizationAffiliation-Loc2&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: OWNS <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code-system#OWNS)</span></p><p><b>location</b>: <span/></p></div>"
   ] ; # 
   fhir:period [
      fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
   ] ; # 
   fhir:organization [
      fhir:identifier [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:Identifier ;
-           fhir:assigner [
-             fhir:display [ fhir:v "MOH" ]
-           ]
-         ]
-       ] ) ;
        fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "IPC.00147437.BC.PRS" ] ;
+       fhir:value [ fhir:v "IPC.90009000.PRS.BC" ] ;
        fhir:period [
          fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]
@@ -230,21 +200,21 @@
   fhir:code ( [
      fhir:coding ( [
        fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "operatesfrom" ]
+       fhir:code [ fhir:v "OWNS" ]
      ] )
   ] ) ; # 
   fhir:location ( [
      fhir:identifier [
-       fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "IFC.00047422.BC.PRS" ] ;
+       fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "22" ] ;
        fhir:period [
          fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]
      ]
   ] ) . # 
 
-<https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS> a fhir:PractitionerRole ;
-  fhir:id [ fhir:v "RELN.125.PRS"] ; # 
+<ef046dcc-7ebe-401b-b44e-594ed21bed81> a fhir:PractitionerRole ;
+  fhir:id [ fhir:v "Example-PractitionerRole-Loc3"] ; # 
   fhir:meta [
      fhir:profile ( [
        fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
@@ -253,7 +223,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"RELN.125.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;RELN.125.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-role-relationships.html\">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Location Type Extension.</b>: WORKSAT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code-system#WORKSAT)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span/></p><p><b>location</b>: <span/></p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"Example-PractitionerRole-Loc3\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;Example-PractitionerRole-Loc3&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-role-relationships.html\">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Location Type Extension.</b>: PRACTICES_AT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-location-relationship-type-code-system#PRACTICES_AT)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span/></p><p><b>location</b>: <span/></p></div>"
   ] ; # 
   fhir:extension ( [
      fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension"^^xsd:anyURI ] ;
@@ -261,7 +231,7 @@
        a fhir:CodeableConcept ;
        fhir:coding ( [
          fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "WORKSAT" ]
+         fhir:code [ fhir:v "PRACTICES_AT" ]
        ] )
      ]
   ] ) ; # 
@@ -271,7 +241,7 @@
   fhir:practitioner [
      fhir:identifier [
        fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "IPC.00147422.BC.PRS" ] ;
+       fhir:value [ fhir:v "IPC.80008000.PRS.BC" ] ;
        fhir:period [
          fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]
@@ -279,8 +249,8 @@
   ] ; # 
   fhir:location ( [
      fhir:identifier [
-       fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "IFC.00047422.BC.PRS" ] ;
+       fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "22" ] ;
        fhir:period [
          fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
        ]

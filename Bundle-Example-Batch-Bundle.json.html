@@ -881,7 +881,7 @@
             "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2",
             "<a href="http://hl7.org/fhir/R4/location.html#Location">resource</a>" : {
               "<a href="http://hl7.org/fhir/R4/location.html">resourceType</a>" : "Location",
-              "<a href="http://hl7.org/fhir/R4/location.html#Location.id">id</a>" : "IFC.00147422.BC.PRS",
+              "<a href="http://hl7.org/fhir/R4/location.html#Location.id">id</a>" : "Example-Location-For-Add",
               "<a href="http://hl7.org/fhir/R4/location.html#Location.meta">meta</a>" : {
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
                   "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"
@@ -889,16 +889,39 @@
               },
               "<a href="http://hl7.org/fhir/R4/location.html#Location.extension">extension</a>" : [
                 {
-                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension",
-                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "Langford/Highlands"
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueAddress</a>" : {
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.extension">extension</a>" : [
+                      {
+                        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+                        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
+                          "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+                              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "FC"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.type">type</a>" : "physical",
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.line">line</a>" : [
+                      "1000 DOUGLAS ST"
+                    ],
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.city">city</a>" : "VICTORIA",
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.state">state</a>" : "BC",
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.postalCode">postalCode</a>" : "V6P7B8",
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.country">country</a>" : "CA",
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.period">period</a>" : {
+                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
+                    }
                   }
                 }
               ],
               "<a href="http://hl7.org/fhir/R4/location.html#Location.identifier">identifier</a>" : [
                 {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "IFC.00047422.BC.PRS",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "22",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>" : {
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
                   }
@@ -976,44 +999,7 @@
                     "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "1991-01-01T00:00:00-07:00"
                   }
                 }
-              ],
-              "<a href="http://hl7.org/fhir/R4/location.html#Location.address">address</a>" : {
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.extension">extension</a>" : [
-                  {
-                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
-                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
-                      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                        {
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "BC"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension",
-                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
-                      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                        {
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system",
-                          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "V"
-                        }
-                      ]
-                    }
-                  }
-                ],
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.type">type</a>" : "postal",
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.line">line</a>" : [
-                  "1000 DOUGLAS ST"
-                ],
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.city">city</a>" : "VICTORIA",
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.state">state</a>" : "BC",
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.postalCode">postalCode</a>" : "V6P7B8",
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.country">country</a>" : "CA",
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.period">period</a>" : {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2000-01-01"
-                }
-              }
+              ]
             }
           }
         ]
@@ -1054,7 +1040,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 18, 2023 21:17+0000">2023-04-18</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 19, 2023 20:43+0000">2023-04-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

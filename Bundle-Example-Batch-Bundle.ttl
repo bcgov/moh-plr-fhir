@@ -520,7 +520,7 @@
   ] ) . # 
 
 <urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2> a fhir:Location ;
-  fhir:id [ fhir:v "IFC.00147422.BC.PRS"] ; # 
+  fhir:id [ fhir:v "Example-Location-For-Add"] ; # 
   fhir:meta [
      fhir:profile ( [
        fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"^^xsd:anyURI ;
@@ -528,15 +528,33 @@
      ] )
   ] ; # 
   fhir:extension ( [
-     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension"^^xsd:anyURI ] ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension"^^xsd:anyURI ] ;
      fhir:value [
-       a fhir:CodeableConcept ;
-       fhir:text [ fhir:v "Langford/Highlands" ]
+       a fhir:Address ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "FC" ]
+           ] )
+         ]
+       ] ) ;
+       fhir:type [ fhir:v "physical" ] ;
+       fhir:line ( [ fhir:v "1000 DOUGLAS ST" ] ) ;
+       fhir:city [ fhir:v "VICTORIA" ] ;
+       fhir:state [ fhir:v "BC" ] ;
+       fhir:postalCode [ fhir:v "V6P7B8" ] ;
+       fhir:country [ fhir:v "CA" ] ;
+       fhir:period [
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+       ]
      ]
   ] ) ; # 
   fhir:identifier ( [
-     fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "IFC.00047422.BC.PRS" ] ;
+     fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "22" ] ;
      fhir:period [
        fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
      ]
@@ -599,37 +617,7 @@
      fhir:period [
        fhir:start [ fhir:v "1991-01-01T00:00:00-07:00"^^xsd:dateTime ]
      ]
-  ] ) ; # 
-  fhir:address [
-     fhir:extension ( [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
-       fhir:value [
-         a fhir:CodeableConcept ;
-         fhir:coding ( [
-           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
-           fhir:code [ fhir:v "BC" ]
-         ] )
-       ]
-     ] [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension"^^xsd:anyURI ] ;
-       fhir:value [
-         a fhir:CodeableConcept ;
-         fhir:coding ( [
-           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system"^^xsd:anyURI ] ;
-           fhir:code [ fhir:v "V" ]
-         ] )
-       ]
-     ] ) ;
-     fhir:type [ fhir:v "postal" ] ;
-     fhir:line ( [ fhir:v "1000 DOUGLAS ST" ] ) ;
-     fhir:city [ fhir:v "VICTORIA" ] ;
-     fhir:state [ fhir:v "BC" ] ;
-     fhir:postalCode [ fhir:v "V6P7B8" ] ;
-     fhir:country [ fhir:v "CA" ] ;
-     fhir:period [
-       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
-     ]
-  ] . # 
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

@@ -10,21 +10,37 @@
     <fullUrl value="urn:uuid:18734433-5c7b-42c8-ade5-22bd2c82e4f2"/>
     <resource>
       <Location>
-        <id value="IFC.00147422.BC.PRS"/>
+        <id value="Example-Location-For-Add"/>
         <meta>
           <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"/>
         </meta>
         <text>
-          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Location</b><a name="IFC.00147422.BC.PRS"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Location &quot;IFC.00147422.BC.PRS&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-location.html">BCLocation</a></p></div><p><b>BC Facility Community Health Service Area Extension</b>: Langford/Highlands <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>identifier</b>: id: IFC.00047422.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href="ftp://someftp.com">ftp://someftp.com</a></p><p><b>address</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p></div>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Location</b><a name="Example-Location-For-Add"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Location &quot;Example-Location-For-Add&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-location.html">BCLocation</a></p></div><p><b>BC Facility Mailing Address Extension</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p><p><b>identifier</b>: id: 22 (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href="ftp://someftp.com">ftp://someftp.com</a></p></div>
         </text>
-        <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension">
-          <valueCodeableConcept>
-            <text value="Langford/Highlands"/>
-          </valueCodeableConcept>
+        <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension">
+          <valueAddress>
+            <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
+                  <code value="FC"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <type value="physical"/>
+            <line value="1000 DOUGLAS ST"/>
+            <city value="VICTORIA"/>
+            <state value="BC"/>
+            <postalCode value="V6P7B8"/>
+            <country value="CA"/>
+            <period>
+              <start value="2000-01-01"/>
+            </period>
+          </valueAddress>
         </extension>
         <identifier>
-          <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC"/>
-          <value value="IFC.00047422.BC.PRS"/>
+          <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"/>
+          <value value="22"/>
           <period>
             <start value="2000-01-01"/>
           </period>
@@ -81,61 +97,27 @@
             <start value="1991-01-01T00:00:00-07:00"/>
           </period>
         </telecom>
-        <address>
-          <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
-            <valueCodeableConcept>
-              <coding>
-                <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
-                <code value="BC"/>
-              </coding>
-            </valueCodeableConcept>
-          </extension>
-          <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension">
-            <valueCodeableConcept>
-              <coding>
-                <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system"/>
-                <code value="V"/>
-              </coding>
-            </valueCodeableConcept>
-          </extension>
-          <type value="postal"/>
-          <line value="1000 DOUGLAS ST"/>
-          <city value="VICTORIA"/>
-          <state value="BC"/>
-          <postalCode value="V6P7B8"/>
-          <country value="CA"/>
-          <period>
-            <start value="2000-01-01"/>
-          </period>
-        </address>
       </Location>
     </resource>
   </entry>
   <entry>
-    <fullUrl value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.182.PRS"/>
+    <fullUrl value="162587c8-eb05-40be-a3a2-ca16d52f73b3"/>
     <resource>
       <OrganizationAffiliation>
-        <id value="RELN.182.PRS"/>
+        <id value="Example-OrganizationAffiliation-Loc1"/>
         <meta>
           <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: OrganizationAffiliation</b><a name="RELN.182.PRS"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource OrganizationAffiliation &quot;RELN.182.PRS&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization-affiliation.html">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: operatesfrom <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (bc-location-relationship-type-code-system#operatesfrom)</span></p><p><b>location</b>: <span/></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: OrganizationAffiliation</b><a name="Example-OrganizationAffiliation-Loc1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource OrganizationAffiliation &quot;Example-OrganizationAffiliation-Loc1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization-affiliation.html">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: OPERATES <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (bc-location-relationship-type-code-system#OPERATES)</span></p><p><b>location</b>: <span/></p></div>
         </text>
         <period>
           <start value="2000-01-01"/>
         </period>
         <organization>
           <identifier>
-            <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
-              <valueIdentifier>
-                <assigner>
-                  <display value="MOH"/>
-                </assigner>
-              </valueIdentifier>
-            </extension>
             <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-            <value value="IPC.00147434.BC.PRS"/>
+            <value value="IPC.70007000.PRS.BC"/>
             <period>
               <start value="2000-01-01"/>
             </period>
@@ -144,13 +126,13 @@
         <code>
           <coding>
             <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"/>
-            <code value="operatesfrom"/>
+            <code value="OPERATES"/>
           </coding>
         </code>
         <location>
           <identifier>
-            <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC"/>
-            <value value="IFC.00047422.BC.PRS"/>
+            <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"/>
+            <value value="22"/>
             <period>
               <start value="2000-01-01"/>
             </period>
@@ -160,30 +142,23 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.142.PRS"/>
+    <fullUrl value="809e0074-ded0-11ed-b5ea-0242ac120002"/>
     <resource>
       <OrganizationAffiliation>
-        <id value="RELN.142.PRS"/>
+        <id value="Example-OrganizationAffiliation-Loc2"/>
         <meta>
           <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: OrganizationAffiliation</b><a name="RELN.142.PRS"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource OrganizationAffiliation &quot;RELN.142.PRS&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization-affiliation.html">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: operatesfrom <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (bc-location-relationship-type-code-system#operatesfrom)</span></p><p><b>location</b>: <span/></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: OrganizationAffiliation</b><a name="Example-OrganizationAffiliation-Loc2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource OrganizationAffiliation &quot;Example-OrganizationAffiliation-Loc2&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization-affiliation.html">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: <span/></p><p><b>code</b>: OWNS <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (bc-location-relationship-type-code-system#OWNS)</span></p><p><b>location</b>: <span/></p></div>
         </text>
         <period>
           <start value="2000-01-01"/>
         </period>
         <organization>
           <identifier>
-            <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
-              <valueIdentifier>
-                <assigner>
-                  <display value="MOH"/>
-                </assigner>
-              </valueIdentifier>
-            </extension>
             <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-            <value value="IPC.00147437.BC.PRS"/>
+            <value value="IPC.90009000.PRS.BC"/>
             <period>
               <start value="2000-01-01"/>
             </period>
@@ -192,13 +167,13 @@
         <code>
           <coding>
             <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"/>
-            <code value="operatesfrom"/>
+            <code value="OWNS"/>
           </coding>
         </code>
         <location>
           <identifier>
-            <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC"/>
-            <value value="IFC.00047422.BC.PRS"/>
+            <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"/>
+            <value value="22"/>
             <period>
               <start value="2000-01-01"/>
             </period>
@@ -208,21 +183,21 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS"/>
+    <fullUrl value="ef046dcc-7ebe-401b-b44e-594ed21bed81"/>
     <resource>
       <PractitionerRole>
-        <id value="RELN.125.PRS"/>
+        <id value="Example-PractitionerRole-Loc3"/>
         <meta>
           <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
         </meta>
         <text>
-          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: PractitionerRole</b><a name="RELN.125.PRS"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource PractitionerRole &quot;RELN.125.PRS&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-role-relationships.html">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Location Type Extension.</b>: WORKSAT <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (bc-location-relationship-type-code-system#WORKSAT)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span/></p><p><b>location</b>: <span/></p></div>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: PractitionerRole</b><a name="Example-PractitionerRole-Loc3"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource PractitionerRole &quot;Example-PractitionerRole-Loc3&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-role-relationships.html">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Location Type Extension.</b>: PRACTICES_AT <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (bc-location-relationship-type-code-system#PRACTICES_AT)</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: <span/></p><p><b>location</b>: <span/></p></div>
         </text>
         <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension">
           <valueCodeableConcept>
             <coding>
               <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"/>
-              <code value="WORKSAT"/>
+              <code value="PRACTICES_AT"/>
             </coding>
           </valueCodeableConcept>
         </extension>
@@ -232,7 +207,7 @@
         <practitioner>
           <identifier>
             <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IPC"/>
-            <value value="IPC.00147422.BC.PRS"/>
+            <value value="IPC.80008000.PRS.BC"/>
             <period>
               <start value="2000-01-01"/>
             </period>
@@ -240,8 +215,8 @@
         </practitioner>
         <location>
           <identifier>
-            <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/IFC"/>
-            <value value="IFC.00047422.BC.PRS"/>
+            <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID"/>
+            <value value="22"/>
             <period>
               <start value="2000-01-01"/>
             </period>
