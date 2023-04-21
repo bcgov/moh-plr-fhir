@@ -242,13 +242,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#10">Extensions</a>
       </li>
       <li>
-         <a href="#11">Structures: Data Type Profiles</a>
+         <a href="#11">Structures: Resource Profiles</a>
       </li>
       <li>
-         <a href="#12">Terminology: Value Sets</a>
+         <a href="#12">Structures: Data Type Profiles</a>
       </li>
       <li>
-         <a href="#13">Example: Example Instances</a>
+         <a href="#13">Structures: Extension Definitions</a>
+      </li>
+      <li>
+         <a href="#14">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#15">Example: Example Instances</a>
       </li>
    </ul>
 </div>
@@ -1018,6 +1024,90 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </table>
    </p>
    <a name="11"> </a>
+   <h3>Structures: Resource Profiles </h3>
+   <p>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-careteam.html"
+                     title="StructureDefinition/bc-careteam">BCCareTeam</a>
+               </td>
+               <td>
+<p>PLR Enhancement representing a collection of practitioners that provide services</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-catalogue-services.html"
+                     title="StructureDefinition/bc-catalogue-services">BCCatalogueService</a>
+               </td>
+               <td>
+<p>PLR Enhancement that describes services as they would be found in a catalogue.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-clinical-services.html"
+                     title="StructureDefinition/bc-clinical-services">BCClinicalService</a>
+               </td>
+               <td>
+<p>PLR Enhancement that describes services that a clinic provides.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-enhanced-location.html"
+                     title="StructureDefinition/bc-enhanced-location">BCEnhancedLocation</a>
+               </td>
+               <td>
+<p>PLR Enhancement to the Location resource</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-enhanced-organization.html"
+                     title="StructureDefinition/bc-enhanced-organization">BCEnhancedOrganization</a>
+               </td>
+               <td>
+<p>PLR Enhancement to the Organization resource</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-enhanced-practitioner.html"
+                     title="StructureDefinition/bc-enhanced-practitioner">BCEnhancedPractitioner</a>
+               </td>
+               <td>
+<p>PLR Enhancement to the Practitioner resource</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-enhanced-practitioner-clinic.html"
+                     title="StructureDefinition/bc-enhanced-practitioner-clinic">BCEnhancedPractitionerClinic</a>
+               </td>
+               <td>
+<p>Describes the relationship between practitioners, clinics, and the locations</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-primary-network.html"
+                     title="StructureDefinition/bc-primary-network">BCPrimaryNetwork</a>
+               </td>
+               <td>
+<p>PLR Enhancement representing a primary care network of practitioners that provide services</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="12"> </a>
    <h3>Structures: Data Type Profiles </h3>
    <p>
     <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
@@ -1065,7 +1155,37 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="12"> </a>
+   <a name="13"> </a>
+   <h3>Structures: Extension Definitions </h3>
+   <p>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-enhanced-owner-name-extension.html"
+                     title="StructureDefinition/bc-enhanced-owner-name-extension">OwnerNameExtension</a>
+               </td>
+               <td>
+<p>Represents the name of the business that owns/runs the clinic.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-bc-enhanced-service-period-extension.html"
+                     title="StructureDefinition/bc-enhanced-service-period-extension">ServicePeriodExtension</a>
+               </td>
+               <td>
+<p>Represents the period that a service is available at a clinic or location</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="14"> </a>
    <h3>Terminology: Value Sets </h3>
    <p>
     <p>These define sets of codes used by systems conforming to this implementation guide.</p>
@@ -1149,7 +1269,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="13"> </a>
+   <a name="15"> </a>
    <h3>Example: Example Instances </h3>
    <p>
     <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
@@ -1842,7 +1962,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 19, 2023 22:41+0000">2023-04-19</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 21, 2023 17:23+0000">2023-04-21</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
