@@ -40,13 +40,28 @@ Description: "Represents the name of the business that owns/runs the clinic."
 * value[x] only string
 * value[x] 1..1 MS
 
-Profile: BCEnhancedOrgServices
+Profile: BCCatalogueService
 Parent: HealthcareService
-Id: bc-enhanced-org-services
+Id: bc-catalogue-services
+Description: "PLR Enhancement that describes services as they would be found in a catalogue."
+* category MS
+* name MS
+* comment MS
+* extraDetails MS
+* type 1..* MS
+* extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-HealthcareService.offeredIn named offeredIn 0..* MS
+
+
+Profile: BCClinicalService
+Parent: HealthcareService
+Id: bc-clinical-services
 Description: "PLR Enhancement that describes services that a clinic provides."
 * providedBy 1..1 MS
 * providedBy only Reference(BCEnhancedOrganization)
 * category MS
+* name MS
+* comment MS
+* extraDetails MS
 * type 1..* MS
 * coverageArea MS
 * availableTime MS
@@ -56,6 +71,7 @@ Description: "PLR Enhancement that describes services that a clinic provides."
   * availableEndTime MS
 * notAvailable MS
   * during MS
+* extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-HealthcareService.offeredIn named offeredIn 0..* MS
 
 Profile: BCEnhancedLocation
 Parent: Location
@@ -86,7 +102,7 @@ Description: "Describes the relationship between practitioners, clinics, and the
 * location MS
 * location only Reference(BCEnhancedLocation)
 * healthcareService MS
-* healthcareService only Reference(BCEnhancedOrgServices)
+* healthcareService only Reference(BCClinicalService)
   * extension contains ServicePeriodExtension named servicePeriod 0..1 MS
 
 Extension: ServicePeriodExtension
