@@ -65,3 +65,13 @@ Description: "BC specific license status class value set."
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-class-value-set"
 * ^experimental = false
 * codes from system $PLRStatusClass
+
+CodeSystem: ServiceTypeCS
+Title: "BC Service type codes"
+Id: bc-service-type-code-system
+Description: "BC Service type Codes"
+* ^caseSensitive = true
+* #catalogue "catalogue" "BC Catalogue HealthCare Service"
+* #clinical "clinical" "BC Clinical HealthCare Service"
+* ^experimental = false
+* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-service-type-code-system"
