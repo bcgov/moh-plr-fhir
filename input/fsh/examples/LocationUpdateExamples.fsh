@@ -31,7 +31,7 @@ Description: "Example of a Location for update."
 //* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"
 //* extension[=].extension[=].valueIdentifier.assigner.display = "MOH"
 * id = "IFC.00147422.BC.PRS"
-* identifier[+] = Example-Identifier-IPC-147422-U
+* identifier[+] = Example-Identifier-IFC-147422-U
 * name = "General Hospital"
 * name.extension[period].valuePeriod.start = "2000-01-01"
 * name.extension[endReason] = Example-ERC-Change
@@ -46,27 +46,22 @@ Description: "Example of a Location for update."
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension"
 * extension[=].valueAddress = Example-Address-Fac-U
 * address = Example-Address-Fac-Civic
-* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension"
-* extension[=].valueCodeableConcept.text = "Langford/Highlands"
-* physicalType.coding.code = #bu
-* physicalType.coding.system = "http://terminology.hl7.org/CodeSystem/location-physical-type"
 
-
-Instance: Example-Identifier-IPC-147422
+Instance: Example-Identifier-IFC-147422
 InstanceOf: Identifier
-Description: "Identifier example for IPC."
+Description: "Identifier example for IFC."
 Usage: #inline
-* system = $System_IPC
-* value = "IPC.00147422.BC.PRS"
+* system = $System_IFC
+* value = "IFC.00147422.BC.PRS"
 * period.start = "2000-01-01"
 
 
-Instance: Example-Identifier-IPC-147422-U
+Instance: Example-Identifier-IFC-147422-U
 InstanceOf: Identifier
-Description: "Identifier example for IPC."
+Description: "Identifier example for IFC."
 Usage: #inline
-* system = $System_IPC
-* value = "IPC.00147422.BC.PRS"
+* system = $System_IFC
+* value = "IFC.00147422.BC.PRS"
 * period.start = "2008-01-01"
 * extension[+] = Example-ERC-Change
 
@@ -108,7 +103,7 @@ Description: "Example of the OrganizationAffiliation for Organization to Locatio
 * code.coding.system = $PLRLocationRelationshipType
 * code.coding.code = #OPERATES
 * period.start = "2000-01-01"
-* location.identifier = Example-Identifier-IPC-147422
+* location.identifier = Example-Identifier-IFC-147422
 * extension[+] = Example-ERC-Change
 
 Instance: Example-OrganizationAffiliation-Loc2-U
@@ -121,7 +116,7 @@ Description: "Example of the OrganizationAffiliation for Organization to Locatio
 * code.coding.system = $PLRLocationRelationshipType
 * code.coding.code = #OWNS
 * period.start = "2000-01-01"
-* location.identifier = Example-Identifier-IPC-147422
+* location.identifier = Example-Identifier-IFC-147422
 * extension[+] = Example-ERC-Change
 
 Instance: Example-PractitionerRole-Loc3-U
@@ -132,7 +127,7 @@ Description: "Example of the PractitionerRole for Practitioner to Location relat
 * practitioner.identifier.value = "IPC.80008000.PRS.BC"
 * practitioner.identifier.period.start = "2000-01-01"
 * period.start = "2000-01-01"
-* location.identifier = Example-Identifier-IPC-147422
+* location.identifier = Example-Identifier-IFC-147422
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension"
 * extension[=].valueCodeableConcept.coding.system = $PLRLocationRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #PRACTICES_AT
