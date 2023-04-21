@@ -2,11 +2,11 @@ Profile: BCCatalogueService
 Parent: HealthcareService
 Id: bc-catalogue-service
 Description: "Definition of services for the BC services catalogue."
-* category 0..1 MS 
-* name 0..1 MS
-* comment 0..1 MS
-* extraDetails 0..1 MS
-//* category only "catalogue"
+* category MS 
+* category = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-service-type-code-system#catalogue
+* name  MS
+* comment MS
+* extraDetails MS
 * type 1..* MS
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-HealthcareService.offeredIn named offeredIn 0..* MS
 
@@ -18,7 +18,7 @@ Description: "Profile that describes services that a clinic provides. A instance
 * providedBy only Reference(BCEnhancedOrganization)
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-HealthcareService.offeredIn named offeredIn 1..* MS
 * category MS
-//* category only "clinic"
+* category = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-service-type-code-system#clinical
 * name MS
 * comment MS
 * extraDetails MS
