@@ -44,7 +44,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ",".scopingRole.Organization"
 "HealthcareService.category","HealthcareService.category","","service category
 ","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
-","Broad category of service being performed or delivered","Identifies the broad category of service being performed or delivered.","Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type.","","","","","","","","",,"example","A category of the service(s) that could be provided.","http://hl7.org/fhir/ValueSet/service-category","",,,,"HealthcareService.category",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Broad category of service being performed or delivered","Identifies the broad category of service being performed or delivered.","Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
+  <coding>
+    <system value=""https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-service-type-code-system""/>
+    <code value=""clinical""/>
+  </coding>
+</valueCodeableConcept>","","","",,"example","A category of the service(s) that could be provided.","http://hl7.org/fhir/ValueSet/service-category","",,,,"HealthcareService.category",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".code","FiveWs.class"
 "HealthcareService.type","HealthcareService.type","","service type
 ","",1,*,"Y","","Y","CodeableConcept {[]} {[]}
