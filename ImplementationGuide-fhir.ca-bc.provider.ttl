@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "BCProviderRegistry"] ; # 
   fhir:title [ fhir:v "BC Provider Location Registry FHIR Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-05-05T19:53:30+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-06-12T18:37:27+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -49,6 +49,18 @@
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
      fhir:version [ fhir:v "5.0.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7ext" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r4" ] ;
+     fhir:version [ fhir:v "1.0.0" ]
   ] [
      fhir:id [ fhir:v "hl7_fhir_ca_baseline" ] ;
      fhir:uri [
@@ -539,6 +551,400 @@
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-address-validation-status-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Address Validataion Extension" ] ;
+       fhir:description [ fhir:v "BC extension for address validation status codes." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-birthplace-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Birth Place Extension" ] ;
+       fhir:description [ fhir:v "Captures the place where a patient/practitioner/person was born." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthtime-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-birthtime-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Birth Time Extension" ] ;
+       fhir:description [ fhir:v "Adds birth time to the birth date." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-communication-purpose-code-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Communication Purpose Extension" ] ;
+       fhir:description [ fhir:v "BC extension for communication purpose codes." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-confidentiality-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-confidentiality-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Confidentiality Extension" ] ;
+       fhir:description [ fhir:v "Indicates the confidentiality of a BC provider's (practitioner or organization) information." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-end-reason-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC End Reason Extension" ] ;
+       fhir:description [ fhir:v "Tracking end reason." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-expertise-value-set> ;
+         fhir:reference [ fhir:v "ValueSet/bc-expertise-value-set" ]
+       ] ;
+       fhir:name [ fhir:v "BC Expertise Value Set" ] ;
+       fhir:description [ fhir:v "BC Expertise value set." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-facility-community-health-service-area-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Facility Community Health Service Area Extension" ] ;
+       fhir:description [ fhir:v "A code that represents the community health service area that the location is a part of." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-facility-details-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Facility Details Extension" ] ;
+       fhir:description [ fhir:v "Provides the details of a facility as represented by a FHIR location." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-facility-mailing-address-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Facility Mailing Address Extension" ] ;
+       fhir:description [ fhir:v "An optional mailing address for the facility." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-language-value-set> ;
+         fhir:reference [ fhir:v "ValueSet/bc-language-value-set" ]
+       ] ;
+       fhir:name [ fhir:v "BC Language Value Set" ] ;
+       fhir:description [ fhir:v "BC Language value set." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-license-status-class-value-set> ;
+         fhir:reference [ fhir:v "ValueSet/bc-license-status-class-value-set" ]
+       ] ;
+       fhir:name [ fhir:v "BC License Status Class Value Set" ] ;
+       fhir:description [ fhir:v "BC specific license status class value set." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-license-status-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC License Status Extension" ] ;
+       fhir:description [ fhir:v "Tracking the status and changes to the status of a practitioner/organization license." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-license-status-reason-value-set> ;
+         fhir:reference [ fhir:v "ValueSet/bc-license-status-reason-value-set" ]
+       ] ;
+       fhir:name [ fhir:v "BC License Status Reason Value Set" ] ;
+       fhir:description [ fhir:v "BC specific license status reason value set." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-license-status-value-set> ;
+         fhir:reference [ fhir:v "ValueSet/bc-license-status-value-set" ]
+       ] ;
+       fhir:name [ fhir:v "BC License Status Value Set" ] ;
+       fhir:description [ fhir:v "BC specific license status value set." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-name-use-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Name Use Extension" ] ;
+       fhir:description [ fhir:v "Allows for use on a simple name string." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-note-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Notes Extension" ] ;
+       fhir:description [ fhir:v "Notes about the practitioner/location/organization." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-organization-role-value-set> ;
+         fhir:reference [ fhir:v "ValueSet/bc-organization-role-value-set" ]
+       ] ;
+       fhir:name [ fhir:v "BC Organization Role Code Value Set" ] ;
+       fhir:description [ fhir:v "BC Organization Role Codes." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-owner-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Owner Extension" ] ;
+       fhir:description [ fhir:v "Tracking the owner." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-condition-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-practitioner-condition-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Practitioner Conditions Extension" ] ;
+       fhir:description [ fhir:v "Conditions on the provider's role" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-deathdate-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-practitioner-deathdate-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Practitioner Date of Death Extension" ] ;
+       fhir:description [ fhir:v "The Date of Death of a Practitioner." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-practitioner-disciplinary-action-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Practitioner Disciplinary Actions Extension" ] ;
+       fhir:description [ fhir:v "Provides details of disciplinary actions against the provider." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-qualification-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-practitioner-qualification-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Practitioner Qualification Extension" ] ;
+       fhir:description [ fhir:v "The qualifications extensions." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-qualification-value-set> ;
+         fhir:reference [ fhir:v "ValueSet/bc-qualification-value-set" ]
+       ] ;
+       fhir:name [ fhir:v "BC Practitioner Qualification Value Set" ] ;
+       fhir:description [ fhir:v "BC specific qualification value set." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-practitioner-role-value-set> ;
+         fhir:reference [ fhir:v "ValueSet/bc-practitioner-role-value-set" ]
+       ] ;
+       fhir:name [ fhir:v "BC Practitioner Role Code Value Set" ] ;
+       fhir:description [ fhir:v "BC Practitioner Role Codes." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-location-relationship-type-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Practitioner to Location Type Extension." ] ;
+       fhir:description [ fhir:v "The relationship type of a Practitioner to Location relationship." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-relationship-type-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Practitioner to Organization or Practitioner to Practitioner Type Extension." ] ;
+       fhir:description [ fhir:v "The relationship type of a Practitioner to Organization or Practitioner to Practitioner relationship." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-relationship-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-practitioner-relationship-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Practitioner to Practitioner Relationship Extension" ] ;
+       fhir:description [ fhir:v "Allows for relationships of practitioners to practitioners without needing CareTeam semantics." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/CodeSystem/bc-service-type-code-system> ;
+         fhir:reference [ fhir:v "CodeSystem/bc-service-type-code-system" ]
+       ] ;
+       fhir:name [ fhir:v "BC Service type codes" ] ;
+       fhir:description [ fhir:v "BC Service type Codes" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-specialty-source-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Specialty Source Extension" ] ;
+       fhir:description [ fhir:v "The specialty source." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-period-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Valid Period Extension" ] ;
+       fhir:description [ fhir:v "The period for when the extended element is valid." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:complex-type" ]
        ] ) ;
        fhir:reference [
@@ -762,6 +1168,32 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-client-capability-statement> ;
+         fhir:reference [ fhir:v "CapabilityStatement/bc-plr-client-capability-statement" ]
+       ] ;
+       fhir:name [ fhir:v "BCPLRClientCapabilityStatement" ] ;
+       fhir:description [ fhir:v "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.\n\n* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Capabilities" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-server-capability-statement> ;
+         fhir:reference [ fhir:v "CapabilityStatement/bc-plr-server-capability-statement" ]
+       ] ;
+       fhir:name [ fhir:v "BCPLRServerCapabilityStatement" ] ;
+       fhir:description [ fhir:v "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)\n\nAll POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Capabilities" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
@@ -826,421 +1258,55 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-address-validation-status-extension" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution> ;
+         fhir:reference [ fhir:v "OperationDefinition/bc-distribution" ]
        ] ;
-       fhir:name [ fhir:v "BC Address Validataion Extension" ] ;
-       fhir:description [ fhir:v "BC extension for address validation status codes." ] ;
+       fhir:name [ fhir:v "Distribution" ] ;
+       fhir:description [ fhir:v "This operation is used to distribute the resources that represent a Provider or Facility." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
+       fhir:groupingId [ fhir:v "Operations" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-birthplace-extension" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query> ;
+         fhir:reference [ fhir:v "OperationDefinition/bc-entity-location-query" ]
        ] ;
-       fhir:name [ fhir:v "BC Birth Place Extension" ] ;
-       fhir:description [ fhir:v "Captures the place where a patient/practitioner/person was born." ] ;
+       fhir:name [ fhir:v "EntityLocationQuery" ] ;
+       fhir:description [ fhir:v "This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
+       fhir:groupingId [ fhir:v "Operations" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthtime-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-birthtime-extension" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-organization-query> ;
+         fhir:reference [ fhir:v "OperationDefinition/bc-entity-organization-query" ]
        ] ;
-       fhir:name [ fhir:v "BC Birth Time Extension" ] ;
-       fhir:description [ fhir:v "Adds birth time to the birth date." ] ;
+       fhir:name [ fhir:v "EntityOrganizationQuery" ] ;
+       fhir:description [ fhir:v "This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
+       fhir:groupingId [ fhir:v "Operations" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-communication-purpose-code-extension" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-practitioner-query> ;
+         fhir:reference [ fhir:v "OperationDefinition/bc-entity-practitioner-query" ]
        ] ;
-       fhir:name [ fhir:v "BC Communication Purpose Extension" ] ;
-       fhir:description [ fhir:v "BC extension for communication purpose codes." ] ;
+       fhir:name [ fhir:v "EntityPractitionerQuery" ] ;
+       fhir:description [ fhir:v "This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-facility-community-health-service-area-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Facility Community Health Service Area Extension" ] ;
-       fhir:description [ fhir:v "A code that represents the community health service area that the location is a part of." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-confidentiality-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-confidentiality-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Confidentiality Extension" ] ;
-       fhir:description [ fhir:v "Indicates the confidentiality of a BC provider's (practitioner or organization) information." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-deathdate-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-practitioner-deathdate-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Practitioner Date of Death Extension" ] ;
-       fhir:description [ fhir:v "The Date of Death of a Practitioner." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-end-reason-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC End Reason Extension" ] ;
-       fhir:description [ fhir:v "Tracking end reason." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-facility-details-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Facility Details Extension" ] ;
-       fhir:description [ fhir:v "Provides the details of a facility as represented by a FHIR location." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-license-status-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC License Status Extension" ] ;
-       fhir:description [ fhir:v "Tracking the status and changes to the status of a practitioner/organization license." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-location-relationship-type-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Practitioner to Location Type Extension." ] ;
-       fhir:description [ fhir:v "The relationship type of a Practitioner to Location relationship." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-facility-mailing-address-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Facility Mailing Address Extension" ] ;
-       fhir:description [ fhir:v "An optional mailing address for the facility." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-name-use-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Name Use Extension" ] ;
-       fhir:description [ fhir:v "Allows for use on a simple name string." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-note-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Notes Extension" ] ;
-       fhir:description [ fhir:v "Notes about the practitioner/location/organization." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-owner-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Owner Extension" ] ;
-       fhir:description [ fhir:v "Tracking the owner." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-owner-name-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-enhanced-owner-name-extension" ]
-       ] ;
-       fhir:name [ fhir:v "OwnerNameExtension" ] ;
-       fhir:description [ fhir:v "Represents the name of the business that owns/runs the clinic." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-period-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Valid Period Extension" ] ;
-       fhir:description [ fhir:v "The period for when the extended element is valid." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-condition-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-practitioner-condition-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Practitioner Conditions Extension" ] ;
-       fhir:description [ fhir:v "Conditions on the provider's role" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-practitioner-disciplinary-action-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Practitioner Disciplinary Actions Extension" ] ;
-       fhir:description [ fhir:v "Provides details of disciplinary actions against the provider." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-qualification-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-practitioner-qualification-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Practitioner Qualification Extension" ] ;
-       fhir:description [ fhir:v "The qualifications extensions." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-relationship-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-practitioner-relationship-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Practitioner to Practitioner Relationship Extension" ] ;
-       fhir:description [ fhir:v "Allows for relationships of practitioners to practitioners without needing CareTeam semantics." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-relationship-type-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Practitioner to Organization or Practitioner to Practitioner Type Extension." ] ;
-       fhir:description [ fhir:v "The relationship type of a Practitioner to Organization or Practitioner to Practitioner relationship." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-service-period-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-enhanced-service-period-extension" ]
-       ] ;
-       fhir:name [ fhir:v "ServicePeriodExtension" ] ;
-       fhir:description [ fhir:v "Represents the period that a service is available at a clinic or location" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-specialty-source-extension" ]
-       ] ;
-       fhir:name [ fhir:v "BC Specialty Source Extension" ] ;
-       fhir:description [ fhir:v "The specialty source." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Extensions" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-expertise-value-set> ;
-         fhir:reference [ fhir:v "ValueSet/bc-expertise-value-set" ]
-       ] ;
-       fhir:name [ fhir:v "BC Expertise Value Set" ] ;
-       fhir:description [ fhir:v "BC Expertise value set." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-language-value-set> ;
-         fhir:reference [ fhir:v "ValueSet/bc-language-value-set" ]
-       ] ;
-       fhir:name [ fhir:v "BC Language Value Set" ] ;
-       fhir:description [ fhir:v "BC Language value set." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-license-status-reason-value-set> ;
-         fhir:reference [ fhir:v "ValueSet/bc-license-status-reason-value-set" ]
-       ] ;
-       fhir:name [ fhir:v "BC License Status Reason Value Set" ] ;
-       fhir:description [ fhir:v "BC specific license status reason value set." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-license-status-class-value-set> ;
-         fhir:reference [ fhir:v "ValueSet/bc-license-status-class-value-set" ]
-       ] ;
-       fhir:name [ fhir:v "BC License Status Class Value Set" ] ;
-       fhir:description [ fhir:v "BC specific license status class value set." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-license-status-value-set> ;
-         fhir:reference [ fhir:v "ValueSet/bc-license-status-value-set" ]
-       ] ;
-       fhir:name [ fhir:v "BC License Status Value Set" ] ;
-       fhir:description [ fhir:v "BC specific license status value set." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-organization-role-value-set> ;
-         fhir:reference [ fhir:v "ValueSet/bc-organization-role-value-set" ]
-       ] ;
-       fhir:name [ fhir:v "BC Organization Role Code Value Set" ] ;
-       fhir:description [ fhir:v "BC Organization Role Codes." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-qualification-value-set> ;
-         fhir:reference [ fhir:v "ValueSet/bc-qualification-value-set" ]
-       ] ;
-       fhir:name [ fhir:v "BC Practitioner Qualification Value Set" ] ;
-       fhir:description [ fhir:v "BC specific qualification value set." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-practitioner-role-value-set> ;
-         fhir:reference [ fhir:v "ValueSet/bc-practitioner-role-value-set" ]
-       ] ;
-       fhir:name [ fhir:v "BC Practitioner Role Code Value Set" ] ;
-       fhir:description [ fhir:v "BC Practitioner Role Codes." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/CodeSystem/bc-service-type-code-system> ;
-         fhir:reference [ fhir:v "CodeSystem/bc-service-type-code-system" ]
-       ] ;
-       fhir:name [ fhir:v "BC Service type codes" ] ;
-       fhir:description [ fhir:v "BC Service type Codes" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:groupingId [ fhir:v "Operations" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1333,6 +1399,141 @@
        fhir:example [
          fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00187833.BC.PRS> ;
+         fhir:reference [ fhir:v "Practitioner/IPC.00187833.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Another-Atomic-Practitioner" ] ;
+       fhir:description [ fhir:v "Example of another generic Practitioner." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Location" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Location/IFC.00047422.BC.PRS> ;
+         fhir:reference [ fhir:v "Location/IFC.00047422.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Atomic-Location" ] ;
+       fhir:description [ fhir:v "Example of a Location." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Organization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Organization/IPC.00047422.BC.PRS> ;
+         fhir:reference [ fhir:v "Organization/IPC.00047422.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Atomic-Organization" ] ;
+       fhir:description [ fhir:v "Example of an Organization." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OrganizationAffiliation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.26.PRS> ;
+         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.26.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Atomic-OrganizationAffiliation-LocRef" ] ;
+       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OrganizationAffiliation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.25.PRS> ;
+         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.25.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Atomic-OrganizationAffiliation-OrgRef" ] ;
+       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Organization relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00047422.BC.PRS> ;
+         fhir:reference [ fhir:v "Practitioner/IPC.00047422.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Atomic-Practitioner" ] ;
+       fhir:description [ fhir:v "Example of generic Practitioner." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.24.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.24.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Atomic-PractitionerRole-LocRef" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Location relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.23.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.23.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Atomic-PractitionerRole-OrgRef" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00047422.BC.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/IPC.00047422.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Atomic-PractitionerRole-RoleSpecialty" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
        ]
      ] [
        fhir:extension ( [
@@ -1443,11 +1644,11 @@
          fhir:value [ fhir:v "Bundle" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-OrganizationAffiliation-Response> ;
-         fhir:reference [ fhir:v "Bundle/Example-GET-OrganizationAffiliation-Response" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-OrganizationAffiliation-byOrganization-Response> ;
+         fhir:reference [ fhir:v "Bundle/Example-GET-OrganizationAffiliation-byOrganization-Response" ]
        ] ;
-       fhir:name [ fhir:v "Example-GET-OrganizationAffiliation-Response" ] ;
-       fhir:description [ fhir:v "Example of a response returning one OrganizationAffiliation" ] ;
+       fhir:name [ fhir:v "Example-GET-OrganizationAffiliation-byOrganization-Response" ] ;
+       fhir:description [ fhir:v "Example of a response returning list of OrganizationAffiliation" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "RestfulQueryResponse" ]
      ] [
@@ -1456,11 +1657,11 @@
          fhir:value [ fhir:v "Bundle" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-OrganizationAffiliation-byOrganization-Response> ;
-         fhir:reference [ fhir:v "Bundle/Example-GET-OrganizationAffiliation-byOrganization-Response" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-OrganizationAffiliation-Response> ;
+         fhir:reference [ fhir:v "Bundle/Example-GET-OrganizationAffiliation-Response" ]
        ] ;
-       fhir:name [ fhir:v "Example-GET-OrganizationAffiliation-byOrganization-Response" ] ;
-       fhir:description [ fhir:v "Example of a response returning list of OrganizationAffiliation" ] ;
+       fhir:name [ fhir:v "Example-GET-OrganizationAffiliation-Response" ] ;
+       fhir:description [ fhir:v "Example of a response returning one OrganizationAffiliation" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "RestfulQueryResponse" ]
      ] [
@@ -1495,11 +1696,11 @@
          fhir:value [ fhir:v "Bundle" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-PractitionerRole-Response> ;
-         fhir:reference [ fhir:v "Bundle/Example-GET-PractitionerRole-Response" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-PractitionerRole-byPractitioner-Response> ;
+         fhir:reference [ fhir:v "Bundle/Example-GET-PractitionerRole-byPractitioner-Response" ]
        ] ;
-       fhir:name [ fhir:v "Example-GET-PractitionerRole-Response" ] ;
-       fhir:description [ fhir:v "Example of a response returning one PractitionerRole" ] ;
+       fhir:name [ fhir:v "Example-GET-PractitionerRole-byPractitioner-Response" ] ;
+       fhir:description [ fhir:v "Example of a response returning all the PractitionerRole for one practitioner" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "RestfulQueryResponse" ]
      ] [
@@ -1508,11 +1709,11 @@
          fhir:value [ fhir:v "Bundle" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-PractitionerRole-byPractitioner-Response> ;
-         fhir:reference [ fhir:v "Bundle/Example-GET-PractitionerRole-byPractitioner-Response" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-PractitionerRole-Response> ;
+         fhir:reference [ fhir:v "Bundle/Example-GET-PractitionerRole-Response" ]
        ] ;
-       fhir:name [ fhir:v "Example-GET-PractitionerRole-byPractitioner-Response" ] ;
-       fhir:description [ fhir:v "Example of a response returning all the PractitionerRole for one practitioner" ] ;
+       fhir:name [ fhir:v "Example-GET-PractitionerRole-Response" ] ;
+       fhir:description [ fhir:v "Example of a response returning one PractitionerRole" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "RestfulQueryResponse" ]
      ] [
@@ -1541,6 +1742,21 @@
        ] ;
        fhir:name [ fhir:v "Example-Location-For-Add" ] ;
        fhir:description [ fhir:v "Example of a Location." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Location" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Location/IFC.00147422.BC.PRS> ;
+         fhir:reference [ fhir:v "Location/IFC.00147422.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Location-For-Update" ] ;
+       fhir:description [ fhir:v "Example of a Location for update." ] ;
        fhir:example [
          fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"^^xsd:anyURI ;
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location>
@@ -1638,6 +1854,96 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Organization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Organization/IPC.00147434.BC.PRS> ;
+         fhir:reference [ fhir:v "Organization/IPC.00147434.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Organization-1-Update" ] ;
+       fhir:description [ fhir:v "Example of an Organization." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Organization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Organization/IPC.00147437.BC.PRS> ;
+         fhir:reference [ fhir:v "Organization/IPC.00147437.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Organization-2" ] ;
+       fhir:description [ fhir:v "Example of generic Organization." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Organization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Organization/IPC.00147436.BC.PRS> ;
+         fhir:reference [ fhir:v "Organization/IPC.00147436.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Organization-Response" ] ;
+       fhir:description [ fhir:v "Example of an Organization that is being created." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OrganizationAffiliation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.132.PRS> ;
+         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.132.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-OrganizationAffiliation-2-LocRef-FromOrg" ] ;
+       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OrganizationAffiliation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.142.PRS> ;
+         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.142.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-OrganizationAffiliation-3-LocRef-FromOrg" ] ;
+       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OrganizationAffiliation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.141.PRS> ;
+         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.141.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-OrganizationAffiliation-3-OrgRef-FromOrg" ] ;
+       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Organization relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "OrganizationAffiliation" ]
        ] ) ;
        fhir:reference [
@@ -1645,6 +1951,21 @@
          fhir:reference [ fhir:v "OrganizationAffiliation/Example-OrganizationAffiliation-Loc1" ]
        ] ;
        fhir:name [ fhir:v "Example-OrganizationAffiliation-Loc1" ] ;
+       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OrganizationAffiliation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.1182.PRS> ;
+         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.1182.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-OrganizationAffiliation-Loc1-U" ] ;
        fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
        fhir:example [
          fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
@@ -1668,6 +1989,66 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OrganizationAffiliation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.1142.PRS> ;
+         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.1142.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-OrganizationAffiliation-Loc2-U" ] ;
+       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OrganizationAffiliation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.182.PRS> ;
+         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.182.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-OrganizationAffiliation-LocRef-FromOrg-2" ] ;
+       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OrganizationAffiliation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.131.PRS> ;
+         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.131.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-OrganizationAffiliation-OrgRef-FromOrg-1" ] ;
+       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Organization relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OrganizationAffiliation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.181.PRS> ;
+         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.181.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-OrganizationAffiliation-OrgRef-FromOrg-2" ] ;
+       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Organization relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Bundle" ]
        ] ) ;
        fhir:reference [
@@ -1679,6 +2060,291 @@
        fhir:example [
          fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"^^xsd:anyURI ;
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00147422.BC.PRS> ;
+         fhir:reference [ fhir:v "Practitioner/IPC.00147422.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Practitioner" ] ;
+       fhir:description [ fhir:v "Example of generic Practitioner." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00147622.BC.PRS> ;
+         fhir:reference [ fhir:v "Practitioner/IPC.00147622.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Practitioner-Response" ] ;
+       fhir:description [ fhir:v "Example of generic Practitioner response." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00147699.BC.PRS> ;
+         fhir:reference [ fhir:v "Practitioner/IPC.00147699.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Practitioner-Response-test" ] ;
+       fhir:description [ fhir:v "Example of generic Practitioner response." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00147433.BC.PRS> ;
+         fhir:reference [ fhir:v "Practitioner/IPC.00147433.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Practitioner-Update" ] ;
+       fhir:description [ fhir:v "Example Practitioner resource for updating License Status." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00763481.BC.PRS> ;
+         fhir:reference [ fhir:v "Practitioner/IPC.00763481.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Practitioner-UpdateLicense" ] ;
+       fhir:description [ fhir:v "Example Practitioner resource for updating License Status." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00147422.BC.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/IPC.00147422.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-1-Role-FromPractitioner" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00147622.BC.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/IPC.00147622.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-1-Role-FromPractitioner-Response" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00147699.BC.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/IPC.00147699.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-1-Role-FromPractitioner-Response-test" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00147633.BC.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/IPC.00147633.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-1-Role-FromPractitioner-Update-Response" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00763481.BC.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/IPC.00763481.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-1-Role-Update" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.123.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.123.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-2-OrgRef-FromPractitioner" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.124.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.124.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-2-OrgRef-FromPractitioner-Response" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.125.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.125.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-3-LocRef-FromPractitioner" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Location relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.126.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.126.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-3-LocRef-FromPractitioner-Response" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Location relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.127.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.127.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-4-PracRef-FromOrg" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Practitioner relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.128.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.128.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-4-PracRef-FromOrg-Response" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Practitioner relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.153.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.153.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-5-OrgRef-FromPractitioner" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.129.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.129.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-5-PracRef-FromLoc" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Practitioner relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.130.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.130.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-5-PracRef-FromLoc-Response" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Practitioner relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
        ]
      ] [
        fhir:extension ( [
@@ -1701,10 +2367,100 @@
          fhir:value [ fhir:v "PractitionerRole" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.1125.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.1125.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-Loc3-U" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Location relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.175.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.175.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-LocRef-FromPractitioner-3" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Location relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.12373.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.12373.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-OrgRef-FromPrac-1-Update" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship update." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.173.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.173.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-OrgRef-FromPractitioner-1" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.193.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/RELN.193.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-OrgRef-FromPractitioner-2" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/Example-PractitionerRole-Role-FromPrac-CPSID> ;
          fhir:reference [ fhir:v "PractitionerRole/Example-PractitionerRole-Role-FromPrac-CPSID" ]
        ] ;
        fhir:name [ fhir:v "Example-PractitionerRole-Role-FromPrac-CPSID" ] ;
+       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00147433.BC.PRS> ;
+         fhir:reference [ fhir:v "PractitionerRole/IPC.00147433.BC.PRS" ]
+       ] ;
+       fhir:name [ fhir:v "Example-PractitionerRole-Role-Update-Specialty" ] ;
        fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
        fhir:example [
          fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
@@ -2012,748 +2768,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Location" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Location/IFC.00047422.BC.PRS> ;
-         fhir:reference [ fhir:v "Location/IFC.00047422.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Atomic-Location" ] ;
-       fhir:description [ fhir:v "Example of a Location." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Location" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Location/IFC.00147422.BC.PRS> ;
-         fhir:reference [ fhir:v "Location/IFC.00147422.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Location-For-Update" ] ;
-       fhir:description [ fhir:v "Example of a Location for update." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Practitioner" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00047422.BC.PRS> ;
-         fhir:reference [ fhir:v "Practitioner/IPC.00047422.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Atomic-Practitioner" ] ;
-       fhir:description [ fhir:v "Example of generic Practitioner." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00047422.BC.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/IPC.00047422.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Atomic-PractitionerRole-RoleSpecialty" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Organization" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Organization/IPC.00047422.BC.PRS> ;
-         fhir:reference [ fhir:v "Organization/IPC.00047422.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Atomic-Organization" ] ;
-       fhir:description [ fhir:v "Example of an Organization." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Practitioner" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00147422.BC.PRS> ;
-         fhir:reference [ fhir:v "Practitioner/IPC.00147422.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Practitioner" ] ;
-       fhir:description [ fhir:v "Example of generic Practitioner." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00147422.BC.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/IPC.00147422.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-1-Role-FromPractitioner" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Practitioner" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00147433.BC.PRS> ;
-         fhir:reference [ fhir:v "Practitioner/IPC.00147433.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Practitioner-Update" ] ;
-       fhir:description [ fhir:v "Example Practitioner resource for updating License Status." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00147433.BC.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/IPC.00147433.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-Role-Update-Specialty" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Organization" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Organization/IPC.00147434.BC.PRS> ;
-         fhir:reference [ fhir:v "Organization/IPC.00147434.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Organization-1-Update" ] ;
-       fhir:description [ fhir:v "Example of an Organization." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Organization" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Organization/IPC.00147436.BC.PRS> ;
-         fhir:reference [ fhir:v "Organization/IPC.00147436.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Organization-Response" ] ;
-       fhir:description [ fhir:v "Example of an Organization that is being created." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Organization" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Organization/IPC.00147437.BC.PRS> ;
-         fhir:reference [ fhir:v "Organization/IPC.00147437.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Organization-2" ] ;
-       fhir:description [ fhir:v "Example of generic Organization." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Practitioner" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00147622.BC.PRS> ;
-         fhir:reference [ fhir:v "Practitioner/IPC.00147622.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Practitioner-Response" ] ;
-       fhir:description [ fhir:v "Example of generic Practitioner response." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00147622.BC.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/IPC.00147622.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-1-Role-FromPractitioner-Response" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00147633.BC.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/IPC.00147633.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-1-Role-FromPractitioner-Update-Response" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Practitioner" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00147699.BC.PRS> ;
-         fhir:reference [ fhir:v "Practitioner/IPC.00147699.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Practitioner-Response-test" ] ;
-       fhir:description [ fhir:v "Example of generic Practitioner response." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00147699.BC.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/IPC.00147699.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-1-Role-FromPractitioner-Response-test" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Practitioner" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00187833.BC.PRS> ;
-         fhir:reference [ fhir:v "Practitioner/IPC.00187833.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Another-Atomic-Practitioner" ] ;
-       fhir:description [ fhir:v "Example of another generic Practitioner." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Practitioner" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Practitioner/IPC.00763481.BC.PRS> ;
-         fhir:reference [ fhir:v "Practitioner/IPC.00763481.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Practitioner-UpdateLicense" ] ;
-       fhir:description [ fhir:v "Example Practitioner resource for updating License Status." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00763481.BC.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/IPC.00763481.BC.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-1-Role-Update" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole with Speciality." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.1125.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.1125.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-Loc3-U" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Location relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OrganizationAffiliation" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.1142.PRS> ;
-         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.1142.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-OrganizationAffiliation-Loc2-U" ] ;
-       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OrganizationAffiliation" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.1182.PRS> ;
-         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.1182.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-OrganizationAffiliation-Loc1-U" ] ;
-       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.123.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.123.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-2-OrgRef-FromPractitioner" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.12373.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.12373.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-OrgRef-FromPrac-1-Update" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship update." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.124.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.124.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-2-OrgRef-FromPractitioner-Response" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.125.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.125.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-3-LocRef-FromPractitioner" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Location relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.126.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.126.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-3-LocRef-FromPractitioner-Response" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Location relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.127.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.127.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-4-PracRef-FromOrg" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Practitioner relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.128.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.128.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-4-PracRef-FromOrg-Response" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Practitioner relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.129.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.129.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-5-PracRef-FromLoc" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Practitioner relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.130.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.130.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-5-PracRef-FromLoc-Response" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Practitioner relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OrganizationAffiliation" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.131.PRS> ;
-         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.131.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-OrganizationAffiliation-OrgRef-FromOrg-1" ] ;
-       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Organization relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OrganizationAffiliation" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.132.PRS> ;
-         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.132.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-OrganizationAffiliation-2-LocRef-FromOrg" ] ;
-       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OrganizationAffiliation" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.141.PRS> ;
-         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.141.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-OrganizationAffiliation-3-OrgRef-FromOrg" ] ;
-       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Organization relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OrganizationAffiliation" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.142.PRS> ;
-         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.142.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-OrganizationAffiliation-3-LocRef-FromOrg" ] ;
-       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.153.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.153.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-5-OrgRef-FromPractitioner" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.173.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.173.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-OrgRef-FromPractitioner-1" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.175.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.175.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-LocRef-FromPractitioner-3" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Location relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OrganizationAffiliation" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.181.PRS> ;
-         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.181.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-OrganizationAffiliation-OrgRef-FromOrg-2" ] ;
-       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Organization relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OrganizationAffiliation" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.182.PRS> ;
-         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.182.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-OrganizationAffiliation-LocRef-FromOrg-2" ] ;
-       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.193.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.193.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-PractitionerRole-OrgRef-FromPractitioner-2" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.23.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.23.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Atomic-PractitionerRole-OrgRef" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Organization relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "PractitionerRole" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/RELN.24.PRS> ;
-         fhir:reference [ fhir:v "PractitionerRole/RELN.24.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Atomic-PractitionerRole-LocRef" ] ;
-       fhir:description [ fhir:v "Example of the PractitionerRole for Practitioner to Location relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OrganizationAffiliation" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.25.PRS> ;
-         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.25.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Atomic-OrganizationAffiliation-OrgRef" ] ;
-       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Organization relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OrganizationAffiliation" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.26.PRS> ;
-         fhir:reference [ fhir:v "OrganizationAffiliation/RELN.26.PRS" ]
-       ] ;
-       fhir:name [ fhir:v "Example-Atomic-OrganizationAffiliation-LocRef" ] ;
-       fhir:description [ fhir:v "Example of the OrganizationAffiliation for Organization to Location relationship." ] ;
-       fhir:example [
-         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution> ;
-         fhir:reference [ fhir:v "OperationDefinition/bc-distribution" ]
-       ] ;
-       fhir:name [ fhir:v "Distribution" ] ;
-       fhir:description [ fhir:v "This operation is used to distribute the resources that represent a Provider or Facility." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Operations" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query> ;
-         fhir:reference [ fhir:v "OperationDefinition/bc-entity-location-query" ]
-       ] ;
-       fhir:name [ fhir:v "EntityLocationQuery" ] ;
-       fhir:description [ fhir:v "This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Operations" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-organization-query> ;
-         fhir:reference [ fhir:v "OperationDefinition/bc-entity-organization-query" ]
-       ] ;
-       fhir:name [ fhir:v "EntityOrganizationQuery" ] ;
-       fhir:description [ fhir:v "This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Operations" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-practitioner-query> ;
-         fhir:reference [ fhir:v "OperationDefinition/bc-entity-practitioner-query" ]
-       ] ;
-       fhir:name [ fhir:v "EntityPractitionerQuery" ] ;
-       fhir:description [ fhir:v "This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Operations" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
@@ -2806,29 +2820,27 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CapabilityStatement" ]
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-client-capability-statement> ;
-         fhir:reference [ fhir:v "CapabilityStatement/bc-plr-client-capability-statement" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-owner-name-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-enhanced-owner-name-extension" ]
        ] ;
-       fhir:name [ fhir:v "BCPLRClientCapabilityStatement" ] ;
-       fhir:description [ fhir:v "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.\n\n* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location" ] ;
-       fhir:example [ fhir:v "true"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Capabilities" ]
+       fhir:name [ fhir:v "OwnerNameExtension" ] ;
+       fhir:description [ fhir:v "Represents the name of the business that owns/runs the clinic." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CapabilityStatement" ]
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-server-capability-statement> ;
-         fhir:reference [ fhir:v "CapabilityStatement/bc-plr-server-capability-statement" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-service-period-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-enhanced-service-period-extension" ]
        ] ;
-       fhir:name [ fhir:v "BCPLRServerCapabilityStatement" ] ;
-       fhir:description [ fhir:v "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)\n\nAll POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)" ] ;
-       fhir:example [ fhir:v "true"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Capabilities" ]
+       fhir:name [ fhir:v "ServicePeriodExtension" ] ;
+       fhir:description [ fhir:v "Represents the period that a service is available at a clinic or location" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
        fhir:extension ( [
