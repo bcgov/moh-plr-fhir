@@ -644,8 +644,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "bc-location","Location.extension:facilityDetails","Location.extension","facilityDetails","","",0,1,"Y","","","Extension {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension]]} {[]}
 ","BC Facility Details Extension","Provides the details of a facility as represented by a FHIR location.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"bc-location","Location.extension:serviceArea","Location.extension","serviceArea","","",0,1,"Y","","","Extension {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension]]} {[]}
-","BC Facility Community Health Service Area Extension","A code that represents the community health service area that the location is a part of.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"bc-location","Location.extension:serviceArea","Location.extension","serviceArea","","",0,1,"Y","","","Extension {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension]]} {[]}
+","BC Facility Health Service Area Extension","A code that represents the health service area, including the PCN and the Community Health Service Area that the location is a part of.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-location","Location.extension:mailingAddress","Location.extension","mailingAddress","","",0,1,"Y","","","Extension {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension]]} {[]}
 ","BC Facility Mailing Address Extension","An optional mailing address for the facility.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -3953,6 +3953,20 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "bc-communication-purpose-code-extension","Extension.value[x]","Extension.value[x]","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"bc-facility-health-service-area-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","BC Facility Health Service Area Extension","A code that represents the health service area, including the PCN and the Community Health Service Area that the location is a part of.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
+",""
+"bc-facility-health-service-area-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"bc-facility-health-service-area-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"bc-facility-health-service-area-extension","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"bc-facility-health-service-area-extension","Extension.value[x]","Extension.value[x]","","","",1,1,"Y","","","Identifier {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "bc-address-validation-status-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Address Validataion Extension","BC extension for address validation status codes.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
 ",""
@@ -4228,20 +4242,6 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-identifier","Identifier.assigner","Identifier.assigner","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Organization that issued id (may be just text)","Organization that issued/manages the identifier.","The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization.","","","","","","","","",,,,,"",,,,"Identifier.assigner",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"bc-facility-community-health-service-area-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
-","BC Facility Community Health Service Area Extension","A code that represents the community health service area that the location is a part of.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
-"bc-facility-community-health-service-area-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"bc-facility-community-health-service-area-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"bc-facility-community-health-service-area-extension","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"bc-facility-community-health-service-area-extension","Extension.value[x]","Extension.value[x]","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-operation-outcome","OperationOutcome","OperationOutcome","","","",0,*,"","","","null {[]} {[]}
 ","Information about the success/failure of an action","A collection of error, warning, or information messages that result from a system action.","Can result from the failure of a REST call or be part of the response message returned from a request message.","","","","","","","","",,,,,"",,,,"OperationOutcome",0,*,"",""
