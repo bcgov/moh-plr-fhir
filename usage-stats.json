@@ -97,20 +97,6 @@
       ]
     },
     {
-      "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-owner-name-extension",
-      "title": "OwnerNameExtension",
-      "types": [
-        "string"
-      ]
-    },
-    {
-      "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-service-period-extension",
-      "title": "ServicePeriodExtension",
-      "types": [
-        "Period"
-      ]
-    },
-    {
       "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension",
       "title": "BC Facility Community Health Service Area Extension",
       "types": [
@@ -584,6 +570,13 @@
       ]
     },
     {
+      "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-service-period-extension",
+      "title": "ServicePeriodExtension",
+      "types": [
+        "Period"
+      ]
+    },
+    {
       "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension",
       "title": "BC Specialty Source Extension",
       "types": [
@@ -606,11 +599,11 @@
     ],
     "HealthcareService": [
       {
-        "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-catalogue-services",
+        "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-catalogue-service",
         "title": "BCCatalogueService"
       },
       {
-        "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-clinical-services",
+        "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-clinical-service",
         "title": "BCClinicalService"
       }
     ],
@@ -620,10 +613,22 @@
         "title": "BCLocation"
       }
     ],
+    "OperationOutcome": [
+      {
+        "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome",
+        "title": "BCOperationOutcome"
+      }
+    ],
     "Organization": [
       {
         "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization",
         "title": "BCOrganization"
+      }
+    ],
+    "OrganizationAffiliation": [
+      {
+        "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation",
+        "title": "BCOrganizationAffiliation"
       }
     ],
     "Practitioner": [
@@ -636,18 +641,6 @@
       {
         "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships",
         "title": "BCRoleRelationships"
-      }
-    ],
-    "OperationOutcome": [
-      {
-        "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome",
-        "title": "BCOperationOutcome"
-      }
-    ],
-    "OrganizationAffiliation": [
-      {
-        "url": "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation",
-        "title": "BCOrganizationAffiliation"
       }
     ]
   },
@@ -807,12 +800,6 @@
       "PractitionerRole",
       "PractitionerRole.specialty"
     ],
-    "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-owner-name-extension": [
-      "Organization"
-    ],
-    "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-service-period-extension": [
-      "PractitionerRole.healthcareService"
-    ],
     "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension": [
       "Location"
     ],
@@ -955,6 +942,9 @@
       "Bundle.entry.resource.entry.resource",
       "Parameters.parameter.resource.entry.resource",
       "PractitionerRole"
+    ],
+    "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-service-period-extension": [
+      "PractitionerRole.healthcareService"
     ],
     "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension": [
       "Bundle.entry.resource.communication",

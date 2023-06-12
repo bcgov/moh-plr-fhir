@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "BCProviderRegistry"] ; # 
   fhir:title [ fhir:v "BC Provider Location Registry FHIR Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-06-12T18:37:27+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-06-12T22:10:20+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -540,6 +540,14 @@
        fhir:name [ fhir:v "Facility" ] ;
        fhir:description [ fhir:v "Artifacts associated with Facilities" ]
      ] [
+       fhir:id [ fhir:v "HealthcareService" ] ;
+       fhir:name [ fhir:v "Healthcare Service" ] ;
+       fhir:description [ fhir:v "Artifacts associated with Healthcare Services" ]
+     ] [
+       fhir:id [ fhir:v "CareTeam" ] ;
+       fhir:name [ fhir:v "Care Team" ] ;
+       fhir:description [ fhir:v "Artifacts associated with Care Teams" ]
+     ] [
        fhir:id [ fhir:v "RestfulQueryResponse" ] ;
        fhir:name [ fhir:v "RESTful Query Response Examples" ] ;
        fhir:description [ fhir:v "RESTful Query Response Examples" ]
@@ -978,31 +986,34 @@
        ] ;
        fhir:name [ fhir:v "BCCareTeam" ] ;
        fhir:description [ fhir:v "PLR Enhancement representing a collection of practitioners that provide services" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "CareTeam" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-catalogue-services> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-catalogue-services" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-catalogue-service> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-catalogue-service" ]
        ] ;
        fhir:name [ fhir:v "BCCatalogueService" ] ;
        fhir:description [ fhir:v "PLR Enhancement that describes services as they would be found in a catalogue." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "HealthcareService" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-clinical-services> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-clinical-services" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-clinical-service> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-clinical-service" ]
        ] ;
        fhir:name [ fhir:v "BCClinicalService" ] ;
        fhir:description [ fhir:v "PLR Enhancement that describes services that a clinic provides." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "HealthcareService" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1014,54 +1025,6 @@
        ] ;
        fhir:name [ fhir:v "BCContactPoint" ] ;
        fhir:description [ fhir:v "Adds an end reason and extra contact information." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-location> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-enhanced-location" ]
-       ] ;
-       fhir:name [ fhir:v "BCEnhancedLocation" ] ;
-       fhir:description [ fhir:v "PLR Enhancement to the Location resource" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-organization> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-enhanced-organization" ]
-       ] ;
-       fhir:name [ fhir:v "BCEnhancedOrganization" ] ;
-       fhir:description [ fhir:v "PLR Enhancement to the Organization resource" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-practitioner> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-enhanced-practitioner" ]
-       ] ;
-       fhir:name [ fhir:v "BCEnhancedPractitioner" ] ;
-       fhir:description [ fhir:v "PLR Enhancement to the Practitioner resource" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-practitioner-clinic> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-enhanced-practitioner-clinic" ]
-       ] ;
-       fhir:name [ fhir:v "BCEnhancedPractitionerClinic" ] ;
-       fhir:description [ fhir:v "Describes the relationship between practitioners, clinics, and the locations" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1223,6 +1186,19 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-clinic> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-practitioner-clinic" ]
+       ] ;
+       fhir:name [ fhir:v "BCPractitionerClinic" ] ;
+       fhir:description [ fhir:v "Describes the relationship between practitioners, clinics, and the locations" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Practitioner" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role> ;
          fhir:reference [ fhir:v "StructureDefinition/bc-practitioner-role" ]
        ] ;
@@ -1241,7 +1217,8 @@
        ] ;
        fhir:name [ fhir:v "BCPrimaryNetwork" ] ;
        fhir:description [ fhir:v "PLR Enhancement representing a primary care network of practitioners that provide services" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "CareTeam" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2823,24 +2800,13 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-owner-name-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-enhanced-owner-name-extension" ]
-       ] ;
-       fhir:name [ fhir:v "OwnerNameExtension" ] ;
-       fhir:description [ fhir:v "Represents the name of the business that owns/runs the clinic." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-enhanced-service-period-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-enhanced-service-period-extension" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-service-period-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-service-period-extension" ]
        ] ;
        fhir:name [ fhir:v "ServicePeriodExtension" ] ;
        fhir:description [ fhir:v "Represents the period that a service is available at a clinic or location" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Extensions" ]
      ] ) ;
      fhir:page [
        fhir:extension ( [

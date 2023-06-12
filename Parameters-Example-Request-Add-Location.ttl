@@ -119,6 +119,27 @@
        fhir:start [ fhir:v "1982-03-04T00:00:00-07:00"^^xsd:dateTime ]
      ]
   ] ) ; # 
+  fhir:address [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "FC" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:type [ fhir:v "physical" ] ;
+     fhir:line ( [ fhir:v "1000 DOUGLAS ST" ] ) ;
+     fhir:city [ fhir:v "VICTORIA" ] ;
+     fhir:state [ fhir:v "BC" ] ;
+     fhir:postalCode [ fhir:v "V6P7B8" ] ;
+     fhir:country [ fhir:v "CA" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+     ]
+  ] ; # 
   fhir:physicalType [
      fhir:coding ( [
        fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/location-physical-type"^^xsd:anyURI ] ;
