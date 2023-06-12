@@ -40,7 +40,7 @@ Description: "Example of a Location."
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #FC
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension"
 * extension[=].valueAddress = Example-Address-Fac
-//* address = Example-Address-Fac
+* address = Example-Address-Fac
 //* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension"
 //* extension[=].valueCodeableConcept.text = "Langford/Highlands"
 * physicalType.coding.code = #bu

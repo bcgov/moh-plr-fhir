@@ -130,6 +130,22 @@ Description: "A bundle that submits Practitioner and PractitionerRole informatio
 * entry[PractitionerRole].resource only BCPractitionerRole
 * entry[RoleRelationship].resource only BCRoleRelationships
 
+Profile: BCPractitionerClinic
+Parent: PractitionerRole
+Id: bc-practitioner-clinic
+Description: "Describes the relationship between practitioners, clinics, and the locations"
+* period 1..1 MS
+* practitioner 1..1 MS
+* practitioner only Reference(BCPractitioner)
+* organization MS
+* organization only Reference(BCOrganization)
+* code MS
+* location MS
+* location only Reference(BCLocation)
+* healthcareService MS
+* healthcareService only Reference(BCClinicalService)
+  * extension contains ServicePeriodExtension named servicePeriod 0..1 MS
+
 Invariant: invariant-prac-bundle-1
 Description: "In a Practitioner Bundle, PractitionerRole.practitioner.identifier must match at least one identifier in Practitioner."
 Expression: "Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-practitioner-role')).practitioner.identifier.value in Bundle.entry.resource.ofType(Practitioner).identifier.value"

@@ -47,11 +47,13 @@ menu:
     Bundles: artifacts.html#5
     Practitioner: artifacts.html#6
     Organization: artifacts.html#7
-    Facility: artifacts.html#8
-    Restful Response Examples: artifacts.html#9
-    Extensions: artifacts.html#10
-    Data Types: artifacts.html#11
-    Value Sets: artifacts.html#12
+    Facility: artifacts.html#8    
+    Healthcare Service: artifacts.html#9
+    Care Team: artifacts.html#10
+    Restful Response Examples: artifacts.html#1
+    Extensions: artifacts.html#12
+    Data Types: artifacts.html#13
+    Value Sets: artifacts.html#14
   #  Code Systems: artifacts.html#13
   Technical Details: techdetails.html
   Glossary: glossary.html
@@ -138,6 +140,7 @@ groups:
       - StructureDefinition/bc-practitioner
       - StructureDefinition/bc-practitioner-role
       - StructureDefinition/bc-role-relationships
+      - StructureDefinition/bc-practitioner-clinic
   Organization:
     name: Organization
     description: Artifacts associated with Organizations
@@ -148,7 +151,20 @@ groups:
     name: Facility
     description: Artifacts associated with Facilities
     resources:
-      - StructureDefinition/bc-location
+      - StructureDefinition/bc-location  
+  HealthcareService:
+    name: Healthcare Service
+    description: Artifacts associated with Healthcare Services
+    resources:
+      - StructureDefinition/bc-catalogue-service  
+      - StructureDefinition/bc-clinical-service 
+  CareTeam:
+    name: Care Team
+    description: Artifacts associated with Care Teams
+    resources:
+      - StructureDefinition/bc-careteam
+      - StructureDefinition/bc-primary-network
+
   RestfulQueryResponse:
     name: RESTful Query Response Examples
     description: RESTful Query Response Examples
@@ -185,6 +201,7 @@ groups:
       - StructureDefinition/bc-practitioner-relationship-extension
       - StructureDefinition/bc-practitioner-disciplinary-action-extension
       - StructureDefinition/bc-practitioner-condition-extension
+      - StructureDefinition/bc-service-period-extension
       - StructureDefinition/bc-facility-details-extension
       - StructureDefinition/bc-facility-community-health-service-area-extension
       - StructureDefinition/bc-facility-mailing-address-extension
