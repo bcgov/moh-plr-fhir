@@ -111,7 +111,7 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for practitioners with an address. Supports trailing wild card,"
+* parameter[=].documentation = "Search for practitioners with an address. Supports trailing wild card."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #healthAuthority
@@ -300,48 +300,55 @@ Usage: #definition
 * system = false
 * type = true
 * instance = true
-* parameter[0].name = #name
-* parameter[0].use = #in
-* parameter[0].min = 0
-* parameter[0].max = "1"
-* parameter[0].documentation = "Search for locations with the specified name."
-* parameter[0].type = #string
-* parameter[0].searchType = #string
-* parameter[1].name = #address-city
-* parameter[1].use = #in
-* parameter[1].min = 0
-* parameter[1].max = "1"
-* parameter[1].documentation = "Search for locations with the specified city."
-* parameter[1].type = #string
-* parameter[1].searchType = #string
-* parameter[2].name = #healthAuthority
-* parameter[2].use = #in
-* parameter[2].min = 0
-* parameter[2].max = "1"
-* parameter[2].documentation = "Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
-* parameter[2].type = #string
-* parameter[2].searchType = #string
-* parameter[3].name = #healthServiceDeliveryArea
-* parameter[3].use = #in
-* parameter[3].min = 0
-* parameter[3].max = "1"
-* parameter[3].documentation = "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
-* parameter[3].type = #string
-* parameter[3].searchType = #string
-* parameter[4].name = #localHealthArea
-* parameter[4].use = #in
-* parameter[4].min = 0
-* parameter[4].max = "1"
-* parameter[4].documentation = "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
-* parameter[4].type = #string
-* parameter[4].searchType = #string
-* parameter[5].name = #communityHealthServiceArea
-* parameter[5].use = #in
-* parameter[5].min = 0
-* parameter[5].max = "1"
-* parameter[5].documentation = "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
-* parameter[5].type = #string
-* parameter[5].searchType = #string
+* parameter[+].name = #name
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for locations with the specified name."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #address-city
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for locations with the specified city."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #address-line1
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with an address. Supports trailing wild card."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #healthAuthority
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #healthServiceDeliveryArea
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #localHealthArea
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #communityHealthServiceArea
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
 
 
 Instance: Maintain
