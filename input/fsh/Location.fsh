@@ -19,7 +19,7 @@ Description: "General constraints on the Location resource for use in the BC Pro
   * latitude MS
 * extension contains NoteExtension named note 0..* MS and
 	FacilityDetailsExtension named facilityDetails 0..1 MS and
-	CommunityHealthServiceArea named serviceArea 0..1 MS and
+	HealthServiceArea named serviceArea 0..1 MS and
 	MailingAddress named mailingAddress 0..1 MS
 
 Profile: BCLocationBundle

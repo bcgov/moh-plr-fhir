@@ -18,11 +18,11 @@ Description: "Provides the details of a facility as represented by a FHIR locati
 * extension[contactName].value[x] only string
 * extension[contactName].value[x] 1..1 MS
 
-Extension: CommunityHealthServiceArea
-Id: bc-facility-community-health-service-area-extension
-Title: "BC Facility Community Health Service Area Extension"
-Description: "A code that represents the community health service area that the location is a part of."
-* value[x] only CodeableConcept
+Extension: HealthServiceArea
+Id: bc-facility-health-service-area-extension
+Title: "BC Facility Health Service Area Extension"
+Description: "A code that represents the health service area, including the PCN and the Community Health Service Area that the location is a part of."
+* value[x] only Identifier
 * value[x] 1..1 MS
 
 Extension: MailingAddress

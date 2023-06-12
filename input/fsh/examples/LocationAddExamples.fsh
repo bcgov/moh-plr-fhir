@@ -41,8 +41,8 @@ Description: "Example of a Location."
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension"
 * extension[=].valueAddress = Example-Address-Fac
 * address = Example-Address-Fac
-//* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension"
-//* extension[=].valueCodeableConcept.text = "Langford/Highlands"
+//* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
+//* extension[=].valueIdentifier.assigner.display = "Langford/Highlands"
 * physicalType.coding.code = #bu
 * physicalType.coding.system = "http://terminology.hl7.org/CodeSystem/location-physical-type"
 
