@@ -10,7 +10,7 @@
   "name" : "BCProviderRegistry",
   "title" : "BC Provider Location Registry FHIR Implementation Guide",
   "status" : "draft",
-  "date" : "2023-06-12T22:51:11+00:00",
+  "date" : "2023-06-22T17:12:55+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -637,7 +637,7 @@
     {
       "id" : "CareTeam",
       "name" : "Care Team",
-      "description" : "Artifacts associated with Care Teams"
+      "description" : "Artifacts associated with Care Teams - no active development in PLR around this for now"
     },
     {
       "id" : "RestfulQueryResponse",
@@ -648,6 +648,11 @@
       "id" : "Extensions",
       "name" : "Extensions",
       "description" : "Extensions used across all groupings"
+    },
+    {
+      "id" : "Datatypes",
+      "name" : "Datatypes",
+      "description" : "Artifacts associated with datatypes"
     }],
     "resource" : [{
       "extension" : [{
@@ -1053,7 +1058,8 @@
       },
       "name" : "BCAddress",
       "description" : "Adds an end reason, communication purpose and validation status to the address.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Datatypes"
     },
     {
       "extension" : [{
@@ -1077,7 +1083,7 @@
         "reference" : "StructureDefinition/bc-careteam"
       },
       "name" : "BCCareTeam",
-      "description" : "PLR Enhancement representing a collection of practitioners that provide services",
+      "description" : "PLR Enhancement representing a collection of practitioners that provide services. There is no active development planned around this in PLR for now.",
       "exampleBoolean" : false,
       "groupingId" : "CareTeam"
     },
@@ -1117,7 +1123,8 @@
       },
       "name" : "BCContactPoint",
       "description" : "Adds an end reason and extra contact information.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Datatypes"
     },
     {
       "extension" : [{
@@ -1129,7 +1136,8 @@
       },
       "name" : "BCHumanName",
       "description" : "Adds an end reason and a use code to a name.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Datatypes"
     },
     {
       "extension" : [{
@@ -1141,7 +1149,8 @@
       },
       "name" : "BCIdentifier",
       "description" : "Adds an end reason to the identifier.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Datatypes"
     },
     {
       "extension" : [{
@@ -1279,19 +1288,6 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/bc-practitioner-clinic"
-      },
-      "name" : "BCPractitionerClinic",
-      "description" : "Describes the relationship between practitioners, clinics, and the locations",
-      "exampleBoolean" : false,
-      "groupingId" : "Practitioner"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/bc-practitioner-role"
       },
       "name" : "BCPractitionerRole",
@@ -1308,7 +1304,7 @@
         "reference" : "StructureDefinition/bc-primary-network"
       },
       "name" : "BCPrimaryNetwork",
-      "description" : "PLR Enhancement representing a primary care network of practitioners that provide services",
+      "description" : "PLR Enhancement representing a primary care network of practitioners that provide services. There is no active development planned around this in PLR for now.",
       "exampleBoolean" : false,
       "groupingId" : "CareTeam"
     },
@@ -2655,19 +2651,6 @@
       "description" : "This operation is used to create and update the resources that represent a Provider or Facility.",
       "exampleBoolean" : false,
       "groupingId" : "Operations"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/bc-service-period-extension"
-      },
-      "name" : "ServicePeriodExtension",
-      "description" : "Represents the period that a service is available at a clinic or location",
-      "exampleBoolean" : false,
-      "groupingId" : "Extensions"
     }],
     "page" : {
       "extension" : [{

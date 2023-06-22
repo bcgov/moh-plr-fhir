@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2023-06-12T22:51:11+00:00"/>
+  <date value="2023-06-22T17:12:55+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -478,7 +478,7 @@
     </grouping>
     <grouping id="CareTeam">
       <name value="Care Team"/>
-      <description value="Artifacts associated with Care Teams"/>
+      <description value="Artifacts associated with Care Teams - no active development in PLR around this for now"/>
     </grouping>
     <grouping id="RestfulQueryResponse">
       <name value="RESTful Query Response Examples"/>
@@ -487,6 +487,10 @@
     <grouping id="Extensions">
       <name value="Extensions"/>
       <description value="Extensions used across all groupings"/>
+    </grouping>
+    <grouping id="Datatypes">
+      <name value="Datatypes"/>
+      <description value="Artifacts associated with datatypes"/>
     </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -861,6 +865,7 @@
       <name value="BCAddress"/>
       <description value="Adds an end reason, communication purpose and validation status to the address."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Datatypes"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -882,7 +887,7 @@
         <reference value="StructureDefinition/bc-careteam"/>
       </reference>
       <name value="BCCareTeam"/>
-      <description value="PLR Enhancement representing a collection of practitioners that provide services"/>
+      <description value="PLR Enhancement representing a collection of practitioners that provide services. There is no active development planned around this in PLR for now."/>
       <exampleBoolean value="false"/>
       <groupingId value="CareTeam"/>
     </resource>
@@ -920,6 +925,7 @@
       <name value="BCContactPoint"/>
       <description value="Adds an end reason and extra contact information."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Datatypes"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -931,6 +937,7 @@
       <name value="BCHumanName"/>
       <description value="Adds an end reason and a use code to a name."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Datatypes"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -942,6 +949,7 @@
       <name value="BCIdentifier"/>
       <description value="Adds an end reason to the identifier."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Datatypes"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1068,18 +1076,6 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/bc-practitioner-clinic"/>
-      </reference>
-      <name value="BCPractitionerClinic"/>
-      <description value="Describes the relationship between practitioners, clinics, and the locations"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="Practitioner"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/bc-practitioner-role"/>
       </reference>
       <name value="BCPractitionerRole"/>
@@ -1095,7 +1091,7 @@
         <reference value="StructureDefinition/bc-primary-network"/>
       </reference>
       <name value="BCPrimaryNetwork"/>
-      <description value="PLR Enhancement representing a primary care network of practitioners that provide services"/>
+      <description value="PLR Enhancement representing a primary care network of practitioners that provide services. There is no active development planned around this in PLR for now."/>
       <exampleBoolean value="false"/>
       <groupingId value="CareTeam"/>
     </resource>
@@ -2333,18 +2329,6 @@
       <description value="This operation is used to create and update the resources that represent a Provider or Facility."/>
       <exampleBoolean value="false"/>
       <groupingId value="Operations"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/bc-service-period-extension"/>
-      </reference>
-      <name value="ServicePeriodExtension"/>
-      <description value="Represents the period that a service is available at a clinic or location"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="Extensions"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
