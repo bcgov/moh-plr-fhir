@@ -4,7 +4,7 @@ Parent: http://hl7.org/fhir/ca/baseline/StructureDefinition/profile-location
 Id: bc-location
 Description: "General constraints on the Location resource for use in the BC Provider Registry project."
 * identifier only BCIdentifier
-* identifier 1..* MS
+* identifier 0..* MS
 * status MS
 * name 0..1 MS
 * name.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
@@ -13,7 +13,7 @@ Description: "General constraints on the Location resource for use in the BC Pro
 * telecom only BCContactPoint 
 * telecom MS
 * address only BCAddress 
-* address 1..1 MS
+* address 0..1 MS
 * position MS
   * longitude MS
   * latitude MS

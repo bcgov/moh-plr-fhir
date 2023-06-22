@@ -130,7 +130,7 @@ Description: "A bundle that submits Practitioner and PractitionerRole informatio
 * entry[PractitionerRole].resource only BCPractitionerRole
 * entry[RoleRelationship].resource only BCRoleRelationships
 
-Profile: BCPractitionerClinic
+/**Profile: BCPractitionerClinic
 Parent: PractitionerRole
 Id: bc-practitioner-clinic
 Description: "Describes the relationship between practitioners, clinics, and the locations"
@@ -144,7 +144,14 @@ Description: "Describes the relationship between practitioners, clinics, and the
 * location only Reference(BCLocation)
 * healthcareService MS
 * healthcareService only Reference(BCClinicalService)
-  * extension contains ServicePeriodExtension named servicePeriod 0..1 MS
+* extension contains ServicePeriodExtension named servicePeriod 0..1 MS
+  
+Extension: ServicePeriodExtension
+Id: bc-service-period-extension
+Description: "Represents the period that a service is available at a clinic or location"
+* value[x] only Period
+* value[x] 1..1 MS
+  */
 
 Invariant: invariant-prac-bundle-1
 Description: "In a Practitioner Bundle, PractitionerRole.practitioner.identifier must match at least one identifier in Practitioner."

@@ -35,7 +35,7 @@ Description: "PLR Enhancement that describes services that a clinic provides."
 Profile: BCCareTeam
 Parent: CareTeam
 Id: bc-careteam
-Description: "PLR Enhancement representing a collection of practitioners that provide services"
+Description: "PLR Enhancement representing a collection of practitioners that provide services. There is no active development planned around this in PLR for now."
 * identifier MS
 * status 1..1 MS
 * category 1..* MS
@@ -48,7 +48,7 @@ Description: "PLR Enhancement representing a collection of practitioners that pr
 Profile: BCPrimaryNetwork
 Parent: CareTeam
 Id: bc-primary-network
-Description: "PLR Enhancement representing a primary care network of practitioners that provide services"
+Description: "PLR Enhancement representing a primary care network of practitioners that provide services. There is no active development planned around this in PLR for now."
 * identifier MS
 * status 1..1 MS
 * category 1..* MS

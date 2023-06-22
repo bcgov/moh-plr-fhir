@@ -74,12 +74,6 @@ Description: "Captures the place where a patient/practitioner/person was born."
 * value[x] only Address
 * value[x] 1..1 MS
 
-Extension: ServicePeriodExtension
-Id: bc-service-period-extension
-Description: "Represents the period that a service is available at a clinic or location"
-* value[x] only Period
-* value[x] 1..1 MS
-
 Extension: ConfidentialityExtension
 Id: bc-confidentiality-extension
 Title: "BC Confidentiality Extension"
