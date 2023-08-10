@@ -41,3 +41,10 @@ Alias: $System_CPSID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPS
 Alias: $System_RNID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/RNID
 Alias: $System_FACID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID
 
+
+//////////////////////////////////
+// Health Boundary Systems
+/////////////////////////////////
+Alias: $System_PCN = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-primary-care-network
+Alias: $System_CHSA = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-community-health-service-area
+
