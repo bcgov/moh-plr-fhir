@@ -19,11 +19,25 @@ Description: "Provides the details of a facility as represented by a FHIR locati
 * extension[contactName].value[x] 1..1 MS
 
 Extension: HealthServiceArea
+Id: bc-facility-health-service-area-list-extension
+Title: "BC Facility Health Service Area Extension"
+Description: "A code that represents the health service area, including the PCN and the Community Health Service Area that the location is a part of."
+* extension contains HealthServiceAreaExtension named HA 1..1 MS and 
+     HealthServiceAreaExtension  named HSDA 1..1 MS and
+     HealthServiceAreaExtension named LHA 1..1 MS and
+     HealthServiceAreaExtension  named CHSA 1..1 MS and
+     HealthServiceAreaExtension named PCN 0..1 MS
+
+Extension: HealthServiceAreaExtension
 Id: bc-facility-health-service-area-extension
 Title: "BC Facility Health Service Area Extension"
 Description: "A code that represents the health service area, including the PCN and the Community Health Service Area that the location is a part of."
-* value[x] only Identifier
-* value[x] 1..1 MS
+* extension contains code 1..1 MS and 
+     description 0..1 MS 
+* extension[code].value[x] only Identifier
+* extension[code].value[x] 1..1 MS
+* extension[description].value[x] only string
+* extension[description].value[x] 0..1 MS
 
 Extension: MailingAddress
 Id: bc-facility-mailing-address-extension

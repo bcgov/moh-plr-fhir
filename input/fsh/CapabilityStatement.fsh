@@ -50,7 +50,7 @@ All POST and PUT Requests are sent using a Paramaters resource and the Response 
 * fhirVersion = #4.0.1
 * format[0] = #json
 * format[0].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* implementationGuide = "http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider"
+//* implementationGuide = "http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider"
 
 * rest[0].mode = #server
 * rest[0].documentation = "RESTful Atomic services"
