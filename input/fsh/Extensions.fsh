@@ -25,10 +25,10 @@ Description: "A code that represents the health service area, including the PCN 
 * value[x] only Identifier
 * value[x] 1..1 MS
 
-Extension: MailingAddress
-Id: bc-facility-mailing-address-extension
-Title: "BC Facility Mailing Address Extension"
-Description: "An optional mailing address for the facility."
+Extension: PhysicalAddress
+Id: bc-facility-physical-address-extension
+Title: "BC Facility Physical Address Extension"
+Description: "An optional physical address for the facility."
 * value[x] only BCAddress
 * value[x] 1..1 MS
 

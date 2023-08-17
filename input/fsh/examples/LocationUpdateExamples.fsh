@@ -43,7 +43,7 @@ Description: "Example of a Location for update."
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #FC
 * telecom[0].extension[endReason] = Example-ERC-Change
-* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-mailing-address-extension"
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-physical-address-extension"
 * extension[=].valueAddress = Example-Address-Fac-U
 * address = Example-Address-Fac-Civic
 

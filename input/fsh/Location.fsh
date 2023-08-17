@@ -20,7 +20,7 @@ Description: "General constraints on the Location resource for use in the BC Pro
 * extension contains NoteExtension named note 0..* MS and
 	FacilityDetailsExtension named facilityDetails 0..1 MS and
 	HealthServiceArea named serviceArea 0..1 MS and
-	MailingAddress named mailingAddress 0..1 MS
+	PhysicalAddress named physicalAddress 0..1 MS
 
 Profile: BCLocationBundle
 Parent: Bundle
