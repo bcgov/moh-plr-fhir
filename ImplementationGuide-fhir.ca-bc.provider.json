@@ -10,7 +10,7 @@
   "name" : "BCProviderRegistry",
   "title" : "BC Provider Location Registry FHIR Implementation Guide",
   "status" : "draft",
-  "date" : "2023-08-11T20:09:37+00:00",
+  "date" : "2023-08-17T21:34:48+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -788,10 +788,10 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/bc-facility-mailing-address-extension"
+        "reference" : "StructureDefinition/bc-facility-physical-address-extension"
       },
-      "name" : "BC Facility Mailing Address Extension",
-      "description" : "An optional mailing address for the facility.",
+      "name" : "BC Facility Physical Address Extension",
+      "description" : "An optional physical address for the facility.",
       "exampleBoolean" : false,
       "groupingId" : "Extensions"
     },
@@ -1416,6 +1416,18 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
+        "reference" : "Bundle/Example-AddLocationWithLinks-Bundle-Response"
+      },
+      "name" : "Example-AddLocationWithLinks-Bundle-Response",
+      "description" : "An example of bundle that is adding a location.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
         "reference" : "Bundle/Example-AddOrganization-Bundle"
       },
       "name" : "Example-AddOrganization-Bundle",
@@ -1755,6 +1767,18 @@
         "reference" : "Location/Example-Location-For-Add"
       },
       "name" : "Example-Location-For-Add",
+      "description" : "Example of a Location.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Location"
+      }],
+      "reference" : {
+        "reference" : "Location/IFC.00147423.BC.PRS"
+      },
+      "name" : "Example-Location-For-Add-Response",
       "description" : "Example of a Location.",
       "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"
     },
@@ -2461,6 +2485,19 @@
       "description" : "Example Parameters to update various attributes of a Individual Provider.",
       "exampleBoolean" : true,
       "groupingId" : "OperationsRequestExamples"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/Example-Response-Add-Location"
+      },
+      "name" : "Example-Response-Add-Location",
+      "description" : "Example Parameters to add an Location (aka Facility).",
+      "exampleBoolean" : true,
+      "groupingId" : "OperationsResponseExamples"
     },
     {
       "extension" : [{
