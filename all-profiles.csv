@@ -1,7 +1,8 @@
 "Profile","Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
 "bc-facility-primary-care-network-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Facility Primary Care Network Extension","A code that represents the Primary Care Network (PCN) that the location is a part of.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-facility-primary-care-network-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-facility-primary-care-network-extension","Extension.extension","Extension.extension","","","",1,*,"","","","Extension {[]} {[]}
@@ -42,7 +43,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}Contributor {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-practitioner-role","PractitionerRole","PractitionerRole","","","",0,*,"","","","null {[]} {[]}
-","PractitionerRole Registry Profile","The PractitionerRoleRegistry Profile is based upon the CA Baseline FHIR PractitionerRole profile for general use","","","","","","","","","",,,,,"",,,,"PractitionerRole",0,*,"",""
+","PractitionerRole Registry Profile","The PractitionerRoleRegistry Profile is based upon the CA Baseline FHIR PractitionerRole profile for general use","","","","","","","","","",,,,,"",,,,"PractitionerRole",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
+dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}invariant-role-1:The organization and location references are not permitted in this profile. {organization.count()=0 and location.count()=0}"
 "bc-practitioner-role","PractitionerRole.id","PractitionerRole.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-practitioner-role","PractitionerRole.meta","PractitionerRole.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -214,7 +216,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Technical endpoints providing access to services operated for the practitioner with this role","Technical endpoints providing access to services operated for the practitioner with this role.","","Organizations have multiple systems that provide various services and ,ay also be different for practitioners too.So the endpoint satisfies the need to be able to define the technical connection details for how to connect to them, and for what purpose.","","","","","","","",,,,,"",,,,"PractitionerRole.endpoint",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-organization-affiliation","OrganizationAffiliation","OrganizationAffiliation","","","",0,*,"","","","null {[]} {[]}
-","OrganizationAffiliation Profile","The OrganizationAffiliation Profile is based upon the core FHIR OrganizationAffiliation Resource","","","","","","","","","",,,,,"",,,,"OrganizationAffiliation",0,*,"",""
+","OrganizationAffiliation Profile","The OrganizationAffiliation Profile is based upon the core FHIR OrganizationAffiliation Resource","","","","","","","","","",,,,,"",,,,"OrganizationAffiliation",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
+dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}invariant-rltn-2:One participating organization or one location allowed; not both. {participatingOrganization.count()=1 xor location.count()=1}"
 "bc-organization-affiliation","OrganizationAffiliation.id","OrganizationAffiliation.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-organization-affiliation","OrganizationAffiliation.meta","OrganizationAffiliation.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -289,7 +292,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-identifier","Identifier","Identifier","","","",0,*,"","","","null {[]} {[]}
 ","An identifier intended for computation","An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers.","","","","","","","","","",,,,,"",,,,"Identifier",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "bc-identifier","Identifier.id","Identifier.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-identifier","Identifier.extension","Identifier.extension","","extensions
@@ -323,7 +327,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-communication-purpose-code-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Communication Purpose Extension","BC extension for communication purpose codes.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-communication-purpose-code-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-communication-purpose-code-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -333,11 +338,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "bc-communication-purpose-code-extension","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "bc-communication-purpose-code-extension","Extension.value[x]","Extension.value[x]","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","","https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set","",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-note-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Notes Extension","Notes about the practitioner/location/organization.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-note-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-note-extension","Extension.extension","Extension.extension","","","",3,*,"","","","Extension {[]} {[]}
@@ -388,7 +394,8 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 "
 "bc-facility-local-health-area-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Facility Local Health Area Extension","A code that represents the Local Health Area (LHA) that the location is a part of.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-facility-local-health-area-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-facility-local-health-area-extension","Extension.extension","Extension.extension","","extensions
@@ -431,7 +438,8 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 "
 "bc-relationship-type-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Practitioner to Organization or Practitioner to Practitioner Type Extension.","The relationship type of a Practitioner to Organization or Practitioner to Practitioner relationship.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-relationship-type-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-relationship-type-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -445,7 +453,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-facility-health-service-area-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Facility Health Service Area Extension","A wrapper extension that will allow to list all the health service area, including the PCN and the Community Health Service Area.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-facility-health-service-area-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-facility-health-service-area-extension","Extension.extension","Extension.extension","","extensions
@@ -475,7 +484,8 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 "
 "bc-birthplace-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Birth Place Extension","Captures the place where a patient/practitioner/person was born.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-birthplace-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-birthplace-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -489,7 +499,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-practitioner-condition-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Practitioner Conditions Extension","Conditions on the provider's role","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-practitioner-condition-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-practitioner-condition-extension","Extension.extension","Extension.extension","","","",5,*,"","","","Extension {[]} {[]}
@@ -568,7 +579,8 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 "
 "bc-contactPoint","ContactPoint","ContactPoint","","","",0,*,"","","","null {[]} {[]}
 ","Details of a Technology mediated contact point (phone, fax, email, etc.)","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","","","","","","","","","",,,,,"",,,,"ContactPoint",0,*,"ele-1
-",""
+","cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}
+ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}"
 "bc-contactPoint","ContactPoint.id","ContactPoint.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-contactPoint","ContactPoint.extension","ContactPoint.extension","","extensions
@@ -603,7 +615,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-practitioner-disciplinary-action-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Practitioner Disciplinary Actions Extension","Provides details of disciplinary actions against the provider.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-practitioner-disciplinary-action-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-practitioner-disciplinary-action-extension","Extension.extension","Extension.extension","","","",4,*,"","","","Extension {[]} {[]}
@@ -681,7 +694,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}Contributor {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-clinical-service","HealthcareService","HealthcareService","","","",0,*,"","","","null {[]} {[]}
-","The details of a healthcare service available at a location","The details of a healthcare service available at a location.","","","","","","","","","",,,,,"",,,,"HealthcareService",0,*,"",""
+","The details of a healthcare service available at a location","The details of a healthcare service available at a location.","","","","","","","","","",,,,,"",,,,"HealthcareService",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
+dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}"
 "bc-clinical-service","HealthcareService.id","HealthcareService.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-clinical-service","HealthcareService.meta","HealthcareService.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -854,7 +868,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Technical endpoints providing access to electronic services operated for the healthcare service","Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.","","","","","","","","","",,,,,"",,,,"HealthcareService.endpoint",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-catalogue-service","HealthcareService","HealthcareService","","","",0,*,"","","","null {[]} {[]}
-","The details of a healthcare service available at a location","The details of a healthcare service available at a location.","","","","","","","","","",,,,,"",,,,"HealthcareService",0,*,"",""
+","The details of a healthcare service available at a location","The details of a healthcare service available at a location.","","","","","","","","","",,,,,"",,,,"HealthcareService",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
+dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}"
 "bc-catalogue-service","HealthcareService.id","HealthcareService.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-catalogue-service","HealthcareService.meta","HealthcareService.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -1028,7 +1043,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-humanName","HumanName","HumanName","","","",0,*,"","","","null {[]} {[]}
 ","Name of a human - parts and usage","A human's name with the ability to identify parts and usage.","Names may be changed, or repudiated, or people may have different names in different contexts. Names may be divided into parts of different type that have variable significance depending on context, though the division into parts does not always matter. With personal names, the different parts might or might not be imbued with some implicit meaning; various cultures associate different importance with the name parts and the degree to which systems must care about name parts around the world varies widely.","","","","","","","","",,,,,"",,,,"HumanName",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "bc-humanName","HumanName.id","HumanName.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-humanName","HumanName.extension","HumanName.extension","","extensions
@@ -1069,7 +1085,8 @@ middle name","",0,*,"","","Y","string {[]} {[]}
 ","Time period when name was/is in use","Indicates the period of time when this name was valid for the named person.","","Allows names to be placed in historical context.","","","","","","","",,,,,"",,,,"HumanName.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-role-relationships","PractitionerRole","PractitionerRole","","","",0,*,"","","","null {[]} {[]}
-","PractitionerRole Registry Profile","The PractitionerRoleRegistry Profile is based upon the CA Baseline FHIR PractitionerRole profile for general use","","","","","","","","","",,,,,"",,,,"PractitionerRole",0,*,"",""
+","PractitionerRole Registry Profile","The PractitionerRoleRegistry Profile is based upon the CA Baseline FHIR PractitionerRole profile for general use","","","","","","","","","",,,,,"",,,,"PractitionerRole",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
+dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}invariant-rltn-1:One organization or one location allowed; not both. {organization.count()=1 xor location.count()=1}"
 "bc-role-relationships","PractitionerRole.id","PractitionerRole.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-role-relationships","PractitionerRole.meta","PractitionerRole.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -1257,7 +1274,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-practitioner-relationship-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Practitioner to Practitioner Relationship Extension","Allows for relationships of practitioners to practitioners without needing CareTeam semantics.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-practitioner-relationship-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-practitioner-relationship-extension","Extension.extension","Extension.extension","","","",3,*,"","","","Extension {[]} {[]}
@@ -1322,7 +1340,8 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 "
 "bc-practitioner","Practitioner","Practitioner","","","",0,*,"","","","null {[]} {[]}
 ","Practitioner Profile","The Practitioner Profile is based upon the CA Bas+
-        `eline FHIR Practitioner Profile for general use","","","","","","","","","",,,,,"",,,,"Practitioner",0,*,"",""
+        `eline FHIR Practitioner Profile for general use","","","","","","","","","",,,,,"",,,,"Practitioner",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
+dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}ca-baseline-practitioner-name:Either name.given and/or name.family SHALL be present or a Data Absent Reason Extension SHALL be present {(name.family.exists() or name.given.exists()) xor extension.where(url='http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists()}invariant-qual-1:The number of qualifications must match the number of contained resources. {qualification.count()=contained.count()}"
 "bc-practitioner","Practitioner.id","Practitioner.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-practitioner","Practitioner.meta","Practitioner.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -1662,7 +1681,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-practitioner-bundle","Bundle","Bundle","","","",0,*,"","","","null {[]} {[]}
-","Contains a collection of resources","A container for a collection of resources.","","","","","","","","","",,,,,"",,,,"Bundle",0,*,"",""
+","Contains a collection of resources","A container for a collection of resources.","","","","","","","","","",,,,,"",,,,"Bundle",0,*,"","bdl-1:total only when a search or history {total.empty() or (type = 'searchset') or (type = 'history')}
+bdl-2:entry.search only when a search {entry.search.empty() or (type = 'searchset')}bdl-3:entry.request mandatory for batch/transaction/history, otherwise prohibited {entry.all(request.exists() = (%resource.type = 'batch' or %resource.type = 'transaction' or %resource.type = 'history'))}bdl-4:entry.response mandatory for batch-response/transaction-response/history, otherwise prohibited {entry.all(response.exists() = (%resource.type = 'batch-response' or %resource.type = 'transaction-response' or %resource.type = 'history'))}bdl-7:FullUrl must be unique in a bundle, or else entries with the same fullUrl must have different meta.versionId (except in history bundles) {(type = 'history') or entry.where(fullUrl.exists()).select(fullUrl&resource.meta.versionId).isDistinct()}bdl-9:A document must have an identifier with a system and a value {type = 'document' implies (identifier.system.exists() and identifier.value.exists())}bdl-10:A document must have a date {type = 'document' implies (timestamp.hasValue())}bdl-11:A document must have a Composition as the first resource {type = 'document' implies entry.first().resource.is(Composition)}bdl-12:A message must have a MessageHeader as the first resource {type = 'message' implies entry.first().resource.is(MessageHeader)}invariant-prac-bundle-1:In a Practitioner Bundle, PractitionerRole.practitioner.identifier must match at least one identifier in Practitioner. {Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-practitioner-role')).practitioner.identifier.value in Bundle.entry.resource.ofType(Practitioner).identifier.value}invariant-prac-bundle-2:In a Practitioner Bundle, PractitionerRole.practitioner.identifier should match other PractitionerRole practitioner identifiers in the Bundle. {Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).practitioner.identifier.value.distinct().count() = 1)}invariant-prac-bundle-3:In a Practitioner Bundle, each PractitionerRole.practitioner.identifier should match at least one identifier in Practitioner. {Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).practitioner.identifier.value.distinct() in Bundle.entry.resource.ofType(Practitioner).identifier.value)}"
 "bc-practitioner-bundle","Bundle.id","Bundle.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-practitioner-bundle","Bundle.meta","Bundle.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -1724,7 +1744,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-practitioner-bundle","Bundle.entry","Bundle.entry","","","",2,*,"","","Y","BackboneElement {[]} {[]}
 ","Entry in the bundle - will have a resource or information","An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).","","","","","","","","","",,,,,"","profile:resource}
-","The specific bundle entries that are needed for creating or updating a BC Practitioner.",,"open","Bundle.entry",0,*,"",""
+","The specific bundle entries that are needed for creating or updating a BC Practitioner.",,"open","Bundle.entry",0,*,"","bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}
+bdl-8:fullUrl cannot be a version specific reference {fullUrl.contains('/_history/').not()}ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}"
 "bc-practitioner-bundle","Bundle.entry.id","Bundle.entry.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-practitioner-bundle","Bundle.entry.extension","Bundle.entry.extension","","extensions
@@ -2197,7 +2218,8 @@ This outcome is not used for error responses in batch/transaction, only for hint
 "
 "bc-birthtime-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Birth Time Extension","Adds birth time to the birth date.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-birthtime-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-birthtime-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -2210,7 +2232,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-location-bundle","Bundle","Bundle","","","",0,*,"","","","null {[]} {[]}
-","Contains a collection of resources","A container for a collection of resources.","","","","","","","","","",,,,,"",,,,"Bundle",0,*,"",""
+","Contains a collection of resources","A container for a collection of resources.","","","","","","","","","",,,,,"",,,,"Bundle",0,*,"","bdl-1:total only when a search or history {total.empty() or (type = 'searchset') or (type = 'history')}
+bdl-2:entry.search only when a search {entry.search.empty() or (type = 'searchset')}bdl-3:entry.request mandatory for batch/transaction/history, otherwise prohibited {entry.all(request.exists() = (%resource.type = 'batch' or %resource.type = 'transaction' or %resource.type = 'history'))}bdl-4:entry.response mandatory for batch-response/transaction-response/history, otherwise prohibited {entry.all(response.exists() = (%resource.type = 'batch-response' or %resource.type = 'transaction-response' or %resource.type = 'history'))}bdl-7:FullUrl must be unique in a bundle, or else entries with the same fullUrl must have different meta.versionId (except in history bundles) {(type = 'history') or entry.where(fullUrl.exists()).select(fullUrl&resource.meta.versionId).isDistinct()}bdl-9:A document must have an identifier with a system and a value {type = 'document' implies (identifier.system.exists() and identifier.value.exists())}bdl-10:A document must have a date {type = 'document' implies (timestamp.hasValue())}bdl-11:A document must have a Composition as the first resource {type = 'document' implies entry.first().resource.is(Composition)}bdl-12:A message must have a MessageHeader as the first resource {type = 'message' implies entry.first().resource.is(MessageHeader)}invariant-loc-bundle-1:In a Location Bundle, OrganizationAffiliation.location.identifiers should match other entries' OrganizationAffiliation.location.identifiers in the Bundle. {Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).location.identifier.value.distinct().count() = 1)}invariant-loc-bundle-2:In a Location Bundle, PractitionerRole.location.identifiers should match other entries' PractitionerRole.location.identifiers in the Bundle. {Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).location.identifier.value.distinct().count() = 1)}invariant-loc-bundle-3:In a Location Bundle, PractitionerRole.location.identifier should match at least one identifier in Location. {Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).location.identifier.value.distinct() in Bundle.entry.resource.ofType(Location).identifier.value)}invariant-loc-bundle-4:In a Location Bundle, OrganizationAffiliation.location.identifier should match at least one identifier in Location. {Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).location.identifier.value.distinct() in Bundle.entry.resource.ofType(Location).identifier.value)}"
 "bc-location-bundle","Bundle.id","Bundle.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-location-bundle","Bundle.meta","Bundle.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -2272,7 +2295,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-location-bundle","Bundle.entry","Bundle.entry","","","",1,*,"","","Y","BackboneElement {[]} {[]}
 ","Entry in the bundle - will have a resource or information","An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).","","","","","","","","","",,,,,"","type:resource}
-","The specific bundle entries that are needed for creating or updating a BC Location.",,"open","Bundle.entry",0,*,"",""
+","The specific bundle entries that are needed for creating or updating a BC Location.",,"open","Bundle.entry",0,*,"","bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}
+bdl-8:fullUrl cannot be a version specific reference {fullUrl.contains('/_history/').not()}ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}"
 "bc-location-bundle","Bundle.entry.id","Bundle.entry.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-location-bundle","Bundle.entry.extension","Bundle.entry.extension","","extensions
@@ -2743,7 +2767,8 @@ This outcome is not used for error responses in batch/transaction, only for hint
 ","Digital Signature","Digital Signature - base64 encoded. XML-DSig or a JWT.","The signature could be created by the ""author"" of the bundle or by the originating device.   Requirements around inclusion of a signature, verification of signatures and treatment of signed/non-signed bundles is implementation-environment specific.","A Signature holds an electronic representation of a signature and its supporting context in a FHIR accessible form. The signature may either be a cryptographic type (XML DigSig or a JWS), which is able to provide non-repudiation proof, or it may be a graphical image that represents a signature or a signature process. This element allows capturing signatures on documents, messages, transactions or even search responses, to support content-authentication, non-repudiation or other business cases. This is primarily relevant where the bundle may travel through multiple hops or via other mechanisms where HTTPS non-repudiation is insufficient.","","","","","","","",,,,,"",,,,"Bundle.signature",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-operation-outcome","OperationOutcome","OperationOutcome","","","",0,*,"","","","null {[]} {[]}
-","Information about the success/failure of an action","A collection of error, warning, or information messages that result from a system action.","Can result from the failure of a REST call or be part of the response message returned from a request message.","","","","","","","","",,,,,"",,,,"OperationOutcome",0,*,"",""
+","Information about the success/failure of an action","A collection of error, warning, or information messages that result from a system action.","Can result from the failure of a REST call or be part of the response message returned from a request message.","","","","","","","","",,,,,"",,,,"OperationOutcome",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
+dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}"
 "bc-operation-outcome","OperationOutcome.id","OperationOutcome.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-operation-outcome","OperationOutcome.meta","OperationOutcome.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -2773,7 +2798,8 @@ user content","",0,*,"","Y","","Extension {[]} {[]}
 Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"DomainResource.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-operation-outcome","OperationOutcome.issue","OperationOutcome.issue","","","",1,*,"","","Y","BackboneElement {[]} {[]}
-","A single issue associated with the action","An error, warning, or information message that results from a system action.","","","","","","","","","",,,,,"",,,,"OperationOutcome.issue",1,*,"",""
+","A single issue associated with the action","An error, warning, or information message that results from a system action.","","","","","","","","","",,,,,"",,,,"OperationOutcome.issue",1,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "bc-operation-outcome","OperationOutcome.issue.id","OperationOutcome.issue.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-operation-outcome","OperationOutcome.issue.extension","OperationOutcome.issue.extension","","extensions
@@ -2845,7 +2871,8 @@ For resource issues, this will be a simple XPath limited to element names, repet
 "
 "bc-specialty-source-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Specialty Source Extension","The specialty source.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-specialty-source-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-specialty-source-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -2859,7 +2886,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-practitioner-qualification-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Practitioner Qualification Extension","The qualifications extensions.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-practitioner-qualification-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-practitioner-qualification-extension","Extension.extension","Extension.extension","","","",2,*,"","","","Extension {[]} {[]}
@@ -2929,7 +2957,8 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 "
 "bc-practitioner-deathdate-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Practitioner Date of Death Extension","The Date of Death of a Practitioner.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-practitioner-deathdate-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-practitioner-deathdate-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -2943,7 +2972,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-end-reason-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC End Reason Extension","Tracking end reason.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-end-reason-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-end-reason-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -2953,11 +2983,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "bc-end-reason-extension","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "bc-end-reason-extension","Extension.value[x]","Extension.value[x]","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","","https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-end-reason-value-set","",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-facility-health-authority-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Facility Health Authority Area Extension","A code that represents the health authority area that the location is a part of.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-facility-health-authority-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-facility-health-authority-extension","Extension.extension","Extension.extension","","extensions
@@ -3000,7 +3031,8 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 "
 "bc-owner-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Owner Extension","Tracking the owner.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-owner-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-owner-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -3013,7 +3045,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-organization-bundle","Bundle","Bundle","","","",0,*,"","","","null {[]} {[]}
-","Contains a collection of resources","A container for a collection of resources.","","","","","","","","","",,,,,"",,,,"Bundle",0,*,"",""
+","Contains a collection of resources","A container for a collection of resources.","","","","","","","","","",,,,,"",,,,"Bundle",0,*,"","bdl-1:total only when a search or history {total.empty() or (type = 'searchset') or (type = 'history')}
+bdl-2:entry.search only when a search {entry.search.empty() or (type = 'searchset')}bdl-3:entry.request mandatory for batch/transaction/history, otherwise prohibited {entry.all(request.exists() = (%resource.type = 'batch' or %resource.type = 'transaction' or %resource.type = 'history'))}bdl-4:entry.response mandatory for batch-response/transaction-response/history, otherwise prohibited {entry.all(response.exists() = (%resource.type = 'batch-response' or %resource.type = 'transaction-response' or %resource.type = 'history'))}bdl-7:FullUrl must be unique in a bundle, or else entries with the same fullUrl must have different meta.versionId (except in history bundles) {(type = 'history') or entry.where(fullUrl.exists()).select(fullUrl&resource.meta.versionId).isDistinct()}bdl-9:A document must have an identifier with a system and a value {type = 'document' implies (identifier.system.exists() and identifier.value.exists())}bdl-10:A document must have a date {type = 'document' implies (timestamp.hasValue())}bdl-11:A document must have a Composition as the first resource {type = 'document' implies entry.first().resource.is(Composition)}bdl-12:A message must have a MessageHeader as the first resource {type = 'message' implies entry.first().resource.is(MessageHeader)}invariant-org-bundle-1:In a Organization Bundle, OrganizationAffiliation.organization.identifiers should match other entries' OrganizationAffiliation.organization.identifiers in the Bundle. {Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).organization.identifier.value.distinct().count() = 1)}invariant-org-bundle-2:In a Organization Bundle, PractitionerRole.organization.identifiers should match other entries' PractitionerRole.organization.identifiers in the Bundle. {Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).organization.identifier.value.distinct().count() = 1)}invariant-org-bundle-3:In a Organization Bundle, PractitionerRole.organization.identifier should match at least one identifier in Organization. {Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).count() = 0 or (Bundle.entry.select(resource as PractitionerRole).where(meta.profile.endsWith('bc-role-relationships')).organization.identifier.value.distinct() in Bundle.entry.resource.ofType(Organization).identifier.value)}invariant-org-bundle-4:In a Organization Bundle, OrganizationAffiliation.organization.identifier should match at least one identifier in Organization. {Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).count() = 0 or (Bundle.entry.select(resource as OrganizationAffiliation).where(meta.profile.endsWith('bc-organization-affiliation')).organization.identifier.value.distinct() in Bundle.entry.resource.ofType(Organization).identifier.value)}"
 "bc-organization-bundle","Bundle.id","Bundle.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-organization-bundle","Bundle.meta","Bundle.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -3075,7 +3108,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-organization-bundle","Bundle.entry","Bundle.entry","","","",1,*,"","","Y","BackboneElement {[]} {[]}
 ","Entry in the bundle - will have a resource or information","An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).","","","","","","","","","",,,,,"","profile:resource}
-","The specific bundle entries that are needed for creating or updating a BC Organization.",,"open","Bundle.entry",0,*,"",""
+","The specific bundle entries that are needed for creating or updating a BC Organization.",,"open","Bundle.entry",0,*,"","bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}
+bdl-8:fullUrl cannot be a version specific reference {fullUrl.contains('/_history/').not()}ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}"
 "bc-organization-bundle","Bundle.entry.id","Bundle.entry.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-organization-bundle","Bundle.entry.extension","Bundle.entry.extension","","extensions
@@ -3546,7 +3580,8 @@ This outcome is not used for error responses in batch/transaction, only for hint
 ","Digital Signature","Digital Signature - base64 encoded. XML-DSig or a JWT.","The signature could be created by the ""author"" of the bundle or by the originating device.   Requirements around inclusion of a signature, verification of signatures and treatment of signed/non-signed bundles is implementation-environment specific.","A Signature holds an electronic representation of a signature and its supporting context in a FHIR accessible form. The signature may either be a cryptographic type (XML DigSig or a JWS), which is able to provide non-repudiation proof, or it may be a graphical image that represents a signature or a signature process. This element allows capturing signatures on documents, messages, transactions or even search responses, to support content-authentication, non-repudiation or other business cases. This is primarily relevant where the bundle may travel through multiple hops or via other mechanisms where HTTPS non-repudiation is insufficient.","","","","","","","",,,,,"",,,,"Bundle.signature",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-primary-network","CareTeam","CareTeam","","","",0,*,"","","","null {[]} {[]}
-","Planned participants in the coordination and delivery of care for a patient or group","The Care Team includes all the people and organizations who plan to participate in the coordination and delivery of care for a patient.","","","","","","","","","",,,,,"",,,,"CareTeam",0,*,"",""
+","Planned participants in the coordination and delivery of care for a patient or group","The Care Team includes all the people and organizations who plan to participate in the coordination and delivery of care for a patient.","","","","","","","","","",,,,,"",,,,"CareTeam",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
+dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}"
 "bc-primary-network","CareTeam.id","CareTeam.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-primary-network","CareTeam.meta","CareTeam.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -3644,7 +3679,8 @@ Member is optional because some participants may be known only by their role, pa
 ","Comments made about the CareTeam","Comments made about the CareTeam.","","","","","","","","","",,,,,"",,,,"CareTeam.note",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-batch-bundle","Bundle","Bundle","","","",0,*,"","","","null {[]} {[]}
-","Contains a collection of resources","A container for a collection of resources.","","","","","","","","","",,,,,"",,,,"Bundle",0,*,"",""
+","Contains a collection of resources","A container for a collection of resources.","","","","","","","","","",,,,,"",,,,"Bundle",0,*,"","bdl-1:total only when a search or history {total.empty() or (type = 'searchset') or (type = 'history')}
+bdl-2:entry.search only when a search {entry.search.empty() or (type = 'searchset')}bdl-3:entry.request mandatory for batch/transaction/history, otherwise prohibited {entry.all(request.exists() = (%resource.type = 'batch' or %resource.type = 'transaction' or %resource.type = 'history'))}bdl-4:entry.response mandatory for batch-response/transaction-response/history, otherwise prohibited {entry.all(response.exists() = (%resource.type = 'batch-response' or %resource.type = 'transaction-response' or %resource.type = 'history'))}bdl-7:FullUrl must be unique in a bundle, or else entries with the same fullUrl must have different meta.versionId (except in history bundles) {(type = 'history') or entry.where(fullUrl.exists()).select(fullUrl&resource.meta.versionId).isDistinct()}bdl-9:A document must have an identifier with a system and a value {type = 'document' implies (identifier.system.exists() and identifier.value.exists())}bdl-10:A document must have a date {type = 'document' implies (timestamp.hasValue())}bdl-11:A document must have a Composition as the first resource {type = 'document' implies entry.first().resource.is(Composition)}bdl-12:A message must have a MessageHeader as the first resource {type = 'message' implies entry.first().resource.is(MessageHeader)}"
 "bc-batch-bundle","Bundle.id","Bundle.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-batch-bundle","Bundle.meta","Bundle.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -3706,7 +3742,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-batch-bundle","Bundle.entry","Bundle.entry","","","",1,*,"","","Y","BackboneElement {[]} {[]}
 ","Entry in the bundle - will have a resource or information","An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).","","","","","","","","","",,,,,"","profile:resource}
-","The specific bundle entries that are needed for creating or updating a BC Organization.",,"open","Bundle.entry",0,*,"",""
+","The specific bundle entries that are needed for creating or updating a BC Organization.",,"open","Bundle.entry",0,*,"","bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}
+bdl-8:fullUrl cannot be a version specific reference {fullUrl.contains('/_history/').not()}ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}"
 "bc-batch-bundle","Bundle.entry.id","Bundle.entry.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-batch-bundle","Bundle.entry.extension","Bundle.entry.extension","","extensions
@@ -4178,7 +4215,8 @@ This outcome is not used for error responses in batch/transaction, only for hint
 "
 "bc-location-relationship-type-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Practitioner to Location Type Extension.","The relationship type of a Practitioner to Location relationship.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-location-relationship-type-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-location-relationship-type-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -4192,7 +4230,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-period-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Valid Period Extension","The period for when the extended element is valid.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-period-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-period-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -4206,7 +4245,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-address-validation-status-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Address Validation Extension","BC extension for address validation status codes.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-address-validation-status-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-address-validation-status-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -4216,11 +4256,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "bc-address-validation-status-extension","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "bc-address-validation-status-extension","Extension.value[x]","Extension.value[x]","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","","https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-address-validation-status-value-set","",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-facility-community-health-area-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Facility Community Health Service Area Extension","A code that represents the Community Health Service Area (CHSA) that the location is a part of.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-facility-community-health-area-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-facility-community-health-area-extension","Extension.extension","Extension.extension","","","",2,*,"","","","Extension {[]} {[]}
@@ -4261,7 +4302,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}Contributor {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-careteam","CareTeam","CareTeam","","","",0,*,"","","","null {[]} {[]}
-","Planned participants in the coordination and delivery of care for a patient or group","The Care Team includes all the people and organizations who plan to participate in the coordination and delivery of care for a patient.","","","","","","","","","",,,,,"",,,,"CareTeam",0,*,"",""
+","Planned participants in the coordination and delivery of care for a patient or group","The Care Team includes all the people and organizations who plan to participate in the coordination and delivery of care for a patient.","","","","","","","","","",,,,,"",,,,"CareTeam",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
+dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}"
 "bc-careteam","CareTeam.id","CareTeam.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-careteam","CareTeam.meta","CareTeam.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -4359,7 +4401,8 @@ Member is optional because some participants may be known only by their role, pa
 ","Comments made about the CareTeam","Comments made about the CareTeam.","","","","","","","","","",,,,,"",,,,"CareTeam.note",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-location","Location","Location","","","",0,*,"","","","null {[]} {[]}
-","Details and position information for a physical place","Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.","","","","","","","","","",,,,,"",,,,"Location",0,*,"",""
+","Details and position information for a physical place","Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.","","","","","","","","","",,,,,"",,,,"Location",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
+dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}"
 "bc-location","Location.id","Location.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-location","Location.meta","Location.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -4525,7 +4568,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-confidentiality-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Confidentiality Extension","Indicates the confidentiality of a BC provider's (practitioner or organization) information.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-confidentiality-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-confidentiality-extension","Extension.extension","Extension.extension","","","",2,*,"","","","Extension {[]} {[]}
@@ -4562,7 +4606,8 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 "
 "bc-license-status-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC License Status Extension","Tracking the status and changes to the status of a practitioner/organization license.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-license-status-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-license-status-extension","Extension.extension","Extension.extension","","","",4,*,"","","","Extension {[]} {[]}
@@ -4638,7 +4683,8 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 "
 "bc-facility-details-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Facility Details Extension","Provides the details of a facility as represented by a FHIR location.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-facility-details-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-facility-details-extension","Extension.extension","Extension.extension","","","",1,*,"","","","Extension {[]} {[]}
@@ -4717,7 +4763,8 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 "
 "bc-facility-physical-address-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Facility Physical Address Extension","An optional physical address for the facility.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-facility-physical-address-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-facility-physical-address-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -4732,7 +4779,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-address","Address","Address","","","",0,*,"","","","null {[]} {[]}
 ","An address expressed using postal conventions (as opposed to GPS or other location definition formats)","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R4/location.html#) resource).","","","","","","","","",,,,,"",,,,"Address",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "bc-address","Address.id","Address.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-address","Address.extension","Address.extension","","extensions
@@ -4791,7 +4839,8 @@ Territory","",0,1,"","","Y","string {[]} {[]}
 "
 "bc-facility-health-service-delivery-area-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Facility Health Service Delivery Area Extension","A code that represents the Health Service Delivery Area (HSDA)that the location is a part of.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-facility-health-service-delivery-area-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-facility-health-service-delivery-area-extension","Extension.extension","Extension.extension","","extensions
@@ -4833,7 +4882,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}Contributor {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "bc-organization","Organization","Organization","","","",0,*,"","","","null {[]} {[]}
-","A grouping of people or organizations with a common purpose","A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, payer/insurer, etc.","","","","","","","","","",,,,,"",,,,"Organization",0,*,"",""
+","A grouping of people or organizations with a common purpose","A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, payer/insurer, etc.","","","","","","","","","",,,,,"",,,,"Organization",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
+dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}org-1:The organization SHALL at least have a name or an identifier, and possibly more than one {(identifier.count() + name.count()) > 0}"
 "bc-organization","Organization.id","Organization.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "bc-organization","Organization.meta","Organization.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -5013,7 +5063,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "bc-name-use-extension","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","BC Name Use Extension","Allows for use on a simple name string.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "bc-name-use-extension","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "bc-name-use-extension","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}

@@ -523,6 +523,11 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <table class="list">
 <tr><td width="60"><b>Id</b></td><td><b>Grade</b></td><td><b>Path(s)</b></td><td><b>Details</b></td><td><b>Requirements</b></td></tr>
 <tr><td>ctm-1</td><td>error</td><td>CareTeam.participant</td><td>CareTeam.participant.onBehalfOf can only be populated when CareTeam.participant.member is a Practitioner<br/>: onBehalfOf.exists() implies (member.resolve().iif(empty(), true, ofType(Practitioner).exists()))</td><td></td></tr>
+<tr><td>dom-2</td><td>error</td><td>CareTeam</td><td>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/>: contained.contained.empty()</td><td></td></tr>
+<tr><td>dom-3</td><td>error</td><td>CareTeam</td><td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/>: contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</td><td></td></tr>
+<tr><td>dom-4</td><td>error</td><td>CareTeam</td><td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/>: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</td><td></td></tr>
+<tr><td>dom-5</td><td>error</td><td>CareTeam</td><td>If a resource is contained in another resource, it SHALL NOT have a security label<br/>: contained.meta.security.empty()</td><td></td></tr>
+<tr><td>dom-6</td><td>best practice</td><td>CareTeam</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
 <tr><td>ele-1</td><td>error</td><td>**ALL** elements</td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
 <tr><td>ext-1</td><td>error</td><td>**ALL** extensions</td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
 </table>
@@ -771,6 +776,11 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <table class="list">
 <tr><td width="60"><b>Id</b></td><td><b>Grade</b></td><td><b>Path(s)</b></td><td><b>Details</b></td><td><b>Requirements</b></td></tr>
 <tr><td>ctm-1</td><td>error</td><td>CareTeam.participant</td><td>CareTeam.participant.onBehalfOf can only be populated when CareTeam.participant.member is a Practitioner<br/>: onBehalfOf.exists() implies (member.resolve().iif(empty(), true, ofType(Practitioner).exists()))</td><td></td></tr>
+<tr><td>dom-2</td><td>error</td><td>CareTeam</td><td>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/>: contained.contained.empty()</td><td></td></tr>
+<tr><td>dom-3</td><td>error</td><td>CareTeam</td><td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/>: contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</td><td></td></tr>
+<tr><td>dom-4</td><td>error</td><td>CareTeam</td><td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/>: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</td><td></td></tr>
+<tr><td>dom-5</td><td>error</td><td>CareTeam</td><td>If a resource is contained in another resource, it SHALL NOT have a security label<br/>: contained.meta.security.empty()</td><td></td></tr>
+<tr><td>dom-6</td><td>best practice</td><td>CareTeam</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
 <tr><td>ele-1</td><td>error</td><td>**ALL** elements</td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
 <tr><td>ext-1</td><td>error</td><td>**ALL** extensions</td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
 </table>
@@ -920,7 +930,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 18:08+0000">2023-08-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 19:47+0000">2023-08-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
