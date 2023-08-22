@@ -89,6 +89,22 @@ Description: "Example of a Location."
 * telecom[0].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #FC
+/* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-authority-extension"
+* extension[=].extension[=].extension[code].value = "02"
+* extension[=].extension[=].extension[name].value = "Vancouver Island"/**/
+/* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-delivery-area-extension"
+* extension[=].extension[=].code = "023"
+* extension[=].extension[=].name = "South Vancouver Island"
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-local-health-area-extension"
+* extension[=].extension[=].code = "0234"
+* extension[=].extension[=].name = "Greater Victoria"
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-area-extension"
+* extension[=].extension[=].code = "02345"
+* extension[=].extension[=].name = "Downtown Victoria/Vic West"
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-primary-care-network-extension"
+* extension[=].extension[=].code = "153"
+* extension[=].extension[=].name = "Downtown/Vic West"*/
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-physical-address-extension"
 * extension[=].valueAddress = Example-Address-Fac
 * address = Example-Address-Fac

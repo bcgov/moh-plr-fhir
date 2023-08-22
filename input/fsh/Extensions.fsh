@@ -19,25 +19,69 @@ Description: "Provides the details of a facility as represented by a FHIR locati
 * extension[contactName].value[x] 1..1 MS
 
 Extension: HealthServiceArea
-Id: bc-facility-health-service-area-list-extension
-Title: "BC Facility Health Service Area Extension"
-Description: "A code that represents the health service area, including the PCN and the Community Health Service Area that the location is a part of."
-* extension contains HealthServiceAreaExtension named HA 1..1 MS and 
-     HealthServiceAreaExtension  named HSDA 1..1 MS and
-     HealthServiceAreaExtension named LHA 1..1 MS and
-     HealthServiceAreaExtension  named CHSA 1..1 MS and
-     HealthServiceAreaExtension named PCN 0..1 MS
-
-Extension: HealthServiceAreaExtension
 Id: bc-facility-health-service-area-extension
 Title: "BC Facility Health Service Area Extension"
-Description: "A code that represents the health service area, including the PCN and the Community Health Service Area that the location is a part of."
+Description: "A wrapper extension that will allow to list all the health service area, including the PCN and the Community Health Service Area."
+* extension contains HealthAuthorityExtension named HA 0..1 MS and 
+     HealthServiceDeliveryAreaExtension named HSDA 0..1 MS and
+     LocalHealthAreaExtension named LHA 0..1 MS and
+     CommunityHealthServiceAreaExtension named CHSA 0..1 MS and
+     PrimaryCareNetworkExtension named PCN 0..1 MS
+
+Extension: HealthAuthorityExtension
+Id: bc-facility-health-authority-extension
+Title: "BC Facility Health Authority Area Extension"
+Description: "A code that represents the health authority area that the location is a part of."
+* extension contains code 0..1 MS and 
+     name 0..1 MS 
+* extension[code].value[x] only Identifier
+* extension[code].value[x] 0..1 MS
+* extension[name].value[x] only string
+* extension[name].value[x] 0..1 MS
+
+Extension: HealthServiceDeliveryAreaExtension
+Id: bc-facility-health-service-delivery-area-extension
+Title: "BC Facility Health Service Delivery Area Extension"
+Description: "A code that represents the Health Service Delivery Area (HSDA)that the location is a part of."
+* extension contains code 0..1 MS and 
+     name 0..1 MS 
+* extension[code].value[x] only Identifier
+* extension[code].value[x] 0..1 MS
+* extension[name].value[x] only string
+* extension[name].value[x] 0..1 MS
+
+Extension: LocalHealthAreaExtension
+Id: bc-facility-local-health-area-extension
+Title: "BC Facility Local Health Area Extension"
+Description: "A code that represents the Local Health Area (LHA) that the location is a part of."
+* extension contains code 0..1 MS and 
+     name 0..1 MS 
+* extension[code].value[x] only Identifier
+* extension[code].value[x] 0..1 MS
+* extension[name].value[x] only string
+* extension[name].value[x] 0..1 MS
+
+Extension: CommunityHealthServiceAreaExtension
+Id: bc-facility-community-health-area-extension
+Title: "BC Facility Community Health Service Area Extension"
+Description: "A code that represents the Community Health Service Area (CHSA) that the location is a part of."
 * extension contains code 1..1 MS and 
-     description 0..1 MS 
+     name 1..1 MS 
 * extension[code].value[x] only Identifier
 * extension[code].value[x] 1..1 MS
-* extension[description].value[x] only string
-* extension[description].value[x] 0..1 MS
+* extension[name].value[x] only string
+* extension[name].value[x] 1..1 MS
+
+Extension: PrimaryCareNetworkExtension
+Id: bc-facility-primary-care-network-extension
+Title: "BC Facility Primary Care Network Extension"
+Description: "A code that represents the Primary Care Network (PCN) that the location is a part of."
+* extension contains code 1..1 MS and 
+     name 0..1 MS 
+* extension[code].value[x] only Identifier
+* extension[code].value[x] 1..1 MS
+* extension[name].value[x] only string
+* extension[name].value[x] 0..1 MS
 
 Extension: PhysicalAddress
 Id: bc-facility-physical-address-extension
