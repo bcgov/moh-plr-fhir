@@ -48,3 +48,4 @@ Alias: $System_FACID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/FAC
 Alias: $System_PCN = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-primary-care-network
 Alias: $System_CHSA = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-community-health-service-area
 
+Alias: $PLRAddressValidationStatus = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system
