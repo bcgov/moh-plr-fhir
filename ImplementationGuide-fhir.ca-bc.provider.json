@@ -10,7 +10,7 @@
   "name" : "BCProviderRegistry",
   "title" : "BC Provider Location Registry FHIR Implementation Guide",
   "status" : "draft",
-  "date" : "2023-08-21T18:39:03+00:00",
+  "date" : "2023-08-22T18:08:48+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -750,6 +750,18 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/bc-facility-community-health-area-extension"
+      },
+      "name" : "BC Facility Community Health Service Area Extension",
+      "description" : "A code that represents the Community Health Service Area (CHSA) that the location is a part of.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/bc-facility-details-extension"
       },
       "name" : "BC Facility Details Extension",
@@ -763,10 +775,10 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/bc-facility-health-service-area-list-extension"
+        "reference" : "StructureDefinition/bc-facility-health-authority-extension"
       },
-      "name" : "BC Facility Health Service Area Extension",
-      "description" : "A code that represents the health service area, including the PCN and the Community Health Service Area that the location is a part of.",
+      "name" : "BC Facility Health Authority Area Extension",
+      "description" : "A code that represents the health authority area that the location is a part of.",
       "exampleBoolean" : false
     },
     {
@@ -778,9 +790,33 @@
         "reference" : "StructureDefinition/bc-facility-health-service-area-extension"
       },
       "name" : "BC Facility Health Service Area Extension",
-      "description" : "A code that represents the health service area, including the PCN and the Community Health Service Area that the location is a part of.",
+      "description" : "A wrapper extension that will allow to list all the health service area, including the PCN and the Community Health Service Area.",
       "exampleBoolean" : false,
       "groupingId" : "Extensions"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-facility-health-service-delivery-area-extension"
+      },
+      "name" : "BC Facility Health Service Delivery Area Extension",
+      "description" : "A code that represents the Health Service Delivery Area (HSDA)that the location is a part of.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-facility-local-health-area-extension"
+      },
+      "name" : "BC Facility Local Health Area Extension",
+      "description" : "A code that represents the Local Health Area (LHA) that the location is a part of.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -794,6 +830,18 @@
       "description" : "An optional physical address for the facility.",
       "exampleBoolean" : false,
       "groupingId" : "Extensions"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-facility-primary-care-network-extension"
+      },
+      "name" : "BC Facility Primary Care Network Extension",
+      "description" : "A code that represents the Primary Care Network (PCN) that the location is a part of.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{

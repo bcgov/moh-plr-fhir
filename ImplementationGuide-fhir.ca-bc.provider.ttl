@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "BCProviderRegistry"] ; # 
   fhir:title [ fhir:v "BC Provider Location Registry FHIR Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-08-21T18:39:03+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-08-22T18:08:48+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -656,6 +656,18 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-area-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-facility-community-health-area-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Facility Community Health Service Area Extension" ] ;
+       fhir:description [ fhir:v "A code that represents the Community Health Service Area (CHSA) that the location is a part of." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension> ;
          fhir:reference [ fhir:v "StructureDefinition/bc-facility-details-extension" ]
        ] ;
@@ -669,11 +681,11 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-list-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-facility-health-service-area-list-extension" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-authority-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-facility-health-authority-extension" ]
        ] ;
-       fhir:name [ fhir:v "BC Facility Health Service Area Extension" ] ;
-       fhir:description [ fhir:v "A code that represents the health service area, including the PCN and the Community Health Service Area that the location is a part of." ] ;
+       fhir:name [ fhir:v "BC Facility Health Authority Area Extension" ] ;
+       fhir:description [ fhir:v "A code that represents the health authority area that the location is a part of." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -685,9 +697,33 @@
          fhir:reference [ fhir:v "StructureDefinition/bc-facility-health-service-area-extension" ]
        ] ;
        fhir:name [ fhir:v "BC Facility Health Service Area Extension" ] ;
-       fhir:description [ fhir:v "A code that represents the health service area, including the PCN and the Community Health Service Area that the location is a part of." ] ;
+       fhir:description [ fhir:v "A wrapper extension that will allow to list all the health service area, including the PCN and the Community Health Service Area." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-delivery-area-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-facility-health-service-delivery-area-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Facility Health Service Delivery Area Extension" ] ;
+       fhir:description [ fhir:v "A code that represents the Health Service Delivery Area (HSDA)that the location is a part of." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-local-health-area-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-facility-local-health-area-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Facility Local Health Area Extension" ] ;
+       fhir:description [ fhir:v "A code that represents the Local Health Area (LHA) that the location is a part of." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -701,6 +737,18 @@
        fhir:description [ fhir:v "An optional physical address for the facility." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "Extensions" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-primary-care-network-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-facility-primary-care-network-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Facility Primary Care Network Extension" ] ;
+       fhir:description [ fhir:v "A code that represents the Primary Care Network (PCN) that the location is a part of." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
