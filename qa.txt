@@ -1,17 +1,17 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 37, warn = 602, info = 195
+err = 37, warn = 612, info = 195
 IG Publisher Version: 1.4.0
-Generated Tue Aug 22 22:27:44 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provider#1.0.0 (canonical = http://hlth.gov.bc.ca/fhir/provider)
+Generated Fri Aug 25 21:46:23 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provider#1.0.0 (canonical = http://hlth.gov.bc.ca/fhir/provider)
  Build Errors : 0 / 4 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 9 / 7
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocationWithLinks-Bundle : 2 / 9 / 19
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocationWithLinks-Bundle-Response : 2 / 6 / 7
- /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 0 / 21 / 14
+ /github/workspace/fsh-generated/resources/Bundle-Example-AddOrganization-Bundle : 0 / 33 / 18
  /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle : 0 / 48 / 38
  /github/workspace/fsh-generated/resources/Bundle-Example-AddPractitioner-Bundle-Response : 0 / 48 / 51
- /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 0 / 69 / 70
+ /github/workspace/fsh-generated/resources/Bundle-Example-Batch-Bundle : 0 / 75 / 72
  /github/workspace/fsh-generated/resources/Bundle-Example-DistributeOrganization-Bundle : 0 / 21 / 25
  /github/workspace/fsh-generated/resources/Bundle-Example-DistributePractitioner-Bundle : 0 / 48 / 51
  /github/workspace/fsh-generated/resources/Bundle-Example-DistributePractitioner-Bundle-forTesting : 0 / 6 / 21
@@ -55,7 +55,7 @@ Generated Tue Aug 22 22:27:44 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-MaintainSuccess : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-Success : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/Organization-Example-Credential-Granting-Institution : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/Organization-Example-Organization-1 : 0 / 12 / 7
+ /github/workspace/fsh-generated/resources/Organization-Example-Organization-1 : 0 / 18 / 9
  /github/workspace/fsh-generated/resources/Organization-Example-Qualification-Organization : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-IPC.00047422.BC.PRS : 0 / 9 / 6
  /github/workspace/fsh-generated/resources/Organization-IPC.00147434.BC.PRS : 0 / 21 / 10
@@ -74,7 +74,7 @@ Generated Tue Aug 22 22:27:44 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/OrganizationAffiliation-RELN.25.PRS : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/OrganizationAffiliation-RELN.26.PRS : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/Parameters-Example-Request-Add-Location : 2 / 9 / 21
- /github/workspace/fsh-generated/resources/Parameters-Example-Request-Add-Organization : 0 / 12 / 12
+ /github/workspace/fsh-generated/resources/Parameters-Example-Request-Add-Organization : 0 / 18 / 14
  /github/workspace/fsh-generated/resources/Parameters-Example-Request-Add-Practitioner : 0 / 30 / 29
  /github/workspace/fsh-generated/resources/Parameters-Example-Request-Distribution-Organization : 0 / 12 / 21
  /github/workspace/fsh-generated/resources/Parameters-Example-Request-Distribution-Practitioner : 0 / 30 / 39
@@ -201,12 +201,16 @@ ERROR: Bundle/Example-AddLocationWithLinks-Bundle-Response: Bundle.entry[0].reso
 ERROR: Bundle/Example-AddLocationWithLinks-Bundle-Response: Bundle.entry[0].resource/*Location/IFC.00147423.BC.PRS*/.extension[2]: The extension http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-service-area-extension is unknown, and not allowed here
 WARNING: Bundle/Example-AddLocationWithLinks-Bundle-Response: Bundle.entry[0].resource/*Location/IFC.00147423.BC.PRS*/.telecom[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
 == fsh-generated/resources/Bundle-Example-AddOrganization-Bundle.json ==
+WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.extension[1].extension[2].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-reason-value-set|1.0.0
+WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.extension[1].extension[3].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-class-value-set|1.0.0
 WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.type[0]: Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-organization-role-value-set|1.0.0
 WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.telecom[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
 WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.address[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
 WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.address[0].extension[1].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-address-validation-status-value-set|1.0.0
 INFORMATION: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.address[0].extension[0]: This element does not match any known slice defined in the profile http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization|1.0.0
 INFORMATION: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource.address[0].extension[1]: This element does not match any known slice defined in the profile http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization|1.0.0
+WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource/*Organization/Example-Organization-1*/.extension[1].extension[2].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-reason-value-set|1.0.0
+WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource/*Organization/Example-Organization-1*/.extension[1].extension[3].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-class-value-set|1.0.0
 WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource/*Organization/Example-Organization-1*/.telecom[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
 WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource/*Organization/Example-Organization-1*/.address[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
 WARNING: Bundle/Example-AddOrganization-Bundle: Bundle.entry[0].resource/*Organization/Example-Organization-1*/.address[0].extension[1].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-address-validation-status-value-set|1.0.0
@@ -295,6 +299,8 @@ WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource
 WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.specialty[0]: Code System URI 'http://fhir.infoway-inforoute.ca/CodeSystem/scpqual' is unknown so the code cannot be validated; Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-expertise-value-set|1.0.0
 INFORMATION: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource.specialty[0].coding[0]: The definition for the Code System with URI 'http://fhir.infoway-inforoute.ca/CodeSystem/scpqual' doesnt provide any codes so the code cannot be validated
 INFORMATION: Bundle/Example-Batch-Bundle: Bundle.entry[0].resource.entry[1].resource/*PractitionerRole/Example-PractitionerRole-Role-FromPrac-CPSID*/.specialty[0].coding[0]: The definition for the Code System with URI 'http://fhir.infoway-inforoute.ca/CodeSystem/scpqual' doesnt provide any codes so the code cannot be validated
+WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource/*Organization/Example-Organization-1*/.extension[1].extension[2].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-reason-value-set|1.0.0
+WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource/*Organization/Example-Organization-1*/.extension[1].extension[3].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-class-value-set|1.0.0
 WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource/*Organization/Example-Organization-1*/.type[0]: Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-organization-role-value-set|1.0.0
 WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource/*Organization/Example-Organization-1*/.telecom[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
 WARNING: Bundle/Example-Batch-Bundle: Bundle.entry[1].resource.entry[0].resource/*Organization/Example-Organization-1*/.address[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
@@ -663,6 +669,8 @@ WARNING: Location/IFC.00147423.BC.PRS: Location.telecom[0].extension[0].value.of
 == fsh-generated/resources/OperationOutcome-Example-OperationOutcome-Success.json ==
 == fsh-generated/resources/Organization-Example-Credential-Granting-Institution.json ==
 == fsh-generated/resources/Organization-Example-Organization-1.json ==
+WARNING: Organization/Example-Organization-1: Organization.extension[1].extension[2].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-reason-value-set|1.0.0
+WARNING: Organization/Example-Organization-1: Organization.extension[1].extension[3].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-class-value-set|1.0.0
 WARNING: Organization/Example-Organization-1: Organization.type[0]: Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-organization-role-value-set|1.0.0
 WARNING: Organization/Example-Organization-1: Organization.telecom[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
 WARNING: Organization/Example-Organization-1: Organization.address[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
@@ -724,6 +732,8 @@ WARNING: Parameters/Example-Request-Add-Location: Parameters.parameter[2].resour
 ERROR: Parameters/Example-Request-Add-Location: Parameters.parameter[2].resource/*Bundle/Example-AddLocationWithLinks-Bundle*/: Rule invariant-loc-bundle-3: 'In a Location Bundle, PractitionerRole.location.identifier should match at least one identifier in Location.' Failed
 ERROR: Parameters/Example-Request-Add-Location: Parameters.parameter[2].resource/*Bundle/Example-AddLocationWithLinks-Bundle*/: Rule invariant-loc-bundle-4: 'In a Location Bundle, OrganizationAffiliation.location.identifier should match at least one identifier in Location.' Failed
 == fsh-generated/resources/Parameters-Example-Request-Add-Organization.json ==
+WARNING: Parameters/Example-Request-Add-Organization: Parameters.parameter[2].resource/*Bundle/Example-AddOrganization-Bundle*/.entry[0].resource/*Organization/Example-Organization-1*/.extension[1].extension[2].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-reason-value-set|1.0.0
+WARNING: Parameters/Example-Request-Add-Organization: Parameters.parameter[2].resource/*Bundle/Example-AddOrganization-Bundle*/.entry[0].resource/*Organization/Example-Organization-1*/.extension[1].extension[3].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-class-value-set|1.0.0
 WARNING: Parameters/Example-Request-Add-Organization: Parameters.parameter[2].resource/*Bundle/Example-AddOrganization-Bundle*/.entry[0].resource/*Organization/Example-Organization-1*/.telecom[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
 WARNING: Parameters/Example-Request-Add-Organization: Parameters.parameter[2].resource/*Bundle/Example-AddOrganization-Bundle*/.entry[0].resource/*Organization/Example-Organization-1*/.address[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
 WARNING: Parameters/Example-Request-Add-Organization: Parameters.parameter[2].resource/*Bundle/Example-AddOrganization-Bundle*/.entry[0].resource/*Organization/Example-Organization-1*/.address[0].extension[1].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-address-validation-status-value-set|1.0.0

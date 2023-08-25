@@ -30,7 +30,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"Example-Organization-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;Example-Organization-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><blockquote><p><b>url</b></p><code>identifier</code></blockquote><p><b>value</b>: id: Note-2</p><blockquote><p><b>url</b></p><code>text</code></blockquote><p><b>value</b>: Note text</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-period-extension.html\">BC Valid Period Extension</a></blockquote><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p></blockquote><p><b>identifier</b>: id: 123123123 (period: 2000-01-01 --&gt; (ongoing))</p><p><b>active</b>: true</p><p><b>type</b>: ORG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-organization-role-code-system#ORG)</span></p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: 2501112234</p><p><b>address</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"Example-Organization-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;Example-Organization-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><blockquote><p><b>url</b></p><code>identifier</code></blockquote><p><b>value</b>: id: Note-2</p><blockquote><p><b>url</b></p><code>text</code></blockquote><p><b>value</b>: Note text</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-period-extension.html\">BC Valid Period Extension</a></blockquote><p><b>value</b>: 1998-01-02 --&gt; (ongoing)</p></blockquote><blockquote><p><b>BC License Status Extension</b></p><blockquote><p><b>url</b></p><code>statusCode</code></blockquote><p><b>value</b>: active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v3-RoleStatus.html\">RoleStatus</a>#active)</span></p><blockquote><p><b>url</b></p><code>period</code></blockquote><p><b>value</b>: 2022-02-07 --&gt; 2023-12-07</p><blockquote><p><b>url</b></p><code>statusReasonCode</code></blockquote><p><b>value</b>: ORG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-reason-code-system#ORG)</span></p><blockquote><p><b>url</b></p><code>statusClassCode</code></blockquote><p><b>value</b>: AE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-license-status-class-code-system#AE)</span></p></blockquote><p><b>identifier</b>: id: 123123123 (period: 2000-01-01 --&gt; (ongoing))</p><p><b>active</b>: true</p><p><b>type</b>: ORG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (bc-organization-role-code-system#ORG)</span></p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: 2501112234</p><p><b>address</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p></div>"
   ] ; # 
   fhir:extension ( [
      fhir:extension ( [
@@ -51,6 +51,43 @@
        ]
      ] ) ;
      fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "statusCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleStatus"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "active" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "period"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2022-02-07"^^xsd:date ] ;
+         fhir:end [ fhir:v "2023-12-07"^^xsd:date ]
+       ]
+     ] [
+       fhir:url [ fhir:v "statusReasonCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "ORG" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "statusClassCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "AE" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"^^xsd:anyURI ]
   ] ) ; # 
   fhir:identifier ( [
      fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/ORGID"^^xsd:anyURI ] ;
