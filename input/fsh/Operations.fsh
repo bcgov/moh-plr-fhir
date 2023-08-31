@@ -76,6 +76,12 @@ Usage: #definition
 * parameter[8].documentation = "Search for practitioners with a license that has the specified status reason."
 * parameter[8].type = #string
 * parameter[8].searchType = #token
+* parameter[+].name = #bundle
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The Response Bundle with the OperationOutcome and the list of BCPractitionerBundle found by the search."
+* parameter[=].type = #Bundle
 
 
 Instance: EntityLocationQuery
@@ -142,6 +148,12 @@ Usage: #definition
 * parameter[=].documentation = "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
+* parameter[+].name = #bundle
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The Response Bundle with the OperationOutcome and the list of BCLocationBundle found by the search."
+* parameter[=].type = #Bundle
 
 
 Instance: EntityOrganizationQuery
@@ -173,6 +185,12 @@ Usage: #definition
 * parameter[1].documentation = "Search for organizations with the specified city."
 * parameter[1].type = #string
 * parameter[1].searchType = #string
+* parameter[+].name = #bundle
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The Response Bundle with the OperationOutcome and the list of BCOrganizationBundle found by the search."
+* parameter[=].type = #Bundle
 
 
 Instance: ExtendedPractitionerQuery
@@ -253,6 +271,12 @@ Usage: #definition
 * parameter[8].documentation = "Search for practitioners with a license that has the specified status reason."
 * parameter[8].type = #string
 * parameter[8].searchType = #token
+* parameter[+].name = #bundle
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The Response Bundle with the OperationOutcome and the list of BCPractitionnerBundle found by the search."
+* parameter[=].type = #Bundle
 
 Instance: ExtendedOrganizationQuery
 InstanceOf: OperationDefinition
@@ -282,7 +306,13 @@ Usage: #definition
 * parameter[1].max = "1"
 * parameter[1].documentation = "Search for organizations with the specified city."
 * parameter[1].type = #string
-* parameter[1].searchType = #string
+* parameter[1].searchType = #string 
+* parameter[+].name = #bundle
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The Response Bundle with the OperationOutcome and the list of BCOrganizationBundle found by the search."
+* parameter[=].type = #Bundle
 
 
 Instance: ExtendedLocationQuery
@@ -349,6 +379,12 @@ Usage: #definition
 * parameter[=].documentation = "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
+* parameter[+].name = #bundle
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The Response Bundle with the OperationOutcome and the list of BCLocationBundle found by the search."
+* parameter[=].type = #Bundle
 
 
 Instance: Maintain
