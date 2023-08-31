@@ -117,7 +117,7 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for practitioners with an address. Supports trailing wild card."
+* parameter[=].documentation = "Search for locations with an address. Supports trailing wild card."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #healthAuthority
@@ -348,7 +348,7 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for practitioners with an address. Supports trailing wild card."
+* parameter[=].documentation = "Search for locations with an address. Supports trailing wild card."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #healthAuthority
