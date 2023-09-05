@@ -36,6 +36,8 @@ Description: "Example of a Location for update."
 * name.extension[period].valuePeriod.start = "2000-01-01"
 * name.extension[endReason] = Example-ERC-Change
 * alias = "Long name or alias or description"
+* physicalType.coding.system = "http://terminology.hl7.org/CodeSystem/location-physical-type"
+* physicalType.coding.code = #bu
 * telecom[0].system = #fax
 * telecom[0].period.start = "1982-03-04T00:00:00-07:00"
 * telecom[0].value = "55555555551"

@@ -49,6 +49,7 @@ Title: "BC End Reason Extension"
 Description: "Tracking end reason."
 * value[x] only CodeableConcept
 * value[x] 1..1 MS
+* valueCodeableConcept from EndReasonVS (required)
 
 Extension: OwnerExtension
 Id: bc-owner-extension
@@ -70,6 +71,7 @@ Title: "BC Communication Purpose Extension"
 Description: "BC extension for communication purpose codes."
 * value[x] only CodeableConcept
 * value[x] 1..1 MS
+* valueCodeableConcept from CommunicationPurposeVS (required)
 
 Extension: AddressValidationStatusExtension
 Id: bc-address-validation-status-extension
@@ -77,3 +79,4 @@ Title: "BC Address Validation Extension"
 Description: "BC extension for address validation status codes."
 * value[x] only CodeableConcept
 * value[x] 1..1 MS
+* valueCodeableConcept from AddressValidationStatusVS (required)

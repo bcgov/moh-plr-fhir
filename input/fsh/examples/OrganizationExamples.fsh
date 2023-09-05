@@ -11,6 +11,20 @@ Description: "Example of an Organization."
 * active = true
 * extension[+] = Example-Note
 * type = $PLROrganizationRoleCode#ORG
+// license status
+* extension[1].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
+* extension[1].extension[+].url = "statusCode"
+* extension[1].extension[=].valueCodeableConcept.coding.system = $RoleStatus
+* extension[1].extension[=].valueCodeableConcept.coding.code = #active
+* extension[1].extension[+].url = "period"
+* extension[1].extension[=].valuePeriod.start = "2022-02-07"
+* extension[1].extension[=].valuePeriod.end = "2023-12-07"
+* extension[1].extension[+].url = "statusReasonCode"
+* extension[1].extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
+* extension[1].extension[=].valueCodeableConcept.coding.code = #ORG
+* extension[1].extension[+].url = "statusClassCode"
+* extension[1].extension[=].valueCodeableConcept.coding.system = $PLRStatusClass
+* extension[1].extension[=].valueCodeableConcept.coding.code = #AE
 
 Instance: Example-Organization-1-Update
 InstanceOf: BCOrganization

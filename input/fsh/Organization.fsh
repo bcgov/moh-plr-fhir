@@ -6,6 +6,7 @@ Description: "General constraints on the Organization resource for use in the BC
 * identifier 0..* MS
 * identifier only BCIdentifier
 * active MS
+* active = true
 * type MS
 * type from OrganizationRoleVS (required)
 * name 1..1 MS

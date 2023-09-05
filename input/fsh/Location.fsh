@@ -5,9 +5,15 @@ Id: bc-location
 Description: "General constraints on the Location resource for use in the BC Provider Registry project."
 * identifier only BCIdentifier
 * identifier 0..* MS
+* physicalType 1..1 MS
+* physicalType ^short = "bu is the only allowed code"
+* physicalType.coding.code = #bu (exactly)
+* physicalType.coding.code 1..1
 * status MS
 * name 0..1 MS
-* name.extension contains PeriodExtension named period 1..1 MS and EndReasonExtension named endReason 0..1 MS
+* name.extension contains PeriodExtension named period 1..1 MS 
+	and EndReasonExtension named endReason 0..1 MS
+	and OwnerExtension named owner 0..1 MS
 * alias MS
 * description MS
 * telecom only BCContactPoint 

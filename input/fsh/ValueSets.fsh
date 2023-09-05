@@ -75,3 +75,36 @@ Description: "BC Service type Codes"
 * #clinical "clinical" "BC Clinical HealthCare Service"
 * ^experimental = false
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-service-type-code-system"
+
+ValueSet: AddressValidationStatusVS
+Title: "BC Address Validation Status Value Set"
+Id: bc-address-validation-status-value-set
+Description: "BC address validation status value set."
+* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-address-validation-status-value-set"
+* ^experimental = false
+* codes from system $PLRAddressValidationStatus
+
+ValueSet: EndReasonVS
+Title: "BC End Reason Value Set"
+Id: bc-end-reason-value-set
+Description: "BC end reason value set."
+* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-end-reason-value-set"
+* ^experimental = false
+* codes from system $PLREndReason
+
+ValueSet: RelationshipTypeVS
+Title: "BC Relationship Type Value Set"
+Id: bc-relationship-type-value-set
+Description: "BC relationship type value set."
+* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-relationship-type-value-set"
+* ^experimental = false
+* codes from system $PLRRelationshipType
+
+ValueSet: CommunicationPurposeVS
+Title: "BC Communication Purpose Value Set"
+Id: bc-communication-purpose-value-set
+Description: "BC communication purpose value set."
+* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set"
+* ^experimental = false
+* codes from system $PLRCommPurpose
+
