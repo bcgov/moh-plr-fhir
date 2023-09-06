@@ -34,8 +34,6 @@ Title: "BC Facility Health Authority Area Extension"
 Description: "A code that represents the health authority area that the location is a part of."
 * extension contains code 0..1 MS and 
      name 0..1 MS 
-* extension[code].value[x] only Identifier
-* extension[code].value[x] 0..1 MS
 * extension[name].value[x] only string
 * extension[name].value[x] 0..1 MS
 
@@ -45,8 +43,6 @@ Title: "BC Facility Health Service Delivery Area Extension"
 Description: "A code that represents the Health Service Delivery Area (HSDA)that the location is a part of."
 * extension contains code 0..1 MS and 
      name 0..1 MS 
-* extension[code].value[x] only Identifier
-* extension[code].value[x] 0..1 MS
 * extension[name].value[x] only string
 * extension[name].value[x] 0..1 MS
 
@@ -56,8 +52,6 @@ Title: "BC Facility Local Health Area Extension"
 Description: "A code that represents the Local Health Area (LHA) that the location is a part of."
 * extension contains code 0..1 MS and 
      name 0..1 MS 
-* extension[code].value[x] only Identifier
-* extension[code].value[x] 0..1 MS
 * extension[name].value[x] only string
 * extension[name].value[x] 0..1 MS
 

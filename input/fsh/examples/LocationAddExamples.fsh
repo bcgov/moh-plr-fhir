@@ -89,29 +89,35 @@ Description: "Example of a Location."
 * telecom[0].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #FC
-/* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
+* physicalType.coding.code = #bu
+* physicalType.coding.system = "http://terminology.hl7.org/CodeSystem/location-physical-type"
+
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
 * extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-authority-extension"
-* extension[=].extension[=].extension[code].value = "02"
-* extension[=].extension[=].extension[name].value = "Vancouver Island"/**/
-/* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-delivery-area-extension"
-* extension[=].extension[=].code = "023"
-* extension[=].extension[=].name = "South Vancouver Island"
+* extension[=].extension[=].extension[+].url = "name"
+* extension[=].extension[=].extension[=].valueString = "Vancouver Island"
+
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-delivery-area-extension"
+* extension[=].extension[=].extension[+].url = "name"
+* extension[=].extension[=].extension[=].valueString = "South Vancouver Island"
 * extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-local-health-area-extension"
-* extension[=].extension[=].code = "0234"
-* extension[=].extension[=].name = "Greater Victoria"
+* extension[=].extension[=].extension[+].url = "name"
+* extension[=].extension[=].extension[=].valueString = "Greater Victoria"
 * extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-area-extension"
-* extension[=].extension[=].code = "02345"
-* extension[=].extension[=].name = "Downtown Victoria/Vic West"
+* extension[=].extension[=].extension[+].url = "code"
+* extension[=].extension[=].extension[=].valueIdentifier.value = "4123"
+* extension[=].extension[=].extension[+].url = "name"
+* extension[=].extension[=].extension[=].valueString = "Downtown Victoria/Vic West"
 * extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-primary-care-network-extension"
-* extension[=].extension[=].code = "153"
-* extension[=].extension[=].name = "Downtown/Vic West"*/
+* extension[=].extension[=].extension[+].url = "code"
+* extension[=].extension[=].extension[=].valueIdentifier.value = "4111"
+* extension[=].extension[=].extension[+].url = "name"
+* extension[=].extension[=].extension[=].valueString = "Downtown/Vic West"
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-physical-address-extension"
 * extension[=].valueAddress = Example-Address-Fac
 * address = Example-Address-Fac
 //* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
 //* extension[=].valueIdentifier.assigner.display = "Langford/Highlands"
-* physicalType.coding.code = #bu
-* physicalType.coding.system = "http://terminology.hl7.org/CodeSystem/location-physical-type"
 
 Instance: Example-Address-Fac
 InstanceOf: BCAddress
