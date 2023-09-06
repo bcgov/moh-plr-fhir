@@ -18,7 +18,7 @@
   fhir:title [ fhir:v "Query for a location without returning associations"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "query"] ; # 
-  fhir:date [ fhir:v "2023-08-25T21:46:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-09-06T17:45:01+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -96,6 +96,13 @@
      fhir:documentation [ fhir:v "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "bundle" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "The Response Bundle with the OperationOutcome and the list of BCLocationBundle found by the search." ] ;
+     fhir:type [ fhir:v "Bundle" ]
   ] ) . # 
 
 # -------------------------------------------------------------------------------------

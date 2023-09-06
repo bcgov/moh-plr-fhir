@@ -11,7 +11,7 @@
   <title value="Query for a practitioner without returning associations"/>
   <status value="draft"/>
   <kind value="query"/>
-  <date value="2023-08-25T21:46:31+00:00"/>
+  <date value="2023-09-06T17:45:01+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -113,5 +113,13 @@
     <documentation value="Search for practitioners with a license that has the specified status reason."/>
     <type value="string"/>
     <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="bundle"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The Response Bundle with the OperationOutcome and the list of BCPractitionerBundle found by the search."/>
+    <type value="Bundle"/>
   </parameter>
 </OperationDefinition>

@@ -256,7 +256,7 @@
         
           Draft
           
-            as of 2023-08-25
+            as of 2023-09-06
           
         
       </td>
@@ -293,7 +293,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;Place
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.title">fhir:title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Query for a practitioner without returning associations&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;draft&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.kind">fhir:kind</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;query&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2023-08-25T21:46:31+00:00&quot;^^xsd:dateTime] ; # 
+  <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2023-09-06T17:45:01+00:00&quot;^^xsd:dateTime] ; # 
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.publisher">fhir:publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;BC Ministry of Health&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.contact">fhir:contact</a> ( [
 <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;BC Ministry of Health&quot; ] ;
@@ -385,6 +385,13 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;Place
 <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Search for practitioners with a license that has the specified status reason.&quot; ] ;
 <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;string&quot; ] ;
 <a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.searchType">fhir:searchType</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;token&quot; ]
+  ] [
+<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;bundle&quot; ] ;
+<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">fhir:use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;out&quot; ] ;
+<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">fhir:min</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#integer">fhir:v</a> &quot;1&quot;^^xsd:integer ] ;
+<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">fhir:max</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;1&quot; ] ;
+<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;The Response Bundle with the OperationOutcome and the list of BCPractitionerBundle found by the search.&quot; ] ;
+<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;Bundle&quot; ]
   ] ) . # 
 
 </code></pre>
@@ -418,7 +425,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;Place
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 25, 2023 21:46+0000">2023-08-25</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Sep 6, 2023 17:45+0000">2023-09-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
