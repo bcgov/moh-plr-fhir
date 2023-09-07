@@ -486,7 +486,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     <tr>
       <td> </td>
       <td style="text-align: left">identifier-type</td>
-      <td style="text-align: left">String code, the type of Identifier, e.g. CPSID</td>
+      <td style="text-align: left">String code, the type of Identifier(e.g. CPSID), mandatory if identifier is specified. Mapping to Practitioner.identifier.type.coding.code</td>
     </tr>
     <tr>
       <td>Organization</td>
@@ -496,17 +496,17 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     <tr>
       <td> </td>
       <td style="text-align: left">name</td>
-      <td style="text-align: left">String, May use trailing wildcards, e.g. Clinic*</td>
+      <td style="text-align: left">String, mandatory. May use trailing wildcards, e.g. Clinic*</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">description</td>
-      <td style="text-align: left">String, May use trailing wildcards, e.g. Clinic*</td>
+      <td style="text-align: left">String, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">role</td>
-      <td style="text-align: left">String code</td>
+      <td style="text-align: left">String role code, mandatory, mapping to BCOrganization.type.</td>
     </tr>
     <tr>
       <td> </td>
@@ -526,7 +526,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     <tr>
       <td> </td>
       <td style="text-align: left">identifier-type</td>
-      <td style="text-align: left">String identifier value, e.g. ORGID</td>
+      <td style="text-align: left">String code for identifier type (e.g. ORGID), mandatory if identifier is specified. Mapping to Organization.identifier.type.coding.code</td>
     </tr>
     <tr>
       <td>Location</td>
@@ -571,10 +571,19 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     <tr>
       <td> </td>
       <td style="text-align: left">identifier-type</td>
-      <td style="text-align: left">String code, the type of Identifier, e.g. LOCID</td>
+      <td style="text-align: left">String code for identifier type (e.g. LOCID), mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code.</td>
     </tr>
   </tbody>
 </table>
+
+<p>Notes:
+Wildcard
+•	The wildcard character is ‘*’.              <br />
+•	Only one wildcard character is allowed in each allowed name field.   <br />
+•	The wildcard character must be trailing.          <br />
+•	At least 1 character must be entered before the wildcard.</p>
+
+<p>There is a limit to the number of search results returned = 20. A message will be provided indicating maximum search results were returned.</p>
 
 <h4 id="query-part-2">Query Part 2</h4>
 
@@ -711,7 +720,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Sep 6, 2023 23:35+0000">2023-09-06</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Sep 7, 2023 20:12+0000">2023-09-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

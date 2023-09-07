@@ -11,7 +11,7 @@
   <title value="Query for a practitioner without returning associations"/>
   <status value="draft"/>
   <kind value="query"/>
-  <date value="2023-09-06T23:35:56+00:00"/>
+  <date value="2023-09-07T20:12:30+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -34,11 +34,29 @@
   <type value="true"/>
   <instance value="true"/>
   <parameter>
+    <name value="identifier"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="String identifier value"/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="identifier-type"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="String code for identifier type (e.g. CPSID),  mandatory if identifier is specified. Mapping to Practitioner.identifier.type.coding.code"/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
     <name value="surname"/>
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="Search for practitioners with the specified surname."/>
+    <documentation value="Search for practitioners with the specified surname. May use trailing wildcards, e.g. Smith*"/>
     <type value="string"/>
     <searchType value="string"/>
   </parameter>
@@ -47,7 +65,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="Search for practitioners with the specified given name."/>
+    <documentation value="Search for practitioners with the specified given name. May use trailing wildcards, e.g. Ann*"/>
     <type value="string"/>
     <searchType value="string"/>
   </parameter>
@@ -113,6 +131,14 @@
     <documentation value="Search for practitioners with a license that has the specified status reason."/>
     <type value="string"/>
     <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="withHistory"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned."/>
+    <type value="boolean"/>
   </parameter>
   <parameter>
     <name value="bundle"/>

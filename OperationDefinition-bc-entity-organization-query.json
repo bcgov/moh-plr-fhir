@@ -11,7 +11,7 @@
   "title" : "Query for an organization without returning associations",
   "status" : "draft",
   "kind" : "query",
-  "date" : "2023-09-06T23:35:56+00:00",
+  "date" : "2023-09-07T20:12:30+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -34,13 +34,49 @@
   "type" : true,
   "instance" : true,
   "parameter" : [{
+    "name" : "identifier",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "String identifier value",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "identifier-type",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "String code for identifier type (e.g. ORGID), mandatory if identifier is specified. Mapping to Organization.identifier.type.coding.code",
+    "type" : "string",
+    "searchType" : "token"
+  },
+  {
     "name" : "name",
     "use" : "in",
     "min" : 0,
     "max" : "1",
-    "documentation" : "Search for organizations with the specified name.",
+    "documentation" : "Search for organizations with the specified name, mandatory if no identifier specified. May use trailing wildcards, e.g. Clinic*",
     "type" : "string",
     "searchType" : "string"
+  },
+  {
+    "name" : "description",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for organizations with the specified description, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "role",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for organizations with the specified role type code, mandatory if no identifier specified, mapping to Organization.type",
+    "type" : "string",
+    "searchType" : "token"
   },
   {
     "name" : "address-city",
@@ -50,6 +86,14 @@
     "documentation" : "Search for organizations with the specified city.",
     "type" : "string",
     "searchType" : "string"
+  },
+  {
+    "name" : "withHistory",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.",
+    "type" : "boolean"
   },
   {
     "name" : "bundle",

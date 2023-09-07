@@ -18,7 +18,7 @@
   fhir:title [ fhir:v "Query for a practitioner without returning associations"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "query"] ; # 
-  fhir:date [ fhir:v "2023-09-06T23:35:56+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-09-07T20:12:30+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -41,11 +41,27 @@
   fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
   fhir:instance [ fhir:v "true"^^xsd:boolean] ; # 
   fhir:parameter ( [
+     fhir:name [ fhir:v "identifier" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "String identifier value" ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "identifier-type" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "String code for identifier type (e.g. CPSID),  mandatory if identifier is specified. Mapping to Practitioner.identifier.type.coding.code" ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "token" ]
+  ] [
      fhir:name [ fhir:v "surname" ] ;
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for practitioners with the specified surname." ] ;
+     fhir:documentation [ fhir:v "Search for practitioners with the specified surname. May use trailing wildcards, e.g. Smith*" ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
   ] [
@@ -53,7 +69,7 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for practitioners with the specified given name." ] ;
+     fhir:documentation [ fhir:v "Search for practitioners with the specified given name. May use trailing wildcards, e.g. Ann*" ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
   ] [
@@ -112,6 +128,13 @@
      fhir:documentation [ fhir:v "Search for practitioners with a license that has the specified status reason." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "token" ]
+  ] [
+     fhir:name [ fhir:v "withHistory" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned." ] ;
+     fhir:type [ fhir:v "boolean" ]
   ] [
      fhir:name [ fhir:v "bundle" ] ;
      fhir:use [ fhir:v "out" ] ;

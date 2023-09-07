@@ -18,7 +18,7 @@
   fhir:title [ fhir:v "Query for a location without returning associations"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "query"] ; # 
-  fhir:date [ fhir:v "2023-09-06T23:35:56+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-09-07T20:12:30+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -41,6 +41,22 @@
   fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
   fhir:instance [ fhir:v "true"^^xsd:boolean] ; # 
   fhir:parameter ( [
+     fhir:name [ fhir:v "identifier" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "String identifier value" ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "identifier-type" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "String code for identifier type (e.g. LOCID),  mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code" ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "token" ]
+  ] [
      fhir:name [ fhir:v "name" ] ;
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
@@ -69,7 +85,7 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
+     fhir:documentation [ fhir:v "Search for locations within the specified health authority. only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
   ] [
@@ -77,7 +93,7 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
+     fhir:documentation [ fhir:v "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
   ] [
@@ -85,7 +101,7 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
+     fhir:documentation [ fhir:v "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
   ] [
@@ -94,6 +110,14 @@
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
      fhir:documentation [ fhir:v "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "primaryCareNetwork" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Search for locations within the specified Primary Care Network. Not implemented yet." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
   ] [

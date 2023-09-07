@@ -269,7 +269,7 @@
         
           Draft
           
-            as of 2023-09-06
+            as of 2023-09-07
           
         
       </td>
@@ -303,8 +303,13 @@
   
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><p>URL: [base]/Organization/$extendedQuery</p><p>URL: [base]/Organization/[id]/$extendedQuery</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>name</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for organizations with the specified name.</p>
+  <div xmlns="http://www.w3.org/1999/xhtml"><p>URL: [base]/Organization/$extendedQuery</p><p>URL: [base]/Organization/[id]/$extendedQuery</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>identifier</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>String identifier value</p>
+</div></td></tr><tr><td>IN</td><td>identifier-type</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>String code for identifier type (e.g. ORGID), mandatory if identifier is specified. Mapping to Organization.identifier.type.coding.code</p>
+</div></td></tr><tr><td>IN</td><td>name</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for organizations with the specified name, mandatory if no identifier specified. May use trailing wildcards, e.g. Clinic*</p>
+</div></td></tr><tr><td>IN</td><td>description</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for organizations with the specified description, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*</p>
+</div></td></tr><tr><td>IN</td><td>role</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for organizations with the specified role type code, mandatory if no identifier specified, mapping to Organization.type</p>
 </div></td></tr><tr><td>IN</td><td>address-city</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for organizations with the specified city.</p>
+</div></td></tr><tr><td>IN</td><td>withHistory</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td><td/><td><div><p>true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.</p>
 </div></td></tr><tr><td>OUT</td><td>bundle</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td><div><p>The Response Bundle with the OperationOutcome and the list of BCOrganizationBundle found by the search.</p>
 </div></td></tr></table></div>
 
@@ -337,7 +342,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Sep 6, 2023 23:35+0000">2023-09-06</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Sep 7, 2023 20:12+0000">2023-09-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
