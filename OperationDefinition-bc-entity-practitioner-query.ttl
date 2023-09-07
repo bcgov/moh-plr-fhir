@@ -18,7 +18,7 @@
   fhir:title [ fhir:v "Query for a practitioner without returning associations"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "query"] ; # 
-  fhir:date [ fhir:v "2023-09-07T20:12:30+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-09-07T21:19:16+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -101,7 +101,7 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for practitioners that have an associated PractitionerRole code with the specified value." ] ;
+     fhir:documentation [ fhir:v "Search for practitioners that have an associated PractitionerRole code with the specified value (e.g. MD or RN)" ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "token" ]
   ] [
@@ -109,7 +109,7 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for practitioners who can communicate with the specified language code." ] ;
+     fhir:documentation [ fhir:v "Search for practitioners who can communicate with the specified language code. May be a comma separated list of language codes, e.g. F01,E09." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "token" ]
   ] [
@@ -117,7 +117,7 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for practitioners with a qualification that matches the specified expertise." ] ;
+     fhir:documentation [ fhir:v "Search for practitioners with a qualification that matches the specified expertise. May be a comma separated list of expertise codes, e.g. AM53,K34." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "token" ]
   ] [

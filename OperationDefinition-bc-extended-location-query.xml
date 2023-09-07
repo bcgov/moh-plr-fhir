@@ -11,7 +11,7 @@
   <title value="Query for a location that returns associated resources"/>
   <status value="draft"/>
   <kind value="query"/>
-  <date value="2023-09-07T20:12:30+00:00"/>
+  <date value="2023-09-07T21:19:16+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -33,6 +33,24 @@
   <system value="false"/>
   <type value="true"/>
   <instance value="true"/>
+  <parameter>
+    <name value="identifier"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="String identifier value"/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="identifier-type"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="String code for identifier type (e.g. LOCID), mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code"/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
   <parameter>
     <name value="name"/>
     <use value="in"/>
@@ -56,7 +74,16 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="Search for locations with an address. Supports trailing wild card."/>
+    <documentation value="Search for locations with a civic address. Supports trailing wild card."/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="otheraddress-line1"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for locations with an address. Supports trailing wild card. Not implemented yet."/>
     <type value="string"/>
     <searchType value="string"/>
   </parameter>
@@ -65,7 +92,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."/>
+    <documentation value="Search for locations within the specified health authority. Only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."/>
     <type value="string"/>
     <searchType value="string"/>
   </parameter>
@@ -74,7 +101,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."/>
+    <documentation value="Search for locations within the specified health service delivery area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."/>
     <type value="string"/>
     <searchType value="string"/>
   </parameter>
@@ -83,7 +110,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."/>
+    <documentation value="Search for locations within the specified local health area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."/>
     <type value="string"/>
     <searchType value="string"/>
   </parameter>
@@ -92,9 +119,26 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."/>
+    <documentation value="Search for locations within the specified local community health service area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."/>
     <type value="string"/>
     <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="primaryCareNetwork"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for locations within the specified Primary Care Network. Not implemented yet."/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="withHistory"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned."/>
+    <type value="boolean"/>
   </parameter>
   <parameter>
     <name value="bundle"/>

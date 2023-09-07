@@ -436,7 +436,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     <tr>
       <td> </td>
       <td style="text-align: left">given-name</td>
-      <td style="text-align: left">String, May use trailing wildcards, e.g. Ann*</td>
+      <td style="text-align: left">String. May use trailing wildcards, e.g. Ann*.	First Name and Last Name are mandatory unless one of City, Expertise or Language is populated.</td>
     </tr>
     <tr>
       <td> </td>
@@ -446,7 +446,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     <tr>
       <td> </td>
       <td style="text-align: left">role</td>
-      <td style="text-align: left">String code</td>
+      <td style="text-align: left">String code for the PractitionerRole (e.g. MD or RN)</td>
     </tr>
     <tr>
       <td> </td>
@@ -456,17 +456,17 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     <tr>
       <td> </td>
       <td style="text-align: left">expertise</td>
-      <td style="text-align: left">May be a comma separated list of expertise codes, e.g. AM53,K34.</td>
+      <td style="text-align: left">May be a comma separated list of expertise codes, e.g. AM53,K34. Expertise Types will be filtered on the Role Type selected.</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">status</td>
-      <td style="text-align: left">String code</td>
+      <td style="text-align: left">String code for status of the license</td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">status-reason</td>
-      <td style="text-align: left">String code</td>
+      <td style="text-align: left">String code for status-reason of the license</td>
     </tr>
     <tr>
       <td> </td>
@@ -545,8 +545,18 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     </tr>
     <tr>
       <td> </td>
+      <td style="text-align: left">address-line1</td>
+      <td style="text-align: left">String,  e.g. 1000 Douglas st</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">otheraddress-line1</td>
+      <td style="text-align: left">String, e.g. 1000 Douglas st - Not implemented yet</td>
+    </tr>
+    <tr>
+      <td> </td>
       <td style="text-align: left">healthAuthority</td>
-      <td style="text-align: left">String, only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed.  The full name is required.  E.g. Langford/Highlands</td>
+      <td style="text-align: left">String, only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands</td>
     </tr>
     <tr>
       <td> </td>
@@ -565,6 +575,16 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     </tr>
     <tr>
       <td> </td>
+      <td style="text-align: left">primaryCareNetwork</td>
+      <td style="text-align: left">Search for locations within the specified Primary Care Network. Not implemented yet.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">withHistory</td>
+      <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.</td>
+    </tr>
+    <tr>
+      <td> </td>
       <td style="text-align: left">identifier</td>
       <td style="text-align: left">String identifier value</td>
     </tr>
@@ -577,13 +597,13 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
 </table>
 
 <p>Notes:
-Wildcard
+There is a limit to the number of search results returned = 20. A message will be provided indicating maximum search results were returned.</p>
+
+<p>Wildcard
 •	The wildcard character is ‘*’.              <br />
 •	Only one wildcard character is allowed in each allowed name field.   <br />
 •	The wildcard character must be trailing.          <br />
 •	At least 1 character must be entered before the wildcard.</p>
-
-<p>There is a limit to the number of search results returned = 20. A message will be provided indicating maximum search results were returned.</p>
 
 <h4 id="query-part-2">Query Part 2</h4>
 
@@ -720,7 +740,7 @@ Wildcard
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Sep 7, 2023 20:12+0000">2023-09-07</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Sep 7, 2023 21:19+0000">2023-09-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

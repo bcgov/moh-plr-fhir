@@ -18,7 +18,7 @@
   fhir:title [ fhir:v "Query for a location without returning associations"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "query"] ; # 
-  fhir:date [ fhir:v "2023-09-07T20:12:30+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-09-07T21:19:16+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -53,7 +53,7 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "String code for identifier type (e.g. LOCID),  mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code" ] ;
+     fhir:documentation [ fhir:v "String code for identifier type (e.g. LOCID), mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code" ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "token" ]
   ] [
@@ -77,7 +77,15 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for locations with an address. Supports trailing wild card." ] ;
+     fhir:documentation [ fhir:v "Search for locations with a civic address. Supports trailing wild card." ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "otheraddress-line1" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Search for locations with an address. Supports trailing wild card. Not implemented yet." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
   ] [
@@ -85,7 +93,7 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for locations within the specified health authority. only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
+     fhir:documentation [ fhir:v "Search for locations within the specified health authority. Only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
   ] [
@@ -93,7 +101,7 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
+     fhir:documentation [ fhir:v "Search for locations within the specified health service delivery area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
   ] [
@@ -101,7 +109,7 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
+     fhir:documentation [ fhir:v "Search for locations within the specified local health area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
   ] [
@@ -109,7 +117,7 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
+     fhir:documentation [ fhir:v "Search for locations within the specified local community health service area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
   ] [
@@ -120,6 +128,13 @@
      fhir:documentation [ fhir:v "Search for locations within the specified Primary Care Network. Not implemented yet." ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "withHistory" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned." ] ;
+     fhir:type [ fhir:v "boolean" ]
   ] [
      fhir:name [ fhir:v "bundle" ] ;
      fhir:use [ fhir:v "out" ] ;
