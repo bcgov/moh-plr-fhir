@@ -13,69 +13,89 @@ Usage: #definition
 * system = false
 * type = true
 * instance = true
-* parameter[0].name = #surname
-* parameter[0].use = #in
-* parameter[0].min = 0
-* parameter[0].max = "1"
-* parameter[0].documentation = "Search for practitioners with the specified surname."
-* parameter[0].type = #string
-* parameter[0].searchType = #string
-* parameter[1].name = #given-name
-* parameter[1].use = #in
-* parameter[1].min = 0
-* parameter[1].max = "1"
-* parameter[1].documentation = "Search for practitioners with the specified given name."
-* parameter[1].type = #string
-* parameter[1].searchType = #string
-* parameter[2].name = #status
-* parameter[2].use = #in
-* parameter[2].min = 0
-* parameter[2].max = "1"
-* parameter[2].documentation = "Search for practitioners with a license that has the specified status."
-* parameter[2].type = #string
-* parameter[2].searchType = #token
-* parameter[3].name = #address-city
-* parameter[3].use = #in
-* parameter[3].min = 0
-* parameter[3].max = "1"
-* parameter[3].documentation = "Search for practitioners with an address that includes the given city."
-* parameter[3].type = #string
-* parameter[3].searchType = #string
-* parameter[4].name = #gender
-* parameter[4].use = #in
-* parameter[4].min = 0
-* parameter[4].max = "1"
-* parameter[4].documentation = "Search for practitioners with the specified gender."
-* parameter[4].type = #string
-* parameter[4].searchType = #token
-* parameter[5].name = #role
-* parameter[5].use = #in
-* parameter[5].min = 0
-* parameter[5].max = "1"
-* parameter[5].documentation = "Search for practitioners that have an associated PractitionerRole code with the specified value."
-* parameter[5].type = #string
-* parameter[5].searchType = #token
-* parameter[6].name = #language
-* parameter[6].use = #in
-* parameter[6].min = 0
-* parameter[6].max = "1"
-* parameter[6].documentation = "Search for practitioners who can communicate with the specified language code."
-* parameter[6].type = #string
-* parameter[6].searchType = #token
-* parameter[7].name = #expertise
-* parameter[7].use = #in
-* parameter[7].min = 0
-* parameter[7].max = "1"
-* parameter[7].documentation = "Search for practitioners with a qualification that matches the specified expertise."
-* parameter[7].type = #string
-* parameter[7].searchType = #token
-* parameter[8].name = #status-reason
-* parameter[8].use = #in
-* parameter[8].min = 0
-* parameter[8].max = "1"
-* parameter[8].documentation = "Search for practitioners with a license that has the specified status reason."
-* parameter[8].type = #string
-* parameter[8].searchType = #token
+* parameter[+].name = #identifier
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "String identifier value"
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #identifier-type
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "String code for identifier type (e.g. CPSID),  mandatory if identifier is specified. Mapping to Practitioner.identifier.type.coding.code"
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #surname
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with the specified surname. May use trailing wildcards, e.g. Smith*"
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #given-name
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with the specified given name. May use trailing wildcards, e.g. Ann*"
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #status
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with a license that has the specified status."
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #address-city
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with an address that includes the given city."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #gender
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with the specified gender."
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #role
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners that have an associated PractitionerRole code with the specified value."
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #language
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners who can communicate with the specified language code."
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #expertise
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with a qualification that matches the specified expertise."
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #status-reason
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with a license that has the specified status reason."
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #withHistory
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned."
+* parameter[=].type = #boolean
 * parameter[+].name = #bundle
 * parameter[=].use = #out
 * parameter[=].min = 1
@@ -99,6 +119,20 @@ Usage: #definition
 * system = false
 * type = true
 * instance = true
+* parameter[+].name = #identifier
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "String identifier value"
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #identifier-type
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "String code for identifier type (e.g. LOCID),  mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code"
+* parameter[=].type = #string
+* parameter[=].searchType = #token
 * parameter[+].name = #name
 * parameter[=].use = #in
 * parameter[=].min = 0
@@ -124,21 +158,21 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].documentation = "Search for locations within the specified health authority. only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #healthServiceDeliveryArea
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].documentation = "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #localHealthArea
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].documentation = "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #communityHealthServiceArea
@@ -146,6 +180,13 @@ Usage: #definition
 * parameter[=].min = 0
 * parameter[=].max = "1"
 * parameter[=].documentation = "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #primaryCareNetwork
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for locations within the specified Primary Care Network. Not implemented yet."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #bundle
@@ -171,20 +212,54 @@ Usage: #definition
 * system = false
 * type = true
 * instance = true
-* parameter[0].name = #name
-* parameter[0].use = #in
-* parameter[0].min = 0
-* parameter[0].max = "1"
-* parameter[0].documentation = "Search for organizations with the specified name."
-* parameter[0].type = #string
-* parameter[0].searchType = #string
-* parameter[1].name = #address-city
-* parameter[1].use = #in
-* parameter[1].min = 0
-* parameter[1].max = "1"
-* parameter[1].documentation = "Search for organizations with the specified city."
-* parameter[1].type = #string
-* parameter[1].searchType = #string
+* parameter[+].name = #identifier
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "String identifier value"
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #identifier-type
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "String code for identifier type (e.g. ORGID), mandatory if identifier is specified. Mapping to Organization.identifier.type.coding.code"
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #name
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for organizations with the specified name, mandatory if no identifier specified. May use trailing wildcards, e.g. Clinic*"
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #description
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for organizations with the specified description, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*"
+* parameter[=].type = #string
+* parameter[=].searchType = #string 
+* parameter[+].name = #role
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for organizations with the specified role type code, mandatory if no identifier specified, mapping to Organization.type"
+* parameter[=].type = #string
+* parameter[=].searchType = #token 
+* parameter[+].name = #address-city
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for organizations with the specified city."
+* parameter[=].type = #string
+* parameter[=].searchType = #string 
+* parameter[+].name = #withHistory
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned."
+* parameter[=].type = #boolean
 * parameter[+].name = #bundle
 * parameter[=].use = #out
 * parameter[=].min = 1
@@ -208,74 +283,94 @@ Usage: #definition
 * system = false
 * type = true
 * instance = true
-* parameter[0].name = #surname
-* parameter[0].use = #in
-* parameter[0].min = 0
-* parameter[0].max = "1"
-* parameter[0].documentation = "Search for practitioners with the specified surname."
-* parameter[0].type = #string
-* parameter[0].searchType = #string
-* parameter[1].name = #given-name
-* parameter[1].use = #in
-* parameter[1].min = 0
-* parameter[1].max = "1"
-* parameter[1].documentation = "Search for practitioners with the specified given name."
-* parameter[1].type = #string
-* parameter[1].searchType = #string
-* parameter[2].name = #status
-* parameter[2].use = #in
-* parameter[2].min = 0
-* parameter[2].max = "1"
-* parameter[2].documentation = "Search for practitioners with a license that has the specified status."
-* parameter[2].type = #string
-* parameter[2].searchType = #token
-* parameter[3].name = #address-city
-* parameter[3].use = #in
-* parameter[3].min = 0
-* parameter[3].max = "1"
-* parameter[3].documentation = "Search for practitioners with an address that includes the given city."
-* parameter[3].type = #string
-* parameter[3].searchType = #string
-* parameter[4].name = #gender
-* parameter[4].use = #in
-* parameter[4].min = 0
-* parameter[4].max = "1"
-* parameter[4].documentation = "Search for practitioners with the specified gender."
-* parameter[4].type = #string
-* parameter[4].searchType = #token
-* parameter[5].name = #role
-* parameter[5].use = #in
-* parameter[5].min = 0
-* parameter[5].max = "1"
-* parameter[5].documentation = "Search for practitioners that have an associated PractitionerRole code with the specified value."
-* parameter[5].type = #string
-* parameter[5].searchType = #token
-* parameter[6].name = #language
-* parameter[6].use = #in
-* parameter[6].min = 0
-* parameter[6].max = "1"
-* parameter[6].documentation = "Search for practitioners who can communicate with the specified language code."
-* parameter[6].type = #string
-* parameter[6].searchType = #token
-* parameter[7].name = #expertise
-* parameter[7].use = #in
-* parameter[7].min = 0
-* parameter[7].max = "1"
-* parameter[7].documentation = "Search for practitioners with a qualification that matches the specified expertise."
-* parameter[7].type = #string
-* parameter[7].searchType = #token
-* parameter[8].name = #status-reason
-* parameter[8].use = #in
-* parameter[8].min = 0
-* parameter[8].max = "1"
-* parameter[8].documentation = "Search for practitioners with a license that has the specified status reason."
-* parameter[8].type = #string
-* parameter[8].searchType = #token
+* parameter[+].name = #identifier
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "String identifier value"
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #identifier-type
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "String identifier value, e.g. CPSID"
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #surname
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with the specified surname. May use trailing wildcards, e.g. Smith*"
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #given-name
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with the specified given name. May use trailing wildcards, e.g. Ann*"
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #status
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with a license that has the specified status."
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #address-city
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with an address that includes the given city."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #gender
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with the specified gender."
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #role
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners that have an associated PractitionerRole code with the specified value."
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #language
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners who can communicate with the specified language code."
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #expertise
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with a qualification that matches the specified expertise."
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #status-reason
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for practitioners with a license that has the specified status reason."
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #withHistory
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned."
+* parameter[=].type = #boolean
 * parameter[+].name = #bundle
 * parameter[=].use = #out
 * parameter[=].min = 1
 * parameter[=].max = "1"
-* parameter[=].documentation = "The Response Bundle with the OperationOutcome and the list of BCPractitionnerBundle found by the search."
+* parameter[=].documentation = "The Response Bundle with the OperationOutcome and the list of BCPractitionerBundle found by the search."
 * parameter[=].type = #Bundle
 
 Instance: ExtendedOrganizationQuery
@@ -293,20 +388,54 @@ Usage: #definition
 * system = false
 * type = true
 * instance = true
-* parameter[0].name = #name
-* parameter[0].use = #in
-* parameter[0].min = 0
-* parameter[0].max = "1"
-* parameter[0].documentation = "Search for organizations with the specified name."
-* parameter[0].type = #string
-* parameter[0].searchType = #string
-* parameter[1].name = #address-city
-* parameter[1].use = #in
-* parameter[1].min = 0
-* parameter[1].max = "1"
-* parameter[1].documentation = "Search for organizations with the specified city."
-* parameter[1].type = #string
-* parameter[1].searchType = #string 
+* parameter[+].name = #identifier
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "String identifier value"
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #identifier-type
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "String code for identifier type (e.g. ORGID), mandatory if identifier is specified. Mapping to Organization.identifier.type.coding.code"
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #name
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for organizations with the specified name, mandatory if no identifier specified. May use trailing wildcards, e.g. Clinic*"
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #description
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for organizations with the specified description, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*"
+* parameter[=].type = #string
+* parameter[=].searchType = #string 
+* parameter[+].name = #role
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for organizations with the specified role type code, mandatory if no identifier specified, mapping to Organization.type"
+* parameter[=].type = #string
+* parameter[=].searchType = #token 
+* parameter[+].name = #address-city
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for organizations with the specified city."
+* parameter[=].type = #string
+* parameter[=].searchType = #string 
+* parameter[+].name = #withHistory
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned."
+* parameter[=].type = #boolean
 * parameter[+].name = #bundle
 * parameter[=].use = #out
 * parameter[=].min = 1

@@ -203,15 +203,15 @@ A FHIR example of a real message can be found [here](Bundle-Example-Response-Que
 ||address-city|String, full city name, e.g. Vancouver
 ||withHistory|true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.|
 ||identifier|String identifier value
-||identifier-type|String code, the type of Identifier, e.g. CPSID
+||identifier-type|String code, the type of Identifier(e.g. CPSID), mandatory if identifier is specified. Mapping to Practitioner.identifier.type.coding.code
 |Organization
-||name|String, May use trailing wildcards, e.g. Clinic*|
-||description|String, May use trailing wildcards, e.g. Clinic*|
-||role|String code
+||name|String, mandatory. May use trailing wildcards, e.g. Clinic*|
+||description|String, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*|
+||role|String role code, mandatory, mapping to BCOrganization.type. 
 ||address-city|String, full city name, e.g. Vancouver
 ||withHistory|true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.|
 ||identifier|String identifier value
-||identifier-type|String identifier value, e.g. ORGID
+||identifier-type| String code for identifier type (e.g. ORGID), mandatory if identifier is specified. Mapping to Organization.identifier.type.coding.code
 |Location
 ||name|String, May use trailing wildcards, e.g. Clinic*|
 ||address-city|String, full city name, e.g. Vancouver
@@ -220,7 +220,17 @@ A FHIR example of a real message can be found [here](Bundle-Example-Response-Que
 ||localHealthArea|See healthAuthority|
 ||communityHealthServiceArea|See healthAuthority|
 ||identifier|String identifier value
-||identifier-type|String code, the type of Identifier, e.g. LOCID
+||identifier-type| String code for identifier type (e.g. LOCID), mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code.
+
+Notes:
+Wildcard
+•	The wildcard character is '*'.                
+•	Only one wildcard character is allowed in each allowed name field.     
+•	The wildcard character must be trailing.            
+•	At least 1 character must be entered before the wildcard.  
+
+There is a limit to the number of search results returned = 20. A message will be provided indicating maximum search results were returned.                
+
 
 #### Query Part 2
 
