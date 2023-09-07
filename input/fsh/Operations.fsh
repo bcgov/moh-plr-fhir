@@ -66,21 +66,21 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for practitioners that have an associated PractitionerRole code with the specified value."
+* parameter[=].documentation = "Search for practitioners that have an associated PractitionerRole code with the specified value (e.g. MD or RN)"
 * parameter[=].type = #string
 * parameter[=].searchType = #token
 * parameter[+].name = #language
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for practitioners who can communicate with the specified language code."
+* parameter[=].documentation = "Search for practitioners who can communicate with the specified language code. May be a comma separated list of language codes, e.g. F01,E09."
 * parameter[=].type = #string
 * parameter[=].searchType = #token
 * parameter[+].name = #expertise
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for practitioners with a qualification that matches the specified expertise."
+* parameter[=].documentation = "Search for practitioners with a qualification that matches the specified expertise. May be a comma separated list of expertise codes, e.g. AM53,K34."
 * parameter[=].type = #string
 * parameter[=].searchType = #token
 * parameter[+].name = #status-reason
@@ -130,7 +130,7 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "String code for identifier type (e.g. LOCID),  mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code"
+* parameter[=].documentation = "String code for identifier type (e.g. LOCID), mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code"
 * parameter[=].type = #string
 * parameter[=].searchType = #token
 * parameter[+].name = #name
@@ -151,35 +151,49 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations with an address. Supports trailing wild card."
+* parameter[=].documentation = "Search for locations with a civic address. Supports trailing wild card."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
+* parameter[+].name = #otheraddress-line1
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for locations with an address. Supports trailing wild card. Not implemented yet."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+/* * parameter[+].name = #facility-type
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for location with the specified facility type code, mapping to Location.physicalType"
+* parameter[=].type = #string
+* parameter[=].searchType = #token*/
 * parameter[+].name = #healthAuthority
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations within the specified health authority. only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].documentation = "Search for locations within the specified health authority. Only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #healthServiceDeliveryArea
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].documentation = "Search for locations within the specified health service delivery area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #localHealthArea
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].documentation = "Search for locations within the specified local health area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #communityHealthServiceArea
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].documentation = "Search for locations within the specified local community health service area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #primaryCareNetwork
@@ -189,6 +203,12 @@ Usage: #definition
 * parameter[=].documentation = "Search for locations within the specified Primary Care Network. Not implemented yet."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
+* parameter[+].name = #withHistory
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned."
+* parameter[=].type = #boolean
 * parameter[+].name = #bundle
 * parameter[=].use = #out
 * parameter[=].min = 1
@@ -294,7 +314,7 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "String identifier value, e.g. CPSID"
+* parameter[=].documentation = "String code for identifier type (e.g. CPSID),  mandatory if identifier is specified. Mapping to Practitioner.identifier.type.coding.code"
 * parameter[=].type = #string
 * parameter[=].searchType = #token
 * parameter[+].name = #surname
@@ -336,21 +356,21 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for practitioners that have an associated PractitionerRole code with the specified value."
+* parameter[=].documentation = "Search for practitioners that have an associated PractitionerRole code with the specified value (e.g. MD or RN)"
 * parameter[=].type = #string
 * parameter[=].searchType = #token
 * parameter[+].name = #language
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for practitioners who can communicate with the specified language code."
+* parameter[=].documentation = "Search for practitioners who can communicate with the specified language code. May be a comma separated list of language codes, e.g. F01,E09."
 * parameter[=].type = #string
 * parameter[=].searchType = #token
 * parameter[+].name = #expertise
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for practitioners with a qualification that matches the specified expertise."
+* parameter[=].documentation = "Search for practitioners with a qualification that matches the specified expertise. May be a comma separated list of expertise codes, e.g. AM53,K34."
 * parameter[=].type = #string
 * parameter[=].searchType = #token
 * parameter[+].name = #status-reason
@@ -459,6 +479,20 @@ Usage: #definition
 * system = false
 * type = true
 * instance = true
+* parameter[+].name = #identifier
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "String identifier value"
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #identifier-type
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "String code for identifier type (e.g. LOCID), mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code"
+* parameter[=].type = #string
+* parameter[=].searchType = #token
 * parameter[+].name = #name
 * parameter[=].use = #in
 * parameter[=].min = 0
@@ -477,37 +511,64 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations with an address. Supports trailing wild card."
+* parameter[=].documentation = "Search for locations with a civic address. Supports trailing wild card."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
+* parameter[+].name = #otheraddress-line1
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for locations with an address. Supports trailing wild card. Not implemented yet."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+/* * parameter[+].name = #facility-type
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for location with the specified facility type code, mapping to Location.physicalType"
+* parameter[=].type = #string
+* parameter[=].searchType = #token*/
 * parameter[+].name = #healthAuthority
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations within the specified health authority.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].documentation = "Search for locations within the specified health authority. Only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #healthServiceDeliveryArea
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations within the specified health service delivery area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].documentation = "Search for locations within the specified health service delivery area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #localHealthArea
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations within the specified local health area.  See [this site](https://www2.gov.bc.ca    /gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].documentation = "Search for locations within the specified local health area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
 * parameter[+].name = #communityHealthServiceArea
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Search for locations within the specified local community health service area.  See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
+* parameter[=].documentation = "Search for locations within the specified local community health service area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings."
 * parameter[=].type = #string
 * parameter[=].searchType = #string
+* parameter[+].name = #primaryCareNetwork
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search for locations within the specified Primary Care Network. Not implemented yet."
+* parameter[=].type = #string
+* parameter[=].searchType = #string
+* parameter[+].name = #withHistory
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned."
+* parameter[=].type = #boolean
 * parameter[+].name = #bundle
 * parameter[=].use = #out
 * parameter[=].min = 1

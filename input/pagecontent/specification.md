@@ -193,13 +193,13 @@ A FHIR example of a real message can be found [here](Bundle-Example-Response-Que
 |Resource|Search Parameter Name|Additional Information
 |----|:----|:---|
 |Practitioner
-||given-name|String, May use trailing wildcards, e.g. Ann*|
+||given-name|String. May use trailing wildcards, e.g. Ann*.	First Name and Last Name are mandatory unless one of City, Expertise or Language is populated.|
 ||surname|String, May use trailing wildcards, e.g. Ann*|
-||role|String code
+||role|String code for the PractitionerRole (e.g. MD or RN)
 ||language|May be a comma separated list of language codes, e.g. F01,E09.
-||expertise|May be a comma separated list of expertise codes, e.g. AM53,K34.
-||status|String code
-||status-reason|String code
+||expertise|May be a comma separated list of expertise codes, e.g. AM53,K34. Expertise Types will be filtered on the Role Type selected.
+||status|String code for status of the license
+||status-reason|String code for status-reason of the license
 ||address-city|String, full city name, e.g. Vancouver
 ||withHistory|true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.|
 ||identifier|String identifier value
@@ -215,21 +215,25 @@ A FHIR example of a real message can be found [here](Bundle-Example-Response-Que
 |Location
 ||name|String, May use trailing wildcards, e.g. Clinic*|
 ||address-city|String, full city name, e.g. Vancouver
-||healthAuthority| String, only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed.  The full name is required.  E.g. Langford/Highlands|
+||address-line1|String,  e.g. 1000 Douglas st
+||otheraddress-line1|String, e.g. 1000 Douglas st - Not implemented yet
+||healthAuthority| String, only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands|
 ||healthServiceDeliveryArea|See healthAuthority|
 ||localHealthArea|See healthAuthority|
 ||communityHealthServiceArea|See healthAuthority|
+||primaryCareNetwork|Search for locations within the specified Primary Care Network. Not implemented yet.|
+||withHistory|true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.|
 ||identifier|String identifier value
 ||identifier-type| String code for identifier type (e.g. LOCID), mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code.
 
 Notes:
+There is a limit to the number of search results returned = 20. A message will be provided indicating maximum search results were returned.     
+
 Wildcard
 •	The wildcard character is '*'.                
 •	Only one wildcard character is allowed in each allowed name field.     
 •	The wildcard character must be trailing.            
-•	At least 1 character must be entered before the wildcard.  
-
-There is a limit to the number of search results returned = 20. A message will be provided indicating maximum search results were returned.                
+•	At least 1 character must be entered before the wildcard.                 
 
 
 #### Query Part 2
