@@ -11,7 +11,7 @@
   "title" : "Query for an organization that returns associated resources",
   "status" : "draft",
   "kind" : "query",
-  "date" : "2023-09-07T21:19:16+00:00",
+  "date" : "2023-09-08T21:32:00+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -38,18 +38,9 @@
     "use" : "in",
     "min" : 0,
     "max" : "1",
-    "documentation" : "String identifier value",
+    "documentation" : "String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]",
     "type" : "string",
     "searchType" : "string"
-  },
-  {
-    "name" : "identifier-type",
-    "use" : "in",
-    "min" : 0,
-    "max" : "1",
-    "documentation" : "String code for identifier type (e.g. ORGID), mandatory if identifier is specified. Mapping to Organization.identifier.type.coding.code",
-    "type" : "string",
-    "searchType" : "token"
   },
   {
     "name" : "name",
@@ -70,7 +61,7 @@
     "searchType" : "string"
   },
   {
-    "name" : "role",
+    "name" : "type",
     "use" : "in",
     "min" : 0,
     "max" : "1",

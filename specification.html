@@ -425,6 +425,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
       <th>Resource</th>
       <th style="text-align: left">Search Parameter Name</th>
       <th style="text-align: left">Additional Information</th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
@@ -432,166 +433,181 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
       <td>Practitioner</td>
       <td style="text-align: left"> </td>
       <td style="text-align: left"> </td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">given-name</td>
       <td style="text-align: left">String. May use trailing wildcards, e.g. Ann*.	First Name and Last Name are mandatory unless one of City, Expertise or Language is populated.</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">surname</td>
       <td style="text-align: left">String, May use trailing wildcards, e.g. Ann*</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">role</td>
       <td style="text-align: left">String code for the PractitionerRole (e.g. MD or RN)</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">language</td>
       <td style="text-align: left">May be a comma separated list of language codes, e.g. F01,E09.</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">expertise</td>
       <td style="text-align: left">May be a comma separated list of expertise codes, e.g. AM53,K34. Expertise Types will be filtered on the Role Type selected.</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">status</td>
       <td style="text-align: left">String code for status of the license</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">status-reason</td>
       <td style="text-align: left">String code for status-reason of the license</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">address-city</td>
       <td style="text-align: left">String, full city name, e.g. Vancouver</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">withHistory</td>
       <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">identifier</td>
-      <td style="text-align: left">String identifier value</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td style="text-align: left">identifier-type</td>
-      <td style="text-align: left">String code, the type of Identifier(e.g. CPSID), mandatory if identifier is specified. Mapping to Practitioner.identifier.type.coding.code</td>
+      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier=[system]</td>
+      <td>[value]</td>
     </tr>
     <tr>
       <td>Organization</td>
       <td style="text-align: left"> </td>
       <td style="text-align: left"> </td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">name</td>
       <td style="text-align: left">String, mandatory. May use trailing wildcards, e.g. Clinic*</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">description</td>
       <td style="text-align: left">String, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
-      <td style="text-align: left">role</td>
-      <td style="text-align: left">String role code, mandatory, mapping to BCOrganization.type.</td>
+      <td style="text-align: left">type</td>
+      <td style="text-align: left">String for role type code, mandatory, mapping to BCOrganization.type.</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">address-city</td>
       <td style="text-align: left">String, full city name, e.g. Vancouver</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">withHistory</td>
       <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">identifier</td>
-      <td style="text-align: left">String identifier value</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td style="text-align: left">identifier-type</td>
-      <td style="text-align: left">String code for identifier type (e.g. ORGID), mandatory if identifier is specified. Mapping to Organization.identifier.type.coding.code</td>
+      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier=[system]</td>
+      <td>[value]</td>
     </tr>
     <tr>
       <td>Location</td>
       <td style="text-align: left"> </td>
       <td style="text-align: left"> </td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">name</td>
       <td style="text-align: left">String, May use trailing wildcards, e.g. Clinic*</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">address-city</td>
       <td style="text-align: left">String, full city name, e.g. Vancouver</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">address-line1</td>
       <td style="text-align: left">String,  e.g. 1000 Douglas st</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">otheraddress-line1</td>
       <td style="text-align: left">String, e.g. 1000 Douglas st - Not implemented yet</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">healthAuthority</td>
       <td style="text-align: left">String, only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">healthServiceDeliveryArea</td>
       <td style="text-align: left">See healthAuthority</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">localHealthArea</td>
       <td style="text-align: left">See healthAuthority</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">communityHealthServiceArea</td>
       <td style="text-align: left">See healthAuthority</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">primaryCareNetwork</td>
       <td style="text-align: left">Search for locations within the specified Primary Care Network. Not implemented yet.</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">withHistory</td>
       <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.</td>
+      <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">identifier</td>
-      <td style="text-align: left">String identifier value</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td style="text-align: left">identifier-type</td>
-      <td style="text-align: left">String code for identifier type (e.g. LOCID), mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code.</td>
+      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier=[system]</td>
+      <td>[value]</td>
     </tr>
   </tbody>
 </table>
@@ -740,7 +756,7 @@ There is a limit to the number of search results returned = 20. A message will b
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Sep 7, 2023 21:19+0000">2023-09-07</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 8, 2023 21:32+0000">2023-09-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

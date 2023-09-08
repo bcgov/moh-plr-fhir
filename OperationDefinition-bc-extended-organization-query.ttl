@@ -18,7 +18,7 @@
   fhir:title [ fhir:v "Query for an organization that returns associated resources"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "query"] ; # 
-  fhir:date [ fhir:v "2023-09-07T21:19:16+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-09-08T21:32:00+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -45,17 +45,9 @@
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "String identifier value" ] ;
+     fhir:documentation [ fhir:v "String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]" ] ;
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
-  ] [
-     fhir:name [ fhir:v "identifier-type" ] ;
-     fhir:use [ fhir:v "in" ] ;
-     fhir:min [ fhir:v "0"^^xsd:integer ] ;
-     fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "String code for identifier type (e.g. ORGID), mandatory if identifier is specified. Mapping to Organization.identifier.type.coding.code" ] ;
-     fhir:type [ fhir:v "string" ] ;
-     fhir:searchType [ fhir:v "token" ]
   ] [
      fhir:name [ fhir:v "name" ] ;
      fhir:use [ fhir:v "in" ] ;
@@ -73,7 +65,7 @@
      fhir:type [ fhir:v "string" ] ;
      fhir:searchType [ fhir:v "string" ]
   ] [
-     fhir:name [ fhir:v "role" ] ;
+     fhir:name [ fhir:v "type" ] ;
      fhir:use [ fhir:v "in" ] ;
      fhir:min [ fhir:v "0"^^xsd:integer ] ;
      fhir:max [ fhir:v "1" ] ;
