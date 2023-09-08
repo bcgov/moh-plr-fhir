@@ -202,16 +202,14 @@ A FHIR example of a real message can be found [here](Bundle-Example-Response-Que
 ||status-reason|String code for status-reason of the license
 ||address-city|String, full city name, e.g. Vancouver
 ||withHistory|true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.|
-||identifier|String identifier value
-||identifier-type|String code, the type of Identifier(e.g. CPSID), mandatory if identifier is specified. Mapping to Practitioner.identifier.type.coding.code
+||identifier|String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]
 |Organization
 ||name|String, mandatory. May use trailing wildcards, e.g. Clinic*|
 ||description|String, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*|
-||role|String role code, mandatory, mapping to BCOrganization.type. 
+||type|String for role type code, mandatory, mapping to BCOrganization.type. 
 ||address-city|String, full city name, e.g. Vancouver
 ||withHistory|true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.|
-||identifier|String identifier value
-||identifier-type| String code for identifier type (e.g. ORGID), mandatory if identifier is specified. Mapping to Organization.identifier.type.coding.code
+||identifier|String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]
 |Location
 ||name|String, May use trailing wildcards, e.g. Clinic*|
 ||address-city|String, full city name, e.g. Vancouver
@@ -223,8 +221,7 @@ A FHIR example of a real message can be found [here](Bundle-Example-Response-Que
 ||communityHealthServiceArea|See healthAuthority|
 ||primaryCareNetwork|Search for locations within the specified Primary Care Network. Not implemented yet.|
 ||withHistory|true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.|
-||identifier|String identifier value
-||identifier-type| String code for identifier type (e.g. LOCID), mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code.
+||identifier|String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]
 
 Notes:
 There is a limit to the number of search results returned = 20. A message will be provided indicating maximum search results were returned.     

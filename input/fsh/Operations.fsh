@@ -17,16 +17,16 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "String identifier value"
+* parameter[=].documentation = "String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]"
 * parameter[=].type = #string
 * parameter[=].searchType = #string
-* parameter[+].name = #identifier-type
+/* parameter[+].name = #identifier-type
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
 * parameter[=].documentation = "String code for identifier type (e.g. CPSID),  mandatory if identifier is specified. Mapping to Practitioner.identifier.type.coding.code"
 * parameter[=].type = #string
-* parameter[=].searchType = #token
+* parameter[=].searchType = #token */
 * parameter[+].name = #surname
 * parameter[=].use = #in
 * parameter[=].min = 0
@@ -123,16 +123,16 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "String identifier value"
+* parameter[=].documentation = "String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]"
 * parameter[=].type = #string
 * parameter[=].searchType = #string
-* parameter[+].name = #identifier-type
+/* parameter[+].name = #identifier-type
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
 * parameter[=].documentation = "String code for identifier type (e.g. LOCID), mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code"
 * parameter[=].type = #string
-* parameter[=].searchType = #token
+* parameter[=].searchType = #token */
 * parameter[+].name = #name
 * parameter[=].use = #in
 * parameter[=].min = 0
@@ -236,16 +236,16 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "String identifier value"
+* parameter[=].documentation = "String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]"
 * parameter[=].type = #string
 * parameter[=].searchType = #string
-* parameter[+].name = #identifier-type
+/* parameter[+].name = #identifier-type
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
 * parameter[=].documentation = "String code for identifier type (e.g. ORGID), mandatory if identifier is specified. Mapping to Organization.identifier.type.coding.code"
 * parameter[=].type = #string
-* parameter[=].searchType = #token
+* parameter[=].searchType = #token */
 * parameter[+].name = #name
 * parameter[=].use = #in
 * parameter[=].min = 0
@@ -260,7 +260,7 @@ Usage: #definition
 * parameter[=].documentation = "Search for organizations with the specified description, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*"
 * parameter[=].type = #string
 * parameter[=].searchType = #string 
-* parameter[+].name = #role
+* parameter[+].name = #type
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
@@ -307,16 +307,9 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "String identifier value"
+* parameter[=].documentation = "String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]"
 * parameter[=].type = #string
 * parameter[=].searchType = #string
-* parameter[+].name = #identifier-type
-* parameter[=].use = #in
-* parameter[=].min = 0
-* parameter[=].max = "1"
-* parameter[=].documentation = "String code for identifier type (e.g. CPSID),  mandatory if identifier is specified. Mapping to Practitioner.identifier.type.coding.code"
-* parameter[=].type = #string
-* parameter[=].searchType = #token
 * parameter[+].name = #surname
 * parameter[=].use = #in
 * parameter[=].min = 0
@@ -412,16 +405,9 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "String identifier value"
+* parameter[=].documentation = "String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]"
 * parameter[=].type = #string
 * parameter[=].searchType = #string
-* parameter[+].name = #identifier-type
-* parameter[=].use = #in
-* parameter[=].min = 0
-* parameter[=].max = "1"
-* parameter[=].documentation = "String code for identifier type (e.g. ORGID), mandatory if identifier is specified. Mapping to Organization.identifier.type.coding.code"
-* parameter[=].type = #string
-* parameter[=].searchType = #token
 * parameter[+].name = #name
 * parameter[=].use = #in
 * parameter[=].min = 0
@@ -436,7 +422,7 @@ Usage: #definition
 * parameter[=].documentation = "Search for organizations with the specified description, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*"
 * parameter[=].type = #string
 * parameter[=].searchType = #string 
-* parameter[+].name = #role
+* parameter[+].name = #type
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
@@ -483,16 +469,9 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "String identifier value"
+* parameter[=].documentation = "String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]"
 * parameter[=].type = #string
 * parameter[=].searchType = #string
-* parameter[+].name = #identifier-type
-* parameter[=].use = #in
-* parameter[=].min = 0
-* parameter[=].max = "1"
-* parameter[=].documentation = "String code for identifier type (e.g. LOCID), mandatory if identifier is specified. Mapping to Location.identifier.type.coding.code"
-* parameter[=].type = #string
-* parameter[=].searchType = #token
 * parameter[+].name = #name
 * parameter[=].use = #in
 * parameter[=].min = 0
