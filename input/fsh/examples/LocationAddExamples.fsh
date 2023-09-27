@@ -94,15 +94,11 @@ Description: "Example of a Location."
 
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
 * extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-authority-extension"
-* extension[=].extension[=].extension[+].url = "name"
-* extension[=].extension[=].extension[=].valueString = "Vancouver Island"
-
+* extension[=].extension[=].valueString = "Vancouver Island"
 * extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-delivery-area-extension"
-* extension[=].extension[=].extension[+].url = "name"
-* extension[=].extension[=].extension[=].valueString = "South Vancouver Island"
+* extension[=].extension[=].valueString = "South Vancouver Island"
 * extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-local-health-area-extension"
-* extension[=].extension[=].extension[+].url = "name"
-* extension[=].extension[=].extension[=].valueString = "Greater Victoria"
+* extension[=].extension[=].valueString = "Greater Victoria"
 * extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-area-extension"
 * extension[=].extension[=].extension[+].url = "code"
 * extension[=].extension[=].extension[=].valueIdentifier.value = "4123"
@@ -116,8 +112,7 @@ Description: "Example of a Location."
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-physical-address-extension"
 * extension[=].valueAddress = Example-Address-Fac
 * address = Example-Address-Fac
-//* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
-//* extension[=].valueIdentifier.assigner.display = "Langford/Highlands"
+
 
 Instance: Example-Address-Fac
 InstanceOf: BCAddress

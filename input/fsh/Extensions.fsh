@@ -32,28 +32,22 @@ Extension: HealthAuthorityExtension
 Id: bc-facility-health-authority-extension
 Title: "BC Facility Health Authority Area Extension"
 Description: "A code that represents the health authority area that the location is a part of."
-* extension contains code 0..1 MS and 
-     name 0..1 MS 
-* extension[name].value[x] only string
-* extension[name].value[x] 0..1 MS
+* value[x] only string
+* value[x] 1..1 MS
 
 Extension: HealthServiceDeliveryAreaExtension
 Id: bc-facility-health-service-delivery-area-extension
 Title: "BC Facility Health Service Delivery Area Extension"
 Description: "A code that represents the Health Service Delivery Area (HSDA)that the location is a part of."
-* extension contains code 0..1 MS and 
-     name 0..1 MS 
-* extension[name].value[x] only string
-* extension[name].value[x] 0..1 MS
+* value[x] only string
+* value[x] 1..1 MS
 
 Extension: LocalHealthAreaExtension
 Id: bc-facility-local-health-area-extension
 Title: "BC Facility Local Health Area Extension"
 Description: "A code that represents the Local Health Area (LHA) that the location is a part of."
-* extension contains code 0..1 MS and 
-     name 0..1 MS 
-* extension[name].value[x] only string
-* extension[name].value[x] 0..1 MS
+* value[x] only string
+* value[x] 1..1 MS
 
 Extension: CommunityHealthServiceAreaExtension
 Id: bc-facility-community-health-area-extension
