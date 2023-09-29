@@ -1,6 +1,6 @@
 Instance: BCPLRClientCapabilityStatement
 InstanceOf: CapabilityStatement
-
+Usage: #definition
 * id = "bc-plr-client-capability-statement"
 * version = "1.0"
 * name = "BCPLRClientCapabilityStatement"
@@ -31,7 +31,7 @@ InstanceOf: CapabilityStatement
 
 Instance: BCPLRServerCapabilityStatement
 InstanceOf: CapabilityStatement
-
+Usage: #definition
 * id = "bc-plr-server-capability-statement"
 * version = "1.0"
 * name = "BCPLRServerCapabilityStatement"
