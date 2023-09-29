@@ -62,8 +62,7 @@ Description: "Example of a Location."
 * telecom[0].period.start = "1982-03-04T00:00:00-07:00"
 * telecom[0].value = "55555555551"
 * telecom[0].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #FC
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept = $PLRCommPurpose#FC
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-physical-address-extension"
 * extension[=].valueAddress = Example-Address-Fac
 //* address = Example-Address-Fac
@@ -87,8 +86,7 @@ Description: "Example of a Location."
 * telecom[0].period.start = "1982-03-04T00:00:00-07:00"
 * telecom[0].value = "55555555551"
 * telecom[0].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
-* telecom[0].extension[commPurposeExtension].valueCodeableConcept.coding.code = #FC
+* telecom[0].extension[commPurposeExtension].valueCodeableConcept = $PLRCommPurpose#FC
 * physicalType.coding.code = #bu
 * physicalType.coding.system = "http://terminology.hl7.org/CodeSystem/location-physical-type"
 
@@ -125,8 +123,7 @@ Usage: #inline
 * state = "BC"
 * country = "CA"
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
-* extension[=].valueCodeableConcept.coding.system = $PLRCommPurpose
-* extension[=].valueCodeableConcept.coding.code = #FC
+* extension[=].valueCodeableConcept = $PLRCommPurpose#FC
 //* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension"
 //* extension[=].valueCodeableConcept.coding.system = $PLRAddressValStatus
 //* extension[=].valueCodeableConcept.coding.code = #V
@@ -170,7 +167,7 @@ Description: "Example of the PractitionerRole for Practitioner to Location relat
 * extension[=].valueCodeableConcept.coding.code = #PRACTICES_AT
 
 Instance: Example-Identifier-FACID-22
-InstanceOf: Identifier
+InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
 Description: "Identifier example for Facility ID."
 Usage: #inline
 * system = $System_FACID
@@ -178,7 +175,7 @@ Usage: #inline
 * period.start = "2000-01-01"
 
 Instance: Example-Identifier-IFC-00147423
-InstanceOf: Identifier
+InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
 Description: "Identifier example for Facility ID."
 Usage: #inline
 * system = $System_IFC

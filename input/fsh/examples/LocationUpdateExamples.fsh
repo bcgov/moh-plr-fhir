@@ -50,7 +50,7 @@ Description: "Example of a Location for update."
 * address = Example-Address-Fac-Civic
 
 Instance: Example-Identifier-IFC-147422
-InstanceOf: Identifier
+InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
 Description: "Identifier example for IFC."
 Usage: #inline
 * system = $System_IFC
@@ -59,7 +59,7 @@ Usage: #inline
 
 
 Instance: Example-Identifier-IFC-147422-U
-InstanceOf: Identifier
+InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
 Description: "Identifier example for IFC."
 Usage: #inline
 * system = $System_IFC
@@ -136,7 +136,7 @@ Description: "Example of the PractitionerRole for Practitioner to Location relat
 * extension[+] = Example-ERC-Change
 
 Instance: Example-Identifier-FACID-22-U
-InstanceOf: Identifier
+InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
 Description: "Identifier example for Facility ID."
 Usage: #inline
 * system = $System_FACID
