@@ -10,14 +10,14 @@
   fhir:id [ fhir:v "fhir.ca-bc.provider"] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Placeholder</div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>BCProviderRegistry</h2><p>The official URL for this implementation guide is: </p><pre>http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider</pre><div><p>FHIR Implementation Guide for BC MOH Provider Registry</p>\n</div></div>"
   ] ; # 
   fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "1.0.0"] ; # 
   fhir:name [ fhir:v "BCProviderRegistry"] ; # 
   fhir:title [ fhir:v "BC Provider Location Registry FHIR Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-09-08T21:32:00+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-09-29T19:19:38+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -48,7 +48,7 @@
        fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
-     fhir:version [ fhir:v "5.2.0" ]
+     fhir:version [ fhir:v "5.3.0" ]
   ] [
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
@@ -237,6 +237,15 @@
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "apply-version" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-wg" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "true" ]
@@ -456,6 +465,15 @@
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "apply-version" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-wg" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "true" ]
@@ -900,6 +918,32 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-client-capability-statement> ;
+         fhir:reference [ fhir:v "CapabilityStatement/bc-plr-client-capability-statement" ]
+       ] ;
+       fhir:name [ fhir:v "BC PLR Client Capability Statement" ] ;
+       fhir:description [ fhir:v "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.\n\n* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Capabilities" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-server-capability-statement> ;
+         fhir:reference [ fhir:v "CapabilityStatement/bc-plr-server-capability-statement" ]
+       ] ;
+       fhir:name [ fhir:v "BC PLR Server Capability Statement" ] ;
+       fhir:description [ fhir:v "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)\n\nAll POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Capabilities" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -1247,32 +1291,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CapabilityStatement" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-client-capability-statement> ;
-         fhir:reference [ fhir:v "CapabilityStatement/bc-plr-client-capability-statement" ]
-       ] ;
-       fhir:name [ fhir:v "BCPLRClientCapabilityStatement" ] ;
-       fhir:description [ fhir:v "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.\n\n* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location" ] ;
-       fhir:example [ fhir:v "true"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Capabilities" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CapabilityStatement" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-server-capability-statement> ;
-         fhir:reference [ fhir:v "CapabilityStatement/bc-plr-server-capability-statement" ]
-       ] ;
-       fhir:name [ fhir:v "BCPLRServerCapabilityStatement" ] ;
-       fhir:description [ fhir:v "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)\n\nAll POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)" ] ;
-       fhir:example [ fhir:v "true"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Capabilities" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
@@ -1335,58 +1353,6 @@
        fhir:description [ fhir:v "General constraints on the PractitionerRole resource for use in the BC Provider Registry project to describe relationships." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "Practitioner" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution> ;
-         fhir:reference [ fhir:v "OperationDefinition/bc-distribution" ]
-       ] ;
-       fhir:name [ fhir:v "Distribution" ] ;
-       fhir:description [ fhir:v "This operation is used to distribute the resources that represent a Provider or Facility." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Operations" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query> ;
-         fhir:reference [ fhir:v "OperationDefinition/bc-entity-location-query" ]
-       ] ;
-       fhir:name [ fhir:v "EntityLocationQuery" ] ;
-       fhir:description [ fhir:v "This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Operations" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-organization-query> ;
-         fhir:reference [ fhir:v "OperationDefinition/bc-entity-organization-query" ]
-       ] ;
-       fhir:name [ fhir:v "EntityOrganizationQuery" ] ;
-       fhir:description [ fhir:v "This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Operations" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-practitioner-query> ;
-         fhir:reference [ fhir:v "OperationDefinition/bc-entity-practitioner-query" ]
-       ] ;
-       fhir:name [ fhir:v "EntityPractitionerQuery" ] ;
-       fhir:description [ fhir:v "This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Operations" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2894,10 +2860,36 @@
          fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-maintain> ;
+         fhir:reference [ fhir:v "OperationDefinition/bc-maintain" ]
+       ] ;
+       fhir:name [ fhir:v "Maintain PLR entities." ] ;
+       fhir:description [ fhir:v "This operation is used to create and update the resources that represent a Provider or Facility." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Operations" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution> ;
+         fhir:reference [ fhir:v "OperationDefinition/bc-distribution" ]
+       ] ;
+       fhir:name [ fhir:v "PLR entities sent out in a distribution." ] ;
+       fhir:description [ fhir:v "This operation is used to distribute the resources that represent a Provider or Facility." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Operations" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-location-query> ;
          fhir:reference [ fhir:v "OperationDefinition/bc-extended-location-query" ]
        ] ;
-       fhir:name [ fhir:v "ExtendedLocationQuery" ] ;
+       fhir:name [ fhir:v "Query for a location that returns associated resources" ] ;
        fhir:description [ fhir:v "This operation is used to query for an location and will return the information for that location along with any instances that can be found by following associations to other providers, organizations, or location." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "Operations" ]
@@ -2907,11 +2899,11 @@
          fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-organization-query> ;
-         fhir:reference [ fhir:v "OperationDefinition/bc-extended-organization-query" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query> ;
+         fhir:reference [ fhir:v "OperationDefinition/bc-entity-location-query" ]
        ] ;
-       fhir:name [ fhir:v "ExtendedOrganizationQuery" ] ;
-       fhir:description [ fhir:v "This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations." ] ;
+       fhir:name [ fhir:v "Query for a location without returning associations" ] ;
+       fhir:description [ fhir:v "This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "Operations" ]
      ] [
@@ -2923,7 +2915,7 @@
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-practitioner-query> ;
          fhir:reference [ fhir:v "OperationDefinition/bc-extended-practitioner-query" ]
        ] ;
-       fhir:name [ fhir:v "ExtendedPractitionerQuery" ] ;
+       fhir:name [ fhir:v "Query for a Practitioner that returns associated resources" ] ;
        fhir:description [ fhir:v "This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "Operations" ]
@@ -2933,11 +2925,37 @@
          fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-maintain> ;
-         fhir:reference [ fhir:v "OperationDefinition/bc-maintain" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-practitioner-query> ;
+         fhir:reference [ fhir:v "OperationDefinition/bc-entity-practitioner-query" ]
        ] ;
-       fhir:name [ fhir:v "Maintain" ] ;
-       fhir:description [ fhir:v "This operation is used to create and update the resources that represent a Provider or Facility." ] ;
+       fhir:name [ fhir:v "Query for a practitioner without returning associations" ] ;
+       fhir:description [ fhir:v "This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Operations" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-organization-query> ;
+         fhir:reference [ fhir:v "OperationDefinition/bc-extended-organization-query" ]
+       ] ;
+       fhir:name [ fhir:v "Query for an organization that returns associated resources" ] ;
+       fhir:description [ fhir:v "This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "Operations" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-organization-query> ;
+         fhir:reference [ fhir:v "OperationDefinition/bc-entity-organization-query" ]
+       ] ;
+       fhir:name [ fhir:v "Query for an organization without returning associations" ] ;
+       fhir:description [ fhir:v "This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "Operations" ]
      ] ) ;

@@ -3,7 +3,7 @@
   "id" : "bc-extended-organization-query",
   "text" : {
     "status" : "extensions",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Placeholder</div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>URL: [base]/Organization/$extendedQuery</p><p>URL: [base]/Organization/[id]/$extendedQuery</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>identifier</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]</p>\n</div></td></tr><tr><td>IN</td><td>name</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for organizations with the specified name, mandatory if no identifier specified. May use trailing wildcards, e.g. Clinic*</p>\n</div></td></tr><tr><td>IN</td><td>description</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for organizations with the specified description, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*</p>\n</div></td></tr><tr><td>IN</td><td>type</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#token\">token</a>)</td><td/><td><div><p>Search for organizations with the specified role type code, mandatory if no identifier specified, mapping to Organization.type</p>\n</div></td></tr><tr><td>IN</td><td>address-city</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>Search for organizations with the specified city.</p>\n</div></td></tr><tr><td>IN</td><td>withHistory</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#boolean\">boolean</a></td><td/><td><div><p>true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.</p>\n</div></td></tr><tr><td>OUT</td><td>bundle</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td><div><p>The Response Bundle with the OperationOutcome and the list of BCOrganizationBundle found by the search.</p>\n</div></td></tr></table></div>"
   },
   "url" : "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-organization-query",
   "version" : "1.0.0",
@@ -11,7 +11,7 @@
   "title" : "Query for an organization that returns associated resources",
   "status" : "draft",
   "kind" : "query",
-  "date" : "2023-09-08T21:32:00+00:00",
+  "date" : "2023-09-29T19:19:38+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",

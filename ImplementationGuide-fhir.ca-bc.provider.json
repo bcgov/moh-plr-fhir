@@ -3,14 +3,14 @@
   "id" : "fhir.ca-bc.provider",
   "text" : {
     "status" : "extensions",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Placeholder</div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>BCProviderRegistry</h2><p>The official URL for this implementation guide is: </p><pre>http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider</pre><div><p>FHIR Implementation Guide for BC MOH Provider Registry</p>\n</div></div>"
   },
   "url" : "http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider",
   "version" : "1.0.0",
   "name" : "BCProviderRegistry",
   "title" : "BC Provider Location Registry FHIR Implementation Guide",
   "status" : "draft",
-  "date" : "2023-09-08T21:32:00+00:00",
+  "date" : "2023-09-29T19:19:38+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -38,7 +38,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "5.2.0"
+    "version" : "5.3.0"
   },
   {
     "id" : "hl7ext",
@@ -259,6 +259,17 @@
       "extension" : [{
         "url" : "code",
         "valueString" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-wg"
       },
       {
         "url" : "value",
@@ -527,6 +538,17 @@
       "extension" : [{
         "url" : "code",
         "valueCode" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-wg"
       },
       {
         "url" : "value",
@@ -994,6 +1016,32 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/bc-plr-client-capability-statement"
+      },
+      "name" : "BC PLR Client Capability Statement",
+      "description" : "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.\n\n* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location",
+      "exampleBoolean" : false,
+      "groupingId" : "Capabilities"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/bc-plr-server-capability-statement"
+      },
+      "name" : "BC PLR Server Capability Statement",
+      "description" : "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)\n\nAll POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)",
+      "exampleBoolean" : false,
+      "groupingId" : "Capabilities"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -1341,32 +1389,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CapabilityStatement"
-      }],
-      "reference" : {
-        "reference" : "CapabilityStatement/bc-plr-client-capability-statement"
-      },
-      "name" : "BCPLRClientCapabilityStatement",
-      "description" : "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.\n\n* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location",
-      "exampleBoolean" : true,
-      "groupingId" : "Capabilities"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CapabilityStatement"
-      }],
-      "reference" : {
-        "reference" : "CapabilityStatement/bc-plr-server-capability-statement"
-      },
-      "name" : "BCPLRServerCapabilityStatement",
-      "description" : "This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):\n* Maintain - used when an external source is communicating a change to PLR\n* Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)\n* Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)\n\nAll POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)",
-      "exampleBoolean" : true,
-      "groupingId" : "Capabilities"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -1428,58 +1450,6 @@
       "description" : "General constraints on the PractitionerRole resource for use in the BC Provider Registry project to describe relationships.",
       "exampleBoolean" : false,
       "groupingId" : "Practitioner"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/bc-distribution"
-      },
-      "name" : "Distribution",
-      "description" : "This operation is used to distribute the resources that represent a Provider or Facility.",
-      "exampleBoolean" : false,
-      "groupingId" : "Operations"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/bc-entity-location-query"
-      },
-      "name" : "EntityLocationQuery",
-      "description" : "This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations.",
-      "exampleBoolean" : false,
-      "groupingId" : "Operations"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/bc-entity-organization-query"
-      },
-      "name" : "EntityOrganizationQuery",
-      "description" : "This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities.",
-      "exampleBoolean" : false,
-      "groupingId" : "Operations"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/bc-entity-practitioner-query"
-      },
-      "name" : "EntityPractitionerQuery",
-      "description" : "This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities.",
-      "exampleBoolean" : false,
-      "groupingId" : "Operations"
     },
     {
       "extension" : [{
@@ -2751,9 +2721,35 @@
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
+        "reference" : "OperationDefinition/bc-maintain"
+      },
+      "name" : "Maintain PLR entities.",
+      "description" : "This operation is used to create and update the resources that represent a Provider or Facility.",
+      "exampleBoolean" : false,
+      "groupingId" : "Operations"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/bc-distribution"
+      },
+      "name" : "PLR entities sent out in a distribution.",
+      "description" : "This operation is used to distribute the resources that represent a Provider or Facility.",
+      "exampleBoolean" : false,
+      "groupingId" : "Operations"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
         "reference" : "OperationDefinition/bc-extended-location-query"
       },
-      "name" : "ExtendedLocationQuery",
+      "name" : "Query for a location that returns associated resources",
       "description" : "This operation is used to query for an location and will return the information for that location along with any instances that can be found by following associations to other providers, organizations, or location.",
       "exampleBoolean" : false,
       "groupingId" : "Operations"
@@ -2764,10 +2760,10 @@
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/bc-extended-organization-query"
+        "reference" : "OperationDefinition/bc-entity-location-query"
       },
-      "name" : "ExtendedOrganizationQuery",
-      "description" : "This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations.",
+      "name" : "Query for a location without returning associations",
+      "description" : "This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations.",
       "exampleBoolean" : false,
       "groupingId" : "Operations"
     },
@@ -2779,7 +2775,7 @@
       "reference" : {
         "reference" : "OperationDefinition/bc-extended-practitioner-query"
       },
-      "name" : "ExtendedPractitionerQuery",
+      "name" : "Query for a Practitioner that returns associated resources",
       "description" : "This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities.",
       "exampleBoolean" : false,
       "groupingId" : "Operations"
@@ -2790,10 +2786,36 @@
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/bc-maintain"
+        "reference" : "OperationDefinition/bc-entity-practitioner-query"
       },
-      "name" : "Maintain",
-      "description" : "This operation is used to create and update the resources that represent a Provider or Facility.",
+      "name" : "Query for a practitioner without returning associations",
+      "description" : "This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities.",
+      "exampleBoolean" : false,
+      "groupingId" : "Operations"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/bc-extended-organization-query"
+      },
+      "name" : "Query for an organization that returns associated resources",
+      "description" : "This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations.",
+      "exampleBoolean" : false,
+      "groupingId" : "Operations"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/bc-entity-organization-query"
+      },
+      "name" : "Query for an organization without returning associations",
+      "description" : "This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities.",
       "exampleBoolean" : false,
       "groupingId" : "Operations"
     }],

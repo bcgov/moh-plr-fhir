@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FHIR.CA-BC.PROVIDER\Artifacts Summary - FHIR v4.0.1</title>
+    <title>Artifacts Summary - BC Provider Location Registry FHIR Implementation Guide v1.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -286,7 +286,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
                <td style="column-width:30%">
                   <a href="CapabilityStatement-bc-plr-client-capability-statement.html"
-                     title="CapabilityStatement/bc-plr-client-capability-statement">BCPLRClientCapabilityStatement</a>
+                     title="CapabilityStatement/bc-plr-client-capability-statement">BC PLR Client Capability Statement</a>
                </td>
                <td>
 <p>This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.</p>
@@ -299,7 +299,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
                <td style="column-width:30%">
                   <a href="CapabilityStatement-bc-plr-server-capability-statement.html"
-                     title="CapabilityStatement/bc-plr-server-capability-statement">BCPLRServerCapabilityStatement</a>
+                     title="CapabilityStatement/bc-plr-server-capability-statement">BC PLR Server Capability Statement</a>
                </td>
                <td>
 <p>This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):</p>
@@ -326,8 +326,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
+                  <a href="OperationDefinition-bc-maintain.html"
+                     title="OperationDefinition/bc-maintain">Maintain PLR entities.</a>
+               </td>
+               <td>
+<p>This operation is used to create and update the resources that represent a Provider or Facility.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="OperationDefinition-bc-distribution.html"
-                     title="OperationDefinition/bc-distribution">Distribution</a>
+                     title="OperationDefinition/bc-distribution">PLR entities sent out in a distribution.</a>
                </td>
                <td>
 <p>This operation is used to distribute the resources that represent a Provider or Facility.</p>
@@ -335,35 +344,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-entity-location-query.html"
-                     title="OperationDefinition/bc-entity-location-query">EntityLocationQuery</a>
-               </td>
-               <td>
-<p>This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-entity-organization-query.html"
-                     title="OperationDefinition/bc-entity-organization-query">EntityOrganizationQuery</a>
-               </td>
-               <td>
-<p>This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-entity-practitioner-query.html"
-                     title="OperationDefinition/bc-entity-practitioner-query">EntityPractitionerQuery</a>
-               </td>
-               <td>
-<p>This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
                   <a href="OperationDefinition-bc-extended-location-query.html"
-                     title="OperationDefinition/bc-extended-location-query">ExtendedLocationQuery</a>
+                     title="OperationDefinition/bc-extended-location-query">Query for a location that returns associated resources</a>
                </td>
                <td>
 <p>This operation is used to query for an location and will return the information for that location along with any instances that can be found by following associations to other providers, organizations, or location.</p>
@@ -371,17 +353,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-extended-organization-query.html"
-                     title="OperationDefinition/bc-extended-organization-query">ExtendedOrganizationQuery</a>
+                  <a href="OperationDefinition-bc-entity-location-query.html"
+                     title="OperationDefinition/bc-entity-location-query">Query for a location without returning associations</a>
                </td>
                <td>
-<p>This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations.</p>
+<p>This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations.</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="OperationDefinition-bc-extended-practitioner-query.html"
-                     title="OperationDefinition/bc-extended-practitioner-query">ExtendedPractitionerQuery</a>
+                     title="OperationDefinition/bc-extended-practitioner-query">Query for a Practitioner that returns associated resources</a>
                </td>
                <td>
 <p>This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities.</p>
@@ -389,11 +371,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="OperationDefinition-bc-maintain.html"
-                     title="OperationDefinition/bc-maintain">Maintain</a>
+                  <a href="OperationDefinition-bc-entity-practitioner-query.html"
+                     title="OperationDefinition/bc-entity-practitioner-query">Query for a practitioner without returning associations</a>
                </td>
                <td>
-<p>This operation is used to create and update the resources that represent a Provider or Facility.</p>
+<p>This operation is used to query for a practitioner and will return the information for that practitioner without following associations to other providers, organizations, or facilities.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="OperationDefinition-bc-extended-organization-query.html"
+                     title="OperationDefinition/bc-extended-organization-query">Query for an organization that returns associated resources</a>
+               </td>
+               <td>
+<p>This operation is used to query for an organization and will return the information for that organization along with any instances that can be found by following associations to other practitioners, organizations, or locations.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="OperationDefinition-bc-entity-organization-query.html"
+                     title="OperationDefinition/bc-entity-organization-query">Query for an organization without returning associations</a>
+               </td>
+               <td>
+<p>This operation is used to query for an organization and will return the information for that organization without following associations to other providers, organizations, or facilities.</p>
 </td>
             </tr>
          </tbody>
@@ -2061,7 +2061,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 8, 2023 21:32+0000">2023-09-08</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 29, 2023 19:19+0000">2023-09-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

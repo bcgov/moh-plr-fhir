@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FHIR.CA-BC.PROVIDER\BCPLRServerCapabilityStatement - XML Representation - FHIR v4.0.1</title>
+    <title>BC PLR Server Capability Statement - XML Representation - BC Provider Location Registry FHIR Implementation Guide v1.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -188,7 +188,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>BCPLRServerCapabilityStatement</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>BC PLR Server Capability Statement</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -247,7 +247,7 @@
 <a name="root"> </a>
 
 
-<h2 id="root">: BCPLRServerCapabilityStatement - XML Representation</h2>
+<h2 id="root">: BC PLR Server Capability Statement - XML Representation</h2>
 
   <table class="colsd">
     <tr>
@@ -278,7 +278,15 @@
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;bc-plr-server-capability-statement&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;extensions&quot;/&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;Placeholder&lt;/div&gt;<a name="end-xhtml"></a>
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;BCPLRServerCapabilityStatement&lt;/h2&gt;&lt;div&gt;&lt;p&gt;This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Maintain - used when an external source is communicating a change to PLR&lt;/li&gt;
+&lt;li&gt;Batch - allows for the sending of multiple Maintain transactions at one time (not implemented yet)&lt;/li&gt;
+&lt;li&gt;Queries - a set of operations are defined that allow the querying of PLR FHIR instances (entityQuery and extendedQuery)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All POST and PUT Requests are sent using a Paramaters resource and the Response is always a Bundle resource containing an OperationOutcome and the expected profile(s) (BCPractitioner, BCPractitionerBundle ect ...)&lt;/p&gt;
+&lt;/div&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Mode&lt;/td&gt;&lt;td&gt;SERVER&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Description&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;RESTful Atomic services&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Transaction&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;System History&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;System Search&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;&lt;b&gt;Resource Type&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Profile&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=&quot;GET a resource (read interaction)&quot;&gt;Read&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=&quot;GET all set of resources of the type (search interaction)&quot;&gt;Search&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=&quot;PUT a new resource version (update interaction)&quot;&gt;Update&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=&quot;POST a new resource (create interaction)&quot;&gt;Create&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Practitioner&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner&quot;&gt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner&lt;/a&gt;&lt;br/&gt;Additional supported profiles:&lt;br/&gt;  &lt;a href=&quot;StructureDefinition-bc-practitioner-bundle.html&quot;&gt;BCPractitionerBundle&lt;/a&gt;&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;PractitionerRole&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role&quot;&gt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role&lt;/a&gt;&lt;br/&gt;Additional supported profiles:&lt;br/&gt;  &lt;a href=&quot;StructureDefinition-bc-role-relationships.html&quot;&gt;BCRoleRelationships&lt;/a&gt;&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Organization&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization&quot;&gt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization&lt;/a&gt;&lt;br/&gt;Additional supported profiles:&lt;br/&gt;  &lt;a href=&quot;StructureDefinition-bc-organization-bundle.html&quot;&gt;BCOrganizationBundle&lt;/a&gt;&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OrganizationAffiliation&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation&quot;&gt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation&lt;/a&gt;&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Location&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location&quot;&gt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location&lt;/a&gt;&lt;br/&gt;Additional supported profiles:&lt;br/&gt;  &lt;a href=&quot;StructureDefinition-bc-location-bundle.html&quot;&gt;BCLocationBundle&lt;/a&gt;&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
   &lt;/text&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.url">url</a>
        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-server-capability-statement&quot;/&gt;
@@ -500,7 +508,7 @@ All POST and PUT Requests are sent using a Paramaters resource and the Response 
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 8, 2023 21:32+0000">2023-09-08</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 29, 2023 19:19+0000">2023-09-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
