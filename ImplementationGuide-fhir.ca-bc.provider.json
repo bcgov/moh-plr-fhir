@@ -10,7 +10,7 @@
   "name" : "BCProviderRegistry",
   "title" : "BC Provider Location Registry FHIR Implementation Guide",
   "status" : "draft",
-  "date" : "2023-10-03T05:01:09+00:00",
+  "date" : "2023-10-03T20:58:36+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -2724,7 +2724,7 @@
         "reference" : "StructureDefinition/bc-organization-primary-care-clinic-extension"
       },
       "name" : "Extension for BC Organization to add Primary Care Clinic details",
-      "description" : "A wrapper extension that will allow to add all the Primary Care Clinic details.",
+      "description" : "A wrapper extension that will allow to add the Primary Care Clinic details.",
       "exampleBoolean" : false
     },
     {
@@ -2733,22 +2733,10 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/bc-organization-clinic-identifier-extension"
+        "reference" : "StructureDefinition/bc-hours-operation-extension"
       },
-      "name" : "Extension to represent the Clinic HIBC Facilty ID number. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCLocation",
-      "description" : "The (Primary Care) Clinic identifier, HIBC Facility ID. TO BE DETERMINED if identifier or string. NamingSystem is known, to find it",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/bc-organization-clinic-hours-operation-extension"
-      },
-      "name" : "Extension to represent the Clinic hours of operation. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCClinicalService",
-      "description" : "The (Primary Care) Clinic identifier, HIBC Facility ID. TO BE DETERMINED if identifier or string",
+      "name" : "Extension to represent hours of operation, for clinic, or other Profiles",
+      "description" : "TO BE DETERMINED if just BC extension or v4 availabletime or v5 hoursOfOperation",
       "exampleBoolean" : false
     },
     {
@@ -2759,8 +2747,8 @@
       "reference" : {
         "reference" : "StructureDefinition/bc-organization-clinic-ownership-type-extension"
       },
-      "name" : "Extension to represent the Clinic Ownership type. TO BE DETERMINED codeSyem or free field",
-      "description" : "The (Primary Care) Clinic Ownership type",
+      "name" : "Extension to represent the Clinic Ownership type.",
+      "description" : "The (Primary Care) Clinic Ownership type, the expected value is one from Health Authority Owned/Operated, First Nation Health Authority Owned/Operated, Physician Owned/Operated, Non-Profit Society, Non-Physician Corporation, Other",
       "exampleBoolean" : false
     },
     {
@@ -2771,7 +2759,7 @@
       "reference" : {
         "reference" : "StructureDefinition/bc-organization-clinic-payee-number-extension"
       },
-      "name" : "Extension to represent the Clinic Payee number. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCPrimaryCareTeam",
+      "name" : "Extension to represent the Clinic Payee number.",
       "description" : "The (Primary Care) Clinic Payee number",
       "exampleBoolean" : false
     },
@@ -2783,8 +2771,8 @@
       "reference" : {
         "reference" : "StructureDefinition/bc-organization-clinic-service-delivery-type-extension"
       },
-      "name" : "Extension to represent the Clinic Service Delivery type. TO BE DETERMINED codeSytemem or free field",
-      "description" : "The (Primary Care) Clinic Service Delivery type",
+      "name" : "Extension to represent the Clinic Service Delivery type.",
+      "description" : "The (Primary Care) Clinic Service Delivery type, the expected value is one from Longitudinal, Episodic, and Mixed",
       "exampleBoolean" : false
     },
     {
@@ -2795,8 +2783,8 @@
       "reference" : {
         "reference" : "StructureDefinition/bc-organization-clinic-type-extension"
       },
-      "name" : "Extension to represent the Clinic type. TO BE DETERMINED codeSytemem or free field",
-      "description" : "The (Primary Care) Clinic type",
+      "name" : "Extension to represent the Clinic type.",
+      "description" : "The (Primary Care) Clinic type, the expected value is one from UPCC, FNPCI, NPCC, CHC, Walk-In/Episodic Care Clinic, Family Practice, Longitudinal Primary Care Practice, Hybrid Primary Care Practice",
       "exampleBoolean" : false
     },
     {

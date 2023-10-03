@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "BCProviderRegistry"] ; # 
   fhir:title [ fhir:v "BC Provider Location Registry FHIR Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-10-03T05:01:09+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-10-03T20:58:36+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -2864,7 +2864,7 @@
          fhir:reference [ fhir:v "StructureDefinition/bc-organization-primary-care-clinic-extension" ]
        ] ;
        fhir:name [ fhir:v "Extension for BC Organization to add Primary Care Clinic details" ] ;
-       fhir:description [ fhir:v "A wrapper extension that will allow to add all the Primary Care Clinic details." ] ;
+       fhir:description [ fhir:v "A wrapper extension that will allow to add the Primary Care Clinic details." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2872,23 +2872,11 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-identifier-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-identifier-extension" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-hours-operation-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-hours-operation-extension" ]
        ] ;
-       fhir:name [ fhir:v "Extension to represent the Clinic HIBC Facilty ID number. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCLocation" ] ;
-       fhir:description [ fhir:v "The (Primary Care) Clinic identifier, HIBC Facility ID. TO BE DETERMINED if identifier or string. NamingSystem is known, to find it" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-hours-operation-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-hours-operation-extension" ]
-       ] ;
-       fhir:name [ fhir:v "Extension to represent the Clinic hours of operation. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCClinicalService" ] ;
-       fhir:description [ fhir:v "The (Primary Care) Clinic identifier, HIBC Facility ID. TO BE DETERMINED if identifier or string" ] ;
+       fhir:name [ fhir:v "Extension to represent hours of operation, for clinic, or other Profiles" ] ;
+       fhir:description [ fhir:v "TO BE DETERMINED if just BC extension or v4 availabletime or v5 hoursOfOperation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2899,8 +2887,8 @@
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-ownership-type-extension> ;
          fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-ownership-type-extension" ]
        ] ;
-       fhir:name [ fhir:v "Extension to represent the Clinic Ownership type. TO BE DETERMINED codeSyem or free field" ] ;
-       fhir:description [ fhir:v "The (Primary Care) Clinic Ownership type" ] ;
+       fhir:name [ fhir:v "Extension to represent the Clinic Ownership type." ] ;
+       fhir:description [ fhir:v "The (Primary Care) Clinic Ownership type, the expected value is one from Health Authority Owned/Operated, First Nation Health Authority Owned/Operated, Physician Owned/Operated, Non-Profit Society, Non-Physician Corporation, Other" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2911,7 +2899,7 @@
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-payee-number-extension> ;
          fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-payee-number-extension" ]
        ] ;
-       fhir:name [ fhir:v "Extension to represent the Clinic Payee number. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCPrimaryCareTeam" ] ;
+       fhir:name [ fhir:v "Extension to represent the Clinic Payee number." ] ;
        fhir:description [ fhir:v "The (Primary Care) Clinic Payee number" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
@@ -2923,8 +2911,8 @@
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-service-delivery-type-extension> ;
          fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-service-delivery-type-extension" ]
        ] ;
-       fhir:name [ fhir:v "Extension to represent the Clinic Service Delivery type. TO BE DETERMINED codeSytemem or free field" ] ;
-       fhir:description [ fhir:v "The (Primary Care) Clinic Service Delivery type" ] ;
+       fhir:name [ fhir:v "Extension to represent the Clinic Service Delivery type." ] ;
+       fhir:description [ fhir:v "The (Primary Care) Clinic Service Delivery type, the expected value is one from Longitudinal, Episodic, and Mixed" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2935,8 +2923,8 @@
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-type-extension> ;
          fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-type-extension" ]
        ] ;
-       fhir:name [ fhir:v "Extension to represent the Clinic type. TO BE DETERMINED codeSytemem or free field" ] ;
-       fhir:description [ fhir:v "The (Primary Care) Clinic type" ] ;
+       fhir:name [ fhir:v "Extension to represent the Clinic type." ] ;
+       fhir:description [ fhir:v "The (Primary Care) Clinic type, the expected value is one from UPCC, FNPCI, NPCC, CHC, Walk-In/Episodic Care Clinic, Family Practice, Longitudinal Primary Care Practice, Hybrid Primary Care Practice" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
