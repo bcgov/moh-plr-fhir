@@ -72,56 +72,56 @@ Description: "A code that represents the Primary Care Network (PCN) that the loc
 * extension[name].value[x] 0..1 MS
 
 
-Extension: ClinicHoursOfOperationExtension
-Id: bc-organization-clinic-hours-operation-extension
-Title: "Extension to represent the Clinic hours of operation. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCClinicalService"
-Description: "The (Primary Care) Clinic identifier, HIBC Facility ID. TO BE DETERMINED if identifier or string"
+Extension: HoursOfOperationExtension
+Id: bc-hours-operation-extension
+Title: "Extension to represent hours of operation, for clinic, or other Profiles"
+Description: "TO BE DETERMINED if just BC extension or v4 availabletime or v5 hoursOfOperation"
 * value[x] only string
 * value[x] 1..1 MS
 
-Extension: ClinicIdentifierExtension
+/*Extension: ClinicIdentifierExtension
 Id: bc-organization-clinic-identifier-extension
 Title: "Extension to represent the Clinic HIBC Facilty ID number. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCLocation"
 Description: "The (Primary Care) Clinic identifier, HIBC Facility ID. TO BE DETERMINED if identifier or string. NamingSystem is known, to find it"
 * value[x] only string
-* value[x] 1..1 MS
+* value[x] 1..1 MS */
 
 Extension: ClinicPayeeNumberExtension
 Id: bc-organization-clinic-payee-number-extension
-Title: "Extension to represent the Clinic Payee number. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCPrimaryCareTeam"
+Title: "Extension to represent the Clinic Payee number."
 Description: "The (Primary Care) Clinic Payee number"
 * value[x] only string
 * value[x] 1..1 MS
 
 Extension: ClinicOwnershipTypeExtension
 Id: bc-organization-clinic-ownership-type-extension
-Title: "Extension to represent the Clinic Ownership type. TO BE DETERMINED codeSyem or free field"
-Description: "The (Primary Care) Clinic Ownership type"
-* value[x] only string
+Title: "Extension to represent the Clinic Ownership type."
+Description: "The (Primary Care) Clinic Ownership type, the expected value is one from Health Authority Owned/Operated, First Nation Health Authority Owned/Operated, Physician Owned/Operated, Non-Profit Society, Non-Physician Corporation, Other"
+* value[x] only CodeableConcept
 * value[x] 1..1 MS
 
 Extension: ClinicServiceDeliveryTypeExtension
 Id: bc-organization-clinic-service-delivery-type-extension
-Title: "Extension to represent the Clinic Service Delivery type. TO BE DETERMINED codeSytemem or free field"
-Description: "The (Primary Care) Clinic Service Delivery type"
-* value[x] only string
+Title: "Extension to represent the Clinic Service Delivery type."
+Description: "The (Primary Care) Clinic Service Delivery type, the expected value is one from Longitudinal, Episodic, and Mixed"
+* value[x] only CodeableConcept
 * value[x] 1..1 MS
 
 Extension: ClinicTypeExtension
 Id: bc-organization-clinic-type-extension
-Title: "Extension to represent the Clinic type. TO BE DETERMINED codeSytemem or free field"
-Description: "The (Primary Care) Clinic type"
-* value[x] only string
+Title: "Extension to represent the Clinic type."
+Description: "The (Primary Care) Clinic type, the expected value is one from UPCC, FNPCI, NPCC, CHC, Walk-In/Episodic Care Clinic, Family Practice, Longitudinal Primary Care Practice, Hybrid Primary Care Practice "
+* value[x] only CodeableConcept
 * value[x] 1..1 MS
 
 Extension: PrimaryCareClinicExtension
 Id: bc-organization-primary-care-clinic-extension
 Title: "Extension for BC Organization to add Primary Care Clinic details"
-Description: "A wrapper extension that will allow to add all the Primary Care Clinic details."
+Description: "A wrapper extension that will allow to add the Primary Care Clinic details."
 * extension contains ClinicTypeExtension named clinicType 1..1 MS and 
      ClinicOwnershipTypeExtension named clinicOwnershipType 1..1 MS and
-     ClinicServiceDeliveryTypeExtension named serviceDeliveryType 1..1 MS and
-     ClinicPayeeNumberExtension named payeeNumber 1..1 MS
+     ClinicServiceDeliveryTypeExtension named serviceDeliveryType 1..1 MS
+
 
 Extension: PhysicalAddress
 Id: bc-facility-physical-address-extension
