@@ -71,6 +71,58 @@ Description: "A code that represents the Primary Care Network (PCN) that the loc
 * extension[name].value[x] only string
 * extension[name].value[x] 0..1 MS
 
+
+Extension: ClinicHoursOfOperationExtension
+Id: bc-organization-clinic-hours-operation-extension
+Title: "Extension to represent the Clinic hours of operation. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCClinicalService"
+Description: "The (Primary Care) Clinic identifier, HIBC Facility ID. TO BE DETERMINED if identifier or string"
+* value[x] only string
+* value[x] 1..1 MS
+
+Extension: ClinicIdentifierExtension
+Id: bc-organization-clinic-identifier-extension
+Title: "Extension to represent the Clinic HIBC Facilty ID number. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCLocation"
+Description: "The (Primary Care) Clinic identifier, HIBC Facility ID. TO BE DETERMINED if identifier or string. NamingSystem is known, to find it"
+* value[x] only string
+* value[x] 1..1 MS
+
+Extension: ClinicPayeeNumberExtension
+Id: bc-organization-clinic-payee-number-extension
+Title: "Extension to represent the Clinic Payee number. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCPrimaryCareTeam"
+Description: "The (Primary Care) Clinic Payee number"
+* value[x] only string
+* value[x] 1..1 MS
+
+Extension: ClinicOwnershipTypeExtension
+Id: bc-organization-clinic-ownership-type-extension
+Title: "Extension to represent the Clinic Ownership type. TO BE DETERMINED codeSyem or free field"
+Description: "The (Primary Care) Clinic Ownership type"
+* value[x] only string
+* value[x] 1..1 MS
+
+Extension: ClinicServiceDeliveryTypeExtension
+Id: bc-organization-clinic-service-delivery-type-extension
+Title: "Extension to represent the Clinic Service Delivery type. TO BE DETERMINED codeSytemem or free field"
+Description: "The (Primary Care) Clinic Service Delivery type"
+* value[x] only string
+* value[x] 1..1 MS
+
+Extension: ClinicTypeExtension
+Id: bc-organization-clinic-type-extension
+Title: "Extension to represent the Clinic type. TO BE DETERMINED codeSytemem or free field"
+Description: "The (Primary Care) Clinic type"
+* value[x] only string
+* value[x] 1..1 MS
+
+Extension: PrimaryCareClinicExtension
+Id: bc-organization-primary-care-clinic-extension
+Title: "Extension for BC Organization to add Primary Care Clinic details"
+Description: "A wrapper extension that will allow to add all the Primary Care Clinic details."
+* extension contains ClinicTypeExtension named clinicType 1..1 MS and 
+     ClinicOwnershipTypeExtension named clinicOwnershipType 1..1 MS and
+     ClinicServiceDeliveryTypeExtension named serviceDeliveryType 1..1 MS and
+     ClinicPayeeNumberExtension named payeeNumber 1..1 MS
+
 Extension: PhysicalAddress
 Id: bc-facility-physical-address-extension
 Title: "BC Facility Physical Address Extension"

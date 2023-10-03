@@ -26,7 +26,8 @@ Description: "General constraints on the Organization resource for use in the BC
   * address MS
 * extension contains LicenseStatusExtension named status 0..* MS and
 	ConfidentialityExtension named confidentiality 0..1 MS and
-	NoteExtension named note 0..* MS
+	NoteExtension named note 0..* MS and
+  PrimaryCareClinicExtension named primaryCareDetails 0..1 MS
 
 Invariant: invariant-rltn-2
 Description: "One participating organization or one location allowed; not both."
