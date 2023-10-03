@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "BCProviderRegistry"] ; # 
   fhir:title [ fhir:v "BC Provider Location Registry FHIR Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-09-29T19:19:38+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-10-03T05:01:09+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -2854,6 +2854,90 @@
          fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"^^xsd:anyURI ;
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle>
        ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-primary-care-clinic-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-organization-primary-care-clinic-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Extension for BC Organization to add Primary Care Clinic details" ] ;
+       fhir:description [ fhir:v "A wrapper extension that will allow to add all the Primary Care Clinic details." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-identifier-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-identifier-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Extension to represent the Clinic HIBC Facilty ID number. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCLocation" ] ;
+       fhir:description [ fhir:v "The (Primary Care) Clinic identifier, HIBC Facility ID. TO BE DETERMINED if identifier or string. NamingSystem is known, to find it" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-hours-operation-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-hours-operation-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Extension to represent the Clinic hours of operation. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCClinicalService" ] ;
+       fhir:description [ fhir:v "The (Primary Care) Clinic identifier, HIBC Facility ID. TO BE DETERMINED if identifier or string" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-ownership-type-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-ownership-type-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Extension to represent the Clinic Ownership type. TO BE DETERMINED codeSyem or free field" ] ;
+       fhir:description [ fhir:v "The (Primary Care) Clinic Ownership type" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-payee-number-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-payee-number-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Extension to represent the Clinic Payee number. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCPrimaryCareTeam" ] ;
+       fhir:description [ fhir:v "The (Primary Care) Clinic Payee number" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-service-delivery-type-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-service-delivery-type-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Extension to represent the Clinic Service Delivery type. TO BE DETERMINED codeSytemem or free field" ] ;
+       fhir:description [ fhir:v "The (Primary Care) Clinic Service Delivery type" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-type-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-type-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Extension to represent the Clinic type. TO BE DETERMINED codeSytemem or free field" ] ;
+       fhir:description [ fhir:v "The (Primary Care) Clinic type" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;

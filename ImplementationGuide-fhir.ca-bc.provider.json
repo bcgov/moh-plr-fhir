@@ -10,7 +10,7 @@
   "name" : "BCProviderRegistry",
   "title" : "BC Provider Location Registry FHIR Implementation Guide",
   "status" : "draft",
-  "date" : "2023-09-29T19:19:38+00:00",
+  "date" : "2023-10-03T05:01:09+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -2714,6 +2714,90 @@
       "name" : "Example-UpdatePractitioner-LicenseStatus-Bundle",
       "description" : "Example of a bundle to update an Indivivdual Provider's License Status.",
       "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-organization-primary-care-clinic-extension"
+      },
+      "name" : "Extension for BC Organization to add Primary Care Clinic details",
+      "description" : "A wrapper extension that will allow to add all the Primary Care Clinic details.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-organization-clinic-identifier-extension"
+      },
+      "name" : "Extension to represent the Clinic HIBC Facilty ID number. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCLocation",
+      "description" : "The (Primary Care) Clinic identifier, HIBC Facility ID. TO BE DETERMINED if identifier or string. NamingSystem is known, to find it",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-organization-clinic-hours-operation-extension"
+      },
+      "name" : "Extension to represent the Clinic hours of operation. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCClinicalService",
+      "description" : "The (Primary Care) Clinic identifier, HIBC Facility ID. TO BE DETERMINED if identifier or string",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-organization-clinic-ownership-type-extension"
+      },
+      "name" : "Extension to represent the Clinic Ownership type. TO BE DETERMINED codeSyem or free field",
+      "description" : "The (Primary Care) Clinic Ownership type",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-organization-clinic-payee-number-extension"
+      },
+      "name" : "Extension to represent the Clinic Payee number. TO BE DETERMINED if it will be part of BCOrganization PrimaryCare extension or of BCPrimaryCareTeam",
+      "description" : "The (Primary Care) Clinic Payee number",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-organization-clinic-service-delivery-type-extension"
+      },
+      "name" : "Extension to represent the Clinic Service Delivery type. TO BE DETERMINED codeSytemem or free field",
+      "description" : "The (Primary Care) Clinic Service Delivery type",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-organization-clinic-type-extension"
+      },
+      "name" : "Extension to represent the Clinic type. TO BE DETERMINED codeSytemem or free field",
+      "description" : "The (Primary Care) Clinic type",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
