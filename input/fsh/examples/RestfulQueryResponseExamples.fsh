@@ -161,7 +161,23 @@ Description: "Example of a Location."
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.code = #MC
 * address = Example-Address-Valid
-
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-authority-extension"
+* extension[=].extension[=].valueString = "Vancouver Island"
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-delivery-area-extension"
+* extension[=].extension[=].valueString = "South Vancouver Island"
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-local-health-area-extension"
+* extension[=].extension[=].valueString = "Greater Victoria"
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-area-extension"
+* extension[=].extension[=].extension[+].url = "name"
+* extension[=].extension[=].extension[=].valueString = "Downtown Victoria/Vic West"
+* extension[=].extension[=].extension[+].url = "code"
+* extension[=].extension[=].extension[=].valueString = "4111"
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-primary-care-network-extension"
+* extension[=].extension[=].extension[+].url = "name"
+* extension[=].extension[=].extension[=].valueString = "Downtown/VicWest"
+* extension[=].extension[=].extension[+].url = "code"
+* extension[=].extension[=].extension[=].valueString = "40701"
 Instance: Example-GET-Practitioner-Response
 InstanceOf: Bundle
 Description: "Example of a response returning one Practioners."
