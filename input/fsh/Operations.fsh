@@ -27,14 +27,14 @@ Usage: #definition
 * parameter[=].documentation = "String code for identifier type (e.g. CPSID),  mandatory if identifier is specified. Mapping to Practitioner.identifier.type.coding.code"
 * parameter[=].type = #string
 * parameter[=].searchType = #token */
-* parameter[+].name = #surname
+* parameter[+].name = #family
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
 * parameter[=].documentation = "Search for practitioners with the specified surname. May use trailing wildcards, e.g. Smith*"
 * parameter[=].type = #string
 * parameter[=].searchType = #string
-* parameter[+].name = #given-name
+* parameter[+].name = #given
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
@@ -69,7 +69,7 @@ Usage: #definition
 * parameter[=].documentation = "Search for practitioners that have an associated PractitionerRole code with the specified value (e.g. MD or RN)"
 * parameter[=].type = #string
 * parameter[=].searchType = #token
-* parameter[+].name = #language
+* parameter[+].name = #communication
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
@@ -310,14 +310,14 @@ Usage: #definition
 * parameter[=].documentation = "String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]"
 * parameter[=].type = #string
 * parameter[=].searchType = #string
-* parameter[+].name = #surname
+* parameter[+].name = #family
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
 * parameter[=].documentation = "Search for practitioners with the specified surname. May use trailing wildcards, e.g. Smith*"
 * parameter[=].type = #string
 * parameter[=].searchType = #string
-* parameter[+].name = #given-name
+* parameter[+].name = #given
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
@@ -352,7 +352,7 @@ Usage: #definition
 * parameter[=].documentation = "Search for practitioners that have an associated PractitionerRole code with the specified value (e.g. MD or RN)"
 * parameter[=].type = #string
 * parameter[=].searchType = #token
-* parameter[+].name = #language
+* parameter[+].name = #communication
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
