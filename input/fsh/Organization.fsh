@@ -9,7 +9,7 @@ Description: "General constraints on the Organization resource for use in the BC
 * active = true
 * type MS
 * type from OrganizationRoleVS (required)
-* name 1..1 MS
+* name 0..1 MS
 * name.extension contains 
 	NameUseExtension named use 0..1 MS and 
 	PeriodExtension named period 0..1 MS and
