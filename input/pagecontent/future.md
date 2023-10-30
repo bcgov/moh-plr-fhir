@@ -19,9 +19,11 @@ Included in this release are two practitioner queries
 
 and where *IPC* is an IPC identifier, like IPC.00012345.BC.PRS.
 
-        GET /Practitioner/$entityQuery?identifier=<value>&identifier-type=<id type>
+        GET /Practitioner/$entityQuery?identifier=<naming-system>|<value>
 
-Users are also able to query using other PLR recognized identifiers by using parametes; *id type* is an identifier type like CPSID or MPID and *value* is the value of the identifier.  E.g.  identifer=1234&identifier-type=MPID. 
+Users are also able to query using other PLR recognized identifiers by using parameters; the format of the identifier type is such as it is needed to pass the NamingSystem that defined the identifier. So *naming-system* is the naming system such as "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc" and *value* is the value of the identifier.  E.g.  identifer=https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc|IPC.00150322.BC.PRS
+
+The full list of the mapping for the Naming system used in PLR is to find in this [file](PLR-NamingSystems.pdf). 
 
 See the following section for more [details](specification.html#query-part-1---operations).
 

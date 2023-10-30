@@ -41,6 +41,15 @@ Alias: $System_CPSID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/CPS
 Alias: $System_RNID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/RNID
 Alias: $System_FACID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/FACID
 
+//////////////////////////////
+// naming systems
+/////////////////////////////
+Alias: $NamingSystem_IPC = https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc
+Alias: $NamingSystem_IFC = https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc
+Alias: $NamingSystem_CPN = https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-common-party-number
+Alias: $NamingSystem_ORGID = https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-org-id
+Alias: $NamingSystem_CPSID = https://fhir.infoway-inforoute.ca/NamingSystem/ca-bc-license-physician
+Alias: $NamingSystem_RNID =  https://fhir.infoway-inforoute.ca/NamingSystem/ca-bc-license-nurse
 
 //////////////////////////////////
 // Health Boundary Systems
