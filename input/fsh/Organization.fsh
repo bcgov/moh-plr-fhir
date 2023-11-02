@@ -29,7 +29,7 @@ Description: "General constraints on the Organization resource for use in the BC
 	NoteExtension named note 0..* MS and
   PrimaryCareClinicExtension named primaryCareDetails 0..1 MS and
   ClinicPayeeNumberExtension named clinicPayeeNumber 0..* MS and
-  HoursOfOperationExtension named clinicHoursOfOperation 0..1 MS
+  AvailabilityExtension named availability 0..* MS 
 
 Invariant: invariant-rltn-2
 Description: "One participating organization or one location allowed; not both."

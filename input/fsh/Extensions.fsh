@@ -72,19 +72,47 @@ Description: "A code that represents the Primary Care Network (PCN) that the loc
 * extension[name].value[x] 0..1 MS
 
 
-Extension: HoursOfOperationExtension
-Id: bc-hours-operation-extension
-Title: "Extension to represent hours of operation, for clinic, or other Profiles"
-Description: "TO BE DETERMINED if just BC extension or v4 availabletime or v5 hoursOfOperation"
-* extension contains hoursOfOperation 1..1 MS and
+Extension: AvailabilityExtension
+Id: bc-availability-extension
+Title: "Extension to represent Availability, or hours of operation, for clinic, or other Profiles"
+Description: "Can represent the Available time or the Not Avaialble details"
+* extension contains AvailableTimeExtension named availableTime 0..* MS and
+     NotAvailableExtension named notAvailableTime 0..* MS and
      identifier 0..1 MS and 
      PeriodExtension named period 1..1 MS and 
      EndReasonExtension named endReason 0..1 MS and
      OwnerExtension named owner 0..1 MS
-* extension[hoursOfOperation].value[x] only string
-* extension[hoursOfOperation].value[x] 1..1 MS
 * extension[identifier].value[x] only Identifier
 * extension[identifier].value[x] 1..1 MS
+
+Extension: AvailableTimeExtension
+Id: bc-availableTime-extension
+Title: "Extension to represent the available Time, or hours of operation, for clinic, or other Profiles"
+Description: "Can represent the Available time"
+* extension contains daysOfWeek 0..* MS and
+     availableStartTime 0..1 MS and
+     availableEndTime 0..1 MS and
+     allDay 0..1 MS 
+* extension[daysOfWeek].value[x] only code
+//* extension[daysOfWeek].value[x] 0..* MS
+* extension[daysOfWeek].value[x] from http://hl7.org/fhir/ValueSet/days-of-week (required)
+* extension[availableStartTime].value[x] only time
+* extension[availableStartTime].value[x] 0..1 MS
+* extension[availableEndTime].value[x] only time
+* extension[availableEndTime].value[x] 0..1 MS
+* extension[allDay].value[x] only boolean
+* extension[allDay].value[x] 0..1 MS
+
+Extension: NotAvailableExtension
+Id: bc-not-available-extension
+Title: "Extension to represent the details when an item is NOT available for clinic, or other Profiles"
+Description: "Can represent the Not Avaialble details"
+* extension contains description 0..1 MS and
+     during 0..1 MS
+* extension[description].value[x] only string
+* extension[description].value[x] 0..1 MS
+* extension[during].value[x] only Period
+* extension[during].value[x] 0..1 MS
 
 Extension: ClinicPayeeNumberExtension
 Id: bc-organization-clinic-payee-number-extension
@@ -142,14 +170,58 @@ Description: "The (Primary Care) Clinic type, the expected value is one from UPC
 * extension[identifier].value[x] only Identifier
 * extension[identifier].value[x] 1..1 MS
 
+Extension: ClinicOwnerExtension
+Id: bc-organization-clinic-owner-extension
+Title: "Extension to represent clinic Owners."
+Description: "The (Primary Care) Clinic Owner"
+* extension contains clinicOwner 1..1 MS and
+     identifier 0..1 MS and 
+     PeriodExtension named period 1..1 MS and 
+     EndReasonExtension named endReason 0..1 MS and
+     OwnerExtension named owner 0..1 MS
+* extension[clinicOwner].value[x] only string
+* extension[clinicOwner].value[x] 1..1 MS
+* extension[identifier].value[x] only Identifier
+* extension[identifier].value[x] 1..1 MS
+
+Extension: PrimaryCareInitiativeExtension
+Id: bc-organization-pci-extension
+Title: "Extension to indicate if the clinic is part of the Primary Care Initiative."
+Description: "Flag that indicates if (Primary Care) Clinic is part of the PrimaryCare Initiative. not all PC clinic are part of this initiative"
+* extension contains pciFlag 1..1 MS and
+     identifier 0..1 MS and 
+     PeriodExtension named period 1..1 MS and 
+     EndReasonExtension named endReason 0..1 MS and
+     OwnerExtension named owner 0..1 MS
+* extension[pciFlag].value[x] only boolean
+* extension[pciFlag].value[x] 1..1 MS
+* extension[identifier].value[x] only Identifier
+* extension[identifier].value[x] 1..1 MS
+
+Extension: ClinicLegalNameExtension
+Id: bc-organization-clinic-legal-name-extension
+Title: "Extension for the clinic business legal name."
+Description: "The clinic business lagal name"
+* extension contains clinicLegalName 1..1 MS and
+     identifier 0..1 MS and 
+     PeriodExtension named period 1..1 MS and 
+     EndReasonExtension named endReason 0..1 MS and
+     OwnerExtension named owner 0..1 MS
+* extension[clinicLegalName].value[x] only string
+* extension[clinicLegalName].value[x] 1..1 MS
+* extension[identifier].value[x] only Identifier
+* extension[identifier].value[x] 1..1 MS
+
 Extension: PrimaryCareClinicExtension
 Id: bc-organization-primary-care-clinic-extension
 Title: "Extension for BC Organization to add Primary Care Clinic details"
 Description: "A wrapper extension that will allow to add the Primary Care Clinic details."
 * extension contains ClinicTypeExtension named clinicType 1..1 MS and 
      ClinicOwnershipTypeExtension named clinicOwnershipType 1..1 MS and
-     ClinicServiceDeliveryTypeExtension named serviceDeliveryType 1..1 MS
-
+     ClinicServiceDeliveryTypeExtension named serviceDeliveryType 1..1 MS and
+     ClinicOwnerExtension named clinicOwners 0..* MS and
+     PrimaryCareInitiativeExtension named pciFlag 1..1 MS and 
+     ClinicLegalNameExtension named clinicLegalName 0..1 MS
 
 Extension: PhysicalAddress
 Id: bc-facility-physical-address-extension
@@ -210,7 +282,7 @@ Description: "Indicates the confidentiality of a BC provider's (practitioner or 
       OwnerExtension named owner 0..1 MS
 * extension[code].value[x] only CodeableConcept
 * extension[code].value[x] 1..1 MS
-* extension[code].valueCodeableConcept from http://terminology.hl7.org/ValueSet/v3-ConfidentialityClassification (required)
+* extension[code].valueCodeableConcept from http://terminology.hl7.org/ValueSet/v3-ConfidentialityClassification (required) // this VS could be updated?
 
 Extension: PractitionerRelationshipExtension
 Id: bc-practitioner-relationship-extension
