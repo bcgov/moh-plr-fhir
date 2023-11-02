@@ -10,7 +10,7 @@
   "name" : "BCProviderRegistry",
   "title" : "BC Provider Location Registry FHIR Implementation Guide",
   "status" : "draft",
-  "date" : "2023-10-30T17:17:37+00:00",
+  "date" : "2023-11-02T16:59:26+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -2733,10 +2733,58 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/bc-hours-operation-extension"
+        "reference" : "StructureDefinition/bc-organization-clinic-legal-name-extension"
       },
-      "name" : "Extension to represent hours of operation, for clinic, or other Profiles",
-      "description" : "TO BE DETERMINED if just BC extension or v4 availabletime or v5 hoursOfOperation",
+      "name" : "Extension for the clinic business legal name.",
+      "description" : "The clinic business lagal name",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-organization-pci-extension"
+      },
+      "name" : "Extension to indicate if the clinic is part of the Primary Care Initiative.",
+      "description" : "Flag that indicates if (Primary Care) Clinic is part of the PrimaryCare Initiative. not all PC clinic are part of this initiative",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-availability-extension"
+      },
+      "name" : "Extension to represent Availability, or hours of operation, for clinic, or other Profiles",
+      "description" : "Can represent the Available time or the Not Avaialble details",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-organization-clinic-owner-extension"
+      },
+      "name" : "Extension to represent clinic Owners.",
+      "description" : "The (Primary Care) Clinic Owner",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-availableTime-extension"
+      },
+      "name" : "Extension to represent the available Time, or hours of operation, for clinic, or other Profiles",
+      "description" : "Can represent the Available time",
       "exampleBoolean" : false
     },
     {
@@ -2785,6 +2833,18 @@
       },
       "name" : "Extension to represent the Clinic type.",
       "description" : "The (Primary Care) Clinic type, the expected value is one from UPCC, FNPCI, NPCC, CHC, Walk-In/Episodic Care Clinic, Family Practice, Longitudinal Primary Care Practice, Hybrid Primary Care Practice",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-not-available-extension"
+      },
+      "name" : "Extension to represent the details when an item is NOT available for clinic, or other Profiles",
+      "description" : "Can represent the Not Avaialble details",
       "exampleBoolean" : false
     },
     {

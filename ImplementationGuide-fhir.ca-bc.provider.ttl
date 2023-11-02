@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "BCProviderRegistry"] ; # 
   fhir:title [ fhir:v "BC Provider Location Registry FHIR Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-10-30T17:17:37+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-02T16:59:26+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -2872,11 +2872,59 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-hours-operation-extension> ;
-         fhir:reference [ fhir:v "StructureDefinition/bc-hours-operation-extension" ]
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-legal-name-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-legal-name-extension" ]
        ] ;
-       fhir:name [ fhir:v "Extension to represent hours of operation, for clinic, or other Profiles" ] ;
-       fhir:description [ fhir:v "TO BE DETERMINED if just BC extension or v4 availabletime or v5 hoursOfOperation" ] ;
+       fhir:name [ fhir:v "Extension for the clinic business legal name." ] ;
+       fhir:description [ fhir:v "The clinic business lagal name" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-pci-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-organization-pci-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Extension to indicate if the clinic is part of the Primary Care Initiative." ] ;
+       fhir:description [ fhir:v "Flag that indicates if (Primary Care) Clinic is part of the PrimaryCare Initiative. not all PC clinic are part of this initiative" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availability-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-availability-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Extension to represent Availability, or hours of operation, for clinic, or other Profiles" ] ;
+       fhir:description [ fhir:v "Can represent the Available time or the Not Avaialble details" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-owner-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-organization-clinic-owner-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Extension to represent clinic Owners." ] ;
+       fhir:description [ fhir:v "The (Primary Care) Clinic Owner" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availableTime-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-availableTime-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Extension to represent the available Time, or hours of operation, for clinic, or other Profiles" ] ;
+       fhir:description [ fhir:v "Can represent the Available time" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2925,6 +2973,18 @@
        ] ;
        fhir:name [ fhir:v "Extension to represent the Clinic type." ] ;
        fhir:description [ fhir:v "The (Primary Care) Clinic type, the expected value is one from UPCC, FNPCI, NPCC, CHC, Walk-In/Episodic Care Clinic, Family Practice, Longitudinal Primary Care Practice, Hybrid Primary Care Practice" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-not-available-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-not-available-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Extension to represent the details when an item is NOT available for clinic, or other Profiles" ] ;
+       fhir:description [ fhir:v "Can represent the Not Avaialble details" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

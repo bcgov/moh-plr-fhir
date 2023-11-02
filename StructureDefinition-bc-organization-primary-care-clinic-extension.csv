@@ -5,7 +5,7 @@
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"Extension.extension","Extension.extension","","","",3,*,"","","","Extension {[]} {[]}
+"Extension.extension","Extension.extension","","","",4,*,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -17,6 +17,15 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Extension.extension:serviceDeliveryType","Extension.extension","serviceDeliveryType","","",1,1,"Y","","","Extension {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-service-delivery-type-extension]]} {[]}
 ","Extension to represent the Clinic Service Delivery type.","The (Primary Care) Clinic Service Delivery type, the expected value is one from Longitudinal, Episodic, and Mixed","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Extension.extension:clinicOwners","Extension.extension","clinicOwners","","",0,*,"Y","","","Extension {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-owner-extension]]} {[]}
+","Extension to represent clinic Owners.","The (Primary Care) Clinic Owner","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Extension.extension:pciFlag","Extension.extension","pciFlag","","",1,1,"Y","","","Extension {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-pci-extension]]} {[]}
+","Extension to indicate if the clinic is part of the Primary Care Initiative.","Flag that indicates if (Primary Care) Clinic is part of the PrimaryCare Initiative. not all PC clinic are part of this initiative","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Extension.extension:clinicLegalName","Extension.extension","clinicLegalName","","",0,1,"Y","","","Extension {[CanonicalType[http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-legal-name-extension]]} {[]}
+","Extension for the clinic business legal name.","The clinic business lagal name","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-primary-care-clinic-extension""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"

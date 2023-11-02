@@ -1,9 +1,9 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 41, warn = 684, info = 203
-IG Publisher Version: 1.5.0
-Generated Mon Oct 30 17:22:11 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provider#1.0.0 (canonical = http://hlth.gov.bc.ca/fhir/provider)
+err = 41, warn = 694, info = 203
+IG Publisher Version: 1.5.1
+Generated Thu Nov 02 17:04:21 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provider#1.0.0 (canonical = http://hlth.gov.bc.ca/fhir/provider)
  Build Errors : 0 / 4 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 9 / 7
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocationWithLinks-Bundle : 2 / 9 / 19
@@ -122,6 +122,8 @@ Generated Mon Oct 30 17:22:11 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/PractitionerRole-RELN.24.PRS : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-address : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-address-validation-status-extension : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-availability-extension : 0 / 2 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-availableTime-extension : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-batch-bundle : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-birthplace-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-birthtime-extension : 0 / 1 / 1
@@ -140,7 +142,6 @@ Generated Mon Oct 30 17:22:11 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-facility-local-health-area-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-facility-physical-address-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-facility-primary-care-network-extension : 0 / 1 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-hours-operation-extension : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-humanName : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-identifier : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-license-status-extension : 0 / 1 / 1
@@ -148,15 +149,19 @@ Generated Mon Oct 30 17:22:11 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-location-bundle : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-location-relationship-type-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-name-use-extension : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-not-available-extension : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-note-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-operation-outcome : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-affiliation : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-bundle : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-legal-name-extension : 0 / 2 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-owner-extension : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-ownership-type-extension : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-payee-number-extension : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-service-delivery-type-extension : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-type-extension : 0 / 2 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-pci-extension : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-primary-care-clinic-extension : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-owner-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-period-extension : 0 / 1 / 1
@@ -1149,12 +1154,18 @@ WARNING: PractitionerRole/RELN.12373.PRS: PractitionerRole.extension[1].value.of
 == fsh-generated/resources/PractitionerRole-RELN.24.PRS.json ==
 == fsh-generated/resources/StructureDefinition-bc-address.json ==
 == fsh-generated/resources/StructureDefinition-bc-address-validation-status-extension.json ==
-WARNING: StructureDefinition/bc-address-validation-status-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-address-validation-status-extension: StructureDefinition.context[0]: Review the extension type for bc-address-validation-status-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+== fsh-generated/resources/StructureDefinition-bc-availability-extension.json ==
+WARNING: StructureDefinition/bc-availability-extension: StructureDefinition.context[0]: Review the extension type for bc-availability-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availability-extension'): The Implementation Guide contains no examples for this extension
+== fsh-generated/resources/StructureDefinition-bc-availableTime-extension.json ==
+WARNING: StructureDefinition/bc-availableTime-extension: StructureDefinition.context[0]: Review the extension type for bc-availableTime-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availableTime-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-batch-bundle.json ==
 == fsh-generated/resources/StructureDefinition-bc-birthplace-extension.json ==
-WARNING: StructureDefinition/bc-birthplace-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-birthplace-extension: StructureDefinition.context[0]: Review the extension type for bc-birthplace-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-birthtime-extension.json ==
-WARNING: StructureDefinition/bc-birthtime-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-birthtime-extension: StructureDefinition.context[0]: Review the extension type for bc-birthtime-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-careteam.json ==
 WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-careteam'): The Implementation Guide contains no examples for this profile
 == fsh-generated/resources/StructureDefinition-bc-catalogue-service.json ==
@@ -1164,87 +1175,96 @@ WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/St
 INFORMATION: StructureDefinition/bc-clinical-service: StructureDefinition.snapshot.element[13].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-clinical-service'): The Implementation Guide contains no examples for this profile
 == fsh-generated/resources/StructureDefinition-bc-communication-purpose-code-extension.json ==
-WARNING: StructureDefinition/bc-communication-purpose-code-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-communication-purpose-code-extension: StructureDefinition.context[0]: Review the extension type for bc-communication-purpose-code-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-confidentiality-extension.json ==
-WARNING: StructureDefinition/bc-confidentiality-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-confidentiality-extension: StructureDefinition.context[0]: Review the extension type for bc-confidentiality-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-contactPoint.json ==
 == fsh-generated/resources/StructureDefinition-bc-end-reason-extension.json ==
-WARNING: StructureDefinition/bc-end-reason-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-end-reason-extension: StructureDefinition.context[0]: Review the extension type for bc-end-reason-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-facility-community-health-area-extension.json ==
-WARNING: StructureDefinition/bc-facility-community-health-area-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-facility-community-health-area-extension: StructureDefinition.context[0]: Review the extension type for bc-facility-community-health-area-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-facility-details-extension.json ==
-WARNING: StructureDefinition/bc-facility-details-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-facility-details-extension: StructureDefinition.context[0]: Review the extension type for bc-facility-details-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-facility-health-authority-extension.json ==
-WARNING: StructureDefinition/bc-facility-health-authority-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-facility-health-authority-extension: StructureDefinition.context[0]: Review the extension type for bc-facility-health-authority-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-facility-health-service-area-extension.json ==
-WARNING: StructureDefinition/bc-facility-health-service-area-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-facility-health-service-area-extension: StructureDefinition.context[0]: Review the extension type for bc-facility-health-service-area-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-facility-health-service-delivery-area-extension.json ==
-WARNING: StructureDefinition/bc-facility-health-service-delivery-area-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-facility-health-service-delivery-area-extension: StructureDefinition.context[0]: Review the extension type for bc-facility-health-service-delivery-area-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-facility-local-health-area-extension.json ==
-WARNING: StructureDefinition/bc-facility-local-health-area-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-facility-local-health-area-extension: StructureDefinition.context[0]: Review the extension type for bc-facility-local-health-area-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-facility-physical-address-extension.json ==
-WARNING: StructureDefinition/bc-facility-physical-address-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-facility-physical-address-extension: StructureDefinition.context[0]: Review the extension type for bc-facility-physical-address-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-facility-primary-care-network-extension.json ==
-WARNING: StructureDefinition/bc-facility-primary-care-network-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-== fsh-generated/resources/StructureDefinition-bc-hours-operation-extension.json ==
-WARNING: StructureDefinition/bc-hours-operation-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-hours-operation-extension'): The Implementation Guide contains no examples for this extension
+WARNING: StructureDefinition/bc-facility-primary-care-network-extension: StructureDefinition.context[0]: Review the extension type for bc-facility-primary-care-network-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-humanName.json ==
 == fsh-generated/resources/StructureDefinition-bc-identifier.json ==
 == fsh-generated/resources/StructureDefinition-bc-license-status-extension.json ==
-WARNING: StructureDefinition/bc-license-status-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-license-status-extension: StructureDefinition.context[0]: Review the extension type for bc-license-status-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-location.json ==
 == fsh-generated/resources/StructureDefinition-bc-location-bundle.json ==
 == fsh-generated/resources/StructureDefinition-bc-location-relationship-type-extension.json ==
-WARNING: StructureDefinition/bc-location-relationship-type-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-location-relationship-type-extension: StructureDefinition.context[0]: Review the extension type for bc-location-relationship-type-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-name-use-extension.json ==
-WARNING: StructureDefinition/bc-name-use-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-name-use-extension: StructureDefinition.context[0]: Review the extension type for bc-name-use-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+== fsh-generated/resources/StructureDefinition-bc-not-available-extension.json ==
+WARNING: StructureDefinition/bc-not-available-extension: StructureDefinition.context[0]: Review the extension type for bc-not-available-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-not-available-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-note-extension.json ==
-WARNING: StructureDefinition/bc-note-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-note-extension: StructureDefinition.context[0]: Review the extension type for bc-note-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-operation-outcome.json ==
 == fsh-generated/resources/StructureDefinition-bc-organization.json ==
 == fsh-generated/resources/StructureDefinition-bc-organization-affiliation.json ==
 == fsh-generated/resources/StructureDefinition-bc-organization-bundle.json ==
+== fsh-generated/resources/StructureDefinition-bc-organization-clinic-legal-name-extension.json ==
+WARNING: StructureDefinition/bc-organization-clinic-legal-name-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-clinic-legal-name-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-legal-name-extension'): The Implementation Guide contains no examples for this extension
+== fsh-generated/resources/StructureDefinition-bc-organization-clinic-owner-extension.json ==
+WARNING: StructureDefinition/bc-organization-clinic-owner-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-clinic-owner-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-owner-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-organization-clinic-ownership-type-extension.json ==
-WARNING: StructureDefinition/bc-organization-clinic-ownership-type-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-organization-clinic-ownership-type-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-clinic-ownership-type-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-ownership-type-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-organization-clinic-payee-number-extension.json ==
-WARNING: StructureDefinition/bc-organization-clinic-payee-number-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-organization-clinic-payee-number-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-clinic-payee-number-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-payee-number-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-organization-clinic-service-delivery-type-extension.json ==
-WARNING: StructureDefinition/bc-organization-clinic-service-delivery-type-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-organization-clinic-service-delivery-type-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-clinic-service-delivery-type-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-service-delivery-type-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-organization-clinic-type-extension.json ==
-WARNING: StructureDefinition/bc-organization-clinic-type-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-organization-clinic-type-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-clinic-type-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-type-extension'): The Implementation Guide contains no examples for this extension
+== fsh-generated/resources/StructureDefinition-bc-organization-pci-extension.json ==
+WARNING: StructureDefinition/bc-organization-pci-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-pci-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-pci-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-organization-primary-care-clinic-extension.json ==
-WARNING: StructureDefinition/bc-organization-primary-care-clinic-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-organization-primary-care-clinic-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-primary-care-clinic-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-primary-care-clinic-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-owner-extension.json ==
-WARNING: StructureDefinition/bc-owner-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-owner-extension: StructureDefinition.context[0]: Review the extension type for bc-owner-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-period-extension.json ==
-WARNING: StructureDefinition/bc-period-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-period-extension: StructureDefinition.context[0]: Review the extension type for bc-period-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-practitioner.json ==
 == fsh-generated/resources/StructureDefinition-bc-practitioner-bundle.json ==
 == fsh-generated/resources/StructureDefinition-bc-practitioner-condition-extension.json ==
-WARNING: StructureDefinition/bc-practitioner-condition-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-practitioner-condition-extension: StructureDefinition.context[0]: Review the extension type for bc-practitioner-condition-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-practitioner-deathdate-extension.json ==
-WARNING: StructureDefinition/bc-practitioner-deathdate-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-practitioner-deathdate-extension: StructureDefinition.context[0]: Review the extension type for bc-practitioner-deathdate-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-practitioner-disciplinary-action-extension.json ==
-WARNING: StructureDefinition/bc-practitioner-disciplinary-action-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-practitioner-disciplinary-action-extension: StructureDefinition.context[0]: Review the extension type for bc-practitioner-disciplinary-action-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-practitioner-qualification-extension.json ==
-WARNING: StructureDefinition/bc-practitioner-qualification-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-practitioner-qualification-extension: StructureDefinition.context[0]: Review the extension type for bc-practitioner-qualification-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-practitioner-relationship-extension.json ==
-WARNING: StructureDefinition/bc-practitioner-relationship-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-practitioner-relationship-extension: StructureDefinition.context[0]: Review the extension type for bc-practitioner-relationship-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-practitioner-role.json ==
 == fsh-generated/resources/StructureDefinition-bc-primary-network.json ==
 WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-primary-network'): The Implementation Guide contains no examples for this profile
 == fsh-generated/resources/StructureDefinition-bc-relationship-type-extension.json ==
-WARNING: StructureDefinition/bc-relationship-type-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-relationship-type-extension: StructureDefinition.context[0]: Review the extension type for bc-relationship-type-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-role-relationships.json ==
 WARNING: StructureDefinition/bc-role-relationships: StructureDefinition.snapshot.element[27].binding: The valueSet reference https://fhir.infoway-inforoute.ca/ValueSet/practitionerspecialty on element PractitionerRole.specialty could not be resolved
 == fsh-generated/resources/StructureDefinition-bc-specialty-source-extension.json ==
-WARNING: StructureDefinition/bc-specialty-source-extension: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition/bc-specialty-source-extension: StructureDefinition.context[0]: Review the extension type for bc-specialty-source-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/ValueSet-bc-address-validation-status-value-set.json ==
 ERROR: ValueSet.where(url = 'https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-address-validation-status-value-set'): Conformance resource /github/workspace/fsh-generated/resources/ValueSet-bc-address-validation-status-value-set.json - the canonical URL (http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-address-validation-status-value-set) does not match the URL (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-address-validation-status-value-set)
 WARNING: ValueSet.where(id = 'bc-address-validation-status-value-set'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system

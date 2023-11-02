@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="draft"/>
-  <date value="2023-10-30T17:17:37+00:00"/>
+  <date value="2023-11-02T16:59:26+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -2399,10 +2399,54 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/bc-hours-operation-extension"/>
+        <reference value="StructureDefinition/bc-organization-clinic-legal-name-extension"/>
       </reference>
-      <name value="Extension to represent hours of operation, for clinic, or other Profiles"/>
-      <description value="TO BE DETERMINED if just BC extension or v4 availabletime or v5 hoursOfOperation"/>
+      <name value="Extension for the clinic business legal name."/>
+      <description value="The clinic business lagal name"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-organization-pci-extension"/>
+      </reference>
+      <name value="Extension to indicate if the clinic is part of the Primary Care Initiative."/>
+      <description value="Flag that indicates if (Primary Care) Clinic is part of the PrimaryCare Initiative. not all PC clinic are part of this initiative"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-availability-extension"/>
+      </reference>
+      <name value="Extension to represent Availability, or hours of operation, for clinic, or other Profiles"/>
+      <description value="Can represent the Available time or the Not Avaialble details"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-organization-clinic-owner-extension"/>
+      </reference>
+      <name value="Extension to represent clinic Owners."/>
+      <description value="The (Primary Care) Clinic Owner"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-availableTime-extension"/>
+      </reference>
+      <name value="Extension to represent the available Time, or hours of operation, for clinic, or other Profiles"/>
+      <description value="Can represent the Available time"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2447,6 +2491,17 @@
       </reference>
       <name value="Extension to represent the Clinic type."/>
       <description value="The (Primary Care) Clinic type, the expected value is one from UPCC, FNPCI, NPCC, CHC, Walk-In/Episodic Care Clinic, Family Practice, Longitudinal Primary Care Practice, Hybrid Primary Care Practice"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-not-available-extension"/>
+      </reference>
+      <name value="Extension to represent the details when an item is NOT available for clinic, or other Profiles"/>
+      <description value="Can represent the Not Avaialble details"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
