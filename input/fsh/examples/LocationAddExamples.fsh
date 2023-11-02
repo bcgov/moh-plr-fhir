@@ -129,7 +129,7 @@ Instance: Example-OrganizationAffiliation-Loc1
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Location relationship."
 //* id = "RELN.182.PRS"
-* organization.identifier.system = $System_IPC
+* organization.identifier.system = $NamingSystem_IPC
 * organization.identifier.value = "IPC.70007000.PRS.BC"
 * organization.identifier.period.start = "2000-01-01"
 * code.coding.system = $PLRLocationRelationshipType
@@ -141,7 +141,7 @@ Instance: Example-OrganizationAffiliation-Loc2
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Location relationship."
 //* id = "RELN.142.PRS"
-* organization.identifier.system = $System_IPC
+* organization.identifier.system = $NamingSystem_IPC
 * organization.identifier.value = "IPC.90009000.PRS.BC"
 * organization.identifier.period.start = "2000-01-01"
 * code.coding.system = $PLRLocationRelationshipType
@@ -153,7 +153,7 @@ Instance: Example-PractitionerRole-Loc3
 InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Location relationship."
 //* id = "RELN.125.PRS"
-* practitioner.identifier.system = $System_IPC
+* practitioner.identifier.system = $NamingSystem_IPC
 * practitioner.identifier.value = "IPC.80008000.PRS.BC"
 * practitioner.identifier.period.start = "2000-01-01"
 * period.start = "2000-01-01"
@@ -166,7 +166,7 @@ Instance: Example-Identifier-FACID-22
 InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
 Description: "Identifier example for Facility ID."
 Usage: #inline
-* system = $System_FACID
+* system = $NamingSystem_IFC
 * value = "22"
 * period.start = "2000-01-01"
 
@@ -174,7 +174,7 @@ Instance: Example-Identifier-IFC-00147423
 InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
 Description: "Identifier example for Facility ID."
 Usage: #inline
-* system = $System_IFC
+* system = $NamingSystem_IFC
 * value = "IFC.00147423.BC.PRS"
 * period.start = "2000-01-01"
 

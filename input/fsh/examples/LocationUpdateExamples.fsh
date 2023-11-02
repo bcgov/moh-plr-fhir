@@ -53,7 +53,7 @@ Instance: Example-Identifier-IFC-147422
 InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
 Description: "Identifier example for IFC."
 Usage: #inline
-* system = $System_IFC
+* system = $NamingSystem_IFC
 * value = "IFC.00147422.BC.PRS"
 * period.start = "2000-01-01"
 
@@ -62,7 +62,7 @@ Instance: Example-Identifier-IFC-147422-U
 InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
 Description: "Identifier example for IFC."
 Usage: #inline
-* system = $System_IFC
+* system = $NamingSystem_IFC
 * value = "IFC.00147422.BC.PRS"
 * period.start = "2008-01-01"
 * extension[+] = Example-ERC-Change
@@ -99,7 +99,7 @@ Instance: Example-OrganizationAffiliation-Loc1-U
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Location relationship."
 * id = "RELN.1182.PRS"
-* organization.identifier.system = $System_IPC
+* organization.identifier.system = $NamingSystem_IPC
 * organization.identifier.value = "IPC.70007000.PRS.BC"
 * organization.identifier.period.start = "2000-01-01"
 * code.coding.system = $PLRLocationRelationshipType
@@ -112,7 +112,7 @@ Instance: Example-OrganizationAffiliation-Loc2-U
 InstanceOf: BCOrganizationAffiliation
 Description: "Example of the OrganizationAffiliation for Organization to Location relationship."
 * id = "RELN.1142.PRS"
-* organization.identifier.system = $System_IPC
+* organization.identifier.system = $NamingSystem_IPC
 * organization.identifier.value = "IPC.90009000.PRS.BC"
 * organization.identifier.period.start = "2000-01-01"
 * code.coding.system = $PLRLocationRelationshipType
@@ -125,7 +125,7 @@ Instance: Example-PractitionerRole-Loc3-U
 InstanceOf: BCRoleRelationships
 Description: "Example of the PractitionerRole for Practitioner to Location relationship."
 * id = "RELN.1125.PRS"
-* practitioner.identifier.system = $System_IPC
+* practitioner.identifier.system = $NamingSystem_IPC
 * practitioner.identifier.value = "IPC.80008000.PRS.BC"
 * practitioner.identifier.period.start = "2000-01-01"
 * period.start = "2000-01-01"
@@ -139,7 +139,7 @@ Instance: Example-Identifier-FACID-22-U
 InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
 Description: "Identifier example for Facility ID."
 Usage: #inline
-* system = $System_FACID
+* system = $NamingSystem_IFC
 * value = "22"
 * period.start = "2000-01-01"
 * extension[+] = Example-ERC-Change
