@@ -217,11 +217,11 @@ Extension: PrimaryCareClinicExtension
 Id: bc-organization-primary-care-clinic-extension
 Title: "Extension for BC Organization to add Primary Care Clinic details"
 Description: "A wrapper extension that will allow to add the Primary Care Clinic details."
-* extension contains ClinicTypeExtension named clinicType 1..1 MS and 
-     ClinicOwnershipTypeExtension named clinicOwnershipType 1..1 MS and
-     ClinicServiceDeliveryTypeExtension named serviceDeliveryType 1..1 MS and
+* extension contains ClinicTypeExtension named clinicType 0..1 MS and 
+     ClinicOwnershipTypeExtension named clinicOwnershipType 0..1 MS and
+     ClinicServiceDeliveryTypeExtension named serviceDeliveryType 0..1 MS and
      ClinicOwnerExtension named clinicOwners 0..* MS and
-     PrimaryCareInitiativeExtension named pciFlag 1..1 MS and 
+     PrimaryCareInitiativeExtension named pciFlag 0..1 MS and 
      ClinicLegalNameExtension named clinicLegalName 0..1 MS
 
 Extension: PhysicalAddress
