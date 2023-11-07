@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "BCProviderRegistry"] ; # 
   fhir:title [ fhir:v "BC Provider Location Registry FHIR Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-02T16:59:26+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-07T20:41:49+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -1953,6 +1953,21 @@
        ] ;
        fhir:name [ fhir:v "Example-Organization-2" ] ;
        fhir:description [ fhir:v "Example of generic Organization." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Organization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Organization/Example-Organization-PrimaryCare> ;
+         fhir:reference [ fhir:v "Organization/Example-Organization-PrimaryCare" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Organization-PrimaryCare" ] ;
+       fhir:description [ fhir:v "Example of an Primary Care clinic" ] ;
        fhir:example [
          fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>

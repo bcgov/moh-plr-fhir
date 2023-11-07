@@ -61,7 +61,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Location</b><a name=\"IFC.00047422.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Location &quot;IFC.00047422.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-location.html\">BCLocation</a></p></div><blockquote><p><b>BC Facility Health Service Area Extension</b></p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-health-authority-extension.html\">BC Facility Health Authority Area Extension</a></blockquote><p><b>value</b>: Vancouver Island</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-health-service-delivery-area-extension.html\">BC Facility Health Service Delivery Area Extension</a></blockquote><p><b>value</b>: South Vancouver Island</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-local-health-area-extension.html\">BC Facility Local Health Area Extension</a></blockquote><p><b>value</b>: Greater Victoria</p><p><b>code</b>: 4111</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-community-health-area-extension.html\">BC Facility Community Health Service Area Extension</a></blockquote><p><b>code</b>: 40701</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-primary-care-network-extension.html\">BC Facility Primary Care Network Extension</a></blockquote></blockquote><p><b>identifier</b>: id: IFC.00047422.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href=\"ftp://someftp.com\">ftp://someftp.com</a></p><p><b>address</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p><p><b>physicalType</b>: Building <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-location-physical-type.html\">Location type</a>#bu)</span></p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Location</b><a name=\"IFC.00047422.BC.PRS\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Location &quot;IFC.00047422.BC.PRS&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-location.html\">BCLocation</a></p></div><blockquote><p><b>BC Facility Health Service Area Extension</b></p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-health-authority-extension.html\">BC Facility Health Authority Area Extension</a></blockquote><p><b>value</b>: Vancouver Island</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-health-service-delivery-area-extension.html\">BC Facility Health Service Delivery Area Extension</a></blockquote><p><b>value</b>: South Vancouver Island</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-local-health-area-extension.html\">BC Facility Local Health Area Extension</a></blockquote><p><b>value</b>: Greater Victoria</p><p><b>code</b>: id: 4111</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-community-health-area-extension.html\">BC Facility Community Health Service Area Extension</a></blockquote><p><b>code</b>: id: 40701</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-primary-care-network-extension.html\">BC Facility Primary Care Network Extension</a></blockquote></blockquote><p><b>identifier</b>: id: IFC.00047422.BC.PRS (period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href=\"ftp://someftp.com\">ftp://someftp.com</a></p><p><b>address</b>: 1000 DOUGLAS ST Kelowna BC V6P7B8 CA </p><p><b>physicalType</b>: Building <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-location-physical-type.html\">Location type</a>#bu)</span></p></div>"
   ] ; # 
   fhir:extension ( [
      fhir:extension ( [
@@ -79,7 +79,10 @@
          fhir:value [ fhir:v "Downtown Victoria/Vic West" ]
        ] [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "4111" ]
+         fhir:value [
+           a fhir:Identifier ;
+           fhir:value [ fhir:v "4111" ]
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-area-extension"^^xsd:anyURI ]
      ] [
@@ -88,7 +91,10 @@
          fhir:value [ fhir:v "Downtown/VicWest" ]
        ] [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "40701" ]
+         fhir:value [
+           a fhir:Identifier ;
+           fhir:value [ fhir:v "40701" ]
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-primary-care-network-extension"^^xsd:anyURI ]
      ] ) ;
@@ -182,7 +188,7 @@
      ] ) ;
      fhir:type [ fhir:v "postal" ] ;
      fhir:line ( [ fhir:v "1000 DOUGLAS ST" ] ) ;
-     fhir:city [ fhir:v "VICTORIA" ] ;
+     fhir:city [ fhir:v "Kelowna" ] ;
      fhir:state [ fhir:v "BC" ] ;
      fhir:postalCode [ fhir:v "V6P7B8" ] ;
      fhir:country [ fhir:v "CA" ] ;
