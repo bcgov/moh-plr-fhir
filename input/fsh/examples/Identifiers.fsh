@@ -199,6 +199,14 @@ Usage: #inline
 * value = "123123123"
 * period.start = "2000-01-01"
 
+Instance: Example-Identifier-ORGID-forPrimaryCare
+InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
+Description: "Identifier example for ORGID."
+Usage: #inline
+* system = $NamingSystem_ORGID
+* value = "456789"
+* period.start = "2021-12-01"
+
 Instance: Example-Identifier-ORGID-Response
 InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
 Description: "Identifier example for ORGID in response."

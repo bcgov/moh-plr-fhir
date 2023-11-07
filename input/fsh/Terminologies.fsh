@@ -27,6 +27,8 @@ Alias: $PLRExpertise = https://terminology.hlth.gov.bc.ca/ProviderLocationRegist
 
 Alias: $PLRWorkLocationID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-work-location-id
 Alias: $PLRNoteID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id
+
+Alias: $PLRPropertyID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-property-id
 Alias: $PLRConditionID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-condition-id
 Alias: $PLRDisciplinaryActionID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-disciplinary-action-id
 

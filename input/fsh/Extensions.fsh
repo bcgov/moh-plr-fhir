@@ -18,6 +18,7 @@ Description: "Provides the details of a facility as represented by a FHIR locati
 * extension[contactName].value[x] only string
 * extension[contactName].value[x] 1..1 MS
 
+// Health Service Area extensions
 Extension: HealthServiceArea
 Id: bc-facility-health-service-area-extension
 Title: "BC Facility Health Service Area Extension"
@@ -71,7 +72,7 @@ Description: "A code that represents the Primary Care Network (PCN) that the loc
 * extension[name].value[x] only string
 * extension[name].value[x] 0..1 MS
 
-
+// Primary Care Properties
 Extension: AvailabilityExtension
 Id: bc-availability-extension
 Title: "Extension to represent Availability, or hours of operation, for clinic, or other Profiles"

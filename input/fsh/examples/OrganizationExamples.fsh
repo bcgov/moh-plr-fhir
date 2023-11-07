@@ -101,5 +101,70 @@ Description: "Example of generic Organization."
 * extension[1].extension[=].valueCodeableConcept.coding.system = $PLRStatusClass
 * extension[1].extension[=].valueCodeableConcept.coding.code = #AE
 
+Instance: Example-Organization-PrimaryCare
+InstanceOf: BCOrganization
+Description: "Example of an Primary Care clinic"
+* identifier[+] = Example-Identifier-ORGID-forPrimaryCare
+* name = "Kelowna PC Clinic"
+* name.extension[use].valueCode = #official
+* name.extension[period].valuePeriod.start = "2021-12-31T00:00:00-07:00"
+* alias = "Primary Care Clinic - Kelowna"
+* address = Example-Address-Valid
+* telecom = Example-ContactPoint-Phone
+* active = true
+* extension[+] = Example-Note
+* extension[+] = Example-PayeeNumber
+* type = $PLROrganizationRoleCode#ORG
+// license status
+* extension[1].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
+* extension[1].extension[+].url = "statusCode"
+* extension[1].extension[=].valueCodeableConcept.coding.system = $RoleStatus
+* extension[1].extension[=].valueCodeableConcept.coding.code = #active
+* extension[1].extension[+].url = "period"
+* extension[1].extension[=].valuePeriod.start = "2022-02-07"
+* extension[1].extension[=].valuePeriod.end = "2023-12-07"
+* extension[1].extension[+].url = "statusReasonCode"
+* extension[1].extension[=].valueCodeableConcept.coding.system = $PLRStatusReason
+* extension[1].extension[=].valueCodeableConcept.coding.code = #ORG
+* extension[1].extension[+].url = "statusClassCode"
+* extension[1].extension[=].valueCodeableConcept.coding.system = $PLRStatusClass
+* extension[1].extension[=].valueCodeableConcept.coding.code = #AE
 
+/*Instance: Example-PrimaryCare-Extension
+InstanceOf: Extension
+Description: "Example for Primary Care Extension."
+Usage: #inline
+* url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-primary-care-clinic-extension"
+* extension[0].url = "identifier"
+* extension[0].valueIdentifier.value = "Note-2"
+* extension[0].valueIdentifier.system = $PLRNoteID
+* extension[1].url = "text"
+* extension[1].valueString = "Note text"
+* extension[2].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
+* extension[2].valuePeriod.start = "1998-01-02"*/
 
+Instance: Example-PayeeNumber
+InstanceOf: Extension
+Description: "Example payee number."
+Usage: #inline
+* url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-payee-number-extension"
+* extension[0].url = "identifier"
+* extension[0].valueIdentifier.value = "PRY_123"
+* extension[0].valueIdentifier.system = $PLRNoteID
+* extension[1].url = "payeeNumber"
+* extension[1].valueString = "123456"
+* extension[2].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
+* extension[2].valuePeriod.start = "2023-01-02"
+
+/*Instance: Example-Availability
+InstanceOf: Extension
+Description: "Example Availability extension."
+Usage: #inline
+* url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availability-extension"
+* extension[0].url = "identifier"
+* extension[0].valueIdentifier.value = "Note-2"
+* extension[0].valueIdentifier.system = $PLRNoteID
+* extension[1].url = "text"
+* extension[1].valueString = "Note text"
+* extension[2].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
+* extension[2].valuePeriod.start = "1998-01-02"*/

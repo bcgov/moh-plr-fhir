@@ -4,7 +4,7 @@ Description: "Address example."
 Usage: #inline
 * type = #postal
 * line[0] = "1000 DOUGLAS ST"
-* city = "VICTORIA"
+* city = "Kelowna"
 * postalCode = "V6P7B8"
 * state = "BC"
 * country = "CA"
