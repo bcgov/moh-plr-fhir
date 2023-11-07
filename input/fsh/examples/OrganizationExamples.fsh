@@ -112,8 +112,8 @@ Description: "Example of an Primary Care clinic"
 * address = Example-Address-Valid
 * telecom = Example-ContactPoint-Phone
 * active = true
-* extension[+] = Example-Note
-* extension[+] = Example-PayeeNumber
+* extension[0] = Example-Note
+
 * type = $PLROrganizationRoleCode#ORG
 // license status
 * extension[1].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"
@@ -129,6 +129,8 @@ Description: "Example of an Primary Care clinic"
 * extension[1].extension[+].url = "statusClassCode"
 * extension[1].extension[=].valueCodeableConcept.coding.system = $PLRStatusClass
 * extension[1].extension[=].valueCodeableConcept.coding.code = #AE
+
+* extension[2] = Example-PayeeNumber
 
 /*Instance: Example-PrimaryCare-Extension
 InstanceOf: Extension
