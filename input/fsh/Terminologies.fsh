@@ -7,6 +7,9 @@ Alias: $SCPType = http://fhir.infoway-inforoute.ca/CodeSystem/scptype
 // code system for provider license status
 Alias: $RoleStatus = http://terminology.hl7.org/CodeSystem/v3-RoleStatus
 
+// code system for Days of week
+Alias: $CSDayOfWeek = http://hl7.org/fhir/days-of-week 
+
 Alias: $PLRLicenseStatus = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system
 Alias: $PLRStatusClass = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system
 Alias: $PLRStatusReason = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system
@@ -27,7 +30,6 @@ Alias: $PLRExpertise = https://terminology.hlth.gov.bc.ca/ProviderLocationRegist
 
 Alias: $PLRWorkLocationID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-work-location-id
 Alias: $PLRNoteID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id
-
 Alias: $PLRPropertyID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-property-id
 Alias: $PLRConditionID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-condition-id
 Alias: $PLRDisciplinaryActionID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-disciplinary-action-id
@@ -49,3 +51,8 @@ Alias: $System_PCN = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-pr
 Alias: $System_CHSA = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-community-health-service-area
 
 Alias: $PLRAddressValidationStatus = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system
+
+Alias: $PLRPrimaryCareClinicType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-clinic-type-code-system
+Alias: $PLRClinicOwnershipType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-clinic-ownership-type-status-code-system
+Alias: $PLRClinicServiceDeliveryType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-clinic-service-delivery-type-code-system
+

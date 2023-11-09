@@ -96,7 +96,7 @@ Description: "Can represent the Available time"
      allDay 0..1 MS 
 * extension[daysOfWeek].value[x] only code
 //* extension[daysOfWeek].value[x] 0..* MS
-* extension[daysOfWeek].value[x] from http://hl7.org/fhir/ValueSet/days-of-week (required)
+* extension[daysOfWeek].value[x] from http://hl7.org/fhir/days-of-week (required)
 * extension[availableStartTime].value[x] only time
 * extension[availableStartTime].value[x] 0..1 MS
 * extension[availableEndTime].value[x] only time
@@ -139,7 +139,7 @@ Description: "The (Primary Care) Clinic Ownership type, the expected value is on
      EndReasonExtension named endReason 0..1 MS and
      OwnerExtension named owner 0..1 MS
 * extension[ownershipType].value[x] only CodeableConcept
-* extension[ownershipType].value[x] 1..1 MS
+//* extension[ownershipType].value[x] 1..1 MS
 * extension[identifier].value[x] only Identifier
 * extension[identifier].value[x] 1..1 MS
 
@@ -153,7 +153,7 @@ Description: "The (Primary Care) Clinic Service Delivery type, the expected valu
      EndReasonExtension named endReason 0..1 MS and
      OwnerExtension named owner 0..1 MS
 * extension[serviceDeliveryType].value[x] only CodeableConcept
-* extension[serviceDeliveryType].value[x] 1..1 MS
+//* extension[serviceDeliveryType].value[x] 1..1 MS
 * extension[identifier].value[x] only Identifier
 * extension[identifier].value[x] 1..1 MS
 
@@ -174,7 +174,7 @@ Description: "The (Primary Care) Clinic type, the expected value is one from UPC
 Extension: ClinicOwnerExtension
 Id: bc-organization-clinic-owner-extension
 Title: "Extension to represent clinic Owners."
-Description: "The (Primary Care) Clinic Owner"
+Description: "The (Primary Care) Clinic Owner - still pending some detailed requirements"
 * extension contains clinicOwner 1..1 MS and
      identifier 0..1 MS and 
      PeriodExtension named period 1..1 MS and 
