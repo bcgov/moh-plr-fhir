@@ -1,9 +1,9 @@
 ﻿BCProviderRegistry : Validation Results
 =========================================
 
-err = 27, warn = 699, info = 205
+err = 41, warn = 690, info = 205
 IG Publisher Version: 1.5.2
-Generated Tue Nov 07 20:47:36 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provider#1.0.0 (canonical = http://hlth.gov.bc.ca/fhir/provider)
+Generated Thu Nov 09 22:41:25 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provider#1.0.0 (canonical = http://hlth.gov.bc.ca/fhir/provider)
  Build Errors : 2 / 4 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 9 / 7
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocationWithLinks-Bundle : 0 / 9 / 19
@@ -56,7 +56,7 @@ Generated Tue Nov 07 20:47:36 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-Success : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/Organization-Example-Credential-Granting-Institution : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-Example-Organization-1 : 0 / 18 / 9
- /github/workspace/fsh-generated/resources/Organization-Example-Organization-PrimaryCare : 0 / 18 / 9
+ /github/workspace/fsh-generated/resources/Organization-Example-Organization-PrimaryCare : 10 / 18 / 9
  /github/workspace/fsh-generated/resources/Organization-Example-Qualification-Organization : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-IPC.00047422.BC.PRS : 0 / 9 / 6
  /github/workspace/fsh-generated/resources/Organization-IPC.00147434.BC.PRS : 0 / 21 / 10
@@ -123,8 +123,8 @@ Generated Tue Nov 07 20:47:36 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/PractitionerRole-RELN.24.PRS : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-address : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-address-validation-status-extension : 0 / 1 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-availability-extension : 0 / 2 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-availableTime-extension : 0 / 2 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-availability-extension : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-availableTime-extension : 4 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-batch-bundle : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-birthplace-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-birthtime-extension : 0 / 1 / 1
@@ -156,14 +156,14 @@ Generated Tue Nov 07 20:47:36 UTC 2023. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-affiliation : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-bundle : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-legal-name-extension : 0 / 2 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-owner-extension : 0 / 2 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-ownership-type-extension : 0 / 2 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-legal-name-extension : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-owner-extension : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-ownership-type-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-payee-number-extension : 0 / 1 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-service-delivery-type-extension : 0 / 2 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-type-extension : 0 / 2 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-pci-extension : 0 / 2 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-primary-care-clinic-extension : 0 / 2 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-service-delivery-type-extension : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-type-extension : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-pci-extension : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-primary-care-clinic-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-owner-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-period-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner : 0 / 0 / 1
@@ -705,6 +705,16 @@ INFORMATION: Organization/Example-Organization-1: Organization.address[0].extens
 == fsh-generated/resources/Organization-Example-Organization-PrimaryCare.json ==
 WARNING: Organization/Example-Organization-PrimaryCare: Organization.extension[1].extension[2].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-reason-value-set|1.0.0
 WARNING: Organization/Example-Organization-PrimaryCare: Organization.extension[1].extension[3].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-class-value-set|1.0.0
+ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[3].extension[1].extension[0].value.ofType(code): Found a reference to a CodeSystem (http://hl7.org/fhir/days-of-week) where a ValueSet belongs
+ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[3].extension[1].extension[1].value.ofType(code): Found a reference to a CodeSystem (http://hl7.org/fhir/days-of-week) where a ValueSet belongs
+ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[3].extension[2].extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code 'Tue' in the system 'http://hl7.org/fhir/days-of-week|4.0.1' for 'http://hl7.org/fhir/days-of-week#Tue'
+ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[3].extension[2].extension[0].value.ofType(CodeableConcept): The Profile 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availableTime-extension|1.0.0' definition allows for the type code but found type CodeableConcept
+ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[3].extension[2].extension[0].value.ofType(CodeableConcept): No code provided, and a code is required from the value set
+ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[3].extension[2].extension[0].value.ofType(CodeableConcept).coding[0]: This element is not allowed by the profile http://hl7.org/fhir/StructureDefinition/code|4.0.1
+ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[4].extension[0].extension[1]: Constraint failed: ext-1: 'Must have either extensions or value[x], not both' (defined in http://hl7.org/fhir/StructureDefinition/Extension)
+ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[4].extension[0].extension[1]: Extension.extension:clinicType.value[x]: minimum required = 1, but only found 0 (from http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-type-extension|1.0.0)
+ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[4].extension[1].extension[1]: Constraint failed: ext-1: 'Must have either extensions or value[x], not both' (defined in http://hl7.org/fhir/StructureDefinition/Extension)
+ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[4].extension[2].extension[1]: Constraint failed: ext-1: 'Must have either extensions or value[x], not both' (defined in http://hl7.org/fhir/StructureDefinition/Extension)
 WARNING: Organization/Example-Organization-PrimaryCare: Organization.type[0]: Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-organization-role-value-set|1.0.0
 WARNING: Organization/Example-Organization-PrimaryCare: Organization.telecom[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
 WARNING: Organization/Example-Organization-PrimaryCare: Organization.address[0].extension[0].value.ofType(CodeableConcept): Unable to check whether the code is in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0
@@ -1155,10 +1165,12 @@ WARNING: PractitionerRole/RELN.12373.PRS: PractitionerRole.extension[1].value.of
 WARNING: StructureDefinition/bc-address-validation-status-extension: StructureDefinition.context[0]: Review the extension type for bc-address-validation-status-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-availability-extension.json ==
 WARNING: StructureDefinition/bc-availability-extension: StructureDefinition.context[0]: Review the extension type for bc-availability-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availability-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-availableTime-extension.json ==
+ERROR: StructureDefinition/bc-availableTime-extension: StructureDefinition.snapshot.element[7].binding.valueSet: Canonical URL 'http://hl7.org/fhir/days-of-week' refers to a resource that has the wrong type. Found CodeSystem expecting one of [ValueSet]
+ERROR: StructureDefinition/bc-availableTime-extension: StructureDefinition.differential.element[4].binding.valueSet: Canonical URL 'http://hl7.org/fhir/days-of-week' refers to a resource that has the wrong type. Found CodeSystem expecting one of [ValueSet]
 WARNING: StructureDefinition/bc-availableTime-extension: StructureDefinition.context[0]: Review the extension type for bc-availableTime-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availableTime-extension'): The Implementation Guide contains no examples for this extension
+ERROR: StructureDefinition/bc-availableTime-extension: StructureDefinition.differential.element[4].binding: The valueSet reference http://hl7.org/fhir/days-of-week on element Extension.extension.value[x] points to something that is not a value set (CodeSystem)
+ERROR: StructureDefinition/bc-availableTime-extension: StructureDefinition.snapshot.element[7].binding: The valueSet reference http://hl7.org/fhir/days-of-week on element Extension.extension.value[x] points to something that is not a value set (CodeSystem)
 == fsh-generated/resources/StructureDefinition-bc-batch-bundle.json ==
 == fsh-generated/resources/StructureDefinition-bc-birthplace-extension.json ==
 WARNING: StructureDefinition/bc-birthplace-extension: StructureDefinition.context[0]: Review the extension type for bc-birthplace-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
@@ -1216,27 +1228,20 @@ WARNING: StructureDefinition/bc-note-extension: StructureDefinition.context[0]: 
 == fsh-generated/resources/StructureDefinition-bc-organization-bundle.json ==
 == fsh-generated/resources/StructureDefinition-bc-organization-clinic-legal-name-extension.json ==
 WARNING: StructureDefinition/bc-organization-clinic-legal-name-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-clinic-legal-name-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-legal-name-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-organization-clinic-owner-extension.json ==
 WARNING: StructureDefinition/bc-organization-clinic-owner-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-clinic-owner-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-owner-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-organization-clinic-ownership-type-extension.json ==
 WARNING: StructureDefinition/bc-organization-clinic-ownership-type-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-clinic-ownership-type-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-ownership-type-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-organization-clinic-payee-number-extension.json ==
 WARNING: StructureDefinition/bc-organization-clinic-payee-number-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-clinic-payee-number-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-organization-clinic-service-delivery-type-extension.json ==
 WARNING: StructureDefinition/bc-organization-clinic-service-delivery-type-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-clinic-service-delivery-type-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-service-delivery-type-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-organization-clinic-type-extension.json ==
 WARNING: StructureDefinition/bc-organization-clinic-type-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-clinic-type-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-type-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-organization-pci-extension.json ==
 WARNING: StructureDefinition/bc-organization-pci-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-pci-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-pci-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-organization-primary-care-clinic-extension.json ==
 WARNING: StructureDefinition/bc-organization-primary-care-clinic-extension: StructureDefinition.context[0]: Review the extension type for bc-organization-primary-care-clinic-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-primary-care-clinic-extension'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-bc-owner-extension.json ==
 WARNING: StructureDefinition/bc-owner-extension: StructureDefinition.context[0]: Review the extension type for bc-owner-extension: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 == fsh-generated/resources/StructureDefinition-bc-period-extension.json ==
