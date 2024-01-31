@@ -9,7 +9,7 @@
   "version" : "1.0.0",
   "name" : "BCBatchBundle",
   "status" : "draft",
-  "date" : "2023-11-09T22:35:19+00:00",
+  "date" : "2024-01-31T21:18:40+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -267,10 +267,6 @@
         {
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
           "valueString" : "Language"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-          "valueBoolean" : true
         }],
         "strength" : "preferred",
         "description" : "A human language.",
@@ -800,7 +796,7 @@
       "path" : "Bundle.entry.fullUrl",
       "short" : "URI for resource (Absolute URL server address or URI for UUID/OID)",
       "definition" : "The Absolute URL for the resource.  The fullUrl SHALL NOT disagree with the id in the resource - i.e. if the fullUrl is not a urn:uuid, the URL shall be version-independent URL consistent with the Resource.id. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that: \n* fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)\n* Results from operations might involve resources that are not identified.",
-      "comment" : "fullUrl might not be [unique in the context of a resource](http://hl7.org/fhir/R4/bundle.html#bundle-unique). Note that since [FHIR resources do not need to be served through the FHIR API](http://hl7.org/fhir/R4/references.html), the fullURL might be a URN or an absolute URL that does not end with the logical id of the resource (Resource.id). However, but if the fullUrl does look like a RESTful server URL (e.g. meets the [regex](http://hl7.org/fhir/R4/references.html#regex), then the 'id' portion of the fullUrl SHALL end with the Resource.id.\n\nNote that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).",
+      "comment" : "fullUrl might not be [unique in the context of a resource](bundle.html#bundle-unique). Note that since [FHIR resources do not need to be served through the FHIR API](http://hl7.org/fhir/R4/references.html), the fullURL might be a URN or an absolute URL that does not end with the logical id of the resource (Resource.id). However, but if the fullUrl does look like a RESTful server URL (e.g. meets the [regex](http://hl7.org/fhir/R4/references.html#regex), then the 'id' portion of the fullUrl SHALL end with the Resource.id.\n\nNote that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -1803,7 +1799,7 @@
       "path" : "Bundle.entry.fullUrl",
       "short" : "URI for resource (Absolute URL server address or URI for UUID/OID)",
       "definition" : "The Absolute URL for the resource.  The fullUrl SHALL NOT disagree with the id in the resource - i.e. if the fullUrl is not a urn:uuid, the URL shall be version-independent URL consistent with the Resource.id. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that: \n* fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)\n* Results from operations might involve resources that are not identified.",
-      "comment" : "fullUrl might not be [unique in the context of a resource](http://hl7.org/fhir/R4/bundle.html#bundle-unique). Note that since [FHIR resources do not need to be served through the FHIR API](http://hl7.org/fhir/R4/references.html), the fullURL might be a URN or an absolute URL that does not end with the logical id of the resource (Resource.id). However, but if the fullUrl does look like a RESTful server URL (e.g. meets the [regex](http://hl7.org/fhir/R4/references.html#regex), then the 'id' portion of the fullUrl SHALL end with the Resource.id.\n\nNote that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).",
+      "comment" : "fullUrl might not be [unique in the context of a resource](bundle.html#bundle-unique). Note that since [FHIR resources do not need to be served through the FHIR API](http://hl7.org/fhir/R4/references.html), the fullURL might be a URN or an absolute URL that does not end with the logical id of the resource (Resource.id). However, but if the fullUrl does look like a RESTful server URL (e.g. meets the [regex](http://hl7.org/fhir/R4/references.html#regex), then the 'id' portion of the fullUrl SHALL end with the Resource.id.\n\nNote that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2910,7 +2906,7 @@
       "path" : "Bundle.entry.fullUrl",
       "short" : "URI for resource (Absolute URL server address or URI for UUID/OID)",
       "definition" : "The Absolute URL for the resource.  The fullUrl SHALL NOT disagree with the id in the resource - i.e. if the fullUrl is not a urn:uuid, the URL shall be version-independent URL consistent with the Resource.id. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that: \n* fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)\n* Results from operations might involve resources that are not identified.",
-      "comment" : "fullUrl might not be [unique in the context of a resource](http://hl7.org/fhir/R4/bundle.html#bundle-unique). Note that since [FHIR resources do not need to be served through the FHIR API](http://hl7.org/fhir/R4/references.html), the fullURL might be a URN or an absolute URL that does not end with the logical id of the resource (Resource.id). However, but if the fullUrl does look like a RESTful server URL (e.g. meets the [regex](http://hl7.org/fhir/R4/references.html#regex), then the 'id' portion of the fullUrl SHALL end with the Resource.id.\n\nNote that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).",
+      "comment" : "fullUrl might not be [unique in the context of a resource](bundle.html#bundle-unique). Note that since [FHIR resources do not need to be served through the FHIR API](http://hl7.org/fhir/R4/references.html), the fullURL might be a URN or an absolute URL that does not end with the logical id of the resource (Resource.id). However, but if the fullUrl does look like a RESTful server URL (e.g. meets the [regex](http://hl7.org/fhir/R4/references.html#regex), then the 'id' portion of the fullUrl SHALL end with the Resource.id.\n\nNote that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -4024,7 +4020,7 @@
       "path" : "Bundle.entry.fullUrl",
       "short" : "URI for resource (Absolute URL server address or URI for UUID/OID)",
       "definition" : "The Absolute URL for the resource.  The fullUrl SHALL NOT disagree with the id in the resource - i.e. if the fullUrl is not a urn:uuid, the URL shall be version-independent URL consistent with the Resource.id. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that: \n* fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)\n* Results from operations might involve resources that are not identified.",
-      "comment" : "fullUrl might not be [unique in the context of a resource](http://hl7.org/fhir/R4/bundle.html#bundle-unique). Note that since [FHIR resources do not need to be served through the FHIR API](http://hl7.org/fhir/R4/references.html), the fullURL might be a URN or an absolute URL that does not end with the logical id of the resource (Resource.id). However, but if the fullUrl does look like a RESTful server URL (e.g. meets the [regex](http://hl7.org/fhir/R4/references.html#regex), then the 'id' portion of the fullUrl SHALL end with the Resource.id.\n\nNote that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).",
+      "comment" : "fullUrl might not be [unique in the context of a resource](bundle.html#bundle-unique). Note that since [FHIR resources do not need to be served through the FHIR API](http://hl7.org/fhir/R4/references.html), the fullURL might be a URN or an absolute URL that does not end with the logical id of the resource (Resource.id). However, but if the fullUrl does look like a RESTful server URL (e.g. meets the [regex](http://hl7.org/fhir/R4/references.html#regex), then the 'id' portion of the fullUrl SHALL end with the Resource.id.\n\nNote that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -4954,10 +4950,6 @@
     },
     {
       "id" : "Bundle.signature",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "Bundle.signature",
       "short" : "Digital Signature",
       "definition" : "Digital Signature - base64 encoded. XML-DSig or a JWT.",
