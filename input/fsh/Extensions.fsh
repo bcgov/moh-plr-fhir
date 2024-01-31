@@ -309,9 +309,9 @@ Title: "BC Practitioner Disciplinary Actions Extension"
 Description: "Provides details of disciplinary actions against the provider."
 * extension contains identifier 0..1 MS 
         and description 1..1 MS and 
-        PeriodExtension named period 1..1 MS and 
         archiveDate 1..1 MS and 
         displayFlag 1..1 MS and 
+        PeriodExtension named period 1..1 MS and 
         EndReasonExtension named endReason 0..1 MS and
         OwnerExtension named owner 0..1 MS
 * extension[identifier].value[x] only Identifier
@@ -341,11 +341,11 @@ Extension: PractitionerConditionExtension
 Id: bc-practitioner-condition-extension
 Title: "BC Practitioner Conditions Extension"
 Description: "Conditions on the provider's role"
-* extension contains identifier 0..1 MS and 
-        PeriodExtension named period 1..1 MS and 
+* extension contains identifier 0..1 MS and  
         restriction 1..1 MS and 
         restrictionText 0..1 MS and 
         code 1..1 MS and 
+        PeriodExtension named period 1..1 MS and
         EndReasonExtension named endReason 0..1 MS and
         OwnerExtension named owner 0..1 MS
 * extension[identifier].value[x] only Identifier
