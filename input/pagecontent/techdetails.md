@@ -10,7 +10,7 @@ The HTTP Headers will need several specific parameters configured with each requ
 
 Parameter | Description
 ---|---|
-Athorization | Bearer KeyCloak token
+Authorization | Bearer KeyCloak token
 UserId | User id of individual e.g. bsmith@IDIR or <userid>@<identy provider>
 Accept | E.g. application/fhir+json;fhirVersion=4.0;BCPLRVersion=1
   

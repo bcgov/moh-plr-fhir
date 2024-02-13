@@ -112,15 +112,15 @@ groups:
     name: Bundles
     description: Inbound Distribution/Maintain and Batch Bundles
     resources:
-      - StructureDefinition/bc-batch-bundle
       - StructureDefinition/bc-practitioner-bundle
       - StructureDefinition/bc-organization-bundle
       - StructureDefinition/bc-location-bundle
-      - Bundle/Example-Batch-Bundle
+      - StructureDefinition/bc-batch-bundle
       - Bundle/Example-AddPractitioner-Bundle
       - Bundle/Example-DistributePractitioner-Bundle
       - Bundle/Example-AddOrganization-Bundle
       - Bundle/Example-AddLocation-Bundle
+      - Bundle/Example-Batch-Bundle
   Practitioner:
     name: Practitioner
     description: Artifacts associated with Practitioners
@@ -141,7 +141,7 @@ groups:
       - StructureDefinition/bc-location  
   HealthcareService:
     name: Healthcare Service
-    description: Artifacts associated with Healthcare Services
+    description: Artifacts associated with Healthcare Services - no active development in PLR around this for now
     resources:
       - StructureDefinition/bc-catalogue-service  
       - StructureDefinition/bc-clinical-service 
@@ -157,12 +157,12 @@ groups:
     resources:
       - Bundle/Example-GET-Practitioner-Response
       - Bundle/Example-GET-Practitioner-Param-Response
-      - Bundle/Example-GET-PractitionerRole-Response
-      - Bundle/Example-GET-PractitionerRole-byPractitioner-Response
       - Bundle/Example-GET-Organization-Response
       - Bundle/Example-GET-Location-Response
-      - Bundle/Example-GET-OrganizationAffiliation-Response
-      - Bundle/Example-GET-OrganizationAffiliation-byOrganization-Response
+      #- Bundle/Example-GET-PractitionerRole-Response
+      #- Bundle/Example-GET-PractitionerRole-byPractitioner-Response
+      #- Bundle/Example-GET-OrganizationAffiliation-Response
+      #- Bundle/Example-GET-OrganizationAffiliation-byOrganization-Response
   Extensions:
     name: Extensions
     description: Extensions used across all groupings

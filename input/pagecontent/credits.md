@@ -8,6 +8,6 @@ This specification is currently published as a Draft Standard on the ministry gi
 This specification was written and built by:
 
 * BC Ministry of Health (Khushwinder Sekhon)
-* CGI (Jonathan Wiebe, Linda Woo, Neil Shrimpton, Olga Pineda)
+* CGI (Jonathan Wiebe, Linda Woo, Neil Shrimpton, Olga Pineda, Camille Estival)
 * Constable Consulting (Lorraine Constable)
 * Duteau Design (Jean Duteau)

@@ -40,5 +40,5 @@ Description: "OperationOutcome example of a success message."
 * issue[0].severity = #information
 * issue[0].code = #business-rule
 * issue[0].details.coding.system = $PLRError
-* issue[0].details.coding.code = #PRS.PRP.MTN.UNK.0.0.0000
-* issue[0].details.text = "The provider search is succesful"
+* issue[0].details.coding.code = #PRS.PRP.MTN.UNK.0.0.7067
+* issue[0].details.text = "Query successful"
