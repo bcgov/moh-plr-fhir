@@ -306,7 +306,7 @@ To show the relationship between an Organizational Provider and a Facility (i.e.
 --->
 
 <h3 id="use-cases">Use Cases</h3>
-<p>There are a number of use cases that support the existing PLR functionality:</p>
+<p>There are many use cases that support the existing PLR functionality:</p>
 
 <ul>
   <li>Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location</li>
@@ -315,7 +315,7 @@ To show the relationship between an Organizational Provider and a Facility (i.e.
   <li>Queries - a set of FHIR Operations and RESTful queries are defined that allow the querying of PLR FHIR instances</li>
 </ul>
 
-<h4 id="distributions">Distributions</h4>
+<h4 id="distributions---included-in-release-1">Distributions - included in RELEASE 1</h4>
 
 <p>A <a href="OperationDefinition-bc-distribution.html">Distribution operation</a> is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.<br />
 The distribution is sent from PLR to a client application by sending a Bundle (of type ‘collection’) wrapped in Parameters, via a RESTful POST to a client nominated endpoint URL.  The Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity.  The Bundle includes one of the following sets:</p>
@@ -328,11 +328,11 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
 
 <p>There will be one POST request per distribution and each distribution will descirbe a single Individual Provider, Organizational Provider or Facility.</p>
 
-<p>POST https://…/$distribution</p>
+<p>POST [Base]/$distribution</p>
 
 <p>The response to a distribution SHALL be HTTP 200 or 201 OK.  Anything else and the reliable messaging function will retry to send the request until a 200 is received back or times out.</p>
 
-<h4 id="maintain">Maintain</h4>
+<h4 id="maintain---included-in-release-1">Maintain - included in RELEASE 1</h4>
 <p>A <a href="OperationDefinition-bc-maintain.html">Maintain operation</a> is used by a user to communicate a change to a single Provider (Individual or Organizational) or Facility to PLR. A Bundle is sent, wrapped in Parameters, and includes one of the following sets:</p>
 
 <ol>
@@ -341,7 +341,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
   <li>OrganizationAffiliation(s), PractitionerRole(s) and Location.</li>
 </ol>
 
-<p>POST https://…/$maintain</p>
+<p>POST [Base]/$maintain</p>
 
 <p>The PLR FHIR Server response will be a Bundle, wrapped in Parameters, with type set to “collection” that contains the created or updated resources that represent the Provider (Individual or Organizational) or Facility.  The Bundle includes one of the following sets (same as request):</p>
 
@@ -365,50 +365,43 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
   <figcaption>Figure 2.5 - BC Maintain and Distribution Structure</figcaption>
 </figure>
 
-<h4 id="batch">Batch</h4>
-<p>Batch allows for many independent transactions to be sent in a single operation. It also uses Bundles, but a batch Bundle (Bundle.type = ‘batch’), that wraps a number of Bundles. The batch Bundle is not expected in the parameters but as a JSON file. It must contain at least one or more of:</p>
-
-<ol>
-  <li>a collection-Bundle (with PractitionerRole(s) and Practitioner) to add/update an Individual Provider</li>
-  <li>a collection-Bundle (with OrganizationAffiliation(s), PractitionerRole(s) and Organization) to add/update an Organizational Provider</li>
-  <li>a collection-Bundle (with OrganizationAffiliations(s), PractitionerRole(s), and Location) to add/update a Facility</li>
-</ol>
-
-<p>The response Bundle is similarly structured to the request, populating and echoing back the results of each contained Bundle.  The only difference is that OperationOutcome SHALL also be included for each collection-Bundle for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn’t processed due to validation or non-business errors.</p>
-
 <h4 id="query-part-1---operations">Query Part 1 - Operations</h4>
 <p>PLR FHIR has defined a set of FHIR Operations to search for Providers and Facilities.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR’s case, the server would need to include resources that make up the full Provider and additionally return related Providers or Facilities.</p>
 
 <p>The two query operations are:</p>
 
 <ul>
-  <li>$entityQuery - used to return the full <a href="OperationDefinition-bc-entity-practitioner-query.html">Individual</a> or <a href="OperationDefinition-bc-entity-organization-query.html">Organization</a> or <a href="OperationDefinition-bc-entity-location-query.html">Facility</a> without following relationships</li>
-  <li>$extendedQuery - used to return the full <a href="OperationDefinition-bc-extended-practitioner-query.html">Individual</a> or <a href="OperationDefinition-bc-extended-organization-query.html">Organization</a> or <a href="OperationDefinition-bc-extended-location-query.html">Facility</a> along with all directly referenced Individuals, Organizations or Facilities</li>
+  <li>$entityQuery - used to return the full <a href="OperationDefinition-bc-entity-practitioner-query.html">Individual</a> or <a href="OperationDefinition-bc-entity-organization-query.html">Organization</a> or <a href="OperationDefinition-bc-entity-location-query.html">Facility</a> without the associated resources linked within the relationships - included in RELEASE 1</li>
+  <li>$extendedQuery - used to return the full <a href="OperationDefinition-bc-extended-practitioner-query.html">Individual</a> or <a href="OperationDefinition-bc-extended-organization-query.html">Organization</a> or <a href="OperationDefinition-bc-extended-location-query.html">Facility</a> along with all directly referenced Individuals, Organizations or Facilities - FUTURE</li>
 </ul>
 
+<h5 id="entityquery---included-in-release-1">EntityQuery - included in RELEASE 1</h5>
 <p>The syntax for the $entityQuery operation is:</p>
 
 <ul>
-  <li>GET /resource/id/$entityQuery to retrieve a specific Provider or Facility where the id is known</li>
-  <li>GET /resource/$entityQuery?param1&amp;param2&amp;… to search for a Provider or Facility with search parameters instead of an id</li>
+  <li>GET [Base]/[resource]/id/$entityQuery to retrieve a specific Provider or Facility where the id is known</li>
+  <li>GET [Base]/[resource]/$entityQuery?param1&amp;param2&amp;… to search for a Provider or Facility with search parameters instead of an id</li>
 </ul>
 
 <p>Although PLR supports many different types of identifiers, the resource id is the identifier assigned by PLR when the resource is created, internally called the IPC for Providers and IFC for Facilities.  This id is always returned in the response and should be persisted by the requestor.  To search with other identifiers stored in PLR and attached to Providers or Facilities, the search parameter ‘identifier’ and ‘identifier-type’ should be used.</p>
 
 <p>The parameters for the $entityQuery operation will be the search parameters listed further below.</p>
 
+<h5 id="extendedquery---future">ExtendedQuery - FUTURE</h5>
 <p>The syntax for the $extendedQuery operation is:</p>
 
 <ul>
-  <li>GET /resource/id/$extendedQuery to retrieve the full information about a specific Provider or Facility where the id is known</li>
-  <li>GET /resource/$extendedQuery?param1&amp;param2&amp;… to search and retrieve the full information about a Provider or Facility</li>
+  <li>GET [Base]/[resource]/id/$extendedQuery to retrieve the full information about a specific Provider or Facility where the id is known</li>
+  <li>GET [Base]/[resource]/$extendedQuery?param1&amp;param2&amp;… to search and retrieve the full information about a Provider or Facility</li>
 </ul>
 
-<p>The parameters for the $extendedQuery operation will be the search parameters listed below.</p>
+<p>The parameters for the $extendedQuery operation will be the search parameters listed further below.</p>
 
 <h5 id="example-search-set-response-bundle">Example Search Set Response Bundle</h5>
 
-<p>Below is a sample search set response bundle.  It shows the structure at a highlevel, as described on this web page.  If this was an Organization search the structure is the same, however the Bundles would include Organization and OrganizationAffilication(s).</p>
+<p>It shows the structure at a highlevel, as described on this web page. 
+If this was an Organization search the structure is the same, however the Bundles would include Organization and OrganizationAffiliation(s).
+If this was a Location search the structure is the same, however the Bundles would include Location and OrganizationAffiliation(s).</p>
 
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_searchset_bundle_practitioner_response.png" alt="BC FHIR Resources" />
@@ -486,14 +479,14 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     <tr>
       <td> </td>
       <td style="text-align: left">withHistory</td>
-      <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.</td>
+      <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.</td>
       <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">identifier</td>
-      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier=[system]</td>
-      <td>[value]</td>
+      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier=[system]”</td>
+      <td>“[value]</td>
     </tr>
     <tr>
       <td>Organization</td>
@@ -504,7 +497,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     <tr>
       <td> </td>
       <td style="text-align: left">name</td>
-      <td style="text-align: left">String, mandatory. May use trailing wildcards, e.g. Clinic*</td>
+      <td style="text-align: left">String, mandatory. May use trailing wildcards, e.g. Clinic* or *Care</td>
       <td> </td>
     </tr>
     <tr>
@@ -521,6 +514,12 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     </tr>
     <tr>
       <td> </td>
+      <td style="text-align: left">address-line1</td>
+      <td style="text-align: left">String, e.g 1200 Douglas st - search will run on Physical address, then Mailing address if no match was found on May use trailing wildcards, e.g. Douglas* -IN PROGRESS</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
       <td style="text-align: left">address-city</td>
       <td style="text-align: left">String, full city name, e.g. Vancouver</td>
       <td> </td>
@@ -528,14 +527,14 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     <tr>
       <td> </td>
       <td style="text-align: left">withHistory</td>
-      <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.</td>
+      <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.</td>
       <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">identifier</td>
-      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier=[system]</td>
-      <td>[value]</td>
+      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier= [system] “</td>
+      <td>“[value]</td>
     </tr>
     <tr>
       <td>Location</td>
@@ -600,14 +599,14 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
     <tr>
       <td> </td>
       <td style="text-align: left">withHistory</td>
-      <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes.  Only the current data is returned.</td>
+      <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.</td>
       <td> </td>
     </tr>
     <tr>
       <td> </td>
       <td style="text-align: left">identifier</td>
-      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier=[system]</td>
-      <td>[value]</td>
+      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier= [system] “</td>
+      <td>“[value]</td>
     </tr>
   </tbody>
 </table>
@@ -615,13 +614,15 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
 <p>Notes:
 There is a limit to the number of search results returned = 20. A message will be provided indicating maximum search results were returned.</p>
 
-<p>Wildcard
-•	The wildcard character is ‘*’.              <br />
-•	Only one wildcard character is allowed in each allowed name field.   <br />
-•	The wildcard character must be trailing.          <br />
-•	At least 1 character must be entered before the wildcard.</p>
+<p>Wildcard</p>
+<ul>
+  <li>The wildcard character is ‘*’.</li>
+  <li>The wildcard character must be trailing.</li>
+  <li>Only one wildcard character is allowed in each name fields for Practitioner search. More than 1 wildcard character is allowed in each allowed field for Organization search</li>
+  <li>At least 1 character must be entered before the wildcard (except for Organization name, Organization Name search allows the 1st character to be a wildcard.)</li>
+</ul>
 
-<h4 id="query-part-2">Query Part 2</h4>
+<h4 id="query-part-2---restful">Query Part 2 - Restful</h4>
 
 <p>The initial design covers all the use cases where the user is interested in receiving or updating the full Provider (Individual or Organizational) or Facility (Location) dataset. As a result several FHIR resources are returned or submitted in a Bundle; those resources represent the full dataset of a Provider or Facility.</p>
 
@@ -638,23 +639,23 @@ There is a limit to the number of search results returned = 20. A message will b
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left">GET Practitioner/<IPC></IPC></td>
+      <td style="text-align: left">GET [Base]/Practitioner/<IPC></IPC></td>
       <td style="text-align: left"><a href="StructureDefinition-bc-practitioner.html">BCPractitioner</a></td>
     </tr>
     <tr>
-      <td style="text-align: left">GET PractitionerRole/<IPC or="" Relationship-id=""></IPC></td>
+      <td style="text-align: left">GET [Base]/PractitionerRole/<IPC or="" Relationship-id=""></IPC></td>
       <td style="text-align: left"><a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a> for the practitioner’s role and specialties information, and/or <a href="StructureDefinition-bc-role-relationships.html">BCRoleRelationship</a>, for the relationships info between practitioner and organization or location</td>
     </tr>
     <tr>
-      <td style="text-align: left">GET Location/<IFC></IFC></td>
+      <td style="text-align: left">GET [Base]/Location/<IFC></IFC></td>
       <td style="text-align: left"><a href="StructureDefinition-bc-location.html">BCLocation</a></td>
     </tr>
     <tr>
-      <td style="text-align: left">GET Organization/<IPC></IPC></td>
+      <td style="text-align: left">GET [Base]/Organization/<IPC></IPC></td>
       <td style="text-align: left"><a href="StructureDefinition-bc-organization.html">BCOrganization</a></td>
     </tr>
     <tr>
-      <td style="text-align: left">GET OrganizationAffiliation/<IPC or="" Relationship-id=""></IPC></td>
+      <td style="text-align: left">GET [Base]/OrganizationAffiliation/<IPC or="" Relationship-id=""></IPC></td>
       <td style="text-align: left"><a href="StructureDefinition-bc-organization-affiliation.html">BCOrganizationAffiliation</a></td>
     </tr>
   </tbody>
@@ -662,28 +663,28 @@ There is a limit to the number of search results returned = 20. A message will b
 
 <h5 id="practitioner">Practitioner</h5>
 <p>Returns a single resource; id for Practitioner is the <strong>IPC identifier</strong></p>
-<pre><code class="language-htm">GET Practitioner/IPC.00012343.BC.PRS 
+<pre><code class="language-htm">GET [Base]/Practitioner/IPC.00012343.BC.PRS 
 </code></pre>
 
 <h5 id="organization">Organization</h5>
 <p>Returns a single resource; id for Organization is the <strong>IPC identifier</strong></p>
-<pre><code class="language-htm">GET Organization/IPC.00012343.BC.PRS
+<pre><code class="language-htm">GET [Base]/Organization/IPC.00012343.BC.PRS
 </code></pre>
 
 <h5 id="location">Location</h5>
 <p>Returns a single resource; id for Location is the <strong>IFC identifier</strong></p>
-<pre><code class="language-htm">GET Location/IFC.00876532.BC.PRS
+<pre><code class="language-htm">GET [Base]/Location/IFC.00876532.BC.PRS
 </code></pre>
-<h5 id="practitionerrole">PractitionerRole</h5>
+<h5 id="practitionerrole---future">PractitionerRole - FUTURE</h5>
 
 <p>Id for PractitionerRole can be</p>
 <ul>
   <li>the <strong>IPC identifier</strong> for the <a href="StructureDefinition-bc-practitioner-role.html">BCPractionerRole</a> instance carrying the Practionner’s role and specialties information
-    <pre><code class="language-htm">GET PractitionerRole/IPC.00012343.BC.PRS
+    <pre><code class="language-htm">GET [Base]/PractitionerRole/IPC.00012343.BC.PRS
 </code></pre>
   </li>
   <li>or a <strong>relationship identifier</strong> that will return a single <a href="StructureDefinition-bc-role-relationships.html">BCRoleRelationship</a> instance
-    <pre><code class="language-htm">GET PractitionerRole/RELNS.1234.BC.PRS
+    <pre><code class="language-htm">GET [Base]/PractitionerRole/RELNS.1234.BC.PRS
 </code></pre>
   </li>
 </ul>
@@ -698,21 +699,21 @@ There is a limit to the number of search results returned = 20. A message will b
 </ul>
 
 <p>This returns all the PractitionerRoles related to a Practitioner (BCPractionerRole and BCRoleRelationship)</p>
-<pre><code class="language-htm">GET PractitionerRole?practitioner=Practitioner/IPC.00012343.BC.PRS
+<pre><code class="language-htm">GET [Base]/PractitionerRole?practitioner=Practitioner/IPC.00012343.BC.PRS
 </code></pre>
 
 <p>This returns all the PractitionerRoles related to an Organization (of instance BCRoleRelationship only)</p>
-<pre><code class="language-htm">GET PractitionerRole?organization=Organization/IPC.00012343.BC.PRS
+<pre><code class="language-htm">GET [Base]/PractitionerRole?organization=Organization/IPC.00012343.BC.PRS
 </code></pre>
 
 <p>This returns all the PractitionerRoles related to a Location (of instance BCRoleRelationship only)</p>
-<pre><code class="language-htm">GET PractitionerRole?location=Location/IFC.00012343.BC.PRS
+<pre><code class="language-htm">GET [Base]/PractitionerRole?location=Location/IFC.00012343.BC.PRS
 </code></pre>
 
-<h5 id="organizationaffiliation">OrganizationAffiliation</h5>
+<h5 id="organizationaffiliation---future">OrganizationAffiliation - FUTURE</h5>
 
 <p>Returns a single resource; id for OrganizationAffiliation is a relationship ID</p>
-<pre><code class="language-htm">GET OrganizationAffiliation/RELNS.1234.PRS
+<pre><code class="language-htm">GET [Base]/OrganizationAffiliation/RELNS.1234.PRS
 </code></pre>
 
 <h6 id="organizationaffiliation---parameters">OrganizationAffiliation - Parameters</h6>
@@ -724,13 +725,23 @@ There is a limit to the number of search results returned = 20. A message will b
 </ul>
 
 <p>This returns all OrganizationAffiliations for the specified Organization</p>
-<pre><code class="language-htm">GET OrganizationAffiliation?organization=Organization/IPC.00012343.BC.PRS
+<pre><code class="language-htm">GET [Base]/OrganizationAffiliation?organization=Organization/IPC.00012343.BC.PRS
 </code></pre>
 
 <p>This returns all OrganizationAffiliations for the specified Location</p>
-<pre><code class="language-htm">GET OrganizationAffiliation?location=Location/IFC.00012343.BC.PRS
+<pre><code class="language-htm">GET [Base]/OrganizationAffiliation?location=Location/IFC.00012343.BC.PRS
 </code></pre>
 
+<h4 id="batch---future">Batch - FUTURE</h4>
+<p>Batch allows for many independent transactions to be sent in a single operation. It also uses Bundles, but a batch Bundle (Bundle.type = ‘batch’), that wraps a number of Bundles. The batch Bundle is not expected in the parameters but as a JSON file. It must contain at least one or more of:</p>
+
+<ol>
+  <li>a collection-Bundle (with PractitionerRole(s) and Practitioner) to add/update an Individual Provider</li>
+  <li>a collection-Bundle (with OrganizationAffiliation(s), PractitionerRole(s) and Organization) to add/update an Organizational Provider</li>
+  <li>a collection-Bundle (with OrganizationAffiliations(s), PractitionerRole(s), and Location) to add/update a Facility</li>
+</ol>
+
+<p>The response Bundle is similarly structured to the request, populating and echoing back the results of each contained Bundle.  The only difference is that OperationOutcome SHALL also be included for each collection-Bundle for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn’t processed due to validation or non-business errors.</p>
 
 
 
@@ -756,7 +767,7 @@ There is a limit to the number of search results returned = 20. A message will b
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 31, 2024 22:27+0000">2024-01-31</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Feb 13, 2024 00:30+0000">2024-02-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
