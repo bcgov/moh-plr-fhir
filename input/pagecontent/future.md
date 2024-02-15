@@ -11,7 +11,7 @@ As the results some features are not released yet, they are marked on as DRAFT i
 
 #### Release - FHIR version 4.0 and BCFHIR version 1
 
-The version information needs to be added in the message *HTTP Accept: Header* to access release 1:
+The version information needs to be added in the message *HTTP Accept: Header* to access release 1
 * fhirVersion=4.0;BCPLRVersion=1
 
 This section describes everything that is available in this release.

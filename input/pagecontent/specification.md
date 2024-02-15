@@ -202,7 +202,7 @@ A FHIR example of a real message can be found [here](Bundle-Example-Response-Que
 ||name|String, mandatory. May use trailing wildcards, e.g. Clinic* or *Care|
 ||description|String, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*|
 ||type|String for role type code, mandatory, mapping to BCOrganization.type. 
-||address-line1|String, e.g 1200 Douglas st - search will run on Physical address, then Mailing address if no match was found on May use trailing wildcards, e.g. Douglas* -IN PROGRESS
+||address-line1|String, e.g 1200 Douglas st - search will run on Physical address, then Mailing address if no match was found on. May use trailing wildcards, e.g. Douglas* 
 ||address-city|String, full city name, e.g. Vancouver
 ||withHistory|true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.|
 ||identifier|String, representing the full identifier value with system and value, e.g. identifier= [system] "|"[value]

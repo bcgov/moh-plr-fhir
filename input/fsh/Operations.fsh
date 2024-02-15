@@ -267,6 +267,13 @@ Usage: #definition
 * parameter[=].documentation = "Search for organizations with the specified role type code, mandatory if no identifier specified, mapping to Organization.type"
 * parameter[=].type = #string
 * parameter[=].searchType = #token 
+* parameter[+].name = #address-line1
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search will run on Physical address, then Mailing address if no match was found on. May use trailing wildcards"
+* parameter[=].type = #string
+* parameter[=].searchType = #string 
 * parameter[+].name = #address-city
 * parameter[=].use = #in
 * parameter[=].min = 0
@@ -429,6 +436,13 @@ Usage: #definition
 * parameter[=].documentation = "Search for organizations with the specified role type code, mandatory if no identifier specified, mapping to Organization.type"
 * parameter[=].type = #string
 * parameter[=].searchType = #token 
+* parameter[+].name = #address-line1
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Search will run on Physical address, then Mailing address if no match was found on. May use trailing wildcards"
+* parameter[=].type = #string
+* parameter[=].searchType = #string 
 * parameter[+].name = #address-city
 * parameter[=].use = #in
 * parameter[=].min = 0
