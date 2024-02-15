@@ -7,6 +7,7 @@
 </div></td></tr><tr><td>IN</td><td>name</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for organizations with the specified name, mandatory if no identifier specified. May use trailing wildcards, e.g. Clinic*</p>
 </div></td></tr><tr><td>IN</td><td>description</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for organizations with the specified description, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*</p>
 </div></td></tr><tr><td>IN</td><td>type</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for organizations with the specified role type code, mandatory if no identifier specified, mapping to Organization.type</p>
+</div></td></tr><tr><td>IN</td><td>address-line1</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search will run on Physical address, then Mailing address if no match was found on. May use trailing wildcards</p>
 </div></td></tr><tr><td>IN</td><td>address-city</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for organizations with the specified city.</p>
 </div></td></tr><tr><td>IN</td><td>withHistory</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td><td/><td><div><p>true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.</p>
 </div></td></tr><tr><td>OUT</td><td>bundle</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td><div><p>The Response Bundle with the OperationOutcome and the list of BCOrganizationBundle found by the search.</p>
@@ -18,7 +19,7 @@
   <title value="Query for an organization without returning associations"/>
   <status value="draft"/>
   <kind value="query"/>
-  <date value="2024-02-13T00:30:38+00:00"/>
+  <date value="2024-02-15T18:07:20+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -75,6 +76,15 @@
     <documentation value="Search for organizations with the specified role type code, mandatory if no identifier specified, mapping to Organization.type"/>
     <type value="string"/>
     <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="address-line1"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search will run on Physical address, then Mailing address if no match was found on. May use trailing wildcards"/>
+    <type value="string"/>
+    <searchType value="string"/>
   </parameter>
   <parameter>
     <name value="address-city"/>
