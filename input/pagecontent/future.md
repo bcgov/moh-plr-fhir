@@ -158,6 +158,8 @@ See details [here too](specification.html#distributions---included-in-release-1)
 ##### Future Release
 
 [Batch](specification.html#batch---future)
+
 [Extended Queries](specification.html#extendedquery---future)
-[Restful Location and other Restful operations](specification.html#location)
+
+[Other Restful operations](specification.html#location)
 

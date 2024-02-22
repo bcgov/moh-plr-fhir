@@ -19,7 +19,7 @@ Description: "General constraints on the Organization resource for use in the BC
 * telecom MS
 * address only BCAddress
 * address MS
-* contact MS
+* contact 
   * purpose MS
   * name MS
   * telecom MS

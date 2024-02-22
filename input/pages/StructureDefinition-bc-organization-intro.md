@@ -5,7 +5,7 @@ This profile sets the minimum expectations for an Organization resource that is 
 
 This Organization profile has the following mandatory elements:
 
-**Each Organizaiton must have:**
+**Each Organization must have:**
 
 1. a name, with optional:
 	1.  Period Extension
@@ -14,13 +14,16 @@ This Organization profile has the following mandatory elements:
 
 **Each Organization must support:**
 
-1.  whether the Organization is active or not
-2.  the type of Organization
-3.  a Contact Point
-4.  an Address
-5.  an identifier
-6.  License Status Extension
-7.  Notes Extension
+1.  an identifier
+2.  whether the Organization is active or not
+3.  the type of Organization
+4.  an Address and Telecom info
+5.  the License Status Extension 
+6.  the PrimaryCareDetails Extension
+7.  the ClinicPayeeNumber Extension
+8.  the Availability Extension
+9.  the Confidentiality Extension
+10.  the Notes Extension
 
 
 ### Examples

@@ -228,7 +228,9 @@ Extension: PhysicalAddress
 Id: bc-facility-physical-address-extension
 Title: "BC Facility Physical Address Extension"
 Description: "An optional physical address for the facility."
-* value[x] only BCAddress
+* value[x] only BCAddress 
+* value[x] ^short = "Physical address only, of the building Location, so no unit number"
+* value[x] ^definition = "An address expressed using postal conventions (as opposed to GPS or other location definition formats). This data type is to used to convey addresses for visiting locations which might not be valid for mail delivery."
 * value[x] 1..1 MS
 
 Extension: RelationshipTypeExtension
