@@ -1,10 +1,24 @@
-{% raw %}
-<blockquote class="stu-note">
-<p>
-This specification is currently published as a Draft Standard on the ministry github and is not intended for implementation.  Feedback is welcome but readers should understand that there is more work to be done in testing the profiles and operations defined in this guide.  For more information, please see the <a href="future.html">Future Plans</a> page in this guide.  The integration process is described in general below.
-</p>
-</blockquote>
-{% endraw %}
+# Becoming a Connected Partner
+
+Below is a summary of the onboarding process for PLR connected parners.
+
+1. Contact the PLR administration team.
+1. An environment will be setup and configured for your testing.
+1. Once the connected partner systems are ready, conformance testing will be performed (quality checks and message testing)
+1. Then, Dates are discussed for Production implementation and Production setup.
+
+All the information regarding conformance standards can be found on the [Ministry HIE conformance](https://www2.gov.bc.ca/gov/content/health/practitioner-professional-resources/software/getting-started "BC Government Health Information Exchange") website.
+
+The following diagram illustrates the process to develop an interface and integrate with a ministry HIE system:
+
+<div>
+<figure class="figure">
+  <img src="vendor-integration-process.png" class="figure-img img-responsive img-rounded center-block" alt="Vendor Integration Process">
+</figure>
+<p></p>
+</div>
+
+Note: The timeline is an estimate and will vary depending on the organization's size and experience.
 
 ### Getting Started
 Vendors that are developing interfaces that correspond to those documented in this Implementation Guide need to meet all the requirements defined within the British Columbia Professional and Software Conformance Stadards.

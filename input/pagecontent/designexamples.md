@@ -1,12 +1,5 @@
-{% raw %}
-<blockquote class="stu-note">
-<p>
-This specification is currently published as a Draft Standard on the ministry github and is not intended for implementation.  Feedback is welcome but readers should understand that there is more work to be done in testing the profiles and operations defined in this guide.  For more information, please see the <a href="future.html">Future Plans</a> page in this guide.</p>
-</blockquote>
-{% endraw %}
-### FHIR Examples
 
-#### Operational Query Examples
+### Operational Query Examples
 
 Search for Individual Provider (aka Practitioner + PractitionerRoles) by FHIR system id
 
@@ -25,7 +18,7 @@ Search for a Location by Health Authority and return all related Organizations a
       GET /Location/$extendedQuery?healthAuthority=Interior%20Health
 
 
-#### Resource Query Examples
+### Resource Query Examples
 
 Operations like the $entityQuery can also be accomplished by a more 'chatty' interface, with multiple simple restful queries.
 ```htm
@@ -49,7 +42,7 @@ GET PractitionerRole/RELN.3432.PRS
 GET OrganizationAffiliation/RELN.3112.PRS
 ```
 
-##### Resource Query Examples with Parameters
+#### Resource Query Examples with Parameters
 
 A short cut to find all PractitionerRoles associated with a Practitioner
 ```htm

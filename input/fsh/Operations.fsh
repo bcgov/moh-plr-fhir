@@ -6,7 +6,7 @@ Usage: #definition
 * url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-practitioner-query"
 * name = "PractitionerEntityQuery"
 * title = "Query for a practitioner without returning associations"
-* status = #draft
+* status = #active
 * kind = #query
 * code = #entityQuery
 * resource[0] = #Practitioner
@@ -225,7 +225,7 @@ Usage: #definition
 * url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-organization-query"
 * name = "OrganizationEntityQuery"
 * title = "Query for an organization without returning associations"
-* status = #draft
+* status = #active
 * kind = #query
 * code = #entityQuery
 * resource[0] = #Organization
