@@ -2,6 +2,7 @@ Profile: BCCatalogueService
 Parent: HealthcareService
 Id: bc-catalogue-service
 Description: "PLR Enhancement that describes services as they would be found in a catalogue."
+* ^status = #draft
 * category MS
 * category = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-service-type-code-system#catalogue
 * name MS
@@ -14,6 +15,7 @@ Profile: BCClinicalService
 Parent: HealthcareService
 Id: bc-clinical-service
 Description: "PLR Enhancement that describes services that a clinic provides."
+* ^status = #draft
 * providedBy 1..1 MS
 * providedBy only Reference(BCOrganization)
 * category MS
@@ -36,6 +38,7 @@ Profile: BCCareTeam
 Parent: CareTeam
 Id: bc-careteam
 Description: "PLR Enhancement representing a collection of practitioners that provide services. There is no active development planned around this in PLR for now."
+* ^status = #draft
 * identifier MS
 * status 1..1 MS
 * category 1..* MS
@@ -49,6 +52,7 @@ Profile: BCPrimaryNetwork
 Parent: CareTeam
 Id: bc-primary-network
 Description: "PLR Enhancement representing a primary care network of practitioners that provide services. There is no active development planned around this in PLR for now."
+* ^status = #draft
 * identifier MS
 * status 1..1 MS
 * category 1..* MS
