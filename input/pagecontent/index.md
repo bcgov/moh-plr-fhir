@@ -90,7 +90,33 @@ Conformance verbs - SHALL, SHOULD, MAY - used in this guide are defined in [FHIR
 
 #### Data Absent Reason 
 
-No form of data absent reason is supported; mandatory data must always be present.
+Data may be absent for various reasons. If data is absent the attribute will have a data absent reason extension indicating why data is missing. The entire attribute, e.g. BCHumanName may be absent or just part of it. In the examples below the name use is present but the rest of the name attribute is missing.
+
+
+For example gender would be masked as follows.
+
+    "_gender" : {
+      "extension" : [
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "masked"
+        }
+      ]
+    }
+
+Below is an example for name.
+
+    "name" : [
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "masked"
+          }
+        ],
+        "use": "temp"
+      }
+    ]
 
 #### Must Support
 

@@ -2,6 +2,7 @@ Extension: FacilityDetailsExtension
 Id: bc-facility-details-extension
 Title: "BC Facility Details Extension"
 Description: "Provides the details of a facility as represented by a FHIR location."
+* ^status = #draft
 * ^context.type = #element
 * ^context.expression = "Location"
 * extension contains campusOfCare 0..1 MS and 
