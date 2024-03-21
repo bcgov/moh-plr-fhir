@@ -19,11 +19,6 @@ Description: "General constraints on the Organization resource for use in the BC
 * telecom MS
 * address only BCAddress
 * address MS
-* contact 
-  * purpose MS
-  * name MS
-  * telecom MS
-  * address MS
 * extension contains LicenseStatusExtension named status 0..* MS and
 	ConfidentialityExtension named confidentiality 0..1 MS and
 	NoteExtension named note 0..* MS and

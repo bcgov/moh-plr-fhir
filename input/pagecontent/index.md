@@ -84,6 +84,42 @@ This Implementation Guide was written based on resource profiles from CA Baselin
 
 The PLR User Guide provides a detailed overview of the current PLR functionality.  Please contact the [registry administrator](mailto:HLTH.REGISTRIESADMIN@gov.bc.ca) to request a copy of the User Guide.
 
+#### Identifiers and Naming Sytems
+
+PLR Practitioner, Organization and Location resources can be identified by different identifiers, which can be created and maintain by various sources. To identify the origin of these various identifiers, the FHIR norm defines Naming Systems. Naming Systems are meant to replace OIDs, used in HL7 v3 messages. The mapping between OIDs and Namings systems used in PLR is listed in this [file](PLR-NamingSystems.pdf).
+
+All the Naming Systems in PLR are registered in the [Canadian URI Registry](https://simplifier.net/canadianuriregistry/~resources?category=NamingSystem&sortBy=RankScore_desc) or in the [BC-core project](https://simplifier.net/bccore/~resources?category=NamingSystem&sortBy=RankScore_desc), depending of their scope (internal to BC or potential use across Canada)
+
+In search queries, identifier and naming systems need to be used together as in following examples:
+
+* Restful Search Request for an Practitioner by CPID - same pattern for Organization or Location  
+
+  GET [Base]/Practitioner?identifier=http://fhir.infoway-inforoute.ca/NamingSystem/ca-bc-license-physician|900012345
+
+* EntitySearch Request for an Location by IFC - same pattern for Organization or Practitioner 
+ 
+  GET [Base]/Location/$entityQuery?identifier=https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc|IFC.00141234.BC.PRS
+
+* In FHIR resources, Naming systems are used like seen in the example below, Organization identifiers block, with IPC and CPN - same pattern for Location or Practitioner 
+
+    "identifier" : [
+      {
+        "system" : "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc",
+        "value" : "IPC.00047422.BC.PRS",
+        "period" : {
+          "start" : "2000-01-01"
+        }
+      },       
+      {
+        "system" : "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-common-party-number",
+        "value" : "CPN.00147433.BC.PRS",
+        "period" : {
+          "start" : "2000-01-01"
+        }
+      }
+    ]
+
+
 #### Conformance Requirements
 
 Conformance verbs - SHALL, SHOULD, MAY - used in this guide are defined in [FHIR Conformance Rules](http://hl7.org/fhir/conformance-rules.html#conflang).

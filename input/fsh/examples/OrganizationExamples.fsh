@@ -144,7 +144,8 @@ Usage: #inline
 * extension[2] = Example-Clinic-Service-Delivery-Type
 * extension[3] = Example-PCI-Flag
 * extension[4] = Example-Clinic-Legal-Name
-* extension[5] = Example-Clinic-Owners
+* extension[5] = Example-Clinic-Owner1
+* extension[6] = Example-Clinic-Owner2
 
 Instance: Example-Clinic-Ownership-Type
 InstanceOf: Extension
@@ -188,9 +189,9 @@ Usage: #inline
 * extension[2].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[2].valuePeriod.start = "2023-01-02"
 
-Instance: Example-Clinic-Owners
+Instance: Example-Clinic-Owner1
 InstanceOf: Extension
-Description: "PC Clinic Owners"
+Description: "PC Clinic Owner 1"
 Usage: #inline
 * url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-owner-extension"
 * extension[0].url = "identifier"
@@ -198,6 +199,19 @@ Usage: #inline
 //* extension[0].valueIdentifier.system = $PLRPropertyID
 * extension[1].url = "clinicOwner"
 * extension[1].valueString = "John Doe, Dc Singh, Interior Health Authority"
+* extension[2].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
+* extension[2].valuePeriod.start = "2023-01-02"
+
+Instance: Example-Clinic-Owner2
+InstanceOf: Extension
+Description: "PC Clinic Owner 2"
+Usage: #inline
+* url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-owner-extension"
+* extension[0].url = "identifier"
+* extension[0].valueIdentifier.value = "PRPTY.156.PRS"
+//* extension[0].valueIdentifier.system = $PLRPropertyID
+* extension[1].url = "clinicOwner"
+* extension[1].valueString = "Owner Two, Dc Singh, Interior Health Authority"
 * extension[2].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[2].valuePeriod.start = "2023-01-02"
 
