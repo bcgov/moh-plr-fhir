@@ -9,7 +9,6 @@ Description: "General constraints on the Location resource for use in the BC Pro
 * physicalType ^short = "bu is the only allowed code"
 * physicalType.coding.code = #bu (exactly)
 * physicalType.coding.code 1..1
-* status
 * name 0..1 MS
 * name.extension contains PeriodExtension named period 1..1 MS 
 	and EndReasonExtension named endReason 0..1 MS

@@ -302,7 +302,7 @@ Usage: #definition
 * id = "bc-extended-practitioner-query"
 * url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-practitioner-query"
 * name = "PractitionerExtendedQuery"
-* title = "Query for a Practitioner that returns associated resources"
+* title = "Query for a Practitioner that returns associated resources - FUTURE"
 * status = #draft
 * kind = #query
 * code = #extendedQuery
@@ -400,7 +400,7 @@ Usage: #definition
 * id = "bc-extended-organization-query"
 * url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-organization-query"
 * name = "OrganizationExtendedQuery"
-* title = "Query for an organization that returns associated resources"
+* title = "Query for an organization that returns associated resources - FUTURE"
 * status = #draft
 * kind = #query
 * code = #extendedQuery
@@ -471,7 +471,7 @@ Usage: #definition
 * id = "bc-extended-location-query"
 * url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-location-query"
 * name = "LocationExtendedQuery"
-* title = "Query for a location that returns associated resources"
+* title = "Query for a location that returns associated resources - FUTURE"
 * status = #draft
 * kind = #query
 * code = #extendedQuery

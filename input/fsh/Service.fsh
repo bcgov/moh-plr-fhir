@@ -1,4 +1,4 @@
-Profile: BCCatalogueService
+/*Profile: BCCatalogueService
 Parent: HealthcareService
 Id: bc-catalogue-service
 Description: "PLR Enhancement that describes services as they would be found in a catalogue."
@@ -71,4 +71,4 @@ Description: "PLR Enhancement representing a primary care network of practitione
 * participant MS
   * role 1..1 MS
   * member 1..1 MS
-  * member only Reference(BCPractitioner)
+  * member only Reference(BCPractitioner)*/
