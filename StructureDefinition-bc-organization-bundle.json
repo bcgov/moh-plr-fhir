@@ -8,8 +8,8 @@
   "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle",
   "version" : "1.0.0",
   "name" : "BCOrganizationBundle",
-  "status" : "draft",
-  "date" : "2024-02-22T00:24:28+00:00",
+  "status" : "active",
+  "date" : "2024-04-16T19:17:03+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -1862,62 +1862,6 @@
         "code" : "Organization",
         "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"]
       }],
-      "constraint" : [{
-        "key" : "dom-2",
-        "severity" : "error",
-        "human" : "If the resource is contained in another resource, it SHALL NOT contain nested Resources",
-        "expression" : "contained.contained.empty()",
-        "xpath" : "not(parent::f:contained and f:contained)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "key" : "dom-3",
-        "severity" : "error",
-        "human" : "If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource",
-        "expression" : "contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()",
-        "xpath" : "not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "key" : "dom-4",
-        "severity" : "error",
-        "human" : "If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated",
-        "expression" : "contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()",
-        "xpath" : "not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "key" : "dom-5",
-        "severity" : "error",
-        "human" : "If a resource is contained in another resource, it SHALL NOT have a security label",
-        "expression" : "contained.meta.security.empty()",
-        "xpath" : "not(exists(f:contained/*/f:meta/f:security))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice",
-          "valueBoolean" : true
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation",
-          "valueMarkdown" : "When a resource has no narrative, only systems that fully understand the data can display the resource to a human safely. Including a human readable representation in the resource makes for a much more robust eco-system and cheaper handling of resources by intermediary systems. Some ecosystems restrict distribution of resources to only those systems that do fully understand the resources, and as a consequence implementers may believe that the narrative is superfluous. However experience shows that such eco-systems often open up to new participants over time."
-        }],
-        "key" : "dom-6",
-        "severity" : "warning",
-        "human" : "A resource should have narrative for robust management",
-        "expression" : "text.`div`.exists()",
-        "xpath" : "exists(f:text/h:div)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "key" : "org-1",
-        "severity" : "error",
-        "human" : "The organization SHALL at least have a name or an identifier, and possibly more than one",
-        "expression" : "(identifier.count() + name.count()) > 0",
-        "xpath" : "count(f:identifier | f:name) > 0",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Organization"
-      }],
       "isModifier" : false,
       "isSummary" : false,
       "mapping" : [{
@@ -2932,61 +2876,6 @@
         "code" : "OrganizationAffiliation",
         "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"]
       }],
-      "constraint" : [{
-        "key" : "dom-2",
-        "severity" : "error",
-        "human" : "If the resource is contained in another resource, it SHALL NOT contain nested Resources",
-        "expression" : "contained.contained.empty()",
-        "xpath" : "not(parent::f:contained and f:contained)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "key" : "dom-3",
-        "severity" : "error",
-        "human" : "If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource",
-        "expression" : "contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()",
-        "xpath" : "not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "key" : "dom-4",
-        "severity" : "error",
-        "human" : "If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated",
-        "expression" : "contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()",
-        "xpath" : "not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "key" : "dom-5",
-        "severity" : "error",
-        "human" : "If a resource is contained in another resource, it SHALL NOT have a security label",
-        "expression" : "contained.meta.security.empty()",
-        "xpath" : "not(exists(f:contained/*/f:meta/f:security))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice",
-          "valueBoolean" : true
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation",
-          "valueMarkdown" : "When a resource has no narrative, only systems that fully understand the data can display the resource to a human safely. Including a human readable representation in the resource makes for a much more robust eco-system and cheaper handling of resources by intermediary systems. Some ecosystems restrict distribution of resources to only those systems that do fully understand the resources, and as a consequence implementers may believe that the narrative is superfluous. However experience shows that such eco-systems often open up to new participants over time."
-        }],
-        "key" : "dom-6",
-        "severity" : "warning",
-        "human" : "A resource should have narrative for robust management",
-        "expression" : "text.`div`.exists()",
-        "xpath" : "exists(f:text/h:div)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "key" : "invariant-rltn-2",
-        "severity" : "error",
-        "human" : "One participating organization or one location allowed; not both.",
-        "expression" : "participatingOrganization.count()=1 xor location.count()=1",
-        "source" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"
-      }],
       "isModifier" : false,
       "isSummary" : false,
       "mapping" : [{
@@ -3992,61 +3881,6 @@
       "type" : [{
         "code" : "PractitionerRole",
         "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"]
-      }],
-      "constraint" : [{
-        "key" : "dom-2",
-        "severity" : "error",
-        "human" : "If the resource is contained in another resource, it SHALL NOT contain nested Resources",
-        "expression" : "contained.contained.empty()",
-        "xpath" : "not(parent::f:contained and f:contained)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "key" : "dom-3",
-        "severity" : "error",
-        "human" : "If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource",
-        "expression" : "contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()",
-        "xpath" : "not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "key" : "dom-4",
-        "severity" : "error",
-        "human" : "If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated",
-        "expression" : "contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()",
-        "xpath" : "not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "key" : "dom-5",
-        "severity" : "error",
-        "human" : "If a resource is contained in another resource, it SHALL NOT have a security label",
-        "expression" : "contained.meta.security.empty()",
-        "xpath" : "not(exists(f:contained/*/f:meta/f:security))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice",
-          "valueBoolean" : true
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation",
-          "valueMarkdown" : "When a resource has no narrative, only systems that fully understand the data can display the resource to a human safely. Including a human readable representation in the resource makes for a much more robust eco-system and cheaper handling of resources by intermediary systems. Some ecosystems restrict distribution of resources to only those systems that do fully understand the resources, and as a consequence implementers may believe that the narrative is superfluous. However experience shows that such eco-systems often open up to new participants over time."
-        }],
-        "key" : "dom-6",
-        "severity" : "warning",
-        "human" : "A resource should have narrative for robust management",
-        "expression" : "text.`div`.exists()",
-        "xpath" : "exists(f:text/h:div)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      },
-      {
-        "key" : "invariant-rltn-1",
-        "severity" : "error",
-        "human" : "One organization or one location allowed; not both.",
-        "expression" : "organization.count()=1 xor location.count()=1",
-        "source" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"
       }],
       "isModifier" : false,
       "isSummary" : false,

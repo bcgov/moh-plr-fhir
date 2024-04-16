@@ -16,8 +16,8 @@
   fhir:version [ fhir:v "1.0.0"] ; # 
   fhir:name [ fhir:v "PeriodExtension"] ; # 
   fhir:title [ fhir:v "BC Valid Period Extension"] ; # 
-  fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-02-22T00:24:28+00:00"^^xsd:dateTime] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-04-16T19:17:03+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -44,7 +44,34 @@
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 
   fhir:context ( [
      fhir:type [ fhir:v "element" ] ;
-     fhir:expression [ fhir:v "Element" ]
+     fhir:expression [ fhir:v "Identifier" ]
+  ] [
+     fhir:type [ fhir:v "element" ] ;
+     fhir:expression [ fhir:v "ContactPoint" ]
+  ] [
+     fhir:type [ fhir:v "element" ] ;
+     fhir:expression [ fhir:v "Address" ]
+  ] [
+     fhir:type [ fhir:v "element" ] ;
+     fhir:expression [ fhir:v "HumanName" ]
+  ] [
+     fhir:type [ fhir:v "element" ] ;
+     fhir:expression [ fhir:v "Extension" ]
+  ] [
+     fhir:type [ fhir:v "element" ] ;
+     fhir:expression [ fhir:v "Practitioner" ]
+  ] [
+     fhir:type [ fhir:v "element" ] ;
+     fhir:expression [ fhir:v "Practitioner.communication" ]
+  ] [
+     fhir:type [ fhir:v "element" ] ;
+     fhir:expression [ fhir:v "PractitionerRole.specialty" ]
+  ] [
+     fhir:type [ fhir:v "element" ] ;
+     fhir:expression [ fhir:v "Location.name" ]
+  ] [
+     fhir:type [ fhir:v "element" ] ;
+     fhir:expression [ fhir:v "Organization.name" ]
   ] ) ; # 
   fhir:type [ fhir:v "Extension"^^xsd:anyURI] ; # 
   fhir:baseDefinition [
