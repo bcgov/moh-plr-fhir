@@ -184,7 +184,7 @@ Usage: #inline
 //* extension[0].valueIdentifier.system = $PLRPropertyID
 * extension[1].url = "clinicType"
 //* extension[1].valueCodeableConcept.coding.system = $PLRPrimaryCareClinicType
-//* extension[1].valueCodeableConcept[0].text.value="Longitudinal Primary Care Practice"
+* extension[1].valueCodeableConcept[0].text = "Longitudinal Primary Care Practice"
 * extension[2].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[2].valuePeriod.start = "2023-01-02"
 
@@ -250,17 +250,16 @@ Usage: #inline
 //* extension[0].valueIdentifier.system = $PLRPropertyID
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availableTime-extension"
 * extension[=].extension[+].url = "daysOfWeek"
-* extension[=].extension[=].valueCode = #Mon
+* extension[=].extension[=].valueCode = #mon
 * extension[=].extension[+].url = "daysOfWeek"
-* extension[=].extension[=].valueCode = #Wed
+* extension[=].extension[=].valueCode = #wed
 * extension[=].extension[+].url = "availableStartTime"
 * extension[=].extension[=].valueTime = "09:00:00"
 * extension[=].extension[+].url = "availableEndTime"
 * extension[=].extension[=].valueTime = "17:00:00"
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availableTime-extension"
 * extension[=].extension[0].url = "daysOfWeek"
-* extension[=].extension[0].valueCodeableConcept.coding.system = $CSDayOfWeek
-* extension[=].extension[0].valueCodeableConcept.coding.code = #Tue
+* extension[=].extension[0].valueCode = #tue
 * extension[=].extension[1].url = "allDay"
 * extension[=].extension[1].valueBoolean = true
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"

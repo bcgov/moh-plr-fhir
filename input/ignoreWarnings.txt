@@ -1,26 +1,30 @@
 == Suppressed Messages ==
 
-# Infoway
+# BC-specific language codes
+None of the codings provided are in the value set 'Common Languages'%
 
-Code System URI 'http://fhir.infoway-inforoute.ca/CodeSystem/scptype' is unknown so the code cannot be validated
-Code System URI 'http://fhir.infoway-inforoute.ca/CodeSystem/scpqual' is unknown so the code cannot be validated
-Error from server: Unable to provide support for code system http://fhir.infoway-inforoute.ca/CodeSystem/scpqual
-Error from server: Unable to provide support for code system http://fhir.infoway-inforoute.ca/CodeSystem/scptype
+# BC-specific practice settings
+None of the codings provided are in the value set 'Practice Setting Code Value Set'%
 
-The valueSet reference https://fhir.infoway-inforoute.ca/ValueSet/healthcareproviderroletype on element PractitionerRole.code could not be resolved
+# Using draft location physical type code system
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/location-physical-type|1.0.0
 
-None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1), and a coding is recommended to come from this value set) (codes = http://fhir.infoway-inforoute.ca/CodeSystem/scpqual#AMD53)
-
-
-Code System URI 'https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/%
-Error from server: Unable to provide support for code system https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/%
-
-[Unable to determine whether the provided codes are in the value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/%
-Unable to check whether code is in value set https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/%
-
-None of the codings provided are in the value set 'Common Languages' (http://hl7.org/fhir/ValueSet/languages|4.0.1), and a coding is recommended to come from this value set) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system#EN)
-None of the codings provided are in the value set 'Common Languages' (http://hl7.org/fhir/ValueSet/languages|4.0.1), and a coding is recommended to come from this value set) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system#FR)
-
-# Custom
-
+# Custom operation response
 No types could be determined from the search string, so the types can''t be checked
+
+
+# Terminology resources that aren't available for checking
+Error from http://tx.fhir.org/r4: Unable to provide support for code system https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem%
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://fhir.infoway-inforoute.ca/CodeSystem/%
+
+A definition for CodeSystem 'https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/%
+A definition for CodeSystem 'http://fhir.infoway-inforoute.ca/CodeSystem/%
+
+Unable to check whether the code is in the value set 'https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/%
+
+
+# No narratives for all of our instances
+Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+
+# Slices don't match - need to check these
+This element does not match any known slice defined in the profile%
