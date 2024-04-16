@@ -47,7 +47,7 @@ The relationships above are compositions, the children cannot exist without the 
 
 ### Facilities
 
-A Facility is an identified, named place, piece of equipment, or amenity of interest to BC Health which is physical (e.g. a building or vehicle).  It can be a a particular place or position which may be physically/spatially related.  Facilities have names, and may have other communication mechanisms: mailing addresses, telephone numbers, etc.  As well, multiple organizations or individual providers can be related to a facility.
+A Facility is an identified, named place, piece of equipment, or amenity of interest to BC Health which is physical (e.g. a building or vehicle).  It can be a a particular place or position which may be physically/spatially related. Facilities have names, and may have other communication mechanisms: mailing addresses, telephone numbers, etc.  As well, multiple organizations can be related to a facility.
 
 A Facility is a unique civic address in BC and may be:
 
