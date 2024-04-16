@@ -75,7 +75,7 @@ Description: "Example of a bundle to update an Indivivdual Provider."
 * entry[=].resource = Example-Practitioner-Update
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00147433.BC.PRS"
 * entry[=].resource = Example-PractitionerRole-Role-Update-Specialty
-* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.173.PRS"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.12373.PRS"
 * entry[=].resource = Example-PractitionerRole-OrgRef-FromPrac-1-Update
 
 Instance: Example-AddPractitioner-Bundle-Response
@@ -90,7 +90,7 @@ Description: "Example of a bundle of resources sent when responding to a practit
 * entry[=].resource = Example-PractitionerRole-1-Role-FromPractitioner-Response
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.124.PRS"
 * entry[=].resource = Example-PractitionerRole-2-OrgRef-FromPractitioner-Response
-* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.126.PRS"
 * entry[=].resource = Example-PractitionerRole-3-LocRef-FromPractitioner-Response
 
 Instance: Example-UpdatePractitioner-Bundle-Response
@@ -105,7 +105,7 @@ Description: "Example of a bundle of resources sent when responding to a practit
 * entry[=].resource = Example-PractitionerRole-1-Role-FromPractitioner-Response
 * entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.124.PRS"
 * entry[=].resource = Example-PractitionerRole-2-OrgRef-FromPractitioner-Response
-* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS"
+* entry[+].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.126.PRS"
 * entry[=].resource = Example-PractitionerRole-3-LocRef-FromPractitioner-Response
 
 Instance: Example-DistributePractitioner-Bundle
@@ -118,7 +118,7 @@ Description: "Example of a bundle of resources sent when distributing a Practiti
 * entry[1].resource = Example-PractitionerRole-1-Role-FromPractitioner-Response
 * entry[2].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.153.PRS"
 * entry[2].resource = Example-PractitionerRole-5-OrgRef-FromPractitioner
-* entry[3].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS"
+* entry[3].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.126.PRS"
 * entry[3].resource = Example-PractitionerRole-3-LocRef-FromPractitioner-Response
 
 Instance: Example-DistributeOrganization-Bundle
@@ -137,13 +137,13 @@ Instance: Example-DistributePractitioner-Bundle-forTesting
 InstanceOf: BCPractitionerBundle
 Description: "Example of a bundle of resources sent when distributing a Practitioner."
 * type = #collection
-* entry[0].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00147622.BC.PRS"
+* entry[0].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00147699.BC.PRS"
 * entry[0].resource = Example-Practitioner-Response-test
-* entry[1].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00147622.BC.PRS"
+* entry[1].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00147699.BC.PRS"
 * entry[1].resource = Example-PractitionerRole-1-Role-FromPractitioner-Response-test
 * entry[2].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.153.PRS"
 * entry[2].resource = Example-PractitionerRole-5-OrgRef-FromPractitioner
-* entry[3].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS"
+* entry[3].fullUrl = "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.126.PRS"
 * entry[3].resource = Example-PractitionerRole-3-LocRef-FromPractitioner-Response
 
 Instance: Example-Practitioner-Response-test

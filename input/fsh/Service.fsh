@@ -3,7 +3,12 @@ Parent: HealthcareService
 Id: bc-catalogue-service
 Description: "PLR Enhancement that describes services as they would be found in a catalogue."
 * category MS
-* category = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-service-type-code-system#catalogue
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "$this"
+  * ^slicing.rules = #open
+  * ^slicing.description = "Slicing for a mandatory catalogue value."
+* category contains Catalogue 1..1
+* category[Catalogue] = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-service-type-code-system#catalogue
 * name MS
 * comment MS
 * extraDetails MS
@@ -17,7 +22,13 @@ Description: "PLR Enhancement that describes services that a clinic provides."
 * providedBy 1..1 MS
 * providedBy only Reference(BCOrganization)
 * category MS
-* category = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-service-type-code-system#clinical
+* category MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "$this"
+  * ^slicing.rules = #open
+  * ^slicing.description = "Slicing for a mandatory clinical value."
+* category contains Clinical 1..1
+* category[Clinical] = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-service-type-code-system#clinical
 * name MS
 * comment MS
 * extraDetails MS

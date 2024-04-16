@@ -364,8 +364,6 @@ Usage: #inline
 * coding = $PLRLanguage#B01
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2000-01-01"
-* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension"
-* extension[=].valueString = "Language Source"
 
 Instance: Example-Language-French
 InstanceOf: CodeableConcept
@@ -374,8 +372,6 @@ Usage: #inline
 * coding = $PLRLanguage#F16
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2000-01-01"
-* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension"
-* extension[=].valueString = "Language Source"
 
 Instance: Example-Language-Response
 InstanceOf: CodeableConcept
@@ -384,8 +380,6 @@ Usage: #inline
 * coding = $PLRLanguage#B01
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[=].valuePeriod.start = "2000-01-01"
-* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension"
-* extension[=].valueString = "Language Source"
 * extension[+] = Example-OC-MOH
 
 Instance: Example-Language-Update
@@ -395,7 +389,5 @@ Usage: #inline
 * coding = $PLRLanguage#B01
 * extension[0].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[0].valuePeriod.start = "2000-01-01"
-* extension[1].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension"
-* extension[1].valueString = "Language Source"
-* extension[2] = Example-ERC-Change
+* extension[+] = Example-ERC-Change
 
