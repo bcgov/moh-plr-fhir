@@ -1,11 +1,4 @@
 
-{% raw %}
-<blockquote class="stu-note">
-<p>
-This specification is currently published as a Draft Standard on the ministry github and is not intended for implementation.  Feedback is welcome but readers should understand that there is more work to be done in testing the profiles and operations defined in this guide.  For more information, please see the <a href="future.html">Future Plans</a> page in this guide.</p>
-</blockquote>
-{% endraw %}
-
 ### FHIR Resources
 
 In FHIR, the primary resources used are named Practitioner, Organization, and Location.  BC has created profiles of each of these resources for use in the PLR system.  The BC profiles are dependent on the Canadian FHIR Baseline.

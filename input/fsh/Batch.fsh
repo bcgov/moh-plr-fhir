@@ -2,6 +2,7 @@ Profile: BCBatchBundle
 Parent: Bundle
 Id: bc-batch-bundle
 Description: "A Bundle that is used in the PLR Batch operation."
+* ^status = #draft
 * type 1..1 MS
 * type = #batch (exactly)
 * entry 1..*

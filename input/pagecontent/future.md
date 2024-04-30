@@ -1,7 +1,7 @@
 
 At this time, this Implementation Guide includes requirements for PLR Providers and Facilities. 
 The FHIR artifacts have been created according to the current understood expectations and schedules of our partners.
-As the results some features are not released yet, they are marked on as DRAFT in the Specification page.
+As a result some features are not released yet, they are marked on as DRAFT in the Specification page.
 
 
 ### Release - FHIR version 4.0 and BCFHIR version 1
