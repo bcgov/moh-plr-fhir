@@ -50,9 +50,6 @@ Instance: Example-Location-For-Add-Response
 InstanceOf: BCLocation
 Description: "Example of a Location."
 * id = "IFC.00147423.BC.PRS"
-* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension"
-* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
-* extension[=].extension[=].valuePeriod.start = "2000-01-01"
 * identifier[+] = Example-Identifier-IFC-00147423
 //* identifier[+] = Example-Identifier-FACID-22
 * name = "General Hospital"
@@ -63,8 +60,13 @@ Description: "Example of a Location."
 * telecom[0].value = "55555555551"
 * telecom[0].extension[commPurposeExtension].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"
 * telecom[0].extension[commPurposeExtension].valueCodeableConcept = $PLRCommPurpose#FC
+* physicalType.coding.code = #bu
+* physicalType.coding.system = "http://terminology.hl7.org/CodeSystem/location-physical-type"
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-physical-address-extension"
 * extension[=].valueAddress = Example-Address-Fac
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension"
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
+* extension[=].extension[=].valuePeriod.start = "2000-01-01"
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
 * extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-authority-extension"
 * extension[=].extension[=].valueString = "Vancouver Island"
@@ -82,17 +84,12 @@ Description: "Example of a Location."
 * extension[=].extension[=].extension[=].valueString = "Downtown/VicWest"
 * extension[=].extension[=].extension[+].url = "code"
 * extension[=].extension[=].extension[=].valueIdentifier.value = "40701"
-* physicalType.coding.code = #bu
-* physicalType.coding.system = "http://terminology.hl7.org/CodeSystem/location-physical-type"
 
 Instance: Example-Location-For-Add
 InstanceOf: BCLocation
 Description: "Example of a Location."
 //* id = "IFC.00147422.BC.PRS"
-* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension"
-* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
-* extension[=].extension[=].valuePeriod.start = "2000-01-01"
-* identifier = Example-Identifier-IFC-22
+* identifier = Example-Identifier-IFC-001474222
 * name = "General Hospital"
 * name.extension[period].valuePeriod.start = "2000-01-01"
 * alias = "Long name or alias or description"
@@ -105,6 +102,9 @@ Description: "Example of a Location."
 * physicalType.coding.system = "http://terminology.hl7.org/CodeSystem/location-physical-type"
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-physical-address-extension"
 * extension[=].valueAddress = Example-Address-Fac
+* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension"
+* extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
+* extension[=].extension[=].valuePeriod.start = "2000-01-01"
 * address = Example-Address-Fac
 
 
@@ -135,7 +135,7 @@ Description: "Example of the OrganizationAffiliation for Organization to Locatio
 * code.coding.system = $PLRLocationRelationshipType
 * code.coding.code = #OPERATES
 * period.start = "2000-01-01"
-* location.identifier = Example-Identifier-IFC-22
+* location.identifier = Example-Identifier-IFC-001474222
 
 Instance: Example-OrganizationAffiliation-Loc2
 InstanceOf: BCOrganizationAffiliation
@@ -147,7 +147,7 @@ Description: "Example of the OrganizationAffiliation for Organization to Locatio
 * code.coding.system = $PLRLocationRelationshipType
 * code.coding.code = #OWNS
 * period.start = "2000-01-01"
-* location.identifier = Example-Identifier-IFC-22
+* location.identifier = Example-Identifier-IFC-001474222
 
 Instance: Example-PractitionerRole-Loc3
 InstanceOf: BCRoleRelationships
@@ -157,17 +157,17 @@ Description: "Example of the PractitionerRole for Practitioner to Location relat
 * practitioner.identifier.value = "IPC.80008000.PRS.BC"
 * practitioner.identifier.period.start = "2000-01-01"
 * period.start = "2000-01-01"
-* location.identifier = Example-Identifier-IFC-22
+* location.identifier = Example-Identifier-IFC-001474222
 * extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension"
 * extension[=].valueCodeableConcept.coding.system = $PLRLocationRelationshipType
 * extension[=].valueCodeableConcept.coding.code = #PRACTICES_AT
 
-Instance: Example-Identifier-IFC-22
+Instance: Example-Identifier-IFC-001474222
 InstanceOf: http://hl7.org/fhir/StructureDefinition/Identifier
 Description: "Identifier example for Facility ID."
 Usage: #inline
 * system = $NamingSystem_IFC
-* value = "22"
+* value = "IFC.001474222.BC.PRS"
 * period.start = "2000-01-01"
 
 Instance: Example-Identifier-IFC-00147423
