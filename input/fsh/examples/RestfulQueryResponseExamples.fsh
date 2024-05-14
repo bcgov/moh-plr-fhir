@@ -161,7 +161,7 @@ Description: "Example of a Location."
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.system = $PLRCommPurpose
 * telecom[2].extension[commPurposeExtension].valueCodeableConcept.coding.code = #MC
 * address = Example-Address-Valid
-* extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
+/** extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
 * extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-authority-extension"
 * extension[=].extension[=].valueString = "Vancouver Island"
 * extension[=].extension[+].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-delivery-area-extension"
@@ -177,7 +177,20 @@ Description: "Example of a Location."
 * extension[=].extension[=].extension[+].url = "name"
 * extension[=].extension[=].extension[=].valueString = "Downtown/VicWest"
 * extension[=].extension[=].extension[+].url = "code"
-* extension[=].extension[=].extension[=].valueIdentifier.value = "40701"
+* extension[=].extension[=].extension[=].valueIdentifier.value = "40701"**/
+* extension[serviceArea].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
+* extension[serviceArea].extension[HA].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-authority-extension"
+* extension[serviceArea].extension[HA].valueString = "Interior"
+* extension[serviceArea].extension[HSDA].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-delivery-area-extension"
+* extension[serviceArea].extension[HSDA].valueString = "Interior Okanogan"
+* extension[serviceArea].extension[LHA].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-local-health-area-extension"
+* extension[serviceArea].extension[LHA].valueString = "Kelowna Area"
+* extension[serviceArea].extension[CHSA].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-area-extension"
+* extension[serviceArea].extension[CHSA].extension[name].valueString = "Downtown Kelowna"
+* extension[serviceArea].extension[CHSA].extension[code].valueIdentifier.value = "3100"
+* extension[serviceArea].extension[PCN].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-primary-care-network-extension"
+* extension[serviceArea].extension[PCN].extension[name].valueString = "Kelowna"
+* extension[serviceArea].extension[PCN].extension[code].valueIdentifier.value = "30801"
 
 Instance: Example-GET-Practitioner-Response
 InstanceOf: Bundle
