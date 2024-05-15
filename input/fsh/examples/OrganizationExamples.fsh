@@ -154,10 +154,9 @@ Usage: #inline
 * url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-ownership-type-extension"
 * extension[0].url = "identifier"
 * extension[0].valueIdentifier.value = "PRPTY.963.PRS"
-//* extension[0].valueIdentifier.system = $PLRPropertyID
 * extension[1].url = "ownershipType"
 //* extension[1].valueCodeableConcept.coding.system = $PLRClinicOwnershipType
-//* extension[1].valueCodeableConcept.text="Other"
+* extension[1].valueCodeableConcept[0].text = "Other"
 * extension[2].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[2].valuePeriod.start = "2023-01-02"
 
@@ -168,10 +167,9 @@ Usage: #inline
 * url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-service-delivery-type-extension"
 * extension[0].url = "identifier"
 * extension[0].valueIdentifier.value = "PRPTY.258.PRS"
-//* extension[0].valueIdentifier.system = $PLRPropertyID
 * extension[1].url = "serviceDeliveryType"
 //* extension[1].valueCodeableConcept.coding.system = $PLRClinicServiceDeliveryType
-//* extension[1].valueCodeableConcept.text="Longitudinal"
+* extension[1].valueCodeableConcept[0].text = "Longitudinal"
 * extension[2].url = "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"
 * extension[2].valuePeriod.start = "2023-01-02"
 
