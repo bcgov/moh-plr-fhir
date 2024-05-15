@@ -1,9 +1,9 @@
 BCProviderRegistry : Validation Results
 =========================================
 
-err = 699, warn = 9, info = 0
+err = 697, warn = 9, info = 0
 IG Publisher Version: 1.6.7
-Generated Tue May 14 23:25:13 UTC 2024. FHIR version 4.0.1 for fhir.ca-bc.provider#1.0.0 (canonical = http://hlth.gov.bc.ca/fhir/provider)
+Generated Wed May 15 07:24:28 UTC 2024. FHIR version 4.0.1 for fhir.ca-bc.provider#1.0.0 (canonical = http://hlth.gov.bc.ca/fhir/provider)
  Build Errors : 0 / 4 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 9 / 8
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocationWithLinks-Bundle : 0 / 9 / 20
@@ -56,7 +56,7 @@ Generated Tue May 14 23:25:13 UTC 2024. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/OperationOutcome-Example-OperationOutcome-Success : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/Organization-Example-Credential-Granting-Institution : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-Example-Organization-1 : 8 / 8 / 6
- /github/workspace/fsh-generated/resources/Organization-Example-Organization-PrimaryCare : 10 / 8 / 6
+ /github/workspace/fsh-generated/resources/Organization-Example-Organization-PrimaryCare : 8 / 8 / 6
  /github/workspace/fsh-generated/resources/Organization-Example-Qualification-Organization : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Organization-IPC.00047422.BC.PRS : 4 / 5 / 4
  /github/workspace/fsh-generated/resources/Organization-IPC.00147434.BC.PRS : 14 / 7 / 3
@@ -650,8 +650,6 @@ ERROR: Organization/Example-Organization-1: Organization.address[0].extension[0]
 == fsh-generated/resources/Organization-Example-Organization-PrimaryCare.json ==
 ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[1].extension[2].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC License Status Reason Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-reason-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system#ORG)
 ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[1].extension[3].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC License Status Class Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-class-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system#AE)
-ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[4].extension[1].extension[1]: Constraint failed: ext-1: 'Must have either extensions or value[x], not both' (defined in http://hl7.org/fhir/StructureDefinition/Extension)
-ERROR: Organization/Example-Organization-PrimaryCare: Organization.extension[4].extension[2].extension[1]: Constraint failed: ext-1: 'Must have either extensions or value[x], not both' (defined in http://hl7.org/fhir/StructureDefinition/Extension)
 ERROR: Organization/Example-Organization-PrimaryCare: Organization.type[0].coding[0]: A definition for CodeSystem 'https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system' could not be found, so the code cannot be validated
 ERROR: Organization/Example-Organization-PrimaryCare: Organization.type[0]: None of the codings provided are in the value set 'BC Organization Role Code Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-organization-role-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system#ORG)
 ERROR: Organization/Example-Organization-PrimaryCare: Organization.telecom[0].extension[0].value.ofType(CodeableConcept).coding[0]: A definition for CodeSystem 'https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system' could not be found, so the code cannot be validated
