@@ -9,15 +9,15 @@ The FHIR artifacts have been created according to the current understood expecta
 As the results some features are not released yet, they are marked on as DRAFT in the Specification page.
 
 
-#### Release - FHIR version 4.0 and BCFHIR version 1
+### Release - FHIR version 4.0 and BCFHIR version 1
 
 The version information needs to be added in the message *HTTP Accept: Header* to access release 1
 * fhirVersion=4.0;BCPLRVersion=1
 
 This section describes everything that is available in this release.
 
-##### Practitioner queries
-###### EntityQuery
+#### Practitioner queries
+##### EntityQuery
 * Entity Query by IPC
 
         GET [Base]/Practitioner/<IPC>/$entityQuery
@@ -38,7 +38,7 @@ The full list of the mapping for the Naming system used in PLR is to find in thi
 
 See the following section for more [details on operations](specification.html#query-part-1---operations).
 
-###### RESTful queries
+##### RESTful queries
 * Restful GET Query by IPC
 
         GET [Base]/Practitioner/<IPC>
@@ -55,8 +55,8 @@ See the following section for more [details on operations](specification.html#qu
 
 See examples of Responses payload for Restful Queries under [restful-examples](Bundle-Example-GET-Practitioner-Param-Response.html)
 
-##### Organization queries
-###### EntityQuery
+#### Organization queries
+##### EntityQuery
 * Entity Query by IPC
 
         GET [Base]/Organization/<IPC>/$entityQuery
@@ -75,7 +75,7 @@ The full list of the mapping for the Naming system used in PLR is to find in thi
 
 See the following section for more [details on operations](specification.html#query-part-1---operations).
 
-###### RESTful queries
+##### RESTful queries
 * Restful GET Query by IPC
 
         GET [Base]/Organization/<IPC>
@@ -88,8 +88,8 @@ See the following section for more [details on operations](specification.html#qu
 _revinclude search is not implemented in release 1 for Organizations.
 See examples of Response for Restful Queries under [restful-examples](Bundle-Example-GET-Organization-Response.html)
 
-##### Location queries
-###### EntityQuery
+#### Location queries
+##### EntityQuery
 * Entity Query by IFC
 
         GET [Base]/Location/<IFC>/$entityQuery
@@ -108,7 +108,7 @@ The full list of the mapping for the Naming system used in PLR is to find in thi
 
 See the following section for more [details on operations](specification.html#query-part-1---operations).
 
-###### RESTful queries
+##### RESTful queries
 * Restful GET Query by IFC
 
         GET [Base]/Location/<IFC>
@@ -124,7 +124,7 @@ See the following section for more [details on operations](specification.html#qu
 _revinclude search is not implemented in release 1 for Locations.
 See examples of Response for Restful Queries under [restful-examples](Bundle-Example-GET-Location-Response.html)
 
-##### Maintain operations - Practitioner, Organization and Location
+#### Maintain operations - Practitioner, Organization and Location
 
 A [Maintain operation](OperationDefinition-bc-maintain.html) is used by a user to communicate a change to a single Provider (Individual or Organizational) or Facility to PLR. 
 
@@ -140,7 +140,7 @@ The PLR FHIR Server response will be a Bundle, wrapped in Parameters, with type 
 
 See details [here too](specification.html#maintain---included-in-release-1)
 
-##### Distributions
+#### Distributions
 
 A [Distribution operation](OperationDefinition-bc-distribution.html) is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service. This is different from the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.  
 The distribution is sent from PLR to a client application, via a POST message to a defined endpoint URL. 
@@ -155,7 +155,7 @@ The Bundle sent, wrapped in Parameters, should be processed by the client as an 
 
 See details [here too](specification.html#distributions---included-in-release-1)
 
-##### Future Release
+### Future Release
 
 [Batch](specification.html#batch---future)
 
