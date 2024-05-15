@@ -41,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5"}
-    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Left logo - typically the publisher's logo - project or affiliate -->
@@ -222,8 +222,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#release---fhir-version-40-and-bcfhir-version-1" id="markdown-toc-release---fhir-version-40-and-bcfhir-version-1">Release - FHIR version 4.0 and BCFHIR version 1</a></li>
+  <li><a href="#future-release" id="markdown-toc-future-release">Future Release</a></li>
+</ul>
+
 </div>
 
 <blockquote class="stu-note">
@@ -235,7 +239,7 @@ This specification is currently published as a Draft Standard on the ministry gi
 The FHIR artifacts have been created according to the current understood expectations and schedules of our partners.
 As the results some features are not released yet, they are marked on as DRAFT in the Specification page.</p>
 
-<h4 id="release---fhir-version-40-and-bcfhir-version-1">Release - FHIR version 4.0 and BCFHIR version 1</h4>
+<h3 id="release---fhir-version-40-and-bcfhir-version-1">Release - FHIR version 4.0 and BCFHIR version 1</h3>
 
 <p>The version information needs to be added in the message <em>HTTP Accept: Header</em> to access release 1</p>
 <ul>
@@ -244,8 +248,8 @@ As the results some features are not released yet, they are marked on as DRAFT i
 
 <p>This section describes everything that is available in this release.</p>
 
-<h5 id="practitioner-queries">Practitioner queries</h5>
-<h6 id="entityquery">EntityQuery</h6>
+<h4 id="practitioner-queries">Practitioner queries</h4>
+<h5 id="entityquery">EntityQuery</h5>
 <ul>
   <li>
     <p>Entity Query by IPC</p>
@@ -281,7 +285,7 @@ As the results some features are not released yet, they are marked on as DRAFT i
 
 <p>See the following section for more <a href="specification.html#query-part-1---operations">details on operations</a>.</p>
 
-<h6 id="restful-queries">RESTful queries</h6>
+<h5 id="restful-queries">RESTful queries</h5>
 <ul>
   <li>
     <p>Restful GET Query by IPC</p>
@@ -305,8 +309,8 @@ As the results some features are not released yet, they are marked on as DRAFT i
 
 <p>See examples of Responses payload for Restful Queries under <a href="Bundle-Example-GET-Practitioner-Param-Response.html">restful-examples</a></p>
 
-<h5 id="organization-queries">Organization queries</h5>
-<h6 id="entityquery-1">EntityQuery</h6>
+<h4 id="organization-queries">Organization queries</h4>
+<h5 id="entityquery-1">EntityQuery</h5>
 <ul>
   <li>
     <p>Entity Query by IPC</p>
@@ -340,7 +344,7 @@ As the results some features are not released yet, they are marked on as DRAFT i
 
 <p>See the following section for more <a href="specification.html#query-part-1---operations">details on operations</a>.</p>
 
-<h6 id="restful-queries-1">RESTful queries</h6>
+<h5 id="restful-queries-1">RESTful queries</h5>
 <ul>
   <li>
     <p>Restful GET Query by IPC</p>
@@ -360,8 +364,8 @@ As the results some features are not released yet, they are marked on as DRAFT i
 <p>_revinclude search is not implemented in release 1 for Organizations.
 See examples of Response for Restful Queries under <a href="Bundle-Example-GET-Organization-Response.html">restful-examples</a></p>
 
-<h5 id="location-queries">Location queries</h5>
-<h6 id="entityquery-2">EntityQuery</h6>
+<h4 id="location-queries">Location queries</h4>
+<h5 id="entityquery-2">EntityQuery</h5>
 <ul>
   <li>
     <p>Entity Query by IFC</p>
@@ -395,7 +399,7 @@ See examples of Response for Restful Queries under <a href="Bundle-Example-GET-O
 
 <p>See the following section for more <a href="specification.html#query-part-1---operations">details on operations</a>.</p>
 
-<h6 id="restful-queries-2">RESTful queries</h6>
+<h5 id="restful-queries-2">RESTful queries</h5>
 <ul>
   <li>
     <p>Restful GET Query by IFC</p>
@@ -418,7 +422,7 @@ See examples of Response for Restful Queries under <a href="Bundle-Example-GET-O
 <p>_revinclude search is not implemented in release 1 for Locations.
 See examples of Response for Restful Queries under <a href="Bundle-Example-GET-Location-Response.html">restful-examples</a></p>
 
-<h5 id="maintain-operations---practitioner-organization-and-location">Maintain operations - Practitioner, Organization and Location</h5>
+<h4 id="maintain-operations---practitioner-organization-and-location">Maintain operations - Practitioner, Organization and Location</h4>
 
 <p>A <a href="OperationDefinition-bc-maintain.html">Maintain operation</a> is used by a user to communicate a change to a single Provider (Individual or Organizational) or Facility to PLR.</p>
 
@@ -437,7 +441,7 @@ See examples of Response for Restful Queries under <a href="Bundle-Example-GET-L
 
 <p>See details <a href="specification.html#maintain---included-in-release-1">here too</a></p>
 
-<h5 id="distributions">Distributions</h5>
+<h4 id="distributions">Distributions</h4>
 
 <p>A <a href="OperationDefinition-bc-distribution.html">Distribution operation</a> is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service. This is different from the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.<br />
 The distribution is sent from PLR to a client application, via a POST message to a defined endpoint URL.</p>
@@ -455,7 +459,7 @@ The distribution is sent from PLR to a client application, via a POST message to
 
 <p>See details <a href="specification.html#distributions---included-in-release-1">here too</a></p>
 
-<h5 id="future-release">Future Release</h5>
+<h3 id="future-release">Future Release</h3>
 
 <p><a href="specification.html#batch---future">Batch</a></p>
 
@@ -482,7 +486,7 @@ The distribution is sent from PLR to a client application, via a POST message to
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 15, 2024 07:20+0000">2024-05-15</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 15, 2024 07:42+0000">2024-05-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
