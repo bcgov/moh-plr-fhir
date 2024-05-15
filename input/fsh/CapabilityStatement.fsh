@@ -11,7 +11,7 @@ Usage: #definition
 * description = "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.
 * Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location
 "
-* kind = #capability
+* kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #json
 * format[0].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
