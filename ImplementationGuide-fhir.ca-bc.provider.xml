@@ -11,7 +11,7 @@
   <name value="BCProviderRegistry"/>
   <title value="BC Provider Location Registry FHIR Implementation Guide"/>
   <status value="active"/>
-  <date value="2024-05-15T07:42:26+00:00"/>
+  <date value="2024-05-31T17:22:32+00:00"/>
   <publisher value="BC Ministry of Health"/>
   <contact>
     <name value="BC Ministry of Health"/>
@@ -718,6 +718,17 @@
     </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/bc-batch"/>
+      </reference>
+      <name value="Batch Maintain PLR entities."/>
+      <description value="This operation is used to create and update multiple resources (Practitioner only for now)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -886,7 +897,7 @@
         <reference value="StructureDefinition/bc-facility-health-service-delivery-area-extension"/>
       </reference>
       <name value="BC Facility Health Service Delivery Area Extension"/>
-      <description value="A code that represents the Health Service Delivery Area (HSDA)that the location is a part of."/>
+      <description value="A code that represents the Health Service Delivery Area (HSDA) that the location is a part of."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -921,6 +932,39 @@
       </reference>
       <name value="BC Facility Primary Care Network Extension"/>
       <description value="A code that represents the Primary Care Network (PCN) that the location is a part of."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-hds-subtype-extension"/>
+      </reference>
+      <name value="BC Health Delivery Site sub-type Extension"/>
+      <description value="Uses to define HDS sub type"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bc-health-delivery-site-type-extension"/>
+      </reference>
+      <name value="BC Health Delivery Site Type Extension"/>
+      <description value="Uses to define HDS Type and HDS sub type"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/bc-hds-type-value-set"/>
+      </reference>
+      <name value="BC Health Delivery Site Type Value Set"/>
+      <description value="BC ealth Delivery Site Type Value set."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1231,6 +1275,17 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/bc-batch-response-bundle"/>
+      </reference>
+      <name value="BCBatchReponseBundle"/>
+      <description value="A Bundle that is used in the PLR Batch operation."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/bc-careteam"/>
       </reference>
       <name value="BCCareTeam"/>
@@ -1481,6 +1536,17 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
+        <reference value="Bundle/Example-AddPractitioner-Batch-Bundle-Response"/>
+      </reference>
+      <name value="Example-AddPractitioner-Batch-Bundle-Response"/>
+      <description value="Example of a bundle of resources sent when responding to a practitioner create."/>
+      <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
         <reference value="Bundle/Example-AddPractitioner-Bundle"/>
       </reference>
       <name value="Example-AddPractitioner-Bundle"/>
@@ -1620,6 +1686,17 @@
       <description value="An example of a Batch Bundle that contains one each of a Practitioner bundle, Organization bundle, and a Location bundle."/>
       <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-batch-bundle"/>
       <groupingId value="Bundles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/Example-Batch-Bundle-Response"/>
+      </reference>
+      <name value="Example-Batch-Bundle-Response"/>
+      <description value="An example of a Batch Bundle that contains one each of a Practitioner bundle."/>
+      <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-batch-response-bundle"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1833,6 +1910,28 @@
       </reference>
       <name value="Example-OperationOutcome-7049"/>
       <description value="OperationOutcome example for Individual Provider search - too many results."/>
+      <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/Example-OperationOutcome-BatchError"/>
+      </reference>
+      <name value="Example-OperationOutcome-BatchError"/>
+      <description value="OperationOutcome example of a success message."/>
+      <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/Example-OperationOutcome-BatchSuccess"/>
+      </reference>
+      <name value="Example-OperationOutcome-BatchSuccess"/>
+      <description value="OperationOutcome example of a success message."/>
       <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"/>
     </resource>
     <resource>
@@ -2570,6 +2669,17 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
+        <reference value="Bundle/Example-UpdatePractitioner-Batch-Bundle-Response"/>
+      </reference>
+      <name value="Example-UpdatePractitioner-Batch-Bundle-Response"/>
+      <description value="Example of a bundle of resources sent when responding to a practitioner update."/>
+      <exampleCanonical value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
         <reference value="Bundle/Example-UpdatePractitioner-Bundle"/>
       </reference>
       <name value="Example-UpdatePractitioner-Bundle"/>
@@ -2639,7 +2749,7 @@
         <reference value="StructureDefinition/bc-availability-extension"/>
       </reference>
       <name value="Extension to represent Availability, or hours of operation, for clinic, or other Profiles"/>
-      <description value="Can represent the Available time or the Not Avaialble details"/>
+      <description value="Can represent the Available time or the Not-Available details"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

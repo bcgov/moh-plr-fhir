@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "BCProviderRegistry"] ; # 
   fhir:title [ fhir:v "BC Provider Location Registry FHIR Implementation Guide"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-05-15T07:42:26+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-05-31T17:22:32+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -815,6 +815,18 @@
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-batch> ;
+         fhir:reference [ fhir:v "OperationDefinition/bc-batch" ]
+       ] ;
+       fhir:name [ fhir:v "Batch Maintain PLR entities." ] ;
+       fhir:description [ fhir:v "This operation is used to create and update multiple resources (Practitioner only for now)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -998,7 +1010,7 @@
          fhir:reference [ fhir:v "StructureDefinition/bc-facility-health-service-delivery-area-extension" ]
        ] ;
        fhir:name [ fhir:v "BC Facility Health Service Delivery Area Extension" ] ;
-       fhir:description [ fhir:v "A code that represents the Health Service Delivery Area (HSDA)that the location is a part of." ] ;
+       fhir:description [ fhir:v "A code that represents the Health Service Delivery Area (HSDA) that the location is a part of." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1036,6 +1048,42 @@
        ] ;
        fhir:name [ fhir:v "BC Facility Primary Care Network Extension" ] ;
        fhir:description [ fhir:v "A code that represents the Primary Care Network (PCN) that the location is a part of." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-hds-subtype-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-hds-subtype-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Health Delivery Site sub-type Extension" ] ;
+       fhir:description [ fhir:v "Uses to define HDS sub type" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-health-delivery-site-type-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-health-delivery-site-type-extension" ]
+       ] ;
+       fhir:name [ fhir:v "BC Health Delivery Site Type Extension" ] ;
+       fhir:description [ fhir:v "Uses to define HDS Type and HDS sub type" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-hds-type-value-set> ;
+         fhir:reference [ fhir:v "ValueSet/bc-hds-type-value-set" ]
+       ] ;
+       fhir:name [ fhir:v "BC Health Delivery Site Type Value Set" ] ;
+       fhir:description [ fhir:v "BC ealth Delivery Site Type Value set." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1372,6 +1420,18 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-batch-response-bundle> ;
+         fhir:reference [ fhir:v "StructureDefinition/bc-batch-response-bundle" ]
+       ] ;
+       fhir:name [ fhir:v "BCBatchReponseBundle" ] ;
+       fhir:description [ fhir:v "A Bundle that is used in the PLR Batch operation." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-careteam> ;
          fhir:reference [ fhir:v "StructureDefinition/bc-careteam" ]
        ] ;
@@ -1655,6 +1715,21 @@
          fhir:value [ fhir:v "Bundle" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-AddPractitioner-Batch-Bundle-Response> ;
+         fhir:reference [ fhir:v "Bundle/Example-AddPractitioner-Batch-Bundle-Response" ]
+       ] ;
+       fhir:name [ fhir:v "Example-AddPractitioner-Batch-Bundle-Response" ] ;
+       fhir:description [ fhir:v "Example of a bundle of resources sent when responding to a practitioner create." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Bundle" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-AddPractitioner-Bundle> ;
          fhir:reference [ fhir:v "Bundle/Example-AddPractitioner-Bundle" ]
        ] ;
@@ -1846,6 +1921,21 @@
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-batch-bundle>
        ] ;
        fhir:groupingId [ fhir:v "Bundles" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Bundle" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-Batch-Bundle-Response> ;
+         fhir:reference [ fhir:v "Bundle/Example-Batch-Bundle-Response" ]
+       ] ;
+       fhir:name [ fhir:v "Example-Batch-Bundle-Response" ] ;
+       fhir:description [ fhir:v "An example of a Batch Bundle that contains one each of a Practitioner bundle." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-batch-response-bundle"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-batch-response-bundle>
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2108,6 +2198,36 @@
        ] ;
        fhir:name [ fhir:v "Example-OperationOutcome-7049" ] ;
        fhir:description [ fhir:v "OperationOutcome example for Individual Provider search - too many results." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationOutcome" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationOutcome/Example-OperationOutcome-BatchError> ;
+         fhir:reference [ fhir:v "OperationOutcome/Example-OperationOutcome-BatchError" ]
+       ] ;
+       fhir:name [ fhir:v "Example-OperationOutcome-BatchError" ] ;
+       fhir:description [ fhir:v "OperationOutcome example of a success message." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationOutcome" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/OperationOutcome/Example-OperationOutcome-BatchSuccess> ;
+         fhir:reference [ fhir:v "OperationOutcome/Example-OperationOutcome-BatchSuccess" ]
+       ] ;
+       fhir:name [ fhir:v "Example-OperationOutcome-BatchSuccess" ] ;
+       fhir:description [ fhir:v "OperationOutcome example of a success message." ] ;
        fhir:example [
          fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"^^xsd:anyURI ;
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome>
@@ -3060,6 +3180,21 @@
          fhir:value [ fhir:v "Bundle" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-UpdatePractitioner-Batch-Bundle-Response> ;
+         fhir:reference [ fhir:v "Bundle/Example-UpdatePractitioner-Batch-Bundle-Response" ]
+       ] ;
+       fhir:name [ fhir:v "Example-UpdatePractitioner-Batch-Bundle-Response" ] ;
+       fhir:description [ fhir:v "Example of a bundle of resources sent when responding to a practitioner update." ] ;
+       fhir:example [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"^^xsd:anyURI ;
+         fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Bundle" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-UpdatePractitioner-Bundle> ;
          fhir:reference [ fhir:v "Bundle/Example-UpdatePractitioner-Bundle" ]
        ] ;
@@ -3145,7 +3280,7 @@
          fhir:reference [ fhir:v "StructureDefinition/bc-availability-extension" ]
        ] ;
        fhir:name [ fhir:v "Extension to represent Availability, or hours of operation, for clinic, or other Profiles" ] ;
-       fhir:description [ fhir:v "Can represent the Available time or the Not Avaialble details" ] ;
+       fhir:description [ fhir:v "Can represent the Available time or the Not-Available details" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

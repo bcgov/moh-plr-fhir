@@ -10,7 +10,7 @@
   "name" : "BCProviderRegistry",
   "title" : "BC Provider Location Registry FHIR Implementation Guide",
   "status" : "active",
-  "date" : "2024-05-15T07:42:26+00:00",
+  "date" : "2024-05-31T17:22:32+00:00",
   "publisher" : "BC Ministry of Health",
   "contact" : [{
     "name" : "BC Ministry of Health",
@@ -965,6 +965,18 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/bc-batch"
+      },
+      "name" : "Batch Maintain PLR entities.",
+      "description" : "This operation is used to create and update multiple resources (Practitioner only for now)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -1147,7 +1159,7 @@
         "reference" : "StructureDefinition/bc-facility-health-service-delivery-area-extension"
       },
       "name" : "BC Facility Health Service Delivery Area Extension",
-      "description" : "A code that represents the Health Service Delivery Area (HSDA)that the location is a part of.",
+      "description" : "A code that represents the Health Service Delivery Area (HSDA) that the location is a part of.",
       "exampleBoolean" : false
     },
     {
@@ -1185,6 +1197,42 @@
       },
       "name" : "BC Facility Primary Care Network Extension",
       "description" : "A code that represents the Primary Care Network (PCN) that the location is a part of.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-hds-subtype-extension"
+      },
+      "name" : "BC Health Delivery Site sub-type Extension",
+      "description" : "Uses to define HDS sub type",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bc-health-delivery-site-type-extension"
+      },
+      "name" : "BC Health Delivery Site Type Extension",
+      "description" : "Uses to define HDS Type and HDS sub type",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/bc-hds-type-value-set"
+      },
+      "name" : "BC Health Delivery Site Type Value Set",
+      "description" : "BC ealth Delivery Site Type Value set.",
       "exampleBoolean" : false
     },
     {
@@ -1522,6 +1570,18 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/bc-batch-response-bundle"
+      },
+      "name" : "BCBatchReponseBundle",
+      "description" : "A Bundle that is used in the PLR Batch operation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/bc-careteam"
       },
       "name" : "BCCareTeam",
@@ -1793,6 +1853,18 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
+        "reference" : "Bundle/Example-AddPractitioner-Batch-Bundle-Response"
+      },
+      "name" : "Example-AddPractitioner-Batch-Bundle-Response",
+      "description" : "Example of a bundle of resources sent when responding to a practitioner create.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
         "reference" : "Bundle/Example-AddPractitioner-Bundle"
       },
       "name" : "Example-AddPractitioner-Bundle",
@@ -1944,6 +2016,18 @@
       "description" : "An example of a Batch Bundle that contains one each of a Practitioner bundle, Organization bundle, and a Location bundle.",
       "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-batch-bundle",
       "groupingId" : "Bundles"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/Example-Batch-Bundle-Response"
+      },
+      "name" : "Example-Batch-Bundle-Response",
+      "description" : "An example of a Batch Bundle that contains one each of a Practitioner bundle.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-batch-response-bundle"
     },
     {
       "extension" : [{
@@ -2176,6 +2260,30 @@
       },
       "name" : "Example-OperationOutcome-7049",
       "description" : "OperationOutcome example for Individual Provider search - too many results.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/Example-OperationOutcome-BatchError"
+      },
+      "name" : "Example-OperationOutcome-BatchError",
+      "description" : "OperationOutcome example of a success message.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/Example-OperationOutcome-BatchSuccess"
+      },
+      "name" : "Example-OperationOutcome-BatchSuccess",
+      "description" : "OperationOutcome example of a success message.",
       "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"
     },
     {
@@ -2979,6 +3087,18 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
+        "reference" : "Bundle/Example-UpdatePractitioner-Batch-Bundle-Response"
+      },
+      "name" : "Example-UpdatePractitioner-Batch-Bundle-Response",
+      "description" : "Example of a bundle of resources sent when responding to a practitioner update.",
+      "exampleCanonical" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
         "reference" : "Bundle/Example-UpdatePractitioner-Bundle"
       },
       "name" : "Example-UpdatePractitioner-Bundle",
@@ -3054,7 +3174,7 @@
         "reference" : "StructureDefinition/bc-availability-extension"
       },
       "name" : "Extension to represent Availability, or hours of operation, for clinic, or other Profiles",
-      "description" : "Can represent the Available time or the Not Avaialble details",
+      "description" : "Can represent the Available time or the Not-Available details",
       "exampleBoolean" : false
     },
     {
