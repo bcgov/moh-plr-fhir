@@ -77,7 +77,7 @@ Description: "A bundle that submits Organization and OrganizationAffiliation inf
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for creating or updating a BC Organization."
-* entry contains Organization 1..* MS and OrganizationAffiliation 0..* MS and RoleRelationship 0..* MS and OperationOutcome 0..1 MS
+* entry contains Organization 1..* MS and OrganizationAffiliation 0..* MS and RoleRelationship 0..* MS
 * entry[Organization].resource only BCOrganization
 * entry[OrganizationAffiliation].resource only BCOrganizationAffiliation
 * entry[RoleRelationship].resource only BCRoleRelationships
