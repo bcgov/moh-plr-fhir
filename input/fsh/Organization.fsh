@@ -7,14 +7,15 @@ Description: "General constraints on the Organization resource for use in the BC
 * identifier only BCIdentifier
 * active MS
 * active = true
-* type MS
+* type 0..1 MS
 * type from OrganizationRoleVS (required)
+* type.extension contains HealthDeliveryTypeExtension named HDSType 0..1 MS /*need to be 1..1*/
 * name 0..1 MS
 * name.extension contains 
-	NameUseExtension named use 0..1 MS and 
-	PeriodExtension named period 0..1 MS and
-	EndReasonExtension named endReason 0..1 MS and
-        OwnerExtension named owner 0..1 MS
+	  NameUseExtension named use 0..1 MS and 
+	  PeriodExtension named period 0..1 MS and
+	  EndReasonExtension named endReason 0..1 MS and
+    OwnerExtension named owner 0..1 MS
 * telecom only BCContactPoint 
 * telecom MS
 * address only BCAddress
@@ -25,11 +26,11 @@ Description: "General constraints on the Organization resource for use in the BC
   * telecom MS
   * address MS
 * extension contains LicenseStatusExtension named status 0..* MS and
-	ConfidentialityExtension named confidentiality 0..1 MS and
-	NoteExtension named note 0..* MS and
-  PrimaryCareClinicExtension named primaryCareDetails 0..1 MS and
-  ClinicPayeeNumberExtension named clinicPayeeNumber 0..* MS and
-  AvailabilityExtension named availability 0..* MS 
+	 ConfidentialityExtension named confidentiality 0..1 MS and
+	 NoteExtension named note 0..* MS and
+   PrimaryCareClinicExtension named primaryCareDetails 0..1 MS and
+   ClinicPayeeNumberExtension named clinicPayeeNumber 0..* MS and
+   AvailabilityExtension named availability 0..* MS 
 
 Invariant: invariant-rltn-2
 Description: "One participating organization or one location allowed; not both."
@@ -76,7 +77,7 @@ Description: "A bundle that submits Organization and OrganizationAffiliation inf
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for creating or updating a BC Organization."
-* entry contains Organization 1..* MS and OrganizationAffiliation 0..* MS and RoleRelationship 0..* MS
+* entry contains Organization 1..* MS and OrganizationAffiliation 0..* MS and RoleRelationship 0..* MS and OperationOutcome 0..1 MS
 * entry[Organization].resource only BCOrganization
 * entry[OrganizationAffiliation].resource only BCOrganizationAffiliation
 * entry[RoleRelationship].resource only BCRoleRelationships

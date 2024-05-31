@@ -48,7 +48,7 @@ Description: "A bundle that submits Location information."
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for creating or updating a BC Location."
-* entry contains Location 1..* MS and OrganizationAffiliation 0..* MS and PractitionerRole 0..* MS
+* entry contains Location 1..* MS and OrganizationAffiliation 0..* MS and PractitionerRole 0..* MS and OperationOutcome 0..1 MS
 * entry[Location].resource only BCLocation
 * entry[OrganizationAffiliation].resource only BCOrganizationAffiliation
 * entry[PractitionerRole].resource only BCRoleRelationships

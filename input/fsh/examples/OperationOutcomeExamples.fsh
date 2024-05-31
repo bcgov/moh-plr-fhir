@@ -42,3 +42,21 @@ Description: "OperationOutcome example of a success message."
 * issue[0].details.coding.system = $PLRError
 * issue[0].details.coding.code = #PRS.PRP.MTN.UNK.0.0.7067
 * issue[0].details.text = "Query successful"
+
+Instance: Example-OperationOutcome-BatchSuccess
+InstanceOf: BCOperationOutcome
+Description: "OperationOutcome example of a success message."
+* issue[0].severity = #information
+* issue[0].code = #business-rule
+* issue[0].details.coding.system = $PLRError
+* issue[0].details.coding.code = #PRS.PRP.MTN.UNK.0.0.0000
+* issue[0].details.text = "The provider transaction was processed."
+
+Instance: Example-OperationOutcome-BatchError
+InstanceOf: BCOperationOutcome
+Description: "OperationOutcome example of a success message."
+* issue[0].severity = #error
+* issue[0].code = #business-rule
+* issue[0].details.coding.system = $PLRError
+* issue[0].details.coding.code = #GRS.DPS.UNK.UNK.0.0.7049
+* issue[0].details.text = "Some results were removed under data permission rules."

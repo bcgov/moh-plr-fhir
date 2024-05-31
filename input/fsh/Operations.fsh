@@ -569,7 +569,6 @@ Usage: #definition
 * parameter[=].documentation = "The Response Bundle with the OperationOutcome and the list of BCLocationBundle found by the search."
 * parameter[=].type = #Bundle
 
-
 Instance: Maintain
 InstanceOf: OperationDefinition
 Description: "This operation is used to create and update the resources that represent a Provider or Facility."
@@ -630,6 +629,77 @@ Usage: #definition
 * parameter[=].min = 0
 * parameter[=].max = "1"
 * parameter[=].documentation = "A [BC Practitioner Bundle](StructureDefinition-bc-practitioner-bundle.html), or [BC Organization Bundle](StructureDefinition-bc-organization-bundle.html) or a [BC Location Bundle](StructureDefinition-bc-location-bundle.html)."
+* parameter[=].type = #Bundle
+
+* parameter[+].name = #outcome
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The operation outcome - success, warning and error messages."
+* parameter[=].type = #OperationOutcome
+
+Instance: Batch
+InstanceOf: OperationDefinition
+Description: "This operation is used to create and update multiple resources (Practitioner only for now)"
+Usage: #definition
+* id = "bc-batch"
+* url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-batch"
+* name = "Batch"
+* title = "Batch Maintain PLR entities."
+* status = #draft
+* kind = #operation
+* code = #batch
+* resource[0] = #Bundle
+* system = true
+* type = false
+* instance = false
+* parameter[+].name = #messageId
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "A unique message ID."
+* parameter[=].type = #string
+
+* parameter[+].name = #messageTime
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "When the message was sent."
+* parameter[=].type = #dateTime
+
+* parameter[+].name = #batch
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "A [BC Batch Bundle](StructureDefinition-bc-batch-bundle.html)"
+* parameter[=].type = #Bundle
+
+* parameter[+].name = #messageId
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "A unique message ID."
+* parameter[=].type = #string
+
+* parameter[+].name = #messageTime
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "When the message was sent."
+* parameter[=].type = #dateTime
+
+* parameter[+].name = #requestMessageId
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The request message ID."
+* parameter[=].type = #string
+
+* parameter[+].name = #batch
+* parameter[=].use = #out
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "A [BC Batch Bundle](StructureDefinition-bc-batch-response-bundle.html)"
 * parameter[=].type = #Bundle
 
 * parameter[+].name = #outcome
