@@ -331,6 +331,8 @@ Title: "BC Specialty Source Extension"
 Description: "The specialty source."
 * ^context.type = #element
 * ^context.expression = "PractitionerRole.specialty"
+* ^context[+].type = #element
+* ^context[=].expression = "Practitioner.communication"
 * value[x] only string
 * value[x] 1..1 MS
 
