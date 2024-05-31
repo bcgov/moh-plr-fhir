@@ -3,7 +3,7 @@ Id: bc-hds-subtype-extension
 Title: "BC Health Delivery Site sub-type Extension"
 Description: "Uses to define HDS sub type"
 * ^context.type = #element
-* ^context.expression = "Organization"
+* ^context.expression = "Extension"
 * extension contains hdsSubType 1..1 MS and
      identifier 0..1 MS and
      PeriodExtension named period 1..1 and 
@@ -208,9 +208,7 @@ Id: bc-organization-clinic-service-delivery-type-extension
 Title: "Extension to represent the Clinic Service Delivery type."
 Description: "The (Primary Care) Clinic Service Delivery type, the expected value is one from Longitudinal, Episodic, and Mixed"
 * ^context.type = #element
-* ^context.expression = "Organization"
-* ^context[+].type = #element
-* ^context[=].expression = "Extension"
+* ^context.expression = "Extension"
 * extension contains serviceDeliveryType 1..1 MS and
      identifier 0..1 MS and 
      PeriodExtension named period 1..1 MS and 
