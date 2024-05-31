@@ -57,6 +57,9 @@ All POST and PUT Requests are sent using a Paramaters resource and the Response 
 * rest[0].operation[0].name = "maintain"
 * rest[0].operation[0].documentation = "A BC resource Bundle is sent to create/update one resource"
 * rest[0].operation[0].definition = Canonical(Maintain)
+* rest[0].operation[1].name = "batch"
+* rest[0].operation[1].documentation = "A BC resource Bundle is sent to create/update multiple resources (Practitioner only for now)"
+* rest[0].operation[1].definition = Canonical(Batch)
 
 * rest[0].resource[0].type = #Practitioner
 * rest[0].resource[0].profile = Canonical(BCPractitioner)

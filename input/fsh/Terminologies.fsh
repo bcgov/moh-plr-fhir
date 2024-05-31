@@ -27,6 +27,7 @@ Alias: $PLRRoleCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistr
 Alias: $PLROrganizationRoleCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system
 Alias: $PLRQulaificationCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-credential-code-system
 Alias: $PLRExpertise = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-expertise-code-system
+Alias: $PLRHDSType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-hds-type-code-system
 
 Alias: $PLRWorkLocationID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-work-location-id
 Alias: $PLRNoteID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id
