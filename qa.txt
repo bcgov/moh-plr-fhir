@@ -1,9 +1,9 @@
 BCProviderRegistry : Validation Results
 =========================================
 
-err = 843, warn = 11, info = 0
-IG Publisher Version: 1.6.10
-Generated Fri May 31 22:45:59 UTC 2024. FHIR version 4.0.1 for fhir.ca-bc.provider#1.0.0 (canonical = http://hlth.gov.bc.ca/fhir/provider)
+err = 843, warn = 11, info = 20
+IG Publisher Version: 1.6.11
+Generated Mon Jun 10 23:21:04 UTC 2024. FHIR version 4.0.1 for fhir.ca-bc.provider#1.0.0 (canonical = http://hlth.gov.bc.ca/fhir/provider)
  Build Errors : 0 / 4 / 0
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocation-Bundle : 0 / 9 / 8
  /github/workspace/fsh-generated/resources/Bundle-Example-AddLocationWithLinks-Bundle : 0 / 9 / 20
@@ -162,8 +162,8 @@ Generated Fri May 31 22:45:59 UTC 2024. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-not-available-extension : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-note-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-operation-outcome : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-affiliation : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization : 0 / 0 / 2
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-affiliation : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-bundle : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-legal-name-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-clinic-owner-extension : 0 / 0 / 1
@@ -175,17 +175,17 @@ Generated Fri May 31 22:45:59 UTC 2024. FHIR version 4.0.1 for fhir.ca-bc.provid
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-organization-primary-care-clinic-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-owner-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-period-extension : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner : 0 / 0 / 4
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-bundle : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-condition-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-deathdate-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-disciplinary-action-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-qualification-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-relationship-extension : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-role : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-practitioner-role : 0 / 0 / 4
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-primary-network : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-relationship-type-extension : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-bc-role-relationships : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-bc-role-relationships : 0 / 0 / 4
  /github/workspace/fsh-generated/resources/StructureDefinition-bc-specialty-source-extension : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ValueSet-bc-address-validation-status-value-set : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ValueSet-bc-communication-purpose-value-set : 0 / 1 / 1
@@ -468,13 +468,17 @@ ERROR: Bundle/Example-GET-Location-Response: Bundle.entry[1].resource/*Location/
 ERROR: Bundle/Example-GET-Location-Response: Bundle.entry[1].resource/*Location/IFC.00047422.BC.PRS*/.telecom[2].extension[0].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC Communication Purpose Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system#MC)
 ERROR: Bundle/Example-GET-Location-Response: Bundle.entry[1].resource/*Location/IFC.00047422.BC.PRS*/.address.extension[0].value.ofType(CodeableConcept).coding[0]: A definition for CodeSystem 'https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system' could not be found, so the code cannot be validated
 ERROR: Bundle/Example-GET-Location-Response: Bundle.entry[1].resource/*Location/IFC.00047422.BC.PRS*/.address.extension[0].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC Communication Purpose Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system#BC)
+INFORMATION: Bundle/Example-GET-Location-Response: Bundle: No types could be determined from the search string, so the types can't be checked
 == fsh-generated/resources/Bundle-Example-GET-Organization-Response.json ==
 ERROR: Bundle/Example-GET-Organization-Response: Bundle.entry[1].resource/*Organization/IPC.00047422.BC.PRS*/.telecom[0].extension[0].value.ofType(CodeableConcept).coding[0]: A definition for CodeSystem 'https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system' could not be found, so the code cannot be validated
 ERROR: Bundle/Example-GET-Organization-Response: Bundle.entry[1].resource/*Organization/IPC.00047422.BC.PRS*/.telecom[0].extension[0].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC Communication Purpose Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system#BC)
 ERROR: Bundle/Example-GET-Organization-Response: Bundle.entry[1].resource/*Organization/IPC.00047422.BC.PRS*/.address[0].extension[0].value.ofType(CodeableConcept).coding[0]: A definition for CodeSystem 'https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system' could not be found, so the code cannot be validated
 ERROR: Bundle/Example-GET-Organization-Response: Bundle.entry[1].resource/*Organization/IPC.00047422.BC.PRS*/.address[0].extension[0].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC Communication Purpose Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system#BC)
+INFORMATION: Bundle/Example-GET-Organization-Response: Bundle: No types could be determined from the search string, so the types can't be checked
 == fsh-generated/resources/Bundle-Example-GET-OrganizationAffiliation-Response.json ==
+INFORMATION: Bundle/Example-GET-OrganizationAffiliation-Response: Bundle: No types could be determined from the search string, so the types can't be checked
 == fsh-generated/resources/Bundle-Example-GET-OrganizationAffiliation-byOrganization-Response.json ==
+INFORMATION: Bundle/Example-GET-OrganizationAffiliation-byOrganization-Response: Bundle: No types could be determined from the search string, so the types can't be checked
 == fsh-generated/resources/Bundle-Example-GET-Practitioner-Param-Response.json ==
 ERROR: Bundle/Example-GET-Practitioner-Param-Response: Bundle.entry[1].resource/*Practitioner/IPC.00047422.BC.PRS*/.extension[2].extension[0].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC License Status Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system#SUSPENDED)
 ERROR: Bundle/Example-GET-Practitioner-Param-Response: Bundle.entry[1].resource/*Practitioner/IPC.00047422.BC.PRS*/.extension[2].extension[1].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC License Status Reason Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-reason-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system#LTP)
@@ -506,11 +510,14 @@ ERROR: Bundle/Example-GET-Practitioner-Response: Bundle.entry[1].resource/*Pract
 ERROR: Bundle/Example-GET-Practitioner-Response: Bundle.entry[1].resource/*Practitioner/IPC.00047422.BC.PRS*/.address[0].extension[0].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC Communication Purpose Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system#BC)
 ERROR: Bundle/Example-GET-Practitioner-Response: Bundle.entry[1].resource/*Practitioner/IPC.00047422.BC.PRS*/.communication[0]: None of the codings provided are in the value set 'BC Language Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-language-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system#B01)
 ERROR: Bundle/Example-GET-Practitioner-Response: Bundle.entry[1].resource/*Practitioner/IPC.00047422.BC.PRS*/.communication[1]: None of the codings provided are in the value set 'BC Language Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-language-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system#F16)
+INFORMATION: Bundle/Example-GET-Practitioner-Response: Bundle: No types could be determined from the search string, so the types can't be checked
 == fsh-generated/resources/Bundle-Example-GET-PractitionerRole-Response.json ==
+INFORMATION: Bundle/Example-GET-PractitionerRole-Response: Bundle: No types could be determined from the search string, so the types can't be checked
 == fsh-generated/resources/Bundle-Example-GET-PractitionerRole-byPractitioner-Response.json ==
 ERROR: Bundle/Example-GET-PractitionerRole-byPractitioner-Response: Bundle.entry[1].resource/*PractitionerRole/IPC.00047422.BC.PRS*/.specialty[0].extension[2].value.ofType(CodeableConcept).coding[0]: A definition for CodeSystem 'https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system' could not be found, so the code cannot be validated
 ERROR: Bundle/Example-GET-PractitionerRole-byPractitioner-Response: Bundle.entry[1].resource/*PractitionerRole/IPC.00047422.BC.PRS*/.specialty[0].extension[2].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC End Reason Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-end-reason-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system#CHG)
 ERROR: Bundle/Example-GET-PractitionerRole-byPractitioner-Response: Bundle.entry[1].resource/*PractitionerRole/IPC.00047422.BC.PRS*/.code[0]: None of the codings provided are in the value set 'BC Practitioner Role Code Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-practitioner-role-value-set|1.0.0), and a coding from this value set is required) (codes = http://fhir.infoway-inforoute.ca/CodeSystem/scptype#MD)
+INFORMATION: Bundle/Example-GET-PractitionerRole-byPractitioner-Response: Bundle: No types could be determined from the search string, so the types can't be checked
 == fsh-generated/resources/Bundle-Example-Individual-Provider-Bundle.json ==
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle: Slice 'Bundle.entry:Practitioner': a matching slice is required, but not found (from http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle|1.0.0). Note that other slices are allowed in addition to this required slice
 ERROR: Bundle/Example-Individual-Provider-Bundle: Bundle: Slice 'Bundle.entry:PractitionerRole': a matching slice is required, but not found (from http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle|1.0.0). Note that other slices are allowed in addition to this required slice
@@ -557,6 +564,7 @@ ERROR: Bundle/Example-Response-Query-Organization-Bundle: Bundle.entry[1].resour
 ERROR: Bundle/Example-Response-Query-Organization-Bundle: Bundle.entry[1].resource/*Bundle/Example-Organizational-Provider-Bundle*/.entry[0].resource/*Organization/IPC.00147437.BC.PRS*/.address[0].extension[0].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC Communication Purpose Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-communication-purpose-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system#BC)
 ERROR: Bundle/Example-Response-Query-Organization-Bundle: Bundle.entry[1].resource/*Bundle/Example-Organizational-Provider-Bundle*/.entry[0].resource/*Organization/IPC.00147437.BC.PRS*/.type[0]: None of the codings provided are in the value set 'BC Organization Role Code Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-organization-role-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system#ORG)
 ERROR: Bundle/Example-Response-Query-Organization-Bundle: Bundle.entry[1].resource/*Bundle/Example-Organizational-Provider-Bundle*/: Slice 'Bundle.entry:Organization': a matching slice is required, but not found (from http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle|1.0.0). Note that other slices are allowed in addition to this required slice
+INFORMATION: Bundle/Example-Response-Query-Organization-Bundle: Bundle: No types could be determined from the search string, so the types can't be checked
 == fsh-generated/resources/Bundle-Example-Response-Query-Practitioner-Bundle.json ==
 ERROR: Bundle/Example-Response-Query-Practitioner-Bundle: Bundle.entry[1].resource/*Bundle/Example-Individual-Provider-Bundle*/.entry[0].resource/*Practitioner/IPC.00147422.BC.PRS*/.extension[2].extension[0].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC License Status Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system#SUSPENDED)
 ERROR: Bundle/Example-Response-Query-Practitioner-Bundle: Bundle.entry[1].resource/*Bundle/Example-Individual-Provider-Bundle*/.entry[0].resource/*Practitioner/IPC.00147422.BC.PRS*/.extension[2].extension[1].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC License Status Reason Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-reason-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system#LTP)
@@ -569,6 +577,7 @@ ERROR: Bundle/Example-Response-Query-Practitioner-Bundle: Bundle.entry[1].resour
 ERROR: Bundle/Example-Response-Query-Practitioner-Bundle: Bundle.entry[1].resource/*Bundle/Example-Individual-Provider-Bundle*/.entry[1].resource/*PractitionerRole/IPC.00147422.BC.PRS*/.code[0]: None of the codings provided are in the value set 'BC Practitioner Role Code Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-practitioner-role-value-set|1.0.0), and a coding from this value set is required) (codes = http://fhir.infoway-inforoute.ca/CodeSystem/scptype#MD)
 ERROR: Bundle/Example-Response-Query-Practitioner-Bundle: Bundle.entry[1].resource/*Bundle/Example-Individual-Provider-Bundle*/: Slice 'Bundle.entry:Practitioner': a matching slice is required, but not found (from http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle|1.0.0). Note that other slices are allowed in addition to this required slice
 ERROR: Bundle/Example-Response-Query-Practitioner-Bundle: Bundle.entry[1].resource/*Bundle/Example-Individual-Provider-Bundle*/: Slice 'Bundle.entry:PractitionerRole': a matching slice is required, but not found (from http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle|1.0.0). Note that other slices are allowed in addition to this required slice
+INFORMATION: Bundle/Example-Response-Query-Practitioner-Bundle: Bundle: No types could be determined from the search string, so the types can't be checked
 == fsh-generated/resources/Bundle-Example-UpdateLocationWithLinks-Bundle.json ==
 ERROR: Bundle/Example-UpdateLocationWithLinks-Bundle: Bundle.entry[0].resource/*Location/IFC.00147422.BC.PRS*/.extension[0].extension[1].value.ofType(CodeableConcept).coding[0]: A definition for CodeSystem 'https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system' could not be found, so the code cannot be validated
 ERROR: Bundle/Example-UpdateLocationWithLinks-Bundle: Bundle.entry[0].resource/*Location/IFC.00147422.BC.PRS*/.extension[0].extension[1].value.ofType(CodeableConcept): None of the codings provided are in the value set 'BC End Reason Value Set' (https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-end-reason-value-set|1.0.0), and a coding from this value set is required) (codes = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system#CHG)
@@ -1211,7 +1220,9 @@ WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/St
 == fsh-generated/resources/StructureDefinition-bc-note-extension.json ==
 == fsh-generated/resources/StructureDefinition-bc-operation-outcome.json ==
 == fsh-generated/resources/StructureDefinition-bc-organization.json ==
+INFORMATION: StructureDefinition/bc-organization: StructureDefinition.snapshot.element[47].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 == fsh-generated/resources/StructureDefinition-bc-organization-affiliation.json ==
+INFORMATION: StructureDefinition/bc-organization-affiliation: StructureDefinition.snapshot.element[13].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 == fsh-generated/resources/StructureDefinition-bc-organization-bundle.json ==
 == fsh-generated/resources/StructureDefinition-bc-organization-clinic-legal-name-extension.json ==
 == fsh-generated/resources/StructureDefinition-bc-organization-clinic-owner-extension.json ==
@@ -1224,6 +1235,9 @@ WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/St
 == fsh-generated/resources/StructureDefinition-bc-owner-extension.json ==
 == fsh-generated/resources/StructureDefinition-bc-period-extension.json ==
 == fsh-generated/resources/StructureDefinition-bc-practitioner.json ==
+INFORMATION: StructureDefinition/bc-practitioner: StructureDefinition.snapshot.element[33].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+INFORMATION: StructureDefinition/bc-practitioner: StructureDefinition.snapshot.element[48].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+INFORMATION: StructureDefinition/bc-practitioner: StructureDefinition.snapshot.element[92].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 == fsh-generated/resources/StructureDefinition-bc-practitioner-bundle.json ==
 == fsh-generated/resources/StructureDefinition-bc-practitioner-condition-extension.json ==
 == fsh-generated/resources/StructureDefinition-bc-practitioner-deathdate-extension.json ==
@@ -1231,10 +1245,16 @@ WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/St
 == fsh-generated/resources/StructureDefinition-bc-practitioner-qualification-extension.json ==
 == fsh-generated/resources/StructureDefinition-bc-practitioner-relationship-extension.json ==
 == fsh-generated/resources/StructureDefinition-bc-practitioner-role.json ==
+INFORMATION: StructureDefinition/bc-practitioner-role: StructureDefinition.snapshot.element[13].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+INFORMATION: StructureDefinition/bc-practitioner-role: StructureDefinition.snapshot.element[35].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+INFORMATION: StructureDefinition/bc-practitioner-role: StructureDefinition.snapshot.element[49].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 == fsh-generated/resources/StructureDefinition-bc-primary-network.json ==
 WARNING: StructureDefinition.where(url = 'http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-primary-network'): The Implementation Guide contains no examples for this profile
 == fsh-generated/resources/StructureDefinition-bc-relationship-type-extension.json ==
 == fsh-generated/resources/StructureDefinition-bc-role-relationships.json ==
+INFORMATION: StructureDefinition/bc-role-relationships: StructureDefinition.snapshot.element[17].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+INFORMATION: StructureDefinition/bc-role-relationships: StructureDefinition.snapshot.element[37].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+INFORMATION: StructureDefinition/bc-role-relationships: StructureDefinition.snapshot.element[51].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 == fsh-generated/resources/StructureDefinition-bc-specialty-source-extension.json ==
 == fsh-generated/resources/ValueSet-bc-address-validation-status-value-set.json ==
 == fsh-generated/resources/ValueSet-bc-communication-purpose-value-set.json ==
