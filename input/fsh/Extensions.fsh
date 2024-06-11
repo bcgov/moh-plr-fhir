@@ -22,6 +22,8 @@ Title: "BC Health Delivery Site Type Extension"
 Description: "Uses to define HDS Type and HDS sub type"
 * ^context.type = #element
 * ^context.expression = "Organization"
+* ^context[+].type = #element
+* ^context[=].expression = "Organization.type"
 * extension contains hdsType 1..1 MS and
      /*identifier 0..1 MS and */ // hds_type not ready, might not need it
      PeriodExtension named period 1..1 MS and 
