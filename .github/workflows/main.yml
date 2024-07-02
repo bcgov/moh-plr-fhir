@@ -29,6 +29,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Set branch name
+        id: branch
+        run: echo "::set-output name=BRANCH_NAME::${GITHUB_REF##*/}"
+
       - name: Update the image to the latest publisher and then run it
         uses: docker://hl7fhir/ig-publisher-base:latest
         with:
@@ -39,5 +43,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output
-          destination_dir: ./$GITHUB_REF
+          destination_dir: ${{ steps.branch.outputs.BRANCH_NAME }}
           
