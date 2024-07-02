@@ -1,0 +1,60 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "bc-distribution",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition bc-distribution</b></p><a name=\"bc-distribution\"> </a><a name=\"hcbc-distribution\"> </a><a name=\"hcbc-distribution-en\"> </a><p>URL: [base]/$distribution</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>messageId</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>A unique message ID.</p>\n</div></td></tr><tr><td>IN</td><td>messageTime</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td/><td><div><p>When the message was sent.</p>\n</div></td></tr><tr><td>IN</td><td>distribution</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td><div><p>A <a href=\"StructureDefinition-bc-practitioner-bundle.html\">BC Practitioner Bundle</a>, or <a href=\"StructureDefinition-bc-organization-bundle.html\">BC Organization Bundle</a> or a <a href=\"StructureDefinition-bc-location-bundle.html\">BC Location Bundle</a> with the latest Provider/Facility data.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution",
+  "version" : "1.0.0",
+  "name" : "Distribution",
+  "title" : "PLR entities sent out in a distribution.",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2024-07-02T14:06:56+00:00",
+  "publisher" : "BC Ministry of Health",
+  "contact" : [{
+    "name" : "BC Ministry of Health",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"
+    }]
+  }],
+  "description" : "This operation is used to distribute the resources that represent a Provider or Facility.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CA",
+      "display" : "Canada"
+    }]
+  }],
+  "code" : "distribution",
+  "resource" : ["Bundle"],
+  "system" : true,
+  "type" : false,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "messageId",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "A unique message ID.",
+    "type" : "string"
+  },
+  {
+    "name" : "messageTime",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "When the message was sent.",
+    "type" : "dateTime"
+  },
+  {
+    "name" : "distribution",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "A [BC Practitioner Bundle](StructureDefinition-bc-practitioner-bundle.html), or [BC Organization Bundle](StructureDefinition-bc-organization-bundle.html) or a [BC Location Bundle](StructureDefinition-bc-location-bundle.html) with the latest Provider/Facility data.",
+    "type" : "Bundle"
+  }]
+}
