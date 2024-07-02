@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="bc-batch"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition bc-batch</b></p><a name="bc-batch"> </a><a name="hcbc-batch"> </a><a name="hcbc-batch-en"> </a><p>URL: [base]/$batch</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>messageId</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>A unique message ID.</p>
+</div></td></tr><tr><td>IN</td><td>messageTime</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td><td/><td><div><p>When the message was sent.</p>
+</div></td></tr><tr><td>IN</td><td>batch</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td><div><p>A <a href="StructureDefinition-bc-batch-bundle.html">BC Batch Bundle</a></p>
+</div></td></tr><tr><td>OUT</td><td>messageId</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>A unique message ID.</p>
+</div></td></tr><tr><td>OUT</td><td>messageTime</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td><td/><td><div><p>When the message was sent.</p>
+</div></td></tr><tr><td>OUT</td><td>requestMessageId</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>The request message ID.</p>
+</div></td></tr><tr><td>OUT</td><td>batch</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td><div><p>A <a href="StructureDefinition-bc-batch-response-bundle.html">BC Batch Bundle</a></p>
+</div></td></tr><tr><td>OUT</td><td>outcome</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/operationoutcome.html">OperationOutcome</a></td><td/><td><div><p>The operation outcome - success, warning and error messages.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-batch"/>
+  <version value="1.0.0"/>
+  <name value="Batch"/>
+  <title value="Batch Maintain PLR entities."/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2024-07-02T15:18:00+00:00"/>
+  <publisher value="BC Ministry of Health"/>
+  <contact>
+    <name value="BC Ministry of Health"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"/>
+    </telecom>
+  </contact>
+  <description value="This operation is used to create and update multiple resources (Practitioner only for now)"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="CA"/>
+      <display value="Canada"/>
+    </coding>
+  </jurisdiction>
+  <code value="batch"/>
+  <resource value="Bundle"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="messageId"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="A unique message ID."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="messageTime"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="When the message was sent."/>
+    <type value="dateTime"/>
+  </parameter>
+  <parameter>
+    <name value="batch"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="A [BC Batch Bundle](StructureDefinition-bc-batch-bundle.html)"/>
+    <type value="Bundle"/>
+  </parameter>
+  <parameter>
+    <name value="messageId"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="A unique message ID."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="messageTime"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="When the message was sent."/>
+    <type value="dateTime"/>
+  </parameter>
+  <parameter>
+    <name value="requestMessageId"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The request message ID."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="batch"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="A [BC Batch Bundle](StructureDefinition-bc-batch-response-bundle.html)"/>
+    <type value="Bundle"/>
+  </parameter>
+  <parameter>
+    <name value="outcome"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The operation outcome - success, warning and error messages."/>
+    <type value="OperationOutcome"/>
+  </parameter>
+</OperationDefinition>
