@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="bc-extended-practitioner-query"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition bc-extended-practitioner-query</b></p><a name="bc-extended-practitioner-query"> </a><a name="hcbc-extended-practitioner-query"> </a><a name="hcbc-extended-practitioner-query-en"> </a><p>URL: [base]/Practitioner/$extendedQuery</p><p>URL: [base]/Practitioner/[id]/$extendedQuery</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>identifier</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]</p>
+</div></td></tr><tr><td>IN</td><td>family</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for practitioners with the specified surname. May use trailing wildcards, e.g. Smith*</p>
+</div></td></tr><tr><td>IN</td><td>given</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for practitioners with the specified given name. May use trailing wildcards, e.g. Ann*</p>
+</div></td></tr><tr><td>IN</td><td>status</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners with a license that has the specified status.</p>
+</div></td></tr><tr><td>IN</td><td>address-city</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>Search for practitioners with an address that includes the given city.</p>
+</div></td></tr><tr><td>IN</td><td>gender</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners with the specified gender.</p>
+</div></td></tr><tr><td>IN</td><td>role</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners that have an associated PractitionerRole code with the specified value (e.g. MD or RN)</p>
+</div></td></tr><tr><td>IN</td><td>communication</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners who can communicate with the specified language code. May be a comma separated list of language codes, e.g. F01,E09.</p>
+</div></td></tr><tr><td>IN</td><td>expertise</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners with a qualification that matches the specified expertise. May be a comma separated list of expertise codes, e.g. AM53,K34.</p>
+</div></td></tr><tr><td>IN</td><td>status-reason</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="http://hl7.org/fhir/R4/search.html#token">token</a>)</td><td/><td><div><p>Search for practitioners with a license that has the specified status reason.</p>
+</div></td></tr><tr><td>IN</td><td>withHistory</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td><td/><td><div><p>true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.</p>
+</div></td></tr><tr><td>OUT</td><td>bundle</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td><div><p>The Response Bundle with the OperationOutcome and the list of BCPractitionerBundle found by the search.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-practitioner-query"/>
+  <version value="1.0.0"/>
+  <name value="PractitionerExtendedQuery"/>
+  <title value="Query for a Practitioner that returns associated resources"/>
+  <status value="draft"/>
+  <kind value="query"/>
+  <date value="2024-07-02T14:59:51+00:00"/>
+  <publisher value="BC Ministry of Health"/>
+  <contact>
+    <name value="BC Ministry of Health"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"/>
+    </telecom>
+  </contact>
+  <description value="This operation is used to query for a provider and will return the information for that provider along with any instances that can be found by following associations to other providers, organizations, or facilities."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="CA"/>
+      <display value="Canada"/>
+    </coding>
+  </jurisdiction>
+  <code value="extendedQuery"/>
+  <resource value="Practitioner"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="identifier"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]"/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="family"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with the specified surname. May use trailing wildcards, e.g. Smith*"/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="given"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with the specified given name. May use trailing wildcards, e.g. Ann*"/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="status"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with a license that has the specified status."/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="address-city"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with an address that includes the given city."/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="gender"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with the specified gender."/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="role"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners that have an associated PractitionerRole code with the specified value (e.g. MD or RN)"/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="communication"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners who can communicate with the specified language code. May be a comma separated list of language codes, e.g. F01,E09."/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="expertise"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with a qualification that matches the specified expertise. May be a comma separated list of expertise codes, e.g. AM53,K34."/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="status-reason"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Search for practitioners with a license that has the specified status reason."/>
+    <type value="string"/>
+    <searchType value="token"/>
+  </parameter>
+  <parameter>
+    <name value="withHistory"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned."/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="bundle"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The Response Bundle with the OperationOutcome and the list of BCPractitionerBundle found by the search."/>
+    <type value="Bundle"/>
+  </parameter>
+</OperationDefinition>

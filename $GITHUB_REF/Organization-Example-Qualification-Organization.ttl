@@ -1,0 +1,29 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/Organization/Example-Qualification-Organization> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Example-Qualification-Organization"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
+       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization Example-Qualification-Organization</b></p><a name=\"Example-Qualification-Organization\"> </a><a name=\"hcExample-Qualification-Organization\"> </a><a name=\"hcExample-Qualification-Organization-en\"> </a><p><b>name</b>: CREDENTIAL_CREDENTIALGRANTINGINSTTXT</p><p><b>address</b>: CALGARY AB CA </p></div>"
+  ] ; # 
+  fhir:name [ fhir:v "CREDENTIAL_CREDENTIALGRANTINGINSTTXT"] ; # 
+  fhir:address ( [
+     fhir:city [ fhir:v "CALGARY" ] ;
+     fhir:state [ fhir:v "AB" ] ;
+     fhir:country [ fhir:v "CA" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
