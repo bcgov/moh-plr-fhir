@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR Design and Overview - BC Provider Location Registry FHIR Implementation Guide v1.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/bc-fhir.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Left logo - typically the publisher's logo - project or affiliate -->
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">
+            <img height="71" alt="Project home" src="assets/images/BCMinistry.png"/>
+          </a>
+        </div>
+
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">BC Provider Location Registry FHIR Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">1.0.0 - fhirVersion-4.0; BCPLRVersion=1
+
+
+
+  <img alt="Canada flag" src="assets/images/can.svg" height="16" title="Canada"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Overview</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Design
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="specification.html">FHIR Design and Overview</a>
+      </li>
+      <li>
+        <a href="designexamples.html">URL Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="transition.html">V3 Transition</a>
+  </li>
+  <li>
+    <a href="connected_partner.html">Connected Partner</a>
+  </li>
+  <li>
+    <a href="future.html">Releases and Future Plans</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All</a>
+      </li>
+      <li>
+        <a href="artifacts.html#1">Capabilities</a>
+      </li>
+      <li>
+        <a href="artifacts.html#2">Operations</a>
+      </li>
+      <li>
+        <a href="artifacts.html#3">Operations Request Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#4">Operations Response Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#5">Bundles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#6">Practitioner</a>
+      </li>
+      <li>
+        <a href="artifacts.html#7">Organization</a>
+      </li>
+      <li>
+        <a href="artifacts.html#8">Facility</a>
+      </li>
+      <li>
+        <a href="artifacts.html#9">Healthcare Service</a>
+      </li>
+      <li>
+        <a href="artifacts.html#10">Care Team</a>
+      </li>
+      <li>
+        <a href="artifacts.html#11">Restful Response Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#12">Extensions</a>
+      </li>
+      <li>
+        <a href="artifacts.html#13">Data Types</a>
+      </li>
+      <li>
+        <a href="artifacts.html#14">Value Sets</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="techdetails.html">Technical Details</a>
+  </li>
+  <li>
+    <a href="glossary.html">Glossary</a>
+  </li>
+  <li>
+    <a href="credits.html">Credits</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>FHIR Design and Overview</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">BC Provider Location Registry FHIR Implementation Guide - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://hlth.gov.bc.ca/fhir/provider/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>FHIR Design and Overview</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#fhir-resources" id="markdown-toc-fhir-resources">FHIR Resources</a></li>
+  <li><a href="#use-cases" id="markdown-toc-use-cases">Use Cases</a></li>
+</ul>
+
+</div>
+
+<blockquote class="stu-note">
+<p>
+This specification is currently published as a Draft Standard on the ministry github and is not intended for implementation.  Feedback is welcome but readers should understand that there is more work to be done in testing the profiles and operations defined in this guide.  For more information, please see the <a href="future.html">Future Plans</a> page in this guide.</p>
+</blockquote>
+
+<h3 id="fhir-resources">FHIR Resources</h3>
+
+<p>In FHIR, the primary resources used are named Practitioner, Organization, and Location.  BC has created profiles of each of these resources for use in the PLR system.  The BC profiles are dependent on the Canadian FHIR Baseline.</p>
+
+<h4 id="individual-provider">Individual Provider</h4>
+<p>Each Individual Provider is composed of a <a href="StructureDefinition-bc-practitioner.html">Practitioner instance</a> and at least one <a href="StructureDefinition-bc-practitioner-role.html">PractitionerRole instance</a> which holds the Practitioner’s role, such as Nurse or Dentist and specialties.</p>
+
+<p>Any other PractitionerRole instances will hold the relationships between an Individual Provider and related Facilities and to Organizational Providers.  A single PractitionerRole instance contains a single relationship.  Thus multiple PractitionerRoles will be required to represent multiple relationships.  There is an <a href="StructureDefinition-bc-practitioner-relationship-extension.html">extension</a> off Practitioner that represents relationships between Individual Providers.</p>
+
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="Ind_Provider_in_FHIR.PNG" alt="FHIR Resources for Individual Provider" />
+  <figcaption>Figure 2.1 - FHIR Resources for Individual Provider</figcaption>
+</figure>
+
+<h4 id="organizational-provider">Organizational Provider</h4>
+<p>Each Organizational Provider is composed of an <a href="StructureDefinition-bc-organization.html">Organization instance</a> with zero or more <a href="StructureDefinition-bc-organization-affiliation.html">OrganizationAffiliation instances</a> and zero or more <a href="StructureDefinition-bc-practitioner-role.html">PractitionerRole instances</a>.</p>
+
+<p>The PractitionerRole is used to represent relationships from Individual Providers to Organizational Providers. OrganizationAffiliation holds the relationship betwen two different Organizational Providers as well as the relationship between an Organizational Provider and Facilities.  A single OrganizationAffilication instance contains a single relationship.  Thus multiple OrganizationAffiliations will be required to represent multiple relationships.  The same applies to PractitionerRole.</p>
+
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="Org_Provider_in_FHIR.PNG" alt="FHIR Resources for Organizational Provider" />
+  <figcaption>Figure 2.2 - FHIR Resources for Organizational Provider</figcaption>
+</figure>
+
+<h4 id="facility">Facility</h4>
+
+<p>Each Facility is composed of a <a href="StructureDefinition-bc-location.html">Location instance</a>.</p>
+
+<p>The relationship between a Facility and a Individual Provider is conveyed in a <a href="StructureDefinition-bc-practitioner-role.html">PractitionerRole instance</a> while the relationship between a Facility and an Organizational Provider is conveyed in an <a href="StructureDefinition-bc-organization-affiliation.html">OrganizationAffiliation instance</a>.  As above multiple PractitionerRoles and OrganizationAffiliations will be required to represent multiple relationships.</p>
+
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="Facility_in_FHIR.PNG" alt="FHIR Resources for Location" />
+  <figcaption>Figure 2.3 - FHIR Resources for Facility</figcaption>
+</figure>
+
+<h4 id="healthcare-providers-with-multiple-roles">Healthcare Providers with Multiple Roles</h4>
+<p>A practitioner providing services in multiple roles, for example, as a Nurse or a Dentist, will have a separate record in PLR for each role.  This means in FHIR for example there will be two Practitioner instances, one for Nurse and one for Dentist, each Practitioner instance being identical, distinguishable only by reviewing the associated Practitioner Role profile instance.  Note that strictly speaking, parts of the Practitioner instances that represent the same person may not be identical if the Provider gave the College of Nurses a slightly different name than the College of Dental Surgeons (like short forms, or last name changes).  It is best practice to treat the Dentist and Nurse as unique Practitioners in the context of FHIR interactions and BC PLR.</p>
+
+<!---
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_fhir_prac_org_fac.png" alt="BC FHIR Resources"/>
+  <figcaption>Figure 2.4 - BC FHIR Resources</figcaption>
+</figure>
+{::options parse_block_html="true" /}
+--->
+
+<!---
+### Relationships between Resources
+#### Provider to Provider Relationships
+
+##### Individual Provider to Individual Provider
+Individual Provider to Individual Provider relationships are used for showing how Providers are related to each other.  For instance, a LOCUM Provider can be referenced using this capability.
+To show the relationship between two Individual Providers, the [BC Practitioner Relationship extension](StructureDefinition-bc-practitioner-relationship-extension.html) was created for the Practitioner resource.  This allows for a relationship type and a linkage between two BC Practitioners to be stated.  NOTE: It is expected that the relationship would be found on both Practitioner instances.
+
+##### Individual Provider to Organizational Provider
+To show the relationship between an Individual Provider and an Organizational Provider (i.e. a Provider working at a hospital), the [BC PractitionerRole profile](StructureDefinition-bc-practitioner-role.html) is used.  This resource has a practitioner data element and an organization data element along with an extension that is used to describe the role the Individual Provider plays at the organization, e.g. employed by.
+
+##### Organizational Provider to Organizational Provider
+To show the relationship between two Organizational Providers (i.e. a subsidiary organization or a care team related to Good Health Clinic Inc.), the [BC OrganizationAffiliation profile](StructureDefinition-bc-organization-affiliation.html) is used.  This resource has an organization data element and a participating organization data element along with a code that is used to indicate the nature of the affiliation between the two organizations.
+
+#### Provider to Facility Relationships
+
+##### Individual Provider to Facility
+To show the relationship between an Individual Provider and a Facility (i.e. a works-at relationship), the [BC PractitionerRole profile](StructureDefinition-bc-practitioner-role.html) is used.  Instead of the organization data element, the location data element is used to indicate that a Provider is related to a Facility.
+
+##### Organization Provider to Facility
+To show the relationship between an Organizational Provider and a Facility (i.e. facilities where the organization does its work), the [BC OrganizationAffiliation profile](StructureDefinition-bc-organization-affiliation.html) is used.  Instead of the participating organization data element, the location data element is used to indicate that an organization is related to a Facility.
+--->
+
+<h3 id="use-cases">Use Cases</h3>
+<p>There are many use cases that support the existing PLR functionality:</p>
+
+<ul>
+  <li>Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location</li>
+  <li>Maintain - used when an external source is communicating a change to a Practitioner, Organization or Location</li>
+  <li>Batch - allows for the sending of multiple Maintain interactions in a single request</li>
+  <li>Queries - a set of FHIR Operations and RESTful queries are defined that allow the querying of PLR FHIR instances</li>
+</ul>
+
+<h4 id="distributions---included-in-release-1">Distributions - included in RELEASE 1</h4>
+
+<p>A <a href="OperationDefinition-bc-distribution.html">Distribution operation</a> is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.<br />
+The distribution is sent from PLR to a client application by sending a Bundle (of type ‘collection’) wrapped in Parameters, via a RESTful POST to a client nominated endpoint URL.  The Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity.  The Bundle includes one of the following sets:</p>
+
+<ol>
+  <li>PractitionerRole(s) and Practitioner;</li>
+  <li>OrganizationAffiliation(s), PractitionerRole(s) and Organization;</li>
+  <li>OrganizationAffiliation(s), PractitionerRole(s) and Location.</li>
+</ol>
+
+<p>There will be one POST request per distribution and each distribution will descirbe a single Individual Provider, Organizational Provider or Facility.</p>
+
+<p>POST [Base]/$distribution</p>
+
+<p>The response to a distribution SHALL be HTTP 200 or 201 OK.  Anything else and the reliable messaging function will retry to send the request until a 200 is received back or times out.</p>
+
+<h4 id="maintain---included-in-release-1">Maintain - included in RELEASE 1</h4>
+<p>A <a href="OperationDefinition-bc-maintain.html">Maintain operation</a> is used by a user to communicate a change to a single Provider (Individual or Organizational) or Facility to PLR. A Bundle is sent, wrapped in Parameters, and includes one of the following sets:</p>
+
+<ol>
+  <li>PractitionerRole(s) and Practitioner;</li>
+  <li>OrganizationAffiliation(s), PractitionerRole(s) and Organization;</li>
+  <li>OrganizationAffiliation(s), PractitionerRole(s) and Location.</li>
+</ol>
+
+<p>POST [Base]/$maintain</p>
+
+<p>The PLR FHIR Server response will be a Bundle, wrapped in Parameters, with type set to “collection” that contains the created or updated resources that represent the Provider (Individual or Organizational) or Facility.  The Bundle includes one of the following sets (same as request):</p>
+
+<ol>
+  <li>PractitionerRole(s) and Practitioner;</li>
+  <li>OrganizationAffiliation(s), PractitionerRole(s) and Organization;</li>
+  <li>OrganizationAffiliation(s), PractitionerRole(s) and Location;</li>
+  <li>OperationOutcome</li>
+</ol>
+
+<p>The response also has an entry of OperationOutcome that has informational, warning or error messages.</p>
+
+<p>A maintain Bundle SHALL only update or create a single Provider or Facility.  Thus, if the message is requesting a relationship to a Provider be created, the target Provider SHALL already exist in PLR.</p>
+
+<h4 id="operations-fhir-resource-structure">Operations FHIR Resource Structure</h4>
+
+<p>The $maintain and $distribution FHIR Resource structure is described on each individual Operation page; below is a summary of that structure to aid understanding.  The diagram shows a Practitioner Bundle, but it could be an Organization or Location Bundle as well.</p>
+
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="Parameters-maintain-distribution.PNG" alt="Parameters Structure" />
+  <figcaption>Figure 2.5 - BC Maintain and Distribution Structure</figcaption>
+</figure>
+
+<h4 id="query-part-1---operations">Query Part 1 - Operations</h4>
+<p>PLR FHIR has defined a set of FHIR Operations to search for Providers and Facilities.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR’s case, the server would need to include resources that make up the full Provider and additionally return related Providers or Facilities.</p>
+
+<p>The two query operations are:</p>
+
+<ul>
+  <li>$entityQuery - used to return the full <a href="OperationDefinition-bc-entity-practitioner-query.html">Individual</a> or <a href="OperationDefinition-bc-entity-organization-query.html">Organization</a> or <a href="OperationDefinition-bc-entity-location-query.html">Facility</a> without the associated resources linked within the relationships - included in RELEASE 1</li>
+  <li>$extendedQuery - used to return the full <a href="OperationDefinition-bc-extended-practitioner-query.html">Individual</a> or <a href="OperationDefinition-bc-extended-organization-query.html">Organization</a> or <a href="OperationDefinition-bc-extended-location-query.html">Facility</a> along with all directly referenced Individuals, Organizations or Facilities - FUTURE</li>
+</ul>
+
+<h5 id="entityquery---included-in-release-1">EntityQuery - included in RELEASE 1</h5>
+<p>The syntax for the $entityQuery operation is:</p>
+
+<ul>
+  <li>GET [Base]/[resource]/id/$entityQuery to retrieve a specific Provider or Facility where the id is known</li>
+  <li>GET [Base]/[resource]/$entityQuery?param1&amp;param2&amp;… to search for a Provider or Facility with search parameters instead of an id</li>
+</ul>
+
+<p>Although PLR supports many different types of identifiers, the resource id is the identifier assigned by PLR when the resource is created, internally called the IPC for Providers and IFC for Facilities.  This id is always returned in the response and should be persisted by the requestor.  To search with other identifiers stored in PLR and attached to Providers or Facilities, the search parameter ‘identifier’ and ‘identifier-type’ should be used.</p>
+
+<p>The parameters for the $entityQuery operation will be the search parameters listed further below.</p>
+
+<h5 id="extendedquery---future">ExtendedQuery - FUTURE</h5>
+<p>The syntax for the $extendedQuery operation is:</p>
+
+<ul>
+  <li>GET [Base]/[resource]/id/$extendedQuery to retrieve the full information about a specific Provider or Facility where the id is known</li>
+  <li>GET [Base]/[resource]/$extendedQuery?param1&amp;param2&amp;… to search and retrieve the full information about a Provider or Facility</li>
+</ul>
+
+<p>The parameters for the $extendedQuery operation will be the search parameters listed further below.</p>
+
+<h5 id="example-search-set-response-bundle">Example Search Set Response Bundle</h5>
+
+<p>It shows the structure at a highlevel, as described on this web page. 
+If this was an Organization search the structure is the same, however the Bundles would include Organization and OrganizationAffiliation(s).
+If this was a Location search the structure is the same, however the Bundles would include Location and OrganizationAffiliation(s).</p>
+
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="bc_searchset_bundle_practitioner_response.png" alt="BC FHIR Resources" />
+  <figcaption>Figure 2.6 - BC FHIR Query Response Bundle Structure</figcaption>
+</figure>
+
+<p>A FHIR example of a real message can be found <a href="Bundle-Example-Response-Query-Practitioner-Bundle.html">here</a>.</p>
+
+<h5 id="query-supported-search-parameters">Query Supported Search Parameters</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th style="text-align: left">Search Parameter Name</th>
+      <th style="text-align: left">Additional Information</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Practitioner</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">given-name</td>
+      <td style="text-align: left">String. May use trailing wildcards, e.g. Ann*.	First Name and Last Name are mandatory unless one of City, Expertise or Language is populated.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">surname</td>
+      <td style="text-align: left">String, May use trailing wildcards, e.g. Ann*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">role</td>
+      <td style="text-align: left">String code for the PractitionerRole (e.g. MD or RN)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">language</td>
+      <td style="text-align: left">May be a comma separated list of language codes, e.g. F01,E09.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">expertise</td>
+      <td style="text-align: left">May be a comma separated list of expertise codes, e.g. AM53,K34. Expertise Types will be filtered on the Role Type selected.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">status</td>
+      <td style="text-align: left">String code for status of the license</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">status-reason</td>
+      <td style="text-align: left">String code for status-reason of the license</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">address-city</td>
+      <td style="text-align: left">String, full city name, e.g. Vancouver</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">withHistory</td>
+      <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">identifier</td>
+      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier=[system]”</td>
+      <td>“[value]</td>
+    </tr>
+    <tr>
+      <td>Organization</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">name</td>
+      <td style="text-align: left">String, mandatory. May use trailing wildcards, e.g. Clinic* or *Care</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">description</td>
+      <td style="text-align: left">String, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">type</td>
+      <td style="text-align: left">String for role type code, mandatory, mapping to BCOrganization.type.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">address-line1</td>
+      <td style="text-align: left">String, e.g 1200 Douglas st - search will run on Physical address, then Mailing address if no match was found on. May use trailing wildcards, e.g. Douglas*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">address-city</td>
+      <td style="text-align: left">String, full city name, e.g. Vancouver</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">withHistory</td>
+      <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">identifier</td>
+      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier= [system] “</td>
+      <td>“[value]</td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">name</td>
+      <td style="text-align: left">String, May use trailing wildcards, e.g. Clinic*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">address-city</td>
+      <td style="text-align: left">String, full city name, e.g. Vancouver</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">address-line1</td>
+      <td style="text-align: left">String,  e.g. 1000 Douglas st</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">otheraddress-line1</td>
+      <td style="text-align: left">String, e.g. 1000 Douglas st - Not implemented yet</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">healthAuthority</td>
+      <td style="text-align: left">String, only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">healthServiceDeliveryArea</td>
+      <td style="text-align: left">See healthAuthority</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">localHealthArea</td>
+      <td style="text-align: left">See healthAuthority</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">communityHealthServiceArea</td>
+      <td style="text-align: left">See healthAuthority</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">primaryCareNetwork</td>
+      <td style="text-align: left">Search for locations within the specified Primary Care Network. Not implemented yet.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">withHistory</td>
+      <td style="text-align: left">true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: left">identifier</td>
+      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier= [system] “</td>
+      <td>“[value]</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Notes:
+There is a limit to the number of search results returned = 20. A message will be provided indicating maximum search results were returned.</p>
+
+<p>Wildcard</p>
+<ul>
+  <li>The wildcard character is ‘*’.</li>
+  <li>The wildcard character must be trailing.</li>
+  <li>Only one wildcard character is allowed in each name fields for Practitioner search. More than 1 wildcard character is allowed in each allowed field for Organization search</li>
+  <li>At least 1 character must be entered before the wildcard (except for Organization name, Organization Name search allows the 1st character to be a wildcard.)</li>
+</ul>
+
+<h4 id="query-part-2---restful">Query Part 2 - Restful</h4>
+
+<p>The initial design covers all the use cases where the user is interested in receiving or updating the full Provider (Individual or Organizational) or Facility (Location) dataset. As a result several FHIR resources are returned or submitted in a Bundle; those resources represent the full dataset of a Provider or Facility.</p>
+
+<p>A resource based RESTful approach breaks down queries into resource focused, interactions.</p>
+
+<p>The following describes the request URL and which profiles are returned:</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th style="text-align: left">Request URL</th>
+      <th style="text-align: left">Instance Returned</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">GET [Base]/Practitioner/<IPC></IPC></td>
+      <td style="text-align: left"><a href="StructureDefinition-bc-practitioner.html">BCPractitioner</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">GET [Base]/PractitionerRole/<IPC or="" Relationship-id=""></IPC></td>
+      <td style="text-align: left"><a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a> for the practitioner’s role and specialties information, and/or <a href="StructureDefinition-bc-role-relationships.html">BCRoleRelationship</a>, for the relationships info between practitioner and organization or location</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">GET [Base]/Location/<IFC></IFC></td>
+      <td style="text-align: left"><a href="StructureDefinition-bc-location.html">BCLocation</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">GET [Base]/Organization/<IPC></IPC></td>
+      <td style="text-align: left"><a href="StructureDefinition-bc-organization.html">BCOrganization</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">GET [Base]/OrganizationAffiliation/<IPC or="" Relationship-id=""></IPC></td>
+      <td style="text-align: left"><a href="StructureDefinition-bc-organization-affiliation.html">BCOrganizationAffiliation</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="practitioner">Practitioner</h5>
+<p>Returns a single resource; id for Practitioner is the <strong>IPC identifier</strong></p>
+<pre><code class="language-htm">GET [Base]/Practitioner/IPC.00012343.BC.PRS 
+</code></pre>
+
+<h5 id="organization">Organization</h5>
+<p>Returns a single resource; id for Organization is the <strong>IPC identifier</strong></p>
+<pre><code class="language-htm">GET [Base]/Organization/IPC.00012343.BC.PRS
+</code></pre>
+
+<h5 id="location">Location</h5>
+<p>Returns a single resource; id for Location is the <strong>IFC identifier</strong></p>
+<pre><code class="language-htm">GET [Base]/Location/IFC.00876532.BC.PRS
+</code></pre>
+<h5 id="practitionerrole---future">PractitionerRole - FUTURE</h5>
+
+<p>Id for PractitionerRole can be</p>
+<ul>
+  <li>the <strong>IPC identifier</strong> for the <a href="StructureDefinition-bc-practitioner-role.html">BCPractionerRole</a> instance carrying the Practionner’s role and specialties information
+    <pre><code class="language-htm">GET [Base]/PractitionerRole/IPC.00012343.BC.PRS
+</code></pre>
+  </li>
+  <li>or a <strong>relationship identifier</strong> that will return a single <a href="StructureDefinition-bc-role-relationships.html">BCRoleRelationship</a> instance
+    <pre><code class="language-htm">GET [Base]/PractitionerRole/RELNS.1234.BC.PRS
+</code></pre>
+  </li>
+</ul>
+
+<h6 id="practitionerrole---parameters">PractitionerRole - Parameters</h6>
+
+<p>Several search parameters are available:</p>
+<ul>
+  <li>practitioner</li>
+  <li>organization</li>
+  <li>location</li>
+</ul>
+
+<p>This returns all the PractitionerRoles related to a Practitioner (BCPractionerRole and BCRoleRelationship)</p>
+<pre><code class="language-htm">GET [Base]/PractitionerRole?practitioner=Practitioner/IPC.00012343.BC.PRS
+</code></pre>
+
+<p>This returns all the PractitionerRoles related to an Organization (of instance BCRoleRelationship only)</p>
+<pre><code class="language-htm">GET [Base]/PractitionerRole?organization=Organization/IPC.00012343.BC.PRS
+</code></pre>
+
+<p>This returns all the PractitionerRoles related to a Location (of instance BCRoleRelationship only)</p>
+<pre><code class="language-htm">GET [Base]/PractitionerRole?location=Location/IFC.00012343.BC.PRS
+</code></pre>
+
+<h5 id="organizationaffiliation---future">OrganizationAffiliation - FUTURE</h5>
+
+<p>Returns a single resource; id for OrganizationAffiliation is a relationship ID</p>
+<pre><code class="language-htm">GET [Base]/OrganizationAffiliation/RELNS.1234.PRS
+</code></pre>
+
+<h6 id="organizationaffiliation---parameters">OrganizationAffiliation - Parameters</h6>
+
+<p>Parameters to search with are:</p>
+<ul>
+  <li>organization</li>
+  <li>location</li>
+</ul>
+
+<p>This returns all OrganizationAffiliations for the specified Organization</p>
+<pre><code class="language-htm">GET [Base]/OrganizationAffiliation?organization=Organization/IPC.00012343.BC.PRS
+</code></pre>
+
+<p>This returns all OrganizationAffiliations for the specified Location</p>
+<pre><code class="language-htm">GET [Base]/OrganizationAffiliation?location=Location/IFC.00012343.BC.PRS
+</code></pre>
+
+<h4 id="batch---future">Batch - FUTURE</h4>
+<p>Batch allows for many independent transactions to be sent in a single operation. It also uses Bundles, but a batch Bundle (Bundle.type = ‘batch’), that wraps a number of Bundles. The batch Bundle is not expected in the parameters but as a JSON file. It must contain at least one or more of:</p>
+
+<ol>
+  <li>a collection-Bundle (with PractitionerRole(s) and Practitioner) to add/update an Individual Provider</li>
+  <li>a collection-Bundle (with OrganizationAffiliation(s), PractitionerRole(s) and Organization) to add/update an Organizational Provider</li>
+  <li>a collection-Bundle (with OrganizationAffiliations(s), PractitionerRole(s), and Location) to add/update a Facility</li>
+</ol>
+
+<p>The response Bundle is similarly structured to the request, populating and echoing back the results of each contained Bundle.  The only difference is that OperationOutcome SHALL also be included for each collection-Bundle for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn’t processed due to validation or non-business errors.</p>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 2, 2024 15:11+0000">2024-07-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
