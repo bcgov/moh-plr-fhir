@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "bc-distribution"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition bc-distribution</b></p><a name=\"bc-distribution\"> </a><a name=\"hcbc-distribution\"> </a><a name=\"hcbc-distribution-en\"> </a><p>URL: [base]/$distribution</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>messageId</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>A unique message ID.</p>\n</div></td></tr><tr><td>IN</td><td>messageTime</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td/><td><div><p>When the message was sent.</p>\n</div></td></tr><tr><td>IN</td><td>distribution</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td><div><p>A <a href=\"StructureDefinition-bc-practitioner-bundle.html\">BC Practitioner Bundle</a>, or <a href=\"StructureDefinition-bc-organization-bundle.html\">BC Organization Bundle</a> or a <a href=\"StructureDefinition-bc-location-bundle.html\">BC Location Bundle</a> with the latest Provider/Facility data.</p>\n</div></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "Distribution"] ; # 
+  fhir:title [ fhir:v "PLR entities sent out in a distribution."] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-07-03T22:17:34+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "BC Ministry of Health" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "This operation is used to distribute the resources that represent a Provider or Facility."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "CA" ] ;
+       fhir:display [ fhir:v "Canada" ]
+     ] )
+  ] ) ; # 
+  fhir:code [ fhir:v "distribution"] ; # 
+  fhir:resource ( [ fhir:v "Bundle"] ) ; # 
+  fhir:system [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "messageId" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "A unique message ID." ] ;
+     fhir:type [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "messageTime" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "When the message was sent." ] ;
+     fhir:type [ fhir:v "dateTime" ]
+  ] [
+     fhir:name [ fhir:v "distribution" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "A [BC Practitioner Bundle](StructureDefinition-bc-practitioner-bundle.html), or [BC Organization Bundle](StructureDefinition-bc-organization-bundle.html) or a [BC Location Bundle](StructureDefinition-bc-location-bundle.html) with the latest Provider/Facility data." ] ;
+     fhir:type [ fhir:v "Bundle" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

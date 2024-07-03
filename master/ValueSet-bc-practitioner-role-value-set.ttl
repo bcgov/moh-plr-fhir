@@ -1,0 +1,47 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-practitioner-role-value-set> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "bc-practitioner-role-value-set"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet bc-practitioner-role-value-set</b></p><a name=\"bc-practitioner-role-value-set\"> </a><a name=\"hcbc-practitioner-role-value-set\"> </a><a name=\"hcbc-practitioner-role-value-set-en\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <code>http://fhir.infoway-inforoute.ca/CodeSystem/scptype</code></li><li>Include all codes defined in <code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system</code></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-practitioner-role-value-set"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "PractitionerRoleVS"] ; # 
+  fhir:title [ fhir:v "BC Practitioner Role Code Value Set"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-07-03T22:17:34+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "BC Ministry of Health" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "BC Practitioner Role Codes."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "CA" ] ;
+       fhir:display [ fhir:v "Canada" ]
+     ] )
+  ] ) ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://fhir.infoway-inforoute.ca/CodeSystem/scptype"^^xsd:anyURI ]
+     ] [
+       fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system"^^xsd:anyURI ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,50 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/Example-OrganizationAffiliation-Loc2> a fhir:OrganizationAffiliation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Example-OrganizationAffiliation-Loc2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OrganizationAffiliation Example-OrganizationAffiliation-Loc2</b></p><a name=\"Example-OrganizationAffiliation-Loc2\"> </a><a name=\"hcExample-OrganizationAffiliation-Loc2\"> </a><a name=\"hcExample-OrganizationAffiliation-Loc2-en\"> </a><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: Identifier: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc</code>/IPC.90009000.PRS.BC (, period: 2000-01-01 --&gt; (ongoing))</p><p><b>code</b>: <span title=\"Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system OWNS}\">OWNS</span></p><p><b>location</b>: Identifier: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc</code>/IFC.001474222.BC.PRS (, period: 2000-01-01 --&gt; (ongoing))</p></div>"
+  ] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+  ] ; # 
+  fhir:organization [
+     fhir:identifier [
+       fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "IPC.90009000.PRS.BC" ] ;
+       fhir:period [
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+       ]
+     ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "OWNS" ]
+     ] )
+  ] ) ; # 
+  fhir:location ( [
+     fhir:identifier [
+       fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "IFC.001474222.BC.PRS" ] ;
+       fhir:period [
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+       ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
