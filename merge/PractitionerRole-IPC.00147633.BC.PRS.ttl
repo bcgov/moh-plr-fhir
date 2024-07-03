@@ -1,0 +1,32 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/PractitionerRole/IPC.00147633.BC.PRS> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "IPC.00147633.BC.PRS"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
+       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole IPC.00147633.BC.PRS</b></p><a name=\"IPC.00147633.BC.PRS\"> </a><a name=\"hcIPC.00147633.BC.PRS\"> </a><a name=\"hcIPC.00147633.BC.PRS-en\"> </a><p><b>practitioner</b>: <a href=\"Bundle-Example-AddPractitioner-Bundle.html#urn-uuid-67b11c73-c2ee-474f-ab64-56b863a1cc87\">Bundle: type = collection</a></p><p><b>code</b>: <span title=\"Codes:{http://fhir.infoway-inforoute.ca/CodeSystem/scptype MD}\">MD</span></p></div>"
+  ] ; # 
+  fhir:practitioner [
+     fhir:reference [ fhir:v "urn:uuid:67b11c73-c2ee-474f-ab64-56b863a1cc87" ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://fhir.infoway-inforoute.ca/CodeSystem/scptype"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "MD" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

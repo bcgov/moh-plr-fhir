@@ -1,0 +1,194 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "Example-GET-Location-Response",
+  "type" : "searchset",
+  "link" : [{
+    "relation" : "self",
+    "url" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00047422.BC.PRS"
+  }],
+  "entry" : [{
+    "fullUrl" : "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552",
+    "resource" : {
+      "resourceType" : "OperationOutcome",
+      "id" : "Example-OperationOutcome-Success",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"OperationOutcome_Example-OperationOutcome-Success\"> </a><p class=\"res-header-id\"><b>Generated Narrative: OperationOutcome Example-OperationOutcome-Success</b></p><a name=\"Example-OperationOutcome-Success\"> </a><a name=\"hcExample-OperationOutcome-Success\"> </a><a name=\"hcExample-OperationOutcome-Success-en\"> </a><h3>Issues</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td style=\"display: none\">*</td><td>information</td><td>business-rule</td><td><span title=\"Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system PRS.PRP.MTN.UNK.0.0.7067}\">Query successful</span></td></tr></table></div>"
+      },
+      "issue" : [{
+        "severity" : "information",
+        "code" : "business-rule",
+        "details" : {
+          "coding" : [{
+            "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system",
+            "code" : "PRS.PRP.MTN.UNK.0.0.7067"
+          }],
+          "text" : "Query successful"
+        }
+      }]
+    },
+    "search" : {
+      "mode" : "outcome"
+    }
+  },
+  {
+    "fullUrl" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00047422.BC.PRS",
+    "resource" : {
+      "resourceType" : "Location",
+      "id" : "IFC.00047422.BC.PRS",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Location_IFC.00047422.BC.PRS\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Location IFC.00047422.BC.PRS</b></p><a name=\"IFC.00047422.BC.PRS\"> </a><a name=\"hcIFC.00047422.BC.PRS\"> </a><a name=\"hcIFC.00047422.BC.PRS-en\"> </a><p><b>identifier</b>: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc</code>/IFC.00047422.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href=\"ftp://someftp.com\">ftp://someftp.com</a></p><p><b>address</b>: 1000 DOUGLAS ST Kelowna BC V6P7B8 CA </p><p><b>physicalType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type bu}\">Building</span></p></div>"
+      },
+      "extension" : [{
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-authority-extension",
+          "valueString" : "Interior"
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-delivery-area-extension",
+          "valueString" : "Interior Okanogan"
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-local-health-area-extension",
+          "valueString" : "Kelowna Area"
+        },
+        {
+          "extension" : [{
+            "url" : "code",
+            "valueIdentifier" : {
+              "value" : "3100"
+            }
+          },
+          {
+            "url" : "name",
+            "valueString" : "Downtown Kelowna"
+          }],
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-area-extension"
+        },
+        {
+          "extension" : [{
+            "url" : "code",
+            "valueIdentifier" : {
+              "value" : "30801"
+            }
+          },
+          {
+            "url" : "name",
+            "valueString" : "Kelowna"
+          }],
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-primary-care-network-extension"
+        }],
+        "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"
+      }],
+      "identifier" : [{
+        "system" : "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc",
+        "value" : "IFC.00047422.BC.PRS",
+        "period" : {
+          "start" : "2000-01-01"
+        }
+      }],
+      "name" : "General Hospital",
+      "_name" : {
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+          "valuePeriod" : {
+            "start" : "2000-01-01"
+          }
+        }]
+      },
+      "telecom" : [{
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+              "code" : "BC"
+            }]
+          }
+        }],
+        "system" : "fax",
+        "value" : "55555555551",
+        "period" : {
+          "start" : "1982-03-04T00:00:00-07:00"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+              "code" : "HC"
+            }]
+          }
+        }],
+        "system" : "fax",
+        "value" : "55555555555",
+        "period" : {
+          "start" : "1981-04-04T00:00:00-07:00"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+              "code" : "MC"
+            }]
+          }
+        }],
+        "system" : "url",
+        "value" : "ftp://someftp.com",
+        "period" : {
+          "start" : "1991-01-01T00:00:00-07:00"
+        }
+      }],
+      "address" : {
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system",
+              "code" : "BC"
+            }]
+          }
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system",
+              "code" : "V"
+            }]
+          }
+        }],
+        "type" : "postal",
+        "line" : ["1000 DOUGLAS ST"],
+        "city" : "Kelowna",
+        "state" : "BC",
+        "postalCode" : "V6P7B8",
+        "country" : "CA",
+        "period" : {
+          "start" : "2000-01-01"
+        }
+      },
+      "physicalType" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+          "code" : "bu"
+        }]
+      }
+    },
+    "search" : {
+      "mode" : "match"
+    }
+  }]
+}
