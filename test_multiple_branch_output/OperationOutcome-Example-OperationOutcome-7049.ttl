@@ -1,0 +1,34 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/OperationOutcome/Example-OperationOutcome-7049> a fhir:OperationOutcome ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Example-OperationOutcome-7049"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"^^xsd:anyURI ;
+       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationOutcome Example-OperationOutcome-7049</b></p><a name=\"Example-OperationOutcome-7049\"> </a><a name=\"hcExample-OperationOutcome-7049\"> </a><a name=\"hcExample-OperationOutcome-7049-en\"> </a><h3>Issues</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td style=\"display: none\">*</td><td>error</td><td>business-rule</td><td><span title=\"Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system GRS.DPS.UNK.UNK.0.0.7049}\">Some results were removed under data permission rules.</span></td></tr></table></div>"
+  ] ; # 
+  fhir:issue ( [
+     fhir:severity [ fhir:v "error" ] ;
+     fhir:code [ fhir:v "business-rule" ] ;
+     fhir:details [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "GRS.DPS.UNK.UNK.0.0.7049" ]
+       ] ) ;
+       fhir:text [ fhir:v "Some results were removed under data permission rules." ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
