@@ -42,7 +42,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"10.133"}
     h3,h4,h5,h6{--heading-prefix:"10.133"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -274,8 +275,8 @@
 <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location&gt;     ] )
   ] ; # 
   <a href="http://hl7.org/fhir/R4/location.html#Location.text">fhir:text</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
-fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: Location Example-Location-For-Add&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;Example-Location-For-Add\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcExample-Location-For-Add\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcExample-Location-For-Add-en\&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc&lt;/code&gt;/IFC.001474222.BC.PRS (, period: 2000-01-01 --&amp;gt; (ongoing))&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: General Hospital&lt;/p&gt;&lt;p&gt;&lt;b&gt;alias&lt;/b&gt;: Long name or alias or description&lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: fax: 55555555551&lt;/p&gt;&lt;p&gt;&lt;b&gt;address&lt;/b&gt;: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA &lt;/p&gt;&lt;p&gt;&lt;b&gt;physicalType&lt;/b&gt;: &lt;span title=\&quot;Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type bu}\&quot;&gt;Building&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;extensions&quot; ] ;
+fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: Location Example-Location-For-Add&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;Example-Location-For-Add\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcExample-Location-For-Add\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;Example-Location-For-Add-en-US\&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;BC Facility Physical Address Extension&lt;/b&gt;: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA &lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;BC Facility Details Extension&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension: 2000-01-01 --&amp;gt; (ongoing)&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc&lt;/code&gt;/IFC.001474222.BC.PRS (, period: 2000-01-01 --&amp;gt; (ongoing))&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: General Hospital&lt;/p&gt;&lt;p&gt;&lt;b&gt;alias&lt;/b&gt;: Long name or alias or description&lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: fax: 55555555551&lt;/p&gt;&lt;p&gt;&lt;b&gt;address&lt;/b&gt;: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA &lt;/p&gt;&lt;p&gt;&lt;b&gt;physicalType&lt;/b&gt;: &lt;span title=\&quot;Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type bu}\&quot;&gt;Building&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
   ] ; # 
   <a href="http://hl7.org/fhir/R4/location.html#Location.extension">fhir:extension</a> ( [
 <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-physical-address-extension&quot;^^xsd:anyURI ] ;
@@ -380,7 +381,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 3, 2024 22:37+0000">2024-07-03</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 27, 2024 21:23+0000">2024-09-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
@@ -397,7 +398,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -408,7 +409,6 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>

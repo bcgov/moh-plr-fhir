@@ -42,7 +42,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"10.174"}
     h3,h4,h5,h6{--heading-prefix:"10.174"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -257,8 +258,7 @@
 
 
 
-  <pre class="json" style="white-space: pre; text-wrap: nowrap;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">
-{
+  <pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
   "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">resourceType</a>" : "PractitionerRole",
   "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a>" : "RELN.128.PRS",
   "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.meta">meta</a>" : {
@@ -267,8 +267,8 @@
     ]
   },
   "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.text">text</a>" : {
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: PractitionerRole RELN.128.PRS&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;RELN.128.PRS\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcRELN.128.PRS\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcRELN.128.PRS-en\&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;period&lt;/b&gt;: 2000-01-01 --&amp;gt; (ongoing)&lt;/p&gt;&lt;p&gt;&lt;b&gt;practitioner&lt;/b&gt;: Identifier: &lt;code&gt;https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc&lt;/code&gt;/IPC.00147422.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&amp;gt; (ongoing))&lt;/p&gt;&lt;p&gt;&lt;b&gt;organization&lt;/b&gt;: Identifier: &lt;code&gt;https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc&lt;/code&gt;/IPC.00147433.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&amp;gt; (ongoing))&lt;/p&gt;&lt;/div&gt;"
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: PractitionerRole RELN.128.PRS&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;RELN.128.PRS\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcRELN.128.PRS\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;RELN.128.PRS-en-US\&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;BC Practitioner to Organization or Practitioner to Practitioner Type Extension.&lt;/b&gt;: &lt;span title=\&quot;Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system careteam}\&quot;&gt;careteam&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;BC Owner Extension&lt;/b&gt;: ?ngen-9?&lt;/p&gt;&lt;p&gt;&lt;b&gt;period&lt;/b&gt;: 2000-01-01 --&amp;gt; (ongoing)&lt;/p&gt;&lt;p&gt;&lt;b&gt;practitioner&lt;/b&gt;: Identifier: &lt;code&gt;https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc&lt;/code&gt;/IPC.00147422.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&amp;gt; (ongoing))&lt;/p&gt;&lt;p&gt;&lt;b&gt;organization&lt;/b&gt;: Identifier: &lt;code&gt;https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc&lt;/code&gt;/IPC.00147433.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&amp;gt; (ongoing))&lt;/p&gt;&lt;/div&gt;"
   },
   "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.extension">extension</a>" : [
     {
@@ -336,7 +336,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 3, 2024 22:37+0000">2024-07-03</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 27, 2024 21:23+0000">2024-09-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
@@ -353,7 +353,7 @@
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -364,7 +364,6 @@
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>

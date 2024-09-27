@@ -40,7 +40,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"2"}
     h3,h4,h5,h6{--heading-prefix:"2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -240,7 +241,7 @@ This specification is currently published as a Draft Standard on the ministry gi
 <p>In FHIR, the primary resources used are named Practitioner, Organization, and Location.  BC has created profiles of each of these resources for use in the PLR system.  The BC profiles are dependent on the Canadian FHIR Baseline.</p>
 
 <h4 id="individual-provider">Individual Provider</h4>
-<p>Each Individual Provider is composed of a <a href="StructureDefinition-bc-practitioner.html">Practitioner instance</a> and at least one <a href="StructureDefinition-bc-practitioner-role.html">PractitionerRole instance</a> which holds the Practitioner’s role, such as Nurse or Dentist and specialties.</p>
+<p>Each Individual Provider is composed of a <a href="StructureDefinition-bc-practitioner.html">Practitioner instance</a> and at least one <a href="StructureDefinition-bc-practitioner-role.html">PractitionerRole instance</a> which holds the Practitioner's role, such as Nurse or Dentist and specialties.</p>
 
 <p>Any other PractitionerRole instances will hold the relationships between an Individual Provider and related Facilities and to Organizational Providers.  A single PractitionerRole instance contains a single relationship.  Thus multiple PractitionerRoles will be required to represent multiple relationships.  There is an <a href="StructureDefinition-bc-practitioner-relationship-extension.html">extension</a> off Practitioner that represents relationships between Individual Providers.</p>
 
@@ -318,7 +319,7 @@ To show the relationship between an Organizational Provider and a Facility (i.e.
 <h4 id="distributions---included-in-release-1">Distributions - included in RELEASE 1</h4>
 
 <p>A <a href="OperationDefinition-bc-distribution.html">Distribution operation</a> is used by PLR to communicate a change in a single Practitioner, Organization, or Location to an external connected system that subscribes to the distribution service.  To be clear, this is not the FHIR Subscription model, but a custom PLR subscription service that requires the user to sign up with the Registry administrator and follow the setup and configuration guide.<br />
-The distribution is sent from PLR to a client application by sending a Bundle (of type ‘collection’) wrapped in Parameters, via a RESTful POST to a client nominated endpoint URL.  The Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity.  The Bundle includes one of the following sets:</p>
+The distribution is sent from PLR to a client application by sending a Bundle (of type 'collection') wrapped in Parameters, via a RESTful POST to a client nominated endpoint URL.  The Bundle is intended to be processed by the client as an atomic commit where the entire set of changes succeed or fail as a single entity.  The Bundle includes one of the following sets:</p>
 
 <ol>
   <li>PractitionerRole(s) and Practitioner;</li>
@@ -366,7 +367,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
 </figure>
 
 <h4 id="query-part-1---operations">Query Part 1 - Operations</h4>
-<p>PLR FHIR has defined a set of FHIR Operations to search for Providers and Facilities.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR’s case, the server would need to include resources that make up the full Provider and additionally return related Providers or Facilities.</p>
+<p>PLR FHIR has defined a set of FHIR Operations to search for Providers and Facilities.  Operations are designed for searches where the server needs to play an active role in preparing the responses.  In PLR's case, the server would need to include resources that make up the full Provider and additionally return related Providers or Facilities.</p>
 
 <p>The two query operations are:</p>
 
@@ -383,7 +384,7 @@ The distribution is sent from PLR to a client application by sending a Bundle (o
   <li>GET [Base]/[resource]/$entityQuery?param1&amp;param2&amp;… to search for a Provider or Facility with search parameters instead of an id</li>
 </ul>
 
-<p>Although PLR supports many different types of identifiers, the resource id is the identifier assigned by PLR when the resource is created, internally called the IPC for Providers and IFC for Facilities.  This id is always returned in the response and should be persisted by the requestor.  To search with other identifiers stored in PLR and attached to Providers or Facilities, the search parameter ‘identifier’ and ‘identifier-type’ should be used.</p>
+<p>Although PLR supports many different types of identifiers, the resource id is the identifier assigned by PLR when the resource is created, internally called the IPC for Providers and IFC for Facilities.  This id is always returned in the response and should be persisted by the requestor.  To search with other identifiers stored in PLR and attached to Providers or Facilities, the search parameter 'identifier' and 'identifier-type' should be used.</p>
 
 <p>The parameters for the $entityQuery operation will be the search parameters listed further below.</p>
 
@@ -485,8 +486,8 @@ If this was a Location search the structure is the same, however the Bundles wou
     <tr>
       <td> </td>
       <td style="text-align: left">identifier</td>
-      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier=[system]”</td>
-      <td>“[value]</td>
+      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier=[system]"</td>
+      <td>"[value]</td>
     </tr>
     <tr>
       <td>Organization</td>
@@ -533,8 +534,8 @@ If this was a Location search the structure is the same, however the Bundles wou
     <tr>
       <td> </td>
       <td style="text-align: left">identifier</td>
-      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier= [system] “</td>
-      <td>“[value]</td>
+      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier= [system] "</td>
+      <td>"[value]</td>
     </tr>
     <tr>
       <td>Location</td>
@@ -605,8 +606,8 @@ If this was a Location search the structure is the same, however the Bundles wou
     <tr>
       <td> </td>
       <td style="text-align: left">identifier</td>
-      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier= [system] “</td>
-      <td>“[value]</td>
+      <td style="text-align: left">String, representing the full identifier value with system and value, e.g. identifier= [system] "</td>
+      <td>"[value]</td>
     </tr>
   </tbody>
 </table>
@@ -616,7 +617,7 @@ There is a limit to the number of search results returned = 20. A message will b
 
 <p>Wildcard</p>
 <ul>
-  <li>The wildcard character is ‘*’.</li>
+  <li>The wildcard character is '*'.</li>
   <li>The wildcard character must be trailing.</li>
   <li>Only one wildcard character is allowed in each name fields for Practitioner search. More than 1 wildcard character is allowed in each allowed field for Organization search</li>
   <li>At least 1 character must be entered before the wildcard (except for Organization name, Organization Name search allows the 1st character to be a wildcard.)</li>
@@ -644,7 +645,7 @@ There is a limit to the number of search results returned = 20. A message will b
     </tr>
     <tr>
       <td style="text-align: left">GET [Base]/PractitionerRole/<IPC or="" Relationship-id=""></IPC></td>
-      <td style="text-align: left"><a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a> for the practitioner’s role and specialties information, and/or <a href="StructureDefinition-bc-role-relationships.html">BCRoleRelationship</a>, for the relationships info between practitioner and organization or location</td>
+      <td style="text-align: left"><a href="StructureDefinition-bc-practitioner-role.html">BCPractitionerRole</a> for the practitioner's role and specialties information, and/or <a href="StructureDefinition-bc-role-relationships.html">BCRoleRelationship</a>, for the relationships info between practitioner and organization or location</td>
     </tr>
     <tr>
       <td style="text-align: left">GET [Base]/Location/<IFC></IFC></td>
@@ -679,7 +680,7 @@ There is a limit to the number of search results returned = 20. A message will b
 
 <p>Id for PractitionerRole can be</p>
 <ul>
-  <li>the <strong>IPC identifier</strong> for the <a href="StructureDefinition-bc-practitioner-role.html">BCPractionerRole</a> instance carrying the Practionner’s role and specialties information
+  <li>the <strong>IPC identifier</strong> for the <a href="StructureDefinition-bc-practitioner-role.html">BCPractionerRole</a> instance carrying the Practionner's role and specialties information
     <pre><code class="language-htm">GET [Base]/PractitionerRole/IPC.00012343.BC.PRS
 </code></pre>
   </li>
@@ -733,7 +734,7 @@ There is a limit to the number of search results returned = 20. A message will b
 </code></pre>
 
 <h4 id="batch---future">Batch - FUTURE</h4>
-<p>Batch allows for many independent transactions to be sent in a single operation. It also uses Bundles, but a batch Bundle (Bundle.type = ‘batch’), that wraps a number of Bundles. The batch Bundle is not expected in the parameters but as a JSON file. It must contain at least one or more of:</p>
+<p>Batch allows for many independent transactions to be sent in a single operation. It also uses Bundles, but a batch Bundle (Bundle.type = 'batch'), that wraps a number of Bundles. The batch Bundle is not expected in the parameters but as a JSON file. It must contain at least one or more of:</p>
 
 <ol>
   <li>a collection-Bundle (with PractitionerRole(s) and Practitioner) to add/update an Individual Provider</li>
@@ -741,7 +742,7 @@ There is a limit to the number of search results returned = 20. A message will b
   <li>a collection-Bundle (with OrganizationAffiliations(s), PractitionerRole(s), and Location) to add/update a Facility</li>
 </ol>
 
-<p>The response Bundle is similarly structured to the request, populating and echoing back the results of each contained Bundle.  The only difference is that OperationOutcome SHALL also be included for each collection-Bundle for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn’t processed due to validation or non-business errors.</p>
+<p>The response Bundle is similarly structured to the request, populating and echoing back the results of each contained Bundle.  The only difference is that OperationOutcome SHALL also be included for each collection-Bundle for acknowledgement and error messages - and a Bundle with a single OperationOutcome to cover the situation where the batch wasn't processed due to validation or non-business errors.</p>
 
 
 
@@ -761,7 +762,7 @@ There is a limit to the number of search results returned = 20. A message will b
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 3, 2024 22:37+0000">2024-07-03</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 27, 2024 21:23+0000">2024-09-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
@@ -778,7 +779,7 @@ There is a limit to the number of search results returned = 20. A message will b
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -789,7 +790,6 @@ There is a limit to the number of search results returned = 20. A message will b
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>

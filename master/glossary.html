@@ -40,7 +40,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"8"}
     h3,h4,h5,h6{--heading-prefix:"8"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -247,7 +248,7 @@ This specification is currently published as a Draft Standard on the ministry gi
     </tr>
     <tr>
       <td><strong>Category</strong></td>
-      <td>A “super-role”, a category of related Provider Role Types. For example, the category “Nurse” might contain many Provider Role Types such as “LPN”, RN” and so on; the category “Doctors” might contain all Provider role types assigned to doctors, and so on.</td>
+      <td>A "super-role", a category of related Provider Role Types. For example, the category "Nurse" might contain many Provider Role Types such as "LPN", RN" and so on; the category "Doctors" might contain all Provider role types assigned to doctors, and so on.</td>
     </tr>
     <tr>
       <td><strong>Common Party Number (CPN)</strong></td>
@@ -263,7 +264,7 @@ This specification is currently published as a Draft Standard on the ministry gi
     </tr>
     <tr>
       <td><strong>Condition</strong></td>
-      <td>A condition is a permission or restriction on the provider’s role. Many conditions can be in effect at a point in time.</td>
+      <td>A condition is a permission or restriction on the provider's role. Many conditions can be in effect at a point in time.</td>
     </tr>
     <tr>
       <td><strong>Consumer</strong></td>
@@ -275,7 +276,7 @@ This specification is currently published as a Draft Standard on the ministry gi
     </tr>
     <tr>
       <td><strong>Data Authority</strong></td>
-      <td>The ability of a data source to maintain (add, update, correct or cease) specified data objects for existing PLR providers. Data authority can be <strong>Exclusive</strong> , <strong>Inclusive</strong> , or <strong>Collaborative</strong> :<br />- <em>Exclusive Authority</em> allows only one source to be able to provide specified data objects (name, address, etc.) and restricts data access to the source creator of the Provider record. <br />- <em>Inclusive Authority</em> allows multiple sources to be able to provide a specified data objects for a Provider and for PLR to be able to distinguish which source provided the data. This model supports the concept of employed Providers where any organization can hold its own independent view of a provider’s data.<br />- <em>Collaborative Authority</em> allows sources to maintain one version of specified data objects for a provider, and track which source provided each edit. This model supports multiple organizations maintaining a single set of data for a provider (e.g. multiple health authorities may maintain the work location for physicians).</td>
+      <td>The ability of a data source to maintain (add, update, correct or cease) specified data objects for existing PLR providers. Data authority can be <strong>Exclusive</strong> , <strong>Inclusive</strong> , or <strong>Collaborative</strong> :<br />- <em>Exclusive Authority</em> allows only one source to be able to provide specified data objects (name, address, etc.) and restricts data access to the source creator of the Provider record. <br />- <em>Inclusive Authority</em> allows multiple sources to be able to provide a specified data objects for a Provider and for PLR to be able to distinguish which source provided the data. This model supports the concept of employed Providers where any organization can hold its own independent view of a provider's data.<br />- <em>Collaborative Authority</em> allows sources to maintain one version of specified data objects for a provider, and track which source provided each edit. This model supports multiple organizations maintaining a single set of data for a provider (e.g. multiple health authorities may maintain the work location for physicians).</td>
     </tr>
     <tr>
       <td><strong>Data Element</strong></td>
@@ -291,7 +292,7 @@ This specification is currently published as a Draft Standard on the ministry gi
     </tr>
     <tr>
       <td><strong>Data Permission Set (DPS)</strong></td>
-      <td>A named collection of allowed data permissions for Provider data objects and elements. When assigned to a registry user, allows access to particular data elements. Data permissions also control the level of interaction the user may have with those data elements. The permission’s presence in a data permission set (DPS) for a data element confers that permission and its absence denies the permission.</td>
+      <td>A named collection of allowed data permissions for Provider data objects and elements. When assigned to a registry user, allows access to particular data elements. Data permissions also control the level of interaction the user may have with those data elements. The permission's presence in a data permission set (DPS) for a data element confers that permission and its absence denies the permission.</td>
     </tr>
     <tr>
       <td><strong>Data Set</strong></td>
@@ -307,7 +308,7 @@ This specification is currently published as a Draft Standard on the ministry gi
     </tr>
     <tr>
       <td><strong>Disciplinary Action</strong></td>
-      <td>A disciplinary action is an undertaking by a regulatory body as the result of a provider’s negligent or otherwise inappropriate actions (e.g. fine, limitation on practice, or requirement for additional education). A disciplinary action will only be recorded by an authorized data source, which will generally only be a primary source.</td>
+      <td>A disciplinary action is an undertaking by a regulatory body as the result of a provider's negligent or otherwise inappropriate actions (e.g. fine, limitation on practice, or requirement for additional education). A disciplinary action will only be recorded by an authorized data source, which will generally only be a primary source.</td>
     </tr>
     <tr>
       <td><strong>Distribution</strong></td>
@@ -323,7 +324,7 @@ This specification is currently published as a Draft Standard on the ministry gi
     </tr>
     <tr>
       <td><strong>Employed Provider</strong></td>
-      <td>A Provider is deemed to be an Employed Provider by virtue of being employed in a health care related field. Depending upon implementation in a particular jurisdiction, an employed Provider may or may not also be subject to a licensing body (e.g. Physicians must be licensed by the College of Physicians and Surgeons (the licensing body)). Lab technicians and orderlies are not subject to a licensing body but, because they are employed in a health care related field, are considered employed providers.For HL7, an Employed Provider may also be known as an “Assigned Entity”.</td>
+      <td>A Provider is deemed to be an Employed Provider by virtue of being employed in a health care related field. Depending upon implementation in a particular jurisdiction, an employed Provider may or may not also be subject to a licensing body (e.g. Physicians must be licensed by the College of Physicians and Surgeons (the licensing body)). Lab technicians and orderlies are not subject to a licensing body but, because they are employed in a health care related field, are considered employed providers.For HL7, an Employed Provider may also be known as an "Assigned Entity".</td>
     </tr>
     <tr>
       <td><strong>Facility</strong></td>
@@ -371,7 +372,7 @@ This specification is currently published as a Draft Standard on the ministry gi
     </tr>
     <tr>
       <td><strong>Provider</strong></td>
-      <td>A Provider is a person or organization acting in a role, for example Dr. Sara Harding, medical doctor (MD). The PLR distinguishes between a person or an organization acting as a Provider. The PLR uses the terms individual Provider and organization Provider to distinguish the two. Although much of the data and business rules are similar. You may see some documentation referring to “practitioners” as individual providers, and “providers” referring to organizations. This usage is historical, in use prior to the definitions given above and will not be used going forward. The introduction of unlicensed Provider types meant that the “qualifications” for inclusion in Provider Registry were no longer restricted to formally certified and licensed individuals such as doctors and pharmacists. While these Provider types are still central to the registry, PLR now also includes a class of Provider known as “Employed Providers”; that is, Providers who may not be licensed by a regulatory body but who are employees of major health care organizations.</td>
+      <td>A Provider is a person or organization acting in a role, for example Dr. Sara Harding, medical doctor (MD). The PLR distinguishes between a person or an organization acting as a Provider. The PLR uses the terms individual Provider and organization Provider to distinguish the two. Although much of the data and business rules are similar. You may see some documentation referring to "practitioners" as individual providers, and "providers" referring to organizations. This usage is historical, in use prior to the definitions given above and will not be used going forward. The introduction of unlicensed Provider types meant that the "qualifications" for inclusion in Provider Registry were no longer restricted to formally certified and licensed individuals such as doctors and pharmacists. While these Provider types are still central to the registry, PLR now also includes a class of Provider known as "Employed Providers"; that is, Providers who may not be licensed by a regulatory body but who are employees of major health care organizations.</td>
     </tr>
     <tr>
       <td><strong>Provider Creation Group</strong></td>
@@ -459,7 +460,7 @@ This specification is currently published as a Draft Standard on the ministry gi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 3, 2024 22:37+0000">2024-07-03</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 27, 2024 21:23+0000">2024-09-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
@@ -476,7 +477,7 @@ This specification is currently published as a Draft Standard on the ministry gi
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -487,7 +488,6 @@ This specification is currently published as a Draft Standard on the ministry gi
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>
