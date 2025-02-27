@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Organization xmlns="http://hl7.org/fhir">
+  <id value="Example-Organization-1"/>
+  <meta>
+    <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Organization Example-Organization-1</b></p><a name="Example-Organization-1"> </a><a name="hcExample-Organization-1"> </a><a name="Example-Organization-1-en-US"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-organization.html">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><ul><li>identifier: <code>http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id</code>/Note-2</li><li>text: Note text</li><li>http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension: 1998-01-02 --&gt; (ongoing)</li></ul></blockquote><blockquote><p><b>BC License Status Extension</b></p><ul><li>statusCode: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleStatus active}">active</span></li><li>period: 2022-02-07 --&gt; 2023-12-07</li><li>statusReasonCode: <span title="Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system ORG}">ORG</span></li><li>statusClassCode: <span title="Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system AE}">AE</span></li></ul></blockquote><p><b>identifier</b>: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-org-id</code>/123123123 (, period: 2000-01-01 --&gt; (ongoing))</p><p><b>active</b>: true</p><p><b>type</b>: <span title="Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system ORG}">ORG</span></p><p><b>name</b>: Kelowna Clinic</p><p><b>alias</b>: ABC Clinic - Kelowna</p><p><b>telecom</b>: ph: 2501112234</p><p><b>address</b>: 1000 DOUGLAS ST Kelowna BC V6P7B8 CA </p></div>
+  </text>
+  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension">
+    <extension url="identifier">
+      <valueIdentifier>
+        <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id"/>
+        <value value="Note-2"/>
+      </valueIdentifier>
+    </extension>
+    <extension url="text">
+      <valueString value="Note text"/>
+    </extension>
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+      <valuePeriod>
+        <start value="1998-01-02"/>
+      </valuePeriod>
+    </extension>
+  </extension>
+  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension">
+    <extension url="statusCode">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-RoleStatus"/>
+          <code value="active"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="period">
+      <valuePeriod>
+        <start value="2022-02-07"/>
+        <end value="2023-12-07"/>
+      </valuePeriod>
+    </extension>
+    <extension url="statusReasonCode">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system"/>
+          <code value="ORG"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="statusClassCode">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system"/>
+          <code value="AE"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+  </extension>
+  <identifier>
+    <system value="https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-org-id"/>
+    <value value="123123123"/>
+    <period>
+      <start value="2000-01-01"/>
+    </period>
+  </identifier>
+  <active value="true"/>
+  <type>
+    <coding>
+      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system"/>
+      <code value="ORG"/>
+    </coding>
+  </type>
+  <name value="Kelowna Clinic">
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension">
+      <valueCode value="official"/>
+    </extension>
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+      <valuePeriod>
+        <start value="2014-01-31T00:00:00-07:00"/>
+      </valuePeriod>
+    </extension>
+  </name>
+  <alias value="ABC Clinic - Kelowna"/>
+  <telecom>
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
+          <code value="BC"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <system value="phone"/>
+    <value value="2501112234"/>
+    <period>
+      <start value="2000-02-02"/>
+    </period>
+  </telecom>
+  <address>
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
+          <code value="BC"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system"/>
+          <code value="V"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <type value="postal"/>
+    <line value="1000 DOUGLAS ST"/>
+    <city value="Kelowna"/>
+    <state value="BC"/>
+    <postalCode value="V6P7B8"/>
+    <country value="CA"/>
+    <period>
+      <start value="2000-01-01"/>
+    </period>
+  </address>
+</Organization>

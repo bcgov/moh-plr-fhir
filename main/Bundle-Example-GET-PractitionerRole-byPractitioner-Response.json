@@ -1,0 +1,189 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "Example-GET-PractitionerRole-byPractitioner-Response",
+  "type" : "searchset",
+  "link" : [{
+    "relation" : "self",
+    "url" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/practitioner=Practitioner/IPC.00147422.BC.PRS"
+  }],
+  "entry" : [{
+    "fullUrl" : "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552",
+    "resource" : {
+      "resourceType" : "OperationOutcome",
+      "id" : "Example-OperationOutcome-Success",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"OperationOutcome_Example-OperationOutcome-Success\"> </a><p class=\"res-header-id\"><b>Generated Narrative: OperationOutcome Example-OperationOutcome-Success</b></p><a name=\"Example-OperationOutcome-Success\"> </a><a name=\"hcExample-OperationOutcome-Success\"> </a><a name=\"Example-OperationOutcome-Success-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-operation-outcome.html\">BCOperationOutcome</a></p></div><h3>Issues</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td style=\"display: none\">*</td><td>Information</td><td>Business Rule Violation</td><td><span title=\"Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system PRS.PRP.MTN.UNK.0.0.7067}\">Query successful</span></td></tr></table></div>"
+      },
+      "issue" : [{
+        "severity" : "information",
+        "code" : "business-rule",
+        "details" : {
+          "coding" : [{
+            "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system",
+            "code" : "PRS.PRP.MTN.UNK.0.0.7067"
+          }],
+          "text" : "Query successful"
+        }
+      }]
+    },
+    "search" : {
+      "mode" : "outcome"
+    }
+  },
+  {
+    "fullUrl" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00047422.BC.PRS",
+    "resource" : {
+      "resourceType" : "PractitionerRole",
+      "id" : "IPC.00047422.BC.PRS",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"PractitionerRole_IPC.00047422.BC.PRS\"> </a><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole IPC.00047422.BC.PRS</b></p><a name=\"IPC.00047422.BC.PRS\"> </a><a name=\"hcIPC.00047422.BC.PRS\"> </a><a name=\"IPC.00047422.BC.PRS-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>practitioner</b>: Identifier: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc</code>/IPC.00047422.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&gt; (ongoing))</p><p><b>code</b>: <span title=\"Codes:{http://fhir.infoway-inforoute.ca/CodeSystem/scptype MD}\">MD</span></p><p><b>specialty</b>: <span title=\"Codes:{http://fhir.infoway-inforoute.ca/CodeSystem/scpqual AMD53}\">AMD53</span></p></div>"
+      },
+      "practitioner" : {
+        "identifier" : {
+          "system" : "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc",
+          "value" : "IPC.00047422.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      },
+      "code" : [{
+        "coding" : [{
+          "system" : "http://fhir.infoway-inforoute.ca/CodeSystem/scptype",
+          "code" : "MD"
+        }]
+      }],
+      "specialty" : [{
+        "extension" : [{
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+          "valuePeriod" : {
+            "start" : "2000-01-01",
+            "end" : "2020-01-01"
+          }
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension",
+          "valueString" : "Expertise source"
+        },
+        {
+          "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system",
+              "code" : "CHG"
+            }]
+          }
+        }],
+        "coding" : [{
+          "system" : "http://fhir.infoway-inforoute.ca/CodeSystem/scpqual",
+          "code" : "AMD53"
+        }]
+      }]
+    },
+    "search" : {
+      "mode" : "match"
+    }
+  },
+  {
+    "fullUrl" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.24.PRS",
+    "resource" : {
+      "resourceType" : "PractitionerRole",
+      "id" : "RELN.24.PRS",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"PractitionerRole_RELN.24.PRS\"> </a><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole RELN.24.PRS</b></p><a name=\"RELN.24.PRS\"> </a><a name=\"hcRELN.24.PRS\"> </a><a name=\"RELN.24.PRS-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-role-relationships.html\">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Location Type Extension.</b>: <span title=\"Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system WORKSAT}\">WORKSAT</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: Identifier: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc</code>/IPC.00147422.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&gt; (ongoing))</p><p><b>location</b>: Identifier: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc</code>/IFC.00047422.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&gt; (ongoing))</p></div>"
+      },
+      "extension" : [{
+        "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system",
+            "code" : "WORKSAT"
+          }]
+        }
+      }],
+      "period" : {
+        "start" : "2000-01-01"
+      },
+      "practitioner" : {
+        "identifier" : {
+          "system" : "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc",
+          "value" : "IPC.00147422.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      },
+      "location" : [{
+        "identifier" : {
+          "system" : "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc",
+          "value" : "IFC.00047422.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      }]
+    },
+    "search" : {
+      "mode" : "match"
+    }
+  },
+  {
+    "fullUrl" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.23.PRS",
+    "resource" : {
+      "resourceType" : "PractitionerRole",
+      "id" : "RELN.23.PRS",
+      "meta" : {
+        "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"PractitionerRole_RELN.23.PRS\"> </a><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole RELN.23.PRS</b></p><a name=\"RELN.23.PRS\"> </a><a name=\"hcRELN.23.PRS\"> </a><a name=\"RELN.23.PRS-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-role-relationships.html\">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Organization or Practitioner to Practitioner Type Extension.</b>: <span title=\"Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system EMPLOYEE}\">EMPLOYEE</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: Identifier: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc</code>/IPC.00147422.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&gt; (ongoing))</p><p><b>organization</b>: Identifier: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc</code>/IPC.00147436.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&gt; (ongoing))</p></div>"
+      },
+      "extension" : [{
+        "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system",
+            "code" : "EMPLOYEE"
+          }]
+        }
+      }],
+      "period" : {
+        "start" : "2000-01-01"
+      },
+      "practitioner" : {
+        "identifier" : {
+          "system" : "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc",
+          "value" : "IPC.00147422.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      },
+      "organization" : {
+        "identifier" : {
+          "system" : "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc",
+          "value" : "IPC.00147436.BC.PRS",
+          "period" : {
+            "start" : "2000-01-01"
+          }
+        }
+      }
+    },
+    "search" : {
+      "mode" : "match"
+    }
+  }]
+}

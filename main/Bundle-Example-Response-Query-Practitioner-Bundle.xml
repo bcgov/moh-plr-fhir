@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="Example-Response-Query-Practitioner-Bundle"/>
+  <type value="searchset"/>
+  <timestamp value="2022-02-02T13:23:13.000-08:00"/>
+  <total value="1"/>
+  <link>
+    <relation value="self"/>
+    <url value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC32/$entityQuery"/>
+  </link>
+  <entry>
+    <fullUrl value="urn:uuid:7bf3d69a-482a-472e-9003-2ade5e0ccd11"/>
+    <resource>
+      <OperationOutcome>
+        <id value="Example-OperationOutcome-7049"/>
+        <meta>
+          <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="OperationOutcome_Example-OperationOutcome-7049"> </a><p class="res-header-id"><b>Generated Narrative: OperationOutcome Example-OperationOutcome-7049</b></p><a name="Example-OperationOutcome-7049"> </a><a name="hcExample-OperationOutcome-7049"> </a><a name="Example-OperationOutcome-7049-en-US"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-operation-outcome.html">BCOperationOutcome</a></p></div><h3>Issues</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td style="display: none">*</td><td>Error</td><td>Business Rule Violation</td><td><span title="Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system GRS.DPS.UNK.UNK.0.0.7049}">Some results were removed under data permission rules.</span></td></tr></table></div>
+        </text>
+        <issue>
+          <severity value="error"/>
+          <code value="business-rule"/>
+          <details>
+            <coding>
+              <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system"/>
+              <code value="GRS.DPS.UNK.UNK.0.0.7049"/>
+            </coding>
+            <text value="Some results were removed under data permission rules."/>
+          </details>
+        </issue>
+      </OperationOutcome>
+    </resource>
+    <search>
+      <mode value="outcome"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:11e1d315-0edf-49f0-b01c-0b42da4c97a6"/>
+    <resource>
+      <Bundle>
+        <id value="Example-Individual-Provider-Bundle"/>
+        <meta>
+          <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"/>
+        </meta>
+        <type value="collection"/>
+        <timestamp value="2022-02-02T13:23:13.000-08:00"/>
+        <entry>
+          <fullUrl value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00147422.BC.PRS"/>
+          <resource>
+            <Practitioner>
+              <id value="IPC.00147422.BC.PRS"/>
+              <meta>
+                <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"/>
+              </meta>
+              <contained>
+                <Organization>
+                  <id value="grantingInstitution"/>
+                  <meta>
+                    <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"/>
+                  </meta>
+                  <name value="University of Calgary"/>
+                  <address>
+                    <city value="CALGARY"/>
+                    <state value="AB"/>
+                    <country value="CA"/>
+                  </address>
+                </Organization>
+              </contained>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                <valuePeriod>
+                  <start value="2012-12-07"/>
+                </valuePeriod>
+              </extension>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension">
+                <valueAddress>
+                  <city value="Ottawa"/>
+                  <state value="ON"/>
+                  <country value="CA"/>
+                </valueAddress>
+              </extension>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension">
+                <extension url="statusCode">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system"/>
+                      <code value="SUSPENDED"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="statusReasonCode">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system"/>
+                      <code value="LTP"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="statusClassCode">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system"/>
+                      <code value="LIC"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="period">
+                  <valuePeriod>
+                    <start value="2022-06-24"/>
+                  </valuePeriod>
+                </extension>
+              </extension>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-disciplinary-action-extension">
+                <extension url="identifier">
+                  <valueIdentifier>
+                    <value value="DA-1"/>
+                  </valueIdentifier>
+                </extension>
+                <extension url="description">
+                  <valueString value="Description"/>
+                </extension>
+                <extension url="archiveDate">
+                  <valueDateTime value="2000-01-01"/>
+                </extension>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="1998-01-02"/>
+                  </valuePeriod>
+                </extension>
+                <extension url="displayFlag">
+                  <valueBoolean value="false"/>
+                </extension>
+              </extension>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension">
+                <extension url="identifier">
+                  <valueIdentifier>
+                    <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id"/>
+                    <value value="Note-2"/>
+                  </valueIdentifier>
+                </extension>
+                <extension url="text">
+                  <valueString value="Note text"/>
+                </extension>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="1998-01-02"/>
+                  </valuePeriod>
+                </extension>
+              </extension>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-condition-extension">
+                <extension url="identifier">
+                  <valueIdentifier>
+                    <system value="http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-condition-id"/>
+                    <value value="Condition-1"/>
+                  </valueIdentifier>
+                </extension>
+                <extension url="restriction">
+                  <valueBoolean value="false"/>
+                </extension>
+                <extension url="restrictionText">
+                  <valueString value="Restriction text"/>
+                </extension>
+                <extension url="code">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-condition-type-code-system"/>
+                      <code value="EXP"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="1998-01-02"/>
+                  </valuePeriod>
+                </extension>
+              </extension>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-confidentiality-extension">
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="2000-01-01"/>
+                    <end value="2020-01-01"/>
+                  </valuePeriod>
+                </extension>
+                <extension url="code">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
+                      <code value="R"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+              </extension>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-relationship-extension">
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="2022-06-30"/>
+                  </valuePeriod>
+                </extension>
+                <extension url="targetPractitioner">
+                  <valueReference>
+                    <identifier>
+                      <system value="https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"/>
+                      <value value="IPC.00763483.BC.PRS"/>
+                      <period>
+                        <start value="2000-01-01"/>
+                      </period>
+                    </identifier>
+                  </valueReference>
+                </extension>
+                <extension url="relationshipType">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system"/>
+                      <code value="WORKSAT"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="logicalId">
+                  <valueString value="987654"/>
+                </extension>
+              </extension>
+              <identifier>
+                <system value="https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"/>
+                <value value="IPC.00147422.BC.PRS"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+              </identifier>
+              <name>
+                <use value="official"/>
+                <family value="FamilyName"/>
+                <given value="GivenName"/>
+                <period>
+                  <start value="2012-12-07"/>
+                </period>
+              </name>
+              <telecom>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
+                      <code value="BC"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <system value="phone"/>
+                <value value="2501112234"/>
+                <period>
+                  <start value="2000-02-02"/>
+                </period>
+              </telecom>
+              <address>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
+                      <code value="BC"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system"/>
+                      <code value="V"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <type value="postal"/>
+                <line value="1000 DOUGLAS ST"/>
+                <city value="Kelowna"/>
+                <state value="BC"/>
+                <postalCode value="V6P7B8"/>
+                <country value="CA"/>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+              </address>
+              <gender value="male"/>
+              <birthDate value="1934-01-02">
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthtime-extension">
+                  <valueDateTime value="1951-11-12T00:00:01-06:00"/>
+                </extension>
+              </birthDate>
+              <qualification>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-qualification-extension">
+                  <extension url="designation">
+                    <valueString value="Designation"/>
+                  </extension>
+                  <extension url="equivalencyFlag">
+                    <valueBoolean value="false"/>
+                  </extension>
+                  <extension url="registrationNumber">
+                    <valueString value="Registration No."/>
+                  </extension>
+                  <extension url="issuedDate">
+                    <valueDateTime value="2000-02-03"/>
+                  </extension>
+                </extension>
+                <code>
+                  <coding>
+                    <system value="http://fhir.infoway-inforoute.ca/CodeSystem/scpqual"/>
+                    <code value="BD"/>
+                  </coding>
+                </code>
+                <period>
+                  <start value="2000-01-01"/>
+                </period>
+                <issuer>
+                  <reference value="#grantingInstitution"/>
+                </issuer>
+              </qualification>
+              <communication>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="2000-01-01"/>
+                  </valuePeriod>
+                </extension>
+                <coding>
+                  <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system"/>
+                  <code value="B01"/>
+                </coding>
+              </communication>
+            </Practitioner>
+          </resource>
+        </entry>
+        <entry>
+          <fullUrl value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00147422.BC.PRS"/>
+          <resource>
+            <PractitionerRole>
+              <id value="IPC.00147422.BC.PRS"/>
+              <meta>
+                <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"/>
+              </meta>
+              <practitioner>
+                <identifier>
+                  <system value="https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"/>
+                  <value value="IPC.00147422.BC.PRS"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </practitioner>
+              <code>
+                <coding>
+                  <system value="http://fhir.infoway-inforoute.ca/CodeSystem/scptype"/>
+                  <code value="MD"/>
+                </coding>
+              </code>
+              <specialty>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+                  <valuePeriod>
+                    <start value="2000-01-01"/>
+                    <end value="2020-01-01"/>
+                  </valuePeriod>
+                </extension>
+                <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension">
+                  <valueString value="Expertise source"/>
+                </extension>
+                <coding>
+                  <system value="http://fhir.infoway-inforoute.ca/CodeSystem/scpqual"/>
+                  <code value="AMD53"/>
+                </coding>
+              </specialty>
+            </PractitionerRole>
+          </resource>
+        </entry>
+        <entry>
+          <fullUrl value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.123.PRS"/>
+          <resource>
+            <PractitionerRole>
+              <id value="RELN.123.PRS"/>
+              <meta>
+                <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
+              </meta>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension">
+                <valueCodeableConcept>
+                  <coding>
+                    <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system"/>
+                    <code value="EE"/>
+                  </coding>
+                </valueCodeableConcept>
+              </extension>
+              <period>
+                <start value="2000-01-01"/>
+              </period>
+              <practitioner>
+                <identifier>
+                  <system value="https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"/>
+                  <value value="IPC.00147422.BC.PRS"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </practitioner>
+              <organization>
+                <identifier>
+                  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension">
+                    <valueIdentifier>
+                      <assigner>
+                        <display value="MOH"/>
+                      </assigner>
+                    </valueIdentifier>
+                  </extension>
+                  <system value="https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"/>
+                  <value value="IPC.00147436.BC.PRS"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </organization>
+            </PractitionerRole>
+          </resource>
+        </entry>
+        <entry>
+          <fullUrl value="https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.125.PRS"/>
+          <resource>
+            <PractitionerRole>
+              <id value="RELN.125.PRS"/>
+              <meta>
+                <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"/>
+              </meta>
+              <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-relationship-type-extension">
+                <valueCodeableConcept>
+                  <coding>
+                    <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"/>
+                    <code value="WORKSAT"/>
+                  </coding>
+                </valueCodeableConcept>
+              </extension>
+              <period>
+                <start value="2000-01-01"/>
+              </period>
+              <practitioner>
+                <identifier>
+                  <system value="https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"/>
+                  <value value="IPC.00147422.BC.PRS"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </practitioner>
+              <location>
+                <identifier>
+                  <system value="https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc"/>
+                  <value value="IFC.00047422.BC.PRS"/>
+                  <period>
+                    <start value="2000-01-01"/>
+                  </period>
+                </identifier>
+              </location>
+            </PractitionerRole>
+          </resource>
+        </entry>
+      </Bundle>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+</Bundle>

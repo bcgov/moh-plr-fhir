@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Location xmlns="http://hl7.org/fhir">
+  <id value="IFC.00147423.BC.PRS"/>
+  <meta>
+    <profile value="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Location IFC.00147423.BC.PRS</b></p><a name="IFC.00147423.BC.PRS"> </a><a name="hcIFC.00147423.BC.PRS"> </a><a name="IFC.00147423.BC.PRS-en-US"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-bc-location.html">BCLocation</a></p></div><p><b>BC Facility Physical Address Extension</b>: 1000 DOUGLAS ST VICTORIA BC V6P7B8 CA </p><blockquote><p><b>BC Facility Details Extension</b></p><ul><li>http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension: 2000-01-01 --&gt; (ongoing)</li></ul></blockquote><blockquote><p><b>BC Facility Health Service Area Extension</b></p><blockquote><p><b>url</b></p><a href="StructureDefinition-bc-facility-health-authority-extension.html">BC Facility Health Authority Area Extension</a></blockquote><p><b>value</b>: Vancouver Island</p><blockquote><p><b>url</b></p><a href="StructureDefinition-bc-facility-health-service-delivery-area-extension.html">BC Facility Health Service Delivery Area Extension</a></blockquote><p><b>value</b>: South Vancouver Island</p><blockquote><p><b>url</b></p><a href="StructureDefinition-bc-facility-local-health-area-extension.html">BC Facility Local Health Area Extension</a></blockquote><p><b>value</b>: Greater Victoria</p><p><b>name</b>: Downtown Victoria/Vic West</p><p><b>code</b>: 4111</p><blockquote><p><b>url</b></p><a href="StructureDefinition-bc-facility-community-health-area-extension.html">BC Facility Community Health Service Area Extension</a></blockquote><p><b>name</b>: Downtown/VicWest</p><p><b>code</b>: 40701</p><blockquote><p><b>url</b></p><a href="StructureDefinition-bc-facility-primary-care-network-extension.html">BC Facility Primary Care Network Extension</a></blockquote></blockquote><p><b>identifier</b>: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc</code>/IFC.00147423.BC.PRS (, period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>alias</b>: Long name or alias or description</p><p><b>telecom</b>: fax: 55555555551</p><p><b>physicalType</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type bu}">Building</span></p></div>
+  </text>
+  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-physical-address-extension">
+    <valueAddress>
+      <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
+            <code value="FC"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <type value="physical"/>
+      <line value="1000 DOUGLAS ST"/>
+      <city value="VICTORIA"/>
+      <state value="BC"/>
+      <postalCode value="V6P7B8"/>
+      <country value="CA"/>
+      <period>
+        <start value="2000-01-01"/>
+      </period>
+    </valueAddress>
+  </extension>
+  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-details-extension">
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+      <valuePeriod>
+        <start value="2000-01-01"/>
+      </valuePeriod>
+    </extension>
+  </extension>
+  <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension">
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-authority-extension">
+      <valueString value="Vancouver Island"/>
+    </extension>
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-delivery-area-extension">
+      <valueString value="South Vancouver Island"/>
+    </extension>
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-local-health-area-extension">
+      <valueString value="Greater Victoria"/>
+    </extension>
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-area-extension">
+      <extension url="name">
+        <valueString value="Downtown Victoria/Vic West"/>
+      </extension>
+      <extension url="code">
+        <valueIdentifier>
+          <value value="4111"/>
+        </valueIdentifier>
+      </extension>
+    </extension>
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-primary-care-network-extension">
+      <extension url="name">
+        <valueString value="Downtown/VicWest"/>
+      </extension>
+      <extension url="code">
+        <valueIdentifier>
+          <value value="40701"/>
+        </valueIdentifier>
+      </extension>
+    </extension>
+  </extension>
+  <identifier>
+    <system value="https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc"/>
+    <value value="IFC.00147423.BC.PRS"/>
+    <period>
+      <start value="2000-01-01"/>
+    </period>
+  </identifier>
+  <name value="General Hospital">
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension">
+      <valuePeriod>
+        <start value="2000-01-01"/>
+      </valuePeriod>
+    </extension>
+  </name>
+  <alias value="Long name or alias or description"/>
+  <telecom>
+    <extension url="http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"/>
+          <code value="FC"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <system value="fax"/>
+    <value value="55555555551"/>
+    <period>
+      <start value="1982-03-04T00:00:00-07:00"/>
+    </period>
+  </telecom>
+  <physicalType>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/location-physical-type"/>
+      <code value="bu"/>
+    </coding>
+  </physicalType>
+</Location>
