@@ -283,7 +283,7 @@
         
           Active
           
-            as of 2025-02-27
+            as of 2025-02-28
           
         
       </td>
@@ -302,76 +302,83 @@
   <a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>BCPractitionerRole</b></td></tr>
  <tr><td>PractitionerRole</td><td>PRD (as one example)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>PRD-7 (or XCN.1)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>CX / EI (occasionally, more often EI maps to a resource id or a URL), PRD-7 (or XCN.1)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>STF-7</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>PRD-8/9 / PRA-5.4</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>PRD-1 / STF-18  / PRA-3  / PRT-4  / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td>PRA-5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>DR, PRD-8/9 / PRA-5.4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>CE/CNE/CWE, PRD-1 / STF-18  / PRA-3  / PRT-4  / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td>CE/CNE/CWE, PRA-5</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;healthcareService</td><td>EDU-2 / AFF-3</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>XTN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>XTN.3</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>XTN.1 (or XTN.12)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>XTN.2 - but often indicated by field</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rank</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>DR, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;notAvailable</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;during</td><td>DR</td> </tr>
 </table>
 <a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>BCPractitionerRole</b></td></tr>
  <tr><td>PractitionerRole</td><td>Entity. Role, or Act, Role</td><td>, </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension (status)</td><td>RoleStatus</td><td><p>Codes representing the defined possible states of the Role</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;meta</td><td>n/a, N/A</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;implicitRules</td><td>n/a</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;language</td><td>n/a</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>n/a, N/A, Act.text?</td><td>, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>Entity. Role, or Act, N/A</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (status)</td><td>n/a, N/A, RoleStatus</td><td>, , <p>Codes representing the defined possible states of the Role</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>.statusCode</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>.performance[@typeCode &lt;= 'PPRF'].ActDefinitionOrEvent.effectiveTime</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;practitioner</td><td>.player</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;organization</td><td>.scoper</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>.code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td>.player.HealthCareProvider[@classCode = 'PROV'].code</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (statusReason)</td><td>n/a, N/A</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>n/a, II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT], .id</td><td>, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>n/a, .statusCode</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>n/a, IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;], .performance[@typeCode &lt;= 'PPRF'].ActDefinitionOrEvent.effectiveTime</td><td>, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;practitioner</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .player</td><td>, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;organization</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .scoper</td><td>, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>n/a, CD, .code</td><td>, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td>n/a, CD, .player.HealthCareProvider[@classCode = 'PROV'].code</td><td>, , </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>.performance.ActDefinitionOrEvent.ServiceDeliveryLocation[@classCode = 'SDLOC']</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;healthcareService</td><td>.player.QualifiedEntity[@classCode = 'QUAL'].code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>.telecom</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .performance.ActDefinitionOrEvent.ServiceDeliveryLocation[@classCode = 'SDLOC']</td><td>, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;healthcareService</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .player.QualifiedEntity[@classCode = 'QUAL'].code</td><td>, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>n/a, TEL, .telecom</td><td>, , </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./scheme</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>./url</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>unique(./use)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>n/a, ./scheme</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>n/a, ./url</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>n/a, unique(./use)</td><td>, </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rank</td><td>n/a</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;availableTime</td><td>.effectiveTime</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>n/a, IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;], ./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]</td><td>, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;availableTime</td><td>n/a, .effectiveTime</td><td>, </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daysOfWeek</td><td>.effectiveTime</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allDay</td><td>.effectiveTime</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;availableStartTime</td><td>.effectiveTime</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;availableEndTime</td><td>.effectiveTime</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;notAvailable</td><td>.effectiveTime</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daysOfWeek</td><td>n/a, .effectiveTime</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allDay</td><td>n/a, .effectiveTime</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;availableStartTime</td><td>n/a, .effectiveTime</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;availableEndTime</td><td>n/a, .effectiveTime</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;notAvailable</td><td>n/a, .effectiveTime</td><td>, </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td><td>, </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description</td><td>n/a</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;during</td><td>.effectiveTime</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;availabilityExceptions</td><td>.effectiveTime</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;endpoint</td><td>n/a</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;during</td><td>n/a, IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;], .effectiveTime</td><td>, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;availabilityExceptions</td><td>n/a, .effectiveTime</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;endpoint</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity)</td><td>, </td> </tr>
 </table>
 <a name="servd"> </a><h3>Mappings for ServD (<a href="http://www.omg.org/spec/ServD/1.0/">http://www.omg.org/spec/ServD/1.0/</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>BCPractitionerRole</b></td></tr>
  <tr><td>PractitionerRole</td><td>ServiceSiteProvider</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>./Identifiers</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Identifier, ./Identifiers</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td>./Specialty</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)&lt;br/&gt; However these are accessed via the Site.ServiceSite.ServiceSiteProvider record. (The Site has the location)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>ContactPoint</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./ContactPointType</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>./Value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>./ContactPointPurpose</td> </tr>
@@ -411,7 +418,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Feb 27, 2025 23:53+0000">2025-02-27</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 28, 2025 00:26+0000">2025-02-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
