@@ -19,7 +19,7 @@
   fhir:title [ fhir:v "Query for an organization without returning associations"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:kind [ fhir:v "query"] ; # 
-  fhir:date [ fhir:v "2025-02-28T00:26:03+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-05T22:25:43+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -38,13 +38,13 @@
   ] ) ; # 
   fhir:code [ fhir:v "entityQuery"] ; # 
   fhir:resource ( [ fhir:v "Organization"] ) ; # 
-  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
-  fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
-  fhir:instance [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:system [ fhir:v false] ; # 
+  fhir:type [ fhir:v true] ; # 
+  fhir:instance [ fhir:v true] ; # 
   fhir:parameter ( [
      fhir:name [ fhir:v "identifier" ] ;
      fhir:use [ fhir:v "in" ] ;
-     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:min [ fhir:v 0 ] ;
      fhir:max [ fhir:v "1" ] ;
      fhir:documentation [ fhir:v "String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]" ] ;
      fhir:type [ fhir:v "string" ] ;
@@ -52,7 +52,7 @@
   ] [
      fhir:name [ fhir:v "name" ] ;
      fhir:use [ fhir:v "in" ] ;
-     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:min [ fhir:v 0 ] ;
      fhir:max [ fhir:v "1" ] ;
      fhir:documentation [ fhir:v "Search for organizations with the specified name, mandatory if no identifier specified. May use trailing wildcards, e.g. Clinic*" ] ;
      fhir:type [ fhir:v "string" ] ;
@@ -60,7 +60,7 @@
   ] [
      fhir:name [ fhir:v "description" ] ;
      fhir:use [ fhir:v "in" ] ;
-     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:min [ fhir:v 0 ] ;
      fhir:max [ fhir:v "1" ] ;
      fhir:documentation [ fhir:v "Search for organizations with the specified description, mapping to BCOrganization.alias. May use trailing wildcards, e.g. Clinic*" ] ;
      fhir:type [ fhir:v "string" ] ;
@@ -68,7 +68,7 @@
   ] [
      fhir:name [ fhir:v "type" ] ;
      fhir:use [ fhir:v "in" ] ;
-     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:min [ fhir:v 0 ] ;
      fhir:max [ fhir:v "1" ] ;
      fhir:documentation [ fhir:v "Search for organizations with the specified role type code, mandatory if no identifier specified, mapping to Organization.type" ] ;
      fhir:type [ fhir:v "string" ] ;
@@ -76,7 +76,7 @@
   ] [
      fhir:name [ fhir:v "address-line1" ] ;
      fhir:use [ fhir:v "in" ] ;
-     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:min [ fhir:v 0 ] ;
      fhir:max [ fhir:v "1" ] ;
      fhir:documentation [ fhir:v "Search will run on Physical address, then Mailing address if no match was found on. May use trailing wildcards" ] ;
      fhir:type [ fhir:v "string" ] ;
@@ -84,7 +84,7 @@
   ] [
      fhir:name [ fhir:v "address-city" ] ;
      fhir:use [ fhir:v "in" ] ;
-     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:min [ fhir:v 0 ] ;
      fhir:max [ fhir:v "1" ] ;
      fhir:documentation [ fhir:v "Search for organizations with the specified city." ] ;
      fhir:type [ fhir:v "string" ] ;
@@ -92,14 +92,14 @@
   ] [
      fhir:name [ fhir:v "withHistory" ] ;
      fhir:use [ fhir:v "in" ] ;
-     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:min [ fhir:v 0 ] ;
      fhir:max [ fhir:v "1" ] ;
      fhir:documentation [ fhir:v "true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned." ] ;
      fhir:type [ fhir:v "boolean" ]
   ] [
      fhir:name [ fhir:v "bundle" ] ;
      fhir:use [ fhir:v "out" ] ;
-     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:min [ fhir:v 1 ] ;
      fhir:max [ fhir:v "1" ] ;
      fhir:documentation [ fhir:v "The Response Bundle with the OperationOutcome and the list of BCOrganizationBundle found by the search." ] ;
      fhir:type [ fhir:v "Bundle" ]
