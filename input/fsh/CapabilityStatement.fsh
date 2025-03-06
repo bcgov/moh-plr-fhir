@@ -5,7 +5,7 @@ Usage: #definition
 * version = "1.0"
 * name = "BCPLRClientCapabilityStatement"
 * title = "BC PLR Client Capability Statement"
-* status = #draft
+* status = #active
 * date = "2024-03-20"
 * publisher = "BC Ministry of Health"
 * description = "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.
@@ -15,7 +15,7 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #json
 * format[0].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-//* implementationGuide = "http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider"
+* implementationGuide = "http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider"
 
 * rest[0].mode = #client
 * rest[0].resource[0].type = #Bundle
@@ -50,7 +50,7 @@ All POST and PUT Requests are sent using a Paramaters resource and the Response 
 * fhirVersion = #4.0.1
 * format[0] = #json
 * format[0].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-//* implementationGuide = "https://fhir-guide.hlth.gov.bc.ca/ProviderLocationRegistry/"
+* implementationGuide = "https://fhir-guide.hlth.gov.bc.ca/ProviderLocationRegistry/"
 
 * rest[0].mode = #server
 //* rest[0].documentation = "RESTful Atomic services"

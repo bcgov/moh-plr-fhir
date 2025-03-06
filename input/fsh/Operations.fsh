@@ -112,7 +112,7 @@ Usage: #definition
 * url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query"
 * name = "LocationEntityQuery"
 * title = "Query for a location without returning associations"
-* status = #draft
+* status = #active
 * kind = #query
 * code = #entityQuery
 * resource[0] = #Location
@@ -578,7 +578,7 @@ Usage: #definition
 * url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-maintain"
 * name = "Maintain"
 * title = "Maintain PLR entities."
-* status = #draft
+* status = #active
 * kind = #operation
 * code = #maintain
 * resource[0] = #Bundle
@@ -647,7 +647,7 @@ Usage: #definition
 * url = "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution"
 * name = "Distribution"
 * title = "PLR entities sent out in a distribution."
-* status = #draft
+* status = #active
 * kind = #operation
 * code = #distribution
 * resource[0] = #Bundle
