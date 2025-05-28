@@ -108,3 +108,11 @@ Description: "BC communication purpose value set."
 * ^experimental = false
 * codes from system $PLRCommPurpose
 
+ValueSet: HealthDeliverySiteTypeVS
+Title: "BC Health Delivery Site Type Value Set"
+Id: bc-hds-type-value-set
+Description: "BC Health Delivery Site Type Value set."
+* ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-hds-type-value-set"
+* ^experimental = false
+* codes from system $PLRHDSType
+
