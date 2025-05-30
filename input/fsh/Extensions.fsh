@@ -1,3 +1,42 @@
+Extension: HDSSubTypeExtension
+Id: bc-hds-subtype-extension
+Title: "BC Health Delivery Site sub-type Extension"
+Description: "Uses to define HDS sub type"
+* ^context.type = #element
+* ^context.expression = "Extension"
+* extension contains hdsSubType 1..1 MS and
+     identifier 0..1 MS and
+     PeriodExtension named period 1..1 and 
+     EndReasonExtension named endReason 0..1 and
+     OwnerExtension named owner 0..1
+* extension[hdsSubType].value[x] only CodeableConcept
+* extension[hdsSubType].value[x] 1..1 MS
+/* extension[hdsSubType].valueCodeableConcept from HealthDeliverySiteSubTypeVS (required) */
+* extension[identifier].value[x] only Identifier
+* extension[identifier].value[x] 1..1 MS
+
+
+Extension: HealthDeliveryTypeExtension
+Id: bc-health-delivery-site-type-extension
+Title: "BC Health Delivery Site Type Extension"
+Description: "Uses to define HDS Type and HDS sub type"
+* ^context.type = #element
+* ^context.expression = "Organization"
+* ^context[+].type = #element
+* ^context[=].expression = "Organization.type"
+* extension contains hdsType 1..1 MS and
+     /*identifier 0..1 MS and */ // hds_type not ready, might not need it
+     PeriodExtension named period 1..1 MS and 
+     EndReasonExtension named endReason 0..1 and
+     OwnerExtension named owner 0..1 and
+     HDSSubTypeExtension named hdsSubType 0..1
+* extension[hdsType].value[x] only CodeableConcept
+* extension[hdsType].value[x] 1..1 MS
+* extension[hdsType].valueCodeableConcept from HealthDeliverySiteTypeVS (required)
+/* extension[identifier].value[x] only Identifier
+* extension[identifier].value[x] 1..1 MS */
+
+
 Extension: FacilityDetailsExtension
 Id: bc-facility-details-extension
 Title: "BC Facility Details Extension"
@@ -46,7 +85,7 @@ Description: "A code that represents the health authority area that the location
 Extension: HealthServiceDeliveryAreaExtension
 Id: bc-facility-health-service-delivery-area-extension
 Title: "BC Facility Health Service Delivery Area Extension"
-Description: "A code that represents the Health Service Delivery Area (HSDA)that the location is a part of."
+Description: "A code that represents the Health Service Delivery Area (HSDA) that the location is a part of."
 * ^context.type = #element
 * ^context.expression = "Extension"
 * value[x] only string
@@ -91,7 +130,7 @@ Description: "A code that represents the Primary Care Network (PCN) that the loc
 Extension: AvailabilityExtension
 Id: bc-availability-extension
 Title: "Extension to represent Availability, or hours of operation, for clinic, or other Profiles"
-Description: "Can represent the Available time or the Not Avaialble details"
+Description: "Can represent the Available time or the Not-Available details"
 * ^context.type = #element
 * ^context.expression = "Organization"
 * extension contains AvailableTimeExtension named availableTime 0..* MS and
@@ -172,9 +211,7 @@ Id: bc-organization-clinic-service-delivery-type-extension
 Title: "Extension to represent the Clinic Service Delivery type."
 Description: "The (Primary Care) Clinic Service Delivery type, the expected value is one from Longitudinal, Episodic, and Mixed"
 * ^context.type = #element
-* ^context.expression = "Organization"
-* ^context[+].type = #element
-* ^context[=].expression = "Extension"
+* ^context.expression = "Extension"
 * extension contains serviceDeliveryType 1..1 MS and
      identifier 0..1 MS and 
      PeriodExtension named period 1..1 MS and 
@@ -297,6 +334,8 @@ Title: "BC Specialty Source Extension"
 Description: "The specialty source."
 * ^context.type = #element
 * ^context.expression = "PractitionerRole.specialty"
+* ^context[+].type = #element
+* ^context[=].expression = "Practitioner.communication"
 * value[x] only string
 * value[x] 1..1 MS
 

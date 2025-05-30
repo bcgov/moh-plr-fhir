@@ -60,6 +60,10 @@ Description: "Tracking end reason."
 * ^context[+].type = #element
 * ^context[=].expression = "Practitioner"
 * ^context[+].type = #element
+* ^context[=].expression = "Practitioner.qualification"
+* ^context[+].type = #element
+* ^context[=].expression = "Practitioner.communication"
+* ^context[+].type = #element
 * ^context[=].expression = "PractitionerRole"
 * ^context[+].type = #element
 * ^context[=].expression = "PractitionerRole.specialty"
@@ -67,6 +71,8 @@ Description: "Tracking end reason."
 * ^context[=].expression = "Location.name"
 * ^context[+].type = #element
 * ^context[=].expression = "Organization.name"
+* ^context[+].type = #element
+* ^context[=].expression = "Organization"
 * ^context[+].type = #element
 * ^context[=].expression = "OrganizationAffiliation"
 * ^context[+].type = #element
@@ -98,7 +104,13 @@ Description: "Tracking the owner."
 * ^context[+].type = #element
 * ^context[=].expression = "PractitionerRole.specialty"
 * ^context[+].type = #element
+* ^context[=].expression = "OrganizationAffiliation"
+* ^context[+].type = #element
 * ^context[=].expression = "Organization.name"
+* ^context[+].type = #element
+* ^context[=].expression = "Organization"
+* ^context[+].type = #element
+* ^context[=].expression = "Location.name"
 * ^context[+].type = #element
 * ^context[=].expression = "Extension"
 * value[x] only Identifier
