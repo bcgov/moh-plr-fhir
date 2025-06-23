@@ -1,0 +1,100 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "bc-batch",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition bc-batch</b></p><a name=\"bc-batch\"> </a><a name=\"hcbc-batch\"> </a><p>URL: [base]/$batch</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>messageId</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>A unique message ID.</p>\n</div></td></tr><tr><td>IN</td><td>messageTime</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td/><td><div><p>When the message was sent.</p>\n</div></td></tr><tr><td>IN</td><td>batch</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td><div><p>A <a href=\"StructureDefinition-bc-batch-bundle.html\">BC Batch Bundle</a></p>\n</div></td></tr><tr><td>OUT</td><td>messageId</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>A unique message ID.</p>\n</div></td></tr><tr><td>OUT</td><td>messageTime</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td/><td><div><p>When the message was sent.</p>\n</div></td></tr><tr><td>OUT</td><td>requestMessageId</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>The request message ID.</p>\n</div></td></tr><tr><td>OUT</td><td>batch</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td><div><p>A <a href=\"StructureDefinition-bc-batch-response-bundle.html\">BC Batch Bundle</a></p>\n</div></td></tr><tr><td>OUT</td><td>outcome</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/operationoutcome.html\">OperationOutcome</a></td><td/><td><div><p>The operation outcome - success, warning and error messages.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-batch",
+  "version" : "1.0.0",
+  "name" : "Batch",
+  "title" : "Batch Maintain PLR entities.",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2025-06-23T21:44:28+00:00",
+  "publisher" : "BC Ministry of Health",
+  "contact" : [{
+    "name" : "BC Ministry of Health",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"
+    }]
+  }],
+  "description" : "This operation is used to create and update multiple resources (Practitioner only for now)",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CA",
+      "display" : "Canada"
+    }]
+  }],
+  "code" : "batch",
+  "resource" : ["Bundle"],
+  "system" : true,
+  "type" : false,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "messageId",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "A unique message ID.",
+    "type" : "string"
+  },
+  {
+    "name" : "messageTime",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "When the message was sent.",
+    "type" : "dateTime"
+  },
+  {
+    "name" : "batch",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "A [BC Batch Bundle](StructureDefinition-bc-batch-bundle.html)",
+    "type" : "Bundle"
+  },
+  {
+    "name" : "messageId",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "A unique message ID.",
+    "type" : "string"
+  },
+  {
+    "name" : "messageTime",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "When the message was sent.",
+    "type" : "dateTime"
+  },
+  {
+    "name" : "requestMessageId",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "The request message ID.",
+    "type" : "string"
+  },
+  {
+    "name" : "batch",
+    "use" : "out",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "A [BC Batch Bundle](StructureDefinition-bc-batch-response-bundle.html)",
+    "type" : "Bundle"
+  },
+  {
+    "name" : "outcome",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "The operation outcome - success, warning and error messages.",
+    "type" : "OperationOutcome"
+  }]
+}

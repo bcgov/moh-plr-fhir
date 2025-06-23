@@ -1,0 +1,48 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/ValueSet/bc-qualification-value-set> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "bc-qualification-value-set"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet bc-qualification-value-set</b></p><a name=\"bc-qualification-value-set\"> </a><a name=\"hcbc-qualification-value-set\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.ca.baseline@1.1.7&amp;canonical=http://fhir.infoway-inforoute.ca/CodeSystem/scpqual\"><code>http://fhir.infoway-inforoute.ca/CodeSystem/scpqual</code></a></li><li>Include all codes defined in <code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-credential-code-system</code></li></ul></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-qualification-value-set"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "PracQualificationVS"] ; # 
+  fhir:title [ fhir:v "BC Practitioner Qualification Value Set"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-23T21:44:28+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "BC Ministry of Health" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "BC specific qualification value set."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "CA" ] ;
+       fhir:display [ fhir:v "Canada" ]
+     ] )
+  ] ) ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://fhir.infoway-inforoute.ca/CodeSystem/scpqual"^^xsd:anyURI ]
+     ] [
+       fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-credential-code-system"^^xsd:anyURI ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

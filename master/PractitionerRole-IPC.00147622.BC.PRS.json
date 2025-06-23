@@ -1,0 +1,59 @@
+{
+  "resourceType" : "PractitionerRole",
+  "id" : "IPC.00147622.BC.PRS",
+  "meta" : {
+    "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole IPC.00147622.BC.PRS</b></p><a name=\"IPC.00147622.BC.PRS\"> </a><a name=\"hcIPC.00147622.BC.PRS\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-practitioner-role.html\">BCPractitionerRole</a></p></div><p><b>practitioner</b>: Identifier: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc</code>/IPC.00147622.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&gt; (ongoing))</p><p><b>code</b>: <span title=\"Codes:{http://fhir.infoway-inforoute.ca/CodeSystem/scptype MD}\">MD</span></p><p><b>specialty</b>: <span title=\"Codes:{http://fhir.infoway-inforoute.ca/CodeSystem/scpqual AMD53}\">AMD53</span></p></div>"
+  },
+  "practitioner" : {
+    "identifier" : {
+      "extension" : [{
+        "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+        "valueIdentifier" : {
+          "assigner" : {
+            "display" : "MOH"
+          }
+        }
+      }],
+      "system" : "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc",
+      "value" : "IPC.00147622.BC.PRS",
+      "period" : {
+        "start" : "2000-01-01"
+      }
+    }
+  },
+  "code" : [{
+    "coding" : [{
+      "system" : "http://fhir.infoway-inforoute.ca/CodeSystem/scptype",
+      "code" : "MD"
+    }]
+  }],
+  "specialty" : [{
+    "extension" : [{
+      "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension",
+      "valuePeriod" : {
+        "start" : "2000-01-01",
+        "end" : "2020-01-01"
+      }
+    },
+    {
+      "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-specialty-source-extension",
+      "valueString" : "Expertise source"
+    },
+    {
+      "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+      "valueIdentifier" : {
+        "assigner" : {
+          "display" : "MOH"
+        }
+      }
+    }],
+    "coding" : [{
+      "system" : "http://fhir.infoway-inforoute.ca/CodeSystem/scpqual",
+      "code" : "AMD53"
+    }]
+  }]
+}

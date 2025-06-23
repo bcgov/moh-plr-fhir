@@ -1,0 +1,49 @@
+{
+  "resourceType" : "PractitionerRole",
+  "id" : "RELN.173.PRS",
+  "meta" : {
+    "profile" : ["http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole RELN.173.PRS</b></p><a name=\"RELN.173.PRS\"> </a><a name=\"hcRELN.173.PRS\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-role-relationships.html\">BCRoleRelationships</a></p></div><p><b>BC Practitioner to Organization or Practitioner to Practitioner Type Extension.</b>: <span title=\"Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system EE}\">EE</span></p><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>practitioner</b>: Identifier: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc</code>/IPC.00147433.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&gt; (ongoing))</p><p><b>organization</b>: Identifier: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc</code>/IPC.00147436.BC.PRS\u00a0(,\u00a0period:\u00a02000-01-01 --&gt; (ongoing))</p></div>"
+  },
+  "extension" : [{
+    "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system",
+        "code" : "EE"
+      }]
+    }
+  }],
+  "period" : {
+    "start" : "2000-01-01"
+  },
+  "practitioner" : {
+    "identifier" : {
+      "system" : "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc",
+      "value" : "IPC.00147433.BC.PRS",
+      "period" : {
+        "start" : "2000-01-01"
+      }
+    }
+  },
+  "organization" : {
+    "identifier" : {
+      "extension" : [{
+        "url" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension",
+        "valueIdentifier" : {
+          "assigner" : {
+            "display" : "MOH"
+          }
+        }
+      }],
+      "system" : "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc",
+      "value" : "IPC.00147436.BC.PRS",
+      "period" : {
+        "start" : "2000-01-01"
+      }
+    }
+  }
+}
