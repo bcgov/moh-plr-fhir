@@ -1,0 +1,390 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/Organization/Example-Organization-PrimaryCare> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Example-Organization-PrimaryCare"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
+       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization Example-Organization-PrimaryCare</b></p><a name=\"Example-Organization-PrimaryCare\"> </a><a name=\"hcExample-Organization-PrimaryCare\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization.html\">BCOrganization</a></p></div><blockquote><p><b>BC Notes Extension</b></p><ul><li>identifier: <code>http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id</code>/Note-2</li><li>text: Note text</li><li>http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension: 1998-01-02 --&gt; (ongoing)</li></ul></blockquote><blockquote><p><b>BC License Status Extension</b></p><ul><li>statusCode: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleStatus active}\">active</span></li><li>period: 2022-02-07 --&gt; 2023-12-07</li><li>statusReasonCode: <span title=\"Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system ORG}\">ORG</span></li><li>statusClassCode: <span title=\"Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system AE}\">AE</span></li></ul></blockquote><blockquote><p><b>Extension to represent the Clinic Payee number.</b></p><ul><li>identifier: PRPTY.123.PRS</li><li>payeeNumber: 123456</li><li>http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension: 2023-01-02 --&gt; (ongoing)</li></ul></blockquote><blockquote><p><b>Extension to represent Availability, or hours of operation, for clinic, or other Profiles</b></p><blockquote><p><b>url</b></p><a href=\"https://simplifier.net/resolve?scope=hl7.fhir.ca.baseline@1.2.0&amp;canonical=http://hl7.org/fhir/ca/baseline/identifier\">identifier</a></blockquote><p><b>value</b>: PRPTY.145.PRS</p><p><b>daysOfWeek</b>: mon</p><p><b>daysOfWeek</b>: wed</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 17:00:00</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-availableTime-extension.html\">Extension to represent the available Time, or hours of operation, for clinic, or other Profiles</a></blockquote><p><b>daysOfWeek</b>: tue</p><p><b>allDay</b>: true</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-availableTime-extension.html\">Extension to represent the available Time, or hours of operation, for clinic, or other Profiles</a></blockquote><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-period-extension.html\">BC Valid Period Extension</a></blockquote><p><b>value</b>: 2023-01-02 --&gt; (ongoing)</p></blockquote><blockquote><p><b>Extension for BC Organization to add Primary Care Clinic details</b></p><p><b>identifier</b>: PRPTY.987.PRS</p><p><b>clinicType</b>: <span title=\"Codes:\">Longitudinal Primary Care Practice</span></p><p><b>BC Valid Period Extension</b>: 2023-01-02 --&gt; (ongoing)</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-organization-clinic-type-extension.html\">Extension to represent the Clinic type.</a></blockquote><p><b>identifier</b>: PRPTY.963.PRS</p><p><b>ownershipType</b>: <span title=\"Codes:\">Other</span></p><p><b>BC Valid Period Extension</b>: 2023-01-02 --&gt; (ongoing)</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-organization-clinic-ownership-type-extension.html\">Extension to represent the Clinic Ownership type.</a></blockquote><p><b>identifier</b>: PRPTY.258.PRS</p><p><b>serviceDeliveryType</b>: <span title=\"Codes:\">Longitudinal</span></p><p><b>BC Valid Period Extension</b>: 2023-01-02 --&gt; (ongoing)</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-organization-clinic-service-delivery-type-extension.html\">Extension to represent the Clinic Service Delivery type.</a></blockquote><p><b>identifier</b>: PRPTY.852.PRS</p><p><b>pciFlag</b>: true</p><p><b>BC Valid Period Extension</b>: 2023-01-02 --&gt; (ongoing)</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-organization-pci-extension.html\">Extension to indicate if the clinic is part of the Primary Care Initiative.</a></blockquote><p><b>identifier</b>: PRPTY.741.PRS</p><p><b>clinicLegalName</b>: Kelowna Downtown Primary Care Clinic Org.</p><p><b>BC Valid Period Extension</b>: 2023-01-02 --&gt; (ongoing)</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-organization-clinic-legal-name-extension.html\">Extension for the clinic business legal name.</a></blockquote><p><b>identifier</b>: PRPTY.654.PRS</p><p><b>clinicOwner</b>: John Doe, Dc Singh, Interior Health Authority</p><p><b>BC Valid Period Extension</b>: 2023-01-02 --&gt; (ongoing)</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-organization-clinic-owner-extension.html\">Extension to represent clinic Owners.</a></blockquote><p><b>identifier</b>: PRPTY.156.PRS</p><p><b>clinicOwner</b>: Owner Two, Dc Singh, Interior Health Authority</p><p><b>BC Valid Period Extension</b>: 2023-01-02 --&gt; (ongoing)</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-organization-clinic-owner-extension.html\">Extension to represent clinic Owners.</a></blockquote></blockquote><p><b>identifier</b>: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-org-id</code>/456789 (, period: 2021-12-01 --&gt; (ongoing))</p><p><b>active</b>: true</p><p><b>type</b>: <span title=\"Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system ORG}\">ORG</span></p><p><b>name</b>: Kelowna PC Clinic</p><p><b>alias</b>: Primary Care Clinic - Kelowna</p><p><b>telecom</b>: ph: 2501112234</p><p><b>address</b>: 1000 DOUGLAS ST Kelowna BC V6P7B8 CA </p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "identifier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Identifier ;
+         fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Note-2" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "text"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Note text"
+       ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "1998-01-02"^^xsd:date ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "statusCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleStatus"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "active" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "period"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2022-02-07"^^xsd:date ] ;
+         fhir:end [ fhir:v "2023-12-07"^^xsd:date ]
+       ]
+     ] [
+       fhir:url [ fhir:v "statusReasonCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "ORG" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "statusClassCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "AE" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "identifier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Identifier ;
+         fhir:value [ fhir:v "PRPTY.123.PRS" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "payeeNumber"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "123456"
+       ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2023-01-02"^^xsd:date ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-payee-number-extension"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "identifier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Identifier ;
+         fhir:value [ fhir:v "PRPTY.145.PRS" ]
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "daysOfWeek"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "mon"
+         ]
+       ] [
+         fhir:url [ fhir:v "daysOfWeek"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "wed"
+         ]
+       ] [
+         fhir:url [ fhir:v "availableStartTime"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:time ;
+           fhir:v "09:00:00"^^xsd:time
+         ]
+       ] [
+         fhir:url [ fhir:v "availableEndTime"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:time ;
+           fhir:v "17:00:00"^^xsd:time
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availableTime-extension"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "daysOfWeek"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "tue"
+         ]
+       ] [
+         fhir:url [ fhir:v "allDay"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availableTime-extension"^^xsd:anyURI ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2023-01-02"^^xsd:date ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-availability-extension"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "identifier"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Identifier ;
+           fhir:value [ fhir:v "PRPTY.987.PRS" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "clinicType"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:text [ fhir:v "Longitudinal Primary Care Practice" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Period ;
+           fhir:start [ fhir:v "2023-01-02"^^xsd:date ]
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-type-extension"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "identifier"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Identifier ;
+           fhir:value [ fhir:v "PRPTY.963.PRS" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "ownershipType"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:text [ fhir:v "Other" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Period ;
+           fhir:start [ fhir:v "2023-01-02"^^xsd:date ]
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-ownership-type-extension"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "identifier"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Identifier ;
+           fhir:value [ fhir:v "PRPTY.258.PRS" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "serviceDeliveryType"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:text [ fhir:v "Longitudinal" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Period ;
+           fhir:start [ fhir:v "2023-01-02"^^xsd:date ]
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-service-delivery-type-extension"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "identifier"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Identifier ;
+           fhir:value [ fhir:v "PRPTY.852.PRS" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "pciFlag"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Period ;
+           fhir:start [ fhir:v "2023-01-02"^^xsd:date ]
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-pci-extension"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "identifier"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Identifier ;
+           fhir:value [ fhir:v "PRPTY.741.PRS" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "clinicLegalName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Kelowna Downtown Primary Care Clinic Org."
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Period ;
+           fhir:start [ fhir:v "2023-01-02"^^xsd:date ]
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-legal-name-extension"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "identifier"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Identifier ;
+           fhir:value [ fhir:v "PRPTY.654.PRS" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "clinicOwner"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "John Doe, Dc Singh, Interior Health Authority"
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Period ;
+           fhir:start [ fhir:v "2023-01-02"^^xsd:date ]
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-owner-extension"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "identifier"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Identifier ;
+           fhir:value [ fhir:v "PRPTY.156.PRS" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "clinicOwner"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Owner Two, Dc Singh, Interior Health Authority"
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Period ;
+           fhir:start [ fhir:v "2023-01-02"^^xsd:date ]
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-clinic-owner-extension"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-primary-care-clinic-extension"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-org-id"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "456789" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2021-12-01"^^xsd:date ]
+     ]
+  ] ) ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ORG" ]
+     ] )
+  ] ) ; # 
+  fhir:name [
+     fhir:v "Kelowna PC Clinic" ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "official"
+       ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2021-12-31T00:00:00-07:00"^^xsd:dateTime ]
+       ]
+     ] )
+  ] ; # 
+  fhir:alias ( [ fhir:v "Primary Care Clinic - Kelowna"] ) ; # 
+  fhir:telecom ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "BC" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "2501112234" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-02-02"^^xsd:date ]
+     ]
+  ] ) ; # 
+  fhir:address ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "BC" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "V" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:type [ fhir:v "postal" ] ;
+     fhir:line ( [ fhir:v "1000 DOUGLAS ST" ] ) ;
+     fhir:city [ fhir:v "Kelowna" ] ;
+     fhir:state [ fhir:v "BC" ] ;
+     fhir:postalCode [ fhir:v "V6P7B8" ] ;
+     fhir:country [ fhir:v "CA" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

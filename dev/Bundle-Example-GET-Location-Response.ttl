@@ -1,0 +1,223 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/Bundle/Example-GET-Location-Response> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Example-GET-Location-Response"] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00047422.BC.PRS"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552"^^xsd:anyURI ] ;
+     fhir:resource ( <urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "outcome" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00047422.BC.PRS"^^xsd:anyURI ] ;
+     fhir:resource ( <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00047422.BC.PRS> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] ) . # 
+
+<urn:uuid:3abd58f7-f226-4358-bdfd-2bb64bc93552> a fhir:OperationOutcome ;
+  fhir:id [ fhir:v "Example-OperationOutcome-Success"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome"^^xsd:anyURI ;
+       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-operation-outcome>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"OperationOutcome_Example-OperationOutcome-Success\"> </a><p class=\"res-header-id\"><b>Generated Narrative: OperationOutcome Example-OperationOutcome-Success</b></p><a name=\"Example-OperationOutcome-Success\"> </a><a name=\"hcExample-OperationOutcome-Success\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-operation-outcome.html\">BCOperationOutcome</a></p></div><h3>Issues</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td style=\"display: none\">*</td><td>Information</td><td>Business Rule Violation</td><td><span title=\"Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system PRS.PRP.MTN.UNK.0.0.7067}\">Query successful</span></td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:issue ( [
+     fhir:severity [ fhir:v "information" ] ;
+     fhir:code [ fhir:v "business-rule" ] ;
+     fhir:details [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "PRS.PRP.MTN.UNK.0.0.7067" ]
+       ] ) ;
+       fhir:text [ fhir:v "Query successful" ]
+     ]
+  ] ) . # 
+
+<https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Location/IFC.00047422.BC.PRS> a fhir:Location ;
+  fhir:id [ fhir:v "IFC.00047422.BC.PRS"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location"^^xsd:anyURI ;
+       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Location_IFC.00047422.BC.PRS\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Location IFC.00047422.BC.PRS</b></p><a name=\"IFC.00047422.BC.PRS\"> </a><a name=\"hcIFC.00047422.BC.PRS\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-location.html\">BCLocation</a></p></div><blockquote><p><b>BC Facility Health Service Area Extension</b></p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-health-authority-extension.html\">BC Facility Health Authority Area Extension</a></blockquote><p><b>value</b>: Interior</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-health-service-delivery-area-extension.html\">BC Facility Health Service Delivery Area Extension</a></blockquote><p><b>value</b>: Interior Okanogan</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-local-health-area-extension.html\">BC Facility Local Health Area Extension</a></blockquote><p><b>value</b>: Kelowna Area</p><p><b>code</b>: 3100</p><p><b>name</b>: Downtown Kelowna</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-community-health-area-extension.html\">BC Facility Community Health Service Area Extension</a></blockquote><p><b>code</b>: 30801</p><p><b>name</b>: Kelowna</p><blockquote><p><b>url</b></p><a href=\"StructureDefinition-bc-facility-primary-care-network-extension.html\">BC Facility Primary Care Network Extension</a></blockquote></blockquote><p><b>identifier</b>: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc</code>/IFC.00047422.BC.PRS (, period: 2000-01-01 --&gt; (ongoing))</p><p><b>name</b>: General Hospital</p><p><b>telecom</b>: fax: 55555555551, fax: 55555555555, <a href=\"ftp://someftp.com\">ftp://someftp.com</a></p><p><b>address</b>: 1000 DOUGLAS ST Kelowna BC V6P7B8 CA </p><p><b>physicalType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type bu}\">Building</span></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-authority-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Interior"
+       ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-delivery-area-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Interior Okanogan"
+       ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-local-health-area-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Kelowna Area"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Identifier ;
+           fhir:value [ fhir:v "3100" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Downtown Kelowna"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-community-health-area-extension"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Identifier ;
+           fhir:value [ fhir:v "30801" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Kelowna"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-primary-care-network-extension"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-facility-health-service-area-extension"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "IFC.00047422.BC.PRS" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+     ]
+  ] ) ; # 
+  fhir:name [
+     fhir:v "General Hospital" ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+       ]
+     ] )
+  ] ; # 
+  fhir:telecom ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "BC" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:system [ fhir:v "fax" ] ;
+     fhir:value [ fhir:v "55555555551" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "1982-03-04T00:00:00-07:00"^^xsd:dateTime ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "HC" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:system [ fhir:v "fax" ] ;
+     fhir:value [ fhir:v "55555555555" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "1981-04-04T00:00:00-07:00"^^xsd:dateTime ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "MC" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:system [ fhir:v "url" ] ;
+     fhir:value [ fhir:v "ftp://someftp.com" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "1991-01-01T00:00:00-07:00"^^xsd:dateTime ]
+     ]
+  ] ) ; # 
+  fhir:address [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "BC" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "V" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:type [ fhir:v "postal" ] ;
+     fhir:line ( [ fhir:v "1000 DOUGLAS ST" ] ) ;
+     fhir:city [ fhir:v "Kelowna" ] ;
+     fhir:state [ fhir:v "BC" ] ;
+     fhir:postalCode [ fhir:v "V6P7B8" ] ;
+     fhir:country [ fhir:v "CA" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+     ]
+  ] ; # 
+  fhir:physicalType [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/location-physical-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "bu" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

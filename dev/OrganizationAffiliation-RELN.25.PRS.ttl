@@ -1,0 +1,51 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/OrganizationAffiliation/RELN.25.PRS> a fhir:OrganizationAffiliation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "RELN.25.PRS"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
+       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OrganizationAffiliation RELN.25.PRS</b></p><a name=\"RELN.25.PRS\"> </a><a name=\"hcRELN.25.PRS\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-bc-organization-affiliation.html\">BCOrganizationAffiliation</a></p></div><p><b>period</b>: 2000-01-01 --&gt; (ongoing)</p><p><b>organization</b>: Identifier: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc</code>/IPC.00147436.BC.PRS (, period: 2000-01-01 --&gt; (ongoing))</p><p><b>participatingOrganization</b>: Identifier: <code>https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc</code>/IPC.001164553.BC.PRS (, period: 2000-02-02 --&gt; (ongoing))</p><p><b>code</b>: <span title=\"Codes:{https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system deptof}\">deptof</span></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+  ] ; # 
+  fhir:organization [
+     fhir:identifier [
+       fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "IPC.00147436.BC.PRS" ] ;
+       fhir:period [
+         fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
+       ]
+     ]
+  ] ; # 
+  fhir:participatingOrganization [
+     fhir:identifier [
+       fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "IPC.001164553.BC.PRS" ] ;
+       fhir:period [
+         fhir:start [ fhir:v "2000-02-02"^^xsd:date ]
+       ]
+     ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "deptof" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
