@@ -20,14 +20,15 @@ Alias: $PLRLanguage = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistr
 Alias: $PLREndReason = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system
 Alias: $PLRError = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-error-code-system
 Alias: $PLRFacilityIdentifierType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-identifier-type-code-system
-Alias: $PLROwnerCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystems/bc-owner-code-system
+Alias: $PLROwnerCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system
 Alias: $PLRCommPurpose = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system
 Alias: $PLRAddressValStatus = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system
 Alias: $PLRRoleCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system
 Alias: $PLROrganizationRoleCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system
-Alias: $PLRQulaificationCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-credential-code-system
+Alias: $PLRQualificationCode = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-credential-code-system
 Alias: $PLRExpertise = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-expertise-code-system
 Alias: $PLRHDSType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-hds-type-code-system
+Alias: $PLRHdsSubtype = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-hds-subtype-code-system
 
 Alias: $PLRWorkLocationID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-work-location-id
 Alias: $PLRNoteID = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id
@@ -54,6 +55,6 @@ Alias: $System_CHSA = http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-c
 Alias: $PLRAddressValidationStatus = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system
 
 Alias: $PLRPrimaryCareClinicType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-clinic-type-code-system
-Alias: $PLRClinicOwnershipType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-clinic-ownership-type-status-code-system
+Alias: $PLRClinicOwnershipType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-clinic-ownership-type-code-system
 Alias: $PLRClinicServiceDeliveryType = https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-clinic-service-delivery-type-code-system
 
