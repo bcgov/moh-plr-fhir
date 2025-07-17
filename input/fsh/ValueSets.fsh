@@ -107,7 +107,7 @@ Description: "BC Health Delivery Site Type Value set."
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-hds-type-value-set"
 
 ValueSet: LocationIdentifierTypeVS
-Title: "BcLocationIdentifierTypeValueSet"
+Title: "Bc Location Identifier Type Value Set"
 Id: bc-location-identifier-type-value-set
 Description: "BC Location Identifier Type Value Set."
 * codes from system $PLRFacilityIdentifierType
@@ -115,7 +115,7 @@ Description: "BC Location Identifier Type Value Set."
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-location-identifier-type-value-set"
 
 ValueSet: LocationRelationshipTypeVS
-Title: "BcLocationRelationshipTypeValueSet"
+Title: "Bc Location Relationship Type Value Set"
 Id: bc-location-relationship-type-value-set
 Description: "BC Location Relationship Type Value Set."
 * codes from system $PLRLocationRelationshipType
@@ -123,7 +123,7 @@ Description: "BC Location Relationship Type Value Set."
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-location-relationship-type-value-set"
 
 ValueSet: ConditionTypeVS
-Title: "BcConditionTypeValueSet"
+Title: "Bc Condition Type Value Set"
 Id: bc-condition-type-value-set
 Description: "BC Condition Type Value Set."
 * codes from system $PLRConditionType
@@ -131,7 +131,7 @@ Description: "BC Condition Type Value Set."
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-condition-type-value-set"
 
 ValueSet: OwnerVS
-Title: "BcOwnerValueSet"
+Title: "Bc Owner Value Set"
 Id: bc-owner-value-set
 Description: "BC Owner Value Set."
 * codes from system $PLROwnerCode
@@ -139,7 +139,7 @@ Description: "BC Owner Value Set."
 * ^url = "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-owner-value-set"
 
 ValueSet: ErrorVS
-Title: "BcErrorValueSet"
+Title: "Bc Error Value Set"
 Id: bc-error-value-set
 Description: "BC Error Value Set."
 * codes from system $PLRError
