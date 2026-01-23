@@ -4,6 +4,13 @@ input_cache_path=./input-cache/
 echo Checking internet connection...
 curl -sSf tx.fhir.org > /dev/null
 
+# Run the Python script to update CodeSystems before building the IG, only if python3 is available
+if command -v python3 &> /dev/null; then
+    python3 generate_codesystems_from_url.py
+else
+    echo "Warning: python3 not found, skipping CodeSystems update. Please install Python 3 if you want this step."
+fi
+
 if [ $? -eq 0 ]; then
 	echo "Online"
 	txoption=""
