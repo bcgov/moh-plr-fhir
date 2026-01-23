@@ -1,0 +1,678 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/CodeSystem/bc-language-code-system> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "bc-language-code-system"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem bc-language-code-system</b></p><a name=\"bc-language-code-system\"> </a><a name=\"hcbc-language-code-system\"> </a><p>This case-sensitive code system <code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">S53<a name=\"bc-language-code-system-S53\"> </a></td><td>Southern Tutchone</td></tr><tr><td style=\"white-space:nowrap\">S54<a name=\"bc-language-code-system-S54\"> </a></td><td>Squamish</td></tr><tr><td style=\"white-space:nowrap\">S55<a name=\"bc-language-code-system-S55\"> </a></td><td>Stoney</td></tr><tr><td style=\"white-space:nowrap\">S56<a name=\"bc-language-code-system-S56\"> </a></td><td>Straits</td></tr><tr><td style=\"white-space:nowrap\">S57<a name=\"bc-language-code-system-S57\"> </a></td><td>Sudanese</td></tr><tr><td style=\"white-space:nowrap\">S58<a name=\"bc-language-code-system-S58\"> </a></td><td>Swampy Cree</td></tr><tr><td style=\"white-space:nowrap\">S59<a name=\"bc-language-code-system-S59\"> </a></td><td>Syriac</td></tr><tr><td style=\"white-space:nowrap\">T27<a name=\"bc-language-code-system-T27\"> </a></td><td>Tahltan</td></tr><tr><td style=\"white-space:nowrap\">T28<a name=\"bc-language-code-system-T28\"> </a></td><td>Taishanese (Toishanese)</td></tr><tr><td style=\"white-space:nowrap\">T29<a name=\"bc-language-code-system-T29\"> </a></td><td>Teochow</td></tr><tr><td style=\"white-space:nowrap\">T30<a name=\"bc-language-code-system-T30\"> </a></td><td>Thompson (Ntlakapamux)</td></tr><tr><td style=\"white-space:nowrap\">T31<a name=\"bc-language-code-system-T31\"> </a></td><td>Tibetan</td></tr><tr><td style=\"white-space:nowrap\">T32<a name=\"bc-language-code-system-T32\"> </a></td><td>Tigrigna</td></tr><tr><td style=\"white-space:nowrap\">T33<a name=\"bc-language-code-system-T33\"> </a></td><td>Tsimshian</td></tr><tr><td style=\"white-space:nowrap\">U07<a name=\"bc-language-code-system-U07\"> </a></td><td>Uyghur</td></tr><tr><td style=\"white-space:nowrap\">U08<a name=\"bc-language-code-system-U08\"> </a></td><td>Uzbek</td></tr><tr><td style=\"white-space:nowrap\">V02<a name=\"bc-language-code-system-V02\"> </a></td><td>Vlaams (Flemish)</td></tr><tr><td style=\"white-space:nowrap\">W02<a name=\"bc-language-code-system-W02\"> </a></td><td>Waray-Waray</td></tr><tr><td style=\"white-space:nowrap\">W03<a name=\"bc-language-code-system-W03\"> </a></td><td>Wolof</td></tr><tr><td style=\"white-space:nowrap\">W04<a name=\"bc-language-code-system-W04\"> </a></td><td>Woods Cree</td></tr><tr><td style=\"white-space:nowrap\">X02<a name=\"bc-language-code-system-X02\"> </a></td><td>Xhosa (isiXhosa)</td></tr><tr><td style=\"white-space:nowrap\">A09<a name=\"bc-language-code-system-A09\"> </a></td><td>Akan (Twi)</td></tr><tr><td style=\"white-space:nowrap\">A10<a name=\"bc-language-code-system-A10\"> </a></td><td>Albanian</td></tr><tr><td style=\"white-space:nowrap\">A11<a name=\"bc-language-code-system-A11\"> </a></td><td>Algonquin</td></tr><tr><td style=\"white-space:nowrap\">A12<a name=\"bc-language-code-system-A12\"> </a></td><td>Amharic</td></tr><tr><td style=\"white-space:nowrap\">A13<a name=\"bc-language-code-system-A13\"> </a></td><td>Assyrian Neo-Armaic</td></tr><tr><td style=\"white-space:nowrap\">A14<a name=\"bc-language-code-system-A14\"> </a></td><td>Atikamekw</td></tr><tr><td style=\"white-space:nowrap\">A15<a name=\"bc-language-code-system-A15\"> </a></td><td>Azerbaijani</td></tr><tr><td style=\"white-space:nowrap\">B12<a name=\"bc-language-code-system-B12\"> </a></td><td>Babine (Wetsuwet'en)</td></tr><tr><td style=\"white-space:nowrap\">B13<a name=\"bc-language-code-system-B13\"> </a></td><td>Bamanankan</td></tr><tr><td style=\"white-space:nowrap\">B14<a name=\"bc-language-code-system-B14\"> </a></td><td>Beaver</td></tr><tr><td style=\"white-space:nowrap\">B15<a name=\"bc-language-code-system-B15\"> </a></td><td>Belarusan</td></tr><tr><td style=\"white-space:nowrap\">B16<a name=\"bc-language-code-system-B16\"> </a></td><td>Bikol</td></tr><tr><td style=\"white-space:nowrap\">B17<a name=\"bc-language-code-system-B17\"> </a></td><td>Bilen</td></tr><tr><td style=\"white-space:nowrap\">B18<a name=\"bc-language-code-system-B18\"> </a></td><td>Bosnian</td></tr><tr><td style=\"white-space:nowrap\">C12<a name=\"bc-language-code-system-C12\"> </a></td><td>Carrier</td></tr><tr><td style=\"white-space:nowrap\">C13<a name=\"bc-language-code-system-C13\"> </a></td><td>Cayuga</td></tr><tr><td style=\"white-space:nowrap\">C14<a name=\"bc-language-code-system-C14\"> </a></td><td>Cebuano</td></tr><tr><td style=\"white-space:nowrap\">C15<a name=\"bc-language-code-system-C15\"> </a></td><td>Chaldean Neo-Aramaic</td></tr><tr><td style=\"white-space:nowrap\">C16<a name=\"bc-language-code-system-C16\"> </a></td><td>Chaochow</td></tr><tr><td style=\"white-space:nowrap\">C17<a name=\"bc-language-code-system-C17\"> </a></td><td>Chilcotin</td></tr><tr><td style=\"white-space:nowrap\">C18<a name=\"bc-language-code-system-C18\"> </a></td><td>Comox</td></tr><tr><td style=\"white-space:nowrap\">D07<a name=\"bc-language-code-system-D07\"> </a></td><td>Dakota</td></tr><tr><td style=\"white-space:nowrap\">D08<a name=\"bc-language-code-system-D08\"> </a></td><td>Dene</td></tr><tr><td style=\"white-space:nowrap\">D09<a name=\"bc-language-code-system-D09\"> </a></td><td>Dinka</td></tr><tr><td style=\"white-space:nowrap\">D10<a name=\"bc-language-code-system-D10\"> </a></td><td>Dogrib (Tlicho)</td></tr><tr><td style=\"white-space:nowrap\">E07<a name=\"bc-language-code-system-E07\"> </a></td><td>Edo</td></tr><tr><td style=\"white-space:nowrap\">E08<a name=\"bc-language-code-system-E08\"> </a></td><td>Ewe</td></tr><tr><td style=\"white-space:nowrap\">F17<a name=\"bc-language-code-system-F17\"> </a></td><td>Frisian</td></tr><tr><td style=\"white-space:nowrap\">F18<a name=\"bc-language-code-system-F18\"> </a></td><td>Fulah (Pular, Pulaar, Fulfulde)</td></tr><tr><td style=\"white-space:nowrap\">G17<a name=\"bc-language-code-system-G17\"> </a></td><td>Ga</td></tr><tr><td style=\"white-space:nowrap\">G18<a name=\"bc-language-code-system-G18\"> </a></td><td>Ganda (Luganda)</td></tr><tr><td style=\"white-space:nowrap\">G19<a name=\"bc-language-code-system-G19\"> </a></td><td>Georgian</td></tr><tr><td style=\"white-space:nowrap\">G20<a name=\"bc-language-code-system-G20\"> </a></td><td>Gitxsan (Gitksan)</td></tr><tr><td style=\"white-space:nowrap\">G21<a name=\"bc-language-code-system-G21\"> </a></td><td>Gwich'in</td></tr><tr><td style=\"white-space:nowrap\">H27<a name=\"bc-language-code-system-H27\"> </a></td><td>Haisla</td></tr><tr><td style=\"white-space:nowrap\">H28<a name=\"bc-language-code-system-H28\"> </a></td><td>Haitian Creole</td></tr><tr><td style=\"white-space:nowrap\">H29<a name=\"bc-language-code-system-H29\"> </a></td><td>Halkomelem</td></tr><tr><td style=\"white-space:nowrap\">H30<a name=\"bc-language-code-system-H30\"> </a></td><td>Harari</td></tr><tr><td style=\"white-space:nowrap\">H31<a name=\"bc-language-code-system-H31\"> </a></td><td>Heiltsuk</td></tr><tr><td style=\"white-space:nowrap\">H32<a name=\"bc-language-code-system-H32\"> </a></td><td>Hiligaynon</td></tr><tr><td style=\"white-space:nowrap\">H33<a name=\"bc-language-code-system-H33\"> </a></td><td>Hmong-Mien</td></tr><tr><td style=\"white-space:nowrap\">I17<a name=\"bc-language-code-system-I17\"> </a></td><td>Igbo</td></tr><tr><td style=\"white-space:nowrap\">I18<a name=\"bc-language-code-system-I18\"> </a></td><td>Ilocano</td></tr><tr><td style=\"white-space:nowrap\">I19<a name=\"bc-language-code-system-I19\"> </a></td><td>Inuinnaqtun (Inuvialuktun)</td></tr><tr><td style=\"white-space:nowrap\">I20<a name=\"bc-language-code-system-I20\"> </a></td><td>Inuktitut</td></tr><tr><td style=\"white-space:nowrap\">J02<a name=\"bc-language-code-system-J02\"> </a></td><td>Javanese</td></tr><tr><td style=\"white-space:nowrap\">K27<a name=\"bc-language-code-system-K27\"> </a></td><td>Kabyle</td></tr><tr><td style=\"white-space:nowrap\">K28<a name=\"bc-language-code-system-K28\"> </a></td><td>Kashmiri</td></tr><tr><td style=\"white-space:nowrap\">K29<a name=\"bc-language-code-system-K29\"> </a></td><td>Kaska (Nahani)</td></tr><tr><td style=\"white-space:nowrap\">K30<a name=\"bc-language-code-system-K30\"> </a></td><td>Khmer (Cambodian)</td></tr><tr><td style=\"white-space:nowrap\">K31<a name=\"bc-language-code-system-K31\"> </a></td><td>Kinyarwanda (Rwanda)</td></tr><tr><td style=\"white-space:nowrap\">K32<a name=\"bc-language-code-system-K32\"> </a></td><td>Kurdish</td></tr><tr><td style=\"white-space:nowrap\">K33<a name=\"bc-language-code-system-K33\"> </a></td><td>Kwakiutl (Kwak'wala)</td></tr><tr><td style=\"white-space:nowrap\">L22<a name=\"bc-language-code-system-L22\"> </a></td><td>Lao</td></tr><tr><td style=\"white-space:nowrap\">L23<a name=\"bc-language-code-system-L23\"> </a></td><td>Lillooet</td></tr><tr><td style=\"white-space:nowrap\">L24<a name=\"bc-language-code-system-L24\"> </a></td><td>Lingala</td></tr><tr><td style=\"white-space:nowrap\">M12<a name=\"bc-language-code-system-M12\"> </a></td><td>Macedonian</td></tr><tr><td style=\"white-space:nowrap\">M13<a name=\"bc-language-code-system-M13\"> </a></td><td>Malagasy</td></tr><tr><td style=\"white-space:nowrap\">M14<a name=\"bc-language-code-system-M14\"> </a></td><td>Malayalam</td></tr><tr><td style=\"white-space:nowrap\">M15<a name=\"bc-language-code-system-M15\"> </a></td><td>Malecite</td></tr><tr><td style=\"white-space:nowrap\">M16<a name=\"bc-language-code-system-M16\"> </a></td><td>Mi'kmaq</td></tr><tr><td style=\"white-space:nowrap\">M17<a name=\"bc-language-code-system-M17\"> </a></td><td>Mohawk</td></tr><tr><td style=\"white-space:nowrap\">M18<a name=\"bc-language-code-system-M18\"> </a></td><td>Mongolian</td></tr><tr><td style=\"white-space:nowrap\">M19<a name=\"bc-language-code-system-M19\"> </a></td><td>Montagnais (Innu)</td></tr><tr><td style=\"white-space:nowrap\">M20<a name=\"bc-language-code-system-M20\"> </a></td><td>Moose Cree</td></tr><tr><td style=\"white-space:nowrap\">N07<a name=\"bc-language-code-system-N07\"> </a></td><td>Naskapi</td></tr><tr><td style=\"white-space:nowrap\">N08<a name=\"bc-language-code-system-N08\"> </a></td><td>Nisga'a</td></tr><tr><td style=\"white-space:nowrap\">N09<a name=\"bc-language-code-system-N09\"> </a></td><td>North Slavey (Hare)</td></tr><tr><td style=\"white-space:nowrap\">N10<a name=\"bc-language-code-system-N10\"> </a></td><td>Northern East Cree</td></tr><tr><td style=\"white-space:nowrap\">N11<a name=\"bc-language-code-system-N11\"> </a></td><td>Northern Tutchone</td></tr><tr><td style=\"white-space:nowrap\">N12<a name=\"bc-language-code-system-N12\"> </a></td><td>Norweigan</td></tr><tr><td style=\"white-space:nowrap\">N13<a name=\"bc-language-code-system-N13\"> </a></td><td>Nuu-chah-nulth (Nootka)</td></tr><tr><td style=\"white-space:nowrap\">O01<a name=\"bc-language-code-system-O01\"> </a></td><td>Ojibway</td></tr><tr><td style=\"white-space:nowrap\">O02<a name=\"bc-language-code-system-O02\"> </a></td><td>Oji-Cree</td></tr><tr><td style=\"white-space:nowrap\">O03<a name=\"bc-language-code-system-O03\"> </a></td><td>Okanagan</td></tr><tr><td style=\"white-space:nowrap\">O04<a name=\"bc-language-code-system-O04\"> </a></td><td>Oneida</td></tr><tr><td style=\"white-space:nowrap\">O05<a name=\"bc-language-code-system-O05\"> </a></td><td>Oriya (Odia)</td></tr><tr><td style=\"white-space:nowrap\">O06<a name=\"bc-language-code-system-O06\"> </a></td><td>Oromo</td></tr><tr><td style=\"white-space:nowrap\">O07<a name=\"bc-language-code-system-O07\"> </a></td><td>Ottawa (Odawa)</td></tr><tr><td style=\"white-space:nowrap\">P17<a name=\"bc-language-code-system-P17\"> </a></td><td>Pampangan (Kapampangan, Pampango)</td></tr><tr><td style=\"white-space:nowrap\">P18<a name=\"bc-language-code-system-P18\"> </a></td><td>Pangasinan</td></tr><tr><td style=\"white-space:nowrap\">P19<a name=\"bc-language-code-system-P19\"> </a></td><td>Plains Cree</td></tr><tr><td style=\"white-space:nowrap\">R07<a name=\"bc-language-code-system-R07\"> </a></td><td>Rundi (Kirundi)</td></tr><tr><td style=\"white-space:nowrap\">S42<a name=\"bc-language-code-system-S42\"> </a></td><td>Sarsi (Sarcee)</td></tr><tr><td style=\"white-space:nowrap\">S43<a name=\"bc-language-code-system-S43\"> </a></td><td>Sekani</td></tr><tr><td style=\"white-space:nowrap\">S44<a name=\"bc-language-code-system-S44\"> </a></td><td>Serbo-Croatian</td></tr><tr><td style=\"white-space:nowrap\">S45<a name=\"bc-language-code-system-S45\"> </a></td><td>Shanghainese</td></tr><tr><td style=\"white-space:nowrap\">S46<a name=\"bc-language-code-system-S46\"> </a></td><td>Shona</td></tr><tr><td style=\"white-space:nowrap\">S47<a name=\"bc-language-code-system-S47\"> </a></td><td>Shuswap (secwepemctsin)</td></tr><tr><td style=\"white-space:nowrap\">S48<a name=\"bc-language-code-system-S48\"> </a></td><td>Sindhi</td></tr><tr><td style=\"white-space:nowrap\">S49<a name=\"bc-language-code-system-S49\"> </a></td><td>Slovene (Slovenian)</td></tr><tr><td style=\"white-space:nowrap\">S50<a name=\"bc-language-code-system-S50\"> </a></td><td>Somali</td></tr><tr><td style=\"white-space:nowrap\">S51<a name=\"bc-language-code-system-S51\"> </a></td><td>South Slavey</td></tr><tr><td style=\"white-space:nowrap\">S52<a name=\"bc-language-code-system-S52\"> </a></td><td>Southern East Cree</td></tr><tr><td style=\"white-space:nowrap\">C06<a name=\"bc-language-code-system-C06\"> </a></td><td>Chinese</td></tr><tr><td style=\"white-space:nowrap\">C11<a name=\"bc-language-code-system-C11\"> </a></td><td>Czech</td></tr><tr><td style=\"white-space:nowrap\">D01<a name=\"bc-language-code-system-D01\"> </a></td><td>Danish</td></tr><tr><td style=\"white-space:nowrap\">E01<a name=\"bc-language-code-system-E01\"> </a></td><td>Estonian</td></tr><tr><td style=\"white-space:nowrap\">E06<a name=\"bc-language-code-system-E06\"> </a></td><td>Ethiopian</td></tr><tr><td style=\"white-space:nowrap\">F01<a name=\"bc-language-code-system-F01\"> </a></td><td>Farsi</td></tr><tr><td style=\"white-space:nowrap\">F02<a name=\"bc-language-code-system-F02\"> </a></td><td>Fijian</td></tr><tr><td style=\"white-space:nowrap\">F06<a name=\"bc-language-code-system-F06\"> </a></td><td>Finnish</td></tr><tr><td style=\"white-space:nowrap\">F11<a name=\"bc-language-code-system-F11\"> </a></td><td>Foochow</td></tr><tr><td style=\"white-space:nowrap\">F13<a name=\"bc-language-code-system-F13\"> </a></td><td>Fookien</td></tr><tr><td style=\"white-space:nowrap\">F21<a name=\"bc-language-code-system-F21\"> </a></td><td>Fries</td></tr><tr><td style=\"white-space:nowrap\">F26<a name=\"bc-language-code-system-F26\"> </a></td><td>Fukien</td></tr><tr><td style=\"white-space:nowrap\">G01<a name=\"bc-language-code-system-G01\"> </a></td><td>Gaelic</td></tr><tr><td style=\"white-space:nowrap\">G11<a name=\"bc-language-code-system-G11\"> </a></td><td>Greek</td></tr><tr><td style=\"white-space:nowrap\">G16<a name=\"bc-language-code-system-G16\"> </a></td><td>Gajarati</td></tr><tr><td style=\"white-space:nowrap\">H01<a name=\"bc-language-code-system-H01\"> </a></td><td>Hakka</td></tr><tr><td style=\"white-space:nowrap\">H06<a name=\"bc-language-code-system-H06\"> </a></td><td>Hausa</td></tr><tr><td style=\"white-space:nowrap\">H11<a name=\"bc-language-code-system-H11\"> </a></td><td>Hebrew</td></tr><tr><td style=\"white-space:nowrap\">H21<a name=\"bc-language-code-system-H21\"> </a></td><td>Hokkien</td></tr><tr><td style=\"white-space:nowrap\">H26<a name=\"bc-language-code-system-H26\"> </a></td><td>Hungarian</td></tr><tr><td style=\"white-space:nowrap\">I01<a name=\"bc-language-code-system-I01\"> </a></td><td>Icelendic</td></tr><tr><td style=\"white-space:nowrap\">I06<a name=\"bc-language-code-system-I06\"> </a></td><td>Indonesian</td></tr><tr><td style=\"white-space:nowrap\">I11<a name=\"bc-language-code-system-I11\"> </a></td><td>Iranian/persian</td></tr><tr><td style=\"white-space:nowrap\">I16<a name=\"bc-language-code-system-I16\"> </a></td><td>Irish</td></tr><tr><td style=\"white-space:nowrap\">A06<a name=\"bc-language-code-system-A06\"> </a></td><td>Arabic</td></tr><tr><td style=\"white-space:nowrap\">A08<a name=\"bc-language-code-system-A08\"> </a></td><td>Armenian</td></tr><tr><td style=\"white-space:nowrap\">B01<a name=\"bc-language-code-system-B01\"> </a></td><td>Bengali</td></tr><tr><td style=\"white-space:nowrap\">B06<a name=\"bc-language-code-system-B06\"> </a></td><td>Bulgarian</td></tr><tr><td style=\"white-space:nowrap\">P02<a name=\"bc-language-code-system-P02\"> </a></td><td>Pashto</td></tr><tr><td style=\"white-space:nowrap\">D02<a name=\"bc-language-code-system-D02\"> </a></td><td>Dari</td></tr><tr><td style=\"white-space:nowrap\">G06<a name=\"bc-language-code-system-G06\"> </a></td><td>German</td></tr><tr><td style=\"white-space:nowrap\">S06<a name=\"bc-language-code-system-S06\"> </a></td><td>Serbo-croatian</td></tr><tr><td style=\"white-space:nowrap\">F16<a name=\"bc-language-code-system-F16\"> </a></td><td>French</td></tr><tr><td style=\"white-space:nowrap\">S31<a name=\"bc-language-code-system-S31\"> </a></td><td>Spanish</td></tr><tr><td style=\"white-space:nowrap\">A01<a name=\"bc-language-code-system-A01\"> </a></td><td>Afrikaans</td></tr><tr><td style=\"white-space:nowrap\">D06<a name=\"bc-language-code-system-D06\"> </a></td><td>Dutch</td></tr><tr><td style=\"white-space:nowrap\">M06<a name=\"bc-language-code-system-M06\"> </a></td><td>Mandarin</td></tr><tr><td style=\"white-space:nowrap\">U06<a name=\"bc-language-code-system-U06\"> </a></td><td>Urdu</td></tr><tr><td style=\"white-space:nowrap\">H16<a name=\"bc-language-code-system-H16\"> </a></td><td>Hindi</td></tr><tr><td style=\"white-space:nowrap\">S21<a name=\"bc-language-code-system-S21\"> </a></td><td>Sinhala (Sinhalese)</td></tr><tr><td style=\"white-space:nowrap\">S26<a name=\"bc-language-code-system-S26\"> </a></td><td>Slovak</td></tr><tr><td style=\"white-space:nowrap\">S36<a name=\"bc-language-code-system-S36\"> </a></td><td>Swahili (Kiswahili)</td></tr><tr><td style=\"white-space:nowrap\">S41<a name=\"bc-language-code-system-S41\"> </a></td><td>Swedish</td></tr><tr><td style=\"white-space:nowrap\">T01<a name=\"bc-language-code-system-T01\"> </a></td><td>Tagalog (Pilipino, Filipino)</td></tr><tr><td style=\"white-space:nowrap\">T06<a name=\"bc-language-code-system-T06\"> </a></td><td>Taiwanese</td></tr><tr><td style=\"white-space:nowrap\">T11<a name=\"bc-language-code-system-T11\"> </a></td><td>Tamil</td></tr><tr><td style=\"white-space:nowrap\">T16<a name=\"bc-language-code-system-T16\"> </a></td><td>Telugu</td></tr><tr><td style=\"white-space:nowrap\">T21<a name=\"bc-language-code-system-T21\"> </a></td><td>Teuchew</td></tr><tr><td style=\"white-space:nowrap\">T22<a name=\"bc-language-code-system-T22\"> </a></td><td>Thai</td></tr><tr><td style=\"white-space:nowrap\">T23<a name=\"bc-language-code-system-T23\"> </a></td><td>Toyshunese</td></tr><tr><td style=\"white-space:nowrap\">T25<a name=\"bc-language-code-system-T25\"> </a></td><td>Tulu</td></tr><tr><td style=\"white-space:nowrap\">T26<a name=\"bc-language-code-system-T26\"> </a></td><td>Turkish</td></tr><tr><td style=\"white-space:nowrap\">U01<a name=\"bc-language-code-system-U01\"> </a></td><td>Ukrainian</td></tr><tr><td style=\"white-space:nowrap\">V01<a name=\"bc-language-code-system-V01\"> </a></td><td>Vietnamese</td></tr><tr><td style=\"white-space:nowrap\">W01<a name=\"bc-language-code-system-W01\"> </a></td><td>Welsh</td></tr><tr><td style=\"white-space:nowrap\">X01<a name=\"bc-language-code-system-X01\"> </a></td><td>Xliosa</td></tr><tr><td style=\"white-space:nowrap\">Y01<a name=\"bc-language-code-system-Y01\"> </a></td><td>Yiddish</td></tr><tr><td style=\"white-space:nowrap\">Y03<a name=\"bc-language-code-system-Y03\"> </a></td><td>Yoruba</td></tr><tr><td style=\"white-space:nowrap\">Y06<a name=\"bc-language-code-system-Y06\"> </a></td><td>Yugoslavian</td></tr><tr><td style=\"white-space:nowrap\">Z01<a name=\"bc-language-code-system-Z01\"> </a></td><td>Zulu (isiZulu)</td></tr><tr><td style=\"white-space:nowrap\">I21<a name=\"bc-language-code-system-I21\"> </a></td><td>Italian</td></tr><tr><td style=\"white-space:nowrap\">J01<a name=\"bc-language-code-system-J01\"> </a></td><td>Japanese</td></tr><tr><td style=\"white-space:nowrap\">K01<a name=\"bc-language-code-system-K01\"> </a></td><td>Kachi</td></tr><tr><td style=\"white-space:nowrap\">K06<a name=\"bc-language-code-system-K06\"> </a></td><td>Kannada</td></tr><tr><td style=\"white-space:nowrap\">K11<a name=\"bc-language-code-system-K11\"> </a></td><td>Kikuyu (Gikuyu)</td></tr><tr><td style=\"white-space:nowrap\">K16<a name=\"bc-language-code-system-K16\"> </a></td><td>Kiswahili</td></tr><tr><td style=\"white-space:nowrap\">K19<a name=\"bc-language-code-system-K19\"> </a></td><td>Konkani</td></tr><tr><td style=\"white-space:nowrap\">K21<a name=\"bc-language-code-system-K21\"> </a></td><td>Korean</td></tr><tr><td style=\"white-space:nowrap\">K26<a name=\"bc-language-code-system-K26\"> </a></td><td>Kutchi</td></tr><tr><td style=\"white-space:nowrap\">L01<a name=\"bc-language-code-system-L01\"> </a></td><td>Latin</td></tr><tr><td style=\"white-space:nowrap\">L06<a name=\"bc-language-code-system-L06\"> </a></td><td>Latvian</td></tr><tr><td style=\"white-space:nowrap\">L11<a name=\"bc-language-code-system-L11\"> </a></td><td>Lithuanian</td></tr><tr><td style=\"white-space:nowrap\">L16<a name=\"bc-language-code-system-L16\"> </a></td><td>Low German</td></tr><tr><td style=\"white-space:nowrap\">L21<a name=\"bc-language-code-system-L21\"> </a></td><td>Luganda</td></tr><tr><td style=\"white-space:nowrap\">M01<a name=\"bc-language-code-system-M01\"> </a></td><td>Malay</td></tr><tr><td style=\"white-space:nowrap\">M03<a name=\"bc-language-code-system-M03\"> </a></td><td>Maltese</td></tr><tr><td style=\"white-space:nowrap\">M11<a name=\"bc-language-code-system-M11\"> </a></td><td>Marathi</td></tr><tr><td style=\"white-space:nowrap\">N01<a name=\"bc-language-code-system-N01\"> </a></td><td>Nepali</td></tr><tr><td style=\"white-space:nowrap\">N03<a name=\"bc-language-code-system-N03\"> </a></td><td>Nepalese</td></tr><tr><td style=\"white-space:nowrap\">N06<a name=\"bc-language-code-system-N06\"> </a></td><td>Norwegian</td></tr><tr><td style=\"white-space:nowrap\">P01<a name=\"bc-language-code-system-P01\"> </a></td><td>Persian (Farsi)</td></tr><tr><td style=\"white-space:nowrap\">P03<a name=\"bc-language-code-system-P03\"> </a></td><td>Philipino</td></tr><tr><td style=\"white-space:nowrap\">P06<a name=\"bc-language-code-system-P06\"> </a></td><td>Polish</td></tr><tr><td style=\"white-space:nowrap\">P11<a name=\"bc-language-code-system-P11\"> </a></td><td>Portugese</td></tr><tr><td style=\"white-space:nowrap\">P16<a name=\"bc-language-code-system-P16\"> </a></td><td>Punjabi (Panjabi)</td></tr><tr><td style=\"white-space:nowrap\">R01<a name=\"bc-language-code-system-R01\"> </a></td><td>Romanian</td></tr><tr><td style=\"white-space:nowrap\">R06<a name=\"bc-language-code-system-R06\"> </a></td><td>Russian</td></tr><tr><td style=\"white-space:nowrap\">S01<a name=\"bc-language-code-system-S01\"> </a></td><td>Serbian</td></tr><tr><td style=\"white-space:nowrap\">S11<a name=\"bc-language-code-system-S11\"> </a></td><td>Shanghaiese</td></tr><tr><td style=\"white-space:nowrap\">S16<a name=\"bc-language-code-system-S16\"> </a></td><td>Sign Language</td></tr><tr><td style=\"white-space:nowrap\">B11<a name=\"bc-language-code-system-B11\"> </a></td><td>Burmese</td></tr><tr><td style=\"white-space:nowrap\">C01<a name=\"bc-language-code-system-C01\"> </a></td><td>Cantonese</td></tr><tr><td style=\"white-space:nowrap\">C04<a name=\"bc-language-code-system-C04\"> </a></td><td>Castellano</td></tr><tr><td style=\"white-space:nowrap\">C05<a name=\"bc-language-code-system-C05\"> </a></td><td>Catalan</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system"^^xsd:anyURI ;
+     fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-language-code-system>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "LanguageCS"] ; # 
+  fhir:title [ fhir:v "Bc Language Codes"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-23T00:06:12+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "BC Ministry of Health" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Bc Language Code System"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "CA" ] ;
+       fhir:display [ fhir:v "Canada" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "209"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "S53" ] ;
+     fhir:display [ fhir:v "Southern Tutchone" ]
+  ] [
+     fhir:code [ fhir:v "S54" ] ;
+     fhir:display [ fhir:v "Squamish" ]
+  ] [
+     fhir:code [ fhir:v "S55" ] ;
+     fhir:display [ fhir:v "Stoney" ]
+  ] [
+     fhir:code [ fhir:v "S56" ] ;
+     fhir:display [ fhir:v "Straits" ]
+  ] [
+     fhir:code [ fhir:v "S57" ] ;
+     fhir:display [ fhir:v "Sudanese" ]
+  ] [
+     fhir:code [ fhir:v "S58" ] ;
+     fhir:display [ fhir:v "Swampy Cree" ]
+  ] [
+     fhir:code [ fhir:v "S59" ] ;
+     fhir:display [ fhir:v "Syriac" ]
+  ] [
+     fhir:code [ fhir:v "T27" ] ;
+     fhir:display [ fhir:v "Tahltan" ]
+  ] [
+     fhir:code [ fhir:v "T28" ] ;
+     fhir:display [ fhir:v "Taishanese (Toishanese)" ]
+  ] [
+     fhir:code [ fhir:v "T29" ] ;
+     fhir:display [ fhir:v "Teochow" ]
+  ] [
+     fhir:code [ fhir:v "T30" ] ;
+     fhir:display [ fhir:v "Thompson (Ntlakapamux)" ]
+  ] [
+     fhir:code [ fhir:v "T31" ] ;
+     fhir:display [ fhir:v "Tibetan" ]
+  ] [
+     fhir:code [ fhir:v "T32" ] ;
+     fhir:display [ fhir:v "Tigrigna" ]
+  ] [
+     fhir:code [ fhir:v "T33" ] ;
+     fhir:display [ fhir:v "Tsimshian" ]
+  ] [
+     fhir:code [ fhir:v "U07" ] ;
+     fhir:display [ fhir:v "Uyghur" ]
+  ] [
+     fhir:code [ fhir:v "U08" ] ;
+     fhir:display [ fhir:v "Uzbek" ]
+  ] [
+     fhir:code [ fhir:v "V02" ] ;
+     fhir:display [ fhir:v "Vlaams (Flemish)" ]
+  ] [
+     fhir:code [ fhir:v "W02" ] ;
+     fhir:display [ fhir:v "Waray-Waray" ]
+  ] [
+     fhir:code [ fhir:v "W03" ] ;
+     fhir:display [ fhir:v "Wolof" ]
+  ] [
+     fhir:code [ fhir:v "W04" ] ;
+     fhir:display [ fhir:v "Woods Cree" ]
+  ] [
+     fhir:code [ fhir:v "X02" ] ;
+     fhir:display [ fhir:v "Xhosa (isiXhosa)" ]
+  ] [
+     fhir:code [ fhir:v "A09" ] ;
+     fhir:display [ fhir:v "Akan (Twi)" ]
+  ] [
+     fhir:code [ fhir:v "A10" ] ;
+     fhir:display [ fhir:v "Albanian" ]
+  ] [
+     fhir:code [ fhir:v "A11" ] ;
+     fhir:display [ fhir:v "Algonquin" ]
+  ] [
+     fhir:code [ fhir:v "A12" ] ;
+     fhir:display [ fhir:v "Amharic" ]
+  ] [
+     fhir:code [ fhir:v "A13" ] ;
+     fhir:display [ fhir:v "Assyrian Neo-Armaic" ]
+  ] [
+     fhir:code [ fhir:v "A14" ] ;
+     fhir:display [ fhir:v "Atikamekw" ]
+  ] [
+     fhir:code [ fhir:v "A15" ] ;
+     fhir:display [ fhir:v "Azerbaijani" ]
+  ] [
+     fhir:code [ fhir:v "B12" ] ;
+     fhir:display [ fhir:v "Babine (Wetsuwet'en)" ]
+  ] [
+     fhir:code [ fhir:v "B13" ] ;
+     fhir:display [ fhir:v "Bamanankan" ]
+  ] [
+     fhir:code [ fhir:v "B14" ] ;
+     fhir:display [ fhir:v "Beaver" ]
+  ] [
+     fhir:code [ fhir:v "B15" ] ;
+     fhir:display [ fhir:v "Belarusan" ]
+  ] [
+     fhir:code [ fhir:v "B16" ] ;
+     fhir:display [ fhir:v "Bikol" ]
+  ] [
+     fhir:code [ fhir:v "B17" ] ;
+     fhir:display [ fhir:v "Bilen" ]
+  ] [
+     fhir:code [ fhir:v "B18" ] ;
+     fhir:display [ fhir:v "Bosnian" ]
+  ] [
+     fhir:code [ fhir:v "C12" ] ;
+     fhir:display [ fhir:v "Carrier" ]
+  ] [
+     fhir:code [ fhir:v "C13" ] ;
+     fhir:display [ fhir:v "Cayuga" ]
+  ] [
+     fhir:code [ fhir:v "C14" ] ;
+     fhir:display [ fhir:v "Cebuano" ]
+  ] [
+     fhir:code [ fhir:v "C15" ] ;
+     fhir:display [ fhir:v "Chaldean Neo-Aramaic" ]
+  ] [
+     fhir:code [ fhir:v "C16" ] ;
+     fhir:display [ fhir:v "Chaochow" ]
+  ] [
+     fhir:code [ fhir:v "C17" ] ;
+     fhir:display [ fhir:v "Chilcotin" ]
+  ] [
+     fhir:code [ fhir:v "C18" ] ;
+     fhir:display [ fhir:v "Comox" ]
+  ] [
+     fhir:code [ fhir:v "D07" ] ;
+     fhir:display [ fhir:v "Dakota" ]
+  ] [
+     fhir:code [ fhir:v "D08" ] ;
+     fhir:display [ fhir:v "Dene" ]
+  ] [
+     fhir:code [ fhir:v "D09" ] ;
+     fhir:display [ fhir:v "Dinka" ]
+  ] [
+     fhir:code [ fhir:v "D10" ] ;
+     fhir:display [ fhir:v "Dogrib (Tlicho)" ]
+  ] [
+     fhir:code [ fhir:v "E07" ] ;
+     fhir:display [ fhir:v "Edo" ]
+  ] [
+     fhir:code [ fhir:v "E08" ] ;
+     fhir:display [ fhir:v "Ewe" ]
+  ] [
+     fhir:code [ fhir:v "F17" ] ;
+     fhir:display [ fhir:v "Frisian" ]
+  ] [
+     fhir:code [ fhir:v "F18" ] ;
+     fhir:display [ fhir:v "Fulah (Pular, Pulaar, Fulfulde)" ]
+  ] [
+     fhir:code [ fhir:v "G17" ] ;
+     fhir:display [ fhir:v "Ga" ]
+  ] [
+     fhir:code [ fhir:v "G18" ] ;
+     fhir:display [ fhir:v "Ganda (Luganda)" ]
+  ] [
+     fhir:code [ fhir:v "G19" ] ;
+     fhir:display [ fhir:v "Georgian" ]
+  ] [
+     fhir:code [ fhir:v "G20" ] ;
+     fhir:display [ fhir:v "Gitxsan (Gitksan)" ]
+  ] [
+     fhir:code [ fhir:v "G21" ] ;
+     fhir:display [ fhir:v "Gwich'in" ]
+  ] [
+     fhir:code [ fhir:v "H27" ] ;
+     fhir:display [ fhir:v "Haisla" ]
+  ] [
+     fhir:code [ fhir:v "H28" ] ;
+     fhir:display [ fhir:v "Haitian Creole" ]
+  ] [
+     fhir:code [ fhir:v "H29" ] ;
+     fhir:display [ fhir:v "Halkomelem" ]
+  ] [
+     fhir:code [ fhir:v "H30" ] ;
+     fhir:display [ fhir:v "Harari" ]
+  ] [
+     fhir:code [ fhir:v "H31" ] ;
+     fhir:display [ fhir:v "Heiltsuk" ]
+  ] [
+     fhir:code [ fhir:v "H32" ] ;
+     fhir:display [ fhir:v "Hiligaynon" ]
+  ] [
+     fhir:code [ fhir:v "H33" ] ;
+     fhir:display [ fhir:v "Hmong-Mien" ]
+  ] [
+     fhir:code [ fhir:v "I17" ] ;
+     fhir:display [ fhir:v "Igbo" ]
+  ] [
+     fhir:code [ fhir:v "I18" ] ;
+     fhir:display [ fhir:v "Ilocano" ]
+  ] [
+     fhir:code [ fhir:v "I19" ] ;
+     fhir:display [ fhir:v "Inuinnaqtun (Inuvialuktun)" ]
+  ] [
+     fhir:code [ fhir:v "I20" ] ;
+     fhir:display [ fhir:v "Inuktitut" ]
+  ] [
+     fhir:code [ fhir:v "J02" ] ;
+     fhir:display [ fhir:v "Javanese" ]
+  ] [
+     fhir:code [ fhir:v "K27" ] ;
+     fhir:display [ fhir:v "Kabyle" ]
+  ] [
+     fhir:code [ fhir:v "K28" ] ;
+     fhir:display [ fhir:v "Kashmiri" ]
+  ] [
+     fhir:code [ fhir:v "K29" ] ;
+     fhir:display [ fhir:v "Kaska (Nahani)" ]
+  ] [
+     fhir:code [ fhir:v "K30" ] ;
+     fhir:display [ fhir:v "Khmer (Cambodian)" ]
+  ] [
+     fhir:code [ fhir:v "K31" ] ;
+     fhir:display [ fhir:v "Kinyarwanda (Rwanda)" ]
+  ] [
+     fhir:code [ fhir:v "K32" ] ;
+     fhir:display [ fhir:v "Kurdish" ]
+  ] [
+     fhir:code [ fhir:v "K33" ] ;
+     fhir:display [ fhir:v "Kwakiutl (Kwak'wala)" ]
+  ] [
+     fhir:code [ fhir:v "L22" ] ;
+     fhir:display [ fhir:v "Lao" ]
+  ] [
+     fhir:code [ fhir:v "L23" ] ;
+     fhir:display [ fhir:v "Lillooet" ]
+  ] [
+     fhir:code [ fhir:v "L24" ] ;
+     fhir:display [ fhir:v "Lingala" ]
+  ] [
+     fhir:code [ fhir:v "M12" ] ;
+     fhir:display [ fhir:v "Macedonian" ]
+  ] [
+     fhir:code [ fhir:v "M13" ] ;
+     fhir:display [ fhir:v "Malagasy" ]
+  ] [
+     fhir:code [ fhir:v "M14" ] ;
+     fhir:display [ fhir:v "Malayalam" ]
+  ] [
+     fhir:code [ fhir:v "M15" ] ;
+     fhir:display [ fhir:v "Malecite" ]
+  ] [
+     fhir:code [ fhir:v "M16" ] ;
+     fhir:display [ fhir:v "Mi'kmaq" ]
+  ] [
+     fhir:code [ fhir:v "M17" ] ;
+     fhir:display [ fhir:v "Mohawk" ]
+  ] [
+     fhir:code [ fhir:v "M18" ] ;
+     fhir:display [ fhir:v "Mongolian" ]
+  ] [
+     fhir:code [ fhir:v "M19" ] ;
+     fhir:display [ fhir:v "Montagnais (Innu)" ]
+  ] [
+     fhir:code [ fhir:v "M20" ] ;
+     fhir:display [ fhir:v "Moose Cree" ]
+  ] [
+     fhir:code [ fhir:v "N07" ] ;
+     fhir:display [ fhir:v "Naskapi" ]
+  ] [
+     fhir:code [ fhir:v "N08" ] ;
+     fhir:display [ fhir:v "Nisga'a" ]
+  ] [
+     fhir:code [ fhir:v "N09" ] ;
+     fhir:display [ fhir:v "North Slavey (Hare)" ]
+  ] [
+     fhir:code [ fhir:v "N10" ] ;
+     fhir:display [ fhir:v "Northern East Cree" ]
+  ] [
+     fhir:code [ fhir:v "N11" ] ;
+     fhir:display [ fhir:v "Northern Tutchone" ]
+  ] [
+     fhir:code [ fhir:v "N12" ] ;
+     fhir:display [ fhir:v "Norweigan" ]
+  ] [
+     fhir:code [ fhir:v "N13" ] ;
+     fhir:display [ fhir:v "Nuu-chah-nulth (Nootka)" ]
+  ] [
+     fhir:code [ fhir:v "O01" ] ;
+     fhir:display [ fhir:v "Ojibway" ]
+  ] [
+     fhir:code [ fhir:v "O02" ] ;
+     fhir:display [ fhir:v "Oji-Cree" ]
+  ] [
+     fhir:code [ fhir:v "O03" ] ;
+     fhir:display [ fhir:v "Okanagan" ]
+  ] [
+     fhir:code [ fhir:v "O04" ] ;
+     fhir:display [ fhir:v "Oneida" ]
+  ] [
+     fhir:code [ fhir:v "O05" ] ;
+     fhir:display [ fhir:v "Oriya (Odia)" ]
+  ] [
+     fhir:code [ fhir:v "O06" ] ;
+     fhir:display [ fhir:v "Oromo" ]
+  ] [
+     fhir:code [ fhir:v "O07" ] ;
+     fhir:display [ fhir:v "Ottawa (Odawa)" ]
+  ] [
+     fhir:code [ fhir:v "P17" ] ;
+     fhir:display [ fhir:v "Pampangan (Kapampangan, Pampango)" ]
+  ] [
+     fhir:code [ fhir:v "P18" ] ;
+     fhir:display [ fhir:v "Pangasinan" ]
+  ] [
+     fhir:code [ fhir:v "P19" ] ;
+     fhir:display [ fhir:v "Plains Cree" ]
+  ] [
+     fhir:code [ fhir:v "R07" ] ;
+     fhir:display [ fhir:v "Rundi (Kirundi)" ]
+  ] [
+     fhir:code [ fhir:v "S42" ] ;
+     fhir:display [ fhir:v "Sarsi (Sarcee)" ]
+  ] [
+     fhir:code [ fhir:v "S43" ] ;
+     fhir:display [ fhir:v "Sekani" ]
+  ] [
+     fhir:code [ fhir:v "S44" ] ;
+     fhir:display [ fhir:v "Serbo-Croatian" ]
+  ] [
+     fhir:code [ fhir:v "S45" ] ;
+     fhir:display [ fhir:v "Shanghainese" ]
+  ] [
+     fhir:code [ fhir:v "S46" ] ;
+     fhir:display [ fhir:v "Shona" ]
+  ] [
+     fhir:code [ fhir:v "S47" ] ;
+     fhir:display [ fhir:v "Shuswap (secwepemctsin)" ]
+  ] [
+     fhir:code [ fhir:v "S48" ] ;
+     fhir:display [ fhir:v "Sindhi" ]
+  ] [
+     fhir:code [ fhir:v "S49" ] ;
+     fhir:display [ fhir:v "Slovene (Slovenian)" ]
+  ] [
+     fhir:code [ fhir:v "S50" ] ;
+     fhir:display [ fhir:v "Somali" ]
+  ] [
+     fhir:code [ fhir:v "S51" ] ;
+     fhir:display [ fhir:v "South Slavey" ]
+  ] [
+     fhir:code [ fhir:v "S52" ] ;
+     fhir:display [ fhir:v "Southern East Cree" ]
+  ] [
+     fhir:code [ fhir:v "C06" ] ;
+     fhir:display [ fhir:v "Chinese" ]
+  ] [
+     fhir:code [ fhir:v "C11" ] ;
+     fhir:display [ fhir:v "Czech" ]
+  ] [
+     fhir:code [ fhir:v "D01" ] ;
+     fhir:display [ fhir:v "Danish" ]
+  ] [
+     fhir:code [ fhir:v "E01" ] ;
+     fhir:display [ fhir:v "Estonian" ]
+  ] [
+     fhir:code [ fhir:v "E06" ] ;
+     fhir:display [ fhir:v "Ethiopian" ]
+  ] [
+     fhir:code [ fhir:v "F01" ] ;
+     fhir:display [ fhir:v "Farsi" ]
+  ] [
+     fhir:code [ fhir:v "F02" ] ;
+     fhir:display [ fhir:v "Fijian" ]
+  ] [
+     fhir:code [ fhir:v "F06" ] ;
+     fhir:display [ fhir:v "Finnish" ]
+  ] [
+     fhir:code [ fhir:v "F11" ] ;
+     fhir:display [ fhir:v "Foochow" ]
+  ] [
+     fhir:code [ fhir:v "F13" ] ;
+     fhir:display [ fhir:v "Fookien" ]
+  ] [
+     fhir:code [ fhir:v "F21" ] ;
+     fhir:display [ fhir:v "Fries" ]
+  ] [
+     fhir:code [ fhir:v "F26" ] ;
+     fhir:display [ fhir:v "Fukien" ]
+  ] [
+     fhir:code [ fhir:v "G01" ] ;
+     fhir:display [ fhir:v "Gaelic" ]
+  ] [
+     fhir:code [ fhir:v "G11" ] ;
+     fhir:display [ fhir:v "Greek" ]
+  ] [
+     fhir:code [ fhir:v "G16" ] ;
+     fhir:display [ fhir:v "Gajarati" ]
+  ] [
+     fhir:code [ fhir:v "H01" ] ;
+     fhir:display [ fhir:v "Hakka" ]
+  ] [
+     fhir:code [ fhir:v "H06" ] ;
+     fhir:display [ fhir:v "Hausa" ]
+  ] [
+     fhir:code [ fhir:v "H11" ] ;
+     fhir:display [ fhir:v "Hebrew" ]
+  ] [
+     fhir:code [ fhir:v "H21" ] ;
+     fhir:display [ fhir:v "Hokkien" ]
+  ] [
+     fhir:code [ fhir:v "H26" ] ;
+     fhir:display [ fhir:v "Hungarian" ]
+  ] [
+     fhir:code [ fhir:v "I01" ] ;
+     fhir:display [ fhir:v "Icelendic" ]
+  ] [
+     fhir:code [ fhir:v "I06" ] ;
+     fhir:display [ fhir:v "Indonesian" ]
+  ] [
+     fhir:code [ fhir:v "I11" ] ;
+     fhir:display [ fhir:v "Iranian/persian" ]
+  ] [
+     fhir:code [ fhir:v "I16" ] ;
+     fhir:display [ fhir:v "Irish" ]
+  ] [
+     fhir:code [ fhir:v "A06" ] ;
+     fhir:display [ fhir:v "Arabic" ]
+  ] [
+     fhir:code [ fhir:v "A08" ] ;
+     fhir:display [ fhir:v "Armenian" ]
+  ] [
+     fhir:code [ fhir:v "B01" ] ;
+     fhir:display [ fhir:v "Bengali" ]
+  ] [
+     fhir:code [ fhir:v "B06" ] ;
+     fhir:display [ fhir:v "Bulgarian" ]
+  ] [
+     fhir:code [ fhir:v "P02" ] ;
+     fhir:display [ fhir:v "Pashto" ]
+  ] [
+     fhir:code [ fhir:v "D02" ] ;
+     fhir:display [ fhir:v "Dari" ]
+  ] [
+     fhir:code [ fhir:v "G06" ] ;
+     fhir:display [ fhir:v "German" ]
+  ] [
+     fhir:code [ fhir:v "S06" ] ;
+     fhir:display [ fhir:v "Serbo-croatian" ]
+  ] [
+     fhir:code [ fhir:v "F16" ] ;
+     fhir:display [ fhir:v "French" ]
+  ] [
+     fhir:code [ fhir:v "S31" ] ;
+     fhir:display [ fhir:v "Spanish" ]
+  ] [
+     fhir:code [ fhir:v "A01" ] ;
+     fhir:display [ fhir:v "Afrikaans" ]
+  ] [
+     fhir:code [ fhir:v "D06" ] ;
+     fhir:display [ fhir:v "Dutch" ]
+  ] [
+     fhir:code [ fhir:v "M06" ] ;
+     fhir:display [ fhir:v "Mandarin" ]
+  ] [
+     fhir:code [ fhir:v "U06" ] ;
+     fhir:display [ fhir:v "Urdu" ]
+  ] [
+     fhir:code [ fhir:v "H16" ] ;
+     fhir:display [ fhir:v "Hindi" ]
+  ] [
+     fhir:code [ fhir:v "S21" ] ;
+     fhir:display [ fhir:v "Sinhala (Sinhalese)" ]
+  ] [
+     fhir:code [ fhir:v "S26" ] ;
+     fhir:display [ fhir:v "Slovak" ]
+  ] [
+     fhir:code [ fhir:v "S36" ] ;
+     fhir:display [ fhir:v "Swahili (Kiswahili)" ]
+  ] [
+     fhir:code [ fhir:v "S41" ] ;
+     fhir:display [ fhir:v "Swedish" ]
+  ] [
+     fhir:code [ fhir:v "T01" ] ;
+     fhir:display [ fhir:v "Tagalog (Pilipino, Filipino)" ]
+  ] [
+     fhir:code [ fhir:v "T06" ] ;
+     fhir:display [ fhir:v "Taiwanese" ]
+  ] [
+     fhir:code [ fhir:v "T11" ] ;
+     fhir:display [ fhir:v "Tamil" ]
+  ] [
+     fhir:code [ fhir:v "T16" ] ;
+     fhir:display [ fhir:v "Telugu" ]
+  ] [
+     fhir:code [ fhir:v "T21" ] ;
+     fhir:display [ fhir:v "Teuchew" ]
+  ] [
+     fhir:code [ fhir:v "T22" ] ;
+     fhir:display [ fhir:v "Thai" ]
+  ] [
+     fhir:code [ fhir:v "T23" ] ;
+     fhir:display [ fhir:v "Toyshunese" ]
+  ] [
+     fhir:code [ fhir:v "T25" ] ;
+     fhir:display [ fhir:v "Tulu" ]
+  ] [
+     fhir:code [ fhir:v "T26" ] ;
+     fhir:display [ fhir:v "Turkish" ]
+  ] [
+     fhir:code [ fhir:v "U01" ] ;
+     fhir:display [ fhir:v "Ukrainian" ]
+  ] [
+     fhir:code [ fhir:v "V01" ] ;
+     fhir:display [ fhir:v "Vietnamese" ]
+  ] [
+     fhir:code [ fhir:v "W01" ] ;
+     fhir:display [ fhir:v "Welsh" ]
+  ] [
+     fhir:code [ fhir:v "X01" ] ;
+     fhir:display [ fhir:v "Xliosa" ]
+  ] [
+     fhir:code [ fhir:v "Y01" ] ;
+     fhir:display [ fhir:v "Yiddish" ]
+  ] [
+     fhir:code [ fhir:v "Y03" ] ;
+     fhir:display [ fhir:v "Yoruba" ]
+  ] [
+     fhir:code [ fhir:v "Y06" ] ;
+     fhir:display [ fhir:v "Yugoslavian" ]
+  ] [
+     fhir:code [ fhir:v "Z01" ] ;
+     fhir:display [ fhir:v "Zulu (isiZulu)" ]
+  ] [
+     fhir:code [ fhir:v "I21" ] ;
+     fhir:display [ fhir:v "Italian" ]
+  ] [
+     fhir:code [ fhir:v "J01" ] ;
+     fhir:display [ fhir:v "Japanese" ]
+  ] [
+     fhir:code [ fhir:v "K01" ] ;
+     fhir:display [ fhir:v "Kachi" ]
+  ] [
+     fhir:code [ fhir:v "K06" ] ;
+     fhir:display [ fhir:v "Kannada" ]
+  ] [
+     fhir:code [ fhir:v "K11" ] ;
+     fhir:display [ fhir:v "Kikuyu (Gikuyu)" ]
+  ] [
+     fhir:code [ fhir:v "K16" ] ;
+     fhir:display [ fhir:v "Kiswahili" ]
+  ] [
+     fhir:code [ fhir:v "K19" ] ;
+     fhir:display [ fhir:v "Konkani" ]
+  ] [
+     fhir:code [ fhir:v "K21" ] ;
+     fhir:display [ fhir:v "Korean" ]
+  ] [
+     fhir:code [ fhir:v "K26" ] ;
+     fhir:display [ fhir:v "Kutchi" ]
+  ] [
+     fhir:code [ fhir:v "L01" ] ;
+     fhir:display [ fhir:v "Latin" ]
+  ] [
+     fhir:code [ fhir:v "L06" ] ;
+     fhir:display [ fhir:v "Latvian" ]
+  ] [
+     fhir:code [ fhir:v "L11" ] ;
+     fhir:display [ fhir:v "Lithuanian" ]
+  ] [
+     fhir:code [ fhir:v "L16" ] ;
+     fhir:display [ fhir:v "Low German" ]
+  ] [
+     fhir:code [ fhir:v "L21" ] ;
+     fhir:display [ fhir:v "Luganda" ]
+  ] [
+     fhir:code [ fhir:v "M01" ] ;
+     fhir:display [ fhir:v "Malay" ]
+  ] [
+     fhir:code [ fhir:v "M03" ] ;
+     fhir:display [ fhir:v "Maltese" ]
+  ] [
+     fhir:code [ fhir:v "M11" ] ;
+     fhir:display [ fhir:v "Marathi" ]
+  ] [
+     fhir:code [ fhir:v "N01" ] ;
+     fhir:display [ fhir:v "Nepali" ]
+  ] [
+     fhir:code [ fhir:v "N03" ] ;
+     fhir:display [ fhir:v "Nepalese" ]
+  ] [
+     fhir:code [ fhir:v "N06" ] ;
+     fhir:display [ fhir:v "Norwegian" ]
+  ] [
+     fhir:code [ fhir:v "P01" ] ;
+     fhir:display [ fhir:v "Persian (Farsi)" ]
+  ] [
+     fhir:code [ fhir:v "P03" ] ;
+     fhir:display [ fhir:v "Philipino" ]
+  ] [
+     fhir:code [ fhir:v "P06" ] ;
+     fhir:display [ fhir:v "Polish" ]
+  ] [
+     fhir:code [ fhir:v "P11" ] ;
+     fhir:display [ fhir:v "Portugese" ]
+  ] [
+     fhir:code [ fhir:v "P16" ] ;
+     fhir:display [ fhir:v "Punjabi (Panjabi)" ]
+  ] [
+     fhir:code [ fhir:v "R01" ] ;
+     fhir:display [ fhir:v "Romanian" ]
+  ] [
+     fhir:code [ fhir:v "R06" ] ;
+     fhir:display [ fhir:v "Russian" ]
+  ] [
+     fhir:code [ fhir:v "S01" ] ;
+     fhir:display [ fhir:v "Serbian" ]
+  ] [
+     fhir:code [ fhir:v "S11" ] ;
+     fhir:display [ fhir:v "Shanghaiese" ]
+  ] [
+     fhir:code [ fhir:v "S16" ] ;
+     fhir:display [ fhir:v "Sign Language" ]
+  ] [
+     fhir:code [ fhir:v "B11" ] ;
+     fhir:display [ fhir:v "Burmese" ]
+  ] [
+     fhir:code [ fhir:v "C01" ] ;
+     fhir:display [ fhir:v "Cantonese" ]
+  ] [
+     fhir:code [ fhir:v "C04" ] ;
+     fhir:display [ fhir:v "Castellano" ]
+  ] [
+     fhir:code [ fhir:v "C05" ] ;
+     fhir:display [ fhir:v "Catalan" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

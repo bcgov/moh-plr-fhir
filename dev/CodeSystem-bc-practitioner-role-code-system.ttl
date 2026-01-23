@@ -1,0 +1,246 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/CodeSystem/bc-practitioner-role-code-system> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "bc-practitioner-role-code-system"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem bc-practitioner-role-code-system</b></p><a name=\"bc-practitioner-role-code-system\"> </a><a name=\"hcbc-practitioner-role-code-system\"> </a><p>This case-sensitive code system <code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">PA<a name=\"bc-practitioner-role-code-system-PA\"> </a></td><td>Physician Assistant</td></tr><tr><td style=\"white-space:nowrap\">ITT<a name=\"bc-practitioner-role-code-system-ITT\"> </a></td><td>Infant Transport Team</td></tr><tr><td style=\"white-space:nowrap\">EMA-FR<a name=\"bc-practitioner-role-code-system-EMA-FR\"> </a></td><td>First Responder</td></tr><tr><td style=\"white-space:nowrap\">ND<a name=\"bc-practitioner-role-code-system-ND\"> </a></td><td>Naturopathic Doctor</td></tr><tr><td style=\"white-space:nowrap\">OOP-CHIRO<a name=\"bc-practitioner-role-code-system-OOP-CHIRO\"> </a></td><td>OOP Chiropractor</td></tr><tr><td style=\"white-space:nowrap\">OOP-RECT<a name=\"bc-practitioner-role-code-system-OOP-RECT\"> </a></td><td>OOP Recreation Therapist</td></tr><tr><td style=\"white-space:nowrap\">OOP-PSYCH<a name=\"bc-practitioner-role-code-system-OOP-PSYCH\"> </a></td><td>OOP Psychologist</td></tr><tr><td style=\"white-space:nowrap\">OOP-CC<a name=\"bc-practitioner-role-code-system-OOP-CC\"> </a></td><td>OOP Registered Clinical Counsellor</td></tr><tr><td style=\"white-space:nowrap\">OOP-VC<a name=\"bc-practitioner-role-code-system-OOP-VC\"> </a></td><td>OOP Vocational Counsellor</td></tr><tr><td style=\"white-space:nowrap\">OOP-PO<a name=\"bc-practitioner-role-code-system-OOP-PO\"> </a></td><td>OOP Podiatrist</td></tr><tr><td style=\"white-space:nowrap\">OOP-AUD<a name=\"bc-practitioner-role-code-system-OOP-AUD\"> </a></td><td>OOP Audiologist</td></tr><tr><td style=\"white-space:nowrap\">OOP-SLP<a name=\"bc-practitioner-role-code-system-OOP-SLP\"> </a></td><td>OOP Speech Language Pathologist</td></tr><tr><td style=\"white-space:nowrap\">OOP-PT<a name=\"bc-practitioner-role-code-system-OOP-PT\"> </a></td><td>OOP Physical Therapist</td></tr><tr><td style=\"white-space:nowrap\">OOP-SW<a name=\"bc-practitioner-role-code-system-OOP-SW\"> </a></td><td>OOP Social Worker</td></tr><tr><td style=\"white-space:nowrap\">OOP-RT<a name=\"bc-practitioner-role-code-system-OOP-RT\"> </a></td><td>OOP Respiratory Therapist</td></tr><tr><td style=\"white-space:nowrap\">OOP-RN<a name=\"bc-practitioner-role-code-system-OOP-RN\"> </a></td><td>OOP Registered Nurse</td></tr><tr><td style=\"white-space:nowrap\">OOP-RD<a name=\"bc-practitioner-role-code-system-OOP-RD\"> </a></td><td>OOP Registered Dietician</td></tr><tr><td style=\"white-space:nowrap\">OOP-OT<a name=\"bc-practitioner-role-code-system-OOP-OT\"> </a></td><td>OOP Occupational Therapist</td></tr><tr><td style=\"white-space:nowrap\">OOP-ND<a name=\"bc-practitioner-role-code-system-OOP-ND\"> </a></td><td>OOP Naturopathic Doctor</td></tr><tr><td style=\"white-space:nowrap\">OOP-DEN<a name=\"bc-practitioner-role-code-system-OOP-DEN\"> </a></td><td>OOP Dentist</td></tr><tr><td style=\"white-space:nowrap\">OOP-RNP<a name=\"bc-practitioner-role-code-system-OOP-RNP\"> </a></td><td>OOP Registered Nurse Practitioner</td></tr><tr><td style=\"white-space:nowrap\">OOP-PHARM<a name=\"bc-practitioner-role-code-system-OOP-PHARM\"> </a></td><td>OOP Pharmacist</td></tr><tr><td style=\"white-space:nowrap\">OOP-RM<a name=\"bc-practitioner-role-code-system-OOP-RM\"> </a></td><td>OOP Registered Midwife</td></tr><tr><td style=\"white-space:nowrap\">OOP-OPT<a name=\"bc-practitioner-role-code-system-OOP-OPT\"> </a></td><td>OOP Optometrist</td></tr><tr><td style=\"white-space:nowrap\">OOP-MD<a name=\"bc-practitioner-role-code-system-OOP-MD\"> </a></td><td>OOP Medical Doctor</td></tr><tr><td style=\"white-space:nowrap\">CC<a name=\"bc-practitioner-role-code-system-CC\"> </a></td><td>Clinical Counsellor</td></tr><tr><td style=\"white-space:nowrap\">UNSPECIFIED<a name=\"bc-practitioner-role-code-system-UNSPECIFIED\"> </a></td><td>UNSPECIFIED</td></tr><tr><td style=\"white-space:nowrap\">RTT<a name=\"bc-practitioner-role-code-system-RTT\"> </a></td><td>Radiation Technologist in Therapy</td></tr><tr><td style=\"white-space:nowrap\">RN<a name=\"bc-practitioner-role-code-system-RN\"> </a></td><td>Registered Nurse</td></tr><tr><td style=\"white-space:nowrap\">RNP<a name=\"bc-practitioner-role-code-system-RNP\"> </a></td><td>Registered Nurse Practitioner</td></tr><tr><td style=\"white-space:nowrap\">RPN<a name=\"bc-practitioner-role-code-system-RPN\"> </a></td><td>Registered Psychiatric Nurse</td></tr><tr><td style=\"white-space:nowrap\">RTEMG<a name=\"bc-practitioner-role-code-system-RTEMG\"> </a></td><td>Registered Electromyography Technologist</td></tr><tr><td style=\"white-space:nowrap\">RTMR<a name=\"bc-practitioner-role-code-system-RTMR\"> </a></td><td>Radiation Technologist  in Magnetic Resonance</td></tr><tr><td style=\"white-space:nowrap\">PHARM<a name=\"bc-practitioner-role-code-system-PHARM\"> </a></td><td>Pharmacist</td></tr><tr><td style=\"white-space:nowrap\">PO<a name=\"bc-practitioner-role-code-system-PO\"> </a></td><td>Podiatrist</td></tr><tr><td style=\"white-space:nowrap\">RAC<a name=\"bc-practitioner-role-code-system-RAC\"> </a></td><td>Registered Acupuncturist</td></tr><tr><td style=\"white-space:nowrap\">REPT<a name=\"bc-practitioner-role-code-system-REPT\"> </a></td><td>Registered Evoked Potential Technologist</td></tr><tr><td style=\"white-space:nowrap\">RET<a name=\"bc-practitioner-role-code-system-RET\"> </a></td><td>Registered Electroencephalography Technologist</td></tr><tr><td style=\"white-space:nowrap\">RM<a name=\"bc-practitioner-role-code-system-RM\"> </a></td><td>Registered Midwife</td></tr><tr><td style=\"white-space:nowrap\">LPN<a name=\"bc-practitioner-role-code-system-LPN\"> </a></td><td>Licensed Practical Nurse</td></tr><tr><td style=\"white-space:nowrap\">MD<a name=\"bc-practitioner-role-code-system-MD\"> </a></td><td>Medical Doctor</td></tr><tr><td style=\"white-space:nowrap\">MOA<a name=\"bc-practitioner-role-code-system-MOA\"> </a></td><td>Medical Office Assistant</td></tr><tr><td style=\"white-space:nowrap\">OPT<a name=\"bc-practitioner-role-code-system-OPT\"> </a></td><td>Optometrist</td></tr><tr><td style=\"white-space:nowrap\">PCP<a name=\"bc-practitioner-role-code-system-PCP\"> </a></td><td>Primary Care Paramedic</td></tr><tr><td style=\"white-space:nowrap\">PCY<a name=\"bc-practitioner-role-code-system-PCY\"> </a></td><td>Pharmacy</td></tr><tr><td style=\"white-space:nowrap\">ACP<a name=\"bc-practitioner-role-code-system-ACP\"> </a></td><td>Advanced Care Paramedic</td></tr><tr><td style=\"white-space:nowrap\">CCP<a name=\"bc-practitioner-role-code-system-CCP\"> </a></td><td>Critical Care Paramedic</td></tr><tr><td style=\"white-space:nowrap\">DEN<a name=\"bc-practitioner-role-code-system-DEN\"> </a></td><td>Dentist</td></tr><tr><td style=\"white-space:nowrap\">EMR<a name=\"bc-practitioner-role-code-system-EMR\"> </a></td><td>Emergency Medical Responder</td></tr><tr><td style=\"white-space:nowrap\">OT<a name=\"bc-practitioner-role-code-system-OT\"> </a></td><td>Occupational Therapist</td></tr><tr><td style=\"white-space:nowrap\">PSYCH<a name=\"bc-practitioner-role-code-system-PSYCH\"> </a></td><td>Psychologist</td></tr><tr><td style=\"white-space:nowrap\">SW<a name=\"bc-practitioner-role-code-system-SW\"> </a></td><td>Social Worker</td></tr><tr><td style=\"white-space:nowrap\">RCSW<a name=\"bc-practitioner-role-code-system-RCSW\"> </a></td><td>Registered Clinical Social Worker</td></tr><tr><td style=\"white-space:nowrap\">CHIRO<a name=\"bc-practitioner-role-code-system-CHIRO\"> </a></td><td>Chiropractor</td></tr><tr><td style=\"white-space:nowrap\">PHYSIO<a name=\"bc-practitioner-role-code-system-PHYSIO\"> </a></td><td>Physiotherapist</td></tr><tr><td style=\"white-space:nowrap\">RMT<a name=\"bc-practitioner-role-code-system-RMT\"> </a></td><td>Registered Massage Therapist</td></tr><tr><td style=\"white-space:nowrap\">KN<a name=\"bc-practitioner-role-code-system-KN\"> </a></td><td>Kinesiologist</td></tr><tr><td style=\"white-space:nowrap\">PTECH<a name=\"bc-practitioner-role-code-system-PTECH\"> </a></td><td>Pharmacy Technician</td></tr><tr><td style=\"white-space:nowrap\">COUN<a name=\"bc-practitioner-role-code-system-COUN\"> </a></td><td>Counsellor</td></tr><tr><td style=\"white-space:nowrap\">MFT<a name=\"bc-practitioner-role-code-system-MFT\"> </a></td><td>Marriage and Family Therapist</td></tr><tr><td style=\"white-space:nowrap\">RD<a name=\"bc-practitioner-role-code-system-RD\"> </a></td><td>Registered Dietitian</td></tr><tr><td style=\"white-space:nowrap\">HA<a name=\"bc-practitioner-role-code-system-HA\"> </a></td><td>Health Authority</td></tr><tr><td style=\"white-space:nowrap\">PHARMTECH<a name=\"bc-practitioner-role-code-system-PHARMTECH\"> </a></td><td>PHARMTECH</td></tr><tr><td style=\"white-space:nowrap\">RTNM<a name=\"bc-practitioner-role-code-system-RTNM\"> </a></td><td>Nuclear Medicine Technologist</td></tr><tr><td style=\"white-space:nowrap\">RTR<a name=\"bc-practitioner-role-code-system-RTR\"> </a></td><td>Radiation Technologist in Radiology</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system"^^xsd:anyURI ;
+     fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-practitioner-role-code-system>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "PractitionerRoleCS"] ; # 
+  fhir:title [ fhir:v "Bc Practitioner Role Codes"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-23T00:06:12+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "BC Ministry of Health" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Bc Practitioner Role Code System"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "CA" ] ;
+       fhir:display [ fhir:v "Canada" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "65"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "PA" ] ;
+     fhir:display [ fhir:v "Physician Assistant" ]
+  ] [
+     fhir:code [ fhir:v "ITT" ] ;
+     fhir:display [ fhir:v "Infant Transport Team" ]
+  ] [
+     fhir:code [ fhir:v "EMA-FR" ] ;
+     fhir:display [ fhir:v "First Responder" ]
+  ] [
+     fhir:code [ fhir:v "ND" ] ;
+     fhir:display [ fhir:v "Naturopathic Doctor" ]
+  ] [
+     fhir:code [ fhir:v "OOP-CHIRO" ] ;
+     fhir:display [ fhir:v "OOP Chiropractor" ]
+  ] [
+     fhir:code [ fhir:v "OOP-RECT" ] ;
+     fhir:display [ fhir:v "OOP Recreation Therapist" ]
+  ] [
+     fhir:code [ fhir:v "OOP-PSYCH" ] ;
+     fhir:display [ fhir:v "OOP Psychologist" ]
+  ] [
+     fhir:code [ fhir:v "OOP-CC" ] ;
+     fhir:display [ fhir:v "OOP Registered Clinical Counsellor" ]
+  ] [
+     fhir:code [ fhir:v "OOP-VC" ] ;
+     fhir:display [ fhir:v "OOP Vocational Counsellor" ]
+  ] [
+     fhir:code [ fhir:v "OOP-PO" ] ;
+     fhir:display [ fhir:v "OOP Podiatrist" ]
+  ] [
+     fhir:code [ fhir:v "OOP-AUD" ] ;
+     fhir:display [ fhir:v "OOP Audiologist" ]
+  ] [
+     fhir:code [ fhir:v "OOP-SLP" ] ;
+     fhir:display [ fhir:v "OOP Speech Language Pathologist" ]
+  ] [
+     fhir:code [ fhir:v "OOP-PT" ] ;
+     fhir:display [ fhir:v "OOP Physical Therapist" ]
+  ] [
+     fhir:code [ fhir:v "OOP-SW" ] ;
+     fhir:display [ fhir:v "OOP Social Worker" ]
+  ] [
+     fhir:code [ fhir:v "OOP-RT" ] ;
+     fhir:display [ fhir:v "OOP Respiratory Therapist" ]
+  ] [
+     fhir:code [ fhir:v "OOP-RN" ] ;
+     fhir:display [ fhir:v "OOP Registered Nurse" ]
+  ] [
+     fhir:code [ fhir:v "OOP-RD" ] ;
+     fhir:display [ fhir:v "OOP Registered Dietician" ]
+  ] [
+     fhir:code [ fhir:v "OOP-OT" ] ;
+     fhir:display [ fhir:v "OOP Occupational Therapist" ]
+  ] [
+     fhir:code [ fhir:v "OOP-ND" ] ;
+     fhir:display [ fhir:v "OOP Naturopathic Doctor" ]
+  ] [
+     fhir:code [ fhir:v "OOP-DEN" ] ;
+     fhir:display [ fhir:v "OOP Dentist" ]
+  ] [
+     fhir:code [ fhir:v "OOP-RNP" ] ;
+     fhir:display [ fhir:v "OOP Registered Nurse Practitioner" ]
+  ] [
+     fhir:code [ fhir:v "OOP-PHARM" ] ;
+     fhir:display [ fhir:v "OOP Pharmacist" ]
+  ] [
+     fhir:code [ fhir:v "OOP-RM" ] ;
+     fhir:display [ fhir:v "OOP Registered Midwife" ]
+  ] [
+     fhir:code [ fhir:v "OOP-OPT" ] ;
+     fhir:display [ fhir:v "OOP Optometrist" ]
+  ] [
+     fhir:code [ fhir:v "OOP-MD" ] ;
+     fhir:display [ fhir:v "OOP Medical Doctor" ]
+  ] [
+     fhir:code [ fhir:v "CC" ] ;
+     fhir:display [ fhir:v "Clinical Counsellor" ]
+  ] [
+     fhir:code [ fhir:v "UNSPECIFIED" ] ;
+     fhir:display [ fhir:v "UNSPECIFIED" ]
+  ] [
+     fhir:code [ fhir:v "RTT" ] ;
+     fhir:display [ fhir:v "Radiation Technologist in Therapy" ]
+  ] [
+     fhir:code [ fhir:v "RN" ] ;
+     fhir:display [ fhir:v "Registered Nurse" ]
+  ] [
+     fhir:code [ fhir:v "RNP" ] ;
+     fhir:display [ fhir:v "Registered Nurse Practitioner" ]
+  ] [
+     fhir:code [ fhir:v "RPN" ] ;
+     fhir:display [ fhir:v "Registered Psychiatric Nurse" ]
+  ] [
+     fhir:code [ fhir:v "RTEMG" ] ;
+     fhir:display [ fhir:v "Registered Electromyography Technologist" ]
+  ] [
+     fhir:code [ fhir:v "RTMR" ] ;
+     fhir:display [ fhir:v "Radiation Technologist  in Magnetic Resonance" ]
+  ] [
+     fhir:code [ fhir:v "PHARM" ] ;
+     fhir:display [ fhir:v "Pharmacist" ]
+  ] [
+     fhir:code [ fhir:v "PO" ] ;
+     fhir:display [ fhir:v "Podiatrist" ]
+  ] [
+     fhir:code [ fhir:v "RAC" ] ;
+     fhir:display [ fhir:v "Registered Acupuncturist" ]
+  ] [
+     fhir:code [ fhir:v "REPT" ] ;
+     fhir:display [ fhir:v "Registered Evoked Potential Technologist" ]
+  ] [
+     fhir:code [ fhir:v "RET" ] ;
+     fhir:display [ fhir:v "Registered Electroencephalography Technologist" ]
+  ] [
+     fhir:code [ fhir:v "RM" ] ;
+     fhir:display [ fhir:v "Registered Midwife" ]
+  ] [
+     fhir:code [ fhir:v "LPN" ] ;
+     fhir:display [ fhir:v "Licensed Practical Nurse" ]
+  ] [
+     fhir:code [ fhir:v "MD" ] ;
+     fhir:display [ fhir:v "Medical Doctor" ]
+  ] [
+     fhir:code [ fhir:v "MOA" ] ;
+     fhir:display [ fhir:v "Medical Office Assistant" ]
+  ] [
+     fhir:code [ fhir:v "OPT" ] ;
+     fhir:display [ fhir:v "Optometrist" ]
+  ] [
+     fhir:code [ fhir:v "PCP" ] ;
+     fhir:display [ fhir:v "Primary Care Paramedic" ]
+  ] [
+     fhir:code [ fhir:v "PCY" ] ;
+     fhir:display [ fhir:v "Pharmacy" ]
+  ] [
+     fhir:code [ fhir:v "ACP" ] ;
+     fhir:display [ fhir:v "Advanced Care Paramedic" ]
+  ] [
+     fhir:code [ fhir:v "CCP" ] ;
+     fhir:display [ fhir:v "Critical Care Paramedic" ]
+  ] [
+     fhir:code [ fhir:v "DEN" ] ;
+     fhir:display [ fhir:v "Dentist" ]
+  ] [
+     fhir:code [ fhir:v "EMR" ] ;
+     fhir:display [ fhir:v "Emergency Medical Responder" ]
+  ] [
+     fhir:code [ fhir:v "OT" ] ;
+     fhir:display [ fhir:v "Occupational Therapist" ]
+  ] [
+     fhir:code [ fhir:v "PSYCH" ] ;
+     fhir:display [ fhir:v "Psychologist" ]
+  ] [
+     fhir:code [ fhir:v "SW" ] ;
+     fhir:display [ fhir:v "Social Worker" ]
+  ] [
+     fhir:code [ fhir:v "RCSW" ] ;
+     fhir:display [ fhir:v "Registered Clinical Social Worker" ]
+  ] [
+     fhir:code [ fhir:v "CHIRO" ] ;
+     fhir:display [ fhir:v "Chiropractor" ]
+  ] [
+     fhir:code [ fhir:v "PHYSIO" ] ;
+     fhir:display [ fhir:v "Physiotherapist" ]
+  ] [
+     fhir:code [ fhir:v "RMT" ] ;
+     fhir:display [ fhir:v "Registered Massage Therapist" ]
+  ] [
+     fhir:code [ fhir:v "KN" ] ;
+     fhir:display [ fhir:v "Kinesiologist" ]
+  ] [
+     fhir:code [ fhir:v "PTECH" ] ;
+     fhir:display [ fhir:v "Pharmacy Technician" ]
+  ] [
+     fhir:code [ fhir:v "COUN" ] ;
+     fhir:display [ fhir:v "Counsellor" ]
+  ] [
+     fhir:code [ fhir:v "MFT" ] ;
+     fhir:display [ fhir:v "Marriage and Family Therapist" ]
+  ] [
+     fhir:code [ fhir:v "RD" ] ;
+     fhir:display [ fhir:v "Registered Dietitian" ]
+  ] [
+     fhir:code [ fhir:v "HA" ] ;
+     fhir:display [ fhir:v "Health Authority" ]
+  ] [
+     fhir:code [ fhir:v "PHARMTECH" ] ;
+     fhir:display [ fhir:v "PHARMTECH" ]
+  ] [
+     fhir:code [ fhir:v "RTNM" ] ;
+     fhir:display [ fhir:v "Nuclear Medicine Technologist" ]
+  ] [
+     fhir:code [ fhir:v "RTR" ] ;
+     fhir:display [ fhir:v "Radiation Technologist in Radiology" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

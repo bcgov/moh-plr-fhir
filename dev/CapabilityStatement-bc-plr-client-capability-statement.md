@@ -1,0 +1,110 @@
+# BC PLR Client Capability Statement - BC Provider Location Registry FHIR Implementation Guide v1.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **BC PLR Client Capability Statement**
+
+## CapabilityStatement: BC PLR Client Capability Statement 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-client-capability-statement | *Version*:1.0.0 |
+| Active as of 2024-03-20 | *Computable Name*:BCPLRClientCapabilityStatement |
+
+ 
+This capability statement describes the use case that is supported by the BC FHIR implementation of PLR. 
+* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location
+ 
+
+ [Raw OpenAPI-Swagger Definition file](bc-plr-client-capability-statement.openapi.json) | [Download](bc-plr-client-capability-statement.openapi.json) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "bc-plr-client-capability-statement",
+  "url" : "http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-client-capability-statement",
+  "version" : "1.0.0",
+  "name" : "BCPLRClientCapabilityStatement",
+  "title" : "BC PLR Client Capability Statement",
+  "status" : "active",
+  "date" : "2024-03-20",
+  "publisher" : "BC Ministry of Health",
+  "contact" : [
+    {
+      "name" : "BC Ministry of Health",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"
+        }
+      ]
+    }
+  ],
+  "description" : "This capability statement describes the use case that is supported by the BC FHIR implementation of PLR.\n* Distributions - used when PLR is communicating a change in a single Practitioner, Organization, or Location\n",
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "CA",
+          "display" : "Canada"
+        }
+      ]
+    }
+  ],
+  "kind" : "requirements",
+  "fhirVersion" : "4.0.1",
+  "format" : ["json"],
+  "_format" : [
+    {
+      "extension" : [
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }
+      ]
+    }
+  ],
+  "implementationGuide" : [
+    "http://hlth.gov.bc.ca/fhir/provider/ImplementationGuide/fhir.ca-bc.provider"
+  ],
+  "rest" : [
+    {
+      "mode" : "client",
+      "resource" : [
+        {
+          "type" : "Bundle",
+          "supportedProfile" : [
+            "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle",
+            "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle",
+            "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location-bundle"
+          ],
+          "interaction" : [
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode" : "SHALL"
+                }
+              ],
+              "code" : "create",
+              "documentation" : "Client applications shall support the three different types of Distributions."
+            }
+          ],
+          "operation" : [
+            {
+              "name" : "distribution",
+              "definition" : "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-distribution"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+```

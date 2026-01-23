@@ -34,10 +34,10 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
-    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
-    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
-    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
@@ -162,6 +162,12 @@
       <li>
         <a href="artifacts.html#12">Value Sets</a>
       </li>
+      <li>
+        <a href="artifacts.html#13">Code Systems</a>
+      </li>
+      <li>
+        <a href="artifacts.html#14">Naming Systems</a>
+      </li>
     </ul>
   </li>
   <li>
@@ -269,12 +275,14 @@
 
 
 
-  <pre class="xml" style="white-space: pre; text-wrap: nowrap; width: auto;"><code style="white-space: pre; text-wrap: nowrap;">
+  <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code style="white-space: pre; text-wrap: nowrap;">
 &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement">CapabilityStatement</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;bc-plr-server-capability-statement&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.text">text</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#CapabilityStatement.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;bc-plr-server-capability-statement&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#CapabilityStatement.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;extensions&quot;/&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: CapabilityStatement bc-plr-server-capability-statement&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;bc-plr-server-capability-statement&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcbc-plr-server-capability-statement&quot;&gt; &lt;/a&gt;&lt;h2 id=&quot;title&quot;&gt;BC PLR Server Capability Statement&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;Implementation Guide Version: 1.0.0 &lt;/li&gt;&lt;li&gt;FHIR Version: 4.0.1 &lt;/li&gt;&lt;li&gt;Supported Formats: &lt;strong&gt;SHALL&lt;/strong&gt; support &lt;code&gt;json&lt;/code&gt;&lt;/li&gt;&lt;li&gt;Supported Patch Formats: &lt;/li&gt;&lt;li&gt;Published on: 2024-03-20 &lt;/li&gt;&lt;li&gt;Published by: BC Ministry of Health &lt;/li&gt;&lt;/ul&gt;&lt;blockquote class=&quot;impl-note&quot;&gt;&lt;p&gt;&lt;strong&gt;Note to Implementers: FHIR Capabilities&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.&lt;/p&gt;&lt;/blockquote&gt;&lt;h3 id=&quot;shallIGs&quot;&gt;SHALL Support the Following Implementation Guides&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;https://fhir-guide.hlth.gov.bc.ca/ProviderLocationRegistry/&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&quot;rest&quot;&gt;FHIR RESTful Capabilities&lt;/h2&gt;&lt;div class=&quot;panel panel-default&quot;&gt;&lt;div class=&quot;panel-heading&quot;&gt;&lt;h3 id=&quot;mode1&quot; class=&quot;panel-title&quot;&gt;Mode: &lt;code&gt;server&lt;/code&gt;&lt;/h3&gt;&lt;/div&gt;&lt;div class=&quot;panel-body&quot;&gt;&lt;div class=&quot;lead&quot;&gt;&lt;em&gt;Summary of System-wide Interactions&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;h3 id=&quot;resourcesCap1&quot;&gt;Capabilities by Resource/Profile&lt;/h3&gt;&lt;h4 id=&quot;resourcesSummary1&quot;&gt;Summary&lt;/h4&gt;&lt;p&gt;The summary table lists the resources that are part of this configuration, and for each resource it lists:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The relevant profiles (if any)&lt;/li&gt;&lt;li&gt;The interactions supported by each resource (&lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;R&lt;/span&gt;&lt;/b&gt;ead, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;S&lt;/span&gt;&lt;/b&gt;earch, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;U&lt;/span&gt;&lt;/b&gt;pdate, and &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;C&lt;/span&gt;&lt;/b&gt;reate, are always shown, while &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;VR&lt;/span&gt;&lt;/b&gt;ead, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;P&lt;/span&gt;&lt;/b&gt;atch, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;D&lt;/span&gt;&lt;/b&gt;elete, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;H&lt;/span&gt;&lt;/b&gt;istory on &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;I&lt;/span&gt;&lt;/b&gt;nstance, or &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;H&lt;/span&gt;&lt;/b&gt;istory on &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;T&lt;/span&gt;&lt;/b&gt;ype are only present if at least one of the resources has support for them.&lt;/li&gt;&lt;li&gt;&lt;span&gt;The required, recommended, and some optional search parameters (if any). &lt;/span&gt;&lt;/li&gt;&lt;li&gt;The linked resources enabled for &lt;code&gt;_include&lt;/code&gt;&lt;/li&gt;&lt;li&gt;The other resources enabled for &lt;code&gt;_revinclude&lt;/code&gt;&lt;/li&gt;&lt;li&gt;The operations on the resource (if any)&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;table-responsive&quot;&gt;&lt;table class=&quot;table table-condensed table-hover&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;b&gt;Resource Type&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Profile&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;GET a resource (read interaction)&quot;&gt;R&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;GET all set of resources of the type (search interaction)&quot;&gt;S&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;PUT a new resource version (update interaction)&quot;&gt;U&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;POST a new resource (create interaction)&quot;&gt;C&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=&quot;Required and recommended search parameters&quot;&gt;Searches&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;&lt;b&gt;_include&lt;/b&gt;&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;&lt;b&gt;_revinclude&lt;/b&gt;&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Operations&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;#Practitioner1-1&quot;&gt;Practitioner&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;StructureDefinition-bc-practitioner.html&quot;&gt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner&lt;/a&gt;&lt;br/&gt;&lt;em&gt;Additional supported profiles:&lt;/em&gt;&lt;br/&gt;  &lt;a href=&quot;StructureDefinition-bc-practitioner-bundle.html&quot;&gt;BCPractitionerBundle&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;y&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;y&lt;/td&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td&gt;identifier, _id, family, given, gender, address-city, _has&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;code&gt;PractitionerRole:practitioner&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;$entityQuery&lt;/code&gt;, &lt;code&gt;$extendedQuery&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;#Organization1-2&quot;&gt;Organization&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;StructureDefinition-bc-organization.html&quot;&gt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization&lt;/a&gt;&lt;br/&gt;&lt;em&gt;Additional supported profiles:&lt;/em&gt;&lt;br/&gt;  &lt;a href=&quot;StructureDefinition-bc-organization-bundle.html&quot;&gt;BCOrganizationBundle&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;y&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;y&lt;/td&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td&gt;identifier, name, type, address-city&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td&gt;&lt;code&gt;$entityQuery&lt;/code&gt;, &lt;code&gt;$extendedQuery&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;#Location1-3&quot;&gt;Location&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;StructureDefinition-bc-location.html&quot;&gt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location&lt;/a&gt;&lt;br/&gt;&lt;em&gt;Additional supported profiles:&lt;/em&gt;&lt;br/&gt;  &lt;a href=&quot;StructureDefinition-bc-location-bundle.html&quot;&gt;BCLocationBundle&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;y&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;y&lt;/td&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td&gt;identifier, address-city, address-line1, otheraddress-line1, healthServiceDeliveryArea, healthAuthority, communityHealthServiceArea, localHealthArea&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td&gt;&lt;code&gt;$entityQuery&lt;/code&gt;, &lt;code&gt;$extendedQuery&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div class=&quot;panel panel-default&quot;&gt;&lt;div class=&quot;panel-heading&quot;&gt;&lt;h4 id=&quot;Practitioner1-1&quot; class=&quot;panel-title&quot;&gt;&lt;span style=&quot;float: right;&quot;&gt;Resource Conformance: supported &lt;/span&gt;Practitioner&lt;/h4&gt;&lt;/div&gt;&lt;div class=&quot;panel-body&quot;&gt;&lt;div class=&quot;container&quot;&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Base System Profile&lt;/span&gt;&lt;br/&gt;&lt;a href=&quot;StructureDefinition-bc-practitioner.html&quot;&gt;BCPractitioner&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-3&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Profile Conformance&lt;/span&gt;&lt;br/&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-3&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Reference Policy&lt;/span&gt;&lt;br/&gt;&lt;/div&gt;&lt;/div&gt;&lt;p/&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-6&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Supported Profiles&lt;/span&gt;&lt;p&gt;&lt;a href=&quot;StructureDefinition-bc-practitioner-bundle.html&quot;&gt;BCPractitionerBundle&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Interaction summary&lt;/span&gt;&lt;br/&gt;&lt;ul&gt;&lt;li&gt;Supports &lt;br/&gt;&lt;code&gt;read&lt;/code&gt;&lt;div&gt;&lt;p&gt;RESTful GET service&lt;/p&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: CapabilityStatement bc-plr-server-capability-statement&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;bc-plr-server-capability-statement&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcbc-plr-server-capability-statement&quot;&gt; &lt;/a&gt;&lt;h2 id=&quot;title&quot;&gt;BC PLR Server Capability Statement&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;Implementation Guide Version: 1.0.0 &lt;/li&gt;&lt;li&gt;FHIR Version: 4.0.1 &lt;/li&gt;&lt;li&gt;Supported Formats: &lt;strong&gt;SHALL&lt;/strong&gt; support &lt;code&gt;json&lt;/code&gt;&lt;/li&gt;&lt;li&gt;Published on: 2024-03-20 &lt;/li&gt;&lt;li&gt;Published by: BC Ministry of Health &lt;/li&gt;&lt;/ul&gt;&lt;blockquote class=&quot;impl-note&quot;&gt;&lt;p&gt;&lt;strong&gt;Note to Implementers: FHIR Capabilities&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.&lt;/p&gt;&lt;/blockquote&gt;&lt;h3 id=&quot;shallIGs&quot;&gt;SHALL Support the Following Implementation Guides&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;https://fhir-guide.hlth.gov.bc.ca/ProviderLocationRegistry/&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&quot;rest&quot;&gt;FHIR RESTful Capabilities&lt;/h2&gt;&lt;div class=&quot;panel panel-default&quot;&gt;&lt;div class=&quot;panel-heading&quot;&gt;&lt;h3 id=&quot;mode1&quot; class=&quot;panel-title&quot;&gt;Mode: &lt;code&gt;server&lt;/code&gt;&lt;/h3&gt;&lt;/div&gt;&lt;div class=&quot;panel-body&quot;&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-12&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Summary of System-wide Operations&lt;/span&gt;&lt;table class=&quot;table table-condensed table-hover&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Conformance&lt;/th&gt;&lt;th&gt;Operation&lt;/th&gt;&lt;th&gt;Documentation&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;OperationDefinition-bc-maintain.html&quot;&gt;$maintain&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;A BC resource Bundle is sent to create/update one resource&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;OperationDefinition-bc-batch.html&quot;&gt;$batch&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;A BC resource Bundle is sent to create/update multiple resources (Practitioner only for now)&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;h3 id=&quot;resourcesCap1&quot;&gt;Capabilities by Resource/Profile&lt;/h3&gt;&lt;h4 id=&quot;resourcesSummary1&quot;&gt;Summary&lt;/h4&gt;&lt;p&gt;The summary table lists the resources that are part of this configuration, and for each resource it lists:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The relevant profiles (if any)&lt;/li&gt;&lt;li&gt;The interactions supported by each resource (&lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;R&lt;/span&gt;&lt;/b&gt;ead, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;S&lt;/span&gt;&lt;/b&gt;earch, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;U&lt;/span&gt;&lt;/b&gt;pdate, and &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;C&lt;/span&gt;&lt;/b&gt;reate, are always shown, while &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;VR&lt;/span&gt;&lt;/b&gt;ead, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;P&lt;/span&gt;&lt;/b&gt;atch, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;D&lt;/span&gt;&lt;/b&gt;elete, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;H&lt;/span&gt;&lt;/b&gt;istory on &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;I&lt;/span&gt;&lt;/b&gt;nstance, or &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;H&lt;/span&gt;&lt;/b&gt;istory on &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;T&lt;/span&gt;&lt;/b&gt;ype are only present if at least one of the resources has support for them.&lt;/li&gt;&lt;li&gt;&lt;span&gt;The required, recommended, and some optional search parameters (if any). &lt;/span&gt;&lt;/li&gt;&lt;li&gt;The linked resources enabled for &lt;code&gt;_include&lt;/code&gt;&lt;/li&gt;&lt;li&gt;The other resources enabled for &lt;code&gt;_revinclude&lt;/code&gt;&lt;/li&gt;&lt;li&gt;The operations on the resource (if any)&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;table-responsive&quot;&gt;&lt;table class=&quot;table table-condensed table-hover&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;b&gt;Resource Type&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Profile&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;GET a resource (read interaction)&quot;&gt;R&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;GET all set of resources of the type (search interaction)&quot;&gt;S&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;PUT a new resource version (update interaction)&quot;&gt;U&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;POST a new resource (create interaction)&quot;&gt;C&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=&quot;Required and recommended search parameters&quot;&gt;Searches&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;&lt;b&gt;_include&lt;/b&gt;&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;&lt;b&gt;_revinclude&lt;/b&gt;&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Operations&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;#Practitioner1-1&quot;&gt;Practitioner&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;StructureDefinition-bc-practitioner.html&quot;&gt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner&lt;/a&gt;&lt;br/&gt;&lt;em&gt;Additional supported profiles:&lt;/em&gt;&lt;br/&gt;  &lt;a href=&quot;StructureDefinition-bc-practitioner-bundle.html&quot;&gt;BCPractitionerBundle&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;y&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;y&lt;/td&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td&gt;identifier, _id, family, given, gender, address-city, _has&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;code&gt;PractitionerRole:practitioner&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;$entityQuery&lt;/code&gt;, &lt;code&gt;$extendedQuery&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;#Organization1-2&quot;&gt;Organization&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;StructureDefinition-bc-organization.html&quot;&gt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization&lt;/a&gt;&lt;br/&gt;&lt;em&gt;Additional supported profiles:&lt;/em&gt;&lt;br/&gt;  &lt;a href=&quot;StructureDefinition-bc-organization-bundle.html&quot;&gt;BCOrganizationBundle&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;y&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;y&lt;/td&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td&gt;identifier, name, type, address-city&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td&gt;&lt;code&gt;$entityQuery&lt;/code&gt;, &lt;code&gt;$extendedQuery&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;#Location1-3&quot;&gt;Location&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;StructureDefinition-bc-location.html&quot;&gt;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-location&lt;/a&gt;&lt;br/&gt;&lt;em&gt;Additional supported profiles:&lt;/em&gt;&lt;br/&gt;  &lt;a href=&quot;StructureDefinition-bc-location-bundle.html&quot;&gt;BCLocationBundle&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;y&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;y&lt;/td&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td&gt;identifier, address-city, address-line1, otheraddress-line1, healthServiceDeliveryArea, healthAuthority, communityHealthServiceArea, localHealthArea&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td&gt;&lt;code&gt;$entityQuery&lt;/code&gt;, &lt;code&gt;$extendedQuery&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div class=&quot;panel panel-default&quot;&gt;&lt;div class=&quot;panel-heading&quot;&gt;&lt;h4 id=&quot;Practitioner1-1&quot; class=&quot;panel-title&quot;&gt;&lt;span style=&quot;float: right;&quot;&gt;Resource Conformance: supported &lt;/span&gt;Practitioner&lt;/h4&gt;&lt;/div&gt;&lt;div class=&quot;panel-body&quot;&gt;&lt;div class=&quot;container&quot;&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Base System Profile&lt;/span&gt;&lt;br/&gt;&lt;a href=&quot;StructureDefinition-bc-practitioner.html&quot;&gt;BCPractitioner&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-3&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Profile Conformance&lt;/span&gt;&lt;br/&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-3&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Reference Policy&lt;/span&gt;&lt;br/&gt;&lt;/div&gt;&lt;/div&gt;&lt;p/&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-6&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Supported Profiles&lt;/span&gt;&lt;p&gt;&lt;a href=&quot;StructureDefinition-bc-practitioner-bundle.html&quot;&gt;BCPractitionerBundle&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Interaction summary&lt;/span&gt;&lt;br/&gt;&lt;ul&gt;&lt;li&gt;Supports &lt;br/&gt;&lt;code&gt;read&lt;/code&gt;&lt;div&gt;&lt;p&gt;RESTful GET service&lt;/p&gt;
 &lt;/div&gt;&lt;code&gt;search-type&lt;/code&gt;&lt;div&gt;&lt;p&gt;RESTful Search&lt;/p&gt;
 &lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;p/&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-lg-7&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Search Parameters&lt;/span&gt;&lt;table class=&quot;table table-condensed table-hover&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Conformance&lt;/th&gt;&lt;th&gt;Parameter&lt;/th&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Documentation&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;identifier&lt;/td&gt;&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Practitioner identifier, format &amp;lt;naming-system&amp;gt;|&amp;lt;value&amp;gt;&lt;/p&gt;
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;_id&lt;/td&gt;&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Practitioner IPC, unique identifier&lt;/p&gt;
@@ -302,8 +310,8 @@
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;communityHealthServiceArea&lt;/td&gt;&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Location community Health Service Area&lt;/p&gt;
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;localHealthArea&lt;/td&gt;&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Location local Health Area&lt;/p&gt;
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-5&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-12&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Extended Operations&lt;/span&gt;&lt;table class=&quot;table table-condensed table-hover&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Conformance&lt;/th&gt;&lt;th&gt;Operation&lt;/th&gt;&lt;th&gt;Documentation&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;OperationDefinition-bc-entity-location-query.html&quot;&gt;$entityQuery&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;OperationDefinition-bc-extended-location-query.html&quot;&gt;$extendedQuery&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;FUTURE&lt;/p&gt;
-&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;h3 id=&quot;operationsCap1&quot;&gt;Operations&lt;/h3&gt;&lt;h4 id=&quot;operationsSummary1&quot;&gt;Use&lt;/h4&gt;&lt;/div&gt;<a name="end-xhtml"></a>
-  &lt;/text&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#CapabilityStatement.text">text</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.url">url</a>
        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/CapabilityStatement/bc-plr-server-capability-statement&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1.0.0&quot;/&gt;
@@ -318,8 +326,8 @@
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;url&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health&quot;/&gt;
-    &lt;/telecom&gt;
-  &lt;/contact&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.contact">contact</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.description">description</a>
                <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;This capability statement is listing the RESTful resources that are exposed as well as the three use cases that are supported by the BC FHIR implementation of PLR (see json or XML for more details):
 * Maintain - used when an external source is communicating a change to PLR
@@ -333,16 +341,16 @@ All POST and PUT Requests are sent using a Paramaters resource and the Response 
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:iso:std:iso:3166&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;CA&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Canada&quot;/&gt;
-    &lt;/coding&gt;
-  &lt;/jurisdiction&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.jurisdiction">jurisdiction</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.kind">kind</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;requirements&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.fhirVersion">fhirVersion</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;4.0.1&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.format">format</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;json&quot;&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#code#code.extension">extension</a>
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#code.extension">extension</a>
                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;SHALL&quot;/&gt;
-    &lt;/extension&gt;
-  &lt;/format&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;SHALL&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#code.extension">extension</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.format">format</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.implementationGuide">implementationGuide</a>
                        <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://fhir-guide.hlth.gov.bc.ca/ProviderLocationRegistry/&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest">rest</a>&gt;
@@ -356,61 +364,61 @@ All POST and PUT Requests are sent using a Paramaters resource and the Response 
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;read&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;RESTful GET service&quot;/&gt;
-      &lt;/interaction&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;search-type&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;RESTful Search&quot;/&gt;
-      &lt;/interaction&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchRevInclude">searchRevInclude</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;PractitionerRole:practitioner&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;identifier&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
                        <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Practitioner identifier, format &amp;lt;naming-system&amp;gt;|&amp;lt;value&amp;gt;&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;_id&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Practitioner IPC, unique identifier&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;family&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Practitioner family name&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;given&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Practitioner given name&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;gender&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Practitioner gender&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;address-city&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Practitioner city&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;_has&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
                        <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;PractitionerRole:practitioner:role= &amp;lt;role&amp;gt;&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;entityQuery&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-practitioner-query&quot;/&gt;
-      &lt;/operation&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;extendedQuery&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-practitioner-query&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;FUTURE&quot;/&gt;
-      &lt;/operation&gt;
-    &lt;/resource&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Organization&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.profile">profile</a>
@@ -420,44 +428,44 @@ All POST and PUT Requests are sent using a Paramaters resource and the Response 
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;read&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;RESTful GET service&quot;/&gt;
-      &lt;/interaction&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;search-type&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;RESTful Search&quot;/&gt;
-      &lt;/interaction&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;identifier&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
                        <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Organization identifier, format &amp;lt;naming-system&amp;gt;|&amp;lt;value&amp;gt;&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;name&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Organization name&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;type&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Organization role type&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;address-city&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Organization city&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;entityQuery&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-organization-query&quot;/&gt;
-      &lt;/operation&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;extendedQuery&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-organization-query&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;FUTURE&quot;/&gt;
-      &lt;/operation&gt;
-    &lt;/resource&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Location&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.profile">profile</a>
@@ -467,80 +475,80 @@ All POST and PUT Requests are sent using a Paramaters resource and the Response 
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;read&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;RESTful GET service&quot;/&gt;
-      &lt;/interaction&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;search-type&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;RESTful Search&quot;/&gt;
-      &lt;/interaction&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;identifier&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
                        <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Location identifier, format &amp;lt;naming-system&amp;gt;|&amp;lt;value&amp;gt;&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;address-city&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Location city&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;address-line1&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Location city&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;otheraddress-line1&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Location city&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;healthServiceDeliveryArea&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Location health Service Delivery Area&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;healthAuthority&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Location health Authority&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;communityHealthServiceArea&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Location community Health Service Area&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;localHealthArea&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Location local Health Area&quot;/&gt;
-      &lt;/searchParam&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;entityQuery&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query&quot;/&gt;
-      &lt;/operation&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;extendedQuery&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-extended-location-query&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;FUTURE&quot;/&gt;
-      &lt;/operation&gt;
-    &lt;/resource&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.operation">operation</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;maintain&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.definition">definition</a>
                   <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-maintain&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.documentation">documentation</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;A BC resource Bundle is sent to create/update one resource&quot;/&gt;
-    &lt;/operation&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.operation">operation</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.operation">operation</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;batch&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.definition">definition</a>
                   <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-batch&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.documentation">documentation</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;A BC resource Bundle is sent to create/update multiple resources (Practitioner only for now)&quot;/&gt;
-    &lt;/operation&gt;
-  &lt;/rest&gt;
-&lt;/CapabilityStatement&gt;</code></pre>
+    &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.operation">operation</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest">rest</a>&gt;
+&lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement">CapabilityStatement</a>&gt;</code></pre>
 
 
   <!-- insert notes if present -->
@@ -564,7 +572,7 @@ All POST and PUT Requests are sent using a Paramaters resource and the Response 
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jun 23, 2025 20:39+0000">2025-06-23</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 23, 2026 00:06+0000">2026-01-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

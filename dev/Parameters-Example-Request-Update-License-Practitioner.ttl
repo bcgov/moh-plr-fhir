@@ -12,13 +12,13 @@
   fhir:parameter ( [
      fhir:name [ fhir:v "messageId" ] ;
      fhir:value [
-       a fhir:string ;
+       a fhir:String ;
        fhir:v "12344321"
      ]
   ] [
      fhir:name [ fhir:v "messageTime" ] ;
      fhir:value [
-       a fhir:dateTime ;
+       a fhir:DateTime ;
        fhir:v "2022-06-27T01:01:01-08:00"^^xsd:dateTime
      ]
   ] [
@@ -29,15 +29,21 @@
        fhir:meta [
          fhir:profile ( [
            fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"^^xsd:anyURI ;
-           fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle>
+           fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle>
          ] )
        ] ;
        fhir:type [ fhir:v "collection" ] ;
        fhir:entry ( [
-         fhir:fullUrl [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00763481.BC.PRS"^^xsd:anyURI ] ;
+         fhir:fullUrl [
+           fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00763481.BC.PRS"^^xsd:anyURI ;
+           fhir:l <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00763481.BC.PRS>
+         ] ;
          fhir:resource ( <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00763481.BC.PRS> )
        ] [
-         fhir:fullUrl [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00763481.BC.PRS"^^xsd:anyURI ] ;
+         fhir:fullUrl [
+           fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00763481.BC.PRS"^^xsd:anyURI ;
+           fhir:l <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00763481.BC.PRS>
+         ] ;
          fhir:resource ( <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00763481.BC.PRS> )
        ] )
      ] )
@@ -48,57 +54,90 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"^^xsd:anyURI ;
-       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
+       fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner>
      ] )
   ] ; # 
   fhir:extension ( [
      fhir:extension ( [
-       fhir:url [ fhir:v "statusCode"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "statusCode"^^xsd:anyURI ;
+         fhir:l fhir:statusCode
+       ] ;
        fhir:value [
          a fhir:CodeableConcept ;
          fhir:coding ( [
-           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system"^^xsd:anyURI ] ;
+           fhir:system [
+             fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system"^^xsd:anyURI ;
+             fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system>
+           ] ;
            fhir:code [ fhir:v "INACTIVE" ]
          ] )
        ]
      ] [
-       fhir:url [ fhir:v "statusReasonCode"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "statusReasonCode"^^xsd:anyURI ;
+         fhir:l fhir:statusReasonCode
+       ] ;
        fhir:value [
          a fhir:CodeableConcept ;
          fhir:coding ( [
-           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system"^^xsd:anyURI ] ;
+           fhir:system [
+             fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system"^^xsd:anyURI ;
+             fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system>
+           ] ;
            fhir:code [ fhir:v "LTP" ]
          ] )
        ]
      ] [
-       fhir:url [ fhir:v "statusClassCode"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "statusClassCode"^^xsd:anyURI ;
+         fhir:l fhir:statusClassCode
+       ] ;
        fhir:value [
          a fhir:CodeableConcept ;
          fhir:coding ( [
-           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system"^^xsd:anyURI ] ;
+           fhir:system [
+             fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system"^^xsd:anyURI ;
+             fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system>
+           ] ;
            fhir:code [ fhir:v "LIC" ]
          ] )
        ]
      ] [
-       fhir:url [ fhir:v "period"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "period"^^xsd:anyURI ;
+         fhir:l fhir:period
+       ] ;
        fhir:value [
          a fhir:Period ;
          fhir:start [ fhir:v "2022-06-24"^^xsd:date ]
        ]
      ] [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension>
+       ] ;
        fhir:value [
          a fhir:CodeableConcept ;
          fhir:coding ( [
-           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system"^^xsd:anyURI ] ;
+           fhir:system [
+             fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system"^^xsd:anyURI ;
+             fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system>
+           ] ;
            fhir:code [ fhir:v "CHG" ]
          ] )
        ]
      ] ) ;
-     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"^^xsd:anyURI ]
+     fhir:url [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension"^^xsd:anyURI ;
+       fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-license-status-extension>
+     ]
   ] ) ; # 
   fhir:identifier ( [
-     fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ] ;
+     fhir:system [
+       fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ;
+       fhir:l <https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc>
+     ] ;
      fhir:value [ fhir:v "IPC.00763481.BC.PRS" ] ;
      fhir:period [
        fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
@@ -107,9 +146,12 @@
   fhir:name ( [
      fhir:family [
        fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ] ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/data-absent-reason>
+         ] ;
          fhir:value [
-           a fhir:code ;
+           a fhir:Code ;
            fhir:v "not-applicable"
          ]
        ] )
@@ -121,12 +163,15 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"^^xsd:anyURI ;
-       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
+       fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role>
      ] )
   ] ; # 
   fhir:practitioner [
      fhir:identifier [
-       fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ] ;
+       fhir:system [
+         fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ;
+         fhir:l <https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc>
+       ] ;
        fhir:value [ fhir:v "IPC.00763481.BC.PRS" ] ;
        fhir:period [
          fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
@@ -135,7 +180,10 @@
   ] ; # 
   fhir:code ( [
      fhir:coding ( [
-       fhir:system [ fhir:v "http://fhir.infoway-inforoute.ca/CodeSystem/scptype"^^xsd:anyURI ] ;
+       fhir:system [
+         fhir:v "http://fhir.infoway-inforoute.ca/CodeSystem/scptype"^^xsd:anyURI ;
+         fhir:l <http://fhir.infoway-inforoute.ca/CodeSystem/scptype>
+       ] ;
        fhir:code [ fhir:v "MD" ]
      ] )
   ] ) . # 

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Bc Owner Value Set - BC Provider Location Registry FHIR Implementation Guide v1.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/bc-fhir.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"10.105"}
+    h3,h4,h5,h6{--heading-prefix:"10.105"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Left logo - typically the publisher's logo - project or affiliate -->
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">
+            <img height="71" alt="Project home" src="assets/images/BCMinistry.png"/>
+          </a>
+        </div>
+
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">BC Provider Location Registry FHIR Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">1.0.0 - fhirVersion-4.0; BCPLRVersion=1
+
+
+
+  <img alt="Canada flag" src="assets/images/can.svg" height="16" title="Canada"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Overview</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Design
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="specification.html">FHIR Design and Overview</a>
+      </li>
+      <li>
+        <a href="designexamples.html">URL Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="transition.html">V3 Transition</a>
+  </li>
+  <li>
+    <a href="connected_partner.html">Connected Partner</a>
+  </li>
+  <li>
+    <a href="future.html">Releases and Future Plans</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All</a>
+      </li>
+      <li>
+        <a href="artifacts.html#1">Capabilities</a>
+      </li>
+      <li>
+        <a href="artifacts.html#2">Operations</a>
+      </li>
+      <li>
+        <a href="artifacts.html#3">Operations Request Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#4">Operations Response Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#5">Bundles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#6">Practitioner</a>
+      </li>
+      <li>
+        <a href="artifacts.html#7">Organization</a>
+      </li>
+      <li>
+        <a href="artifacts.html#8">Facility</a>
+      </li>
+      <li>
+        <a href="artifacts.html#9">Restful Response Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#10">Extensions</a>
+      </li>
+      <li>
+        <a href="artifacts.html#11">Data Types</a>
+      </li>
+      <li>
+        <a href="artifacts.html#12">Value Sets</a>
+      </li>
+      <li>
+        <a href="artifacts.html#13">Code Systems</a>
+      </li>
+      <li>
+        <a href="artifacts.html#14">Naming Systems</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="techdetails.html">Technical Details</a>
+  </li>
+  <li>
+    <a href="glossary.html">Glossary</a>
+  </li>
+  <li>
+    <a href="credits.html">Credits</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Bc Owner Value Set</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">BC Provider Location Registry FHIR Implementation Guide - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hlth.gov.bc.ca/fhir/provider/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-bc-owner-value-set.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-bc-owner-value-set.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-bc-owner-value-set.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: Bc Owner Value Set
+
+  </h2>
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-owner-value-set<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-owner-value-set"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">1.0.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-owner-value-set|1.0.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+            as of 2026-01-23
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">OwnerVS</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>BC Owner Value Set.</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<p>This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)</p>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="bc-owner-value-set"> </a><a name="hcbc-owner-value-set"> </a>
+<ul><li>Include all codes defined in <a href="CodeSystem-bc-owner-code-system.html"><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;1.0.0</span></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"/><p style="border: black 1px dotted; background-color: #ffcccc; padding: 8px; margin-bottom: 8px">Expansion based on code system fragment <a href="CodeSystem-bc-owner-code-system.html">https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system Bc Owner Codes v1.0.0 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system|1.0.0" title="Click to Copy URL" class="btn-copy"> </button></span></p><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion performed internally based on <a href="CodeSystem-bc-owner-code-system.html">codesystem Bc Owner Codes v1.0.0 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system|1.0.0" title="Click to Copy URL" class="btn-copy"> </button></span></p><p>This value set contains at least 38 concepts</p><table class="codes" data-fhir="generated"><tr><td><b>System</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-HLBC"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-HLBC">HLBC</a></td><td>Healthlinks</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;HLBC&quot;, &quot;display&quot;: &quot;Healthlinks&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;HLBC&quot;&gt;&lt;display value=&quot;Healthlinks&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-PAS"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-PAS">PAS</a></td><td>Provincial Attachment System</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;PAS&quot;, &quot;display&quot;: &quot;Provincial Attachment System&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;PAS&quot;&gt;&lt;display value=&quot;Provincial Attachment System&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-EMALB"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-EMALB">EMALB</a></td><td>Emergency Medical Assistants Licensing Board</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;EMALB&quot;, &quot;display&quot;: &quot;Emergency Medical Assistants Licensing Board&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;EMALB&quot;&gt;&lt;display value=&quot;Emergency Medical Assistants Licensing Board&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CNPBC"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CNPBC">CNPBC</a></td><td>College of Naturopathic Physicians of BC</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CNPBC&quot;, &quot;display&quot;: &quot;College of Naturopathic Physicians of BC&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CNPBC&quot;&gt;&lt;display value=&quot;College of Naturopathic Physicians of BC&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CPOD"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CPOD">CPOD</a></td><td>College of Podiatric Surgeons of BC</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CPOD&quot;, &quot;display&quot;: &quot;College of Podiatric Surgeons of BC&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CPOD&quot;&gt;&lt;display value=&quot;College of Podiatric Surgeons of BC&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-BCACC"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-BCACC">BCACC</a></td><td>BC Association of Clinical Counsellors</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;BCACC&quot;, &quot;display&quot;: &quot;BC Association of Clinical Counsellors&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;BCACC&quot;&gt;&lt;display value=&quot;BC Association of Clinical Counsellors&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-RM"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-RM">RM</a></td><td>Registered Midwife</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;RM&quot;, &quot;display&quot;: &quot;Registered Midwife&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;RM&quot;&gt;&lt;display value=&quot;Registered Midwife&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CDS"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CDS">CDS</a></td><td>College of Dental Surgeons</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CDS&quot;, &quot;display&quot;: &quot;College of Dental Surgeons&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CDS&quot;&gt;&lt;display value=&quot;College of Dental Surgeons&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CP"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CP">CP</a></td><td>CP</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CP&quot;, &quot;display&quot;: &quot;CP&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CP&quot;&gt;&lt;display value=&quot;CP&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CPSA"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CPSA">CPSA</a></td><td>CPSA</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CPSA&quot;, &quot;display&quot;: &quot;CPSA&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CPSA&quot;&gt;&lt;display value=&quot;CPSA&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-HA1"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-HA1">HA1</a></td><td>test data set</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;HA1&quot;, &quot;display&quot;: &quot;test data set&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;HA1&quot;&gt;&lt;display value=&quot;test data set&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-HA2"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-HA2">HA2</a></td><td>test data set</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;HA2&quot;, &quot;display&quot;: &quot;test data set&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;HA2&quot;&gt;&lt;display value=&quot;test data set&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-HA3"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-HA3">HA3</a></td><td>test data set</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;HA3&quot;, &quot;display&quot;: &quot;test data set&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;HA3&quot;&gt;&lt;display value=&quot;test data set&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-MIN"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-MIN">MIN</a></td><td>MIN</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;MIN&quot;, &quot;display&quot;: &quot;MIN&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;MIN&quot;&gt;&lt;display value=&quot;MIN&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-PHSA"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-PHSA">PHSA</a></td><td>PHSA</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;PHSA&quot;, &quot;display&quot;: &quot;PHSA&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;PHSA&quot;&gt;&lt;display value=&quot;PHSA&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-RNA"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-RNA">RNA</a></td><td>RNA</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;RNA&quot;, &quot;display&quot;: &quot;RNA&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;RNA&quot;&gt;&lt;display value=&quot;RNA&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-SC1SSRC2"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-SC1SSRC2">SC1SSRC2</a></td><td>test data set</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;SC1SSRC2&quot;, &quot;display&quot;: &quot;test data set&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;SC1SSRC2&quot;&gt;&lt;display value=&quot;test data set&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-SHARED"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-SHARED">SHARED</a></td><td>test data set</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;SHARED&quot;, &quot;display&quot;: &quot;test data set&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;SHARED&quot;&gt;&lt;display value=&quot;test data set&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CORE"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CORE">CORE</a></td><td>Core data set</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CORE&quot;, &quot;display&quot;: &quot;Core data set&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CORE&quot;&gt;&lt;display value=&quot;Core data set&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-BCCSW"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-BCCSW">BCCSW</a></td><td>College of Social Workers</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;BCCSW&quot;, &quot;display&quot;: &quot;College of Social Workers&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;BCCSW&quot;&gt;&lt;display value=&quot;College of Social Workers&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-COTBC"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-COTBC">COTBC</a></td><td>College of Occupational Therapists</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;COTBC&quot;, &quot;display&quot;: &quot;College of Occupational Therapists&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;COTBC&quot;&gt;&lt;display value=&quot;College of Occupational Therapists&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CPBC"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CPBC">CPBC</a></td><td>College of Psychologists</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CPBC&quot;, &quot;display&quot;: &quot;College of Psychologists&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CPBC&quot;&gt;&lt;display value=&quot;College of Psychologists&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CCBC"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CCBC">CCBC</a></td><td>College of Chiropractors of BC</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CCBC&quot;, &quot;display&quot;: &quot;College of Chiropractors of BC&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CCBC&quot;&gt;&lt;display value=&quot;College of Chiropractors of BC&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CMTBC"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CMTBC">CMTBC</a></td><td>College of Massage Therapists of BC</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CMTBC&quot;, &quot;display&quot;: &quot;College of Massage Therapists of BC&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CMTBC&quot;&gt;&lt;display value=&quot;College of Massage Therapists of BC&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CPTBC"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CPTBC">CPTBC</a></td><td>College of Physiotherapists of BC</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CPTBC&quot;, &quot;display&quot;: &quot;College of Physiotherapists of BC&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CPTBC&quot;&gt;&lt;display value=&quot;College of Physiotherapists of BC&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-BCAK"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-BCAK">BCAK</a></td><td>BC Association of Kinesiologists</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;BCAK&quot;, &quot;display&quot;: &quot;BC Association of Kinesiologists&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;BCAK&quot;&gt;&lt;display value=&quot;BC Association of Kinesiologists&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CTCMA"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CTCMA">CTCMA</a></td><td>College of Traditional Chinese Medicine Practitioners and Acupuncturists of BC</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CTCMA&quot;, &quot;display&quot;: &quot;College of Traditional Chinese Medicine Practitioners and Acupuncturists of BC&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CTCMA&quot;&gt;&lt;display value=&quot;College of Traditional Chinese Medicine Practitioners and Acupuncturists of BC&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-BCAMFT"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-BCAMFT">BCAMFT</a></td><td>BC Association of Marriage and Family Therapists</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;BCAMFT&quot;, &quot;display&quot;: &quot;BC Association of Marriage and Family Therapists&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;BCAMFT&quot;&gt;&lt;display value=&quot;BC Association of Marriage and Family Therapists&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CCPA"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CCPA">CCPA</a></td><td>Canadian Counselling and Psychotherapy Association</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CCPA&quot;, &quot;display&quot;: &quot;Canadian Counselling and Psychotherapy Association&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CCPA&quot;&gt;&lt;display value=&quot;Canadian Counselling and Psychotherapy Association&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-MOH"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-MOH">MOH</a></td><td>Ministry of Health</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;MOH&quot;, &quot;display&quot;: &quot;Ministry of Health&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;MOH&quot;&gt;&lt;display value=&quot;Ministry of Health&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CDBC"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CDBC">CDBC</a></td><td>College of Dietitians of British Columbia</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CDBC&quot;, &quot;display&quot;: &quot;College of Dietitians of British Columbia&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CDBC&quot;&gt;&lt;display value=&quot;College of Dietitians of British Columbia&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-COBC"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-COBC">COBC</a></td><td>College of Optometrists of British Columbia</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;COBC&quot;, &quot;display&quot;: &quot;College of Optometrists of British Columbia&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;COBC&quot;&gt;&lt;display value=&quot;College of Optometrists of British Columbia&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-HIBC"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-HIBC">HIBC</a></td><td>HIBC</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;HIBC&quot;, &quot;display&quot;: &quot;HIBC&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;HIBC&quot;&gt;&lt;display value=&quot;HIBC&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-DUMMY"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-DUMMY">DUMMY</a></td><td>DUMMY</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;DUMMY&quot;, &quot;display&quot;: &quot;DUMMY&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;DUMMY&quot;&gt;&lt;display value=&quot;DUMMY&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CA"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CA">CA</a></td><td>test data set</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CA&quot;, &quot;display&quot;: &quot;test data set&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CA&quot;&gt;&lt;display value=&quot;test data set&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-ACOP"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-ACOP">ACOP</a></td><td>ACOP</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;ACOP&quot;, &quot;display&quot;: &quot;ACOP&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;ACOP&quot;&gt;&lt;display value=&quot;ACOP&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-AAIMS"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-AAIMS">AAIMS</a></td><td>AAIMS</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;AAIMS&quot;, &quot;display&quot;: &quot;AAIMS&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;AAIMS&quot;&gt;&lt;display value=&quot;AAIMS&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system-CPS"> </a><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system</code></td><td style="white-space:nowrap">  <a href="CodeSystem-bc-owner-code-system.html#bc-owner-code-system-CPS">CPS</a></td><td>CPS</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;, &quot;version&quot;: &quot;1.0.0&quot;, &quot;code&quot;: &quot;CPS&quot;, &quot;display&quot;: &quot;CPS&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-owner-code-system&quot;&gt;&lt;version value=&quot;1.0.0&quot;&gt;&lt;code value=&quot;CPS&quot;&gt;&lt;display value=&quot;CPS&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr></table></div>
+
+  <hr/>
+  <p>
+    Explanation of the columns that may appear on this page:
+  </p>
+  <table class="grid">
+    <tr>
+      <td>Level</td>
+      <td>A few code lists that FHIR defines are hierarchical - each code is assigned a level.
+          In this scheme, some codes are under other codes, and imply that the code they are under also applies</td>
+    </tr>
+    <tr>
+      <td>System</td>
+      <td>The source of the definition of the code (when the value set draws in codes defined elsewhere)</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>The code (used as the code in the resource instance)</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>The display (used in the <i>display</i> element of a <a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a>). If there is no display, implementers should not simply display the code, but map the concept into their application</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>An explanation of the meaning of the concept</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>Additional notes about how to use the code</td>
+    </tr>
+  </table>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 23, 2026 00:06+0000">2026-01-23</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

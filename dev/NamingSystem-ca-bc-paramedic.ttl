@@ -1,0 +1,76 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/NamingSystem/ca-bc-paramedic> a fhir:NamingSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ca-bc-paramedic"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: NamingSystem ca-bc-paramedic</b></p><a name=\"ca-bc-paramedic\"> </a><a name=\"hcca-bc-paramedic\"> </a><h3>Summary</h3><table class=\"grid\"><tr><td>Defining URL</td><td>http://hlth.gov.bc.ca/fhir/provider/NamingSystem/ca-bc-paramedic</td></tr><tr><td>Version</td><td>1.0.0</td></tr><tr><td>Name</td><td>CaBcParamedic</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>Definition</td><td><div><p>Paramedic Practitioner ID</p>\n</div></td></tr><tr><td>Publisher</td><td>BC Ministry of Health</td></tr></table><h3>Identifiers</h3><table class=\"grid\"><tr><td><b>Type</b></td><td><b>Value</b></td><td><b>Preferred</b></td></tr><tr><td>URI</td><td>https://fhir.infoway-inforoute.ca/NamingSystem/ca-bc-paramedic</td><td>true</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.url"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.url>
+     ] ;
+     fhir:value [
+       a fhir:Uri ;
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/NamingSystem/ca-bc-paramedic"^^xsd:anyURI ;
+       fhir:l <http://hlth.gov.bc.ca/fhir/provider/NamingSystem/ca-bc-paramedic>
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "1.0.0"
+     ]
+  ] ) ; # 
+  fhir:name [ fhir:v "CaBcParamedic"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "identifier"] ; # 
+  fhir:date [ fhir:v "2025-07-14"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "BC Ministry of Health" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
+     ] )
+  ] ) ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+       ] ;
+       fhir:code [ fhir:v "PRN" ] ;
+       fhir:display [ fhir:v "Provider" ]
+     ] )
+  ] ; # 
+  fhir:description [ fhir:v "Paramedic Practitioner ID"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "CA" ] ;
+       fhir:display [ fhir:v "Canada" ]
+     ] )
+  ] ) ; # 
+  fhir:uniqueId ( [
+     fhir:type [ fhir:v "uri" ] ;
+     fhir:value [ fhir:v "https://fhir.infoway-inforoute.ca/NamingSystem/ca-bc-paramedic" ] ;
+     fhir:preferred [ fhir:v true ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

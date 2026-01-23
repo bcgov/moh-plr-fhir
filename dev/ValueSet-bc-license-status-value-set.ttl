@@ -11,15 +11,18 @@
   fhir:id [ fhir:v "bc-license-status-value-set"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet bc-license-status-value-set</b></p><a name=\"bc-license-status-value-set\"> </a><a name=\"hcbc-license-status-value-set\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system</code></li><li>Include all codes defined in <a href=\"http://terminology.hl7.org/6.4.0/CodeSystem-v3-RoleStatus.html\"><code>http://terminology.hl7.org/CodeSystem/v3-RoleStatus</code></a></li></ul></div>"^^rdf:XMLLiteral
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet bc-license-status-value-set</b></p><a name=\"bc-license-status-value-set\"> </a><a name=\"hcbc-license-status-value-set\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-bc-license-status-code-system.html\"><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?1.0.0</span></li><li>Include all codes defined in <a href=\"http://terminology.hl7.org/7.0.1/CodeSystem-v3-RoleStatus.html\"><code>http://terminology.hl7.org/CodeSystem/v3-RoleStatus</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references\"> version ?3.0.0</span></li></ul></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-value-set"^^xsd:anyURI] ; # 
+  fhir:url [
+     fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-value-set"^^xsd:anyURI ;
+     fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-license-status-value-set>
+  ] ; # 
   fhir:version [ fhir:v "1.0.0"] ; # 
   fhir:name [ fhir:v "LicenseStatusVS"] ; # 
   fhir:title [ fhir:v "BC License Status Value Set"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:experimental [ fhir:v false] ; # 
-  fhir:date [ fhir:v "2025-06-23T20:38:35+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-01-23T00:06:12+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -31,16 +34,25 @@
   fhir:description [ fhir:v "BC specific license status value set."] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
        fhir:code [ fhir:v "CA" ] ;
        fhir:display [ fhir:v "Canada" ]
      ] )
   ] ) ; # 
   fhir:compose [
      fhir:include ( [
-       fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system"^^xsd:anyURI ]
+       fhir:system [
+         fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system"^^xsd:anyURI ;
+         fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system>
+       ]
      ] [
-       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleStatus"^^xsd:anyURI ]
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleStatus"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-RoleStatus>
+       ]
      ] )
   ] . # 
 

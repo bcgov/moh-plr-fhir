@@ -34,10 +34,10 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
-    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
-    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
-    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"10.157"}
-    h3,h4,h5,h6{--heading-prefix:"10.157"}</style>
+    <style type="text/css">h2{--heading-prefix:"10.219"}
+    h3,h4,h5,h6{--heading-prefix:"10.219"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -162,6 +162,12 @@
       <li>
         <a href="artifacts.html#12">Value Sets</a>
       </li>
+      <li>
+        <a href="artifacts.html#13">Code Systems</a>
+      </li>
+      <li>
+        <a href="artifacts.html#14">Naming Systems</a>
+      </li>
     </ul>
   </li>
   <li>
@@ -254,110 +260,110 @@
 
 
 
-  <pre class="xml" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
+  <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
 &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">Practitioner</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;IPC.00147699.BC.PRS&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.meta">meta</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Practitioner.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;IPC.00147699.BC.PRS&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Practitioner.meta">meta</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner&quot;/&gt;
-  &lt;/meta&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.text">text</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/resource.html#Practitioner.meta">meta</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Practitioner.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;extensions&quot;/&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: Practitioner IPC.00147699.BC.PRS&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;IPC.00147699.BC.PRS&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcIPC.00147699.BC.PRS&quot;&gt; &lt;/a&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;/&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Profile: &lt;a href=&quot;StructureDefinition-bc-practitioner.html&quot;&gt;BCPractitioner&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;BC Valid Period Extension&lt;/b&gt;: 2012-12-07 --&amp;gt; (ongoing)&lt;/p&gt;&lt;p&gt;&lt;b&gt;BC Owner Extension&lt;/b&gt;: ?ngen-9?&lt;/p&gt;&lt;p&gt;&lt;b&gt;BC Birth Place Extension&lt;/b&gt;: Ottawa ON CA &lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc&lt;/code&gt;/IPC.00147622.BC.PRS (, period: 2000-01-01 --&amp;gt; (ongoing)), &lt;code&gt;https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-common-party-number&lt;/code&gt;/CPN.00147422.BC.PRS (, period: 2000-01-01 --&amp;gt; (ongoing)), &lt;code&gt;https://fhir.infoway-inforoute.ca/NamingSystem/ca-bc-license-physician&lt;/code&gt;/123454 (, period: 2000-01-01 --&amp;gt; (ongoing))&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: GivenName FamilyName (Official)&lt;/p&gt;&lt;p&gt;&lt;b&gt;gender&lt;/b&gt;: Male&lt;/p&gt;&lt;p&gt;&lt;b&gt;birthDate&lt;/b&gt;: 1934-01-02&lt;/p&gt;&lt;/div&gt;<a name="end-xhtml"></a>
-  &lt;/text&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.extension">extension</a>
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: Practitioner IPC.00147699.BC.PRS&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;IPC.00147699.BC.PRS&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcIPC.00147699.BC.PRS&quot;&gt; &lt;/a&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;/&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Profile: &lt;a href=&quot;StructureDefinition-bc-practitioner.html&quot;&gt;BCPractitioner&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;BC Valid Period Extension&lt;/b&gt;: 2012-12-07 --&amp;gt; (ongoing)&lt;/p&gt;&lt;p&gt;&lt;b&gt;BC Owner Extension&lt;/b&gt;: ?ngen-9?&lt;/p&gt;&lt;p&gt;&lt;b&gt;BC Birth Place Extension&lt;/b&gt;: Ottawa ON CA &lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;a href=&quot;NamingSystem-ca-bc-plr-ipc.html&quot; title=&quot;Internal Party Code&quot;&gt;CaBcPlrIpc&lt;/a&gt;/IPC.00147622.BC.PRS (, period: 2000-01-01 --&amp;gt; (ongoing)), &lt;a href=&quot;NamingSystem-ca-bc-plr-common-party-number.html&quot; title=&quot;Common Party Number&quot;&gt;CaBcPlrCommonPartyNumber&lt;/a&gt;/CPN.00147422.BC.PRS (, period: 2000-01-01 --&amp;gt; (ongoing)), &lt;a href=&quot;NamingSystem-ca-bc-license-physician.html&quot; title=&quot;Physician ID Number&quot;&gt;CaBcLicensePhysician&lt;/a&gt;/123454 (, period: 2000-01-01 --&amp;gt; (ongoing))&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: GivenName FamilyName (Official)&lt;/p&gt;&lt;p&gt;&lt;b&gt;gender&lt;/b&gt;: Male&lt;/p&gt;&lt;p&gt;&lt;b&gt;birthDate&lt;/b&gt;: 1934-01-02&lt;/p&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Practitioner.text">text</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Practitioner.extension">extension</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension&quot;&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valuePeriod</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valuePeriod</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2012-12-07&quot;/&gt;
-    &lt;/valuePeriod&gt;
-  &lt;/extension&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.extension">extension</a>
+    &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valuePeriod</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Practitioner.extension">extension</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Practitioner.extension">extension</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension&quot;&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueIdentifier</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;MOH&quot;/&gt;
-      &lt;/assigner&gt;
-    &lt;/valueIdentifier&gt;
-  &lt;/extension&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.extension">extension</a>
+      &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueIdentifier</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Practitioner.extension">extension</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Practitioner.extension">extension</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthplace-extension&quot;&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueAddress</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueAddress</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.city">city</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Ottawa&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.state">state</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ON&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.country">country</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;CA&quot;/&gt;
-    &lt;/valueAddress&gt;
-  &lt;/extension&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueAddress</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Practitioner.extension">extension</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">identifier</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.extension">extension</a>
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Identifier.extension">extension</a>
                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension&quot;&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueIdentifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;MOH&quot;/&gt;
-        &lt;/assigner&gt;
-      &lt;/valueIdentifier&gt;
-    &lt;/extension&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueIdentifier</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Identifier.extension">extension</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;IPC.00147622.BC.PRS&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
-    &lt;/period&gt;
-  &lt;/identifier&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">identifier</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">identifier</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.extension">extension</a>
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Identifier.extension">extension</a>
                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension&quot;&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueIdentifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;MOH&quot;/&gt;
-        &lt;/assigner&gt;
-      &lt;/valueIdentifier&gt;
-    &lt;/extension&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueIdentifier</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Identifier.extension">extension</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-common-party-number&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;CPN.00147422.BC.PRS&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
-    &lt;/period&gt;
-  &lt;/identifier&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">identifier</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">identifier</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.extension">extension</a>
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Identifier.extension">extension</a>
                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension&quot;&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueIdentifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;MOH&quot;/&gt;
-        &lt;/assigner&gt;
-      &lt;/valueIdentifier&gt;
-    &lt;/extension&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueIdentifier</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Identifier.extension">extension</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://fhir.infoway-inforoute.ca/NamingSystem/ca-bc-license-physician&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;123454&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-01-01&quot;/&gt;
-    &lt;/period&gt;
-  &lt;/identifier&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.period">period</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">identifier</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.name">name</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.extension">extension</a>
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#HumanName.extension">extension</a>
                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension&quot;&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueIdentifier</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueIdentifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;MOH&quot;/&gt;
-        &lt;/assigner&gt;
-      &lt;/valueIdentifier&gt;
-    &lt;/extension&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueIdentifier</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#HumanName.extension">extension</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;official&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">family</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;FamilyName&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.given">given</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;GivenName&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.period">period</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2012-12-07&quot;/&gt;
-    &lt;/period&gt;
-  &lt;/name&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.period">period</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.name">name</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.gender">gender</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;male&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.birthDate">birthDate</a> <a href="http://hl7.org/fhir/R4/datatypes.html#date">value</a>=&quot;1934-01-02&quot;&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#date#date.extension">extension</a>
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#date.extension">extension</a>
                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-birthtime-extension&quot;&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueDateTime</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;1951-11-12T00:00:01-06:00&quot;/&gt;
-    &lt;/extension&gt;
-  &lt;/birthDate&gt;
-&lt;/Practitioner&gt;</code></pre>
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueDateTime</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;1951-11-12T00:00:01-06:00&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#date.extension">extension</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.birthDate">birthDate</a>&gt;
+&lt;/<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">Practitioner</a>&gt;</code></pre>
 
 
   <!-- insert notes if present -->
@@ -381,7 +387,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jun 23, 2025 20:39+0000">2025-06-23</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 23, 2026 00:06+0000">2026-01-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
