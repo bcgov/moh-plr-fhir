@@ -11,15 +11,18 @@
   fhir:id [ fhir:v "bc-qualification-value-set"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet bc-qualification-value-set</b></p><a name=\"bc-qualification-value-set\"> </a><a name=\"hcbc-qualification-value-set\"> </a><a name=\"bc-qualification-value-set-en-US\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.ca.baseline@1.2.0&amp;canonical=http://fhir.infoway-inforoute.ca/CodeSystem/scpqual\"><code>http://fhir.infoway-inforoute.ca/CodeSystem/scpqual</code></a></li><li>Include all codes defined in <code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-credential-code-system</code></li></ul></div>"^^rdf:XMLLiteral
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet bc-qualification-value-set</b></p><a name=\"bc-qualification-value-set\"> </a><a name=\"hcbc-qualification-value-set\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-bc-credential-code-system.html\"><code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-credential-code-system</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?1.0.0</span></li><li>Include all codes defined in <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.ca.baseline@1.2.0&amp;canonical=http://fhir.infoway-inforoute.ca/CodeSystem/scpqual\"><code>http://fhir.infoway-inforoute.ca/CodeSystem/scpqual</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span></li></ul></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-qualification-value-set"^^xsd:anyURI] ; # 
+  fhir:url [
+     fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-qualification-value-set"^^xsd:anyURI ;
+     fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/ValueSet/bc-qualification-value-set>
+  ] ; # 
   fhir:version [ fhir:v "1.0.0"] ; # 
   fhir:name [ fhir:v "PracQualificationVS"] ; # 
   fhir:title [ fhir:v "BC Practitioner Qualification Value Set"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:experimental [ fhir:v false] ; # 
-  fhir:date [ fhir:v "2025-05-30T21:39:06+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-04-01T23:28:58+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "BC Ministry of Health" ] ;
@@ -31,16 +34,25 @@
   fhir:description [ fhir:v "BC specific qualification value set."] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
        fhir:code [ fhir:v "CA" ] ;
        fhir:display [ fhir:v "Canada" ]
      ] )
   ] ) ; # 
   fhir:compose [
      fhir:include ( [
-       fhir:system [ fhir:v "http://fhir.infoway-inforoute.ca/CodeSystem/scpqual"^^xsd:anyURI ]
+       fhir:system [
+         fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-credential-code-system"^^xsd:anyURI ;
+         fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-credential-code-system>
+       ]
      ] [
-       fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-credential-code-system"^^xsd:anyURI ]
+       fhir:system [
+         fhir:v "http://fhir.infoway-inforoute.ca/CodeSystem/scpqual"^^xsd:anyURI ;
+         fhir:l <http://fhir.infoway-inforoute.ca/CodeSystem/scpqual>
+       ]
      ] )
   ] . # 
 

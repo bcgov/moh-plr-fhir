@@ -1,0 +1,161 @@
+# Query for a location without returning associations - BC Provider Location Registry FHIR Implementation Guide v1.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Query for a location without returning associations**
+
+## OperationDefinition: Query for a location without returning associations 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query | *Version*:1.0.0 |
+| Active as of 2026-04-01 | *Computable Name*:LocationEntityQuery |
+
+ 
+This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations. 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "bc-entity-location-query",
+  "url" : "http://hlth.gov.bc.ca/fhir/provider/OperationDefinition/bc-entity-location-query",
+  "version" : "1.0.0",
+  "name" : "LocationEntityQuery",
+  "title" : "Query for a location without returning associations",
+  "status" : "active",
+  "kind" : "query",
+  "date" : "2026-04-01T23:28:58+00:00",
+  "publisher" : "BC Ministry of Health",
+  "contact" : [{
+    "name" : "BC Ministry of Health",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health"
+    }]
+  }],
+  "description" : "This operation is used to query for an location and will return the information for that location without following associations to other practitioner, organizations, or locations.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CA",
+      "display" : "Canada"
+    }]
+  }],
+  "code" : "entityQuery",
+  "resource" : ["Location"],
+  "system" : false,
+  "type" : true,
+  "instance" : true,
+  "parameter" : [{
+    "name" : "identifier",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "String, representing the full identifier value with system and value, e.g. identifier=[system]|[value]",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "name",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations with the specified name.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "address-city",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations with the specified city.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "address-line1",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations with a civic address. Supports trailing wild card.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "otheraddress-line1",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations with an address. Supports trailing wild card. Not implemented yet.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "healthAuthority",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations within the specified health authority. Only one of healthAuthority, healthServiceDeliveryArea, localHealthArea, communityHealthServiceArea allowed. The full name is required. E.g. Langford/Highlands. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "healthServiceDeliveryArea",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations within the specified health service delivery area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "localHealthArea",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations within the specified local health area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "communityHealthServiceArea",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations within the specified local community health service area. See [this site](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/land-use/administrative-boundaries/health-boundaries) for a list of accepteable strings.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "primaryCareNetwork",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Search for locations within the specified Primary Care Network. Not implemented yet.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "withHistory",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "true or false, The withHistory parameter instructs PLR to search through historical records for matching attributes. Only the current data is returned.",
+    "type" : "boolean"
+  },
+  {
+    "name" : "bundle",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "The Response Bundle with the OperationOutcome and the list of BCLocationBundle found by the search.",
+    "type" : "Bundle"
+  }]
+}
+
+```

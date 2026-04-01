@@ -1,0 +1,102 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hlth.gov.bc.ca/fhir/provider/CodeSystem/bc-relationship-type-code-system> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "bc-relationship-type-code-system"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem bc-relationship-type-code-system</b></p><a name=\"bc-relationship-type-code-system\"> </a><a name=\"hcbc-relationship-type-code-system\"> </a><p>This case-sensitive code system <code>https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">MANAGEDBY<a name=\"bc-relationship-type-code-system-MANAGEDBY\"> </a></td><td>Managed by the target</td></tr><tr><td style=\"white-space:nowrap\">MANAGES<a name=\"bc-relationship-type-code-system-MANAGES\"> </a></td><td>Manages the target</td></tr><tr><td style=\"white-space:nowrap\">WORKSAT<a name=\"bc-relationship-type-code-system-WORKSAT\"> </a></td><td>Works at</td></tr><tr><td style=\"white-space:nowrap\">DIRECTED<a name=\"bc-relationship-type-code-system-DIRECTED\"> </a></td><td>Directed by the target.</td></tr><tr><td style=\"white-space:nowrap\">DIRECTS<a name=\"bc-relationship-type-code-system-DIRECTS\"> </a></td><td>Directs the target, e.g. Medical Director.</td></tr><tr><td style=\"white-space:nowrap\">OPERATED<a name=\"bc-relationship-type-code-system-OPERATED\"> </a></td><td>Operated by the target.</td></tr><tr><td style=\"white-space:nowrap\">OPERATES<a name=\"bc-relationship-type-code-system-OPERATES\"> </a></td><td>Operates the target.</td></tr><tr><td style=\"white-space:nowrap\">WORKLOCATION<a name=\"bc-relationship-type-code-system-WORKLOCATION\"> </a></td><td>Work location</td></tr><tr><td style=\"white-space:nowrap\">SPONSOR<a name=\"bc-relationship-type-code-system-SPONSOR\"> </a></td><td>Owner Provider</td></tr><tr><td style=\"white-space:nowrap\">PHSTF<a name=\"bc-relationship-type-code-system-PHSTF\"> </a></td><td>Staff Pharmacist</td></tr><tr><td style=\"white-space:nowrap\">PHMGR<a name=\"bc-relationship-type-code-system-PHMGR\"> </a></td><td>Pharmacy Manager</td></tr><tr><td style=\"white-space:nowrap\">PHCST<a name=\"bc-relationship-type-code-system-PHCST\"> </a></td><td>Pharmacist</td></tr><tr><td style=\"white-space:nowrap\">PHARMACY<a name=\"bc-relationship-type-code-system-PHARMACY\"> </a></td><td>Pharmacy</td></tr><tr><td style=\"white-space:nowrap\">OTHER<a name=\"bc-relationship-type-code-system-OTHER\"> </a></td><td>Other</td></tr><tr><td style=\"white-space:nowrap\">LOC<a name=\"bc-relationship-type-code-system-LOC\"> </a></td><td>Locum</td></tr><tr><td style=\"white-space:nowrap\">EE<a name=\"bc-relationship-type-code-system-EE\"> </a></td><td>Employee</td></tr><tr><td style=\"white-space:nowrap\">ER<a name=\"bc-relationship-type-code-system-ER\"> </a></td><td>Employer</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system"^^xsd:anyURI ;
+     fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "RelationshipTypeCS"] ; # 
+  fhir:title [ fhir:v "Bc Relationship Type Codes"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-04-01T23:28:58+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "BC Ministry of Health"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "BC Ministry of Health" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Bc Relationship Type Code System"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "CA" ] ;
+       fhir:display [ fhir:v "Canada" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "17"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "MANAGEDBY" ] ;
+     fhir:display [ fhir:v "Managed by the target" ]
+  ] [
+     fhir:code [ fhir:v "MANAGES" ] ;
+     fhir:display [ fhir:v "Manages the target" ]
+  ] [
+     fhir:code [ fhir:v "WORKSAT" ] ;
+     fhir:display [ fhir:v "Works at" ]
+  ] [
+     fhir:code [ fhir:v "DIRECTED" ] ;
+     fhir:display [ fhir:v "Directed by the target." ]
+  ] [
+     fhir:code [ fhir:v "DIRECTS" ] ;
+     fhir:display [ fhir:v "Directs the target, e.g. Medical Director." ]
+  ] [
+     fhir:code [ fhir:v "OPERATED" ] ;
+     fhir:display [ fhir:v "Operated by the target." ]
+  ] [
+     fhir:code [ fhir:v "OPERATES" ] ;
+     fhir:display [ fhir:v "Operates the target." ]
+  ] [
+     fhir:code [ fhir:v "WORKLOCATION" ] ;
+     fhir:display [ fhir:v "Work location" ]
+  ] [
+     fhir:code [ fhir:v "SPONSOR" ] ;
+     fhir:display [ fhir:v "Owner Provider" ]
+  ] [
+     fhir:code [ fhir:v "PHSTF" ] ;
+     fhir:display [ fhir:v "Staff Pharmacist" ]
+  ] [
+     fhir:code [ fhir:v "PHMGR" ] ;
+     fhir:display [ fhir:v "Pharmacy Manager" ]
+  ] [
+     fhir:code [ fhir:v "PHCST" ] ;
+     fhir:display [ fhir:v "Pharmacist" ]
+  ] [
+     fhir:code [ fhir:v "PHARMACY" ] ;
+     fhir:display [ fhir:v "Pharmacy" ]
+  ] [
+     fhir:code [ fhir:v "OTHER" ] ;
+     fhir:display [ fhir:v "Other" ]
+  ] [
+     fhir:code [ fhir:v "LOC" ] ;
+     fhir:display [ fhir:v "Locum" ]
+  ] [
+     fhir:code [ fhir:v "EE" ] ;
+     fhir:display [ fhir:v "Employee" ]
+  ] [
+     fhir:code [ fhir:v "ER" ] ;
+     fhir:display [ fhir:v "Employer" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

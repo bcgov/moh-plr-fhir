@@ -34,10 +34,10 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
-    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
-    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
-    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
@@ -66,7 +66,7 @@
 
 
 
-  Canada
+  <img alt="Canada flag" src="assets/images/can.svg" height="16" title="Canada"/>
 
 
             </span>
@@ -162,6 +162,12 @@
       <li>
         <a href="artifacts.html#12">Value Sets</a>
       </li>
+      <li>
+        <a href="artifacts.html#13">Code Systems</a>
+      </li>
+      <li>
+        <a href="artifacts.html#14">Naming Systems</a>
+      </li>
     </ul>
   </li>
   <li>
@@ -254,24 +260,24 @@
 
 
 
-  <pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  <pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
   "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters">resourceType</a>" : "Parameters",
-  "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.id">id</a>" : "Example-Request-Update-License-Practitioner",
+  "<a href="http://hl7.org/fhir/R4/resource.html#Parameters.id">id</a>" : "Example-Request-Update-License-Practitioner",
   "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "messageId",
-      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueString</a>" : "12344321"
+      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value_x_">valueString</a>" : "12344321"
     },
     {
       "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "messageTime",
-      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueDateTime</a>" : "2022-06-27T01:01:01-08:00"
+      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value_x_">valueDateTime</a>" : "2022-06-27T01:01:01-08:00"
     },
     {
       "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "maintain",
       "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">resource</a>" : {
         "<a href="http://hl7.org/fhir/R4/bundle.html">resourceType</a>" : "Bundle",
-        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.id">id</a>" : "Example-UpdatePractitioner-LicenseStatus-Bundle",
-        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.meta">meta</a>" : {
+        "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.id">id</a>" : "Example-UpdatePractitioner-LicenseStatus-Bundle",
+        "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.meta">meta</a>" : {
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-bc-practitioner-bundle.html" style="color: Maroon">&#x1F517;</a> "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-bundle"
           ]
@@ -282,18 +288,18 @@
             "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Practitioner/IPC.00763481.BC.PRS",
             "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">resource</a>" : {
               "<a href="http://hl7.org/fhir/R4/practitioner.html">resourceType</a>" : "Practitioner",
-              "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.id">id</a>" : "IPC.00763481.BC.PRS",
-              "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.meta">meta</a>" : {
+              "<a href="http://hl7.org/fhir/R4/resource.html#Practitioner.id">id</a>" : "IPC.00763481.BC.PRS",
+              "<a href="http://hl7.org/fhir/R4/resource.html#Practitioner.meta">meta</a>" : {
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
                   <a href="StructureDefinition-bc-practitioner.html" style="color: Maroon">&#x1F517;</a> "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner"
                 ]
               },
-              "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.extension">extension</a>" : [
+              "<a href="http://hl7.org/fhir/R4/domainresource.html#Practitioner.extension">extension</a>" : [
                 {
-                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.extension">extension</a>" : [
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "statusCode",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>" : {
                         "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                           {
                             "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-code-system",
@@ -304,7 +310,7 @@
                     },
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "statusReasonCode",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>" : {
                         "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                           {
                             "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-reason-code-system",
@@ -315,7 +321,7 @@
                     },
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "statusClassCode",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>" : {
                         "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                           {
                             "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-license-status-class-code-system",
@@ -326,13 +332,13 @@
                     },
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "period",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valuePeriod</a>" : {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valuePeriod</a>" : {
                         "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2022-06-24"
                       }
                     },
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-end-reason-extension",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>" : {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>" : {
                         "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                           {
                             "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-end-reason-code-system",
@@ -357,10 +363,10 @@
               "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.name">name</a>" : [
                 {
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">_family</a>" : {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#string#string.extension">extension</a>" : [
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#string.extension">extension</a>" : [
                       {
                         "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-                        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCode</a>" : "not-applicable"
+                        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCode</a>" : "not-applicable"
                       }
                     ]
                   }
@@ -372,8 +378,8 @@
             "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/IPC.00763481.BC.PRS",
             "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">resource</a>" : {
               "<a href="http://hl7.org/fhir/R4/practitionerrole.html">resourceType</a>" : "PractitionerRole",
-              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a>" : "IPC.00763481.BC.PRS",
-              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.meta">meta</a>" : {
+              "<a href="http://hl7.org/fhir/R4/resource.html#PractitionerRole.id">id</a>" : "IPC.00763481.BC.PRS",
+              "<a href="http://hl7.org/fhir/R4/resource.html#PractitionerRole.meta">meta</a>" : {
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
                   <a href="StructureDefinition-bc-practitioner-role.html" style="color: Maroon">&#x1F517;</a> "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-practitioner-role"
                 ]
@@ -427,7 +433,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 30, 2025 21:40+0000">2025-05-30</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health">BC Ministry of Health</a>.  Package fhir.ca-bc.provider#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 1, 2026 23:28+0000">2026-04-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

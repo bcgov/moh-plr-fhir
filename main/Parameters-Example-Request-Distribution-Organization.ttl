@@ -12,13 +12,13 @@
   fhir:parameter ( [
      fhir:name [ fhir:v "messageId" ] ;
      fhir:value [
-       a fhir:string ;
+       a fhir:String ;
        fhir:v "12344321"
      ]
   ] [
      fhir:name [ fhir:v "messageTime" ] ;
      fhir:value [
-       a fhir:dateTime ;
+       a fhir:DateTime ;
        fhir:v "2022-06-27T01:01:01-08:00"^^xsd:dateTime
      ]
   ] [
@@ -29,18 +29,27 @@
        fhir:meta [
          fhir:profile ( [
            fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle"^^xsd:anyURI ;
-           fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle>
+           fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-bundle>
          ] )
        ] ;
        fhir:type [ fhir:v "collection" ] ;
        fhir:entry ( [
-         fhir:fullUrl [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00147436.BC.PRS"^^xsd:anyURI ] ;
+         fhir:fullUrl [
+           fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00147436.BC.PRS"^^xsd:anyURI ;
+           fhir:l <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00147436.BC.PRS>
+         ] ;
          fhir:resource ( <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/Organization/IPC.00147436.BC.PRS> )
        ] [
-         fhir:fullUrl [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.123.PRS"^^xsd:anyURI ] ;
+         fhir:fullUrl [
+           fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.123.PRS"^^xsd:anyURI ;
+           fhir:l <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.123.PRS>
+         ] ;
          fhir:resource ( <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/PractitionerRole/RELN.123.PRS> )
        ] [
-         fhir:fullUrl [ fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.132.PRS"^^xsd:anyURI ] ;
+         fhir:fullUrl [
+           fhir:v "https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.132.PRS"^^xsd:anyURI ;
+           fhir:l <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.132.PRS>
+         ] ;
          fhir:resource ( <https://plresb.hlth.gov.bc.ca/HSA-web/fhir-rs/OrganizationAffiliation/RELN.132.PRS> )
        ] )
      ] )
@@ -51,31 +60,46 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization"^^xsd:anyURI ;
-       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
+       fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization>
      ] )
   ] ; # 
   fhir:extension ( [
      fhir:extension ( [
-       fhir:url [ fhir:v "identifier"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "identifier"^^xsd:anyURI ;
+         fhir:l fhir:identifier
+       ] ;
        fhir:value [
          a fhir:Identifier ;
-         fhir:system [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id"^^xsd:anyURI ] ;
+         fhir:system [
+           fhir:v "http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id"^^xsd:anyURI ;
+           fhir:l <http://hlth.gov.bc.ca/fhir/provider/identifier-system/bc-note-id>
+         ] ;
          fhir:value [ fhir:v "Note-2" ]
        ]
      ] [
-       fhir:url [ fhir:v "text"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "text"^^xsd:anyURI ;
+         fhir:l fhir:text
+       ] ;
        fhir:value [
-         a fhir:string ;
+         a fhir:String ;
          fhir:v "Note text"
        ]
      ] [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension>
+       ] ;
        fhir:value [
          a fhir:Period ;
          fhir:start [ fhir:v "1998-01-02"^^xsd:date ]
        ]
      ] [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension>
+       ] ;
        fhir:value [
          a fhir:Identifier ;
          fhir:assigner [
@@ -83,11 +107,17 @@
          ]
        ]
      ] ) ;
-     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension"^^xsd:anyURI ]
+     fhir:url [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension"^^xsd:anyURI ;
+       fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-note-extension>
+     ]
   ] ) ; # 
   fhir:identifier ( [
      fhir:extension ( [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension>
+       ] ;
        fhir:value [
          a fhir:Identifier ;
          fhir:assigner [
@@ -95,14 +125,20 @@
          ]
        ]
      ] ) ;
-     fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-org-id"^^xsd:anyURI ] ;
+     fhir:system [
+       fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-org-id"^^xsd:anyURI ;
+       fhir:l <https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-org-id>
+     ] ;
      fhir:value [ fhir:v "123123123" ] ;
      fhir:period [
        fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
      ]
   ] [
      fhir:extension ( [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension>
+       ] ;
        fhir:value [
          a fhir:Identifier ;
          fhir:assigner [
@@ -110,14 +146,20 @@
          ]
        ]
      ] ) ;
-     fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ] ;
+     fhir:system [
+       fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ;
+       fhir:l <https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc>
+     ] ;
      fhir:value [ fhir:v "IPC.00147436.BC.PRS" ] ;
      fhir:period [
        fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
      ]
   ] [
      fhir:extension ( [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension>
+       ] ;
        fhir:value [
          a fhir:Identifier ;
          fhir:assigner [
@@ -125,7 +167,10 @@
          ]
        ]
      ] ) ;
-     fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-common-party-number"^^xsd:anyURI ] ;
+     fhir:system [
+       fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-common-party-number"^^xsd:anyURI ;
+       fhir:l <https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-common-party-number>
+     ] ;
      fhir:value [ fhir:v "CPN.00147433.BC.PRS" ] ;
      fhir:period [
        fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
@@ -134,26 +179,38 @@
   fhir:active [ fhir:v true] ; # 
   fhir:type ( [
      fhir:coding ( [
-       fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system"^^xsd:anyURI ] ;
+       fhir:system [
+         fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system"^^xsd:anyURI ;
+         fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-organization-role-code-system>
+       ] ;
        fhir:code [ fhir:v "CLINIC" ]
      ] )
   ] ) ; # 
   fhir:name [
      fhir:v "Kelowna Clinic" ;
      fhir:extension ( [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-name-use-extension>
+       ] ;
        fhir:value [
-         a fhir:code ;
+         a fhir:Code ;
          fhir:v "official"
        ]
      ] [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-period-extension>
+       ] ;
        fhir:value [
          a fhir:Period ;
          fhir:start [ fhir:v "2014-01-31T00:00:00-07:00"^^xsd:dateTime ]
        ]
      ] [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension>
+       ] ;
        fhir:value [
          a fhir:Identifier ;
          fhir:assigner [
@@ -165,16 +222,25 @@
   fhir:alias ( [ fhir:v "ABC Clinic - Kelowna"] ) ; # 
   fhir:telecom ( [
      fhir:extension ( [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension>
+       ] ;
        fhir:value [
          a fhir:CodeableConcept ;
          fhir:coding ( [
-           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+           fhir:system [
+             fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ;
+             fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system>
+           ] ;
            fhir:code [ fhir:v "BC" ]
          ] )
        ]
      ] [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension>
+       ] ;
        fhir:value [
          a fhir:Identifier ;
          fhir:assigner [
@@ -190,25 +256,40 @@
   ] ) ; # 
   fhir:address ( [
      fhir:extension ( [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-communication-purpose-code-extension>
+       ] ;
        fhir:value [
          a fhir:CodeableConcept ;
          fhir:coding ( [
-           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ] ;
+           fhir:system [
+             fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system"^^xsd:anyURI ;
+             fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-communication-purpose-code-system>
+           ] ;
            fhir:code [ fhir:v "BC" ]
          ] )
        ]
      ] [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-address-validation-status-extension>
+       ] ;
        fhir:value [
          a fhir:CodeableConcept ;
          fhir:coding ( [
-           fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system"^^xsd:anyURI ] ;
+           fhir:system [
+             fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system"^^xsd:anyURI ;
+             fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-address-validation-status-code-system>
+           ] ;
            fhir:code [ fhir:v "V" ]
          ] )
        ]
      ] [
-       fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+       fhir:url [
+         fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ;
+         fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension>
+       ] ;
        fhir:value [
          a fhir:Identifier ;
          fhir:assigner [
@@ -232,15 +313,21 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships"^^xsd:anyURI ;
-       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
+       fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-role-relationships>
      ] )
   ] ; # 
   fhir:extension ( [
-     fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"^^xsd:anyURI ] ;
+     fhir:url [
+       fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension"^^xsd:anyURI ;
+       fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-relationship-type-extension>
+     ] ;
      fhir:value [
        a fhir:CodeableConcept ;
        fhir:coding ( [
-         fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system"^^xsd:anyURI ] ;
+         fhir:system [
+           fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system"^^xsd:anyURI ;
+           fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-relationship-type-code-system>
+         ] ;
          fhir:code [ fhir:v "EE" ]
        ] )
      ]
@@ -250,7 +337,10 @@
   ] ; # 
   fhir:practitioner [
      fhir:identifier [
-       fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ] ;
+       fhir:system [
+         fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ;
+         fhir:l <https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc>
+       ] ;
        fhir:value [ fhir:v "IPC.00147422.BC.PRS" ] ;
        fhir:period [
          fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
@@ -260,7 +350,10 @@
   fhir:organization [
      fhir:identifier [
        fhir:extension ( [
-         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+         fhir:url [
+           fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ;
+           fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension>
+         ] ;
          fhir:value [
            a fhir:Identifier ;
            fhir:assigner [
@@ -268,7 +361,10 @@
            ]
          ]
        ] ) ;
-       fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ] ;
+       fhir:system [
+         fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ;
+         fhir:l <https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc>
+       ] ;
        fhir:value [ fhir:v "IPC.00147436.BC.PRS" ] ;
        fhir:period [
          fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
@@ -281,7 +377,7 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation"^^xsd:anyURI ;
-       fhir:link <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
+       fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-organization-affiliation>
      ] )
   ] ; # 
   fhir:period [
@@ -290,7 +386,10 @@
   fhir:organization [
      fhir:identifier [
        fhir:extension ( [
-         fhir:url [ fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ] ;
+         fhir:url [
+           fhir:v "http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension"^^xsd:anyURI ;
+           fhir:l <http://hlth.gov.bc.ca/fhir/provider/StructureDefinition/bc-owner-extension>
+         ] ;
          fhir:value [
            a fhir:Identifier ;
            fhir:assigner [
@@ -298,7 +397,10 @@
            ]
          ]
        ] ) ;
-       fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ] ;
+       fhir:system [
+         fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc"^^xsd:anyURI ;
+         fhir:l <https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ipc>
+       ] ;
        fhir:value [ fhir:v "IPC.00147436.BC.PRS" ] ;
        fhir:period [
          fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
@@ -307,13 +409,19 @@
   ] ; # 
   fhir:code ( [
      fhir:coding ( [
-       fhir:system [ fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"^^xsd:anyURI ] ;
+       fhir:system [
+         fhir:v "https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system"^^xsd:anyURI ;
+         fhir:l <https://terminology.hlth.gov.bc.ca/ProviderLocationRegistry/CodeSystem/bc-location-relationship-type-code-system>
+       ] ;
        fhir:code [ fhir:v "operatesfrom" ]
      ] )
   ] ) ; # 
   fhir:location ( [
      fhir:identifier [
-       fhir:system [ fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc"^^xsd:anyURI ] ;
+       fhir:system [
+         fhir:v "https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc"^^xsd:anyURI ;
+         fhir:l <https://health.gov.bc.ca/fhir/NamingSystem/ca-bc-plr-ifc>
+       ] ;
        fhir:value [ fhir:v "IFC.00047422.BC.PRS" ] ;
        fhir:period [
          fhir:start [ fhir:v "2000-01-01"^^xsd:date ]
